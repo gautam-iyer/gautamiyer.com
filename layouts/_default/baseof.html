@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {{- $title := .Site.Title -}}
+  {{- if not .IsHome -}}
+    {{- if .Title -}}
+      {{- $title = printf "%s — %s" .Title .Site.Title -}}
+    {{- end -}}
+  {{- end }}
+  <title>{{ $title }}</title>
+
+  {{- with .Description }}
+  <meta name="description" content="{{ . }}">
+  {{- else with .Site.Params.description }}
+  <meta name="description" content="{{ . }}">
+  {{- end }}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  {{ block "head" . }}{{ end }}
+</head>
+<body>
+
+<header>
+  <a href="/" class="site-name">{{ .Site.Title }}</a>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/" {{ if .IsHome }}class="active"{{ end }}>Home</a></li>
+    <li><a href="/writing/" {{ if eq .Section "writing" }}class="active"{{ end }}>Writing</a></li>
+    <li><a href="/photos/" {{ if eq .Section "photos" }}class="active"{{ end }}>Photos</a></li>
+    <li><a href="/projects/" {{ if eq .Section "projects" }}class="active"{{ end }}>Projects</a></li>
+    <li><a href="/about/" {{ if eq .Section "about" }}class="active"{{ end }}>About</a></li>
+  </ul>
+</nav>
+
+{{ block "main" . }}{{ end }}
+
+<footer>
+  <p>&copy; {{ now.Year }} {{ .Site.Params.author | default .Site.Title }}</p>
+</footer>
+
+{{ block "scripts" . }}{{ end }}
+
+</body>
+</html>

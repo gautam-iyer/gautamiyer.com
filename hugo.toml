@@ -1,3 +1,7 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+baseURL = 'https://gautamiyer.com/'
+languageCode = 'en-us'
+title = 'Gautam Iyer'
+
+[params]
+  description = "Writer and researcher interested in cities, urban policy, and the built environment."
+  author = "Gautam Iyer"

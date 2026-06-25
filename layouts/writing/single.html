@@ -1,0 +1,45 @@
+{{ define "main" }}
+<article>
+  <div class="article-header">
+    <div class="article-meta">
+      {{ with .Params.category }}<span class="article-category">{{ . }}</span>{{ end }}
+      {{ if and .Params.category .Date }}<span class="meta-dot"></span>{{ end }}
+      <span class="article-date">{{ .Date.Format "January 2, 2006" }}</span>
+    </div>
+    <h1 class="article-title">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="article-subtitle">{{ . }}</p>{{ end }}
+    {{ with .Params.series }}
+    <a href="/writing/?series={{ . | urlize }}" class="article-series">Series: {{ . }} ›</a>
+    {{ end }}
+  </div>
+
+  {{ with .Params.hero_image }}
+  <div class="article-hero">
+    <img src="{{ . }}" alt="{{ $.Title }}">
+  </div>
+  {{ with $.Params.hero_caption }}
+  <p class="article-hero-caption">{{ . }}</p>
+  {{ end }}
+  {{ end }}
+
+  <div class="article-body">
+    {{ .Content }}
+  </div>
+
+  <div class="article-end">
+    {{ with .PrevInSection }}
+    <a href="{{ .Permalink }}">
+      <div class="end-label">← Previous</div>
+      <div class="end-title">{{ .Title }}</div>
+    </a>
+    {{ else }}<span></span>{{ end }}
+
+    {{ with .NextInSection }}
+    <a href="{{ .Permalink }}" class="end-next">
+      <div class="end-label">Next →</div>
+      <div class="end-title">{{ .Title }}</div>
+    </a>
+    {{ else }}<span></span>{{ end }}
+  </div>
+</article>
+{{ end }}

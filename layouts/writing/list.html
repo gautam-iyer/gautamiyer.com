@@ -1,0 +1,98 @@
+{{ define "main" }}
+<main>
+  <h1 class="page-title">Writing</h1>
+  <p class="page-desc">
+    {{ with .Content }}{{ . }}{{ else }}Essays on cities, politics, urban history, music, and whatever else.{{ end }}
+  </p>
+
+  <div class="view-toggle">
+    <button class="toggle-btn active" onclick="showView('all')">All</button>
+    <button class="toggle-btn" onclick="showView('series')">By Series</button>
+  </div>
+
+  {{/* ── ALL VIEW (chronological by year) ── */}}
+  <div class="all-section visible" id="view-all">
+    {{ range (.Pages.GroupByDate "2006") }}
+    <div class="year-label">{{ .Key }}</div>
+    <ul class="essay-list">
+      {{ range .Pages }}
+      <a href="{{ .Permalink }}" class="essay-item">
+        <div class="essay-row">
+          <div class="essay-info">
+            <div class="essay-title">{{ .Title }}</div>
+            {{ with .Params.subtitle }}<div class="essay-excerpt">{{ . }}</div>{{ end }}
+          </div>
+          <div class="essay-date">{{ .Date.Format "Jan 2" }}</div>
+        </div>
+      </a>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+
+  {{/* ── SERIES VIEW ── */}}
+  <div class="series-section" id="view-series">
+
+    {{/* Essays with a series */}}
+    {{ $withSeries := where .Pages "Params.series" "!=" nil }}
+    {{ range $withSeries.GroupByParam "series" }}
+    <div class="series-group">
+      <div class="series-header">
+        <div class="series-name">{{ .Key }}</div>
+        <div class="series-count">{{ len .Pages }} {{ if eq (len .Pages) 1 }}essay{{ else }}essays{{ end }}</div>
+      </div>
+      <ul class="essay-list">
+        {{ range .Pages }}
+        <a href="{{ .Permalink }}" class="essay-item">
+          <div class="essay-row">
+            <div class="essay-info">
+              <div class="essay-title">{{ .Title }}</div>
+              {{ with .Params.subtitle }}<div class="essay-excerpt">{{ . }}</div>{{ end }}
+            </div>
+            <div class="essay-date">{{ .Date.Format "Jan 2006" }}</div>
+          </div>
+        </a>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+    {{/* Standalone essays (no series) */}}
+    {{ $standalone := where .Pages "Params.series" "==" nil }}
+    {{ if $standalone }}
+    <div class="series-group">
+      <div class="series-header">
+        <div class="series-name">Standalone</div>
+        <div class="series-count">{{ len $standalone }} {{ if eq (len $standalone) 1 }}essay{{ else }}essays{{ end }}</div>
+      </div>
+      <ul class="essay-list">
+        {{ range $standalone }}
+        <a href="{{ .Permalink }}" class="essay-item">
+          <div class="essay-row">
+            <div class="essay-info">
+              <div class="essay-title">{{ .Title }}</div>
+              {{ with .Params.subtitle }}<div class="essay-excerpt">{{ . }}</div>{{ end }}
+            </div>
+            <div class="essay-date">{{ .Date.Format "Jan 2006" }}</div>
+          </div>
+        </a>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+  </div>
+</main>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+  function showView(view) {
+    document.getElementById('view-all').classList.toggle('visible', view === 'all');
+    document.getElementById('view-series').classList.toggle('visible', view === 'series');
+    document.querySelectorAll('.toggle-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === (view === 'all' ? 'all' : 'by series'));
+    });
+  }
+</script>
+{{ end }}

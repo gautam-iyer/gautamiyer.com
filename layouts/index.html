@@ -1,0 +1,29 @@
+{{ define "main" }}
+<main>
+  <div class="intro">
+    {{ with .Content }}
+      {{ . }}
+    {{ else }}
+      <p>{{ .Site.Params.description }}</p>
+    {{ end }}
+  </div>
+
+  {{ with hugo.Data.featured }}
+  <div class="section-label">Featured</div>
+  <div class="featured-grid">
+    {{ range . }}
+    <a href="{{ .url }}" class="featured-item">
+      <div class="featured-image">
+        {{ with .image }}
+          <img src="{{ . }}" alt="{{ $.title }}">
+        {{ end }}
+      </div>
+      <div class="featured-tag">{{ .tag }}</div>
+      <div class="featured-title">{{ .title }}</div>
+      <div class="featured-desc">{{ .desc }}</div>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+</main>
+{{ end }}
