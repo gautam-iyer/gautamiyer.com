@@ -4,19 +4,19 @@
       "key": "land_use",
       "label": "Land use",
       "multi": true,
-      "values": ["Residential", "Commercial", "Industrial", "Civic", "Religious", "Mixed", "Park"]
+      "values": ["Residential", "Commercial", "Mixed", "Civic", "Institutional", "Religious", "Industrial", "Infrastructure", "Park"]
     },
     {
       "key": "architecture",
       "label": "Architecture",
       "multi": true,
-      "values": ["Victorian", "Rowhouse", "Industrial", "Mid-century", "Art Deco", "Brutalist", "Modern", "Vernacular", "Commercial Vernacular", "Other", "NA"]
+      "values": ["Victorian", "Italianate", "Romanesque", "Gothic Revival", "Greek Revival", "Beaux-Arts / Neoclassical", "Colonial Revival", "Spanish Colonial / Mission", "Rowhouse", "Art Deco", "Streamline Moderne", "Mid-century", "International Style", "Modern", "Postmodern", "Brutalist", "Skyscraper", "Industrial", "Religious", "Vernacular", "Commercial Vernacular", "Other", "NA"]
     },
     {
       "key": "subject",
       "label": "Subject",
       "multi": true,
-      "values": ["Streetscape", "Façade", "Detail", "Signage", "Infrastructure", "People", "Landscape", "Interior"]
+      "values": ["Streetscape", "Skyline", "Façade", "Detail", "Signage", "Infrastructure", "People", "Interior", "Landscape"]
     },
     {
       "key": "tone",

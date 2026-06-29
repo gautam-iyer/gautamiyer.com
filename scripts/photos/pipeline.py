@@ -120,7 +120,8 @@ def resize_to(src, dst, longest_edge):
 def cmd_scan(args):
     m = load_manifest()
     added = 0
-    for shoot in SHOOTS:
+    shoots = [s for s in SHOOTS if (not args.shoot or s["slug"] == args.shoot)]
+    for shoot in shoots:
         folder = PHOTOS_ROOT / shoot["folder"]
         if not folder.exists():
             print(f"  ! missing shoot folder: {folder}", file=sys.stderr)
@@ -340,7 +341,8 @@ def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--manifest", help="override manifest path (e.g. a staging file)")
     sub = p.add_subparsers(dest="cmd", required=True)
-    sub.add_parser("scan")
+    sc = sub.add_parser("scan")
+    sc.add_argument("--shoot", default=None)
     d = sub.add_parser("derive")
     d.add_argument("--limit", type=int, default=0)
     d.add_argument("--force", action="store_true")
