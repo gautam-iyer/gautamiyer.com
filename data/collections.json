@@ -1,3 +1,40 @@
 {
-  "collections": []
+  "collections": [
+    {
+      "slug": "ppg-place-pittsburgh",
+      "title": "PPG Place - Pittsburgh",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated"
+    },
+    {
+      "slug": "cathedral-of-learning-pittsburgh",
+      "title": "Cathedral of Learning - Pittsburgh",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated"
+    },
+    {
+      "slug": "upmc-building-pittsburgh",
+      "title": "UPMC Building - Pittsburgh",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated"
+    },
+    {
+      "slug": "bridges-of-pittsburgh",
+      "title": "Bridges of Pittsburgh",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated"
+    }
+  ]
 }

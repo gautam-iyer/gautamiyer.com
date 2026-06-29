@@ -274,6 +274,9 @@ def cmd_tag_apply(args):
                 if field in MULTI_FIELDS and not isinstance(val, list):
                     val = [val]   # vision agents emit a single value; store as array
                 rec[field] = val
+        # collections merge by UNION — never drop a membership the human (or a prior pass) set
+        if tags.get("collections"):
+            rec["collections"] = sorted(set(rec.get("collections") or []) | set(tags["collections"]))
         rec["tagged"] = True
         applied += 1
     save_manifest(m)
