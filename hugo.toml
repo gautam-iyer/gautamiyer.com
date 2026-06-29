@@ -5,3 +5,6 @@ title = 'Gautam Iyer'
 [params]
   description = "Writer and researcher interested in cities, urban policy, and the built environment."
   author = "Gautam Iyer"
+  # Base URL for photo derivatives, hosted on Cloudflare R2 (bucket: gautamiyer-photos).
+  # For local preview against a localhost static server, temporarily point this at http://localhost:8899/.
+  photo_base = "https://pub-cf176eff18f94be89643cd9b73085bf8.r2.dev/"

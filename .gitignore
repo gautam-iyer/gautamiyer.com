@@ -3,9 +3,19 @@
 /resources/_gen/
 .hugo_build.lock
 
+# Photo pipeline build artifacts (derivatives go to R2, not git)
+/.photo-build/
+
+# Wrangler local cache/state
+/.wrangler/
+
 # macOS
 .DS_Store
 
 # Editor cruft
 *.swp
 *~
+
+# Python cache
+__pycache__/
+*.pyc
