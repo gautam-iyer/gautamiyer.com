@@ -47,9 +47,18 @@ SHOOTS = [
         "date": "2026-06-16",
         "title": "Pittsburgh",
     },
+    {
+        "folder": "Texas 6:14:26/Dump 1/Edited",
+        "slug": "san-antonio-2026-06-14",
+        "city": "San Antonio",
+        "date": "2026-06-14",
+        "title": "San Antonio",
+    },
 ]
 
 TAG_FIELDS = ["neighborhood", "land_use", "architecture", "subject", "medium", "tone", "tag_notes"]
+# Dimensions stored as arrays (multi-select). Kept in sync with data/taxonomy.json.
+MULTI_FIELDS = ["land_use", "architecture", "subject", "tone"]
 
 
 # ---------- manifest io ----------
@@ -132,11 +141,11 @@ def cmd_scan(args):
                 "height": h,
                 # tag fields (filled by tag-apply / neighborhoods)
                 "neighborhood": None,
-                "land_use": None,
-                "architecture": None,
-                "subject": None,
+                "land_use": [],
+                "architecture": [],
+                "subject": [],
                 "medium": None,
-                "tone": None,
+                "tone": [],
                 "tag_notes": None,
                 "collections": [],
                 # derivative urls (filled by derive + r2 upload)
@@ -260,7 +269,10 @@ def cmd_tag_apply(args):
             continue
         for field in TAG_FIELDS:
             if field in tags and tags[field] is not None:
-                rec[field] = tags[field]
+                val = tags[field]
+                if field in MULTI_FIELDS and not isinstance(val, list):
+                    val = [val]   # vision agents emit a single value; store as array
+                rec[field] = val
         rec["tagged"] = True
         applied += 1
     save_manifest(m)
@@ -274,7 +286,7 @@ def cmd_contact_sheet(args):
     recs.sort(key=lambda r: (r["img_no"], r["file"]))
     cells = []
     for r in recs:
-        abs_thumb = (REPO / r["thumb"]).as_uri()
+        abs_thumb = (DERIV / r["thumb"]).as_uri()
         hood = r.get("neighborhood") or ""
         cells.append(
             f'<figure><img loading="lazy" src="{abs_thumb}">'
@@ -313,8 +325,20 @@ def cmd_status(args):
     print(f"reviewed:     {reviewed}")
 
 
+def cmd_prune(args):
+    """Delete local DISPLAY tiers (.avif/.webp) whose objects are on R2, keeping thumbnails.
+    Frees ~95% of local space; thumbs (~70KB) stay so the tagger works offline."""
+    removed = freed = 0
+    for f in DERIV.rglob("*.display.*"):
+        freed += f.stat().st_size
+        f.unlink()
+        removed += 1
+    print(f"prune: removed {removed} display files, freed {freed/1e6:.0f} MB (thumbnails kept)")
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("--manifest", help="override manifest path (e.g. a staging file)")
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("scan")
     d = sub.add_parser("derive")
@@ -326,14 +350,19 @@ def main():
     t.add_argument("batch")
     cs = sub.add_parser("contact-sheet")
     cs.add_argument("--shoot", default="pittsburgh-2026-06-16")
+    sub.add_parser("prune")
     sub.add_parser("status")
     args = p.parse_args()
+    if args.manifest:
+        global MANIFEST
+        MANIFEST = Path(args.manifest)
     {
         "scan": cmd_scan,
         "derive": cmd_derive,
         "neighborhoods": cmd_neighborhoods,
         "tag-apply": cmd_tag_apply,
         "contact-sheet": cmd_contact_sheet,
+        "prune": cmd_prune,
         "status": cmd_status,
     }[args.cmd](args)
 

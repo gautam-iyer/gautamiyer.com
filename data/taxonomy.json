@@ -1,0 +1,29 @@
+{
+  "dimensions": [
+    {
+      "key": "land_use",
+      "label": "Land use",
+      "multi": true,
+      "values": ["Residential", "Commercial", "Industrial", "Civic", "Religious", "Mixed", "Park"]
+    },
+    {
+      "key": "architecture",
+      "label": "Architecture",
+      "multi": true,
+      "values": ["Victorian", "Rowhouse", "Industrial", "Mid-century", "Art Deco", "Brutalist", "Modern", "Vernacular", "Commercial Vernacular", "Other", "NA"]
+    },
+    {
+      "key": "subject",
+      "label": "Subject",
+      "multi": true,
+      "values": ["Streetscape", "Façade", "Detail", "Signage", "Infrastructure", "People", "Landscape", "Interior"]
+    },
+    {
+      "key": "tone",
+      "label": "Tone",
+      "multi": true,
+      "values": ["Color", "B&W"]
+    }
+  ],
+  "_note": "Single source of truth for multi-select tag dimensions. Edit values here (or add a new dimension object) and the tagger + website filters pick it up. neighborhood/city/medium are handled separately (single-value, derived)."
+}

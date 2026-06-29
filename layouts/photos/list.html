@@ -14,24 +14,31 @@
     {{ if $p.thumb }}{{ $photos = $photos | append $p }}{{ end }}
   {{ end }}
 
-  {{ $dims := slice "city" "neighborhood" "land_use" "architecture" "subject" "medium" "tone" }}
-  {{ $labels := dict
-      "city" "City" "neighborhood" "Neighborhood" "land_use" "Land use"
-      "architecture" "Architecture" "subject" "Subject" "medium" "Medium" "tone" "Tone" }}
+  {{/* Filterable dimensions. multi=true means the manifest stores an array of values. */}}
+  {{ $dimdefs := slice
+      (dict "k" "city" "label" "City" "multi" false)
+      (dict "k" "neighborhood" "label" "Neighborhood" "multi" false)
+      (dict "k" "land_use" "label" "Land use" "multi" true)
+      (dict "k" "architecture" "label" "Architecture" "multi" true)
+      (dict "k" "subject" "label" "Subject" "multi" true)
+      (dict "k" "medium" "label" "Medium" "multi" false)
+      (dict "k" "tone" "label" "Tone" "multi" true) }}
 
   <div class="controls">
     <div class="filter-group">
       <span class="filter-label">Filter</span>
-      {{ range $dim := $dims }}
+      {{ range $d := $dimdefs }}
         {{ $vals := slice }}
         {{ range $photos }}
-          {{ $v := index . $dim }}
-          {{ if $v }}{{ $vals = $vals | append $v }}{{ end }}
+          {{ $v := index . $d.k }}
+          {{ if $d.multi }}
+            {{ range $v }}{{ $vals = $vals | append . }}{{ end }}
+          {{ else if $v }}{{ $vals = $vals | append $v }}{{ end }}
         {{ end }}
         {{ $vals = $vals | uniq | sort }}
         {{ if $vals }}
-        <select class="filter-select" data-dim="{{ $dim }}">
-          <option value="">{{ index $labels $dim }}</option>
+        <select class="filter-select" data-dim="{{ $d.k }}">
+          <option value="">{{ $d.label }}</option>
           {{ range $vals }}<option value="{{ . }}">{{ . }}</option>{{ end }}
         </select>
         {{ end }}
@@ -44,27 +51,29 @@
 
   <div class="gallery">
     {{ range $photos }}
+      {{ $p := . }}
+      {{/* caption = neighborhood + architecture styles + subjects */}}
       {{ $meta := slice }}
-      {{ with .neighborhood }}{{ $meta = $meta | append . }}{{ end }}
-      {{ with .architecture }}{{ $meta = $meta | append . }}{{ end }}
-      {{ with .subject }}{{ $meta = $meta | append . }}{{ end }}
+      {{ with $p.neighborhood }}{{ $meta = $meta | append . }}{{ end }}
+      {{ range $p.architecture }}{{ $meta = $meta | append . }}{{ end }}
+      {{ range $p.subject }}{{ $meta = $meta | append . }}{{ end }}
       <div class="gallery-item"
-           data-city="{{ .city }}"
-           data-neighborhood="{{ .neighborhood }}"
-           data-land_use="{{ .land_use }}"
-           data-architecture="{{ .architecture }}"
-           data-subject="{{ .subject }}"
-           data-medium="{{ .medium }}"
-           data-tone="{{ .tone }}"
-           data-avif="{{ $base }}{{ .display_avif }}"
-           data-webp="{{ $base }}{{ .display_webp }}"
-           data-title="{{ with .neighborhood }}{{ . }}, {{ end }}{{ .city }}"
+           data-city="{{ $p.city }}"
+           data-neighborhood="{{ $p.neighborhood }}"
+           data-land_use="{{ delimit $p.land_use "|" }}"
+           data-architecture="{{ delimit $p.architecture "|" }}"
+           data-subject="{{ delimit $p.subject "|" }}"
+           data-medium="{{ $p.medium }}"
+           data-tone="{{ delimit $p.tone "|" }}"
+           data-avif="{{ $base }}{{ $p.display_avif }}"
+           data-webp="{{ $base }}{{ $p.display_webp }}"
+           data-title="{{ with $p.neighborhood }}{{ . }}, {{ end }}{{ $p.city }}"
            data-caption="{{ delimit $meta " · " }}">
         <div class="photo">
-          <img src="{{ $base }}{{ .thumb }}" loading="lazy" alt="{{ .city }}{{ with .subject }} — {{ . }}{{ end }}">
+          <img src="{{ $base }}{{ $p.thumb }}" loading="lazy" alt="{{ $p.city }}{{ with $p.tag_notes }} — {{ . }}{{ end }}">
         </div>
         <div class="overlay">
-          <div class="overlay-title">{{ with .neighborhood }}{{ . }}{{ else }}{{ .city }}{{ end }}</div>
+          <div class="overlay-title">{{ with $p.neighborhood }}{{ . }}{{ else }}{{ $p.city }}{{ end }}</div>
           <div class="overlay-meta">{{ delimit $meta " · " }}</div>
         </div>
       </div>

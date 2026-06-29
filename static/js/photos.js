@@ -19,8 +19,10 @@
   function apply() {
     let shown = 0;
     items.forEach((item) => {
+      // Multi-value dims are stored pipe-delimited; a photo matches if the
+      // selected value is among its values. Single-value dims split to one item.
       const match = Object.entries(filters).every(
-        ([dim, val]) => !val || item.dataset[dim] === val
+        ([dim, val]) => !val || (item.dataset[dim] || '').split('|').includes(val)
       );
       item.style.display = match ? '' : 'none';
       if (match) shown++;

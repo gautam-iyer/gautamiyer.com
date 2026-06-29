@@ -25,17 +25,9 @@ from urllib.parse import urlparse, parse_qs, unquote
 REPO = Path(__file__).resolve().parents[2]
 MANIFEST = REPO / "data" / "photos.json"
 COLLECTIONS = REPO / "data" / "collections.json"
+TAXONOMY = REPO / "data" / "taxonomy.json"
 DERIV = REPO / ".photo-build" / "derivatives"
 PORT = 8800
-
-VOCAB = {
-    "land_use": ["Residential", "Commercial", "Industrial", "Civic", "Religious", "Mixed", "Park"],
-    "architecture": ["Victorian", "Rowhouse", "Industrial", "Mid-century", "Art Deco",
-                     "Brutalist", "Modern", "Vernacular", "Commercial Vernacular", "Other", "NA"],
-    "subject": ["Streetscape", "Façade", "Detail", "Signage", "Infrastructure",
-                "People", "Landscape", "Interior"],
-    "tone": ["Color", "B&W"],
-}
 
 _lock = threading.Lock()
 
@@ -116,12 +108,14 @@ PAGE = """<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger</
 </header>
 <main id="list"></main>
 <script>
-let PHOTOS={}, COLLS=[], SHOOTS=[];
+let PHOTOS={}, COLLS=[], SHOOTS=[], TAX=[];
 const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/'/g,"\\'");
+const arr=(key,dim)=>{const v=PHOTOS[key][dim];return Array.isArray(v)?v:(v?[v]:[]);};
 
 async function boot(){
   const d = await (await fetch('/api/data')).json();
-  PHOTOS=d.photos; COLLS=d.collections; SHOOTS=d.shoots;
+  PHOTOS=d.photos; COLLS=d.collections; SHOOTS=d.shoots; TAX=d.taxonomy||[];
   const ss=$('#shoot'); ss.innerHTML='<option value="">All shoots</option>'+
     SHOOTS.map(s=>`<option value="${s}">${s}</option>`).join('');
   ss.onchange=render; $('#filter').onchange=render;
@@ -135,7 +129,6 @@ async function save(key, patch){
   await fetch('/api/save',{method:'POST',headers:{'content-type':'application/json'},
     body:JSON.stringify({key, patch})});
   flash(); updateStat();
-  // update reviewed style without full re-render
   const el=document.querySelector(`[data-key="${CSS.escape(key)}"]`);
   if(el) el.classList.add('reviewed');
 }
@@ -144,8 +137,7 @@ async function newCollection(title, key){
   const r=await (await fetch('/api/collection',{method:'POST',headers:{'content-type':'application/json'},
     body:JSON.stringify({title})})).json();
   COLLS=r.collections;
-  const slug=r.slug;
-  const cur=new Set(PHOTOS[key].collections||[]); cur.add(slug);
+  const cur=new Set(PHOTOS[key].collections||[]); cur.add(r.slug);
   await save(key,{collections:[...cur]});
   render();
 }
@@ -167,37 +159,42 @@ function visible(){
   }).sort((a,b)=>(PHOTOS[a].img_no-PHOTOS[b].img_no)||a.localeCompare(b));
 }
 
+// dim is a taxonomy object {key,label,values,multi}. Every dim here is multi-select.
 function chipRow(key, dim){
-  const p=PHOTOS[key], cur=p[dim];
-  return `<div class="dim"><div class="label">${dim.replace('_',' ')}</div><div class="chips">`+
-    VOCAB[dim].map(v=>`<span class="chip ${cur===v?'on':''}" onclick="toggleDim('${key.replace(/'/g,"\\'")}','${dim}','${v.replace(/'/g,"\\'")}')">${v}</span>`).join('')+
+  const cur=arr(key,dim.key);
+  return `<div class="dim"><div class="label">${dim.label}</div><div class="chips">`+
+    dim.values.map(v=>`<span class="chip ${cur.includes(v)?'on':''}" onclick="toggleDim('${esc(key)}','${dim.key}','${esc(v)}')">${v}</span>`).join('')+
     `</div></div>`;
 }
 
 function collRow(key){
   const p=PHOTOS[key], cur=new Set(p.collections||[]);
-  const chips=COLLS.map(c=>`<span class="chip coll ${cur.has(c.slug)?'on':''}" onclick="toggleColl('${key.replace(/'/g,"\\'")}','${c.slug}')">${c.title}</span>`).join('');
+  const chips=COLLS.map(c=>`<span class="chip coll ${cur.has(c.slug)?'on':''}" onclick="toggleColl('${esc(key)}','${c.slug}')">${c.title}</span>`).join('');
   return `<div class="dim"><div class="label">Collections</div><div class="chips">${chips||'<span class="notes">none yet</span>'}</div>`+
     `<div class="newcoll"><input placeholder="New collection name…" id="nc-${cssid(key)}">`+
-    `<button onclick="(function(){const i=document.getElementById('nc-${cssid(key)}');if(i.value.trim())newCollection(i.value.trim(),'${key.replace(/'/g,"\\'")}')})()">＋ create & add</button></div></div>`;
+    `<button onclick="(function(){const i=document.getElementById('nc-${cssid(key)}');if(i.value.trim())newCollection(i.value.trim(),'${esc(key)}')})()">＋ create & add</button></div></div>`;
 }
 function cssid(k){return k.replace(/[^a-z0-9]/gi,'_');}
 
-window.toggleDim=(key,dim,v)=>{const cur=PHOTOS[key][dim];const nv=(cur===v)?null:v;
-  PHOTOS[key][dim]=nv; save(key,{[dim]:nv}); paintDim(key,dim);};
+window.toggleDim=(key,dim,v)=>{
+  const s=new Set(arr(key,dim)); s.has(v)?s.delete(v):s.add(v);
+  PHOTOS[key][dim]=[...s]; save(key,{[dim]:[...s]}); paintDim(key,dim);
+};
 window.toggleColl=(key,slug)=>{const s=new Set(PHOTOS[key].collections||[]);
   s.has(slug)?s.delete(slug):s.add(slug); PHOTOS[key].collections=[...s];
   save(key,{collections:[...s]}); paintColl(key);};
 
 function paintDim(key,dim){const row=document.querySelector(`[data-key="${CSS.escape(key)}"]`);
-  if(!row)return; const wrap=row.querySelector(`[data-dim="${dim}"]`); wrap.outerHTML=`<div data-dim="${dim}">${chipRow(key,dim)}</div>`;}
+  if(!row)return; const d=TAX.find(x=>x.key===dim);
+  row.querySelector(`[data-dim="${dim}"]`).outerHTML=`<div data-dim="${dim}">${chipRow(key,d)}</div>`;}
 function paintColl(key){const row=document.querySelector(`[data-key="${CSS.escape(key)}"]`);
-  if(!row)return; const wrap=row.querySelector('[data-dim="collections"]'); wrap.outerHTML=`<div data-dim="collections">${collRow(key)}</div>`;}
+  if(!row)return; row.querySelector('[data-dim="collections"]').outerHTML=`<div data-dim="collections">${collRow(key)}</div>`;}
 
 function render(){
   const list=visible();
   $('#list').innerHTML=list.map(key=>{
     const p=PHOTOS[key];
+    const dims=TAX.map(d=>`<div data-dim="${d.key}">${chipRow(key,d)}</div>`).join('');
     return `<div class="row ${p.reviewed?'reviewed':''}" data-key="${key}">
       <div>
         <img class="thumb" loading="lazy" src="/img/${p.thumb}">
@@ -207,11 +204,8 @@ function render(){
       <div>
         <div class="dim"><div class="label">Neighborhood</div>
           <div class="nb"><input list="hoods" value="${(p.neighborhood||'').replace(/"/g,'&quot;')}"
-            onchange="save('${key.replace(/'/g,"\\'")}',{neighborhood:this.value||null})"></div></div>
-        <div data-dim="land_use">${chipRow(key,'land_use')}</div>
-        <div data-dim="architecture">${chipRow(key,'architecture')}</div>
-        <div data-dim="subject">${chipRow(key,'subject')}</div>
-        <div data-dim="tone">${chipRow(key,'tone')}</div>
+            onchange="save('${esc(key)}',{neighborhood:this.value||null})"></div></div>
+        ${dims}
         <div data-dim="collections">${collRow(key)}</div>
       </div>
     </div>`;
@@ -245,8 +239,9 @@ class Handler(BaseHTTPRequestHandler):
             with _lock:
                 m = load(MANIFEST, {})
                 colls = load(COLLECTIONS, {"collections": []})["collections"]
+                tax = load(TAXONOMY, {"dimensions": []})["dimensions"]
             shoots = sorted({p["shoot"] for p in m.values()})
-            return self._send(200, {"photos": m, "collections": colls, "shoots": shoots})
+            return self._send(200, {"photos": m, "collections": colls, "shoots": shoots, "taxonomy": tax})
         if path.startswith("/img/"):
             rel = unquote(path[len("/img/"):])
             f = (DERIV / rel).resolve()
