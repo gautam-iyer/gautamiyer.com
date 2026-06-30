@@ -204,6 +204,36 @@
       "order": 0,
       "type": "curated",
       "place": "Newark"
+    },
+    {
+      "slug": "industrial-durham",
+      "title": "Industrial Durham",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Durham"
+    },
+    {
+      "slug": "beaux-arts-durham",
+      "title": "Beaux-Arts Durham",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Durham"
+    },
+    {
+      "slug": "storefronts-of-durham",
+      "title": "Storefronts of Durham",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Durham"
     }
   ]
 }

@@ -61,6 +61,13 @@ SHOOTS = [
         "date": "2026-05-14",
         "title": "Newark",
     },
+    {
+        "folder": "Durham 4:24:26/Edited",
+        "slug": "durham-2026-04-24",
+        "city": "Durham",
+        "date": "2026-04-24",
+        "title": "Durham",
+    },
 ]
 
 TAG_FIELDS = ["neighborhood", "land_use", "architecture", "subject", "medium", "tone", "tag_notes"]

@@ -1,4 +1,4328 @@
 {
+  "Durham 4:24:26/Edited/IMG_3873.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3873.jpg",
+    "file": "IMG_3873.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3873,
+    "width": 3930,
+    "height": 5895,
+    "neighborhood": null,
+    "land_use": [
+      "Institutional",
+      "Civic"
+    ],
+    "architecture": [
+      "Gothic Revival"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Collegiate Gothic stone building on Duke University's West Campus, with rough-cut multicolor Hillsborough bluestone walls, slate roof, twisted carved chimneys, Gothic tracery windows, and a pointed-arch doorway with timber doors.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3873.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3873.display.avif",
+    "display_webp": "durham-2026-04-24/img_3873.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3875.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3875.jpg",
+    "file": "IMG_3875.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3875,
+    "width": 3071,
+    "height": 4607,
+    "neighborhood": null,
+    "land_use": [
+      "Religious"
+    ],
+    "architecture": [
+      "Mid-century"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Mid-century modern church with a steeply pitched A-frame gable, red brick side walls, a tall stucco front panel, and a glazed lower narthex, partly screened by a large shade tree.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3875.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3875.display.avif",
+    "display_webp": "durham-2026-04-24/img_3875.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3878.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3878.jpg",
+    "file": "IMG_3878.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3878,
+    "width": 6000,
+    "height": 4000,
+    "neighborhood": null,
+    "land_use": [
+      "Park"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Field of red and pink poppies in bloom behind a low concrete wall, backed by a dense tree line with a white high-rise building peeking through, on a clear day.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3878.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3878.display.avif",
+    "display_webp": "durham-2026-04-24/img_3878.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3879.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3879.jpg",
+    "file": "IMG_3879.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3879,
+    "width": 5619,
+    "height": 3746,
+    "neighborhood": null,
+    "land_use": [
+      "Religious"
+    ],
+    "architecture": [
+      "Greek Revival",
+      "Beaux-Arts / Neoclassical"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Red brick Neoclassical/Greek Revival church with a monumental white pedimented portico of fluted Doric columns, three arched entry doors atop a broad stair, and a posted marquee sign at the curb.",
+    "collections": [
+      "beaux-arts-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3879.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3879.display.avif",
+    "display_webp": "durham-2026-04-24/img_3879.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3880.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3880.jpg",
+    "file": "IMG_3880.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3880,
+    "width": 6000,
+    "height": 4000,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Civic"
+    ],
+    "architecture": [
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Murals",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Red brick commercial vernacular building whose side wall bears a community mural of stylized figures titled 'Faces of Our Community,' fronted by lawn and a yellow 'Speed Hump' sign in East Durham.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3880.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3880.display.avif",
+    "display_webp": "durham-2026-04-24/img_3880.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3882.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3882.jpg",
+    "file": "IMG_3882.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3882,
+    "width": 5603,
+    "height": 3735,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Signage",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Gutted backlit 'Mini Mart' billboard sign listing bread, milk, hot dogs and ice cream, atop a steel pole above a gray corner bodega ('Bodeguita & Vegetables') against a bright sky.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3882.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3882.display.avif",
+    "display_webp": "durham-2026-04-24/img_3882.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3883.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3883.jpg",
+    "file": "IMG_3883.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3883,
+    "width": 3961,
+    "height": 5941,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Streetscape",
+      "People",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Brick neighborhood storefront (Neal's Deli / Vega Metals strip) with a hanging 'Produce, Fresh Baked Bread, Beer & Wine' sign, where patrons sit at picnic tables on the sidewalk under overhead wires.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3883.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3883.display.avif",
+    "display_webp": "durham-2026-04-24/img_3883.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3885.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3885.jpg",
+    "file": "IMG_3885.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3885,
+    "width": 3862,
+    "height": 5793,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Streetscape",
+      "People",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A man in a high-visibility vest walks past a shaded brick corner storefront seen beneath a canopy and a metal pole signed 'Joe's Diner' in gold lettering.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3885.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3885.display.avif",
+    "display_webp": "durham-2026-04-24/img_3885.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3886.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3886.jpg",
+    "file": "IMG_3886.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3886,
+    "width": 3448,
+    "height": 5172,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Former bank now 'Design Bank' vintage/modern studio: a small Neoclassical limestone-fronted temple with paired Corinthian columns and a pediment, on the corner of Driver Street in East Durham.",
+    "collections": [
+      "beaux-arts-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3886.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3886.display.avif",
+    "display_webp": "durham-2026-04-24/img_3886.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3887.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3887.jpg",
+    "file": "IMG_3887.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3887,
+    "width": 3849,
+    "height": 5774,
+    "neighborhood": null,
+    "land_use": [
+      "Religious",
+      "Civic"
+    ],
+    "architecture": [
+      "Greek Revival",
+      "Beaux-Arts / Neoclassical"
+    ],
+    "subject": [
+      "Signage",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Brick monument wall with white 'OLD EAST DURHAM' lettering in front of a red brick Greek Revival church with a white columned portico and arched stained-glass windows.",
+    "collections": [
+      "beaux-arts-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3887.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3887.display.avif",
+    "display_webp": "durham-2026-04-24/img_3887.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3889.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3889.jpg",
+    "file": "IMG_3889.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3889,
+    "width": 5875,
+    "height": 3917,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Vacant single-story red brick commercial storefront with whitewashed lower walls, large plate-glass display windows papered over in purple, and a boarded central transom, with a 'No Parking' sign at right.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3889.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3889.display.avif",
+    "display_webp": "durham-2026-04-24/img_3889.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3890.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3890.jpg",
+    "file": "IMG_3890.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3890,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Brick industrial-vernacular building with a stepped parapet, large storefront windows, gooseneck lights and a neon 'Wine' sign (Pinhook-area block), a young woman standing at the curb out front.",
+    "collections": [
+      "industrial-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3890.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3890.display.avif",
+    "display_webp": "durham-2026-04-24/img_3890.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3892.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3892.jpg",
+    "file": "IMG_3892.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3892,
+    "width": 2891,
+    "height": 4336,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Joe's Diner 'Home of the 1 lb. Hot Dog': a corrugated-metal-clad storefront with hand-painted signage and a roll-down door, abutting a dark brick wall, the diner name running vertically down a steel column.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3892.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3892.display.avif",
+    "display_webp": "durham-2026-04-24/img_3892.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3893.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3893.jpg",
+    "file": "IMG_3893.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3893,
+    "width": 5994,
+    "height": 3996,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Streetscape",
+      "Signage",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Wider street view of Joe's Diner 'Home of the 1 lb. Hot Dog,' showing the corrugated-metal corner building beside a long brick party wall painted with a faded matching ghost-sign advertisement.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3893.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3893.display.avif",
+    "display_webp": "durham-2026-04-24/img_3893.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3894.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3894.jpg",
+    "file": "IMG_3894.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3894,
+    "width": 5627,
+    "height": 3751,
+    "neighborhood": null,
+    "land_use": [
+      "Industrial",
+      "Commercial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Italianate"
+    ],
+    "subject": [
+      "Streetscape",
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Old East Durham brick warehouse/factory complex with a tall brick chimney and arched Italianate windows, a gray 'OLD EAST DURHAM' banner along the fence and a parked silver sedan.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3894.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3894.display.avif",
+    "display_webp": "durham-2026-04-24/img_3894.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3895.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3895.jpg",
+    "file": "IMG_3895.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3895,
+    "width": 5954,
+    "height": 3969,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Landscape",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A vintage faded-blue flatbed dump truck parked in a shady tree-filled backyard beside an empty trailer bed and a pile of brush.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3895.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3895.display.avif",
+    "display_webp": "durham-2026-04-24/img_3895.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3896.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3896.jpg",
+    "file": "IMG_3896.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3896,
+    "width": 5365,
+    "height": 3577,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Abandoned white clapboard-clad corner store with a stepped parapet, draped in overgrown vines, its open storefront bays fronted by a chain-link fence and gate.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3896.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3896.display.avif",
+    "display_webp": "durham-2026-04-24/img_3896.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3897.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3897.jpg",
+    "file": "IMG_3897.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3897,
+    "width": 5773,
+    "height": 3849,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Streamline Moderne",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Vacant white stucco commercial building with teal-trimmed pilasters and a low parapet in a Streamline-influenced vernacular style, three doors and clerestory transom windows facing a cracked concrete lot.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3897.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3897.display.avif",
+    "display_webp": "durham-2026-04-24/img_3897.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3898.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3898.jpg",
+    "file": "IMG_3898.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3898,
+    "width": 3869,
+    "height": 5803,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Detail",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Teal-painted two-story shingle-clad bungalow (address 1604) with a 'LOVE AND RESPECT' inscription along its frieze, a brick porch, French doors and an arched-top front door, shaded by trees.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3898.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3898.display.avif",
+    "display_webp": "durham-2026-04-24/img_3898.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3899.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3899.jpg",
+    "file": "IMG_3899.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3899,
+    "width": 6000,
+    "height": 4000,
+    "neighborhood": null,
+    "land_use": [
+      "Infrastructure"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Landscape",
+      "Infrastructure"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A dense stand of kudzu-draped trees and overgrown brush along a roadside, crossed by multiple sagging overhead utility lines against a clear blue sky.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3899.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3899.display.avif",
+    "display_webp": "durham-2026-04-24/img_3899.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3900.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3900.jpg",
+    "file": "IMG_3900.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3900,
+    "width": 4687,
+    "height": 3125,
+    "neighborhood": null,
+    "land_use": [
+      "Religious",
+      "Residential"
+    ],
+    "architecture": [
+      "Mid-century",
+      "Colonial Revival"
+    ],
+    "subject": [
+      "Streetscape",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Small red brick mid-century church with a front-gable end and tall colored-glass window beside a gray Colonial Revival bungalow with a hipped roof and full-width porch, both set above a sloping lawn.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3900.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3900.display.avif",
+    "display_webp": "durham-2026-04-24/img_3900.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3901.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3901.jpg",
+    "file": "IMG_3901.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3901,
+    "width": 5616,
+    "height": 3744,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Weathered red brick warehouse corner with a peeling painted wall bearing a Durham Rescue Mission 'Spring Community Event / Easter Celebration' banner (1201 E. Main St.) at dusk.",
+    "collections": [
+      "industrial-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3901.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3901.display.avif",
+    "display_webp": "durham-2026-04-24/img_3901.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3902.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3902.jpg",
+    "file": "IMG_3902.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3902,
+    "width": 4559,
+    "height": 3039,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Landscape",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Black metal-mesh patio tables and chairs set on a grassy lot against a whitewashed brick wall with a faded ghost sign, shaded by overhanging tree foliage.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3902.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3902.display.avif",
+    "display_webp": "durham-2026-04-24/img_3902.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3903.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3903.jpg",
+    "file": "IMG_3903.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3903,
+    "width": 5939,
+    "height": 3959,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular",
+      "Industrial"
+    ],
+    "subject": [
+      "Streetscape",
+      "Signage",
+      "Murals"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Vacant concrete lot flanked by a partly demolished brick party wall with peeling stucco and graffiti, with a yellow-and-red 'Ralph's Pizza' building and Steve's Auto Repair across the way.",
+    "collections": [
+      "industrial-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3903.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3903.display.avif",
+    "display_webp": "durham-2026-04-24/img_3903.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3904.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3904.jpg",
+    "file": "IMG_3904.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3904,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Religious"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical",
+      "Religious"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Former church with a dark-painted brick semicircular apse, white Corinthian columns supporting a domed roof, arched windows, and a brick stair, in Durham, NC.",
+    "collections": [
+      "beaux-arts-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3904.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3904.display.avif",
+    "display_webp": "durham-2026-04-24/img_3904.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3905.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3905.jpg",
+    "file": "IMG_3905.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3905,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Religious"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical",
+      "Religious"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Detail of the same dark-brick former church's curved colonnaded portico with white Corinthian columns, arched stained-glass windows, and a domed drum, in Durham, NC.",
+    "collections": [
+      "beaux-arts-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3905.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3905.display.avif",
+    "display_webp": "durham-2026-04-24/img_3905.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3906.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3906.jpg",
+    "file": "IMG_3906.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3906,
+    "width": 5932,
+    "height": 3955,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular",
+      "Vernacular"
+    ],
+    "subject": [
+      "Streetscape",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Vacant lot with Steve's Auto Repair Center (white building with cupola) and a red-and-yellow former Reln's Pizza building beneath overhead power lines, in Durham, NC.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3906.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3906.display.avif",
+    "display_webp": "durham-2026-04-24/img_3906.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3907.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3907.jpg",
+    "file": "IMG_3907.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3907,
+    "width": 3969,
+    "height": 2646,
+    "neighborhood": null,
+    "land_use": [
+      "Infrastructure",
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular",
+      "NA"
+    ],
+    "subject": [
+      "Streetscape",
+      "People",
+      "Infrastructure"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Cars maneuvering around traffic barrels at a road-construction intersection with a keep-right sign, a low brick commercial building, and a retaining wall behind, in Durham, NC.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3907.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3907.display.avif",
+    "display_webp": "durham-2026-04-24/img_3907.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3908.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3908.jpg",
+    "file": "IMG_3908.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3908,
+    "width": 3736,
+    "height": 5604,
+    "neighborhood": null,
+    "land_use": [
+      "Religious"
+    ],
+    "architecture": [
+      "Colonial Revival",
+      "Religious"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Red-brick church with a white clapboard steeple, clock face, and arched stained-glass windows, framed by tree foliage, in Durham, NC.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3908.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3908.display.avif",
+    "display_webp": "durham-2026-04-24/img_3908.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3909.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3909.jpg",
+    "file": "IMG_3909.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3909,
+    "width": 2677,
+    "height": 4016,
+    "neighborhood": null,
+    "land_use": [
+      "Institutional",
+      "Commercial"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Green-framed Durham Rescue Mission sign with an LED message board reading 'YOU can make a difference,' set against green tree foliage, in Durham, NC.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3909.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3909.display.avif",
+    "display_webp": "durham-2026-04-24/img_3909.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3910.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3910.jpg",
+    "file": "IMG_3910.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3910,
+    "width": 5430,
+    "height": 3620,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Industrial"
+    ],
+    "architecture": [
+      "Commercial Vernacular",
+      "Industrial"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "White-painted brick warehouse with an arched roofline and faded 'Los Primos Supermarket' sign, with a red service door and small high windows, in Durham, NC.",
+    "collections": [
+      "industrial-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3910.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3910.display.avif",
+    "display_webp": "durham-2026-04-24/img_3910.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3911.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3911.jpg",
+    "file": "IMG_3911.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3911,
+    "width": 5811,
+    "height": 3874,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular",
+      "Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Small white-painted brick Tater Bread Cafe with blue-trimmed windows, a yellow hand-painted sign, a metal screen door, and two black benches out front, in Durham, NC.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3911.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3911.display.avif",
+    "display_webp": "durham-2026-04-24/img_3911.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3913.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3913.jpg",
+    "file": "IMG_3913.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3913,
+    "width": 3245,
+    "height": 4867,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Industrial"
+    ],
+    "architecture": [
+      "Commercial Vernacular",
+      "Industrial"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Rear view of the Tater Bread Cafe menu board mounted on a brick base, with the arched-roof white warehouse (former Los Primos) behind, in Durham, NC.",
+    "collections": [
+      "industrial-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3913.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3913.display.avif",
+    "display_webp": "durham-2026-04-24/img_3913.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3914.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3914.jpg",
+    "file": "IMG_3914.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3914,
+    "width": 5646,
+    "height": 3764,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Vernacular",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Nolia family + coffee shop at 1004, a converted white cinder-block house with a blue standing-seam metal roof and corrugated fencing, in Durham, NC.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3914.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3914.display.avif",
+    "display_webp": "durham-2026-04-24/img_3914.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3917.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3917.jpg",
+    "file": "IMG_3917.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3917,
+    "width": 3648,
+    "height": 5472,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Industrial"
+    ],
+    "subject": [
+      "People",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Woman in pink sunglasses leaning over a patio table with a drink, with a converted red-brick textile mill (likely Golden Belt) and string lights behind, in Durham, NC.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3917.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3917.display.avif",
+    "display_webp": "durham-2026-04-24/img_3917.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3918.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3918.jpg",
+    "file": "IMG_3918.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3918,
+    "width": 3987,
+    "height": 5980,
+    "neighborhood": null,
+    "land_use": [
+      "Industrial",
+      "Commercial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Romanesque"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Red-brick textile mill tower with round oculus windows and tall arched multi-pane windows, likely the Golden Belt complex, in Durham, NC.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3918.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3918.display.avif",
+    "display_webp": "durham-2026-04-24/img_3918.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3919.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3919.jpg",
+    "file": "IMG_3919.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3919,
+    "width": 3468,
+    "height": 5202,
+    "neighborhood": null,
+    "land_use": [
+      "Industrial",
+      "Infrastructure"
+    ],
+    "architecture": [
+      "Industrial"
+    ],
+    "subject": [
+      "Landscape",
+      "Infrastructure"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Tall tapered brick industrial smokestack rising above trees, with a steel railroad trestle bridge crossing in the foreground, in Durham, NC.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3919.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3919.display.avif",
+    "display_webp": "durham-2026-04-24/img_3919.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3920.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3920.jpg",
+    "file": "IMG_3920.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3920,
+    "width": 5541,
+    "height": 3694,
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Modern",
+      "International Style"
+    ],
+    "subject": [
+      "Façade",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Durham County Main Library, a modern building clad in dark vertical metal fins over a glass-walled ground floor with a green roof, in Durham, NC.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3920.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3920.display.avif",
+    "display_webp": "durham-2026-04-24/img_3920.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3921.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3921.jpg",
+    "file": "IMG_3921.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3921,
+    "width": 3391,
+    "height": 5087,
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Modern",
+      "International Style"
+    ],
+    "subject": [
+      "Façade",
+      "People",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Cantilevered entrance of the Durham County Main Library with gold lettering, board-formed concrete columns, and a purple sculpture, with people on the steps, in Durham, NC.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3921.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3921.display.avif",
+    "display_webp": "durham-2026-04-24/img_3921.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3923.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3923.jpg",
+    "file": "IMG_3923.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3923,
+    "width": 5647,
+    "height": 3765,
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical",
+      "Greek Revival"
+    ],
+    "subject": [
+      "Façade",
+      "Streetscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "United States Post Office, a stone Neoclassical building with a row of Doric columns and a flagpole, fronting a downtown street, in Durham, NC.",
+    "collections": [
+      "beaux-arts-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3923.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3923.display.avif",
+    "display_webp": "durham-2026-04-24/img_3923.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3925.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3925.jpg",
+    "file": "IMG_3925.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3925,
+    "width": 3437,
+    "height": 5156,
+    "neighborhood": null,
+    "land_use": [
+      "Residential",
+      "Mixed",
+      "Park"
+    ],
+    "architecture": [
+      "Modern",
+      "Industrial"
+    ],
+    "subject": [
+      "Streetscape",
+      "Murals",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Brick-and-metal apartment buildings overlooking Durham Central Park, with a faded painted 'Durham Central Park' magnolia mural and a green pavilion roof, in Durham, NC.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3925.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3925.display.avif",
+    "display_webp": "durham-2026-04-24/img_3925.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3926.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3926.jpg",
+    "file": "IMG_3926.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3926,
+    "width": 3898,
+    "height": 5847,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular",
+      "Industrial"
+    ],
+    "subject": [
+      "Façade",
+      "Signage",
+      "Streetscape",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Red-brick commercial building with a faded painted 'Liberty Cafe' ghost sign and a hanging 'Green's Grill / Pine State Milk' sign, along a sidewalk, in Durham, NC.",
+    "collections": [
+      "industrial-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3926.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3926.display.avif",
+    "display_webp": "durham-2026-04-24/img_3926.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3927.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3927.jpg",
+    "file": "IMG_3927.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3927,
+    "width": 5577,
+    "height": 3718,
+    "neighborhood": null,
+    "land_use": [
+      "Residential",
+      "Commercial"
+    ],
+    "architecture": [
+      "Modern"
+    ],
+    "subject": [
+      "Signage",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Vintage-style 'PARKING ...for your car!' sign with a smiling retro couple, mounted against a modern dark vertical-metal apartment facade, in Durham, NC.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3927.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3927.display.avif",
+    "display_webp": "durham-2026-04-24/img_3927.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3930.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3930.jpg",
+    "file": "IMG_3930.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3930,
+    "width": 5981,
+    "height": 3987,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Interior",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Open garage-door patio of a restaurant with Edison string lights, hanging globe lamps, and patrons at wood-and-metal tables before tall industrial windows, in Durham, NC.",
+    "collections": [
+      "industrial-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3930.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3930.display.avif",
+    "display_webp": "durham-2026-04-24/img_3930.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3931.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3931.jpg",
+    "file": "IMG_3931.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3931,
+    "width": 5910,
+    "height": 3940,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Interior",
+      "Signage",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Pizza counter (Hot / Mark IV) with exposed brick, ductwork, a blue beadboard counter, vintage Valvoline Motor Oil sign, and stools, likely in a converted garage, in Durham, NC.",
+    "collections": [
+      "industrial-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3931.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3931.display.avif",
+    "display_webp": "durham-2026-04-24/img_3931.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3932.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3932.jpg",
+    "file": "IMG_3932.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3932,
+    "width": 5991,
+    "height": 3994,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Industrial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Brick industrial Hutchins Building with a stepped parapet and tall steel-sash windows, with a round hanging sign on a white pole and overhead wires, in Durham, NC.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3932.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3932.display.avif",
+    "display_webp": "durham-2026-04-24/img_3932.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3935.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3935.jpg",
+    "file": "IMG_3935.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3935,
+    "width": 5276,
+    "height": 3517,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular",
+      "Vernacular"
+    ],
+    "subject": [
+      "Streetscape",
+      "Signage",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Cyclists crossing in front of a brick commercial strip with the 'Modest Green Habitat' storefront and the white 'Rigo's since 1942' building with a striped awning, in Durham, NC.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3935.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3935.display.avif",
+    "display_webp": "durham-2026-04-24/img_3935.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3937.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3937.jpg",
+    "file": "IMG_3937.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3937,
+    "width": 2667,
+    "height": 4001,
+    "neighborhood": null,
+    "land_use": [
+      "Mixed",
+      "Residential",
+      "Commercial"
+    ],
+    "architecture": [
+      "Skyscraper",
+      "Modern",
+      "Art Deco"
+    ],
+    "subject": [
+      "Streetscape",
+      "Skyline",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Downtown view down a sloping street with pedestrians, brick mid-rise apartments, and the setback Art Deco Hill Building (CCB tower) on the skyline, in Durham, NC.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3937.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3937.display.avif",
+    "display_webp": "durham-2026-04-24/img_3937.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3938.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3938.jpg",
+    "file": "IMG_3938.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3938,
+    "width": 6000,
+    "height": 4000,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Mid-century",
+      "Modern",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Streetscape",
+      "Signage",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Storefront at 600 Foster Street in Durham, with a brick wall, large plate-glass display windows showing mid-century architecture photographs, and vintage metal patio chairs on the sidewalk.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3938.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3938.display.avif",
+    "display_webp": "durham-2026-04-24/img_3938.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3940.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3940.jpg",
+    "file": "IMG_3940.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3940,
+    "width": 3752,
+    "height": 2501,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Murals",
+      "People",
+      "Streetscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Painted portrait mural with a 'True Community' quotation on a weathered red-brick warehouse wall beside a parking lot, with pedestrians passing in Durham.",
+    "collections": [
+      "industrial-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3940.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3940.display.avif",
+    "display_webp": "durham-2026-04-24/img_3940.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3941.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3941.jpg",
+    "file": "IMG_3941.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3941,
+    "width": 5838,
+    "height": 3892,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Institutional"
+    ],
+    "architecture": [
+      "Romanesque",
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Detail",
+      "Skyline"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Crenellated buff-brick Romanesque tower with corbeled brickwork in downtown Durham, with the Art Deco Hill Building (CCB/Five Points tower) rising behind at right.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3941.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3941.display.avif",
+    "display_webp": "durham-2026-04-24/img_3941.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3942.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3942.jpg",
+    "file": "IMG_3942.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3942,
+    "width": 3876,
+    "height": 5814,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Art Deco",
+      "Skyscraper"
+    ],
+    "subject": [
+      "Façade",
+      "Skyline"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The Art Deco Hill Building (1937, now 21c Museum Hotel) in downtown Durham, a limestone-clad setback tower seen against the sky with a modern glass tower at left.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3942.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3942.display.avif",
+    "display_webp": "durham-2026-04-24/img_3942.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3943.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3943.jpg",
+    "file": "IMG_3943.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3943,
+    "width": 5869,
+    "height": 3913,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Upper floors and ornamented cornice of an early-20th-century buff-brick commercial block in downtown Durham, with terracotta classical detailing and a modern building at left.",
+    "collections": [
+      "beaux-arts-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3943.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3943.display.avif",
+    "display_webp": "durham-2026-04-24/img_3943.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3945.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3945.jpg",
+    "file": "IMG_3945.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3945,
+    "width": 5004,
+    "height": 3336,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Corner view of an early-20th-century buff-brick commercial building in downtown Durham with a heavily ornamented terracotta cornice and frieze, lit by low sun.",
+    "collections": [
+      "beaux-arts-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3945.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3945.display.avif",
+    "display_webp": "durham-2026-04-24/img_3945.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3946.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3946.jpg",
+    "file": "IMG_3946.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3946,
+    "width": 5626,
+    "height": 3751,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular",
+      "Modern"
+    ],
+    "subject": [
+      "Façade",
+      "Streetscape",
+      "People",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Stone-faced storefront at 115 with the Primrose sign and posters in the windows along a downtown Durham sidewalk, with joggers, a streetlamp, and a red fire hydrant in low evening light.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3946.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3946.display.avif",
+    "display_webp": "durham-2026-04-24/img_3946.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3948.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3948.jpg",
+    "file": "IMG_3948.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3948,
+    "width": 3398,
+    "height": 5097,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Other"
+    ],
+    "subject": [
+      "Detail",
+      "Interior"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Detail of a leaded stained-glass skylight or ceiling in Durham, with a geometric grid of clear and yellow glass and a horizontal amber-and-green decorative band.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3948.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3948.display.avif",
+    "display_webp": "durham-2026-04-24/img_3948.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3950.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3950.jpg",
+    "file": "IMG_3950.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3950,
+    "width": 6000,
+    "height": 4000,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Art Deco",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Signage",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Upper facade and parapet of the S.H. Kress Building in downtown Durham, a cream terracotta Art Deco five-and-dime with the embossed 'KRESS' nameplate and a rooftop flagpole.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3950.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3950.display.avif",
+    "display_webp": "durham-2026-04-24/img_3950.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3952.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3952.jpg",
+    "file": "IMG_3952.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3952,
+    "width": 3387,
+    "height": 5081,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Art Deco",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Signage",
+      "Streetscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The S.H. Kress Building at the corner of N. Mangum Street in downtown Durham, a cream terracotta Art Deco facade with the 'KRESS' nameplate, photographed from the street at dusk.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3952.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3952.display.avif",
+    "display_webp": "durham-2026-04-24/img_3952.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3953.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3953.jpg",
+    "file": "IMG_3953.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3953,
+    "width": 5817,
+    "height": 3878,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Institutional"
+    ],
+    "architecture": [
+      "Mid-century",
+      "Modern"
+    ],
+    "subject": [
+      "Façade",
+      "Signage",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Storefront entrance in Durham with a 'Prince Hall Family Structure' Masonic organizational chart in the window, an aluminum door, and an 'ENTER AT FRONT' decal.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3953.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3953.display.avif",
+    "display_webp": "durham-2026-04-24/img_3953.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3954.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3954.jpg",
+    "file": "IMG_3954.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3954,
+    "width": 3757,
+    "height": 5635,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical",
+      "Greek Revival"
+    ],
+    "subject": [
+      "Façade",
+      "Streetscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The former Citizens National Bank in downtown Durham, a small marble Neoclassical temple-front building with a pedimented gable, dentil cornice, and Ionic columns flanking the entrance.",
+    "collections": [
+      "beaux-arts-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3954.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3954.display.avif",
+    "display_webp": "durham-2026-04-24/img_3954.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3956.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3956.jpg",
+    "file": "IMG_3956.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3956,
+    "width": 6000,
+    "height": 4000,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Signage",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Faded ghost signs for Pepsi-Cola and 'Roberts & Wittenberg Attys' painted on the brick side wall of an old commercial building in downtown Durham, framed by trees.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3956.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3956.display.avif",
+    "display_webp": "durham-2026-04-24/img_3956.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3957.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3957.jpg",
+    "file": "IMG_3957.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3957,
+    "width": 5633,
+    "height": 3755,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Signage",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Entrance of the Mechanics and Farmers Bank (M&F Bank) in downtown Durham, with an incised stone nameplate over three round arches and Ionic capitals.",
+    "collections": [
+      "beaux-arts-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3957.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3957.display.avif",
+    "display_webp": "durham-2026-04-24/img_3957.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3958.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3958.jpg",
+    "file": "IMG_3958.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3958,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "People",
+      "Streetscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A smiling man in a quilted jacket holding a drink carton walks along a tree-lined downtown Durham sidewalk past brick planters of hostas and parked cars.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3958.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3958.display.avif",
+    "display_webp": "durham-2026-04-24/img_3958.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3959.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3959.jpg",
+    "file": "IMG_3959.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3959,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "People",
+      "Streetscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A smiling man in a quilted jacket and shorts walks beside raised planters of hostas under street trees on a downtown Durham sidewalk, with storefronts and parked cars behind.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3959.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3959.display.avif",
+    "display_webp": "durham-2026-04-24/img_3959.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3961.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3961.jpg",
+    "file": "IMG_3961.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3961,
+    "width": 3853,
+    "height": 5779,
+    "neighborhood": null,
+    "land_use": [
+      "Residential",
+      "Mixed",
+      "Commercial"
+    ],
+    "architecture": [
+      "Modern",
+      "Skyscraper",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Streetscape",
+      "Skyline",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A glass-and-balcony modern residential high-rise tower rising above the low-rise Penny Furniture Co. building and a busy parking lot in Durham.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3961.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3961.display.avif",
+    "display_webp": "durham-2026-04-24/img_3961.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3963.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3963.jpg",
+    "file": "IMG_3963.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3963,
+    "width": 4252,
+    "height": 2835,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Modern",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Murals",
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Ninth Street Bakery building in Durham with a large painted wheat-stalk mural on its wall, the Marriott hotel tower rising behind it against a clear blue sky.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3963.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3963.display.avif",
+    "display_webp": "durham-2026-04-24/img_3963.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3964.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3964.jpg",
+    "file": "IMG_3964.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3964,
+    "width": 3758,
+    "height": 5637,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Art Deco entrance at 331 W. Main Street in downtown Durham, with fluted limestone piers, stylized geometric ornament, and a recessed doorway flanked by patterned metal grilles.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3964.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3964.display.avif",
+    "display_webp": "durham-2026-04-24/img_3964.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3965.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3965.jpg",
+    "file": "IMG_3965.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3965,
+    "width": 2961,
+    "height": 1974,
+    "neighborhood": null,
+    "land_use": [
+      "Industrial",
+      "Commercial"
+    ],
+    "architecture": [
+      "Romanesque",
+      "Industrial",
+      "Victorian"
+    ],
+    "subject": [
+      "Skyline",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Rooftop view of the brick Liggett & Myers / American Tobacco district in Durham, showing corbeled brick parapets, decorative chimneys, and a copper-roofed water tower or cupola against a hazy sunset.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3965.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3965.display.avif",
+    "display_webp": "durham-2026-04-24/img_3965.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3966.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3966.jpg",
+    "file": "IMG_3966.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3966,
+    "width": 5880,
+    "height": 3920,
+    "neighborhood": null,
+    "land_use": [
+      "Industrial"
+    ],
+    "architecture": [
+      "Industrial"
+    ],
+    "subject": [
+      "Detail",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Carved marble cornerstone reading 'Liggett & Myers Tobacco Co. O'Brien Warehouse 1898' set into the red-brick wall of a tobacco warehouse in Durham.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3966.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3966.display.avif",
+    "display_webp": "durham-2026-04-24/img_3966.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3967.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3967.jpg",
+    "file": "IMG_3967.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3967,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Industrial",
+      "Commercial"
+    ],
+    "architecture": [
+      "Art Deco",
+      "Industrial"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Streamlined Art Deco limestone 'Office' entrance bay set into a red-brick tobacco-factory building in Durham, with a tall grid-pane window above the door, lit by low sun.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3967.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3967.display.avif",
+    "display_webp": "durham-2026-04-24/img_3967.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3968.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3968.jpg",
+    "file": "IMG_3968.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3968,
+    "width": 3651,
+    "height": 5476,
+    "neighborhood": null,
+    "land_use": [
+      "Industrial",
+      "Commercial"
+    ],
+    "architecture": [
+      "Art Deco",
+      "Industrial"
+    ],
+    "subject": [
+      "Façade",
+      "Detail",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Stepped Art Deco limestone entrance surround at door 700, labeled 'Office', set into a red-brick tobacco-factory building in Durham with a tall grid-glass transom window.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3968.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3968.display.avif",
+    "display_webp": "durham-2026-04-24/img_3968.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3969.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3969.jpg",
+    "file": "IMG_3969.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3969,
+    "width": 3521,
+    "height": 5281,
+    "neighborhood": null,
+    "land_use": [
+      "Industrial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Carved stone plaque reading 'Research Laboratory Liggett & Myers Tobacco Company 1949' on the red-brick wall of the tobacco research lab building in Durham, with patterned recessed-brick windows and tree shadows.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3969.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3969.display.avif",
+    "display_webp": "durham-2026-04-24/img_3969.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3971.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3971.jpg",
+    "file": "IMG_3971.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3971,
+    "width": 3959,
+    "height": 5939,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Mixed"
+    ],
+    "architecture": [
+      "Mid-century",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Streetscape",
+      "Signage",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The Chesterfield building (former Liggett & Myers tobacco factory, now lab/office space) in downtown Durham, a long brick mid-century block crowned by its restored orange neon CHESTERFIELD rooftop sign, seen from across a street with overhead power lines.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3971.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3971.display.avif",
+    "display_webp": "durham-2026-04-24/img_3971.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3972.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3972.jpg",
+    "file": "IMG_3972.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3972,
+    "width": 3987,
+    "height": 5981,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Mixed"
+    ],
+    "architecture": [
+      "Mid-century",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Signage",
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Close view of the Chesterfield building's brick upper floors and its rooftop orange neon CHESTERFIELD sign ('Durham Home, Visitors Welcome') glowing in golden light, Durham.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3972.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3972.display.avif",
+    "display_webp": "durham-2026-04-24/img_3972.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3973.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3973.jpg",
+    "file": "IMG_3973.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3973,
+    "width": 4806,
+    "height": 3204,
+    "neighborhood": null,
+    "land_use": [
+      "Industrial",
+      "Commercial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Italianate"
+    ],
+    "subject": [
+      "Façade",
+      "Infrastructure",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Historic red-brick tobacco warehouse complex at M(organ) St and N. Duke St in Durham, with corbeled cornices and crenellated brick parapets, behind it a white elevated municipal water tower at golden hour.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3973.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3973.display.avif",
+    "display_webp": "durham-2026-04-24/img_3973.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3974.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3974.jpg",
+    "file": "IMG_3974.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3974,
+    "width": 6000,
+    "height": 4000,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Signage",
+      "Detail",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Backlit white-and-red 'SHOOTERS NITE CLUB' neon-edged sign mounted on the red brick exterior wall of the Shooters II nightclub, Durham, viewed at dusk.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3974.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3974.display.avif",
+    "display_webp": "durham-2026-04-24/img_3974.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3977.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3977.jpg",
+    "file": "IMG_3977.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3977,
+    "width": 3992,
+    "height": 5988,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Signage",
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The illuminated 'SHOOTERS NITE CLUB' sign with orange neon border on a red brick wall above a weathered wooden bench and traffic cone, Durham nightclub at dusk.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3977.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3977.display.avif",
+    "display_webp": "durham-2026-04-24/img_3977.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3978.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3978.jpg",
+    "file": "IMG_3978.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3978,
+    "width": 4779,
+    "height": 3186,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Infrastructure"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Signage",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Shooters Nite Club VIP party van and branded shuttle buses parked in a tree-lined lot, Durham.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3978.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3978.display.avif",
+    "display_webp": "durham-2026-04-24/img_3978.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3979.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3979.jpg",
+    "file": "IMG_3979.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3979,
+    "width": 5422,
+    "height": 3615,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Mid-century",
+      "Vernacular"
+    ],
+    "subject": [
+      "Streetscape",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Vintage trucks (an old blue-and-white Ford pickup, sedan, and red Ford F-150) parked on a grassy lot in front of a blue split-level house and a green wood-frame house with exterior stair, Durham residential street.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3979.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3979.display.avif",
+    "display_webp": "durham-2026-04-24/img_3979.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3981.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3981.jpg",
+    "file": "IMG_3981.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3981,
+    "width": 3970,
+    "height": 5955,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Colonial Revival",
+      "Vernacular"
+    ],
+    "subject": [
+      "Detail",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Dusk detail of a residential front porch with a white tapered column, hanging lantern, glass storm door, and a red planter on stone steps, dappled golden light on the clapboard siding, Durham.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3981.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3981.display.avif",
+    "display_webp": "durham-2026-04-24/img_3981.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3982.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3982.jpg",
+    "file": "IMG_3982.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3982,
+    "width": 3512,
+    "height": 5268,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Colonial Revival",
+      "Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Landscape",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A glowing gas-style lamppost in front of a clapboard house with a brick-pillared porch, framed by dense trees at dusk in a Durham residential neighborhood.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3982.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3982.display.avif",
+    "display_webp": "durham-2026-04-24/img_3982.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3983.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3983.jpg",
+    "file": "IMG_3983.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3983,
+    "width": 5688,
+    "height": 3792,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Mid-century",
+      "Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A green-stained Craftsman-style bungalow with deep porch, brick pillars, and brick steps amid flowering shrubs in low evening light, Durham residential neighborhood.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3983.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3983.display.avif",
+    "display_webp": "durham-2026-04-24/img_3983.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3984.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3984.jpg",
+    "file": "IMG_3984.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3984,
+    "width": 2966,
+    "height": 4449,
+    "neighborhood": null,
+    "land_use": [
+      "Institutional",
+      "Residential"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Streetscape",
+      "Façade",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A tall buff-brick institutional building (likely a former school) anchors a tree-lined Durham street at sunset, with a woman pushing a stroller on the sidewalk past stop signs.",
+    "collections": [
+      "beaux-arts-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_3984.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3984.display.avif",
+    "display_webp": "durham-2026-04-24/img_3984.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3986.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3986.jpg",
+    "file": "IMG_3986.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3986,
+    "width": 3883,
+    "height": 5825,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Landscape",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A weathered dark sedan and parked cars half-hidden in dense green undergrowth and trees beside a residential property, dappled sunlight, Durham.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3986.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3986.display.avif",
+    "display_webp": "durham-2026-04-24/img_3986.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3988.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3988.jpg",
+    "file": "IMG_3988.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3988,
+    "width": 5826,
+    "height": 3884,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A yellow clapboard house with brick chimney glimpsed across a backyard of trees and tall grass in strong backlit evening sun, a large tree trunk silhouetted in the foreground, Durham.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3988.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3988.display.avif",
+    "display_webp": "durham-2026-04-24/img_3988.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3989.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3989.jpg",
+    "file": "IMG_3989.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3989,
+    "width": 3906,
+    "height": 5859,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Landscape",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A backyard wooden treehouse/playhouse with elevated deck and a metal arched arbor over a brick path, hammock and potted plants in a lush green garden, Durham.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3989.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3989.display.avif",
+    "display_webp": "durham-2026-04-24/img_3989.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3990.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3990.jpg",
+    "file": "IMG_3990.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3990,
+    "width": 3869,
+    "height": 5803,
+    "neighborhood": null,
+    "land_use": [
+      "Residential",
+      "Infrastructure"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Streetscape",
+      "Infrastructure"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A residential street receding to a hillcrest under a tangle of overhead power lines and transmission towers, a tree arching over the double-yellow centerline and a 25 mph sign, parked cars at right, Durham.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3990.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3990.display.avif",
+    "display_webp": "durham-2026-04-24/img_3990.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3991.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3991.jpg",
+    "file": "IMG_3991.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3991,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Residential",
+      "Infrastructure"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Landscape",
+      "Streetscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A shaded unpaved gravel alley running between rows of tall trees, with blue recycling bins set out along the side, dappled light, Durham.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3991.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3991.display.avif",
+    "display_webp": "durham-2026-04-24/img_3991.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3992.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3992.jpg",
+    "file": "IMG_3992.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3992,
+    "width": 3345,
+    "height": 5017,
+    "neighborhood": null,
+    "land_use": [
+      "Residential",
+      "Infrastructure"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Landscape",
+      "Streetscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A tree-canopied gravel back alley in deep shade with blue and yellow bins set out along it, Durham residential neighborhood.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3992.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3992.display.avif",
+    "display_webp": "durham-2026-04-24/img_3992.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3994.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3994.jpg",
+    "file": "IMG_3994.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3994,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Detail",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A large rhododendron shrub in full purple-pink bloom against dark green foliage, lit by a shaft of golden evening light, Durham garden.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3994.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3994.display.avif",
+    "display_webp": "durham-2026-04-24/img_3994.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3996.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3996.jpg",
+    "file": "IMG_3996.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3996,
+    "width": 2351,
+    "height": 3527,
+    "neighborhood": null,
+    "land_use": [
+      "Residential",
+      "Infrastructure"
+    ],
+    "architecture": [
+      "Colonial Revival",
+      "Vernacular"
+    ],
+    "subject": [
+      "Signage",
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Green street-name signs marking the corner of Lancaster St (900) and Green St (1300) with a perched bird, set against a white clapboard house with brown shutters, Durham's Trinity Park / Watts-Hillandale area.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3996.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3996.display.avif",
+    "display_webp": "durham-2026-04-24/img_3996.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_3998.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_3998.jpg",
+    "file": "IMG_3998.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 3998,
+    "width": 5579,
+    "height": 3719,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Landscape",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Side yard of a blue clapboard house with a row of pink hydrangeas and potted shrubs along the foundation, golden afternoon light raking across the lawn, Durham.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_3998.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_3998.display.avif",
+    "display_webp": "durham-2026-04-24/img_3998.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4001.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4001.jpg",
+    "file": "IMG_4001.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4001,
+    "width": 3199,
+    "height": 4798,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Colonial Revival"
+    ],
+    "subject": [
+      "Detail",
+      "Signage",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Historic Preservation Society of Durham bronze plaque reading 'THE MANCHESTER 1927', built by developer Fletcher M. Tilley, in the Trinity Historic District, mounted on a multicolored brick wall beneath a black lantern at No. 143.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4001.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4001.display.avif",
+    "display_webp": "durham-2026-04-24/img_4001.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4003.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4003.jpg",
+    "file": "IMG_4003.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4003,
+    "width": 5852,
+    "height": 3901,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Colonial Revival",
+      "Vernacular"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A two-story gray American Foursquare-style house with a hipped roof, central dormer, full-width front porch on white columns with brick piers, and a red front door, framed by trees, Durham.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4003.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4003.display.avif",
+    "display_webp": "durham-2026-04-24/img_4003.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4004.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4004.jpg",
+    "file": "IMG_4004.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4004,
+    "width": 5755,
+    "height": 3837,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Victorian",
+      "Vernacular"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A two-story tan clapboard Victorian-era house with front-gable roof, brick chimney, wraparound porch on white columns with brick piers, a red front door and rainbow flag, Durham residential street.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4004.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4004.display.avif",
+    "display_webp": "durham-2026-04-24/img_4004.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4005.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4005.jpg",
+    "file": "IMG_4005.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4005,
+    "width": 5614,
+    "height": 3743,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Victorian",
+      "Vernacular"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A two-story tan clapboard Victorian / folk-Victorian house with a steep front-facing gable, front porch, and red door, neighboring a dark green house at right, Durham residential street.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4005.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4005.display.avif",
+    "display_webp": "durham-2026-04-24/img_4005.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4006.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4006.jpg",
+    "file": "IMG_4006.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4006,
+    "width": 3962,
+    "height": 5943,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Colonial Revival"
+    ],
+    "subject": [
+      "Façade",
+      "Detail",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Brick Colonial Revival house (number 1312) with a columned front porch, partly screened by a Japanese maple turning autumnal.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4006.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4006.display.avif",
+    "display_webp": "durham-2026-04-24/img_4006.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4007.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4007.jpg",
+    "file": "IMG_4007.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4007,
+    "width": 3277,
+    "height": 4916,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Colonial Revival"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Shaded front porch of the brick house numbered 1312, showing a painted column, vintage rocking chairs, and a divided-light window.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4007.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4007.display.avif",
+    "display_webp": "durham-2026-04-24/img_4007.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4008.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4008.jpg",
+    "file": "IMG_4008.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4008,
+    "width": 5977,
+    "height": 3985,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Detail",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A gray squirrel on a wooden retaining wall beside a berried mahonia (Oregon grape) shrub against a brick wall.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4008.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4008.display.avif",
+    "display_webp": "durham-2026-04-24/img_4008.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4009.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4009.jpg",
+    "file": "IMG_4009.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4009,
+    "width": 3968,
+    "height": 5952,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Flowering red pomegranate shrub overhanging a gray plastic trash bin against a wooden fence and deck.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4009.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4009.display.avif",
+    "display_webp": "durham-2026-04-24/img_4009.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4011.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4011.jpg",
+    "file": "IMG_4011.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4011,
+    "width": 3569,
+    "height": 5354,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Colonial Revival"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Three-story brick apartment building seen from the rear with a parked blue pickup truck and a concrete retaining wall in the foreground.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4011.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4011.display.avif",
+    "display_webp": "durham-2026-04-24/img_4011.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4124.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4124.jpg",
+    "file": "IMG_4124.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4124,
+    "width": 6000,
+    "height": 4000,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Colonial Revival"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Dark-shingled bungalow porch (number 1008) with tapered columns on blue brick piers, a black glazed front door, and a Duke garden flag.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4124.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4124.display.avif",
+    "display_webp": "durham-2026-04-24/img_4124.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4125.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4125.jpg",
+    "file": "IMG_4125.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4125,
+    "width": 3777,
+    "height": 5666,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Other"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Tudor Revival cottage (number 1006) of brick and stone with a steep cross-gabled slate roof, arched red door, and ivy climbing the chimney.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4125.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4125.display.avif",
+    "display_webp": "durham-2026-04-24/img_4125.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4127.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4127.jpg",
+    "file": "IMG_4127.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4127,
+    "width": 3735,
+    "height": 5603,
+    "neighborhood": null,
+    "land_use": [
+      "Religious",
+      "Institutional"
+    ],
+    "architecture": [
+      "Gothic Revival",
+      "Religious"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Brick Gothic Revival church with a corner tower, pointed-arch stained-glass windows, arched twin entrance doors, and a banner-marked stair entry.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4127.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4127.display.avif",
+    "display_webp": "durham-2026-04-24/img_4127.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4128.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4128.jpg",
+    "file": "IMG_4128.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4128,
+    "width": 3821,
+    "height": 5731,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Colonial Revival"
+    ],
+    "subject": [
+      "Façade",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Corner of a multi-story brick apartment building largely obscured by mature trees and shrubs.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4128.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4128.display.avif",
+    "display_webp": "durham-2026-04-24/img_4128.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4129.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4129.jpg",
+    "file": "IMG_4129.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4129,
+    "width": 3801,
+    "height": 5702,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Colonial Revival"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Brick rowhouse-style entrance (number 906) with a red six-light door, white pedimented door surround on fluted pilasters, and a flagstone path.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4129.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4129.display.avif",
+    "display_webp": "durham-2026-04-24/img_4129.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4130.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4130.jpg",
+    "file": "IMG_4130.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4130,
+    "width": 3861,
+    "height": 5791,
+    "neighborhood": null,
+    "land_use": [
+      "Residential"
+    ],
+    "architecture": [
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Plain variegated-brick wall of an apartment block (number 900) with white-framed windows and a toppled orange traffic cone on the gravel below.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_4130.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4130.display.avif",
+    "display_webp": "durham-2026-04-24/img_4130.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4131.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4131.jpg",
+    "file": "IMG_4131.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4131,
+    "width": 6000,
+    "height": 4000,
+    "neighborhood": null,
+    "land_use": [
+      "Infrastructure"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Detail",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Purple spray-painted graffiti reading 'Chinga la migra' on a weathered concrete wall, likely a bridge underpass.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4131.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4131.display.avif",
+    "display_webp": "durham-2026-04-24/img_4131.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4132.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4132.jpg",
+    "file": "IMG_4132.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4132,
+    "width": 4919,
+    "height": 3279,
+    "neighborhood": null,
+    "land_use": [
+      "Infrastructure"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A small recessed concrete niche framed with painted dots holding a folk-art canvas and a blue toy stegosaurus, set in a weathered concrete wall.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4132.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4132.display.avif",
+    "display_webp": "durham-2026-04-24/img_4132.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4133.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4133.jpg",
+    "file": "IMG_4133.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4133,
+    "width": 3845,
+    "height": 5768,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Industrial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Brick industrial building entrance (number 100) with an aluminum-framed glass door set in a glass-block transom and a cast-stone surround.",
+    "collections": [
+      "industrial-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_4133.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4133.display.avif",
+    "display_webp": "durham-2026-04-24/img_4133.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4134.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4134.jpg",
+    "file": "IMG_4134.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4134,
+    "width": 3675,
+    "height": 5513,
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Other"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Entrance (number 721) to the Durham County Agriculture Building, brick with fluted cast-stone door surrounds and a round upper window; NC Cooperative Extension.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4134.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4134.display.avif",
+    "display_webp": "durham-2026-04-24/img_4134.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4135.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4135.jpg",
+    "file": "IMG_4135.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4135,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Park"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "People",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Portrait of a smiling family of three (two adults holding a toddler) in a green garden setting, with a white industrial building and apartments behind.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4135.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4135.display.avif",
+    "display_webp": "durham-2026-04-24/img_4135.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4136.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4136.jpg",
+    "file": "IMG_4136.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4136,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Park"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "People",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Portrait of the same family of three smiling in a green garden, with a white industrial building, a street, and apartments in the background.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4136.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4136.display.avif",
+    "display_webp": "durham-2026-04-24/img_4136.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4137.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4137.jpg",
+    "file": "IMG_4137.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4137,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Park"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "People",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Portrait of the same family of three, the toddler laughing, in a green garden with a white industrial building behind.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4137.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4137.display.avif",
+    "display_webp": "durham-2026-04-24/img_4137.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4138.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4138.jpg",
+    "file": "IMG_4138.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4138,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Park"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "People",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Candid portrait of the same family of three in a green garden, the adult on the left looking at the child, with a white industrial building behind.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4138.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4138.display.avif",
+    "display_webp": "durham-2026-04-24/img_4138.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4139.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4139.jpg",
+    "file": "IMG_4139.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4139,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Park"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "People",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Portrait of the same family of three smiling in a green garden, with a white industrial building, street, and apartment block in the background.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4139.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4139.display.avif",
+    "display_webp": "durham-2026-04-24/img_4139.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4140.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4140.jpg",
+    "file": "IMG_4140.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4140,
+    "width": 3909,
+    "height": 5864,
+    "neighborhood": null,
+    "land_use": [
+      "Mixed",
+      "Commercial",
+      "Park"
+    ],
+    "architecture": [
+      "Industrial",
+      "Modern"
+    ],
+    "subject": [
+      "Murals",
+      "Signage",
+      "People",
+      "Streetscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Durham Central Park: a green-roofed open pavilion with ornate metal screens beside a renovated brick warehouse bearing a painted 'Durham Central Park' ghost-sign mural, with modern apartments above.",
+    "collections": [
+      "industrial-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_4140.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4140.display.avif",
+    "display_webp": "durham-2026-04-24/img_4140.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4141.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4141.jpg",
+    "file": "IMG_4141.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4141,
+    "width": 3136,
+    "height": 4704,
+    "neighborhood": null,
+    "land_use": [
+      "Mixed",
+      "Commercial",
+      "Park"
+    ],
+    "architecture": [
+      "Modern"
+    ],
+    "subject": [
+      "Signage",
+      "People",
+      "Streetscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Durham Farmers Market: a flower vendor's box truck with a 'Bluebird Meadows' banner, backed by a multi-story modern apartment building.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4141.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4141.display.avif",
+    "display_webp": "durham-2026-04-24/img_4141.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4142.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4142.jpg",
+    "file": "IMG_4142.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4142,
+    "width": 5789,
+    "height": 3859,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Park"
+    ],
+    "architecture": [
+      "NA"
+    ],
+    "subject": [
+      "People",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Durham Farmers Market flower stall with buckets of cut peonies and ranunculus in paper wraps, a vendor and shoppers behind under market tents.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4142.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4142.display.avif",
+    "display_webp": "durham-2026-04-24/img_4142.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4144.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4144.jpg",
+    "file": "IMG_4144.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4144,
+    "width": 3801,
+    "height": 5701,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Park"
+    ],
+    "architecture": [
+      "Modern"
+    ],
+    "subject": [
+      "People",
+      "Streetscape",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Street vendor cart selling cold-pressed watermelon juice blends with customers, set against trees and a modern mid-rise apartment building.",
+    "collections": [],
+    "thumb": "durham-2026-04-24/img_4144.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4144.display.avif",
+    "display_webp": "durham-2026-04-24/img_4144.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4147.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4147.jpg",
+    "file": "IMG_4147.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4147,
+    "width": 2544,
+    "height": 3816,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Industrial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Signage",
+      "Interior",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Vintage painted 'Liberty Warehouse Durham' tobacco-warehouse sign mounted on a dark wall inside an adaptive-reuse interior with exposed concrete ceiling, ductwork, and track lighting.",
+    "collections": [
+      "industrial-durham",
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_4147.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4147.display.avif",
+    "display_webp": "durham-2026-04-24/img_4147.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4148.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4148.jpg",
+    "file": "IMG_4148.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4148,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Commercial"
+    ],
+    "architecture": [
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Interior",
+      "People",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Interior of Locals Seafood restaurant and fish market, showing workers at a marble counter with whole fish on ice beneath a blue mullet-fish sign and drop-ceiling lighting.",
+    "collections": [
+      "storefronts-of-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_4148.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4148.display.avif",
+    "display_webp": "durham-2026-04-24/img_4148.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4149.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4149.jpg",
+    "file": "IMG_4149.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4149,
+    "width": 4000,
+    "height": 6000,
+    "neighborhood": null,
+    "land_use": [
+      "Institutional",
+      "Park"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical"
+    ],
+    "subject": [
+      "Landscape",
+      "Façade",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Duke University East Campus quad with Baldwin Auditorium, a domed red-brick Neoclassical building with a white columned portico, seen across a broad lawn framed by trees.",
+    "collections": [
+      "beaux-arts-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_4149.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4149.display.avif",
+    "display_webp": "durham-2026-04-24/img_4149.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4152.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4152.jpg",
+    "file": "IMG_4152.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4152,
+    "width": 4192,
+    "height": 2795,
+    "neighborhood": null,
+    "land_use": [
+      "Institutional",
+      "Park"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical"
+    ],
+    "subject": [
+      "Landscape",
+      "Façade",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Duke University East Campus quad with Baldwin Auditorium, a domed red-brick Neoclassical building with a white columned portico, viewed closer across the lawn with students gathered along the walkway.",
+    "collections": [
+      "beaux-arts-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_4152.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4152.display.avif",
+    "display_webp": "durham-2026-04-24/img_4152.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4153.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4153.jpg",
+    "file": "IMG_4153.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4153,
+    "width": 3790,
+    "height": 5685,
+    "neighborhood": null,
+    "land_use": [
+      "Institutional"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Carnegie-style Neoclassical library building on Duke University East Campus, tan brick with a green tile hipped roof, arched Palladian windows, and a stone pedimented entry portico on paired columns.",
+    "collections": [
+      "beaux-arts-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_4153.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4153.display.avif",
+    "display_webp": "durham-2026-04-24/img_4153.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Durham 4:24:26/Edited/IMG_4155.jpg": {
+    "key": "Durham 4:24:26/Edited/IMG_4155.jpg",
+    "file": "IMG_4155.jpg",
+    "shoot": "durham-2026-04-24",
+    "city": "Durham",
+    "date": "2026-04-24",
+    "img_no": 4155,
+    "width": 5544,
+    "height": 3696,
+    "neighborhood": null,
+    "land_use": [
+      "Institutional"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Carnegie-style Neoclassical library building on Duke University East Campus, tan brick with a green tile hipped roof, arched Palladian windows, and a stone pedimented entry portico, shown in a wider three-quarter view with surrounding trees.",
+    "collections": [
+      "beaux-arts-durham"
+    ],
+    "thumb": "durham-2026-04-24/img_4155.thumb.webp",
+    "display_avif": "durham-2026-04-24/img_4155.display.avif",
+    "display_webp": "durham-2026-04-24/img_4155.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
   "Newark 5:14:26/Final JPEGs/IMG_4156.jpg": {
     "key": "Newark 5:14:26/Final JPEGs/IMG_4156.jpg",
     "file": "IMG_4156.jpg",
