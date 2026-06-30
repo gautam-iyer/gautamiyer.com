@@ -1,26 +1,119 @@
 {
   "places": [
-    { "name": "Durham, NC", "city": "Durham", "state": "NC" },
-    { "name": "Newark, NJ", "city": "Newark", "state": "NJ" },
-    { "name": "Buffalo, NY", "city": "Buffalo", "state": "NY" },
-    { "name": "Memphis, TN", "city": "Memphis", "state": "TN" },
-    { "name": "New Orleans, LA", "city": "New Orleans", "state": "LA" },
-    { "name": "Pittsburgh, PA", "city": "Pittsburgh", "state": "PA" },
-    { "name": "Clarksdale, MS", "city": "Clarksdale", "state": "MS" },
-    { "name": "Jackson, MS", "city": "Jackson", "state": "MS" },
-    { "name": "Baton Rouge, LA", "city": "Baton Rouge", "state": "LA" },
-    { "name": "Dallas, TX", "city": "Dallas", "state": "TX" },
-    { "name": "San Antonio, TX", "city": "San Antonio", "state": "TX" },
-    { "name": "Austin, TX", "city": "Austin", "state": "TX" },
-    { "name": "Albany, NY", "city": "Albany", "state": "NY" },
-    { "name": "Catskill, NY", "city": "Catskill", "state": "NY" },
-    { "name": "Utica, NY", "city": "Utica", "state": "NY" },
-    { "name": "Troy, NY", "city": "Troy", "state": "NY" },
-    { "name": "Syracuse, NY", "city": "Syracuse", "state": "NY" },
-    { "name": "Schenectady, NY", "city": "Schenectady", "state": "NY" },
-    { "name": "Binghamton, NY", "city": "Binghamton", "state": "NY" },
-    { "name": "Endicott, NY", "city": "Endicott", "state": "NY" },
-    { "name": "Johnson City, NY", "city": "Johnson City", "state": "NY" },
-    { "name": "Scranton, PA", "city": "Scranton", "state": "PA" }
+    {
+      "name": "Durham, NC",
+      "city": "Durham",
+      "state": "NC"
+    },
+    {
+      "name": "Newark, NJ",
+      "city": "Newark",
+      "state": "NJ"
+    },
+    {
+      "name": "Buffalo, NY",
+      "city": "Buffalo",
+      "state": "NY"
+    },
+    {
+      "name": "Memphis, TN",
+      "city": "Memphis",
+      "state": "TN"
+    },
+    {
+      "name": "New Orleans, LA",
+      "city": "New Orleans",
+      "state": "LA"
+    },
+    {
+      "name": "Pittsburgh, PA",
+      "city": "Pittsburgh",
+      "state": "PA"
+    },
+    {
+      "name": "Clarksdale, MS",
+      "city": "Clarksdale",
+      "state": "MS"
+    },
+    {
+      "name": "Jackson, MS",
+      "city": "Jackson",
+      "state": "MS"
+    },
+    {
+      "name": "Baton Rouge, LA",
+      "city": "Baton Rouge",
+      "state": "LA"
+    },
+    {
+      "name": "Dallas, TX",
+      "city": "Dallas",
+      "state": "TX"
+    },
+    {
+      "name": "San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX"
+    },
+    {
+      "name": "Austin, TX",
+      "city": "Austin",
+      "state": "TX"
+    },
+    {
+      "name": "Albany, NY",
+      "city": "Albany",
+      "state": "NY"
+    },
+    {
+      "name": "Catskill, NY",
+      "city": "Catskill",
+      "state": "NY"
+    },
+    {
+      "name": "Utica, NY",
+      "city": "Utica",
+      "state": "NY"
+    },
+    {
+      "name": "Troy, NY",
+      "city": "Troy",
+      "state": "NY"
+    },
+    {
+      "name": "Syracuse, NY",
+      "city": "Syracuse",
+      "state": "NY"
+    },
+    {
+      "name": "Schenectady, NY",
+      "city": "Schenectady",
+      "state": "NY"
+    },
+    {
+      "name": "Binghamton, NY",
+      "city": "Binghamton",
+      "state": "NY"
+    },
+    {
+      "name": "Endicott, NY",
+      "city": "Endicott",
+      "state": "NY"
+    },
+    {
+      "name": "Johnson City, NY",
+      "city": "Johnson City",
+      "state": "NY"
+    },
+    {
+      "name": "Scranton, PA",
+      "city": "Scranton",
+      "state": "PA"
+    },
+    {
+      "name": "Brooklyn, NY",
+      "city": "Brooklyn",
+      "state": "NY"
+    }
   ]
 }

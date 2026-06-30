@@ -234,6 +234,36 @@
       "order": 0,
       "type": "curated",
       "place": "Durham"
+    },
+    {
+      "slug": "churches-of-brooklyn",
+      "title": "Churches of Brooklyn",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Brooklyn"
+    },
+    {
+      "slug": "rowhouses-of-brooklyn",
+      "title": "Rowhouses of Brooklyn",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Brooklyn"
+    },
+    {
+      "slug": "storefronts-of-brooklyn",
+      "title": "Storefronts of Brooklyn",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Brooklyn"
     }
   ]
 }

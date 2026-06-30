@@ -68,6 +68,13 @@ SHOOTS = [
         "date": "2026-04-24",
         "title": "Durham",
     },
+    {
+        "folder": "South BK 4:6:26/Edited/JPEGs",
+        "slug": "south-brooklyn-2026-04-06",
+        "city": "Brooklyn",
+        "date": "2026-04-06",
+        "title": "South Brooklyn",
+    },
 ]
 
 TAG_FIELDS = ["neighborhood", "land_use", "architecture", "subject", "medium", "tone", "tag_notes"]
