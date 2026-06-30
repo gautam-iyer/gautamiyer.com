@@ -31,32 +31,87 @@
   <a href="/" class="site-name">{{ .Site.Title }}</a>
 </header>
 
-<nav>
-  <ul>
-    <li><a href="/" {{ if .IsHome }}class="active"{{ end }}>Home</a></li>
-    <li><a href="/writing/" {{ if eq .Section "writing" }}class="active"{{ end }}>Writing</a></li>
-    <li><a href="/photos/" {{ if eq .Section "photos" }}class="active"{{ end }}>Photos</a></li>
-    <li><a href="/places/" {{ if eq .Section "places" }}class="active"{{ end }}>Places</a></li>
-    <li><a href="/projects/" {{ if eq .Section "projects" }}class="active"{{ end }}>Projects</a></li>
-    <li><a href="/about/" {{ if eq .Section "about" }}class="active"{{ end }}>About</a></li>
-  </ul>
-</nav>
+{{ $featured := partialCached "featured.html" . "featured" }}
+<div class="sidenav" data-sidenav>
+  <button class="sidenav-handle" type="button" aria-label="Open menu"><span class="sidenav-arrow">›</span></button>
+  <nav class="sidenav-panel" aria-label="Site navigation">
+    <ul class="sidenav-list">
+      <li class="has-sub">
+        <a href="/" class="{{ if .IsHome }}active{{ end }}">Home</a>
+        <ul class="submenu">
+          <li><a href="/#featured-writing">Featured Writing</a></li>
+          <li class="has-sub">
+            <a href="/#featured-photos">Featured Photos</a>
+            <ul class="submenu">
+              {{ range $featured }}<li><a href="/#collection-{{ .slug }}" data-spy="collection-{{ .slug }}">{{ .title }}</a></li>{{ end }}
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="/writing/" class="{{ if eq .Section "writing" }}active{{ end }}">Writing</a></li>
+      <li class="has-sub">
+        <a href="/photos/" class="{{ if or (eq .Section "photos") (eq .Section "collections") (eq .Section "places") }}active{{ end }}">Photos</a>
+        <ul class="submenu">
+          <li><a href="/photos/" class="{{ if eq .Section "photos" }}active{{ end }}">All Photos</a></li>
+          <li><a href="/collections/" class="{{ if eq .Section "collections" }}active{{ end }}">Collections</a></li>
+          <li><a href="/places/" class="{{ if eq .Section "places" }}active{{ end }}">Places</a></li>
+        </ul>
+      </li>
+      <li><a href="/projects/" class="{{ if eq .Section "projects" }}active{{ end }}">Projects</a></li>
+      <li><a href="/about/" class="{{ if eq .Section "about" }}active{{ end }}">About</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="sidenav-backdrop" data-sidenav-backdrop></div>
 
 {{ block "main" . }}{{ end }}
 
-<footer>
+<footer data-snap>
   <p>&copy; {{ now.Year }} {{ .Site.Params.author | default .Site.Title }}</p>
 </footer>
 
 {{ block "scripts" . }}{{ end }}
+{{ partial "asset-js.html" "js/nav.js" }}
 
 <script>
   (function () {
-    var onScroll = function () {
-      document.body.classList.toggle('scrolled', window.scrollY > 40);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
+    var GRID = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--grid'), 10) || 40;
+    var header = document.querySelector('header');
+    var shrunk = false, ticking = false;
+
+    function onScroll() {
+      ticking = false;
+      var y = window.scrollY;
+      // Keep the sticky header's grid lined up with the page grid scrolling
+      // behind it, so the grid reads as continuous beneath the name.
+      if (header) header.style.backgroundPositionY = (-(y % GRID)) + 'px';
+      // Hysteresis: shrink past 90px, restore below 30px. The dead zone prevents
+      // the flip-flop a single threshold causes; the shrink is a CSS transform
+      // (no layout change) so it can't feed back into scroll position.
+      if (!shrunk && y > 90) { shrunk = true; document.body.classList.add('scrolled'); }
+      else if (shrunk && y < 30) { shrunk = false; document.body.classList.remove('scrolled'); }
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+    }, { passive: true });
     onScroll();
+
+    // Snap flagged blocks so their top edge lands on a grid line. The grid
+    // scrolls with the page, so once snapped they stay aligned while scrolling.
+    var snaps = Array.prototype.slice.call(document.querySelectorAll('[data-snap]'));
+    function snap() {
+      snaps.forEach(function (el) { el.style.marginTop = ''; });
+      snaps.forEach(function (el) {
+        var top = el.getBoundingClientRect().top + window.scrollY;
+        el.style.marginTop = ((GRID - (top % GRID)) % GRID) + 'px';
+      });
+    }
+    if (snaps.length) {
+      snap();
+      var rt;
+      window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(snap, 150); });
+      window.addEventListener('load', snap); // re-snap once fonts/images settle
+    }
   })();
 </script>
 

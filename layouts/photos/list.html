@@ -49,7 +49,7 @@
   <div class="active-filters"></div>
   <div class="photo-count">{{ len $photos }} photographs</div>
 
-  <div class="gallery">
+  <div class="gallery jgallery">
     {{ range $photos }}
       {{ $p := . }}
       {{/* caption = neighborhood + architecture styles + subjects */}}
@@ -57,7 +57,8 @@
       {{ with $p.neighborhood }}{{ $meta = $meta | append . }}{{ end }}
       {{ range $p.architecture }}{{ $meta = $meta | append . }}{{ end }}
       {{ range $p.subject }}{{ $meta = $meta | append . }}{{ end }}
-      <div class="gallery-item" data-lb
+      {{ $ar := 1.5 }}{{ if and $p.width $p.height (gt $p.height 0) }}{{ $ar = div (float $p.width) $p.height }}{{ end }}
+      <div class="gallery-item" style="--ar:{{ $ar }}" data-lb
            data-city="{{ $p.city }}"
            data-neighborhood="{{ $p.neighborhood }}"
            data-land_use="{{ delimit $p.land_use "|" }}"
@@ -86,6 +87,7 @@
 {{ define "scripts" }}
 {{ $m := dict }}{{ range $c := (index hugo.Data.collections "collections") }}{{ $m = merge $m (dict $c.slug $c.title) }}{{ end }}
 <script>window.COLLECTION_TITLES = {{ $m | jsonify | safeJS }};</script>
+{{ partial "asset-js.html" "js/justify.js" }}
 {{ partial "asset-js.html" "js/photos.js" }}
 {{ partial "asset-js.html" "js/lightbox.js" }}
 {{ end }}

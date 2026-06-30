@@ -1,26 +1,36 @@
 {{ define "main" }}
 <main>
-  <div class="intro">
-    {{ with .Content }}{{ . }}{{ else }}<p>Cities I've photographed and thought about.</p>{{ end }}
-  </div>
-
   {{ $base := .Site.Params.photo_base | default "/img/" }}
-  <div class="featured-grid">
-    {{ range (where .Site.RegularPages "Section" "places").ByWeight }}
-      {{ $place := .Params.place | default .Title }}
-      {{ $cover := .Params.cover }}
-      {{ $count := 0 }}
-      {{ range $k, $p := hugo.Data.photos }}
-        {{ if and $p.thumb (eq $p.city $place) }}
-          {{ $count = add $count 1 }}
-          {{ if not $cover }}{{ $cover = printf "%s%s" $base $p.thumb }}{{ end }}
-        {{ end }}
-      {{ end }}
-      <a href="{{ .RelPermalink }}" class="featured-item">
-        <div class="featured-image">{{ with $cover }}<img src="{{ . }}" alt="{{ $place }}">{{ end }}</div>
-        <div class="featured-title">{{ .Title }}</div>
-        <div class="featured-desc">{{ $count }} photograph{{ if ne $count 1 }}s{{ end }}</div>
+  {{/* A representative Pittsburgh photo as its cover; everywhere else gets a
+       placeholder for now (so we don't entangle this with photo tagging yet). */}}
+  {{ $pgh := "" }}
+  {{ range $k, $p := hugo.Data.photos }}
+    {{ if and (not $pgh) $p.thumb (eq $p.city "Pittsburgh") }}{{ $pgh = printf "%s%s" $base $p.thumb }}{{ end }}
+  {{ end }}
+
+  {{/* Shared accent palette (hugo.toml), cycled across the place names. */}}
+  {{ $palette := .Site.Params.palette }}
+  {{ $places := slice
+      "Durham, NC" "Newark, NJ" "Buffalo, NY" "Memphis, TN" "New Orleans, LA"
+      "Pittsburgh, PA" "Clarksdale, MS" "Jackson, MS" "Baton Rouge, LA" "Dallas, TX"
+      "San Antonio, TX" "Austin, TX" "Albany, NY" "Catskill, NY" "Utica, NY"
+      "Troy, NY" "Syracuse, NY" "Schenectady, NY" "Binghamton, NY" "Endicott, NY"
+      "Johnson City, NY" "Scranton, PA" }}
+
+  <div class="places-list">
+    {{ range $i, $name := $places }}
+      {{ $color := index $palette (mod $i 5) }}
+      {{ if eq $name "Pittsburgh, PA" }}
+      <a href="/places/pittsburgh/" class="place">
+        <div class="place-name" style="color:{{ $color }}">{{ $name }}</div>
+        <div class="place-img">{{ with $pgh }}<img src="{{ . }}" alt="{{ $name }}" loading="lazy">{{ end }}</div>
       </a>
+      {{ else }}
+      <div class="place">
+        <div class="place-name" style="color:{{ $color }}">{{ $name }}</div>
+        <div class="place-img placeholder"></div>
+      </div>
+      {{ end }}
     {{ end }}
   </div>
 </main>

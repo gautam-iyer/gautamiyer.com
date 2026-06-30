@@ -2,20 +2,29 @@
 <main>
   {{ $base := .Site.Params.photo_base | default "/img/" }}
   {{ $slug := .Params.collection }}
-  {{ $color := .Params.color | default "#1d3a5f" }}
 
-  <div class="collection-head">
-    <a class="fc-name collection-name" href="/collections/{{ $slug }}/" style="color:{{ $color }}">{{ .Title }}</a>
-    <hr class="fc-rule" style="background:{{ $color }}">
-  </div>
+  {{/* Accent: a featured collection uses its home slot's colour (so the page
+       matches the home carousel); any other collection cycles the palette by
+       its position in the registry, so each still gets a distinct colour. */}}
+  {{ $palette := .Site.Params.palette }}
+  {{ $color := index $palette 0 }}
+  {{ range $i, $c := (index hugo.Data.collections "collections") }}{{ if eq $c.slug $slug }}{{ $color = index $palette (mod $i 5) }}{{ end }}{{ end }}
+  {{ range $i, $c := (partialCached "featured.html" . "featured") }}{{ if eq $c.slug $slug }}{{ $color = index $palette (mod $i 5) }}{{ end }}{{ end }}
 
   {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
 
-  <div class="photo-count">{{ len $items }} photograph{{ if ne (len $items) 1 }}s{{ end }}</div>
-  <div class="collection-grid">
-    {{ range $items }}{{ partial "lbthumb.html" . }}{{ end }}
+  <a class="backlink" href="/collections/">&lt;- Back to Collections</a>
+
+  <div class="fc-collection">
+    <div class="fc-name" style="color:{{ $color }}">{{ .Title }}</div>
+    <hr class="fc-rule" style="background:{{ $color }}">
+    <div class="photo-count">{{ len $items }} photograph{{ if ne (len $items) 1 }}s{{ end }}</div>
+    {{ partial "carousel.html" (dict "items" $items "color" $color) }}
   </div>
 </main>
 {{ end }}
 
-{{ define "scripts" }}{{ partial "asset-js.html" "js/lightbox.js" }}{{ end }}
+{{ define "scripts" }}
+{{ partial "asset-js.html" "js/carousel.js" }}
+{{ partial "asset-js.html" "js/lightbox.js" }}
+{{ end }}

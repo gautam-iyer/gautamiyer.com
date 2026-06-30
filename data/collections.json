@@ -95,16 +95,6 @@
       "place": "Pittsburgh"
     },
     {
-      "slug": "art-nouveau",
-      "title": "Art Nouveau",
-      "description": "",
-      "featured": false,
-      "cover": null,
-      "order": 0,
-      "type": "curated",
-      "place": "Pittsburgh"
-    },
-    {
       "slug": "rivers-of-pittsburgh",
       "title": "Rivers of Pittsburgh",
       "description": "",

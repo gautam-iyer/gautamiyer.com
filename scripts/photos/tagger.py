@@ -94,15 +94,33 @@ PAGE = """<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger</
  .newcoll button{font:inherit;font-size:12px;padding:5px 10px;border-radius:6px;border:1px solid #7c3aed;
    background:#7c3aed;color:#fff;cursor:pointer}
  .notes{font-size:12px;color:#71717a;font-style:italic;margin-top:4px}
+ /* collection-review grid */
+ main.grid-mode{max-width:1400px}
+ .collhint{font-size:13px;color:#71717a;margin:0 0 14px}
+ .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+ .cell{position:relative;border:2px solid #7c3aed;border-radius:8px;overflow:hidden;cursor:pointer;
+   background:#fff;transition:all .12s}
+ .cell img{width:100%;display:block;aspect-ratio:1;object-fit:cover;background:#e4e4e7}
+ .cell .cap{font-size:11px;color:#52525b;padding:5px 7px;font-variant-numeric:tabular-nums}
+ .cell .badge{position:absolute;top:6px;right:6px;font-size:11px;font-weight:700;padding:3px 8px;
+   border-radius:999px;background:#7c3aed;color:#fff}
+ .cell.out{border-color:#e4e4e7;opacity:.45}
+ .cell.out .badge{background:#ef4444}
+ .cell.out:hover{opacity:.7}
 </style></head><body>
 <header>
  <h1>Photo Tagger</h1>
+ <select id="mode">
+   <option value="tag">Tag photos</option>
+   <option value="coll">Browse a collection</option>
+ </select>
  <select id="shoot"></select>
  <select id="filter">
    <option value="all">All</option>
    <option value="unreviewed">Unreviewed only</option>
    <option value="reviewed">Reviewed only</option>
  </select>
+ <select id="collection"></select>
  <span class="save-flash" id="flash">saved ✓</span>
  <span class="stat" id="stat"></span>
 </header>
@@ -118,7 +136,20 @@ async function boot(){
   PHOTOS=d.photos; COLLS=d.collections; SHOOTS=d.shoots; TAX=d.taxonomy||[];
   const ss=$('#shoot'); ss.innerHTML='<option value="">All shoots</option>'+
     SHOOTS.map(s=>`<option value="${s}">${s}</option>`).join('');
+  $('#collection').innerHTML='<option value="">— pick a collection —</option>'+
+    COLLS.slice().sort((a,b)=>a.title.localeCompare(b.title))
+      .map(c=>`<option value="${c.slug}">${c.title}</option>`).join('');
   ss.onchange=render; $('#filter').onchange=render;
+  $('#mode').onchange=syncMode; $('#collection').onchange=render;
+  syncMode();
+}
+
+// show/hide the relevant header controls per mode, then render
+function syncMode(){
+  const coll = $('#mode').value==='coll';
+  $('#shoot').style.display = coll?'none':'';
+  $('#filter').style.display = coll?'none':'';
+  $('#collection').style.display = coll?'':'none';
   render();
 }
 
@@ -190,7 +221,45 @@ function paintDim(key,dim){const row=document.querySelector(`[data-key="${CSS.es
 function paintColl(key){const row=document.querySelector(`[data-key="${CSS.escape(key)}"]`);
   if(!row)return; row.querySelector('[data-dim="collections"]').outerHTML=`<div data-dim="collections">${collRow(key)}</div>`;}
 
+// ---- collection-review (grid) mode ----
+function collMembers(slug){
+  return Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(slug))
+    .sort((a,b)=>(PHOTOS[a].img_no-PHOTOS[b].img_no)||a.localeCompare(b));
+}
+window.toggleCell=(key,slug)=>{
+  const s=new Set(PHOTOS[key].collections||[]);
+  s.has(slug)?s.delete(slug):s.add(slug);
+  PHOTOS[key].collections=[...s]; save(key,{collections:[...s]});
+  const cell=document.querySelector(`.cell[data-key="${CSS.escape(key)}"]`);
+  if(cell){const inn=s.has(slug); cell.classList.toggle('out',!inn);
+    cell.querySelector('.badge').textContent=inn?'in':'removed';}
+  updateCollStat(slug);
+};
+function updateCollStat(slug){
+  const n=Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(slug)).length;
+  $('#stat').textContent=`${n} in collection`;
+}
+function renderCollection(){
+  const slug=$('#collection').value, m=$('#list');
+  m.classList.add('grid-mode');
+  if(!slug){m.innerHTML='<p class="collhint">Pick a collection above to review its photos. Click any photo to remove it (click again to put it back). Changes autosave.</p>';$('#stat').textContent='';return;}
+  const c=COLLS.find(x=>x.slug===slug);
+  const members=collMembers(slug); // snapshot so removed photos stay on screen
+  m.innerHTML=`<p class="collhint"><b>${c?c.title:slug}</b> — click a photo to remove it from this collection (click again to re-add). Autosaves.</p>`+
+    `<div class="grid">`+members.map(key=>{
+      const p=PHOTOS[key];
+      return `<div class="cell" data-key="${key}" onclick="toggleCell('${esc(key)}','${esc(slug)}')">
+        <span class="badge">in</span>
+        <img loading="lazy" src="/img/${p.thumb}">
+        <div class="cap">${p.file} · #${p.img_no}</div>
+      </div>`;
+    }).join('')+`</div>`;
+  updateCollStat(slug);
+}
+
 function render(){
+  if($('#mode').value==='coll'){ renderCollection(); return; }
+  $('#list').classList.remove('grid-mode');
   const list=visible();
   $('#list').innerHTML=list.map(key=>{
     const p=PHOTOS[key];

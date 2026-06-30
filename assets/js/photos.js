@@ -34,6 +34,8 @@
     });
     countEl.textContent =
       shown === total ? `${total} photographs` : `${shown} of ${total} photographs`;
+    // Re-justify so the visible set fills full rows edge-to-edge.
+    if (window.justifyGalleries) window.justifyGalleries();
     renderChips();
   }
 

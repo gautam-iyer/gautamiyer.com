@@ -1,9 +1,14 @@
 // Generic lightbox with prev/next navigation. Any element with [data-lb]
-// (+ data-avif/data-webp/data-title/data-meta) is a slide; arrows / keyboard /
-// swipe move between all slides on the page (i.e. the whole collection).
+// (+ data-avif/data-webp/data-title/data-meta) is a slide. Navigation is scoped
+// to the group the opened slide belongs to — a single carousel, or the gallery —
+// so on the multi-carousel home page arrows stay within one collection.
 (function () {
   const triggers = Array.from(document.querySelectorAll('[data-lb]'));
   if (!triggers.length) return;
+
+  // The navigation group for a slide: its carousel/gallery container, else all.
+  const groupOf = (el) => el.closest('[data-carousel], .jgallery, .collection-grid');
+  let nav = triggers; // current navigable set (the opened slide's group)
 
   const lb = document.createElement('div');
   lb.className = 'lightbox';
@@ -24,10 +29,11 @@
   let idx = 0;
   // A trigger is navigable only if visible (on /photos, filters hide items).
   const isVisible = (el) => el.offsetParent !== null;
-  const navigable = () => triggers.some((t, i) => i !== idx && isVisible(t));
+  const navigable = () => nav.some((t, i) => i !== idx && isVisible(t));
 
   function render() {
-    const d = triggers[idx].dataset;
+    lb.classList.remove('zoomed'); // reset zoom on open and on each navigation
+    const d = nav[idx].dataset;
     pic.innerHTML = '';
     if (d.avif) {
       const s = document.createElement('source');
@@ -46,8 +52,11 @@
     nextBtn.style.display = show ? '' : 'none';
   }
 
-  function open(i) {
-    idx = i;
+  function open(el) {
+    // Scope navigation to the opened slide's group (its carousel/gallery).
+    const g = groupOf(el);
+    nav = g ? triggers.filter((t) => groupOf(t) === g) : triggers;
+    idx = nav.indexOf(el);
     render();
     lb.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -59,19 +68,24 @@
   }
   function go(step) {
     let i = idx;
-    for (let n = 0; n < triggers.length; n++) {
-      i = (i + step + triggers.length) % triggers.length;
-      if (isVisible(triggers[i])) { idx = i; render(); return; }
+    for (let n = 0; n < nav.length; n++) {
+      i = (i + step + nav.length) % nav.length;
+      if (isVisible(nav[i])) { idx = i; render(); return; }
     }
   }
 
-  triggers.forEach((el, i) => el.addEventListener('click', () => open(i)));
+  triggers.forEach((el) => el.addEventListener('click', () => open(el)));
   prevBtn.addEventListener('click', (e) => { e.stopPropagation(); go(-1); });
   nextBtn.addEventListener('click', (e) => { e.stopPropagation(); go(1); });
   lb.querySelector('.lightbox-close').addEventListener('click', (e) => { e.stopPropagation(); close(); });
-  // click on the dark backdrop closes; clicks on the image/arrows do not
-  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
-  lb.querySelector('.lightbox-image').addEventListener('click', (e) => e.stopPropagation());
+  // Click the photo to toggle one level of zoom; click anywhere else on the
+  // black backdrop to close. (Arrows / close button stopPropagation, so they
+  // never reach here.)
+  lb.addEventListener('click', (e) => {
+    if (e.target.closest('picture')) { lb.classList.toggle('zoomed'); return; }
+    if (e.target.closest('.lightbox-caption')) return; // reading the caption shouldn't dismiss
+    close();
+  });
 
   document.addEventListener('keydown', (e) => {
     if (!lb.classList.contains('open')) return;

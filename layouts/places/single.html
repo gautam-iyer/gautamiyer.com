@@ -3,6 +3,7 @@
   {{ $base := .Site.Params.photo_base | default "/img/" }}
   {{ $place := .Params.place | default .Title }}
 
+  <a class="backlink" href="/places/">&lt;- Back to Places</a>
   <div class="place-header">
     <h1 class="place-title">{{ .Title }}</h1>
     <div class="intro place-overview">{{ .Content }}</div>

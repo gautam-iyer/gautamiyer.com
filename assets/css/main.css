@@ -18,35 +18,64 @@
   --max-width: 960px;
   --text-width: 640px;
   --side-padding: 24px;
+  /* Dynamic page width: fills the viewport (minus a responsive gutter) on any
+     screen. Drives the chrome (header/main/footer) AND the photo galleries, so
+     everything scales together — no fixed cap, no breakout hacks. */
+  --page-gutter: max(22px, 2.4vw);
+  --page-w: calc(100vw - 2 * var(--page-gutter));
+  /* Faint background grid. --grid-color defaults to neutral gray; carousel.js
+     tints it to the active collection's accent on the home page. */
+  --grid: 40px;
+  --grid-color: rgba(0, 0, 0, 0.034);
+}
+
+/* Registered so the tint can animate smoothly when the grid colour changes. */
+@property --grid-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(0, 0, 0, 0.034);
 }
 
 /* ── Base ── */
-html { font-size: 16px; }
+html { font-size: 16px; scroll-behavior: smooth; transition: --grid-color 0.8s ease; }
 
 body {
   font-family: var(--font);
   color: var(--black);
-  background: var(--bg);
   line-height: 1.6;
+  margin: 0; /* grid origin sits at the very top of the page */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Tight grid that scrolls with the page (so it stays put behind content). */
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid) var(--grid);
 }
 
-/* ── Header (shrinks + tucks up on scroll) ── */
+/* ── Header (just the name; shrinks on scroll) ──
+   Fixed height of exactly 2 grid cells, so the line under the name lands on a
+   grid line. Full-bleed white base hides content scrolling underneath, while
+   the same grid is painted on top of that base (background-position-y synced to
+   scroll in JS) so the grid appears continuous behind the name. Transform-only
+   shrink: changing only `transform` (not size/padding) can't shift layout, so
+   it never feeds back into scroll position and jitters. */
 header {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: var(--bg);
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 48px var(--side-padding) 12px;
-  transition: padding 0.28s ease;
-}
-
-body.scrolled header {
-  padding-top: 14px;
-  padding-bottom: 10px;
+  width: 100%;
+  height: calc(var(--grid) * 2);
+  padding: 0 var(--page-gutter);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid) var(--grid);
 }
 
 .site-name {
@@ -58,55 +87,134 @@ body.scrolled header {
   text-decoration: none;
   display: inline-block;
   transform-origin: left center;
-  transition: font-size 0.28s ease, letter-spacing 0.28s ease, opacity 0.2s;
+  transition: transform 0.3s ease, opacity 0.2s;
 }
 
-body.scrolled .site-name {
-  font-size: 0.95rem;
-  letter-spacing: 0.12em;
-}
+body.scrolled .site-name { transform: scale(0.64); }
 
 .site-name:hover { opacity: 0.6; }
 
-/* ── Nav ── */
-nav {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 16px var(--side-padding) 0;
-}
-
-nav ul {
-  list-style: none;
+/* ── Side navigation drawer ───────────────────────────────────────────
+   A slim sliver handle hugs the left edge; hovering it (or clicking to pin,
+   handled in nav.js) slides the dark panel out over the page, dimming the
+   rest with a backdrop. Keeps the chrome minimal so photos + writing lead. */
+.sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 50;
   display: flex;
-  gap: 28px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 16px;
+  align-items: center;
 }
-
-nav a {
-  font-size: 0.82rem;
-  font-weight: 400;
+.sidenav-handle {
+  width: 26px;
+  height: 40vh;
+  border: 0;
+  border-radius: 0 10px 10px 0;
+  background: rgba(0, 0, 0, 0.07);
   color: var(--mid);
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  transition: color 0.2s ease;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, width 0.2s;
 }
+.sidenav-handle:hover { background: rgba(0, 0, 0, 0.14); color: var(--black); width: 30px; }
+.sidenav-arrow { transition: transform 0.32s ease; }
+.sidenav.open .sidenav-arrow { transform: rotate(180deg); }
 
-nav a:hover { color: var(--black); }
-nav a.active { color: var(--black); font-weight: 500; }
+.sidenav-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: max(220px, 11vw);
+  background: #1b1b1d;
+  color: #e7e7e9;
+  padding: 84px 26px 32px;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  box-shadow: 2px 0 24px rgba(0, 0, 0, 0.18);
+}
+.sidenav.open .sidenav-panel { transform: translateX(0); }
+
+.sidenav-list, .submenu { list-style: none; margin: 0; padding: 0; }
+.sidenav-list > li { margin-bottom: 2px; }
+.sidenav-list a {
+  display: block;
+  padding: 8px 0;
+  font-size: 1.08rem;
+  letter-spacing: 0.02em;
+  color: #cdcdd2;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.sidenav-list a:hover { color: #fff; }
+.sidenav-list a.active { color: #fff; font-weight: 600; }
+
+/* Submenus reveal on hover of an ANCESTOR (descendant combinator), so hovering
+   "Home" pops the whole tree open at once — collections included, no second
+   hover. max-height + opacity keeps it smooth without a JS height measure. */
+.submenu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-left: 14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  /* Slow open, and a delay before collapsing so it lingers (stickier). */
+  transition: max-height 0.8s ease 0.3s, opacity 0.6s ease 0.3s;
+}
+.has-sub:hover .submenu { max-height: 640px; opacity: 1; transition-delay: 0s; }
+.submenu a {
+  font-size: 0.98rem;
+  color: #9a9aa2;
+  padding: 6px 0 6px 12px;
+}
+.submenu a:hover { color: #e7e7e9; }
+.submenu .submenu a { font-size: 0.92rem; }
+.submenu a.active,
+.submenu a.current { color: #fff; font-weight: 600; }
+
+.sidenav-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(0, 0, 0, 0.34);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.sidenav-backdrop.show { opacity: 1; pointer-events: auto; }
 
 /* ── Main (default) ── */
 main {
-  max-width: var(--max-width);
+  width: var(--page-w);
   margin: 0 auto;
-  padding: 48px var(--side-padding) 80px;
+  padding: 44px 0 80px;
 }
+
+/* Back link — small, analog "<-" arrow. A plain link to the parent section,
+   so it can't get out of sync with browser history. */
+.backlink {
+  display: inline-block;
+  margin-bottom: 28px;
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.backlink:hover { color: var(--black); }
 
 /* ── Footer ── */
 footer {
-  max-width: var(--max-width);
+  width: var(--page-w);
   margin: 0 auto;
-  padding: 24px var(--side-padding);
+  padding: 24px 0;
   border-top: 1px solid var(--border);
 }
 
@@ -121,9 +229,12 @@ footer p {
    ════════════════════════════════════════════════ */
 
 .intro {
-  max-width: var(--text-width);
+  max-width: 900px; /* matches the Featured Writing column's right edge */
   margin-bottom: 56px;
 }
+
+/* Clear separation between the Writing block and the photo carousels below. */
+#featured-writing { margin-bottom: 84px; }
 
 .intro p {
   font-size: 0.95rem;
@@ -668,32 +779,42 @@ article {
   margin-bottom: 24px;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
+/* ── Justified photo gallery (shared) ─────────────────────────────────
+   Used by /photos (.gallery) and collection pages (.collection-grid).
+   True edge-to-edge justified rows: justify.js packs visible items into
+   rows and scales each row to fill the width exactly (flush left+right),
+   preserving every photo's real aspect ratio — no crop. It sets each
+   item's width/height inline; the rules here are the pre-JS fallback and
+   the shared image fill. --thumb-h is the target row height (one knob);
+   justify.js re-runs on resize and after filtering. */
+.jgallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: var(--jgap, 8px);
+  --thumb-h: 320px;
 }
+.jgallery > * {                       /* .gallery-item or .lb-thumb */
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  height: var(--thumb-h);
+  width: auto;
+  aspect-ratio: var(--ar, 1.5);
+}
+.jgallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .gallery-item {
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
 }
 
 .gallery-item .photo {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
-  overflow: hidden;
-  transition: opacity 0.2s;
-}
-
-.gallery-item .photo img {
-  width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
+  transition: opacity 0.2s;
 }
 
 .gallery-item:hover .photo { opacity: 0.85; }
@@ -759,7 +880,10 @@ article {
   max-height: 90vh;
   object-fit: contain;
   display: block;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
 }
+.lightbox.zoomed .lightbox-image img { transform: scale(1.5); cursor: zoom-out; }
 
 /* translucent prev/next arrows */
 .lightbox-nav {
@@ -826,10 +950,11 @@ article {
 
 .about-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 320px;
   gap: 64px;
   align-items: start;
   margin-bottom: 72px;
+  max-width: 940px;
 }
 
 .about-bio h1 {
@@ -838,6 +963,14 @@ article {
   letter-spacing: -0.02em;
   margin-bottom: 24px;
 }
+
+.headshot {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #111;
+  overflow: hidden;
+}
+.headshot img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .about-bio p {
   font-size: 0.92rem;
@@ -1268,8 +1401,7 @@ article {
 
 @media (max-width: 700px) {
   header { padding-top: 32px; }
-  nav ul { gap: 20px; flex-wrap: wrap; }
-  main { padding: 36px var(--side-padding) 64px; }
+  main { padding: 32px 0 64px; }
   article { padding: 36px var(--side-padding) 64px; }
 
   .featured-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1284,8 +1416,6 @@ article {
   .contact-card { position: static; }
   .elsewhere-grid { grid-template-columns: 1fr; }
   .currently-grid { grid-template-columns: 1fr; }
-
-  .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px) {
@@ -1295,6 +1425,41 @@ article {
 /* ════════════════════════════════════════════════
    PLACES
    ════════════════════════════════════════════════ */
+
+/* Places index: a colourful grid of place names, each over one image.
+   Hovering a place keeps it full colour while the rest dim to the same level
+   as the Featured-Collections spotlight on the home page. */
+.places-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 36px 28px;
+}
+.place {
+  display: block;
+  text-decoration: none;
+  transition: opacity 0.35s ease;
+}
+.places-list:hover .place { opacity: 0.42; }
+.places-list .place:hover { opacity: 1; }
+.place-name {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.place-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--bg-subtle);
+}
+.place-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.place-img.placeholder { background: #111; }
+
+@media (max-width: 640px) {
+  .places-list { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
+  .place-name { font-size: 1.15rem; }
+}
 
 .place-header { margin-bottom: 48px; }
 
@@ -1359,16 +1524,93 @@ article {
   border: 0;
   height: 2px;
   opacity: 0.55;
-  margin: 0 0 14px;
+  margin: 0 0 18px;
 }
 
-.fc-thumbs {
+/* ── Home collection carousel (center-mode) ───────────────────────────
+   One row per featured collection: a spotlit center photo with dimmed
+   neighbours peeking left/right. carousel.js centers the active slide,
+   auto-advances (pausing on hover), and arrows step manually. Slide width
+   follows the real photo ratio (--ar); --carousel-h is the size knob. */
+.carousel {
+  --carousel-h: 520px;
+  position: relative;
+  overflow: hidden;
+}
+/* Only the dominant carousel plays; the rest go inert and their photos take on
+   the same whitened wash as a playing carousel's side photos (centre included).
+   Dimming is a solid white veil (::after), NOT opacity, so the photos stay
+   opaque and the background grid never bleeds through them.
+   carousel.js toggles .dormant as you scroll. */
+/* Dormant carousels still accept clicks (a photo visible in a non-dominant
+   carousel should still open the lightbox); only auto-play stops. */
+.carousel.dormant .carousel-slide.on { transform: scale(0.84); }
+.carousel.dormant .carousel-slide.on::after { opacity: 0.55; }
+.carousel-track {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  align-items: center;
+  gap: 22px;
+  will-change: transform;
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
+.carousel-slide {
+  position: relative;
+  flex: 0 0 auto;
+  height: var(--carousel-h);
+  aspect-ratio: var(--ar, 1.5);
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: var(--bg-subtle);
+  cursor: pointer;
+  overflow: hidden;
+  transform: scale(0.84);
+  transition: transform 0.5s;
+}
+.carousel-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  opacity: 0.55;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+.carousel-slide.on { transform: scale(1); }
+.carousel-slide.on::after { opacity: 0; }
+.fc-collection { scroll-margin-top: 90px; }
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* Lightbox-triggering thumbnail (home + collection pages) */
+/* Analog, keyboard-typed arrows ("<-" / "->") rather than glyph chevrons. */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  border: 0;
+  background: transparent;
+  color: #1b1b1d;
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  cursor: pointer;
+  padding: 10px 14px;
+  opacity: 0;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.85);
+  transition: opacity 0.2s, color 0.2s;
+}
+.carousel:hover .carousel-arrow { opacity: 0.7; }
+.carousel-arrow:hover { opacity: 1; color: #000; }
+.carousel-prev { left: 6px; }
+.carousel-next { right: 6px; }
+
+@media (max-width: 1000px) { .carousel { --carousel-h: 380px; } }
+@media (max-width: 640px)  { .carousel { --carousel-h: 240px; } .carousel-track { gap: 12px; } }
+
+/* Lightbox-triggering thumbnail (home + collection pages). Layout — size,
+   aspect ratio, wrapping, gaps — all come from .jgallery on the container. */
 .lb-thumb {
   display: block;
   padding: 0;
@@ -1381,32 +1623,13 @@ article {
   transition: opacity 0.15s;
 }
 .lb-thumb:hover { opacity: 0.8; }
-.lb-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-.fc-thumbs .lb-thumb { width: 88px; height: 88px; }
-
-/* Collection page */
+/* Collection page header */
 .collection-head { margin-bottom: 24px; }
 .collection-name { font-size: 1.4rem; margin-bottom: 12px; }
-/* Equal-height rows: vertical + horizontal photos align on a common baseline,
-   full frame (no square crop), centered, with breathing room. */
-.collection-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-}
-.collection-grid .lb-thumb {
-  flex: 0 0 auto;
-  height: 260px;
-  width: auto;
-  aspect-ratio: auto;
-}
-.collection-grid .lb-thumb img { height: 100%; width: auto; object-fit: cover; }
 
 /* Home — Writing */
-.home-essays { display: flex; flex-direction: column; }
+.home-essays { display: flex; flex-direction: column; max-width: 900px; }
 .home-essay {
   padding: 14px 0;
   border-bottom: 1px solid var(--border);
@@ -1418,8 +1641,7 @@ article {
 .home-essay:hover .home-essay-title { text-decoration: underline; text-underline-offset: 3px; }
 .home-essay-sub { font-size: 0.85rem; color: var(--mid); margin-top: 2px; }
 
-@media (max-width: 700px) {
-  .fc-thumbs .lb-thumb { width: 64px; height: 64px; }
-  .collection-grid { gap: 12px; }
-  .collection-grid .lb-thumb { height: 170px; }
-}
+/* Justified gallery scales down on narrower screens (one knob does home,
+   /photos, and collection pages at once). */
+@media (max-width: 1000px) { .jgallery { --thumb-h: 240px; } }
+@media (max-width: 640px)  { .jgallery { --thumb-h: 165px; --jgap: 6px; } }

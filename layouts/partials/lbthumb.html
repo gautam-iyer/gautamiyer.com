@@ -1,4 +1,4 @@
-{{- /* Lightbox-triggering thumbnail. Expects a dict: thumb, avif, webp, title, meta */ -}}
-<button class="lb-thumb" data-lb data-avif="{{ .avif }}" data-webp="{{ .webp }}" data-title="{{ .title }}" data-meta="{{ .meta }}">
+{{- /* Lightbox-triggering thumbnail. Expects a dict: thumb, avif, webp, ar, title, meta */ -}}
+<button class="lb-thumb" data-lb data-avif="{{ .avif }}" data-webp="{{ .webp }}" data-title="{{ .title }}" data-meta="{{ .meta }}"{{ with .ar }} style="--ar:{{ . }}"{{ end }}>
   <img src="{{ .thumb }}" loading="lazy" alt="{{ .title }}">
 </button>

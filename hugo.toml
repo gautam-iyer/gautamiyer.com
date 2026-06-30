@@ -5,6 +5,10 @@ title = 'Gautam Iyer'
 [params]
   description = "Writer and researcher interested in cities, urban policy, and the built environment."
   author = "Gautam Iyer"
+  # Fixed accent palette, applied BY POSITION (1st featured collection, 2nd, …),
+  # so the colors stay constant no matter which collections are featured.
+  # dark blue, steel, purple, gold, terracotta — then repeats.
+  palette = ["#1d3a5f", "#5b6b7b", "#6b4a7a", "#a8842c", "#a8483f"]
   # Base URL for photo derivatives, hosted on Cloudflare R2 (bucket: gautamiyer-photos).
   # For local preview against a localhost static server, temporarily point this at http://localhost:8899/.
   photo_base = "https://pub-cf176eff18f94be89643cd9b73085bf8.r2.dev/"

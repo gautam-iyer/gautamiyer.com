@@ -5,42 +5,47 @@
   </div>
 
   {{ $base := .Site.Params.photo_base | default "/img/" }}
-  {{ $featured := slice }}
-  {{ range (index hugo.Data.collections "collections") }}
-    {{ if .featured }}{{ $featured = $featured | append . }}{{ end }}
-  {{ end }}
-  {{ $featured = sort $featured "order" }}
+  {{ $featured := partialCached "featured.html" . "featured" }}
 
-  {{ with $featured }}
-  <div class="fc-head">Featured Collections</div>
-  {{ range . }}
-    {{ $slug := .slug }}
-    {{ $title := .title }}
-    {{ $color := .color | default "#1d3a5f" }}
-    {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
-    <div class="fc-collection">
-      <a class="fc-name" href="/collections/{{ $slug }}/" style="color:{{ $color }}">{{ $title }}</a>
-      <hr class="fc-rule" style="background:{{ $color }}">
-      <div class="fc-thumbs">
-        {{ range (first 12 $items) }}{{ partial "lbthumb.html" . }}{{ end }}
-      </div>
-    </div>
-  {{ end }}
-  {{ end }}
-
+  {{/* Writing leads — it's compact and sits above the photo carousels. */}}
   {{ $essays := first 6 (where .Site.RegularPages "Section" "writing").ByDate.Reverse }}
   {{ with $essays }}
-  <div class="fc-head fc-head-essays">Writing</div>
-  <div class="home-essays">
-    {{ range . }}
-    <a href="{{ .RelPermalink }}" class="home-essay">
-      <div class="home-essay-title">{{ .Title }}</div>
-      {{ with .Params.subtitle }}<div class="home-essay-sub">{{ . }}</div>{{ end }}
-    </a>
+  <section id="featured-writing" data-snap>
+    <div class="fc-head">Featured Writing</div>
+    <div class="home-essays">
+      {{ range . }}
+      <a href="{{ .RelPermalink }}" class="home-essay">
+        <div class="home-essay-title">{{ .Title }}</div>
+        {{ with .Params.subtitle }}<div class="home-essay-sub">{{ . }}</div>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ $palette := .Site.Params.palette }}
+  {{ with $featured }}
+  <section id="featured-photos" class="home-featured" data-snap>
+  <div class="fc-head">Featured Photos</div>
+  {{ range $i, $c := . }}
+    {{ $slug := $c.slug }}
+    {{ $title := $c.title }}
+    {{ $color := index $palette (mod $i 5) }}
+    {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
+    {{ with $items }}
+    <div class="fc-collection" id="collection-{{ $slug }}">
+      <a class="fc-name" href="/collections/{{ $slug }}/" style="color:{{ $color }}">{{ $title }}</a>
+      <hr class="fc-rule" style="background:{{ $color }}">
+      {{ partial "carousel.html" (dict "items" . "color" $color "limit" 15) }}
+    </div>
     {{ end }}
-  </div>
+  {{ end }}
+  </section>
   {{ end }}
 </main>
 {{ end }}
 
-{{ define "scripts" }}{{ partial "asset-js.html" "js/lightbox.js" }}{{ end }}
+{{ define "scripts" }}
+{{ partial "asset-js.html" "js/carousel.js" }}
+{{ partial "asset-js.html" "js/lightbox.js" }}
+{{ end }}
