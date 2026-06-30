@@ -22,9 +22,9 @@
   const nextBtn = lb.querySelector('.lightbox-nav.next');
 
   let idx = 0;
-  const multiple = triggers.length > 1;
-  prevBtn.style.display = multiple ? '' : 'none';
-  nextBtn.style.display = multiple ? '' : 'none';
+  // A trigger is navigable only if visible (on /photos, filters hide items).
+  const isVisible = (el) => el.offsetParent !== null;
+  const navigable = () => triggers.some((t, i) => i !== idx && isVisible(t));
 
   function render() {
     const d = triggers[idx].dataset;
@@ -41,6 +41,9 @@
     pic.appendChild(img);
     titleEl.textContent = d.title || '';
     metaEl.textContent = d.meta || '';
+    const show = navigable();
+    prevBtn.style.display = show ? '' : 'none';
+    nextBtn.style.display = show ? '' : 'none';
   }
 
   function open(i) {
@@ -55,8 +58,11 @@
     pic.innerHTML = '';
   }
   function go(step) {
-    idx = (idx + step + triggers.length) % triggers.length;
-    render();
+    let i = idx;
+    for (let n = 0; n < triggers.length; n++) {
+      i = (i + step + triggers.length) % triggers.length;
+      if (isVisible(triggers[i])) { idx = i; render(); return; }
+    }
   }
 
   triggers.forEach((el, i) => el.addEventListener('click', () => open(i)));

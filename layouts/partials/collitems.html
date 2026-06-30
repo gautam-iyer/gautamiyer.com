@@ -1,0 +1,20 @@
+{{- /*
+  Returns the photos in a collection as a slice of lightbox-ready dicts.
+  Call via partialCached so each collection's photo scan runs once per build:
+    {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
+  Each item: { thumb, avif, webp, title, meta }.
+*/ -}}
+{{- $slug := .slug -}}
+{{- $base := .base -}}
+{{- $items := slice -}}
+{{- range $k, $p := hugo.Data.photos -}}
+  {{- if and $p.thumb (in (or $p.collections slice) $slug) -}}
+    {{- $items = $items | append (dict
+        "thumb" (printf "%s%s" $base $p.thumb)
+        "avif"  (printf "%s%s" $base $p.display_avif)
+        "webp"  (printf "%s%s" $base $p.display_webp)
+        "title" (cond (gt (len $p.neighborhood) 0) (printf "%s, %s" $p.neighborhood $p.city) $p.city)
+        "meta"  (or $p.tag_notes "")) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $items -}}

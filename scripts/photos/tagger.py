@@ -135,7 +135,7 @@ async function save(key, patch){
 
 async function newCollection(title, key){
   const r=await (await fetch('/api/collection',{method:'POST',headers:{'content-type':'application/json'},
-    body:JSON.stringify({title})})).json();
+    body:JSON.stringify({title, place: PHOTOS[key].city})})).json();
   COLLS=r.collections;
   const cur=new Set(PHOTOS[key].collections||[]); cur.add(r.slug);
   await save(key,{collections:[...cur]});
@@ -268,12 +268,14 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/collection":
             title = data["title"].strip()
             slug = slugify(title)
+            place = (data.get("place") or "").strip()
             with _lock:
                 reg = load(COLLECTIONS, {"collections": []})
                 if not any(c["slug"] == slug for c in reg["collections"]):
                     reg["collections"].append({
                         "slug": slug, "title": title, "description": "",
-                        "featured": False, "cover": None, "order": 0, "type": "curated",
+                        "featured": False, "cover": None, "order": 0,
+                        "type": "curated", "place": place,
                     })
                     atomic_write(COLLECTIONS, reg)
             return self._send(200, {"slug": slug, "collections": reg["collections"]})

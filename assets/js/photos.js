@@ -62,42 +62,7 @@
     });
   });
 
-  // ── Lightbox ──
-  const lb = document.getElementById('lightbox');
-  const lbPic = document.getElementById('lightbox-picture');
-  const lbTitle = document.getElementById('lightbox-title');
-  const lbMeta = document.getElementById('lightbox-meta');
-
-  function openLightbox(item) {
-    const { avif, webp, title, caption } = item.dataset;
-    lbPic.innerHTML = '';
-    if (avif) {
-      const s = document.createElement('source');
-      s.type = 'image/avif';
-      s.srcset = avif;
-      lbPic.appendChild(s);
-    }
-    const img = document.createElement('img');
-    img.src = webp || avif;
-    img.alt = title || '';
-    lbPic.appendChild(img);
-    lbTitle.textContent = title || '';
-    lbMeta.textContent = caption || '';
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-    lbPic.innerHTML = '';
-  }
-
-  items.forEach((item) =>
-    item.addEventListener('click', () => openLightbox(item))
-  );
-  lb.addEventListener('click', closeLightbox);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
-  });
+  apply();
+  // The expanded-photo lightbox (with prev/next/swipe) is handled by the shared
+  // lightbox.js — every .gallery-item carries [data-lb]. Nav skips filtered-out items.
 })();

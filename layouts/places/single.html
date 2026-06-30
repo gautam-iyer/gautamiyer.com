@@ -25,17 +25,14 @@
   <div class="featured-grid">
     {{ range . }}
       {{ $slug := .slug }}
+      {{ $title := .title }}
+      {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
+      {{ $count := len $items }}
       {{ $cover := .cover }}
-      {{ $count := 0 }}
-      {{ range $k, $p := hugo.Data.photos }}
-        {{ if in (or $p.collections slice) $slug }}
-          {{ $count = add $count 1 }}
-          {{ if not $cover }}{{ $cover = printf "%s%s" $base $p.thumb }}{{ end }}
-        {{ end }}
-      {{ end }}
-      <a href="/photos/?c={{ $slug }}" class="featured-item">
-        <div class="featured-image">{{ with $cover }}<img src="{{ . }}" alt="{{ $.Title }}">{{ end }}</div>
-        <div class="featured-title">{{ .title }}</div>
+      {{ if and (not $cover) (gt $count 0) }}{{ $cover = (index $items 0).thumb }}{{ end }}
+      <a href="/collections/{{ $slug }}/" class="featured-item">
+        <div class="featured-image">{{ with $cover }}<img src="{{ . }}" alt="{{ $title }}">{{ end }}</div>
+        <div class="featured-title">{{ $title }}</div>
         <div class="featured-desc">{{ $count }} photograph{{ if ne $count 1 }}s{{ end }}</div>
       </a>
     {{ end }}

@@ -1,0 +1,6 @@
+{{- /* Fingerprinted, minified <script defer> for a JS file under assets/. Usage:
+       {{ partial "asset-js.html" "js/lightbox.js" }}  */ -}}
+{{- with resources.Get . -}}
+  {{- $r := . | minify | fingerprint -}}
+  <script src="{{ $r.RelPermalink }}" defer></script>
+{{- end -}}

@@ -6,15 +6,10 @@
     {{ range (index hugo.Data.collections "collections") }}
       {{ $slug := .slug }}
       {{ $title := .title }}
-      {{ $cover := "" }}
-      {{ $count := 0 }}
-      {{ range $k, $p := hugo.Data.photos }}
-        {{ if and $p.thumb (in (or $p.collections slice) $slug) }}
-          {{ $count = add $count 1 }}
-          {{ if not $cover }}{{ $cover = printf "%s%s" $base $p.thumb }}{{ end }}
-        {{ end }}
-      {{ end }}
+      {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
+      {{ $count := len $items }}
       {{ if gt $count 0 }}
+      {{ $cover := (index $items 0).thumb }}
       <a href="/collections/{{ $slug }}/" class="featured-item">
         <div class="featured-image">{{ with $cover }}<img src="{{ . }}" alt="{{ $title }}">{{ end }}</div>
         <div class="featured-title">{{ $title }}</div>

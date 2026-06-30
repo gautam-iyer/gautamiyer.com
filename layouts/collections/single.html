@@ -9,17 +9,7 @@
     <hr class="fc-rule" style="background:{{ $color }}">
   </div>
 
-  {{ $items := slice }}
-  {{ range $k, $p := hugo.Data.photos }}
-    {{ if and $p.thumb (in (or $p.collections slice) $slug) }}
-      {{ $items = $items | append (dict
-          "thumb" (printf "%s%s" $base $p.thumb)
-          "avif"  (printf "%s%s" $base $p.display_avif)
-          "webp"  (printf "%s%s" $base $p.display_webp)
-          "title" (cond (gt (len $p.neighborhood) 0) (printf "%s, %s" $p.neighborhood $p.city) $p.city)
-          "meta"  (or $p.tag_notes "")) }}
-    {{ end }}
-  {{ end }}
+  {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
 
   <div class="photo-count">{{ len $items }} photograph{{ if ne (len $items) 1 }}s{{ end }}</div>
   <div class="collection-grid">
@@ -28,4 +18,4 @@
 </main>
 {{ end }}
 
-{{ define "scripts" }}<script src="/js/lightbox.js" defer></script>{{ end }}
+{{ define "scripts" }}{{ partial "asset-js.html" "js/lightbox.js" }}{{ end }}

@@ -57,7 +57,7 @@
       {{ with $p.neighborhood }}{{ $meta = $meta | append . }}{{ end }}
       {{ range $p.architecture }}{{ $meta = $meta | append . }}{{ end }}
       {{ range $p.subject }}{{ $meta = $meta | append . }}{{ end }}
-      <div class="gallery-item"
+      <div class="gallery-item" data-lb
            data-city="{{ $p.city }}"
            data-neighborhood="{{ $p.neighborhood }}"
            data-land_use="{{ delimit $p.land_use "|" }}"
@@ -69,7 +69,7 @@
            data-avif="{{ $base }}{{ $p.display_avif }}"
            data-webp="{{ $base }}{{ $p.display_webp }}"
            data-title="{{ with $p.neighborhood }}{{ . }}, {{ end }}{{ $p.city }}"
-           data-caption="{{ delimit $meta " · " }}">
+           data-meta="{{ delimit $meta " · " }}">
         <div class="photo">
           <img src="{{ $base }}{{ $p.thumb }}" loading="lazy" alt="{{ $p.city }}{{ with $p.tag_notes }} — {{ . }}{{ end }}">
         </div>
@@ -81,19 +81,11 @@
     {{ end }}
   </div>
 </main>
-
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-close">CLOSE ✕</div>
-  <div class="lightbox-image"><picture id="lightbox-picture"></picture></div>
-  <div class="lightbox-caption">
-    <div class="lightbox-title" id="lightbox-title"></div>
-    <div class="lightbox-meta" id="lightbox-meta"></div>
-  </div>
-</div>
 {{ end }}
 
 {{ define "scripts" }}
 {{ $m := dict }}{{ range $c := (index hugo.Data.collections "collections") }}{{ $m = merge $m (dict $c.slug $c.title) }}{{ end }}
 <script>window.COLLECTION_TITLES = {{ $m | jsonify | safeJS }};</script>
-<script src="/js/photos.js" defer></script>
+{{ partial "asset-js.html" "js/photos.js" }}
+{{ partial "asset-js.html" "js/lightbox.js" }}
 {{ end }}
