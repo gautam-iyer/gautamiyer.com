@@ -1,16 +1,18 @@
 {{ define "main" }}
 <main>
   {{ $base := .Site.Params.photo_base | default "/img/" }}
-  {{/* Pittsburgh gets a real cover (its true aspect); others are placeholders. */}}
-  {{ $pgh := "" }}
-  {{ $pghAr := 1.5 }}
+  {{ $palette := .Site.Params.palette }}
+
+  {{/* First photo per city → its cover thumb + true aspect ratio. Any place
+       whose city has photos gets a real cover; the rest stay placeholders. */}}
+  {{ $covers := dict }}
   {{ range $k, $p := hugo.Data.photos }}
-    {{ if and (not $pgh) $p.thumb (eq $p.city "Pittsburgh") (gt (or $p.height 0) 0) }}
-      {{ $pgh = printf "%s%s" $base $p.thumb }}{{ $pghAr = div (float $p.width) $p.height }}
+    {{ if and $p.thumb $p.city (gt (or $p.height 0) 0) }}
+      {{ if not (index $covers $p.city) }}
+        {{ $covers = merge $covers (dict $p.city (dict "thumb" (printf "%s%s" $base $p.thumb) "ar" (div (float $p.width) $p.height))) }}
+      {{ end }}
     {{ end }}
   {{ end }}
-
-  {{ $palette := .Site.Params.palette }}
 
   <div class="backlinks">
     <a class="backlink" href="/">← Back to Home</a>
@@ -30,16 +32,15 @@
   <div class="tile-grid dim-titles" id="places-grid" data-tilegrid>
     {{ range $i, $pl := (index hugo.Data.places "places") }}
       {{ $color := index $palette (mod $i 5) }}
-      {{ $isPgh := eq $pl.name "Pittsburgh, PA" }}
-      {{ if $isPgh }}
-      <a href="/places/pittsburgh/" class="tile" style="--tint:{{ $color }}"
-         data-city="{{ $pl.city }}" data-state="{{ $pl.state }}">
-        <div class="tile-img" style="aspect-ratio:{{ $pghAr }}">{{ with $pgh }}<img src="{{ . }}" alt="{{ $pl.name }}" loading="lazy">{{ end }}</div>
+      {{ $cover := index $covers $pl.city }}
+      {{ if eq $pl.name "Pittsburgh, PA" }}
+      <a href="/places/pittsburgh/" class="tile" style="--tint:{{ $color }}" data-city="{{ $pl.city }}" data-state="{{ $pl.state }}">
+        <div class="tile-img{{ if not $cover }} placeholder{{ end }}" style="aspect-ratio:{{ with $cover }}{{ .ar }}{{ else }}3/2{{ end }}">{{ with $cover }}<img src="{{ .thumb }}" alt="{{ $pl.name }}" loading="lazy">{{ end }}</div>
         <div class="tile-title subsubhead" style="color:{{ $color }}">{{ $pl.name }}</div>
       </a>
       {{ else }}
       <div class="tile" style="--tint:{{ $color }}" data-city="{{ $pl.city }}" data-state="{{ $pl.state }}">
-        <div class="tile-img placeholder" style="aspect-ratio:3/2"></div>
+        <div class="tile-img{{ if not $cover }} placeholder{{ end }}" style="aspect-ratio:{{ with $cover }}{{ .ar }}{{ else }}3/2{{ end }}">{{ with $cover }}<img src="{{ .thumb }}" alt="{{ $pl.name }}" loading="lazy">{{ end }}</div>
         <div class="tile-title subsubhead" style="color:{{ $color }}">{{ $pl.name }}</div>
       </div>
       {{ end }}

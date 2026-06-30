@@ -124,6 +124,46 @@
       "type": "curated",
       "place": "Pittsburgh",
       "hidden": true
+    },
+    {
+      "slug": "spanish-colonial-of-san-antonio",
+      "title": "Spanish Colonial of San Antonio",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "San Antonio"
+    },
+    {
+      "slug": "art-deco-of-san-antonio",
+      "title": "Art Deco of San Antonio",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "San Antonio"
+    },
+    {
+      "slug": "greenery-of-san-antonio",
+      "title": "Greenery of San Antonio",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "San Antonio"
+    },
+    {
+      "slug": "sprawling-austin",
+      "title": "Sprawling Austin",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Austin"
     }
   ]
 }

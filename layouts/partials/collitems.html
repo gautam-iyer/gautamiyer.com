@@ -11,12 +11,13 @@
   {{- if and $p.thumb (in (or $p.collections slice) $slug) -}}
     {{- $ar := 1.5 -}}
     {{- if and $p.width $p.height (gt $p.height 0) -}}{{- $ar = div (float $p.width) $p.height -}}{{- end -}}
+    {{- $hood := $p.neighborhood | default "" -}}
     {{- $items = $items | append (dict
         "thumb" (printf "%s%s" $base $p.thumb)
         "avif"  (printf "%s%s" $base $p.display_avif)
         "webp"  (printf "%s%s" $base $p.display_webp)
         "ar"    $ar
-        "title" (cond (gt (len $p.neighborhood) 0) (printf "%s, %s" $p.neighborhood $p.city) $p.city)
+        "title" (cond (gt (len $hood) 0) (printf "%s, %s" $hood $p.city) $p.city)
         "meta"  (or $p.tag_notes "")) -}}
   {{- end -}}
 {{- end -}}
