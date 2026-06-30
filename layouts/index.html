@@ -1,26 +1,48 @@
 {{ define "main" }}
 <main>
   <div class="intro">
-    {{ with .Content }}
-      {{ . }}
-    {{ else }}
-      <p>{{ .Site.Params.description }}</p>
-    {{ end }}
+    {{ with .Content }}{{ . }}{{ else }}<p>{{ .Site.Params.description }}</p>{{ end }}
   </div>
 
-  {{ with hugo.Data.featured }}
-  <div class="section-label">Featured</div>
-  <div class="featured-grid">
-    {{ range . }}
-    <a href="{{ .url }}" class="featured-item">
-      <div class="featured-image">
-        {{ with .image }}
-          <img src="{{ . }}" alt="{{ $.title }}">
+  {{ $base := .Site.Params.photo_base | default "/img/" }}
+  {{ $featured := slice }}
+  {{ range (index hugo.Data.collections "collections") }}
+    {{ if .featured }}{{ $featured = $featured | append . }}{{ end }}
+  {{ end }}
+  {{ $featured = sort $featured "order" }}
+
+  {{ with $featured }}
+  <div class="fc-head">Featured Collections</div>
+  {{ range . }}
+    {{ $slug := .slug }}
+    {{ $title := .title }}
+    {{ $color := .color | default "#1d3a5f" }}
+    {{ $thumbs := slice }}
+    {{ range $k, $p := hugo.Data.photos }}
+      {{ if and $p.thumb (in (or $p.collections slice) $slug) }}
+        {{ $thumbs = $thumbs | append (printf "%s%s" $base $p.thumb) }}
+      {{ end }}
+    {{ end }}
+    <div class="fc-collection">
+      <a class="fc-name" href="/photos/?c={{ $slug }}" style="color:{{ $color }}">{{ $title }}</a>
+      <hr class="fc-rule" style="background:{{ $color }}">
+      <div class="fc-thumbs">
+        {{ range (first 12 $thumbs) }}
+          <a href="/photos/?c={{ $slug }}" class="fc-thumb"><img src="{{ . }}" loading="lazy" alt="{{ $title }}"></a>
         {{ end }}
       </div>
-      <div class="featured-tag">{{ .tag }}</div>
-      <div class="featured-title">{{ .title }}</div>
-      <div class="featured-desc">{{ .desc }}</div>
+    </div>
+  {{ end }}
+  {{ end }}
+
+  {{ $essays := first 6 (where .Site.RegularPages "Section" "writing").ByDate.Reverse }}
+  {{ with $essays }}
+  <div class="fc-head fc-head-essays">Writing</div>
+  <div class="home-essays">
+    {{ range . }}
+    <a href="{{ .RelPermalink }}" class="home-essay">
+      <div class="home-essay-title">{{ .Title }}</div>
+      {{ with .Params.subtitle }}<div class="home-essay-sub">{{ . }}</div>{{ end }}
     </a>
     {{ end }}
   </div>

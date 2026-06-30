@@ -1,0 +1,27 @@
+{{ define "main" }}
+<main>
+  <div class="intro">
+    {{ with .Content }}{{ . }}{{ else }}<p>Cities I've photographed and thought about.</p>{{ end }}
+  </div>
+
+  {{ $base := .Site.Params.photo_base | default "/img/" }}
+  <div class="featured-grid">
+    {{ range (where .Site.RegularPages "Section" "places").ByWeight }}
+      {{ $place := .Params.place | default .Title }}
+      {{ $cover := .Params.cover }}
+      {{ $count := 0 }}
+      {{ range $k, $p := hugo.Data.photos }}
+        {{ if and $p.thumb (eq $p.city $place) }}
+          {{ $count = add $count 1 }}
+          {{ if not $cover }}{{ $cover = printf "%s%s" $base $p.thumb }}{{ end }}
+        {{ end }}
+      {{ end }}
+      <a href="{{ .RelPermalink }}" class="featured-item">
+        <div class="featured-image">{{ with $cover }}<img src="{{ . }}" alt="{{ $place }}">{{ end }}</div>
+        <div class="featured-title">{{ .Title }}</div>
+        <div class="featured-desc">{{ $count }} photograph{{ if ne $count 1 }}s{{ end }}</div>
+      </a>
+    {{ end }}
+  </div>
+</main>
+{{ end }}

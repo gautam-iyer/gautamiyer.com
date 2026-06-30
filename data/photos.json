@@ -17,7 +17,8 @@
     ],
     "subject": [
       "Infrastructure",
-      "Signage"
+      "Signage",
+      "Skyline"
     ],
     "medium": "Digital",
     "tag_notes": "Duquesne Incline trestle; PPG and UPMC behind",
@@ -25,11 +26,14 @@
     "display_avif": "pittsburgh-2026-06-16/img_6430.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6430.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
+      "bridges-of-pittsburgh",
+      "downtown-pittsburgh",
+      "industrial-pittsburgh",
       "ppg-place-pittsburgh",
       "upmc-building-pittsburgh"
     ]
@@ -61,11 +65,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6432.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6432.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6433.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6433.jpg",
@@ -94,7 +100,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6433.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6433.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -131,7 +137,10 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh",
+      "downtown-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6436.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6436.jpg",
@@ -182,10 +191,12 @@
     ],
     "architecture": [
       "Italianate",
-      "Commercial Vernacular"
+      "Commercial Vernacular",
+      "Victorian"
     ],
     "subject": [
-      "Façade"
+      "Façade",
+      "People"
     ],
     "medium": "Digital",
     "tag_notes": "Lou's bar, brick building, dormers and porch",
@@ -193,7 +204,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6441.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6441.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -263,7 +274,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6447.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6447.jpg",
@@ -281,7 +294,8 @@
     ],
     "architecture": [
       "Italianate",
-      "Commercial Vernacular"
+      "Commercial Vernacular",
+      "Victorian"
     ],
     "subject": [
       "Façade",
@@ -293,7 +307,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6447.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6447.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -315,7 +329,8 @@
     ],
     "architecture": [
       "Italianate",
-      "Commercial Vernacular"
+      "Commercial Vernacular",
+      "Victorian"
     ],
     "subject": [
       "Façade",
@@ -328,7 +343,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6449.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6449.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -349,7 +364,6 @@
     ],
     "architecture": [
       "Gothic Revival",
-      "Romanesque",
       "Religious"
     ],
     "subject": [
@@ -361,11 +375,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6452.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6452.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6454.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6454.jpg",
@@ -382,11 +398,11 @@
     ],
     "architecture": [
       "Gothic Revival",
-      "Romanesque",
       "Religious"
     ],
     "subject": [
-      "Façade"
+      "Façade",
+      "Detail"
     ],
     "medium": "Digital",
     "tag_notes": "Same church, pointed-arch entrance and windows",
@@ -394,11 +410,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6454.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6454.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6455.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6455.jpg",
@@ -427,11 +445,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6455.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6455.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "italians-in-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6457.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6457.jpg",
@@ -460,11 +480,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6457.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6457.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "italians-in-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6460.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6460.jpg",
@@ -483,8 +505,7 @@
       "Vernacular"
     ],
     "subject": [
-      "Detail",
-      "Signage"
+      "Detail"
     ],
     "medium": "Digital",
     "tag_notes": "Mac Miller mural on brick alley wall",
@@ -492,11 +513,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6460.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6460.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "rap-murals"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6462.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6462.jpg",
@@ -515,8 +538,7 @@
       "Vernacular"
     ],
     "subject": [
-      "Detail",
-      "Signage"
+      "Detail"
     ],
     "medium": "Digital",
     "tag_notes": "Same Mac Miller mural, wider alley view",
@@ -524,11 +546,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6462.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6462.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "rap-murals"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6464.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6464.jpg",
@@ -577,11 +601,12 @@
       "Commercial"
     ],
     "architecture": [
-      "Beaux-Arts / Neoclassical",
-      "Commercial Vernacular"
+      "Commercial Vernacular",
+      "Victorian"
     ],
     "subject": [
-      "Façade"
+      "Façade",
+      "Signage"
     ],
     "medium": "Digital",
     "tag_notes": "Brick commercial block, classical parapet",
@@ -589,11 +614,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6466.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6466.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "italians-in-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6468.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6468.jpg",
@@ -654,12 +681,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6471.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6471.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
-      "cathedral-of-learning-pittsburgh"
+      "cathedral-of-learning-pittsburgh",
+      "downtown-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6474.jpg": {
@@ -746,7 +774,8 @@
     ],
     "subject": [
       "Detail",
-      "Signage"
+      "Signage",
+      "Façade"
     ],
     "medium": "Digital",
     "tag_notes": "Weathered brick tavern wall, drink-special banners",
@@ -754,11 +783,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6479.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6479.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "go-steelers-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6480.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6480.jpg",
@@ -811,7 +842,8 @@
     ],
     "subject": [
       "Façade",
-      "Streetscape"
+      "Streetscape",
+      "People"
     ],
     "medium": "Digital",
     "tag_notes": "Pale terracotta commercial block, AutoZone, cyclist on street",
@@ -819,7 +851,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6482.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6482.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -839,11 +871,12 @@
       "Residential"
     ],
     "architecture": [
-      "Mid-century"
+      "Modern"
     ],
     "subject": [
       "Façade",
-      "Detail"
+      "Detail",
+      "People"
     ],
     "medium": "Digital",
     "tag_notes": "Green tiled midcentury apartment wall, car in garage",
@@ -851,11 +884,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6484.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6484.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6485.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6485.jpg",
@@ -871,11 +906,12 @@
       "Residential"
     ],
     "architecture": [
-      "Mid-century"
+      "Modern"
     ],
     "subject": [
       "Façade",
-      "Detail"
+      "Detail",
+      "People"
     ],
     "medium": "Digital",
     "tag_notes": "Same green-tile apartment, car entering garage",
@@ -883,11 +919,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6485.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6485.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6489.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6489.jpg",
@@ -979,11 +1017,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6493.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6493.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6494.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6494.jpg",
@@ -1012,11 +1052,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6494.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6494.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6496.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6496.jpg",
@@ -1045,11 +1087,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6496.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6496.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6497.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6497.jpg",
@@ -1065,7 +1109,7 @@
       "Residential"
     ],
     "architecture": [
-      "Mid-century"
+      "Beaux-Arts / Neoclassical"
     ],
     "subject": [
       "Façade"
@@ -1076,7 +1120,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6497.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6497.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -1095,9 +1139,7 @@
     "land_use": [
       "Residential"
     ],
-    "architecture": [
-      "Art Deco"
-    ],
+    "architecture": [],
     "subject": [
       "Detail",
       "Signage"
@@ -1108,11 +1150,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6498.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6498.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "art-nouveau"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6499.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6499.jpg",
@@ -1128,11 +1172,10 @@
       "Residential"
     ],
     "architecture": [
-      "Italianate"
+      "Victorian"
     ],
     "subject": [
-      "Façade",
-      "Landscape"
+      "Façade"
     ],
     "medium": "Digital",
     "tag_notes": "Brick house glimpsed through heavy foliage",
@@ -1140,7 +1183,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6499.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6499.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -1172,7 +1215,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6501.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6501.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -1223,7 +1266,8 @@
       "Residential"
     ],
     "architecture": [
-      "Colonial Revival"
+      "Colonial Revival",
+      "Greek Revival"
     ],
     "subject": [
       "Streetscape",
@@ -1235,7 +1279,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6503.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6503.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -1258,8 +1302,7 @@
       "Other"
     ],
     "subject": [
-      "Façade",
-      "Streetscape"
+      "Façade"
     ],
     "medium": "Digital",
     "tag_notes": "Brick mansion driveway, porte-cochere, green awnings",
@@ -1267,7 +1310,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6504.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6504.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -2099,7 +2142,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6553.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6553.jpg",
@@ -2132,7 +2177,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6554.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6554.jpg",
@@ -2164,7 +2211,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6556.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6556.jpg",
@@ -2196,7 +2245,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6558.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6558.jpg",
@@ -2228,7 +2279,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6559.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6559.jpg",
@@ -2260,7 +2313,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6561.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6561.jpg",
@@ -2292,7 +2347,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6563.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6563.jpg",
@@ -2324,7 +2381,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6564.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6564.jpg",
@@ -2356,7 +2415,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6565.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6565.jpg",
@@ -2389,7 +2450,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6566.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6566.jpg",
@@ -2422,7 +2485,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6567.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6567.jpg",
@@ -2454,7 +2519,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6568.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6568.jpg",
@@ -2487,7 +2554,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6570.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6570.jpg",
@@ -2519,7 +2588,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6571.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6571.jpg",
@@ -2551,7 +2622,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6572.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6572.jpg",
@@ -2583,7 +2656,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6573.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6573.jpg",
@@ -2615,7 +2690,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6576.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6576.jpg",
@@ -2648,7 +2725,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6577.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6577.jpg",
@@ -2681,7 +2760,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6579.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6579.jpg",
@@ -2714,7 +2795,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6580.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6580.jpg",
@@ -2747,7 +2830,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6581.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6581.jpg",
@@ -2779,7 +2864,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6582.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6582.jpg",
@@ -2812,7 +2899,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6583.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6583.jpg",
@@ -2844,7 +2933,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6584.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6584.jpg",
@@ -2876,7 +2967,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6588.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6588.jpg",
@@ -2908,7 +3001,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6589.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6589.jpg",
@@ -3036,7 +3131,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6599.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6599.jpg",
@@ -3296,7 +3393,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6612.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6612.jpg",
@@ -3329,7 +3428,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6614.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6614.jpg",
@@ -3362,7 +3463,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6616.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6616.jpg",
@@ -3394,7 +3497,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6619.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6619.jpg",
@@ -3427,7 +3532,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6620.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6620.jpg",
@@ -3460,7 +3567,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6622.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6622.jpg",
@@ -3558,7 +3667,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6630.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6630.jpg",
@@ -3658,7 +3769,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6636.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6636.jpg",
@@ -3823,7 +3936,8 @@
       "Color"
     ],
     "collections": [
-      "cathedral-of-learning-pittsburgh"
+      "cathedral-of-learning-pittsburgh",
+      "downtown-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6641.jpg": {
@@ -3857,7 +3971,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6642.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6642.jpg",
@@ -3890,7 +4006,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6644.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6644.jpg",
@@ -3923,7 +4041,8 @@
       "Color"
     ],
     "collections": [
-      "cathedral-of-learning-pittsburgh"
+      "cathedral-of-learning-pittsburgh",
+      "downtown-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6648.jpg": {
@@ -3957,7 +4076,8 @@
       "Color"
     ],
     "collections": [
-      "cathedral-of-learning-pittsburgh"
+      "cathedral-of-learning-pittsburgh",
+      "downtown-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6649.jpg": {
@@ -3991,7 +4111,8 @@
       "Color"
     ],
     "collections": [
-      "cathedral-of-learning-pittsburgh"
+      "cathedral-of-learning-pittsburgh",
+      "downtown-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6651.jpg": {
@@ -4025,7 +4146,8 @@
       "Color"
     ],
     "collections": [
-      "cathedral-of-learning-pittsburgh"
+      "cathedral-of-learning-pittsburgh",
+      "downtown-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6652.jpg": {
@@ -4059,7 +4181,8 @@
       "Color"
     ],
     "collections": [
-      "cathedral-of-learning-pittsburgh"
+      "cathedral-of-learning-pittsburgh",
+      "downtown-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6655.jpg": {
@@ -4092,7 +4215,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6657.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6657.jpg",
@@ -4125,7 +4250,8 @@
       "Color"
     ],
     "collections": [
-      "cathedral-of-learning-pittsburgh"
+      "cathedral-of-learning-pittsburgh",
+      "downtown-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6660.jpg": {
@@ -4221,7 +4347,8 @@
       "Color"
     ],
     "collections": [
-      "cathedral-of-learning-pittsburgh"
+      "cathedral-of-learning-pittsburgh",
+      "downtown-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6665.jpg": {
@@ -4255,7 +4382,8 @@
       "Color"
     ],
     "collections": [
-      "cathedral-of-learning-pittsburgh"
+      "cathedral-of-learning-pittsburgh",
+      "downtown-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6667.jpg": {
@@ -4412,7 +4540,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6677.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6677.jpg",
@@ -5010,7 +5140,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6711.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6711.jpg",
@@ -5104,7 +5236,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6719.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6719.jpg",
@@ -5136,7 +5270,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6720.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6720.jpg",
@@ -5167,7 +5303,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6722.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6722.jpg",
@@ -5199,7 +5337,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6725.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6725.jpg",
@@ -5419,7 +5559,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6737.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6737.jpg",
@@ -5546,7 +5688,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6744.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6744.jpg",
@@ -5610,7 +5754,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6747.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6747.jpg",
@@ -5739,7 +5885,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6754.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6754.jpg",
@@ -5835,7 +5983,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6758.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6758.jpg",
@@ -5867,7 +6017,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6760.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6760.jpg",
@@ -5899,7 +6051,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6763.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6763.jpg",
@@ -5931,7 +6085,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6764.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6764.jpg",
@@ -6025,7 +6181,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6770.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6770.jpg",
@@ -6057,7 +6215,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6772.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6772.jpg",
@@ -6247,7 +6407,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6783.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6783.jpg",
@@ -6279,7 +6441,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6784.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6784.jpg",
@@ -6312,7 +6476,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6785.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6785.jpg",
@@ -6344,7 +6510,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6786.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6786.jpg",
@@ -6376,7 +6544,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6788.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6788.jpg",
@@ -6409,7 +6579,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6790.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6790.jpg",
@@ -6441,7 +6613,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6791.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6791.jpg",
@@ -6566,7 +6740,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6799.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6799.jpg",
@@ -6630,7 +6806,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6801.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6801.jpg",
@@ -6880,7 +7058,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6812.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6812.jpg",
@@ -6911,7 +7091,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6814.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6814.jpg",
@@ -6942,7 +7124,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6816.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6816.jpg",
@@ -6976,7 +7160,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6818.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6818.jpg",
@@ -7008,7 +7194,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6819.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6819.jpg",
@@ -7106,7 +7294,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6822.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6822.jpg",
@@ -7140,7 +7330,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6824.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6824.jpg",
@@ -7173,7 +7365,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6825.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6825.jpg",
@@ -7399,7 +7593,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "downtown-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6838.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6838.jpg",
@@ -7464,7 +7660,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6842.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6842.jpg",
@@ -7497,7 +7695,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6843.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6843.jpg",
@@ -7530,7 +7730,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6845.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6845.jpg",
@@ -7629,7 +7831,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6850.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6850.jpg",
@@ -7726,7 +7930,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6855.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6855.jpg",
@@ -8076,7 +8282,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6868.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6868.jpg",
@@ -8108,7 +8316,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6870.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6870.jpg",
@@ -8140,7 +8350,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6872.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6872.jpg",
@@ -8265,7 +8477,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6877.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6877.jpg",
@@ -8296,7 +8510,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6878.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6878.jpg",
@@ -8359,7 +8575,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6882.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6882.jpg",
@@ -8453,7 +8671,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6889.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6889.jpg",
@@ -8485,7 +8705,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6890.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6890.jpg",
@@ -8548,7 +8770,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6897.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6897.jpg",
@@ -8613,7 +8837,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6901.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6901.jpg",
@@ -8677,7 +8903,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6904.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6904.jpg",
@@ -8709,7 +8937,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6905.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6905.jpg",
@@ -8867,7 +9097,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6925-2.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6925-2.jpg",
@@ -8900,7 +9132,10 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "modern-apartments-of-pittsburgh",
+      "rivers-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6927.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6927.jpg",
@@ -9059,7 +9294,10 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "downtown-pittsburgh",
+      "upmc-building-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6939.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6939.jpg",
@@ -9222,7 +9460,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6946.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6946.jpg",
@@ -9444,7 +9684,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6959.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6959.jpg",
@@ -9476,7 +9718,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6960.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6960.jpg",
@@ -9509,7 +9753,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6962.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6962.jpg",
@@ -9573,7 +9819,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6967.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6967.jpg",
@@ -9701,6 +9949,7 @@
       "Color"
     ],
     "collections": [
+      "churches-of-pittsburgh",
       "upmc-building-pittsburgh"
     ]
   },
@@ -9736,6 +9985,7 @@
       "Color"
     ],
     "collections": [
+      "downtown-pittsburgh",
       "upmc-building-pittsburgh"
     ]
   },
@@ -9771,6 +10021,7 @@
       "B&W"
     ],
     "collections": [
+      "downtown-pittsburgh",
       "upmc-building-pittsburgh"
     ]
   },
@@ -9805,7 +10056,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "downtown-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6978.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6978.jpg",
@@ -9838,7 +10091,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "downtown-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6981.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6981.jpg",
@@ -9870,7 +10125,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "downtown-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6985.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6985.jpg",
@@ -9902,7 +10159,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "downtown-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6986.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6986.jpg",
@@ -9935,7 +10194,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "downtown-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6988.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6988.jpg",
@@ -9968,7 +10229,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "downtown-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6990.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6990.jpg",
@@ -9999,7 +10262,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "downtown-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6991.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6991.jpg",
@@ -10032,7 +10297,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "downtown-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6992.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6992.jpg",
@@ -10063,7 +10330,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "downtown-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6995.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6995.jpg",
@@ -10095,7 +10364,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_6998.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6998.jpg",
@@ -10127,7 +10398,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7000.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7000.jpg",
@@ -10159,7 +10432,8 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh"
+      "bridges-of-pittsburgh",
+      "industrial-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7003.jpg": {
@@ -10192,7 +10466,8 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh"
+      "bridges-of-pittsburgh",
+      "industrial-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7004.jpg": {
@@ -10225,7 +10500,8 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh"
+      "bridges-of-pittsburgh",
+      "industrial-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7008.jpg": {
@@ -10352,7 +10628,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7017.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7017.jpg",
@@ -10477,7 +10755,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7023.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7023.jpg",
@@ -10603,7 +10883,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7028.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7028.jpg",
@@ -10635,7 +10917,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7029.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7029.jpg",
@@ -10667,7 +10951,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7030.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7030.jpg",
@@ -10699,7 +10985,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7032.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7032.jpg",
@@ -10731,7 +11019,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7034.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7034.jpg",
@@ -10795,7 +11085,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7037.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7037.jpg",
@@ -10858,7 +11150,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7042.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7042.jpg",
@@ -10890,7 +11184,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7043.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7043.jpg",
@@ -10922,7 +11218,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7044.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7044.jpg",
@@ -10954,7 +11252,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7045.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7045.jpg",
@@ -11019,7 +11319,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7050.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7050.jpg",
@@ -11051,7 +11353,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7051.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7051.jpg",
@@ -11082,7 +11386,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7054.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7054.jpg",
@@ -11144,7 +11450,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7057.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7057.jpg",
@@ -11207,7 +11515,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7062.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7062.jpg",
@@ -11270,7 +11580,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7064.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7064.jpg",
@@ -11397,6 +11709,7 @@
     ],
     "collections": [
       "bridges-of-pittsburgh",
+      "downtown-pittsburgh",
       "ppg-place-pittsburgh"
     ]
   },
@@ -11430,7 +11743,11 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "downtown-pittsburgh",
+      "industrial-pittsburgh",
+      "rivers-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7071.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7071.jpg",
@@ -11461,7 +11778,10 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh",
+      "rivers-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7072.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7072.jpg",
@@ -11493,7 +11813,9 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh"
+      "bridges-of-pittsburgh",
+      "industrial-pittsburgh",
+      "rivers-of-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7074.jpg": {
@@ -11526,7 +11848,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7076.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7076.jpg",
@@ -11559,6 +11883,7 @@
       "Color"
     ],
     "collections": [
+      "churches-of-pittsburgh",
       "ppg-place-pittsburgh"
     ]
   },
@@ -11592,7 +11917,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7081.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7081.jpg",
@@ -11625,6 +11952,7 @@
       "Color"
     ],
     "collections": [
+      "churches-of-pittsburgh",
       "upmc-building-pittsburgh"
     ]
   },
@@ -11659,6 +11987,8 @@
       "Color"
     ],
     "collections": [
+      "downtown-pittsburgh",
+      "industrial-pittsburgh",
       "ppg-place-pittsburgh"
     ]
   },
@@ -11693,7 +12023,9 @@
       "Color"
     ],
     "collections": [
-      "ppg-place-pittsburgh"
+      "downtown-pittsburgh",
+      "ppg-place-pittsburgh",
+      "rivers-of-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7085.jpg": {
@@ -11825,7 +12157,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "rivers-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7091.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7091.jpg",
@@ -12147,7 +12481,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7108.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7108.jpg",
@@ -12179,7 +12515,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7111.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7111.jpg",
@@ -12309,7 +12647,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7116.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7116.jpg",
@@ -12343,6 +12683,8 @@
       "Color"
     ],
     "collections": [
+      "downtown-pittsburgh",
+      "industrial-pittsburgh",
       "ppg-place-pittsburgh"
     ]
   },
@@ -12477,7 +12819,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7125.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7125.jpg",
@@ -12541,7 +12885,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7134.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7134.jpg",
@@ -12572,7 +12918,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "bridges-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7136.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7136.jpg",
@@ -12605,6 +12953,7 @@
       "Color"
     ],
     "collections": [
+      "downtown-pittsburgh",
       "ppg-place-pittsburgh"
     ]
   },
@@ -12639,6 +12988,8 @@
       "Color"
     ],
     "collections": [
+      "bridges-of-pittsburgh",
+      "downtown-pittsburgh",
       "ppg-place-pittsburgh"
     ]
   },
@@ -12673,6 +13024,7 @@
       "Color"
     ],
     "collections": [
+      "downtown-pittsburgh",
       "ppg-place-pittsburgh"
     ]
   },
@@ -12806,7 +13158,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7148.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7148.jpg",
@@ -12839,7 +13193,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7149.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7149.jpg",
@@ -12872,7 +13228,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7150.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7150.jpg",
@@ -13100,7 +13458,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7164.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7164.jpg",
@@ -13134,7 +13494,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7167.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7167.jpg",
@@ -13167,7 +13529,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "churches-of-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7169.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7169.jpg",
@@ -13265,7 +13629,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7174.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7174.jpg",
@@ -13298,7 +13664,8 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh"
+      "bridges-of-pittsburgh",
+      "churches-of-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7176.jpg": {
@@ -13332,7 +13699,8 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh"
+      "bridges-of-pittsburgh",
+      "churches-of-pittsburgh"
     ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7178.jpg": {
@@ -13367,6 +13735,7 @@
     ],
     "collections": [
       "bridges-of-pittsburgh",
+      "downtown-pittsburgh",
       "ppg-place-pittsburgh",
       "upmc-building-pittsburgh"
     ]
@@ -13400,7 +13769,9 @@
     "tone": [
       "Color"
     ],
-    "collections": []
+    "collections": [
+      "industrial-pittsburgh"
+    ]
   },
   "Pittsburgh 6:16:26/Edited/IMG_7181.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7181.jpg",

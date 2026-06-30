@@ -9,9 +9,14 @@
   const countEl = document.querySelector('.photo-count');
   const total = items.length;
 
-  // dim -> selected value ("" = any)
-  const filters = {};
+  // dim -> selected value ("" = any). `collections` is a pseudo-dim set via ?c=<slug>,
+  // not a dropdown — it filters to one collection and shows a labeled chip.
+  const filters = { collections: '' };
   selects.forEach((s) => (filters[s.dataset.dim] = ''));
+
+  const COLLECTION_TITLES = window.COLLECTION_TITLES || {};
+  const collParam = new URLSearchParams(location.search).get('c');
+  if (collParam) filters.collections = collParam;
 
   const labelFor = (dim) =>
     selects.find((s) => s.dataset.dim === dim)?.options[0].text || dim;
@@ -36,9 +41,10 @@
     activeWrap.innerHTML = '';
     Object.entries(filters).forEach(([dim, val]) => {
       if (!val) return;
+      const label = dim === 'collections' ? (COLLECTION_TITLES[val] || val) : val;
       const chip = document.createElement('span');
       chip.className = 'filter-tag';
-      chip.innerHTML = `${val} <span class="x">✕</span>`;
+      chip.innerHTML = `${label} <span class="x">✕</span>`;
       chip.addEventListener('click', () => {
         filters[dim] = '';
         const sel = selects.find((s) => s.dataset.dim === dim);

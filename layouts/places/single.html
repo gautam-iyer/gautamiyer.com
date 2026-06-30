@@ -1,0 +1,56 @@
+{{ define "main" }}
+<main>
+  {{ $base := .Site.Params.photo_base | default "/img/" }}
+  {{ $place := .Params.place | default .Title }}
+
+  <div class="place-header">
+    <h1 class="place-title">{{ .Title }}</h1>
+    <div class="intro place-overview">{{ .Content }}</div>
+  </div>
+
+  {{/* Collections in this place. A collection's place = its `place` field, else the city of its photos. */}}
+  {{ $colls := slice }}
+  {{ range $c := (index hugo.Data.collections "collections") }}
+    {{ $cplace := $c.place }}
+    {{ if not $cplace }}
+      {{ range $k, $p := hugo.Data.photos }}
+        {{ if and (not $cplace) (in (or $p.collections slice) $c.slug) }}{{ $cplace = $p.city }}{{ end }}
+      {{ end }}
+    {{ end }}
+    {{ if eq $cplace $place }}{{ $colls = $colls | append $c }}{{ end }}
+  {{ end }}
+
+  {{ with $colls }}
+  <div class="section-label">Collections</div>
+  <div class="featured-grid">
+    {{ range . }}
+      {{ $slug := .slug }}
+      {{ $cover := .cover }}
+      {{ $count := 0 }}
+      {{ range $k, $p := hugo.Data.photos }}
+        {{ if in (or $p.collections slice) $slug }}
+          {{ $count = add $count 1 }}
+          {{ if not $cover }}{{ $cover = printf "%s%s" $base $p.thumb }}{{ end }}
+        {{ end }}
+      {{ end }}
+      <a href="/photos/?c={{ $slug }}" class="featured-item">
+        <div class="featured-image">{{ with $cover }}<img src="{{ . }}" alt="{{ $.Title }}">{{ end }}</div>
+        <div class="featured-title">{{ .title }}</div>
+        <div class="featured-desc">{{ $count }} photograph{{ if ne $count 1 }}s{{ end }}</div>
+      </a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* Essays tagged with this place (writing front matter: places: ["Pittsburgh"]) */}}
+  {{ $essays := where (where .Site.RegularPages "Section" "writing") "Params.places" "intersect" (slice $place) }}
+  {{ with $essays }}
+  <div class="section-label">Writing</div>
+  <ul class="place-essays">
+    {{ range .ByDate.Reverse }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.subtitle }} <span class="essay-sub">— {{ . }}</span>{{ end }}</li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</main>
+{{ end }}

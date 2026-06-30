@@ -4,19 +4,23 @@
       "slug": "ppg-place-pittsburgh",
       "title": "PPG Place - Pittsburgh",
       "description": "",
-      "featured": false,
+      "featured": true,
       "cover": null,
-      "order": 0,
-      "type": "curated"
+      "order": 1,
+      "type": "curated",
+      "place": "Pittsburgh",
+      "color": "#1d3a5f"
     },
     {
       "slug": "cathedral-of-learning-pittsburgh",
       "title": "Cathedral of Learning - Pittsburgh",
       "description": "",
-      "featured": false,
+      "featured": true,
       "cover": null,
-      "order": 0,
-      "type": "curated"
+      "order": 2,
+      "type": "curated",
+      "place": "Pittsburgh",
+      "color": "#5b6b7b"
     },
     {
       "slug": "upmc-building-pittsburgh",
@@ -25,16 +29,111 @@
       "featured": false,
       "cover": null,
       "order": 0,
-      "type": "curated"
+      "type": "curated",
+      "place": "Pittsburgh"
     },
     {
       "slug": "bridges-of-pittsburgh",
       "title": "Bridges of Pittsburgh",
       "description": "",
+      "featured": true,
+      "cover": null,
+      "order": 5,
+      "type": "curated",
+      "place": "Pittsburgh",
+      "color": "#a8842c"
+    },
+    {
+      "slug": "churches-of-pittsburgh",
+      "title": "Churches of Pittsburgh",
+      "description": "",
+      "featured": true,
+      "cover": null,
+      "order": 4,
+      "type": "curated",
+      "place": "Pittsburgh",
+      "color": "#6b4a7a"
+    },
+    {
+      "slug": "italians-in-pittsburgh",
+      "title": "Italians in Pittsburgh",
+      "description": "",
       "featured": false,
       "cover": null,
       "order": 0,
-      "type": "curated"
+      "type": "curated",
+      "place": "Pittsburgh"
+    },
+    {
+      "slug": "rap-murals",
+      "title": "Rap Murals",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Pittsburgh"
+    },
+    {
+      "slug": "go-steelers-pittsburgh",
+      "title": "Go Steelers - Pittsburgh",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Pittsburgh"
+    },
+    {
+      "slug": "modern-apartments-of-pittsburgh",
+      "title": "Modern Apartments of Pittsburgh",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Pittsburgh"
+    },
+    {
+      "slug": "art-nouveau",
+      "title": "Art Nouveau",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Pittsburgh"
+    },
+    {
+      "slug": "rivers-of-pittsburgh",
+      "title": "Rivers of Pittsburgh",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Pittsburgh"
+    },
+    {
+      "slug": "industrial-pittsburgh",
+      "title": "Industrial Pittsburgh",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Pittsburgh"
+    },
+    {
+      "slug": "downtown-pittsburgh",
+      "title": "Downtown Pittsburgh",
+      "description": "",
+      "featured": true,
+      "cover": null,
+      "order": 3,
+      "type": "curated",
+      "place": "Pittsburgh",
+      "color": "#9c7a4d"
     }
   ]
 }

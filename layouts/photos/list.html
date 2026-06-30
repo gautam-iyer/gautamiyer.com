@@ -65,6 +65,7 @@
            data-subject="{{ delimit $p.subject "|" }}"
            data-medium="{{ $p.medium }}"
            data-tone="{{ delimit $p.tone "|" }}"
+           data-collections="{{ delimit $p.collections "|" }}"
            data-avif="{{ $base }}{{ $p.display_avif }}"
            data-webp="{{ $base }}{{ $p.display_webp }}"
            data-title="{{ with $p.neighborhood }}{{ . }}, {{ end }}{{ $p.city }}"
@@ -92,5 +93,7 @@
 {{ end }}
 
 {{ define "scripts" }}
+{{ $m := dict }}{{ range $c := (index hugo.Data.collections "collections") }}{{ $m = merge $m (dict $c.slug $c.title) }}{{ end }}
+<script>window.COLLECTION_TITLES = {{ $m | jsonify | safeJS }};</script>
 <script src="/js/photos.js" defer></script>
 {{ end }}
