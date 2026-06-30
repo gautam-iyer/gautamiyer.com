@@ -1,0 +1,31 @@
+{{ define "main" }}
+<main>
+  {{ $base := .Site.Params.photo_base | default "/img/" }}
+  {{ $slug := .Params.collection }}
+  {{ $color := .Params.color | default "#1d3a5f" }}
+
+  <div class="collection-head">
+    <a class="fc-name collection-name" href="/collections/{{ $slug }}/" style="color:{{ $color }}">{{ .Title }}</a>
+    <hr class="fc-rule" style="background:{{ $color }}">
+  </div>
+
+  {{ $items := slice }}
+  {{ range $k, $p := hugo.Data.photos }}
+    {{ if and $p.thumb (in (or $p.collections slice) $slug) }}
+      {{ $items = $items | append (dict
+          "thumb" (printf "%s%s" $base $p.thumb)
+          "avif"  (printf "%s%s" $base $p.display_avif)
+          "webp"  (printf "%s%s" $base $p.display_webp)
+          "title" (cond (gt (len $p.neighborhood) 0) (printf "%s, %s" $p.neighborhood $p.city) $p.city)
+          "meta"  (or $p.tag_notes "")) }}
+    {{ end }}
+  {{ end }}
+
+  <div class="photo-count">{{ len $items }} photograph{{ if ne (len $items) 1 }}s{{ end }}</div>
+  <div class="collection-grid">
+    {{ range $items }}{{ partial "lbthumb.html" . }}{{ end }}
+  </div>
+</main>
+{{ end }}
+
+{{ define "scripts" }}<script src="/js/lightbox.js" defer></script>{{ end }}

@@ -49,5 +49,15 @@
 
 {{ block "scripts" . }}{{ end }}
 
+<script>
+  (function () {
+    var onScroll = function () {
+      document.body.classList.toggle('scrolled', window.scrollY > 40);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+
 </body>
 </html>

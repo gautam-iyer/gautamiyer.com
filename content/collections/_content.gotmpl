@@ -1,0 +1,10 @@
+{{/* Generate one page per collection from data/collections.json (auto-syncs). */}}
+{{ range (index hugo.Data.collections "collections") }}
+  {{ $page := dict
+      "kind" "page"
+      "path" .slug
+      "title" .title
+      "params" (dict "collection" .slug "color" (.color | default "") "place" (.place | default ""))
+  }}
+  {{ $.AddPage $page }}
+{{ end }}

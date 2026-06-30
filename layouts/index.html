@@ -17,19 +17,22 @@
     {{ $slug := .slug }}
     {{ $title := .title }}
     {{ $color := .color | default "#1d3a5f" }}
-    {{ $thumbs := slice }}
+    {{ $items := slice }}
     {{ range $k, $p := hugo.Data.photos }}
       {{ if and $p.thumb (in (or $p.collections slice) $slug) }}
-        {{ $thumbs = $thumbs | append (printf "%s%s" $base $p.thumb) }}
+        {{ $items = $items | append (dict
+            "thumb" (printf "%s%s" $base $p.thumb)
+            "avif"  (printf "%s%s" $base $p.display_avif)
+            "webp"  (printf "%s%s" $base $p.display_webp)
+            "title" (cond (gt (len $p.neighborhood) 0) (printf "%s, %s" $p.neighborhood $p.city) $p.city)
+            "meta"  (or $p.tag_notes "")) }}
       {{ end }}
     {{ end }}
     <div class="fc-collection">
-      <a class="fc-name" href="/photos/?c={{ $slug }}" style="color:{{ $color }}">{{ $title }}</a>
+      <a class="fc-name" href="/collections/{{ $slug }}/" style="color:{{ $color }}">{{ $title }}</a>
       <hr class="fc-rule" style="background:{{ $color }}">
       <div class="fc-thumbs">
-        {{ range (first 12 $thumbs) }}
-          <a href="/photos/?c={{ $slug }}" class="fc-thumb"><img src="{{ . }}" loading="lazy" alt="{{ $title }}"></a>
-        {{ end }}
+        {{ range (first 12 $items) }}{{ partial "lbthumb.html" . }}{{ end }}
       </div>
     </div>
   {{ end }}
@@ -49,3 +52,5 @@
   {{ end }}
 </main>
 {{ end }}
+
+{{ define "scripts" }}<script src="/js/lightbox.js" defer></script>{{ end }}

@@ -1,0 +1,27 @@
+{{ define "main" }}
+<main>
+  <div class="intro"><p>All collections.</p></div>
+  {{ $base := .Site.Params.photo_base | default "/img/" }}
+  <div class="featured-grid">
+    {{ range (index hugo.Data.collections "collections") }}
+      {{ $slug := .slug }}
+      {{ $title := .title }}
+      {{ $cover := "" }}
+      {{ $count := 0 }}
+      {{ range $k, $p := hugo.Data.photos }}
+        {{ if and $p.thumb (in (or $p.collections slice) $slug) }}
+          {{ $count = add $count 1 }}
+          {{ if not $cover }}{{ $cover = printf "%s%s" $base $p.thumb }}{{ end }}
+        {{ end }}
+      {{ end }}
+      {{ if gt $count 0 }}
+      <a href="/collections/{{ $slug }}/" class="featured-item">
+        <div class="featured-image">{{ with $cover }}<img src="{{ . }}" alt="{{ $title }}">{{ end }}</div>
+        <div class="featured-title">{{ $title }}</div>
+        <div class="featured-desc">{{ $count }} photograph{{ if ne $count 1 }}s{{ end }}</div>
+      </a>
+      {{ end }}
+    {{ end }}
+  </div>
+</main>
+{{ end }}
