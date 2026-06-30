@@ -164,6 +164,46 @@
       "order": 0,
       "type": "curated",
       "place": "Austin"
+    },
+    {
+      "slug": "churches-of-newark",
+      "title": "Churches of Newark",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Newark"
+    },
+    {
+      "slug": "art-deco-newark",
+      "title": "Art Deco Newark",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Newark"
+    },
+    {
+      "slug": "industrial-newark",
+      "title": "Industrial Newark",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Newark"
+    },
+    {
+      "slug": "beaux-arts-newark",
+      "title": "Beaux-Arts Newark",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Newark"
     }
   ]
 }

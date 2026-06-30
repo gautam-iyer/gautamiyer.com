@@ -54,6 +54,13 @@ SHOOTS = [
         "date": "2026-06-14",
         "title": "San Antonio",
     },
+    {
+        "folder": "Newark 5:14:26/Final JPEGs",
+        "slug": "newark-2026-05-14",
+        "city": "Newark",
+        "date": "2026-05-14",
+        "title": "Newark",
+    },
 ]
 
 TAG_FIELDS = ["neighborhood", "land_use", "architecture", "subject", "medium", "tone", "tag_notes"]
