@@ -1356,12 +1356,22 @@ article {
 /* Collection page */
 .collection-head { margin-bottom: 24px; }
 .collection-name { font-size: 1.4rem; margin-bottom: 12px; }
+/* Equal-height rows: vertical + horizontal photos align on a common baseline,
+   full frame (no square crop), centered, with breathing room. */
 .collection-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
 }
-.collection-grid .lb-thumb { width: 100%; aspect-ratio: 1 / 1; }
+.collection-grid .lb-thumb {
+  flex: 0 0 auto;
+  height: 260px;
+  width: auto;
+  aspect-ratio: auto;
+}
+.collection-grid .lb-thumb img { height: 100%; width: auto; object-fit: cover; }
 
 /* Home — Writing */
 .home-essays { display: flex; flex-direction: column; }
@@ -1378,4 +1388,6 @@ article {
 
 @media (max-width: 700px) {
   .fc-thumbs .lb-thumb { width: 64px; height: 64px; }
+  .collection-grid { gap: 12px; }
+  .collection-grid .lb-thumb { height: 170px; }
 }
