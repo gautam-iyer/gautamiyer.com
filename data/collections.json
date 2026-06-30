@@ -264,6 +264,36 @@
       "order": 0,
       "type": "curated",
       "place": "Brooklyn"
+    },
+    {
+      "slug": "skyscrapers-of-fidi",
+      "title": "Skyscrapers of FiDi",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "New York"
+    },
+    {
+      "slug": "art-deco-fidi",
+      "title": "Art Deco FiDi",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "New York"
+    },
+    {
+      "slug": "beaux-arts-fidi",
+      "title": "Beaux-Arts FiDi",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "New York"
     }
   ]
 }

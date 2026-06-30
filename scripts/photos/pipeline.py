@@ -75,6 +75,13 @@ SHOOTS = [
         "date": "2026-04-06",
         "title": "South Brooklyn",
     },
+    {
+        "folder": "FiDi 4:20:26/Edited",
+        "slug": "fidi-2026-04-20",
+        "city": "New York",
+        "date": "2026-04-20",
+        "title": "FiDi",
+    },
 ]
 
 TAG_FIELDS = ["neighborhood", "land_use", "architecture", "subject", "medium", "tone", "tag_notes"]

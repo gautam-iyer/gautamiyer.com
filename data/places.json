@@ -114,6 +114,11 @@
       "name": "Brooklyn, NY",
       "city": "Brooklyn",
       "state": "NY"
+    },
+    {
+      "name": "New York, NY",
+      "city": "New York",
+      "state": "NY"
     }
   ]
 }
