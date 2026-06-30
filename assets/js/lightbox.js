@@ -14,8 +14,8 @@
   lb.className = 'lightbox';
   lb.innerHTML =
     '<div class="lightbox-close">CLOSE ✕</div>' +
-    '<button class="lightbox-nav prev" aria-label="Previous">‹</button>' +
-    '<button class="lightbox-nav next" aria-label="Next">›</button>' +
+    '<button class="lightbox-nav prev" aria-label="Previous">←</button>' +
+    '<button class="lightbox-nav next" aria-label="Next">→</button>' +
     '<div class="lightbox-image"><picture></picture></div>' +
     '<div class="lightbox-caption"><div class="lightbox-title"></div><div class="lightbox-meta"></div></div>';
   document.body.appendChild(lb);

@@ -13,10 +13,10 @@
 
   {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
 
-  <a class="backlink" href="/collections/">&lt;- Back to Collections</a>
+  <a class="backlink" href="/collections/">← Back to Collections</a>
 
   <div class="fc-collection">
-    <div class="fc-name" style="color:{{ $color }}">{{ .Title }}</div>
+    <div class="fc-name subsubhead" style="color:{{ $color }}">{{ .Title }}</div>
     <hr class="fc-rule" style="background:{{ $color }}">
     <div class="photo-count">{{ len $items }} photograph{{ if ne (len $items) 1 }}s{{ end }}</div>
     {{ partial "carousel.html" (dict "items" $items "color" $color) }}

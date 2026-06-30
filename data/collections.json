@@ -113,6 +113,17 @@
       "order": 0,
       "type": "curated",
       "place": "Pittsburgh"
+    },
+    {
+      "slug": "home-hero",
+      "title": "Home Hero",
+      "description": "Images that rotate behind the home-page hero. Curate in the tagger.",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Pittsburgh",
+      "hidden": true
     }
   ]
 }

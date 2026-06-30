@@ -25,7 +25,7 @@
 
   {{ block "head" . }}{{ end }}
 </head>
-<body>
+<body{{ if .IsHome }} class="home"{{ end }}>
 
 <header>
   <a href="/" class="site-name">{{ .Site.Title }}</a>
@@ -72,9 +72,11 @@
 
 {{ block "scripts" . }}{{ end }}
 {{ partial "asset-js.html" "js/nav.js" }}
+{{ partial "asset-js.html" "js/gridlines.js" }}
 
 <script>
   (function () {
+    document.documentElement.classList.add('js'); // enables progressive-reveal CSS
     var GRID = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--grid'), 10) || 40;
     var header = document.querySelector('header');
     var shrunk = false, ticking = false;
@@ -111,6 +113,19 @@
       var rt;
       window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(snap, 150); });
       window.addEventListener('load', snap); // re-snap once fonts/images settle
+    }
+
+    // Gentle fade-up reveal as sections enter the viewport.
+    var reveals = document.querySelectorAll('[data-reveal]');
+    if (reveals.length && 'IntersectionObserver' in window) {
+      var ro = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add('revealed'); ro.unobserve(en.target); }
+        });
+      }, { rootMargin: '0px 0px -10% 0px' });
+      reveals.forEach(function (el) { ro.observe(el); });
+    } else {
+      reveals.forEach(function (el) { el.classList.add('revealed'); });
     }
   })();
 </script>

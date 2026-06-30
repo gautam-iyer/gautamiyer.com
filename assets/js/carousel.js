@@ -73,8 +73,6 @@
       if (slide && slide.dataset.clone) originals[+slide.dataset.idx].click();
     });
 
-    root.addEventListener('mouseenter', stop);
-    root.addEventListener('mouseleave', () => { if (active) start(); });
     window.addEventListener('resize', () => center(false));
     slides.forEach((s) => {
       const img = s.querySelector('img');

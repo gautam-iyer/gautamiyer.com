@@ -1,22 +1,51 @@
 {{ define "main" }}
 <main>
-  <div class="intro"><p>All collections.</p></div>
   {{ $base := .Site.Params.photo_base | default "/img/" }}
-  <div class="featured-grid">
+  {{ $palette := .Site.Params.palette }}
+
+  <div class="backlinks">
+    <a class="backlink" href="/">← Back to Home</a>
+    <a class="backlink" href="/photos/">← All Photos</a>
+  </div>
+
+  <div class="controls" data-tilecontrols="coll-grid">
+    <div class="filter-group">
+      <span class="filter-label">Sort</span>
+      <select class="filter-select" data-role="sort">
+        <option value="i">Default</option>
+        <option value="title">A–Z</option>
+      </select>
+      <select class="filter-select" data-role="filter" data-key="places">
+        <option value="">All places</option>
+        {{ range (index hugo.Data.places "places") }}<option value="{{ .name }}">{{ .name }}</option>{{ end }}
+        <option value="__multiple">Multiple</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="tile-grid tile-rows dim-titles" id="coll-grid" data-tilegrid>
+    {{ $idx := 0 }}
     {{ range (index hugo.Data.collections "collections") }}
       {{ $slug := .slug }}
       {{ $title := .title }}
       {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
-      {{ $count := len $items }}
-      {{ if gt $count 0 }}
-      {{ $cover := (index $items 0).thumb }}
-      <a href="/collections/{{ $slug }}/" class="featured-item">
-        <div class="featured-image">{{ with $cover }}<img src="{{ . }}" alt="{{ $title }}">{{ end }}</div>
-        <div class="featured-title">{{ $title }}</div>
-        <div class="featured-desc">{{ $count }} photograph{{ if ne $count 1 }}s{{ end }}</div>
-      </a>
+      {{ if and (gt (len $items) 0) (not .hidden) }}
+        {{ $color := index $palette (mod $idx 5) }}
+        {{ $cover := index $items 0 }}
+        {{ $places := .places | default (slice (.place | default "")) }}
+        <a href="/collections/{{ $slug }}/" class="tile" style="--tint:{{ $color }}"
+           data-title="{{ $title }}" data-places="{{ delimit $places "|" }}"{{ if gt (len $places) 1 }} data-multi="1"{{ end }}>
+          <div class="tile-img" style="aspect-ratio:{{ $cover.ar }}">
+            <img src="{{ $cover.thumb }}" alt="{{ $title }}" loading="lazy">
+          </div>
+          <div class="tile-title subsubhead" style="color:{{ $color }}">{{ $title }}</div>
+          <div class="tile-meta">{{ len $items }} photograph{{ if ne (len $items) 1 }}s{{ end }}</div>
+        </a>
+        {{ $idx = add $idx 1 }}
       {{ end }}
     {{ end }}
   </div>
 </main>
 {{ end }}
+
+{{ define "scripts" }}{{ partial "asset-js.html" "js/tiles.js" }}{{ end }}

@@ -5,8 +5,8 @@
 */ -}}
 {{- $items := .items -}}
 {{- with .limit }}{{ $items = first . $items }}{{ end -}}
-<div class="carousel" data-carousel data-color="{{ .color }}">
-  <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous">&lt;-</button>
+<div class="carousel" data-carousel data-color="{{ .color }}" style="--tint:{{ .color }}">
+  <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous">←</button>
   <div class="carousel-track">
     {{- range $items }}
     <button class="carousel-slide" type="button" style="--ar:{{ .ar }}"
@@ -15,5 +15,5 @@
     </button>
     {{- end }}
   </div>
-  <button class="carousel-arrow carousel-next" type="button" aria-label="Next">-&gt;</button>
+  <button class="carousel-arrow carousel-next" type="button" aria-label="Next">→</button>
 </div>

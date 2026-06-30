@@ -1,20 +1,43 @@
 {{ define "main" }}
+{{ $base := .Site.Params.photo_base | default "/img/" }}
+{{ $palette := .Site.Params.palette }}
+{{ $featured := partialCached "featured.html" . "featured" }}
+{{ $hero := partialCached "collitems.html" (dict "slug" "home-hero" "base" $base) "home-hero" }}
+{{ $essays := first 6 (where .Site.RegularPages "Section" "writing").ByDate.Reverse }}
 <main>
-  <div class="intro">
-    {{ with .Content }}{{ . }}{{ else }}<p>{{ .Site.Params.description }}</p>{{ end }}
-  </div>
 
-  {{ $base := .Site.Params.photo_base | default "/img/" }}
-  {{ $featured := partialCached "featured.html" . "featured" }}
+  {{/* HERO — one uncropped photo, full content width, framed by the grid; a
+       blurb sits over it. hero.js swaps a random image of the right orientation
+       and sets the box aspect-ratio so nothing is ever cropped. */}}
+  {{ with $hero }}
+    {{ $default := index . 0 }}
+    {{ $found := false }}
+    {{ range . }}{{ if and (not $found) (ge .ar 1.0) }}{{ $default = . }}{{ $found = true }}{{ end }}{{ end }}
+  <section class="hero">
+    <div class="hero-media" style="aspect-ratio:{{ $default.ar }}">
+      <picture class="hero-pic">
+        <source type="image/avif" srcset="{{ $default.avif }}">
+        <img src="{{ $default.webp }}" alt="" fetchpriority="high">
+      </picture>
+      <div class="hero-scrim"></div>
+      <div class="hero-overlay">
+        <p class="hero-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+      </div>
+    </div>
+  </section>
+  <script>window.HERO_IMAGES = {{ . | jsonify | safeJS }};</script>
+  {{ end }}
 
-  {{/* Writing leads — it's compact and sits above the photo carousels. */}}
-  {{ $essays := first 6 (where .Site.RegularPages "Section" "writing").ByDate.Reverse }}
+  {{/* Featured Writing — short section above the photos, lines aligned to grid. */}}
   {{ with $essays }}
-  <section id="featured-writing" data-snap>
+  <section id="featured-writing" data-snap data-reveal data-darkline>
     <div class="fc-head">Featured Writing</div>
     <div class="home-essays">
       {{ range . }}
-      <a href="{{ .RelPermalink }}" class="home-essay">
+      <a href="{{ .RelPermalink }}" class="home-essay" data-darkline="both">
         <div class="home-essay-title">{{ .Title }}</div>
         {{ with .Params.subtitle }}<div class="home-essay-sub">{{ . }}</div>{{ end }}
       </a>
@@ -23,9 +46,8 @@
   </section>
   {{ end }}
 
-  {{ $palette := .Site.Params.palette }}
   {{ with $featured }}
-  <section id="featured-photos" class="home-featured" data-snap>
+  <section id="featured-photos" class="home-featured" data-snap data-darkline>
   <div class="fc-head">Featured Photos</div>
   {{ range $i, $c := . }}
     {{ $slug := $c.slug }}
@@ -33,9 +55,9 @@
     {{ $color := index $palette (mod $i 5) }}
     {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
     {{ with $items }}
-    <div class="fc-collection" id="collection-{{ $slug }}">
-      <a class="fc-name" href="/collections/{{ $slug }}/" style="color:{{ $color }}">{{ $title }}</a>
-      <hr class="fc-rule" style="background:{{ $color }}">
+    <div class="fc-collection" id="collection-{{ $slug }}" data-reveal>
+      <a class="fc-name subsubhead" href="/collections/{{ $slug }}/" style="color:{{ $color }}">{{ $title }}</a>
+      <hr class="fc-rule" style="background:{{ $color }}" data-snap>
       {{ partial "carousel.html" (dict "items" . "color" $color "limit" 15) }}
     </div>
     {{ end }}
@@ -46,6 +68,7 @@
 {{ end }}
 
 {{ define "scripts" }}
+{{ partial "asset-js.html" "js/hero.js" }}
 {{ partial "asset-js.html" "js/carousel.js" }}
 {{ partial "asset-js.html" "js/lightbox.js" }}
 {{ end }}

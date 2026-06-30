@@ -27,6 +27,7 @@
      tints it to the active collection's accent on the home page. */
   --grid: 40px;
   --grid-color: rgba(0, 0, 0, 0.034);
+  --header-h: calc(var(--grid) * 2);
 }
 
 /* Registered so the tint can animate smoothly when the grid colour changes. */
@@ -44,6 +45,7 @@ body {
   color: var(--black);
   line-height: 1.6;
   margin: 0; /* grid origin sits at the very top of the page */
+  position: relative; /* containing block for the .gridlines overlay */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Tight grid that scrolls with the page (so it stays put behind content). */
@@ -66,7 +68,7 @@ header {
   top: 0;
   z-index: 30;
   width: 100%;
-  height: calc(var(--grid) * 2);
+  height: var(--header-h);
   padding: 0 var(--page-gutter);
   display: flex;
   align-items: center;
@@ -76,7 +78,11 @@ header {
     linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
   background-size: var(--grid) var(--grid);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
 }
+
+/* Home: the name stays in the header (as elsewhere); the hero sits just below. */
+body.home main { padding-top: var(--grid); }
 
 .site-name {
   font-size: 1.5rem;
@@ -201,7 +207,6 @@ main {
 .backlink {
   display: inline-block;
   margin-bottom: 28px;
-  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
   font-size: 0.82rem;
   letter-spacing: 0.02em;
   color: var(--mid);
@@ -209,6 +214,9 @@ main {
   transition: color 0.18s;
 }
 .backlink:hover { color: var(--black); }
+/* Row of multiple back links (e.g. Collections / Places). */
+.backlinks { display: flex; gap: 22px; flex-wrap: wrap; }
+.backlinks .backlink { margin-bottom: 24px; }
 
 /* ── Footer ── */
 footer {
@@ -228,13 +236,69 @@ footer p {
    HOMEPAGE
    ════════════════════════════════════════════════ */
 
+/* ── Hero ──────────────────────────────────────────────────────────────
+   One photo fills the first screen, framed by a couple of grid cells; name,
+   blurb and featured-writing chips sit over it on a soft scrim. Scrolling
+   reveals the Featured Photos below. hero.js randomizes the image. */
+.hero {
+  position: relative;
+  width: 100%;
+  margin-bottom: calc(var(--grid) * 2);
+}
+/* Full content width (left/right bounds match the sections below). The box
+   aspect-ratio is set to the image's own ratio (inline + by hero.js), so the
+   photo fills it with NO crop and NO letterbox bars. Height follows naturally. */
+.hero-media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-subtle);
+}
+.hero-pic { display: block; width: 100%; height: 100%; }
+.hero-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.66), rgba(0,0,0,0.16) 42%, rgba(0,0,0,0.04) 68%, transparent);
+}
+.hero-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: clamp(24px, 4vw, 60px);
+  color: #fff;
+}
+.hero-blurb {
+  margin: 0;
+  max-width: 680px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  opacity: 0.96;
+}
+
+/* Fade-in reveal (set by the IntersectionObserver in baseof). Scoped to .js so
+   nothing is hidden without JS. Opacity-only — a transform would shift layout
+   and throw off the grid line-snapping measurements. */
+.js [data-reveal] { opacity: 0; transition: opacity 0.8s ease; }
+.js [data-reveal].revealed { opacity: 1; }
+
 .intro {
   max-width: 900px; /* matches the Featured Writing column's right edge */
   margin-bottom: 56px;
 }
 
-/* Clear separation between the Writing block and the photo carousels below. */
-#featured-writing { margin-bottom: 84px; }
+/* Darker grid lines above each featured section + around the essay rows are
+   drawn by gridlines.js onto the .gridlines overlay, exactly on existing grid
+   lines (see [data-darkline]). */
+#featured-writing { margin-bottom: calc(var(--grid) * 2); }
+
+/* Overlay that darkens individual grid lines. Sits above the faint body grid
+   but behind the page content (which is given z-index: 1). */
+.gridlines { position: absolute; top: 0; left: 0; width: 100%; z-index: 0; pointer-events: none; }
+/* full-width by default; content-width lines get left/width set inline by JS */
+.gridline-dark { position: absolute; left: 0; right: 0; height: 1px; background: rgba(0, 0, 0, 0.2); }
+main, footer { position: relative; z-index: 1; }
 
 .intro p {
   font-size: 0.95rem;
@@ -886,35 +950,33 @@ article {
 .lightbox.zoomed .lightbox-image img { transform: scale(1.5); cursor: zoom-out; }
 
 /* translucent prev/next arrows */
+/* Analog "<-" / "->" arrows, matching the carousels. */
 .lightbox-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 0;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.12);
+  background: transparent;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.05em;
   line-height: 1;
+  padding: 12px 16px;
   cursor: pointer;
   z-index: 2;
-  transition: background 0.15s, opacity 0.15s;
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+  opacity: 0.7;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.15s;
 }
-.lightbox-nav:hover { background: rgba(255,255,255,0.28); }
-.lightbox-nav.prev { left: 18px; }
-.lightbox-nav.next { right: 18px; }
+.lightbox-nav:hover { opacity: 1; }
+.lightbox-nav.prev { left: 10px; }
+.lightbox-nav.next { right: 10px; }
 
 @media (max-width: 700px) {
-  .lightbox-nav { width: 40px; height: 40px; font-size: 1.2rem; }
-  .lightbox-nav.prev { left: 8px; }
-  .lightbox-nav.next { right: 8px; }
+  .lightbox-nav { font-size: 1.3rem; }
+  .lightbox-nav.prev { left: 2px; }
+  .lightbox-nav.next { right: 2px; }
 }
 
 .lightbox-caption { text-align: center; }
@@ -1426,39 +1488,71 @@ article {
    PLACES
    ════════════════════════════════════════════════ */
 
-/* Places index: a colourful grid of place names, each over one image.
-   Hovering a place keeps it full colour while the rest dim to the same level
-   as the Featured-Collections spotlight on the home page. */
-.places-list {
+/* ── Tile grid (shared by Collections + Places) ────────────────────────
+   A colourful grid of cover + title cards. Covers keep their real aspect
+   (no crop) and are whitened by default with a hint of the card's accent
+   (--tint); hovering a card restores its full colour. */
+.tile-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 36px 28px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 40px 28px;
+  align-items: start;
 }
-.place {
-  display: block;
-  text-decoration: none;
-  transition: opacity 0.35s ease;
+/* Equal-height rows (Collections): every cover is the same height, so a
+   landscape cover simply takes ~2x the width — same scale, never cropped. */
+.tile-rows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 26px;
+  align-items: flex-start;
+  --tile-h: 300px;
 }
-.places-list:hover .place { opacity: 0.42; }
-.places-list .place:hover { opacity: 1; }
-.place-name {
-  font-size: 1.45rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  margin-bottom: 12px;
-}
-.place-img {
+.tile-rows .tile { flex: 0 0 auto; }
+.tile-rows .tile-img { height: var(--tile-h); width: auto; }
+/* title fills the cover width without widening the flex item past the cover */
+.tile-rows .tile-title,
+.tile-rows .tile-meta { width: 0; min-width: 100%; overflow-wrap: break-word; }
+@media (max-width: 640px) { .tile-rows { --tile-h: 200px; } }
+
+/* Places: titles whiten with their images, full colour on hover. */
+.dim-titles .tile-title { opacity: 0.5; transition: opacity 0.45s ease; }
+.dim-titles .tile:hover .tile-title { opacity: 1; }
+
+.tile { display: block; text-decoration: none; }
+.tile-img {
+  position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
   overflow: hidden;
   background: var(--bg-subtle);
+  /* aspect-ratio set inline per cover so shapes stay honest */
 }
-.place-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.place-img.placeholder { background: #111; }
+.tile-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tile-img.placeholder { background: #111; }
+.tile-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--tint, #888) 30%, #fff);
+  opacity: 0.66;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+.tile:hover .tile-img::after { opacity: 0; }
+.tile-title { margin: 14px 0 2px; }
+.tile-meta { font-size: 0.72rem; color: var(--light); margin-top: 2px; }
+
+/* Shared "sub-sub-header" — collection/place names read identically on the
+   home Featured Collections and the Collections/Places pages. */
+.subsubhead {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
 
 @media (max-width: 640px) {
-  .places-list { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
-  .place-name { font-size: 1.15rem; }
+  .tile-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }
+  .subsubhead { font-size: 1.12rem; }
 }
 
 .place-header { margin-bottom: 48px; }
@@ -1500,19 +1594,19 @@ article {
    ════════════════════════════════════════════════ */
 
 .fc-head {
-  font-size: 1.5rem;
+  height: calc(var(--grid) * 2);   /* 2 cells: heading block ends on a grid line */
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: -0.01em;
-  margin: 8px 0 28px;
+  letter-spacing: -0.015em;
 }
-.fc-head-essays { margin-top: 64px; }
 
 .fc-collection { margin-bottom: 40px; }
 
+/* font sizing comes from .subsubhead (shared with the tile titles) */
 .fc-name {
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
   text-decoration: none;
   display: inline-block;
   margin-bottom: 10px;
@@ -1525,6 +1619,7 @@ article {
   height: 2px;
   opacity: 0.55;
   margin: 0 0 18px;
+  transform: translateY(-0.5px); /* centre the 2px rule on the 1px grid line */
 }
 
 /* ── Home collection carousel (center-mode) ───────────────────────────
@@ -1571,8 +1666,9 @@ article {
   content: '';
   position: absolute;
   inset: 0;
-  background: #fff;
-  opacity: 0.55;
+  /* whitened wash with a hint of the collection's accent */
+  background: color-mix(in srgb, var(--tint, #fff) 30%, #fff);
+  opacity: 0.6;
   transition: opacity 0.5s;
   pointer-events: none;
 }
@@ -1590,7 +1686,6 @@ article {
   border: 0;
   background: transparent;
   color: #1b1b1d;
-  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.05em;
@@ -1630,13 +1725,18 @@ article {
 
 /* Home — Writing */
 .home-essays { display: flex; flex-direction: column; max-width: 900px; }
+/* Each essay row is 3 grid cells; its separator lines are the darkened grid
+   lines drawn by gridlines.js. The text is centred at the 1.5-cell mark so it
+   sits between grid lines, never on one. */
 .home-essay {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
+  box-sizing: border-box;
+  height: calc(var(--grid) * 3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-decoration: none;
   color: var(--black);
 }
-.home-essay:first-child { border-top: 1px solid var(--border); }
 .home-essay-title { font-size: 0.98rem; font-weight: 500; }
 .home-essay:hover .home-essay-title { text-decoration: underline; text-underline-offset: 3px; }
 .home-essay-sub { font-size: 0.85rem; color: var(--mid); margin-top: 2px; }
