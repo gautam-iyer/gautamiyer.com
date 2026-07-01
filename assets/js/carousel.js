@@ -109,7 +109,12 @@
   // accent (or back to neutral gray when no carousel is in view). It's just a
   // CSS custom property feeding a static background-image — no measurable cost.
   const docEl = document.documentElement;
+  // Grid toggled OFF for now: don't tint the background grid to the active
+  // collection color. Flip to true (and restore --grid-color in main.css) to
+  // bring the tinted grid back.
+  const GRID_TINT = false;
   function setGrid(color) {
+    if (!GRID_TINT) return;
     if (color) docEl.style.setProperty('--grid-color', 'color-mix(in srgb, ' + color + ' 16%, transparent)');
     else docEl.style.removeProperty('--grid-color');
   }

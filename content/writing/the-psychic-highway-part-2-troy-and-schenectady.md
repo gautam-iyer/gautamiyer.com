@@ -1,6 +1,7 @@
 ---
 title: "The Psychic Highway: Part 2 - Troy and Schenectady"
 date: 2026-01-30T18:52:10-05:00
+featured: true
 subtitle: "Heading West to the Lakes"
 category: "Essay"
 series: "The Psychic Highway"

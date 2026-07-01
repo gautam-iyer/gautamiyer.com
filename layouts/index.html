@@ -12,7 +12,7 @@
   {{ $hero = $hero | append (dict "avif" (printf "%s%s" $base .avif) "webp" (printf "%s%s" $base .webp) "ar" .ar) }}
 {{ end }}
 {{ if not $hero }}{{ $hero = partialCached "collitems.html" (dict "slug" "home-hero" "base" $base) "home-hero" }}{{ end }}
-{{ $essays := first 6 (where .Site.RegularPages "Section" "writing").ByDate.Reverse }}
+{{ $essays := (where (where .Site.RegularPages "Section" "writing") "Params.featured" true).ByDate.Reverse }}
 {{ $featuredProjects := where (index hugo.Data.projects "projects") "featured" true }}
 <main>
 
@@ -64,7 +64,7 @@
   {{/* Featured Writing — short section above the photos, lines aligned to grid. */}}
   {{ with $essays }}
   <section id="featured-writing" data-snap data-reveal data-darkline>
-    <div class="fc-head">Featured Writing</div>
+    <div class="fc-head">Featured Writing <a class="fc-head-link" href="/writing/">All Writing</a></div>
     <div class="home-essays">
       {{ range . }}
       <a href="{{ .RelPermalink }}" class="home-essay" data-darkline="both">
@@ -93,7 +93,7 @@
 
   {{ with $featured }}
   <section id="featured-photos" class="home-featured" data-snap data-darkline>
-  <div class="fc-head">Featured Photos</div>
+  <div class="fc-head">Featured Photos <a class="fc-head-link" href="/photos/">All Photos</a></div>
   {{ range $i, $c := . }}
     {{ $slug := $c.slug }}
     {{ $title := $c.title }}

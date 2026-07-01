@@ -1,6 +1,7 @@
 ---
 title: "The Psychic Highway: Part 1 - Intro & Albany"
 date: 2025-11-26T13:39:14-05:00
+featured: true
 subtitle: "Meandering up the Hudson"
 category: "Essay"
 series: "The Psychic Highway"

@@ -26,7 +26,10 @@
   /* Faint background grid. --grid-color defaults to neutral gray; carousel.js
      tints it to the active collection's accent on the home page. */
   --grid: 40px;
-  --grid-color: rgba(0, 0, 0, 0.034);
+  /* Grid toggled OFF for now — set back to rgba(0,0,0,0.034) (and flip
+     GRID_TINT in carousel.js) to restore the faint background grid. The darker
+     section lines (.gridline-dark) + colored rules (.fc-rule) are independent. */
+  --grid-color: transparent;
   --header-h: calc(var(--grid) * 2);
 }
 
@@ -1032,6 +1035,7 @@ article {
 .lightbox-meta {
   font-size: 0.75rem;
   color: rgba(255,255,255,0.5);
+  display: none; /* hidden for now — AI-generated per-photo captions; remove this line to restore */
 }
 
 .lightbox-close {
@@ -1643,6 +1647,20 @@ article {
   font-weight: 700;
   letter-spacing: -0.015em;
 }
+
+/* Small gray "All Writing" / "All Photos" link sitting beside a section head. */
+.fc-head-link {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--light);
+  letter-spacing: 0;
+  margin-left: 14px;
+  align-self: flex-end;
+  padding-bottom: 0.55rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.fc-head-link:hover { color: var(--dark); }
 
 .fc-collection { margin-bottom: 40px; }
 

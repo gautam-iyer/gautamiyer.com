@@ -1,6 +1,7 @@
 ---
 title: "New York on the eve of the 2025 Mayoral Primary"
 date: 2025-06-23T19:06:41-04:00
+featured: true
 subtitle: "Your options are institutional rot or literally anything else."
 category: "Essay"
 source_url: "https://gautamiyer.substack.com/p/new-york-on-the-eve-of-the-2025-mayoral"
