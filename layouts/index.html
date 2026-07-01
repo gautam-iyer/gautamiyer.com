@@ -13,6 +13,7 @@
 {{ end }}
 {{ if not $hero }}{{ $hero = partialCached "collitems.html" (dict "slug" "home-hero" "base" $base) "home-hero" }}{{ end }}
 {{ $essays := first 6 (where .Site.RegularPages "Section" "writing").ByDate.Reverse }}
+{{ $featuredProjects := where (index hugo.Data.projects "projects") "featured" true }}
 <main>
 
   {{/* HERO — one uncropped photo, full content width, framed by the grid; a
@@ -69,6 +70,21 @@
       <a href="{{ .RelPermalink }}" class="home-essay" data-darkline="both">
         <div class="home-essay-title">{{ .Title }}</div>
         {{ with .Params.subtitle }}<div class="home-essay-sub">{{ . }}</div>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* Featured Projects — same chip treatment as Featured Writing. */}}
+  {{ with $featuredProjects }}
+  <section id="featured-projects" data-snap data-reveal data-darkline>
+    <div class="fc-head">Featured Projects</div>
+    <div class="home-essays">
+      {{ range . }}
+      <a href="/projects/walking-tours/{{ .slug }}/" class="home-essay" data-darkline="both">
+        <div class="home-essay-title">{{ .title }}</div>
+        {{ with .subtitle }}<div class="home-essay-sub">{{ . }}</div>{{ end }}
       </a>
       {{ end }}
     </div>

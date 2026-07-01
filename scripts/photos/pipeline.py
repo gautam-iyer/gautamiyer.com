@@ -75,6 +75,50 @@ SHOOTS = [
         "date": "2026-01-01",
         "title": "Buffalo",
     },
+    # NYC shoots (ingest the curated "Edited" subfolders; folder cities are
+    # defaults — mixed-borough folders get fixed per-record during tagging).
+    {
+        "folder": "BK + Broad Channel Feb '26/Edited",
+        "slug": "bk-broad-channel-2026",
+        "city": "Brooklyn",
+        "date": "2026-02-01",
+        "title": "Brooklyn",
+    },
+    {
+        "folder": "Flatbush 3:23:26/Edited",
+        "slug": "flatbush-2026",
+        "city": "Brooklyn",
+        "date": "2026-03-23",
+        "title": "Brooklyn",
+    },
+    {
+        "folder": "Hells Kitchen + LES 3:31:26/Edited",
+        "slug": "hells-kitchen-les-2026",
+        "city": "New York",
+        "date": "2026-03-31",
+        "title": "New York",
+    },
+    {
+        "folder": "Queens 3:9:26/Edited",
+        "slug": "queens-2026",
+        "city": "Queens",
+        "date": "2026-03-09",
+        "title": "Queens",
+    },
+    {
+        "folder": "Rockaways 4:12:26/Edited",
+        "slug": "rockaways-2026",
+        "city": "Queens",
+        "date": "2026-04-12",
+        "title": "Queens",
+    },
+    {
+        "folder": "SoBro + Riverside 4:18:26/Edited",
+        "slug": "sobro-riverside-2026",
+        "city": "Bronx",
+        "date": "2026-04-18",
+        "title": "Bronx",
+    },
     {
         "folder": "Pittsburgh 6:16:26/Edited",
         "slug": "pittsburgh-2026-06-16",
@@ -161,12 +205,14 @@ def img_number(filename):
 
 def dims(path):
     """ORIENTED pixel dims — honors the EXIF orientation flag so a portrait shot
-    (landscape sensor + orientation 6/8) reports portrait. Falls back to sips."""
+    (landscape sensor + orientation 6/8) reports portrait. Reads size + the
+    orientation tag WITHOUT decoding pixels (fast at scale). Falls back to sips."""
     try:
-        from PIL import Image, ImageOps
+        from PIL import Image
         with Image.open(path) as im:
-            im = ImageOps.exif_transpose(im)
-            return im.size  # (w, h) after applying orientation
+            w, h = im.size  # lazy — no full decode
+            orient = (im.getexif() or {}).get(0x0112, 1)  # 0x0112 = Orientation
+            return (h, w) if orient in (5, 6, 7, 8) else (w, h)
     except Exception:
         pass
     out = subprocess.run(

@@ -1,0 +1,39 @@
+{
+  "types": ["Walking Tours", "Mapping", "Demographic Analysis", "Other"],
+  "projects": [
+    {
+      "slug": "rockefellers-razing-and-revival",
+      "title": "Rockefeller's Razing and Revival",
+      "subtitle": "Radio Row, the World Trade Center, and the remaking of Lower Manhattan.",
+      "type": "Walking Tours",
+      "date": "2026-05-01",
+      "when": "May 2026",
+      "where": "Lower Manhattan, New York",
+      "summary": "A visual companion guide to a walking tour tracing the razing of Radio Row to build the World Trade Center — and the people, agencies, and ideas that reshaped Lower Manhattan along the way.",
+      "details": "Presented as part of the Municipal Art Society of New York's Jane's Walks, May 2026. The route runs from Battery Park City north through the former Washington Market and Radio Row to the World Trade Center site and the Financial District.",
+      "contents": ["Battery Park City", "The Port of New York", "The Manufacturing Economy", "Nelson Rockefeller", "David Rockefeller", "Washington Market", "Jane Jacobs", "The World Trade Center", "The Port Authority", "Minoru Yamasaki", "Radio Row", "Oscar Nadel", "The Equitable Building", "One Chase Plaza", "References & Resources"],
+      "preview": "tours/rockefellers-razing-toc.webp",
+      "cover": "tours/rockefellers-razing-cover.webp",
+      "pdf": "tours/rockefellers-razing-guide.pdf",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "slug": "williamsburg-through-the-years",
+      "title": "Williamsburg Through the Years",
+      "subtitle": "A walk through the changing face of Williamsburg, Brooklyn.",
+      "type": "Walking Tours",
+      "date": "2026-04-01",
+      "when": "",
+      "where": "Williamsburg, Brooklyn",
+      "summary": "A walking tour through the industrial, immigrant, and post-industrial histories of Williamsburg, Brooklyn.",
+      "details": "",
+      "contents": [],
+      "preview": "",
+      "cover": "",
+      "pdf": "",
+      "featured": false,
+      "order": 2
+    }
+  ]
+}

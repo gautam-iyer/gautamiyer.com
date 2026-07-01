@@ -1,9 +1,56 @@
 {{ define "main" }}
 <main>
-  <a class="backlink" href="/">← Back to Home</a>
-  <div class="coming-soon">
-    <div class="fc-head">Projects</div>
-    <p>Coming soon.</p>
+  {{ $base := .Site.Params.photo_base | default "/img/" }}
+  {{ $palette := .Site.Params.palette }}
+  {{ $projects := index hugo.Data.projects "projects" }}
+  {{ $library := .Params.islibrary }}
+  {{ $tourtype := .Params.tourtype }}
+
+  {{/* Walking Tours = only that type; All Projects = everything (+ Type filter). */}}
+  {{ $shown := $projects }}
+  {{ if $library }}{{ $shown = where $projects "type" $tourtype }}{{ end }}
+
+  <div class="backlinks">
+    <a class="backlink" href="/">← Back to Home</a>
+    {{ if $library }}<a class="backlink" href="/projects/">← All Projects</a>{{ end }}
+  </div>
+
+  <h1 class="page-title">{{ if $library }}{{ .Title }}{{ else }}Projects{{ end }}</h1>
+  {{ with .Content }}<p class="page-desc">{{ . }}</p>{{ end }}
+
+  {{/* Type filter only on All Projects (the tours library is already one type). */}}
+  {{ if not $library }}
+  <div class="controls" data-tilecontrols="proj-grid">
+    <div class="filter-group">
+      <span class="filter-label">Sort</span>
+      <select class="filter-select" data-role="sort">
+        <option value="i">Default</option>
+        <option value="title">A–Z</option>
+      </select>
+      <select class="filter-select" data-role="filter" data-key="type">
+        <option value="">All types</option>
+        {{ range (index hugo.Data.projects "types") }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+      </select>
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="tile-grid tile-rows dim-titles" id="proj-grid" data-tilegrid>
+    {{ range $i, $p := $shown }}
+      {{ $color := index $palette (mod $i 5) }}
+      <a href="/projects/walking-tours/{{ $p.slug }}/" class="tile" style="--tint:{{ $color }}"
+         data-title="{{ $p.title }}" data-type="{{ $p.type }}">
+        {{ if $p.preview }}
+        <div class="tile-img" style="aspect-ratio:8.5/11"><img src="{{ $base }}{{ $p.preview }}" alt="{{ $p.title }}" loading="lazy"></div>
+        {{ else }}
+        <div class="tile-img placeholder" style="aspect-ratio:8.5/11"></div>
+        {{ end }}
+        <div class="tile-title subsubhead" style="color:{{ $color }}">{{ $p.title }}</div>
+        <div class="tile-meta">{{ $p.type }}{{ with $p.where }} · {{ . }}{{ end }}</div>
+      </a>
+    {{ end }}
   </div>
 </main>
 {{ end }}
+
+{{ define "scripts" }}{{ partial "asset-js.html" "js/tiles.js" }}{{ end }}

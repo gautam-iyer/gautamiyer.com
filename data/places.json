@@ -119,6 +119,16 @@
       "name": "New York, NY",
       "city": "New York",
       "state": "NY"
+    },
+    {
+      "name": "Queens, NY",
+      "city": "Queens",
+      "state": "NY"
+    },
+    {
+      "name": "Bronx, NY",
+      "city": "Bronx",
+      "state": "NY"
     }
   ]
 }

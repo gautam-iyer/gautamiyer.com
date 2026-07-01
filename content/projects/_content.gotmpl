@@ -1,0 +1,11 @@
+{{/* Generate one detail page per project from data/projects.json, nested under
+     the tour's section. Walking Tours live at /projects/walking-tours/<slug>/.
+     Auto-syncs with the registry. */}}
+{{ range (index hugo.Data.projects "projects") }}
+  {{ $section := "walking-tours" }}
+  {{ $.AddPage (dict
+      "kind" "page"
+      "path" (printf "%s/%s" $section .slug)
+      "title" .title
+      "params" (dict "project" .slug)) }}
+{{ end }}

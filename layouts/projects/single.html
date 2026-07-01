@@ -1,0 +1,55 @@
+{{ define "main" }}
+<main>
+  {{ $base := .Site.Params.photo_base | default "/img/" }}
+  {{ $slug := .Params.project }}
+  {{ $p := dict }}
+  {{ range (index hugo.Data.projects "projects") }}{{ if eq .slug $slug }}{{ $p = . }}{{ end }}{{ end }}
+  {{ $palette := .Site.Params.palette }}
+  {{ $color := index $palette 0 }}
+
+  <a class="backlink" href="/projects/walking-tours/">← Back to Walking Tours</a>
+
+  <article class="tour">
+    <div class="tour-header">
+      <div class="tour-kicker subsubhead" style="color:{{ $color }}">{{ $p.type }}</div>
+      <h1 class="tour-title">{{ $p.title }}</h1>
+      {{ with $p.subtitle }}<p class="tour-subtitle">{{ . }}</p>{{ end }}
+    </div>
+
+    {{ with $p.cover }}
+    <div class="tour-cover"><img src="{{ $base }}{{ . }}" alt="{{ $p.title }} — cover"></div>
+    {{ end }}
+
+    <div class="tour-info">
+      {{ with $p.when }}<div class="tour-fact"><span class="tour-fact-label">When</span><span class="tour-fact-val">{{ . }}</span></div>{{ end }}
+      {{ with $p.where }}<div class="tour-fact"><span class="tour-fact-label">Where</span><span class="tour-fact-val">{{ . }}</span></div>{{ end }}
+      {{ with $p.summary }}<div class="tour-fact"><span class="tour-fact-label">What</span><span class="tour-fact-val">{{ . }}</span></div>{{ end }}
+      {{ with $p.details }}<div class="tour-fact"><span class="tour-fact-label">Details</span><span class="tour-fact-val">{{ . }}</span></div>{{ end }}
+    </div>
+
+    {{ with $p.contents }}
+    <div class="tour-contents">
+      <div class="tour-section-label" style="color:{{ $color }}">Contents</div>
+      <ol class="tour-toc">{{ range . }}<li>{{ . }}</li>{{ end }}</ol>
+    </div>
+    {{ end }}
+
+    {{ if $p.pdf }}
+    <div class="tour-guide">
+      <div class="tour-guide-bar">
+        <div class="tour-section-label" style="color:{{ $color }}">The Guide</div>
+        <a class="tour-open" href="{{ $base }}{{ $p.pdf }}" target="_blank" rel="noopener">Open in new tab ↗</a>
+      </div>
+      <object class="tour-pdf" data="{{ $base }}{{ $p.pdf }}" type="application/pdf">
+        <div class="tour-pdf-fallback">
+          <p>Your browser can't display the PDF inline.</p>
+          <a class="tour-open" href="{{ $base }}{{ $p.pdf }}" target="_blank" rel="noopener">Open the guide in a new tab ↗</a>
+        </div>
+      </object>
+    </div>
+    {{ else }}
+    <div class="tour-guide"><div class="tour-guide-coming">Guide coming soon.</div></div>
+    {{ end }}
+  </article>
+</main>
+{{ end }}
