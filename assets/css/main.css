@@ -837,6 +837,47 @@ article {
 .filter-tag:hover { border-color: var(--black); background: var(--border); }
 .filter-tag .x { font-size: 0.65rem; color: var(--light); line-height: 1; }
 
+/* Shuffle button (matches the filter selects) */
+.shuffle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font);
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--dark);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.shuffle-btn svg { display: block; }
+.shuffle-btn:hover { border-color: var(--black); color: var(--black); }
+.shuffle-btn:active svg { transform: rotate(180deg); transition: transform 0.3s; }
+
+/* Simple pagination */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 40px 0 8px;
+}
+.pager:empty { display: none; }
+.pager-btn {
+  font-family: var(--font);
+  font-size: 0.8rem;
+  padding: 7px 16px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--dark);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.pager-btn:hover:not(:disabled) { border-color: var(--black); color: var(--black); }
+.pager-btn:disabled { opacity: 0.35; cursor: default; }
+.pager-info { font-size: 0.72rem; color: var(--light); font-variant-numeric: tabular-nums; }
+
 .photo-count {
   font-size: 0.72rem;
   color: var(--light);

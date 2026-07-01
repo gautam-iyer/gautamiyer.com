@@ -44,6 +44,12 @@
         </select>
         {{ end }}
       {{ end }}
+      <button class="shuffle-btn" type="button" data-shuffle aria-label="Shuffle photos">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/>
+        </svg>
+        Shuffle
+      </button>
     </div>
   </div>
 
@@ -82,6 +88,8 @@
       </div>
     {{ end }}
   </div>
+
+  <nav class="pager" data-pager aria-label="Gallery pages"></nav>
 </main>
 {{ end }}
 

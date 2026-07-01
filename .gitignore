@@ -9,6 +9,10 @@
 # Wrangler local cache/state
 /.wrangler/
 
+# Local Claude Code config + scratch working files (not part of the site)
+/.claude/
+/scratchpad/
+
 # macOS
 .DS_Store
 

@@ -61,8 +61,11 @@
   }
 
   function open(el) {
-    // Scope navigation to the opened slide's group (its carousel/gallery).
-    nav = groups.get(groupOf(el) || document) || triggers;
+    // Scope navigation to the opened slide's group (its carousel/gallery), and
+    // order it by current DOM position so prev/next follow the on-screen order
+    // (e.g. after the /photos gallery is shuffled).
+    nav = (groups.get(groupOf(el) || document) || triggers).slice().sort((a, b) =>
+      a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
     idx = nav.indexOf(el);
     render();
     lb.classList.add('open');
