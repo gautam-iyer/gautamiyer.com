@@ -105,6 +105,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .chip.on{background:#18181b;color:#fff;border-color:#18181b}
  .chip.coll.on{background:#7c3aed;border-color:#7c3aed}
  .chip.role.on{background:#d97706;border-color:#d97706;color:#fff}
+ .chip.med.on{background:#0891b2;border-color:#0891b2;color:#fff}
  .geo{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
  .geo label{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:#a1a1aa;margin-bottom:3px}
  .geo input{width:100%}
@@ -208,7 +209,7 @@ function datalists(){
 }
 
 /* ================= TAG MODE ================= */
-const tagFilters={shoot:'',city:'',state:'',coll:'',review:'',q:''};
+const tagFilters={shoot:'',city:'',state:'',coll:'',medium:'',review:'',q:''};
 function tagVisible(){
   const f=tagFilters;
   return Object.keys(PHOTOS).filter(k=>{
@@ -217,6 +218,7 @@ function tagVisible(){
     if(f.city&&p.city!==f.city)return false;
     if(f.state&&p.state!==f.state)return false;
     if(f.coll&&!(p.collections||[]).includes(f.coll))return false;
+    if(f.medium&&(p.medium||'')!==f.medium)return false;
     if(f.review==='un'&&p.reviewed)return false;
     if(f.review==='rev'&&!p.reviewed)return false;
     if(f.q){const q=f.q.toLowerCase();
@@ -234,13 +236,14 @@ function tagFilterBar(){
   <select id="f-city"><option value="">All cities</option>${opt(cities.map(c=>({v:c,t:c})),tagFilters.city)}</select>
   <select id="f-state"><option value="">State</option>${opt(states.map(s=>({v:s,t:s})),tagFilters.state)}</select>
   <select id="f-coll"><option value="">Any collection</option>${opt(COLLS.slice().sort((a,b)=>a.title.localeCompare(b.title)).map(c=>({v:c.slug,t:c.title})),tagFilters.coll)}</select>
+  <select id="f-medium"><option value="">Any medium</option><option value="Digital"${tagFilters.medium==='Digital'?' selected':''}>Digital</option><option value="Film"${tagFilters.medium==='Film'?' selected':''}>Film</option></select>
   <select id="f-review"><option value="">All</option><option value="un"${tagFilters.review==='un'?' selected':''}>Unreviewed</option><option value="rev"${tagFilters.review==='rev'?' selected':''}>Reviewed</option></select>
   <input class="search" id="f-q" placeholder="search…" value="${esc(tagFilters.q)}">`;
 }
 function wireTagFilters(){
   const bind=(id,key,ev)=>{const el=$(id);if(!el)return;el.addEventListener(ev,()=>{tagFilters[key]=el.value;page=0;render();});};
   bind('#f-shoot','shoot','change');bind('#f-city','city','change');bind('#f-state','state','change');
-  bind('#f-coll','coll','change');bind('#f-review','review','change');
+  bind('#f-coll','coll','change');bind('#f-medium','medium','change');bind('#f-review','review','change');
   const q=$('#f-q');if(q){q.addEventListener('input',()=>{tagFilters.q=q.value;page=0;renderList();});q.focus();q.setSelectionRange(q.value.length,q.value.length);}
 }
 function geoRow(key){
@@ -272,6 +275,13 @@ function rolesRow(key){
     `<span class="chip role ${p.place_cover?'on':''}" onclick="toggleCover('${jesc(key)}')">⚑ Place cover</span>`+
     `</div></div>`;
 }
+// Medium: single-select Film vs Digital (the `medium` field).
+function mediumRow(key){
+  const cur=PHOTOS[key].medium||'';
+  const chip=v=>`<span class="chip med ${cur===v?'on':''}" onclick="setMedium('${jesc(key)}','${v}')">${v}</span>`;
+  return `<div class="dim" data-dim="medium"><div class="label">Medium</div><div class="chips">${chip('Digital')}${chip('Film')}</div></div>`;
+}
+window.setMedium=(key,v)=>{PHOTOS[key].medium=v;save(key,{medium:v});repaint(key,'medium',mediumRow(key));};
 window.toggleHero=(key)=>{const v=!PHOTOS[key].hero;PHOTOS[key].hero=v;save(key,{hero:v});repaint(key,'roles',rolesRow(key));};
 window.toggleCover=(key)=>{const v=!PHOTOS[key].place_cover;
   if(v){const city=PHOTOS[key].city;Object.keys(PHOTOS).forEach(k=>{
@@ -320,7 +330,7 @@ function renderList(){
         <div class="imgmeta"><b>${esc(p.file)}</b> · ${esc(p.shoot)} · #${p.img_no}</div>
         ${p.tag_notes?`<div class="notes">“${esc(p.tag_notes)}”</div>`:''}
         <button class="del small" onclick="deletePhoto('${jesc(key)}')">🗑 Delete photo</button></div>
-      <div>${geoRow(key)}${rolesRow(key)}${dims}${collRow(key)}</div></div>`;
+      <div>${geoRow(key)}${rolesRow(key)}${mediumRow(key)}${dims}${collRow(key)}</div></div>`;
   }).join('')+pager(page,pages,all.length)+datalists();
   wirePager();
 }

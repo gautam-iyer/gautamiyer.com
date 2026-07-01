@@ -98,18 +98,21 @@
     });
   });
 
-  if (shuffleBtn) {
-    shuffleBtn.addEventListener('click', () => {
-      for (let i = items.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [items[i], items[j]] = [items[j], items[i]];
-      }
-      items.forEach((it) => gallery.appendChild(it)); // reflect new order in the DOM
-      page = 1;
-      apply();
-    });
+  function shuffle() {
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    items.forEach((it) => gallery.appendChild(it)); // reflect new order in the DOM
   }
 
+  if (shuffleBtn) {
+    shuffleBtn.addEventListener('click', () => { shuffle(); page = 1; apply(); });
+  }
+
+  // Default/starting order is shuffled on first load; the user can re-shuffle or
+  // filter/sort from there.
+  shuffle();
   apply();
   // The expanded-photo lightbox (prev/next/swipe) is handled by lightbox.js —
   // every .gallery-item carries [data-lb]; it navigates in DOM order (so it

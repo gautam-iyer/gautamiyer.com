@@ -55,6 +55,27 @@ SHOOTS = [
         "title": "Buffalo",
     },
     {
+        "folder": "Buffalo '26/Film Drop 1",
+        "slug": "buffalo-2026-film1",
+        "city": "Buffalo",
+        "date": "2026-01-01",
+        "title": "Buffalo",
+    },
+    {
+        "folder": "Buffalo '26/Film Drop 2",
+        "slug": "buffalo-2026-film2",
+        "city": "Buffalo",
+        "date": "2026-01-01",
+        "title": "Buffalo",
+    },
+    {
+        "folder": "Buffalo '26/Film Drop 3",
+        "slug": "buffalo-2026-film3",
+        "city": "Buffalo",
+        "date": "2026-01-01",
+        "title": "Buffalo",
+    },
+    {
         "folder": "Pittsburgh 6:16:26/Edited",
         "slug": "pittsburgh-2026-06-16",
         "city": "Pittsburgh",
@@ -139,6 +160,15 @@ def img_number(filename):
 # ---------- sips helpers ----------
 
 def dims(path):
+    """ORIENTED pixel dims — honors the EXIF orientation flag so a portrait shot
+    (landscape sensor + orientation 6/8) reports portrait. Falls back to sips."""
+    try:
+        from PIL import Image, ImageOps
+        with Image.open(path) as im:
+            im = ImageOps.exif_transpose(im)
+            return im.size  # (w, h) after applying orientation
+    except Exception:
+        pass
     out = subprocess.run(
         ["sips", "-g", "pixelWidth", "-g", "pixelHeight", str(path)],
         capture_output=True, text=True,
@@ -149,12 +179,24 @@ def dims(path):
 
 
 def resize_to(src, dst, longest_edge):
-    """High-quality downscale to longest_edge using sips. Never upscales (-Z caps the max dim)."""
+    """High-quality downscale to longest_edge, HONORING EXIF orientation — bakes
+    the rotation into the pixels (and strips the flag) so straight-from-camera
+    verticals aren't stored sideways. Never upscales. Falls back to sips."""
     dst.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run(
-        ["sips", "-s", "format", "png", "-Z", str(longest_edge), str(src), "--out", str(dst)],
-        capture_output=True, text=True, check=True,
-    )
+    try:
+        from PIL import Image, ImageOps
+        with Image.open(src) as im:
+            im = ImageOps.exif_transpose(im)            # apply orientation to pixels
+            if im.mode not in ("RGB", "L"):
+                im = im.convert("RGB")
+            im.thumbnail((longest_edge, longest_edge), Image.LANCZOS)  # downscale only
+            im.save(dst, "PNG")
+        return
+    except Exception:
+        subprocess.run(
+            ["sips", "-s", "format", "png", "-Z", str(longest_edge), str(src), "--out", str(dst)],
+            capture_output=True, text=True, check=True,
+        )
 
 
 # ---------- commands ----------

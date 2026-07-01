@@ -41,7 +41,8 @@
       "order": 1,
       "type": "curated",
       "place": "Pittsburgh",
-      "color": "#a8842c"
+      "color": "#a8842c",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
     },
     {
       "slug": "churches-of-pittsburgh",
@@ -153,7 +154,8 @@
       "cover": null,
       "order": 5,
       "type": "curated",
-      "place": "San Antonio"
+      "place": "San Antonio",
+      "caption": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis."
     },
     {
       "slug": "sprawling-austin",
@@ -163,7 +165,8 @@
       "cover": null,
       "order": 2,
       "type": "curated",
-      "place": "Austin"
+      "place": "Austin",
+      "caption": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia."
     },
     {
       "slug": "churches-of-newark",
@@ -213,7 +216,8 @@
       "cover": null,
       "order": 4,
       "type": "curated",
-      "place": "Durham"
+      "place": "Durham",
+      "caption": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint."
     },
     {
       "slug": "beaux-arts-durham",
@@ -273,7 +277,8 @@
       "cover": null,
       "order": 3,
       "type": "curated",
-      "place": "New York"
+      "place": "New York",
+      "caption": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est."
     },
     {
       "slug": "art-deco-fidi",
