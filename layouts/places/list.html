@@ -3,12 +3,12 @@
   {{ $base := .Site.Params.photo_base | default "/img/" }}
   {{ $palette := .Site.Params.palette }}
 
-  {{/* First photo per city → its cover thumb + true aspect ratio. Any place
-       whose city has photos gets a real cover; the rest stay placeholders. */}}
+  {{/* Cover thumb per city: the photo flagged place_cover in the tagger if any,
+       else the first photo. (A place_cover photo overrides an already-set first.) */}}
   {{ $covers := dict }}
   {{ range $k, $p := hugo.Data.photos }}
     {{ if and $p.thumb $p.city $p.width (gt (or $p.height 0) 0) }}
-      {{ if not (index $covers $p.city) }}
+      {{ if or (not (index $covers $p.city)) $p.place_cover }}
         {{ $covers = merge $covers (dict $p.city (dict "thumb" (printf "%s%s" $base $p.thumb) "ar" (div (float $p.width) $p.height))) }}
       {{ end }}
     {{ end }}
@@ -33,14 +33,16 @@
     {{ range $i, $pl := (index hugo.Data.places "places") }}
       {{ $color := index $palette (mod $i 5) }}
       {{ $cover := index $covers $pl.city }}
-      {{ if eq $pl.name "Pittsburgh, PA" }}
-      <a href="/places/pittsburgh/" class="tile" style="--tint:{{ $color }}" data-city="{{ $pl.city }}" data-state="{{ $pl.state }}">
-        <div class="tile-img{{ if not $cover }} placeholder{{ end }}" style="aspect-ratio:{{ with $cover }}{{ .ar }}{{ else }}3/2{{ end }}">{{ with $cover }}<img src="{{ .thumb }}" alt="{{ $pl.name }}" loading="lazy">{{ end }}</div>
+      {{/* Places with photos become clickable album pages; the rest (no photos
+           yet) stay as non-clickable colored placeholders. */}}
+      {{ if $cover }}
+      <a href="/places/{{ $pl.city | urlize }}/" class="tile" style="--tint:{{ $color }}" data-city="{{ $pl.city }}" data-state="{{ $pl.state }}">
+        <div class="tile-img" style="aspect-ratio:{{ $cover.ar }}"><img src="{{ $cover.thumb }}" alt="{{ $pl.name }}" loading="lazy"></div>
         <div class="tile-title subsubhead" style="color:{{ $color }}">{{ $pl.name }}</div>
       </a>
       {{ else }}
       <div class="tile" style="--tint:{{ $color }}" data-city="{{ $pl.city }}" data-state="{{ $pl.state }}">
-        <div class="tile-img{{ if not $cover }} placeholder{{ end }}" style="aspect-ratio:{{ with $cover }}{{ .ar }}{{ else }}3/2{{ end }}">{{ with $cover }}<img src="{{ .thumb }}" alt="{{ $pl.name }}" loading="lazy">{{ end }}</div>
+        <div class="tile-img placeholder" style="aspect-ratio:3/2"></div>
         <div class="tile-title subsubhead" style="color:{{ $color }}">{{ $pl.name }}</div>
       </div>
       {{ end }}

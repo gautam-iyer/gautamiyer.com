@@ -18,6 +18,16 @@
     const N = originals.length;
     if (N === 0) return null;
 
+    // Shuffle so each visit shows the collection's photos in a fresh order
+    // (Fisher–Yates), then reflect that order in the DOM before cloning.
+    if (N > 1) {
+      for (let x = N - 1; x > 0; x--) {
+        const y = Math.floor(Math.random() * (x + 1));
+        [originals[x], originals[y]] = [originals[y], originals[x]];
+      }
+      originals.forEach((s) => track.appendChild(s));
+    }
+
     originals.forEach((s, i) => (s.dataset.idx = i));
 
     if (N > 1) {

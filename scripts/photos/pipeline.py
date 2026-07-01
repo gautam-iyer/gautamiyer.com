@@ -41,6 +41,20 @@ AVIF_ARGS = ["--min", "0", "--max", "28", "--speed", "6", "--jobs", "2"]
 # Pilot shoots. Add entries here as more shoots get edited.
 SHOOTS = [
     {
+        "folder": "Buffalo '26/Drop 1",
+        "slug": "buffalo-2026-drop1",
+        "city": "Buffalo",
+        "date": "2026-01-01",
+        "title": "Buffalo",
+    },
+    {
+        "folder": "Buffalo '26/Drop 2",
+        "slug": "buffalo-2026-drop2",
+        "city": "Buffalo",
+        "date": "2026-01-01",
+        "title": "Buffalo",
+    },
+    {
         "folder": "Pittsburgh 6:16:26/Edited",
         "slug": "pittsburgh-2026-06-16",
         "city": "Pittsburgh",

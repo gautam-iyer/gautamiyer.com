@@ -1654,6 +1654,15 @@ article {
   transition: opacity 0.15s;
 }
 .fc-name:hover { opacity: 0.65; }
+/* small, gray, non-bold place label next to a collection name */
+.fc-place {
+  margin-left: 10px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--light);
+}
+.fc-place a { color: inherit; text-decoration: none; }
+.fc-place a:hover { text-decoration: underline; text-underline-offset: 2px; color: var(--mid); }
 
 .fc-rule {
   border: 0;

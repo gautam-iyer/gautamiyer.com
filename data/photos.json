@@ -2436,8 +2436,9 @@
     "display_avif": "durham-2026-04-24/img_3965.display.avif",
     "display_webp": "durham-2026-04-24/img_3965.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NC"
+    "reviewed": true,
+    "state": "NC",
+    "place_cover": true
   },
   "Durham 4:24:26/Edited/IMG_3966.jpg": {
     "key": "Durham 4:24:26/Edited/IMG_3966.jpg",
@@ -4822,7 +4823,8 @@
     "display_webp": "fidi-2026-04-20/img_3630.display.webp",
     "tagged": true,
     "reviewed": true,
-    "state": "NY"
+    "state": "NY",
+    "hero": true
   },
   "FiDi 4:20:26/Edited/IMG_3633.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3633.jpg",
@@ -5057,7 +5059,8 @@
     "display_webp": "fidi-2026-04-20/img_3645.display.webp",
     "tagged": true,
     "reviewed": true,
-    "state": "NY"
+    "state": "NY",
+    "hero": true
   },
   "FiDi 4:20:26/Edited/IMG_3648.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3648.jpg",
@@ -5242,8 +5245,9 @@
     "display_avif": "fidi-2026-04-20/img_3669.display.avif",
     "display_webp": "fidi-2026-04-20/img_3669.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NY"
+    "reviewed": true,
+    "state": "NY",
+    "hero": true
   },
   "FiDi 4:20:26/Edited/IMG_3670.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3670.jpg",
@@ -5928,8 +5932,10 @@
     "display_avif": "fidi-2026-04-20/img_3721.display.avif",
     "display_webp": "fidi-2026-04-20/img_3721.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NY"
+    "reviewed": true,
+    "state": "NY",
+    "hero": true,
+    "place_cover": true
   },
   "FiDi 4:20:26/Edited/IMG_3722.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3722.jpg",
@@ -6543,7 +6549,8 @@
     "display_webp": "fidi-2026-04-20/img_3754.display.webp",
     "tagged": true,
     "reviewed": true,
-    "state": "NY"
+    "state": "NY",
+    "hero": true
   },
   "FiDi 4:20:26/Edited/IMG_3757.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3757.jpg",
@@ -6926,8 +6933,9 @@
     "display_avif": "fidi-2026-04-20/img_3784.display.avif",
     "display_webp": "fidi-2026-04-20/img_3784.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NY"
+    "reviewed": true,
+    "state": "NY",
+    "hero": true
   },
   "FiDi 4:20:26/Edited/IMG_3786.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3786.jpg",
@@ -7234,7 +7242,8 @@
     "display_webp": "newark-2026-05-14/img_4156.display.webp",
     "tagged": true,
     "reviewed": true,
-    "state": "NY"
+    "state": "NY",
+    "hero": true
   },
   "Newark 5:14:26/Final JPEGs/IMG_4158.jpg": {
     "key": "Newark 5:14:26/Final JPEGs/IMG_4158.jpg",
@@ -7302,9 +7311,7 @@
       "Color"
     ],
     "tag_notes": "Weathered brick loft facade of the Canal Plastics Center with a vintage red-and-white PLASTICS sign, a vertical neon PARK sign, graffiti tags, and window air-conditioners in raking late light.",
-    "collections": [
-      "industrial-newark"
-    ],
+    "collections": [],
     "thumb": "newark-2026-05-14/img_4164.thumb.webp",
     "display_avif": "newark-2026-05-14/img_4164.display.avif",
     "display_webp": "newark-2026-05-14/img_4164.display.webp",
@@ -7341,9 +7348,7 @@
       "Color"
     ],
     "tag_notes": "Wider view of the graffiti-covered Canal Plastics Center brick loft with PLASTICS signage and vertical PARK sign, flanked by a white cast-iron building at left and a fire-escape facade at right.",
-    "collections": [
-      "industrial-newark"
-    ],
+    "collections": [],
     "thumb": "newark-2026-05-14/img_4166.thumb.webp",
     "display_avif": "newark-2026-05-14/img_4166.display.avif",
     "display_webp": "newark-2026-05-14/img_4166.display.webp",
@@ -7378,9 +7383,7 @@
       "Color"
     ],
     "tag_notes": "Upward view of an ornate white-painted cast-iron loft facade with a bracketed cornice, dentils, and arched windows, set against deep blue sky beside a brick gabled warehouse with graffiti.",
-    "collections": [
-      "industrial-newark"
-    ],
+    "collections": [],
     "thumb": "newark-2026-05-14/img_4168.thumb.webp",
     "display_avif": "newark-2026-05-14/img_4168.display.avif",
     "display_webp": "newark-2026-05-14/img_4168.display.webp",
@@ -7417,9 +7420,7 @@
       "Color"
     ],
     "tag_notes": "Street-level corner view of the Canal Plastics Center brick loft with PLASTICS sign, exterior fire escape, and graffitied roll-down gate, with golden side light raking across the block.",
-    "collections": [
-      "industrial-newark"
-    ],
+    "collections": [],
     "thumb": "newark-2026-05-14/img_4171.thumb.webp",
     "display_avif": "newark-2026-05-14/img_4171.display.avif",
     "display_webp": "newark-2026-05-14/img_4171.display.webp",
@@ -7456,9 +7457,7 @@
       "Color"
     ],
     "tag_notes": "Frontal view of the Canal Plastics Center brick loft with PLASTICS sign, awning, graffiti, and crosswalk, flanked by a cast-iron fire-escape facade with an empty blue sky above.",
-    "collections": [
-      "industrial-newark"
-    ],
+    "collections": [],
     "thumb": "newark-2026-05-14/img_4174.thumb.webp",
     "display_avif": "newark-2026-05-14/img_4174.display.avif",
     "display_webp": "newark-2026-05-14/img_4174.display.webp",
@@ -7495,15 +7494,14 @@
       "Color"
     ],
     "tag_notes": "Vertical street view of the Canal Plastics Center brick loft with PLASTICS sign and graffitied gate above an empty crosswalk, with a sunlit cast-iron building and fire escape at right.",
-    "collections": [
-      "industrial-newark"
-    ],
+    "collections": [],
     "thumb": "newark-2026-05-14/img_4176.thumb.webp",
     "display_avif": "newark-2026-05-14/img_4176.display.avif",
     "display_webp": "newark-2026-05-14/img_4176.display.webp",
     "tagged": true,
     "reviewed": true,
-    "state": "NY"
+    "state": "NY",
+    "hero": true
   },
   "Newark 5:14:26/Final JPEGs/IMG_4182.jpg": {
     "key": "Newark 5:14:26/Final JPEGs/IMG_4182.jpg",
@@ -7612,7 +7610,8 @@
     "display_webp": "newark-2026-05-14/img_4184.display.webp",
     "tagged": true,
     "reviewed": true,
-    "state": "NY"
+    "state": "NY",
+    "hero": true
   },
   "Newark 5:14:26/Final JPEGs/IMG_4190.jpg": {
     "key": "Newark 5:14:26/Final JPEGs/IMG_4190.jpg",
@@ -22467,8 +22466,10 @@
     "display_avif": "newark-2026-05-14/img_5048.display.avif",
     "display_webp": "newark-2026-05-14/img_5048.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NJ"
+    "reviewed": true,
+    "state": "NJ",
+    "hero": true,
+    "place_cover": true
   },
   "Newark 5:14:26/Final JPEGs/IMG_5048-2.jpg": {
     "key": "Newark 5:14:26/Final JPEGs/IMG_5048-2.jpg",
@@ -23008,8 +23009,9 @@
     "display_avif": "newark-2026-05-14/img_5074.display.avif",
     "display_webp": "newark-2026-05-14/img_5074.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NJ"
+    "reviewed": true,
+    "state": "NJ",
+    "hero": true
   },
   "Newark 5:14:26/Final JPEGs/IMG_5077.jpg": {
     "key": "Newark 5:14:26/Final JPEGs/IMG_5077.jpg",
@@ -23194,8 +23196,9 @@
     "display_avif": "newark-2026-05-14/img_5085.display.avif",
     "display_webp": "newark-2026-05-14/img_5085.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NJ"
+    "reviewed": true,
+    "state": "NJ",
+    "hero": true
   },
   "Newark 5:14:26/Final JPEGs/IMG_5087.jpg": {
     "key": "Newark 5:14:26/Final JPEGs/IMG_5087.jpg",
@@ -24665,7 +24668,8 @@
     "display_webp": "pittsburgh-2026-06-16/img_6126.display.webp",
     "tagged": true,
     "reviewed": true,
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6129.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6129.jpg",
@@ -24739,8 +24743,9 @@
     "display_avif": "pittsburgh-2026-06-16/img_6131.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6131.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "PA"
+    "reviewed": true,
+    "state": "PA",
+    "hero": false
   },
   "Pittsburgh 6:16:26/Edited/IMG_6133.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6133.jpg",
@@ -25063,8 +25068,9 @@
     "display_avif": "pittsburgh-2026-06-16/img_6152.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6152.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "PA"
+    "reviewed": true,
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6153.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6153.jpg",
@@ -25615,8 +25621,10 @@
     "display_avif": "pittsburgh-2026-06-16/img_6186.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6186.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "PA"
+    "reviewed": true,
+    "state": "PA",
+    "hero": true,
+    "place_cover": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6186-2.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6186-2.jpg",
@@ -26477,8 +26485,9 @@
     "display_avif": "pittsburgh-2026-06-16/img_6245.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6245.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "PA"
+    "reviewed": true,
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6247.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6247.jpg",
@@ -26721,8 +26730,9 @@
     "display_avif": "pittsburgh-2026-06-16/img_6268.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6268.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "PA"
+    "reviewed": true,
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6271.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6271.jpg",
@@ -26831,8 +26841,9 @@
     "display_avif": "pittsburgh-2026-06-16/img_6277.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6277.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "PA"
+    "reviewed": true,
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6279.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6279.jpg",
@@ -27652,8 +27663,9 @@
     "display_avif": "pittsburgh-2026-06-16/img_6325.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6325.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "PA"
+    "reviewed": true,
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6327.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6327.jpg",
@@ -28397,7 +28409,8 @@
     "display_webp": "pittsburgh-2026-06-16/img_6357.display.webp",
     "tagged": true,
     "reviewed": true,
-    "state": "PA"
+    "state": "PA",
+    "hero": false
   },
   "Pittsburgh 6:16:26/Edited/IMG_6358.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6358.jpg",
@@ -28436,7 +28449,8 @@
     "display_webp": "pittsburgh-2026-06-16/img_6358.display.webp",
     "tagged": true,
     "reviewed": true,
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6359.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6359.jpg",
@@ -29213,7 +29227,8 @@
     "display_webp": "pittsburgh-2026-06-16/img_6400.display.webp",
     "tagged": true,
     "reviewed": true,
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6401.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6401.jpg",
@@ -30399,7 +30414,8 @@
     "collections": [
       "cathedral-of-learning-pittsburgh"
     ],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6474.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6474.jpg",
@@ -31179,12 +31195,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6515.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6515.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6518.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6518.jpg",
@@ -31874,12 +31891,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6550.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6550.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6551.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6551.jpg",
@@ -32471,14 +32489,15 @@
     "display_avif": "pittsburgh-2026-06-16/img_6573.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6573.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
       "churches-of-pittsburgh"
     ],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6576.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6576.jpg",
@@ -32998,14 +33017,15 @@
     "display_avif": "pittsburgh-2026-06-16/img_6600.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6600.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
       "modern-apartments-of-pittsburgh"
     ],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6601.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6601.jpg",
@@ -33497,7 +33517,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6628.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6628.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -33505,7 +33525,8 @@
       "cathedral-of-learning-pittsburgh",
       "churches-of-pittsburgh"
     ],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6630.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6630.jpg",
@@ -33992,7 +34013,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6651.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6651.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -34000,7 +34021,8 @@
       "cathedral-of-learning-pittsburgh",
       "churches-of-pittsburgh"
     ],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6652.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6652.jpg",
@@ -35229,14 +35251,15 @@
     "display_avif": "pittsburgh-2026-06-16/img_6722.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6722.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
       "modern-apartments-of-pittsburgh"
     ],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6725.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6725.jpg",
@@ -36110,7 +36133,8 @@
     "collections": [
       "churches-of-pittsburgh"
     ],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6770.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6770.jpg",
@@ -36553,7 +36577,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_6790.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6790.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -36561,7 +36585,8 @@
       "churches-of-pittsburgh",
       "modern-apartments-of-pittsburgh"
     ],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6791.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6791.jpg",
@@ -37121,14 +37146,15 @@
     "display_avif": "pittsburgh-2026-06-16/img_6816.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6816.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
       "industrial-pittsburgh"
     ],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6818.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6818.jpg",
@@ -37156,14 +37182,15 @@
     "display_avif": "pittsburgh-2026-06-16/img_6818.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6818.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
       "industrial-pittsburgh"
     ],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6819.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6819.jpg",
@@ -37226,12 +37253,13 @@
     "display_avif": "pittsburgh-2026-06-16/img_6820.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6820.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [],
-    "state": "PA"
+    "state": "PA",
+    "hero": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6821.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6821.jpg",
@@ -44150,8 +44178,9 @@
     "display_avif": "south-brooklyn-2026-04-06/img_2391.display.avif",
     "display_webp": "south-brooklyn-2026-04-06/img_2391.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NY"
+    "reviewed": true,
+    "state": "NY",
+    "place_cover": true
   },
   "South BK 4:6:26/Edited/JPEGs/IMG_2392.jpg": {
     "key": "South BK 4:6:26/Edited/JPEGs/IMG_2392.jpg",
@@ -54609,8 +54638,9 @@
     "display_avif": "san-antonio-2026-06-14/img_5970.display.avif",
     "display_webp": "san-antonio-2026-06-14/img_5970.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "TX"
+    "reviewed": true,
+    "state": "TX",
+    "place_cover": true
   },
   "Texas 6:14:26/Dump 1/Edited/IMG_5971.jpg": {
     "key": "Texas 6:14:26/Dump 1/Edited/IMG_5971.jpg",
@@ -55059,8 +55089,9 @@
     "display_avif": "san-antonio-2026-06-14/img_5988.display.avif",
     "display_webp": "san-antonio-2026-06-14/img_5988.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "TX"
+    "reviewed": true,
+    "state": "TX",
+    "place_cover": true
   },
   "Texas 6:14:26/Dump 1/Edited/IMG_5990.jpg": {
     "key": "Texas 6:14:26/Dump 1/Edited/IMG_5990.jpg",

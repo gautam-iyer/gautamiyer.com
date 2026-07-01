@@ -1,8 +1,20 @@
 {{ define "main" }}
 {{ $base := .Site.Params.photo_base | default "/img/" }}
 {{ $palette := .Site.Params.palette }}
+{{/* city → "City, ST" for the small place label next to each collection name */}}
+{{ $placeNames := dict }}
+{{ range (index hugo.Data.places "places") }}{{ $placeNames = merge $placeNames (dict .city .name) }}{{ end }}
 {{ $featured := partialCached "featured.html" . "featured" }}
-{{ $hero := partialCached "collitems.html" (dict "slug" "home-hero" "base" $base) "home-hero" }}
+{{/* Hero rotation = photos flagged hero:true in the tagger (any number). Falls
+     back to the home-hero collection until any are flagged. */}}
+{{ $hero := slice }}
+{{ range $k, $p := hugo.Data.photos }}
+  {{ if and $p.hero $p.thumb }}
+    {{ $ar := 1.5 }}{{ if and $p.width $p.height (gt $p.height 0) }}{{ $ar = div (float $p.width) $p.height }}{{ end }}
+    {{ $hero = $hero | append (dict "avif" (printf "%s%s" $base $p.display_avif) "webp" (printf "%s%s" $base $p.display_webp) "ar" $ar) }}
+  {{ end }}
+{{ end }}
+{{ if not $hero }}{{ $hero = partialCached "collitems.html" (dict "slug" "home-hero" "base" $base) "home-hero" }}{{ end }}
 {{ $essays := first 6 (where .Site.RegularPages "Section" "writing").ByDate.Reverse }}
 <main>
 
@@ -55,8 +67,11 @@
     {{ $color := index $palette (mod $i 5) }}
     {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
     {{ with $items }}
+    {{ $pls := $c.places | default (slice ($c.place | default "")) }}
+    {{ $plinks := slice }}
+    {{ range $pls }}{{ if . }}{{ $plinks = $plinks | append (dict "name" (index $placeNames . | default .) "slug" (urlize .)) }}{{ end }}{{ end }}
     <div class="fc-collection" id="collection-{{ $slug }}" data-reveal>
-      <a class="fc-name subsubhead" href="/collections/{{ $slug }}/" style="color:{{ $color }}">{{ $title }}</a>
+      <a class="fc-name subsubhead" href="/collections/{{ $slug }}/" style="color:{{ $color }}">{{ $title }}</a>{{ with $plinks }}<span class="fc-place">{{ range $j, $pk := . }}{{ if $j }} · {{ end }}<a href="/places/{{ $pk.slug }}/">{{ $pk.name }}</a>{{ end }}</span>{{ end }}
       <hr class="fc-rule" style="background:{{ $color }}" data-snap>
       {{ partial "carousel.html" (dict "items" . "color" $color "limit" 15) }}
     </div>

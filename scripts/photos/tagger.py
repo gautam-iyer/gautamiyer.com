@@ -101,6 +101,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .chip:hover{border-color:#a1a1aa}
  .chip.on{background:#18181b;color:#fff;border-color:#18181b}
  .chip.coll.on{background:#7c3aed;border-color:#7c3aed}
+ .chip.role.on{background:#d97706;border-color:#d97706;color:#fff}
  .geo{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
  .geo label{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:#a1a1aa;margin-bottom:3px}
  .geo input{width:100%}
@@ -113,6 +114,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .ctable th,.ctable td{padding:9px 12px;border-bottom:1px solid #f0f0f1;text-align:left;font-size:13px}
  .ctable th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#a1a1aa;background:#fafafa}
  .ctable tr.feat{background:#faf5ff}
+ .ctable tr.role-row{background:#fff7ed}
  .ctable input.title{width:100%;max-width:280px}
  .ctable input.place{width:100%;max-width:220px}
  .ctable input.order{width:52px;text-align:center}
@@ -244,6 +246,21 @@ function collRow(key){
     <button onclick="(()=>{const i=document.getElementById('nc-${cssid(key)}');if(i.value.trim())newCollection(i.value.trim(),'${esc(key)}')})()">＋ create & add</button></div></div>`;
 }
 const cssid=k=>k.replace(/[^a-z0-9]/gi,'_');
+// Special roles: Hero (in the home-page hero rotation) + Place cover (this
+// photo represents its place on /places). One cover per city.
+function rolesRow(key){
+  const p=PHOTOS[key];
+  return `<div class="dim" data-dim="roles"><div class="label">Roles</div><div class="chips">`+
+    `<span class="chip role ${p.hero?'on':''}" onclick="toggleHero('${esc(key)}')">★ Hero</span>`+
+    `<span class="chip role ${p.place_cover?'on':''}" onclick="toggleCover('${esc(key)}')">⚑ Place cover</span>`+
+    `</div></div>`;
+}
+window.toggleHero=(key)=>{const v=!PHOTOS[key].hero;PHOTOS[key].hero=v;save(key,{hero:v});repaint(key,'roles',rolesRow(key));};
+window.toggleCover=(key)=>{const v=!PHOTOS[key].place_cover;
+  if(v){const city=PHOTOS[key].city;Object.keys(PHOTOS).forEach(k=>{
+    if(k!==key&&PHOTOS[k].city===city&&PHOTOS[k].place_cover){PHOTOS[k].place_cover=false;save(k,{place_cover:false});
+      const c=document.querySelector(`.row[data-key="${CSS.escape(k)}"] [data-dim="roles"]`);if(c)c.outerHTML=rolesRow(k);}});}
+  PHOTOS[key].place_cover=v;save(key,{place_cover:v});repaint(key,'roles',rolesRow(key));};
 window.toggleDim=(key,dim,v)=>{const s=new Set(arr(key,dim));s.has(v)?s.delete(v):s.add(v);
   PHOTOS[key][dim]=[...s];save(key,{[dim]:[...s]});repaint(key,dim,chipRow(key,TAX.find(x=>x.key===dim)));};
 window.toggleColl=(key,slug)=>{const s=new Set(PHOTOS[key].collections||[]);s.has(slug)?s.delete(slug):s.add(slug);
@@ -264,7 +281,7 @@ function renderList(){
       <div><img class="thumb" loading="lazy" src="/img/${p.thumb}">
         <div class="imgmeta"><b>${esc(p.file)}</b> · ${esc(p.shoot)} · #${p.img_no}</div>
         ${p.tag_notes?`<div class="notes">“${esc(p.tag_notes)}”</div>`:''}</div>
-      <div>${geoRow(key)}${dims}${collRow(key)}</div></div>`;
+      <div>${geoRow(key)}${rolesRow(key)}${dims}${collRow(key)}</div></div>`;
   }).join('')+pager(page,pages,all.length)+datalists();
   wirePager();
 }
@@ -285,44 +302,55 @@ function renderColls(){
      <td><button class="linkbtn" onclick="editMembers('${esc(c.slug)}')">Edit members →</button></td>
    </tr>`).join('');
   const cities=uniq(Object.values(PHOTOS).map(p=>p.city));
-  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — type one or several <b>comma-separated</b> locations (e.g. “Newark, Brooklyn”) to span multiple; the site’s Collections filter then lists it under each. Tick <b>Featured</b> + set <b>Order</b> (1,2,3…) to choose the home-page 5 and their sequence. “Edit members” opens the add/remove grid.</p>
-   <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th></th></tr></thead><tbody>${rows}</tbody></table>
+  // Two special "sets" browsable in the same grid: the home Hero rotation and
+  // the per-place cover photos.
+  const roleRows=`
+   <tr class="role-row"><td><b>★ Hero</b> <span class="ct">— home hero rotation</span></td><td class="ct">any</td><td class="ct">${targetCount('__hero')}</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__hero')">Edit set →</button></td></tr>
+   <tr class="role-row"><td><b>⚑ Place cover</b> <span class="ct">— one per place</span></td><td class="ct">per city</td><td class="ct">${targetCount('__cover')}</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__cover')">Edit set →</button></td></tr>`;
+  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — type one or several <b>comma-separated</b> locations (e.g. “Newark, Brooklyn”) to span multiple; the site’s Collections filter then lists it under each. Tick <b>Featured</b> + set <b>Order</b> (1,2,3…) to choose the home-page 5 and their sequence. “Edit members / set” opens the add/remove grid — that includes the two special sets at the top: ★ Hero and ⚑ Place cover.</p>
+   <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th></th></tr></thead><tbody>${roleRows}${rows}</tbody></table>
    <datalist id="dl-place">${cities.map(c=>`<option value="${esc(c)}">`).join('')}</datalist>`;
 }
 window.editMembers=(slug)=>{mode='members';memberSlug=slug;page=0;memberFilter.city='';memberFilter.all=false;render();};
 
-/* ================= EDIT-MEMBERS GRID ================= */
+/* ============ EDIT-MEMBERS GRID (collections + Hero / Place-cover) ============
+   memberSlug is a collection slug, or the pseudo-targets "__hero" / "__cover"
+   (per-photo flags). isIn/setIn branch on which; the rest is shared. */
 const memberFilter={city:'',all:false};
+function targetLabel(t){return t==='__hero'?'★ Hero':t==='__cover'?'⚑ Place cover':((COLLS.find(x=>x.slug===t)||{}).title||t);}
+function isIn(key,t){const p=PHOTOS[key];return t==='__hero'?!!p.hero:t==='__cover'?!!p.place_cover:(p.collections||[]).includes(t);}
+function targetCount(t){return Object.keys(PHOTOS).filter(k=>isIn(k,t)).length;}
+function setIn(key,t,on){const p=PHOTOS[key];
+  if(t==='__hero'){p.hero=on;save(key,{hero:on});}
+  else if(t==='__cover'){
+    if(on){const city=p.city;Object.keys(PHOTOS).forEach(k=>{if(k!==key&&PHOTOS[k].city===city&&PHOTOS[k].place_cover){PHOTOS[k].place_cover=false;save(k,{place_cover:false});}});}
+    p.place_cover=on;save(key,{place_cover:on});}
+  else{const s=new Set(p.collections||[]);on?s.add(t):s.delete(t);p.collections=[...s];save(key,{collections:[...s]});}}
 function memberList(){
-  const slug=memberSlug;
-  let keys;
-  if(memberFilter.all){
-    keys=Object.keys(PHOTOS).filter(k=>!memberFilter.city||PHOTOS[k].city===memberFilter.city);
-  }else{
-    keys=Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(slug));
-    if(memberFilter.city)keys=keys.filter(k=>PHOTOS[k].city===memberFilter.city);
-  }
+  const t=memberSlug;
+  let keys=memberFilter.all?Object.keys(PHOTOS):Object.keys(PHOTOS).filter(k=>isIn(k,t));
+  if(memberFilter.city)keys=keys.filter(k=>PHOTOS[k].city===memberFilter.city);
   return keys.sort((a,b)=>(PHOTOS[a].shoot||'').localeCompare(PHOTOS[b].shoot||'')||(PHOTOS[a].img_no-PHOTOS[b].img_no));
 }
-window.toggleMember=(key)=>{const slug=memberSlug;const s=new Set(PHOTOS[key].collections||[]);
-  const inn=!s.has(slug); inn?s.add(slug):s.delete(slug); PHOTOS[key].collections=[...s]; save(key,{collections:[...s]});
+window.toggleMember=(key)=>{const t=memberSlug;const on=!isIn(key,t);setIn(key,t,on);
+  if(t==='__cover'){render();return;}   // one-per-city may clear another cover → full refresh
   const cell=document.querySelector(`.cell[data-key="${CSS.escape(key)}"]`);
-  if(cell){cell.classList.toggle('out',!inn);cell.querySelector('.badge').textContent=inn?'in':'add';}
-  $('#stat').textContent=`${collCount(slug)} in collection`;};
+  if(cell){cell.classList.toggle('out',!on);cell.querySelector('.badge').textContent=on?'in':'add';}
+  $('#stat').textContent=`${targetCount(t)} in set`;};
 function renderMembers(){
-  const c=COLLS.find(x=>x.slug===memberSlug);
+  const t=memberSlug;
   const cities=uniq(Object.values(PHOTOS).map(p=>p.city));
   const all=memberList(), pages=Math.max(1,Math.ceil(all.length/GRIDPER));
   if(page>=pages)page=pages-1;
   const slice=all.slice(page*GRIDPER,page*GRIDPER+GRIDPER);
-  $('#stat').textContent=`${collCount(memberSlug)} in collection`;
-  $('#main').innerHTML=`<p class="hint"><button class="linkbtn" onclick="backToColls()">← Collections</button> &nbsp; Editing <b>${esc(c?c.title:memberSlug)}</b>.
+  $('#stat').textContent=`${targetCount(t)} in set`;
+  $('#main').innerHTML=`<p class="hint"><button class="linkbtn" onclick="backToColls()">← Collections</button> &nbsp; Editing <b>${esc(targetLabel(t))}</b>.
      Click a photo to ${memberFilter.all?'add/remove':'remove'} it. Autosaves.</p>
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
       <label style="font-size:13px"><input type="checkbox" id="m-all" ${memberFilter.all?'checked':''}> show all photos (to add)</label>
       <select id="m-city"><option value="">All cities</option>${cities.map(c=>`<option value="${esc(c)}"${c===memberFilter.city?' selected':''}>${esc(c)}</option>`).join('')}</select>
     </div>
-    <div class="grid">`+slice.map(key=>{const p=PHOTOS[key];const inn=(p.collections||[]).includes(memberSlug);
+    <div class="grid">`+slice.map(key=>{const p=PHOTOS[key];const inn=isIn(key,t);
       return `<div class="cell ${inn?'':'out'}" data-key="${esc(key)}" onclick="toggleMember('${esc(key)}')">
         <span class="badge">${inn?'in':'add'}</span><img loading="lazy" src="/img/${p.thumb}">
         <div class="cap">${esc(p.city||'')} · #${p.img_no}</div></div>`;}).join('')+`</div>`+pager(page,pages,all.length);

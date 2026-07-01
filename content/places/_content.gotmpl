@@ -1,0 +1,16 @@
+{{/* Generate one clickable album page per place that has photos (auto-syncs
+     with data/places.json + the manifest). Slug = urlized city. */}}
+{{ $palette := site.Params.palette }}
+{{ range $i, $pl := (index hugo.Data.places "places") }}
+  {{ $has := false }}
+  {{ range $k, $p := hugo.Data.photos }}
+    {{ if and (not $has) $p.thumb (eq $p.city $pl.city) }}{{ $has = true }}{{ end }}
+  {{ end }}
+  {{ if $has }}
+    {{ $.AddPage (dict
+        "kind" "page"
+        "path" ($pl.city | urlize)
+        "title" $pl.name
+        "params" (dict "place" $pl.city "name" $pl.name "state" $pl.state "color" (index $palette (mod $i 5)))) }}
+  {{ end }}
+{{ end }}
