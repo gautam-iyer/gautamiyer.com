@@ -7,7 +7,7 @@
        whose city has photos gets a real cover; the rest stay placeholders. */}}
   {{ $covers := dict }}
   {{ range $k, $p := hugo.Data.photos }}
-    {{ if and $p.thumb $p.city (gt (or $p.height 0) 0) }}
+    {{ if and $p.thumb $p.city $p.width (gt (or $p.height 0) 0) }}
       {{ if not (index $covers $p.city) }}
         {{ $covers = merge $covers (dict $p.city (dict "thumb" (printf "%s%s" $base $p.thumb) "ar" (div (float $p.width) $p.height))) }}
       {{ end }}

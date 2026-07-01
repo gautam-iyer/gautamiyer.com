@@ -73,10 +73,14 @@
       if (slide && slide.dataset.clone) originals[+slide.dataset.idx].click();
     });
 
-    window.addEventListener('resize', () => center(false));
-    slides.forEach((s) => {
-      const img = s.querySelector('img');
-      if (img && !img.complete) img.addEventListener('load', () => center(false));
+    // Re-center on resize, coalesced to one reflow per frame (center() forces a
+    // synchronous layout read, so an unthrottled handler janks on mobile
+    // orientation / URL-bar changes). Slide geometry is fixed by CSS
+    // (height + aspect-ratio), so there is no need to recenter on image load.
+    let rzraf = null;
+    window.addEventListener('resize', () => {
+      if (rzraf) cancelAnimationFrame(rzraf);
+      rzraf = requestAnimationFrame(() => center(false));
     });
 
     center(false);

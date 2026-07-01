@@ -17,31 +17,31 @@
       </select>
       <select class="filter-select" data-role="filter" data-key="places">
         <option value="">All places</option>
-        {{ range (index hugo.Data.places "places") }}<option value="{{ .name }}">{{ .name }}</option>{{ end }}
-        <option value="__multiple">Multiple</option>
+        {{ range (index hugo.Data.places "places") }}<option value="{{ .city }}">{{ .name }}</option>{{ end }}
       </select>
     </div>
   </div>
 
   <div class="tile-grid tile-rows dim-titles" id="coll-grid" data-tilegrid>
-    {{ $idx := 0 }}
-    {{ range (index hugo.Data.collections "collections") }}
-      {{ $slug := .slug }}
-      {{ $title := .title }}
+    {{ range $ri, $c := (index hugo.Data.collections "collections") }}
+      {{ $slug := $c.slug }}
+      {{ $title := $c.title }}
       {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
-      {{ if and (gt (len $items) 0) (not .hidden) }}
-        {{ $color := index $palette (mod $idx 5) }}
+      {{ if and (gt (len $items) 0) (not $c.hidden) }}
+        {{/* Same accent rule as collections/single.html: palette by registry
+             index, overridden to the featured-slot colour when featured. */}}
+        {{ $color := index $palette (mod $ri 5) }}
+        {{ range $fi, $fc := (partialCached "featured.html" $ "featured") }}{{ if eq $fc.slug $slug }}{{ $color = index $palette (mod $fi 5) }}{{ end }}{{ end }}
         {{ $cover := index $items 0 }}
-        {{ $places := .places | default (slice (.place | default "")) }}
+        {{ $places := $c.places | default (slice ($c.place | default "")) }}
         <a href="/collections/{{ $slug }}/" class="tile" style="--tint:{{ $color }}"
-           data-title="{{ $title }}" data-places="{{ delimit $places "|" }}"{{ if gt (len $places) 1 }} data-multi="1"{{ end }}>
+           data-title="{{ $title }}" data-places="{{ delimit $places "|" }}">
           <div class="tile-img" style="aspect-ratio:{{ $cover.ar }}">
             <img src="{{ $cover.thumb }}" alt="{{ $title }}" loading="lazy">
           </div>
           <div class="tile-title subsubhead" style="color:{{ $color }}">{{ $title }}</div>
           <div class="tile-meta">{{ len $items }} photograph{{ if ne (len $items) 1 }}s{{ end }}</div>
         </a>
-        {{ $idx = add $idx 1 }}
       {{ end }}
     {{ end }}
   </div>

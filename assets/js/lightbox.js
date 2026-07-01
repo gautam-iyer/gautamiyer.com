@@ -8,6 +8,14 @@
 
   // The navigation group for a slide: its carousel/gallery container, else all.
   const groupOf = (el) => el.closest('[data-carousel], .jgallery, .collection-grid');
+  // Precompute each slide's group ONCE (one closest() per trigger here) instead
+  // of rescanning all triggers on every open — matters on /photos (1438 items).
+  const groups = new Map();
+  triggers.forEach((t) => {
+    const g = groupOf(t) || document;
+    if (!groups.has(g)) groups.set(g, []);
+    groups.get(g).push(t);
+  });
   let nav = triggers; // current navigable set (the opened slide's group)
 
   const lb = document.createElement('div');
@@ -54,8 +62,7 @@
 
   function open(el) {
     // Scope navigation to the opened slide's group (its carousel/gallery).
-    const g = groupOf(el);
-    nav = g ? triggers.filter((t) => groupOf(t) === g) : triggers;
+    nav = groups.get(groupOf(el) || document) || triggers;
     idx = nav.indexOf(el);
     render();
     lb.classList.add('open');
@@ -74,7 +81,13 @@
     }
   }
 
-  triggers.forEach((el) => el.addEventListener('click', () => open(el)));
+  // One delegated listener instead of one per [data-lb] (1438 on /photos).
+  // Carousel clone slides carry no [data-lb]; carousel.js proxies their clicks
+  // to the real original, whose click bubbles here — so this covers them too.
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-lb]');
+    if (el) open(el);
+  });
   prevBtn.addEventListener('click', (e) => { e.stopPropagation(); go(-1); });
   nextBtn.addEventListener('click', (e) => { e.stopPropagation(); go(1); });
   lb.querySelector('.lightbox-close').addEventListener('click', (e) => { e.stopPropagation(); close(); });

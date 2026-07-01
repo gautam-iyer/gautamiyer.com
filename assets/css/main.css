@@ -844,7 +844,7 @@ article {
 }
 
 /* ── Justified photo gallery (shared) ─────────────────────────────────
-   Used by /photos (.gallery) and collection pages (.collection-grid).
+   Used by /photos (.gallery). (Collection pages now use the carousel.)
    True edge-to-edge justified rows: justify.js packs visible items into
    rows and scales each row to fill the width exactly (flush left+right),
    preserving every photo's real aspect ratio — no crop. It sets each
