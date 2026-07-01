@@ -24,8 +24,10 @@ edited photos reviewed=true so the pipeline never overwrites hand edits.
 import json
 import os
 import re
+import subprocess
 import threading
 import webbrowser
+from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse, unquote
@@ -35,6 +37,7 @@ MANIFEST = REPO / "data" / "photos.json"
 COLLECTIONS = REPO / "data" / "collections.json"
 TAXONOMY = REPO / "data" / "taxonomy.json"
 PLACES = REPO / "data" / "places.json"
+DELETIONS = REPO / "data" / "deleted-photos.jsonl"  # append-only record of deletes
 DERIV = REPO / ".photo-build" / "derivatives"
 PORT = 8800
 
@@ -129,6 +132,17 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .cell .badge{position:absolute;top:6px;right:6px;font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:999px;background:#7c3aed;color:#fff}
  .cell.out{border-color:#e4e4e7;opacity:.5} .cell.out .badge{background:#94a3b8}
  .cell.out:hover{opacity:.85}
+ .cell .cmbtn{position:absolute;top:6px;left:6px;z-index:2;width:22px;height:22px;padding:0;border-radius:6px;background:rgba(255,255,255,.92);border:1px solid #d4d4d8;font-size:13px;line-height:1;cursor:pointer}
+ .cell .cmenu{position:absolute;top:30px;left:6px;z-index:4;background:#fff;border:1px solid #d4d4d8;border-radius:8px;padding:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);display:flex;flex-direction:column;gap:6px;width:180px}
+ .cell .cmenu select{width:100%;font-size:12px}
+ .del{border:1px solid #ef4444;color:#ef4444;background:#fff;border-radius:6px;font-size:12px;padding:5px 8px;cursor:pointer}
+ .del:hover{background:#ef4444;color:#fff}
+ .del.small{margin-top:8px;padding:3px 8px}
+ .ctable textarea.caption{width:100%;min-height:52px;font:inherit;font-size:12.5px;padding:6px 9px;border:1px solid #d4d4d8;border-radius:6px;resize:vertical}
+ .ctable tr.caprow td{padding-top:0;border-bottom:1px solid #f0f0f1}
+ .caplabel{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:#a1a1aa;margin-bottom:3px}
+ .deleting{opacity:.4;pointer-events:none;transition:opacity .15s}
+ .removing{opacity:0;transform:scale(.92);transition:opacity .25s,transform .25s}
 </style></head><body>
 <header>
  <h1>Photo Tagger</h1>
@@ -148,6 +162,9 @@ let mode='tag', page=0, memberSlug=null;
 const PER=48, GRIDPER=60;                     // list page size / grid page size
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;');
+// For a value placed inside an onclick JS single-quoted string: backslash-escape
+// \ and ' (keys like "Buffalo '26/..." contain apostrophes), then HTML-escape.
+const jesc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;').replace(/\\/g,'\\\\').replace(/'/g,"\\'");
 const arr=(k,d)=>{const v=PHOTOS[k][d];return Array.isArray(v)?v:(v?[v]:[]);};
 const uniq=a=>[...new Set(a.filter(Boolean))].sort();
 
@@ -229,21 +246,21 @@ function wireTagFilters(){
 function geoRow(key){
   const p=PHOTOS[key];
   const inp=(f,label)=>`<div><label>${label}</label><input list="dl-${f}" value="${esc(p[f]||'')}"
-     onchange="save('${esc(key)}',{${f}:this.value||null})"></div>`;
+     onchange="save('${jesc(key)}',{${f}:this.value||null})"></div>`;
   return `<div class="geo">${inp('sub_neighborhood','Sub-nbhd')}${inp('neighborhood','Neighborhood')}${inp('city','City')}${inp('state','State')}</div>`;
 }
 function chipRow(key,dim){
   const cur=arr(key,dim.key);
   return `<div class="dim" data-dim="${dim.key}"><div class="label">${dim.label}</div><div class="chips">`+
-    dim.values.map(v=>`<span class="chip ${cur.includes(v)?'on':''}" onclick="toggleDim('${esc(key)}','${dim.key}','${esc(v)}')">${esc(v)}</span>`).join('')+`</div></div>`;
+    dim.values.map(v=>`<span class="chip ${cur.includes(v)?'on':''}" onclick="toggleDim('${jesc(key)}','${dim.key}','${jesc(v)}')">${esc(v)}</span>`).join('')+`</div></div>`;
 }
 function collRow(key){
   const cur=new Set(PHOTOS[key].collections||[]);
   const chips=COLLS.slice().sort((a,b)=>a.title.localeCompare(b.title))
-    .map(c=>`<span class="chip coll ${cur.has(c.slug)?'on':''}" onclick="toggleColl('${esc(key)}','${c.slug}')">${esc(c.title)}</span>`).join('');
+    .map(c=>`<span class="chip coll ${cur.has(c.slug)?'on':''}" onclick="toggleColl('${jesc(key)}','${c.slug}')">${esc(c.title)}</span>`).join('');
   return `<div class="dim" data-dim="collections"><div class="label">Collections</div><div class="chips">${chips||'<span class="notes">none</span>'}</div>
     <div class="newcoll"><input placeholder="New collection…" id="nc-${cssid(key)}">
-    <button onclick="(()=>{const i=document.getElementById('nc-${cssid(key)}');if(i.value.trim())newCollection(i.value.trim(),'${esc(key)}')})()">＋ create & add</button></div></div>`;
+    <button onclick="(()=>{const i=document.getElementById('nc-${cssid(key)}');if(i.value.trim())newCollection(i.value.trim(),'${jesc(key)}')})()">＋ create & add</button></div></div>`;
 }
 const cssid=k=>k.replace(/[^a-z0-9]/gi,'_');
 // Special roles: Hero (in the home-page hero rotation) + Place cover (this
@@ -251,8 +268,8 @@ const cssid=k=>k.replace(/[^a-z0-9]/gi,'_');
 function rolesRow(key){
   const p=PHOTOS[key];
   return `<div class="dim" data-dim="roles"><div class="label">Roles</div><div class="chips">`+
-    `<span class="chip role ${p.hero?'on':''}" onclick="toggleHero('${esc(key)}')">★ Hero</span>`+
-    `<span class="chip role ${p.place_cover?'on':''}" onclick="toggleCover('${esc(key)}')">⚑ Place cover</span>`+
+    `<span class="chip role ${p.hero?'on':''}" onclick="toggleHero('${jesc(key)}')">★ Hero</span>`+
+    `<span class="chip role ${p.place_cover?'on':''}" onclick="toggleCover('${jesc(key)}')">⚑ Place cover</span>`+
     `</div></div>`;
 }
 window.toggleHero=(key)=>{const v=!PHOTOS[key].hero;PHOTOS[key].hero=v;save(key,{hero:v});repaint(key,'roles',rolesRow(key));};
@@ -265,6 +282,27 @@ window.toggleDim=(key,dim,v)=>{const s=new Set(arr(key,dim));s.has(v)?s.delete(v
   PHOTOS[key][dim]=[...s];save(key,{[dim]:[...s]});repaint(key,dim,chipRow(key,TAX.find(x=>x.key===dim)));};
 window.toggleColl=(key,slug)=>{const s=new Set(PHOTOS[key].collections||[]);s.has(slug)?s.delete(slug):s.add(slug);
   PHOTOS[key].collections=[...s];save(key,{collections:[...s]});repaint(key,'collections',collRow(key));};
+// Cell "⋯" actions: add to another collection, or delete the photo everywhere.
+window.toggleMenu=(key)=>{const el=document.getElementById('menu-'+cssid(key));if(el)el.style.display=(el.style.display==='none'?'block':'none');};
+window.addToColl=(key,slug)=>{if(!slug)return;const s=new Set(PHOTOS[key].collections||[]);s.add(slug);PHOTOS[key].collections=[...s];save(key,{collections:[...s]});};
+window.deletePhoto=async(key)=>{
+  if(!confirm('Delete this photo from the site + R2 for good? (Recorded in data/deleted-photos.jsonl.)'))return;
+  const els=[...document.querySelectorAll(`[data-key="${CSS.escape(key)}"]`)];
+  els.forEach(e=>e.classList.add('deleting'));           // instant feedback
+  let r=null; try{r=await fetch('/api/delete',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({key})});}catch(e){}
+  if(!r||!r.ok){els.forEach(e=>e.classList.remove('deleting'));alert('Delete failed — nothing was removed.');return;}
+  delete PHOTOS[key];
+  els.forEach(e=>{e.classList.add('removing');setTimeout(()=>e.remove(),260);});  // fade out
+  flash();
+  if(mode==='members')setTimeout(()=>{$('#stat').textContent=`${targetCount(memberSlug)} in set`;},280);
+};
+function cellMenu(key){
+  return `<button class="cmbtn" title="More…" onclick="event.stopPropagation();toggleMenu('${jesc(key)}')">⋯</button>
+    <div class="cmenu" id="menu-${cssid(key)}" style="display:none" onclick="event.stopPropagation()">
+      <select onchange="addToColl('${jesc(key)}',this.value);this.value=''"><option value="">+ Add to collection…</option>`+
+      COLLS.slice().sort((a,b)=>a.title.localeCompare(b.title)).map(c=>`<option value="${esc(c.slug)}">${esc(c.title)}</option>`).join('')+
+      `</select><button class="del" onclick="deletePhoto('${jesc(key)}')">🗑 Delete photo</button></div>`;
+}
 function repaint(key,dim,html){const row=document.querySelector(`.row[data-key="${CSS.escape(key)}"]`);
   if(row){const el=row.querySelector(`[data-dim="${dim}"]`);if(el)el.outerHTML=html;}}
 
@@ -280,7 +318,8 @@ function renderList(){
     return `<div class="row ${p.reviewed?'reviewed':''}" data-key="${esc(key)}">
       <div><img class="thumb" loading="lazy" src="/img/${p.thumb}">
         <div class="imgmeta"><b>${esc(p.file)}</b> · ${esc(p.shoot)} · #${p.img_no}</div>
-        ${p.tag_notes?`<div class="notes">“${esc(p.tag_notes)}”</div>`:''}</div>
+        ${p.tag_notes?`<div class="notes">“${esc(p.tag_notes)}”</div>`:''}
+        <button class="del small" onclick="deletePhoto('${jesc(key)}')">🗑 Delete photo</button></div>
       <div>${geoRow(key)}${rolesRow(key)}${dims}${collRow(key)}</div></div>`;
   }).join('')+pager(page,pages,all.length)+datalists();
   wirePager();
@@ -300,7 +339,8 @@ function renderColls(){
      <td><input type="checkbox" ${c.featured?'checked':''} onchange="updateColl('${esc(c.slug)}',{featured:this.checked})"></td>
      <td><input class="order" type="number" min="0" value="${c.order||0}" onchange="updateColl('${esc(c.slug)}',{order:+this.value})"></td>
      <td><button class="linkbtn" onclick="editMembers('${esc(c.slug)}')">Edit members →</button></td>
-   </tr>`).join('');
+   </tr>
+   <tr class="caprow${c.featured?' feat':''}"><td colspan="6"><div class="caplabel">Caption${c.featured?' — shown on the home page':''}</div><textarea class="caption" placeholder="Write a 2–10 sentence caption…" onchange="updateColl('${esc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea></td></tr>`).join('');
   const cities=uniq(Object.values(PHOTOS).map(p=>p.city));
   // Two special "sets" browsable in the same grid: the home Hero rotation and
   // the per-place cover photos.
@@ -351,8 +391,8 @@ function renderMembers(){
       <select id="m-city"><option value="">All cities</option>${cities.map(c=>`<option value="${esc(c)}"${c===memberFilter.city?' selected':''}>${esc(c)}</option>`).join('')}</select>
     </div>
     <div class="grid">`+slice.map(key=>{const p=PHOTOS[key];const inn=isIn(key,t);
-      return `<div class="cell ${inn?'':'out'}" data-key="${esc(key)}" onclick="toggleMember('${esc(key)}')">
-        <span class="badge">${inn?'in':'add'}</span><img loading="lazy" src="/img/${p.thumb}">
+      return `<div class="cell ${inn?'':'out'}" data-key="${esc(key)}" onclick="toggleMember('${jesc(key)}')">
+        <span class="badge">${inn?'in':'add'}</span>${cellMenu(key)}<img loading="lazy" src="/img/${p.thumb}">
         <div class="cap">${esc(p.city||'')} · #${p.img_no}</div></div>`;}).join('')+`</div>`+pager(page,pages,all.length);
   $('#m-all').onchange=e=>{memberFilter.all=e.target.checked;page=0;render();};
   $('#m-city').onchange=e=>{memberFilter.city=e.target.value;page=0;render();};
@@ -446,13 +486,42 @@ class Handler(BaseHTTPRequestHandler):
                     })
                     atomic_write(COLLECTIONS, reg)
             return self._send(200, {"slug": slug, "collections": reg["collections"]})
+        if path == "/api/delete":
+            # Remove a photo everywhere: manifest, R2 (all tiers), local cache,
+            # and append it to data/deleted-photos.jsonl (deny-list + record).
+            key = data["key"]
+            with _lock:
+                m = load(MANIFEST, {})
+                rec = m.pop(key, None)
+                if rec is None:
+                    return self._send(404, {"error": "unknown key"})
+                entry = {"key": key, "deleted_at": datetime.now(timezone.utc).isoformat(),
+                         "city": rec.get("city"), "shoot": rec.get("shoot"),
+                         "thumb": rec.get("thumb"), "tag_notes": rec.get("tag_notes")}
+                with open(DELETIONS, "a") as fh:
+                    fh.write(json.dumps(entry, ensure_ascii=False) + "\n")
+                save_manifest(m)
+            # R2 + local-cache cleanup runs in the background so the response is
+            # instant (3 wrangler calls would otherwise block ~5s). The manifest
+            # removal + log above are the source-of-truth deletion.
+            tiers = [rec.get(t) for t in ("thumb", "display_avif", "display_webp") if rec.get(t)]
+            def _cleanup(paths):
+                for rel in paths:
+                    subprocess.run(["npx", "wrangler", "r2", "object", "delete",
+                                    f"gautamiyer-photos/{rel}", "--remote"], capture_output=True)
+                    try:
+                        (DERIV / rel).unlink()
+                    except FileNotFoundError:
+                        pass
+            threading.Thread(target=_cleanup, args=(tiers,), daemon=True).start()
+            return self._send(200, {"ok": True})
         if path == "/api/collection/update":
             slug = data["slug"]
             with _lock:
                 reg = load(COLLECTIONS, {"collections": []})
                 for c in reg["collections"]:
                     if c["slug"] == slug:
-                        for f in ("title", "featured", "order", "place", "places", "description"):
+                        for f in ("title", "featured", "order", "place", "places", "description", "caption"):
                             if f in data:
                                 c[f] = data[f]
                         break

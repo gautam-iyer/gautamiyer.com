@@ -74,6 +74,7 @@
       <a class="fc-name subsubhead" href="/collections/{{ $slug }}/" style="color:{{ $color }}">{{ $title }}</a>{{ with $plinks }}<span class="fc-place">{{ range $j, $pk := . }}{{ if $j }} · {{ end }}<a href="/places/{{ $pk.slug }}/">{{ $pk.name }}</a>{{ end }}</span>{{ end }}
       <hr class="fc-rule" style="background:{{ $color }}" data-snap>
       {{ partial "carousel.html" (dict "items" . "color" $color "limit" 15) }}
+      {{ with $c.caption }}<p class="fc-caption">{{ . }}</p>{{ end }}
     </div>
     {{ end }}
   {{ end }}

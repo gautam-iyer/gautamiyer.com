@@ -9,7 +9,7 @@
 // clone set we snap (no animation) to the equivalent original. Clones carry no
 // [data-lb] (no lightbox duplicates); clicking one proxies to its original.
 (function () {
-  const DELAY = 4000;
+  const DELAY = 3000;
   const controllers = [];
 
   function initCarousel(root) {

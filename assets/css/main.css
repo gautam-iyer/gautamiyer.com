@@ -1663,6 +1663,15 @@ article {
 }
 .fc-place a { color: inherit; text-decoration: none; }
 .fc-place a:hover { text-decoration: underline; text-underline-offset: 2px; color: var(--mid); }
+/* editorial caption under a featured collection's carousel */
+.fc-caption {
+  font-style: italic;
+  color: var(--mid);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: var(--text-width);
+  margin: 18px 0 0;
+}
 
 .fc-rule {
   border: 0;

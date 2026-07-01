@@ -162,6 +162,18 @@ def resize_to(src, dst, longest_edge):
 def cmd_scan(args):
     m = load_manifest()
     added = 0
+    # Deny-list: photos deleted via the tagger (data/deleted-photos.jsonl) must
+    # not be re-added on a re-scan, even though the source JPEG still exists.
+    deleted = set()
+    dlog = REPO / "data" / "deleted-photos.jsonl"
+    if dlog.exists():
+        for line in dlog.read_text().splitlines():
+            line = line.strip()
+            if line:
+                try:
+                    deleted.add(json.loads(line)["key"])
+                except Exception:
+                    pass
     shoots = [s for s in SHOOTS if (not args.shoot or s["slug"] == args.shoot)]
     for shoot in shoots:
         folder = PHOTOS_ROOT / shoot["folder"]
@@ -170,7 +182,7 @@ def cmd_scan(args):
             continue
         for f in sorted(folder.glob("*.jpg")) + sorted(folder.glob("*.JPG")):
             key = f"{shoot['folder']}/{f.name}"
-            if key in m:
+            if key in m or key in deleted:
                 continue
             w, h = dims(f)
             m[key] = {

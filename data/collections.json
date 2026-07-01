@@ -294,6 +294,36 @@
       "order": 0,
       "type": "curated",
       "place": "New York"
+    },
+    {
+      "slug": "grain-siloes-of-buffalo",
+      "title": "Grain Siloes of Buffalo",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Buffalo"
+    },
+    {
+      "slug": "buffalo-city-hall",
+      "title": "Buffalo City Hall",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Buffalo"
+    },
+    {
+      "slug": "victorian-homes-of-buffalo",
+      "title": "Victorian Homes of Buffalo",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Buffalo"
     }
   ]
 }
