@@ -25,5 +25,5 @@
       "values": ["Color", "B&W"]
     }
   ],
-  "_note": "Single source of truth for multi-select tag dimensions. Edit values here (or add a new dimension object) and the tagger + website filters pick it up. neighborhood/city/medium are handled separately (single-value, derived)."
+  "_note": "Single source of truth for multi-select tag dimensions (land_use/architecture/subject/tone). Edit values here (or add a new dimension object) and the tagger + website filters pick it up. GEO HIERARCHY is separate, single-value, per-photo: sub_neighborhood → neighborhood → city → state (e.g. Dyker Heights, Brooklyn, New York, NY). state is derived from city via data/places.json; city set at ingest; neighborhood/sub_neighborhood hand-tagged. medium is single-value (Digital). The All-Photos subtitle shows Neighborhood, City, State."
 }

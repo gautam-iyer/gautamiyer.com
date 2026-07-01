@@ -17,8 +17,10 @@
 
   {{/* Filterable dimensions. multi=true means the manifest stores an array of values. */}}
   {{ $dimdefs := slice
-      (dict "k" "city" "label" "City" "multi" false)
+      (dict "k" "sub_neighborhood" "label" "Sub-neighborhood" "multi" false)
       (dict "k" "neighborhood" "label" "Neighborhood" "multi" false)
+      (dict "k" "city" "label" "City" "multi" false)
+      (dict "k" "state" "label" "State" "multi" false)
       (dict "k" "land_use" "label" "Land use" "multi" true)
       (dict "k" "architecture" "label" "Architecture" "multi" true)
       (dict "k" "subject" "label" "Subject" "multi" true)
@@ -59,15 +61,22 @@
   <div class="gallery jgallery">
     {{ range $photos }}
       {{ $p := . }}
-      {{/* caption = neighborhood + architecture styles + subjects */}}
+      {{/* Consistent place label: Neighborhood, City, State (non-empty parts). */}}
+      {{ $geo := slice }}
+      {{ with $p.neighborhood }}{{ $geo = $geo | append . }}{{ end }}
+      {{ with $p.city }}{{ $geo = $geo | append . }}{{ end }}
+      {{ with $p.state }}{{ $geo = $geo | append . }}{{ end }}
+      {{ $place := delimit $geo ", " }}
+      {{/* Tag details shown under the place. */}}
       {{ $meta := slice }}
-      {{ with $p.neighborhood }}{{ $meta = $meta | append . }}{{ end }}
       {{ range $p.architecture }}{{ $meta = $meta | append . }}{{ end }}
       {{ range $p.subject }}{{ $meta = $meta | append . }}{{ end }}
       {{ $ar := 1.5 }}{{ if and $p.width $p.height (gt $p.height 0) }}{{ $ar = div (float $p.width) $p.height }}{{ end }}
       <div class="gallery-item" style="--ar:{{ $ar }}" data-lb
            data-city="{{ $p.city }}"
            data-neighborhood="{{ $p.neighborhood }}"
+           data-sub_neighborhood="{{ $p.sub_neighborhood }}"
+           data-state="{{ $p.state }}"
            data-land_use="{{ delimit $p.land_use "|" }}"
            data-architecture="{{ delimit $p.architecture "|" }}"
            data-subject="{{ delimit $p.subject "|" }}"
@@ -76,13 +85,13 @@
            data-collections="{{ delimit $p.collections "|" }}"
            data-avif="{{ $base }}{{ $p.display_avif }}"
            data-webp="{{ $base }}{{ $p.display_webp }}"
-           data-title="{{ with $p.neighborhood }}{{ . }}, {{ end }}{{ $p.city }}"
+           data-title="{{ $place }}"
            data-meta="{{ delimit $meta " · " }}">
         <div class="photo">
-          <img src="{{ $base }}{{ $p.thumb }}" loading="lazy" alt="{{ $p.city }}{{ with $p.tag_notes }} — {{ . }}{{ end }}">
+          <img src="{{ $base }}{{ $p.thumb }}" loading="lazy" alt="{{ $place }}{{ with $p.tag_notes }} — {{ . }}{{ end }}">
         </div>
         <div class="overlay">
-          <div class="overlay-title">{{ with $p.neighborhood }}{{ . }}{{ else }}{{ $p.city }}{{ end }}</div>
+          <div class="overlay-title">{{ $place }}</div>
           <div class="overlay-meta">{{ delimit $meta " · " }}</div>
         </div>
       </div>

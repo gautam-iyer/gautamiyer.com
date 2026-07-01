@@ -2,9 +2,9 @@
   "collections": [
     {
       "slug": "ppg-place-pittsburgh",
-      "title": "PPG Place - Pittsburgh",
+      "title": "Philip Johnson's PPG Place",
       "description": "",
-      "featured": true,
+      "featured": false,
       "cover": null,
       "order": 1,
       "type": "curated",
@@ -13,9 +13,9 @@
     },
     {
       "slug": "cathedral-of-learning-pittsburgh",
-      "title": "Cathedral of Learning - Pittsburgh",
+      "title": "The Cathedral of Learning",
       "description": "",
-      "featured": true,
+      "featured": false,
       "cover": null,
       "order": 2,
       "type": "curated",
@@ -24,7 +24,7 @@
     },
     {
       "slug": "upmc-building-pittsburgh",
-      "title": "UPMC Building - Pittsburgh",
+      "title": "Omnipresent UPMC",
       "description": "",
       "featured": false,
       "cover": null,
@@ -38,7 +38,7 @@
       "description": "",
       "featured": true,
       "cover": null,
-      "order": 4,
+      "order": 1,
       "type": "curated",
       "place": "Pittsburgh",
       "color": "#a8842c"
@@ -47,7 +47,7 @@
       "slug": "churches-of-pittsburgh",
       "title": "Churches of Pittsburgh",
       "description": "",
-      "featured": true,
+      "featured": false,
       "cover": null,
       "order": 3,
       "type": "curated",
@@ -56,7 +56,7 @@
     },
     {
       "slug": "italians-in-pittsburgh",
-      "title": "Italians in Pittsburgh",
+      "title": "Italian Pittsburgh",
       "description": "",
       "featured": false,
       "cover": null,
@@ -76,7 +76,7 @@
     },
     {
       "slug": "go-steelers-pittsburgh",
-      "title": "Go Steelers - Pittsburgh",
+      "title": "Go Steelers",
       "description": "",
       "featured": false,
       "cover": null,
@@ -86,7 +86,7 @@
     },
     {
       "slug": "modern-apartments-of-pittsburgh",
-      "title": "Modern Apartments of Pittsburgh",
+      "title": "Apartment Modernism",
       "description": "",
       "featured": false,
       "cover": null,
@@ -127,7 +127,7 @@
     },
     {
       "slug": "spanish-colonial-of-san-antonio",
-      "title": "Spanish Colonial of San Antonio",
+      "title": "Spanish Colonial San Antonio",
       "description": "",
       "featured": false,
       "cover": null,
@@ -147,11 +147,11 @@
     },
     {
       "slug": "greenery-of-san-antonio",
-      "title": "Greenery of San Antonio",
+      "title": "Green King William",
       "description": "",
-      "featured": false,
+      "featured": true,
       "cover": null,
-      "order": 0,
+      "order": 5,
       "type": "curated",
       "place": "San Antonio"
     },
@@ -159,9 +159,9 @@
       "slug": "sprawling-austin",
       "title": "Sprawling Austin",
       "description": "",
-      "featured": false,
+      "featured": true,
       "cover": null,
-      "order": 0,
+      "order": 2,
       "type": "curated",
       "place": "Austin"
     },
@@ -177,7 +177,7 @@
     },
     {
       "slug": "art-deco-newark",
-      "title": "Art Deco Newark",
+      "title": "Art Deco of Newark",
       "description": "",
       "featured": false,
       "cover": null,
@@ -197,7 +197,7 @@
     },
     {
       "slug": "beaux-arts-newark",
-      "title": "Beaux-Arts Newark",
+      "title": "Beaux-Arts in Newark",
       "description": "",
       "featured": false,
       "cover": null,
@@ -207,17 +207,17 @@
     },
     {
       "slug": "industrial-durham",
-      "title": "Industrial Durham",
+      "title": "Tobacco Realism",
       "description": "",
-      "featured": false,
+      "featured": true,
       "cover": null,
-      "order": 0,
+      "order": 4,
       "type": "curated",
       "place": "Durham"
     },
     {
       "slug": "beaux-arts-durham",
-      "title": "Beaux-Arts Durham",
+      "title": "Beaux-Arts in Durham",
       "description": "",
       "featured": false,
       "cover": null,
@@ -227,7 +227,7 @@
     },
     {
       "slug": "storefronts-of-durham",
-      "title": "Storefronts of Durham",
+      "title": "Durham Storefronts",
       "description": "",
       "featured": false,
       "cover": null,
@@ -267,17 +267,17 @@
     },
     {
       "slug": "skyscrapers-of-fidi",
-      "title": "Skyscrapers of FiDi",
+      "title": "A Century of Up",
       "description": "",
-      "featured": false,
+      "featured": true,
       "cover": null,
-      "order": 0,
+      "order": 3,
       "type": "curated",
       "place": "New York"
     },
     {
       "slug": "art-deco-fidi",
-      "title": "Art Deco FiDi",
+      "title": "Art Deco of the Financial District",
       "description": "",
       "featured": false,
       "cover": null,
@@ -287,7 +287,7 @@
     },
     {
       "slug": "beaux-arts-fidi",
-      "title": "Beaux-Arts FiDi",
+      "title": "Beaux-Arts in the Financial District",
       "description": "",
       "featured": false,
       "cover": null,
