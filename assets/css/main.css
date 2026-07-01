@@ -1639,10 +1639,11 @@ article {
    ════════════════════════════════════════════════ */
 
 .fc-head {
-  height: calc(var(--grid) * 2);   /* 2 cells: heading block ends on a grid line */
   margin: 0;
+  padding: 24px 0;                 /* equal padding centers the heading between */
+  border-top: 1px solid rgba(0, 0, 0, 0.2);  /* its own rule and the first row's */
   display: flex;
-  align-items: center;
+  align-items: baseline;           /* gray "All …" link sits on the heading baseline */
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.015em;
@@ -1655,9 +1656,8 @@ article {
   color: var(--light);
   letter-spacing: 0;
   margin-left: 14px;
-  align-self: center;   /* level with the (vertically centered) heading text */
-  position: relative;
-  top: 1px;
+  /* baseline-aligned with the heading via .fc-head { align-items: baseline } —
+     mirrors how .fc-place sits beside a collection name */
   text-decoration: none;
   transition: color 0.2s;
 }

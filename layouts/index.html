@@ -63,7 +63,7 @@
 
   {{/* Featured Writing — short section above the photos, lines aligned to grid. */}}
   {{ with $essays }}
-  <section id="featured-writing" data-snap data-reveal data-darkline>
+  <section id="featured-writing" data-reveal>
     <div class="fc-head">Featured Writing <a class="fc-head-link" href="/writing/">All Writing</a></div>
     <div class="home-essays">
       {{ range . }}
@@ -78,8 +78,8 @@
 
   {{/* Featured Projects — same chip treatment as Featured Writing. */}}
   {{ with $featuredProjects }}
-  <section id="featured-projects" data-snap data-reveal data-darkline>
-    <div class="fc-head">Featured Projects</div>
+  <section id="featured-projects" data-reveal>
+    <div class="fc-head">Featured Projects <a class="fc-head-link" href="/projects/">All Projects</a></div>
     <div class="home-essays">
       {{ range . }}
       <a href="/projects/walking-tours/{{ .slug }}/" class="home-essay">
@@ -92,7 +92,7 @@
   {{ end }}
 
   {{ with $featured }}
-  <section id="featured-photos" class="home-featured" data-snap data-darkline>
+  <section id="featured-photos" class="home-featured">
   <div class="fc-head">Featured Photos <a class="fc-head-link" href="/photos/">All Photos</a></div>
   {{ range $i, $c := . }}
     {{ $slug := $c.slug }}
