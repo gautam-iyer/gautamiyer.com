@@ -294,7 +294,7 @@ footer p {
 /* Darker grid lines above each featured section + around the essay rows are
    drawn by gridlines.js onto the .gridlines overlay, exactly on existing grid
    lines (see [data-darkline]). */
-#featured-writing { margin-bottom: calc(var(--grid) * 2); }
+#featured-writing { margin-bottom: 28px; }
 
 /* Overlay that darkens individual grid lines. Sits above the faint body grid
    but behind the page content (which is given z-index: 1). */
@@ -1655,8 +1655,9 @@ article {
   color: var(--light);
   letter-spacing: 0;
   margin-left: 14px;
-  align-self: flex-end;
-  padding-bottom: 0.55rem;
+  align-self: center;   /* level with the (vertically centered) heading text */
+  position: relative;
+  top: 1px;
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -1805,12 +1806,15 @@ article {
 /* Each essay row is 3 grid cells; its separator lines are the darkened grid
    lines drawn by gridlines.js. The text is centred at the 1.5-cell mark so it
    sits between grid lines, never on one. */
+/* Each essay/project row: equal top+bottom padding centers the text between its
+   own top rule and the next row's, and the last row has no rule beneath it. */
 .home-essay {
   box-sizing: border-box;
-  height: calc(var(--grid) * 3);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 20px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
   text-decoration: none;
   color: var(--black);
 }

@@ -67,7 +67,7 @@
     <div class="fc-head">Featured Writing <a class="fc-head-link" href="/writing/">All Writing</a></div>
     <div class="home-essays">
       {{ range . }}
-      <a href="{{ .RelPermalink }}" class="home-essay" data-darkline="both">
+      <a href="{{ .RelPermalink }}" class="home-essay">
         <div class="home-essay-title">{{ .Title }}</div>
         {{ with .Params.subtitle }}<div class="home-essay-sub">{{ . }}</div>{{ end }}
       </a>
@@ -82,7 +82,7 @@
     <div class="fc-head">Featured Projects</div>
     <div class="home-essays">
       {{ range . }}
-      <a href="/projects/walking-tours/{{ .slug }}/" class="home-essay" data-darkline="both">
+      <a href="/projects/walking-tours/{{ .slug }}/" class="home-essay">
         <div class="home-essay-title">{{ .title }}</div>
         {{ with .subtitle }}<div class="home-essay-sub">{{ . }}</div>{{ end }}
       </a>
