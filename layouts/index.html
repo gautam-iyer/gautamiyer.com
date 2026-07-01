@@ -8,11 +8,8 @@
 {{/* Hero rotation = photos flagged hero:true in the tagger (any number). Falls
      back to the home-hero collection until any are flagged. */}}
 {{ $hero := slice }}
-{{ range $k, $p := hugo.Data.photos }}
-  {{ if and $p.hero $p.thumb }}
-    {{ $ar := 1.5 }}{{ if and $p.width $p.height (gt $p.height 0) }}{{ $ar = div (float $p.width) $p.height }}{{ end }}
-    {{ $hero = $hero | append (dict "avif" (printf "%s%s" $base $p.display_avif) "webp" (printf "%s%s" $base $p.display_webp) "ar" $ar) }}
-  {{ end }}
+{{ range (index hugo.Data.index "hero") }}
+  {{ $hero = $hero | append (dict "avif" (printf "%s%s" $base .avif) "webp" (printf "%s%s" $base .webp) "ar" .ar) }}
 {{ end }}
 {{ if not $hero }}{{ $hero = partialCached "collitems.html" (dict "slug" "home-hero" "base" $base) "home-hero" }}{{ end }}
 {{ $essays := first 6 (where .Site.RegularPages "Section" "writing").ByDate.Reverse }}

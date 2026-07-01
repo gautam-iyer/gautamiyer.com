@@ -9,31 +9,21 @@
     {{ with .Content }}<div class="intro place-overview">{{ . }}</div>{{ end }}
   </div>
 
-  {{/* Album — every photo from this place, as a justified gallery + lightbox. */}}
-  {{ $photos := slice }}
-  {{ range $k, $p := hugo.Data.photos }}
-    {{ if and $p.thumb (eq $p.city $place) }}{{ $photos = $photos | append $p }}{{ end }}
-  {{ end }}
+  {{/* Album — every photo from this place, as a justified gallery + lightbox.
+       Read from the denormalized data/index.json (build_index.py) instead of
+       scanning the whole manifest per place page. */}}
+  {{ $photos := index (index hugo.Data.index "places") $place }}
   {{ with $photos }}
   <div class="photo-count">{{ len . }} photograph{{ if ne (len .) 1 }}s{{ end }}</div>
   <div class="gallery jgallery">
     {{ range . }}
-      {{ $p := . }}
-      {{ $geo := slice }}
-      {{ with $p.neighborhood }}{{ $geo = $geo | append . }}{{ end }}
-      {{ with $p.city }}{{ $geo = $geo | append . }}{{ end }}
-      {{ with $p.state }}{{ $geo = $geo | append . }}{{ end }}
-      {{ $meta := slice }}
-      {{ range $p.architecture }}{{ $meta = $meta | append . }}{{ end }}
-      {{ range $p.subject }}{{ $meta = $meta | append . }}{{ end }}
-      {{ $ar := 1.5 }}{{ if and $p.width $p.height (gt $p.height 0) }}{{ $ar = div (float $p.width) $p.height }}{{ end }}
-      <div class="gallery-item" style="--ar:{{ $ar }}" data-lb
-           data-avif="{{ $base }}{{ $p.display_avif }}" data-webp="{{ $base }}{{ $p.display_webp }}"
-           data-title="{{ delimit $geo ", " }}" data-meta="{{ delimit $meta " · " }}">
-        <div class="photo"><img src="{{ $base }}{{ $p.thumb }}" loading="lazy" alt="{{ delimit $geo ", " }}"></div>
+      <div class="gallery-item" style="--ar:{{ .ar }}" data-lb
+           data-avif="{{ $base }}{{ .avif }}" data-webp="{{ $base }}{{ .webp }}"
+           data-title="{{ .title }}" data-meta="{{ .meta }}">
+        <div class="photo"><img src="{{ $base }}{{ .thumb }}" loading="lazy" alt="{{ .title }}"></div>
         <div class="overlay">
-          <div class="overlay-title">{{ delimit $geo ", " }}</div>
-          <div class="overlay-meta">{{ delimit $meta " · " }}</div>
+          <div class="overlay-title">{{ .title }}</div>
+          <div class="overlay-meta">{{ .meta }}</div>
         </div>
       </div>
     {{ end }}

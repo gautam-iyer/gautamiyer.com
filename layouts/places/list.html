@@ -3,15 +3,11 @@
   {{ $base := .Site.Params.photo_base | default "/img/" }}
   {{ $palette := .Site.Params.palette }}
 
-  {{/* Cover thumb per city: the photo flagged place_cover in the tagger if any,
-       else the first photo. (A place_cover photo overrides an already-set first.) */}}
+  {{/* Cover thumb per city (place_cover photo if flagged, else first) — read
+       from the denormalized data/index.json (build_index.py). */}}
   {{ $covers := dict }}
-  {{ range $k, $p := hugo.Data.photos }}
-    {{ if and $p.thumb $p.city $p.width (gt (or $p.height 0) 0) }}
-      {{ if or (not (index $covers $p.city)) $p.place_cover }}
-        {{ $covers = merge $covers (dict $p.city (dict "thumb" (printf "%s%s" $base $p.thumb) "ar" (div (float $p.width) $p.height))) }}
-      {{ end }}
-    {{ end }}
+  {{ range $city, $c := (index hugo.Data.index "covers") }}
+    {{ $covers = merge $covers (dict $city (dict "thumb" (printf "%s%s" $base $c.thumb) "ar" $c.ar)) }}
   {{ end }}
 
   <div class="backlinks">

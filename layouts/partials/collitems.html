@@ -1,27 +1,22 @@
 {{- /*
   Returns the photos in a collection as a slice of lightbox-ready dicts.
-  Call via partialCached so each collection's photo scan runs once per build:
+  Membership is denormalized at deploy time into data/index.json by
+  scripts/photos/build_index.py, so this is an O(1) map lookup + O(k) base-prefix
+  pass instead of scanning the whole manifest once per collection.
+  Still call via partialCached so each slug builds once per render:
     {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
   Each item: { thumb, avif, webp, ar, title, meta }.  (ar = width/height, for justified layout)
 */ -}}
 {{- $slug := .slug -}}
 {{- $base := .base -}}
 {{- $items := slice -}}
-{{- range $k, $p := hugo.Data.photos -}}
-  {{- if and $p.thumb (in (or $p.collections slice) $slug) -}}
-    {{- $ar := 1.5 -}}
-    {{- if and $p.width $p.height (gt $p.height 0) -}}{{- $ar = div (float $p.width) $p.height -}}{{- end -}}
-    {{- $geo := slice -}}
-    {{- with $p.neighborhood }}{{ $geo = $geo | append . }}{{ end -}}
-    {{- with $p.city }}{{ $geo = $geo | append . }}{{ end -}}
-    {{- with $p.state }}{{ $geo = $geo | append . }}{{ end -}}
-    {{- $items = $items | append (dict
-        "thumb" (printf "%s%s" $base $p.thumb)
-        "avif"  (printf "%s%s" $base $p.display_avif)
-        "webp"  (printf "%s%s" $base $p.display_webp)
-        "ar"    $ar
-        "title" (delimit $geo ", ")
-        "meta"  (or $p.tag_notes "")) -}}
-  {{- end -}}
+{{- range (index (index hugo.Data.index "collections") $slug) -}}
+  {{- $items = $items | append (dict
+      "thumb" (printf "%s%s" $base .thumb)
+      "avif"  (printf "%s%s" $base .avif)
+      "webp"  (printf "%s%s" $base .webp)
+      "ar"    .ar
+      "title" .title
+      "meta"  .meta) -}}
 {{- end -}}
 {{- return $items -}}

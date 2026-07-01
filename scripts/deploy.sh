@@ -5,6 +5,9 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
+echo "▸ Rebuild data/index.json (denormalized collection/place membership)…"
+python3 scripts/photos/build_index.py
+
 echo "▸ Preflight build (hugo --gc --minify)…"
 rm -rf public
 if ! hugo --gc --minify; then

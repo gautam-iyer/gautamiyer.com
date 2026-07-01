@@ -25,38 +25,61 @@ REPO = Path(__file__).resolve().parents[2]
 DATA = REPO / "data"
 
 
-def _item(p):
+def _ar(p):
     w, h = p.get("width"), p.get("height")
-    ar = (float(w) / h) if (w and h and h > 0) else 1.5
-    geo = [x for x in (p.get("neighborhood"), p.get("city"), p.get("state")) if x]
+    return round(float(w) / h, 4) if (w and h and h > 0) else 1.5
+
+
+def _title(p):
+    return ", ".join(x for x in (p.get("neighborhood"), p.get("city"), p.get("state")) if x)
+
+
+def _coll_item(p):
+    """Shape consumed by partials/collitems.html (meta = tag_notes)."""
     return {
         "thumb": p.get("thumb"),
         "avif": p.get("display_avif"),
         "webp": p.get("display_webp"),
-        "ar": round(ar, 4),
-        "title": ", ".join(geo),
+        "ar": _ar(p),
+        "title": _title(p),
         "meta": p.get("tag_notes") or "",
+    }
+
+
+def _place_item(p):
+    """Shape consumed by layouts/places/single.html (meta = architecture · subject)."""
+    meta = list(p.get("architecture") or []) + list(p.get("subject") or [])
+    return {
+        "thumb": p.get("thumb"),
+        "avif": p.get("display_avif"),
+        "webp": p.get("display_webp"),
+        "ar": _ar(p),
+        "title": _title(p),
+        "meta": " · ".join(meta),
     }
 
 
 def main():
     photos = json.loads((DATA / "photos.json").read_text())
-    recs = [p for p in photos.values() if p.get("thumb")]
-    # stable order: by shoot then img_no (mirrors the manifest scan order)
-    recs.sort(key=lambda p: (p.get("shoot") or "", p.get("img_no") or 0))
+    # Match Hugo's `range hugo.Data.photos` order (a map ranged by SORTED KEY) so
+    # the generated lists render in the same order the templates did when they
+    # scanned the manifest directly.
+    recs = [photos[k] for k in sorted(photos) if photos[k].get("thumb")]
 
     collections, places, hero, covers = {}, {}, [], {}
     for p in recs:
-        it = _item(p)
+        ci = _coll_item(p)
         for slug in (p.get("collections") or []):
-            collections.setdefault(slug, []).append(it)
+            collections.setdefault(slug, []).append(ci)
         city = p.get("city")
         if city:
-            places.setdefault(city, []).append(it)
+            places.setdefault(city, []).append(_place_item(p))
+            # cover: first photo of the city (needs real dims), place_cover wins
+            if p.get("width") and (p.get("height") or 0) > 0:
+                if city not in covers or p.get("place_cover"):
+                    covers[city] = {"thumb": p.get("thumb"), "ar": _ar(p)}
         if p.get("hero"):
-            hero.append({"avif": it["avif"], "webp": it["webp"], "ar": it["ar"]})
-        if p.get("place_cover") and city and city not in covers:
-            covers[city] = it
+            hero.append({"avif": ci["avif"], "webp": ci["webp"], "ar": ci["ar"]})
 
     index = {"collections": collections, "places": places, "hero": hero, "covers": covers}
     (DATA / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")))
