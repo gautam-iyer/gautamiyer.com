@@ -114,6 +114,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .ctable th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#a1a1aa;background:#fafafa}
  .ctable tr.feat{background:#faf5ff}
  .ctable input.title{width:100%;max-width:280px}
+ .ctable input.place{width:100%;max-width:220px}
  .ctable input.order{width:52px;text-align:center}
  .ctable td.ct{color:#71717a;font-variant-numeric:tabular-nums}
  .linkbtn{border:0;background:none;color:#7c3aed;padding:0;text-decoration:underline;cursor:pointer;font-size:13px}
@@ -270,19 +271,23 @@ function renderList(){
 
 /* ================= COLLECTIONS MODE ================= */
 function collCount(slug){return Object.values(PHOTOS).filter(p=>(p.collections||[]).includes(slug)).length;}
+function collPlacesStr(c){const a=(c.places&&c.places.length)?c.places:(c.place?[c.place]:[]);return a.join(', ');}
+window.savePlaces=(slug,val)=>{const a=val.split(',').map(s=>s.trim()).filter(Boolean);updateColl(slug,{places:a,place:a[0]||''});};
 function renderColls(){
   $('#stat').textContent=`${COLLS.length} collections`;
   const rows=COLLS.slice().sort((a,b)=>(a.featured===b.featured)?(a.order-b.order)||a.title.localeCompare(b.title):(a.featured?-1:1))
    .map(c=>`<tr class="${c.featured?'feat':''}">
      <td><input class="title" value="${esc(c.title)}" onchange="updateColl('${esc(c.slug)}',{title:this.value})"></td>
-     <td class="ct">${esc(c.place||'')}</td>
+     <td><input class="place" list="dl-place" value="${esc(collPlacesStr(c))}" placeholder="e.g. Newark, Brooklyn" onchange="savePlaces('${esc(c.slug)}',this.value)"></td>
      <td class="ct">${collCount(c.slug)}</td>
      <td><input type="checkbox" ${c.featured?'checked':''} onchange="updateColl('${esc(c.slug)}',{featured:this.checked})"></td>
      <td><input class="order" type="number" min="0" value="${c.order||0}" onchange="updateColl('${esc(c.slug)}',{order:+this.value})"></td>
      <td><button class="linkbtn" onclick="editMembers('${esc(c.slug)}')">Edit members →</button></td>
    </tr>`).join('');
-  $('#main').innerHTML=`<p class="hint">Rename a collection by editing its title. Tick <b>Featured</b> and set <b>Order</b> (1,2,3…) to choose the 5 shown on the home page and their sequence. “Edit members” opens a grid to add/remove photos.</p>
-   <table class="ctable"><thead><tr><th>Title</th><th>Place</th><th>Photos</th><th>Featured</th><th>Order</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
+  const cities=uniq(Object.values(PHOTOS).map(p=>p.city));
+  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — type one or several <b>comma-separated</b> locations (e.g. “Newark, Brooklyn”) to span multiple; the site’s Collections filter then lists it under each. Tick <b>Featured</b> + set <b>Order</b> (1,2,3…) to choose the home-page 5 and their sequence. “Edit members” opens the add/remove grid.</p>
+   <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th></th></tr></thead><tbody>${rows}</tbody></table>
+   <datalist id="dl-place">${cities.map(c=>`<option value="${esc(c)}">`).join('')}</datalist>`;
 }
 window.editMembers=(slug)=>{mode='members';memberSlug=slug;page=0;memberFilter.city='';memberFilter.all=false;render();};
 
@@ -419,7 +424,7 @@ class Handler(BaseHTTPRequestHandler):
                 reg = load(COLLECTIONS, {"collections": []})
                 for c in reg["collections"]:
                     if c["slug"] == slug:
-                        for f in ("title", "featured", "order", "place", "description"):
+                        for f in ("title", "featured", "order", "place", "places", "description"):
                             if f in data:
                                 c[f] = data[f]
                         break
