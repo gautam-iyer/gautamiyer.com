@@ -1,0 +1,76 @@
+{{- /* Data-project article body (charts). Context: dict "p" (registry record)
+       "color" (accent). Figures/stats/intro live in data/projects.json; the
+       charts themselves are drawn by the project's JS (registry "scripts"),
+       which binds to each figure's id. */ -}}
+{{ $p := .p }}
+{{ $color := .color }}
+
+<article class="tour dproj">
+  <div class="tour-header">
+    <div class="tour-kicker subsubhead" style="color:{{ $color }}">{{ $p.type }}</div>
+    <h1 class="tour-title">{{ $p.title }}</h1>
+    {{ with $p.subtitle }}<p class="tour-subtitle">{{ . }}</p>{{ end }}
+  </div>
+
+  <div class="tour-info">
+    {{ with $p.when }}<div class="tour-fact"><span class="tour-fact-label">When</span><span class="tour-fact-val">{{ . }}</span></div>{{ end }}
+    {{ with $p.where }}<div class="tour-fact"><span class="tour-fact-label">Where</span><span class="tour-fact-val">{{ . }}</span></div>{{ end }}
+    {{ with $p.summary }}<div class="tour-fact"><span class="tour-fact-label">What</span><span class="tour-fact-val">{{ . }}</span></div>{{ end }}
+    {{ with $p.method }}<div class="tour-fact"><span class="tour-fact-label">Method</span><span class="tour-fact-val">{{ . }}</span></div>{{ end }}
+  </div>
+
+  {{ with $p.intro }}
+  <div class="dp-intro">
+    {{ range . }}<p>{{ . }}</p>{{ end }}
+  </div>
+  {{ end }}
+
+  {{ with $p.stats }}
+  <div class="dp-stats">
+    {{ range . }}
+    <div class="dp-stat">
+      <div class="dp-stat-label">{{ .label }}</div>
+      <div class="dp-stat-value">{{ .value }}</div>
+      {{ with .note }}<div class="dp-stat-note">{{ . }}</div>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ $base := site.Params.photo_base }}
+  {{ range $p.blocks }}
+    {{ if eq .type "photos" }}
+    {{/* photo row: manifest keys resolved to R2 tiers; opens in the shared lightbox */}}
+    <div class="dp-photos {{ if gt (len .items) 1 }}dp-photos-2{{ end }}">
+      {{ range .items }}
+        {{ $ph := index hugo.Data.photos .key }}
+        {{ if $ph }}
+        <div class="dp-photo">
+          {{ partial "lbthumb.html" (dict
+              "thumb" (printf "%s%s" $base $ph.thumb)
+              "avif"  (printf "%s%s" $base $ph.display_avif)
+              "webp"  (printf "%s%s" $base $ph.display_webp)
+              "ar"    (div (float $ph.width) (float $ph.height))
+              "title" .caption
+              "meta"  "") }}
+          {{ with .caption }}<div class="dp-photo-cap">{{ . }}</div>{{ end }}
+        </div>
+        {{ end }}
+      {{ end }}
+    </div>
+    {{ else }}
+    <figure class="dp-fig" id="{{ .id }}">
+      <figcaption>
+        <div class="dp-fig-title" style="color:{{ $color }}">{{ .title }}</div>
+        {{ with .sub }}<div class="dp-fig-sub">{{ . }}</div>{{ end }}
+      </figcaption>
+      <div class="dp-canvas"{{ with .h }} style="height:{{ . }}px"{{ end }}>
+        <canvas role="img" aria-label="{{ .title }}"></canvas>
+      </div>
+      {{ if .model }}<div class="dp-model" id="{{ .id }}-model"></div>{{ end }}
+    </figure>
+    {{ end }}
+  {{ end }}
+
+  {{ with $p.datanote }}<p class="dp-note">{{ . }}</p>{{ end }}
+</article>

@@ -38,7 +38,9 @@
   <div class="tile-grid tile-rows dim-titles" id="proj-grid" data-tilegrid>
     {{ range $i, $p := $shown }}
       {{ $color := index $palette (mod $i 5) }}
-      <a href="/projects/walking-tours/{{ $p.slug }}/" class="tile" style="--tint:{{ $color }}"
+      {{ $href := printf "/projects/%s/" $p.slug }}
+      {{ if eq $p.type "Walking Tours" }}{{ $href = printf "/projects/walking-tours/%s/" $p.slug }}{{ end }}
+      <a href="{{ $href }}" class="tile" style="--tint:{{ $color }}"
          data-title="{{ $p.title }}" data-type="{{ $p.type }}">
         {{ if $p.preview }}
         <div class="tile-img" style="aspect-ratio:8.5/11"><img src="{{ $base }}{{ $p.preview }}" alt="{{ $p.title }}" loading="lazy"></div>

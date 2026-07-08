@@ -64,7 +64,7 @@
         <a href="/projects/" class="{{ if eq .Section "projects" }}active{{ end }}">Projects</a>
         <ul class="submenu">
           <li><a href="/projects/" class="{{ if and (eq .Section "projects") (eq .Kind "section") (not .Params.islibrary) }}active{{ end }}">All Projects</a></li>
-          <li><a href="/projects/walking-tours/" class="{{ if or .Params.islibrary (and (eq .Section "projects") (eq .Kind "page")) }}active{{ end }}">Walking Tours</a></li>
+          <li><a href="/projects/walking-tours/" class="{{ if or .Params.islibrary (eq .Params.ptype "Walking Tours") }}active{{ end }}">Walking Tours</a></li>
         </ul>
       </li>
       <li><a href="/about/" class="{{ if eq .Section "about" }}active{{ end }}">About</a></li>

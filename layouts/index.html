@@ -13,7 +13,7 @@
 {{ end }}
 {{ if not $hero }}{{ $hero = partialCached "collitems.html" (dict "slug" "home-hero" "base" $base) "home-hero" }}{{ end }}
 {{ $essays := (where (where .Site.RegularPages "Section" "writing") "Params.featured" true).ByDate.Reverse }}
-{{ $featuredProjects := where (index hugo.Data.projects "projects") "featured" true }}
+{{ $featuredProjects := sort (where (index hugo.Data.projects "projects") "featured" true) "order" }}
 <main>
 
   {{/* HERO — one uncropped photo, full content width, framed by the grid; a
@@ -82,7 +82,9 @@
     <div class="fc-head">Featured Projects <a class="fc-head-link" href="/projects/">All Projects</a></div>
     <div class="home-essays">
       {{ range . }}
-      <a href="/projects/walking-tours/{{ .slug }}/" class="home-essay">
+      {{ $href := printf "/projects/%s/" .slug }}
+      {{ if eq .type "Walking Tours" }}{{ $href = printf "/projects/walking-tours/%s/" .slug }}{{ end }}
+      <a href="{{ $href }}" class="home-essay">
         <div class="home-essay-title">{{ .title }}</div>
         {{ with .subtitle }}<div class="home-essay-sub">{{ . }}</div>{{ end }}
       </a>

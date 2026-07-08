@@ -7,6 +7,10 @@
   {{ $palette := .Site.Params.palette }}
   {{ $color := index $palette 0 }}
 
+  {{ if eq $p.layout "data" }}
+  <a class="backlink" href="/projects/">← All Projects</a>
+  {{ partial "project-data.html" (dict "p" $p "color" $color) }}
+  {{ else }}
   <a class="backlink" href="/projects/walking-tours/">← Back to Walking Tours</a>
 
   <article class="tour">
@@ -51,5 +55,15 @@
     <div class="tour-guide"><div class="tour-guide-coming">Guide coming soon.</div></div>
     {{ end }}
   </article>
+  {{ end }}
 </main>
+{{ end }}
+
+{{ define "scripts" }}
+{{- /* Per-project JS (chart pages): registry "scripts" lists assets/ paths in
+       load order (vendor lib → site theme → page charts; defer preserves it). */ -}}
+{{ $slug := .Params.project }}
+{{ range (index hugo.Data.projects "projects") }}{{ if eq .slug $slug }}
+  {{ range .scripts }}{{ partial "asset-js.html" . }}{{ end }}
+{{ end }}{{ end }}
 {{ end }}
