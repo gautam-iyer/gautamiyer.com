@@ -26,36 +26,13 @@
   function ctx(id) { var el = fig(id); return el && el.querySelector('canvas'); }
   function fmt(v) { return v.toLocaleString('en-US'); }
 
-  var eraX = {
-    grid: { display: false },
-    border: { color: INK.axis },
-    ticks: { maxRotation: 0, autoSkip: false, callback: function (v, i) { return i % 2 === 0 ? eraStart[i] : null; } }
-  };
+  var eraXTick = function (v, i) { return i % 2 === 0 ? eraStart[i] : null; };
 
   /* ---------- fig 1: apartments completed per era ---------- */
   if (ctx('fig-waves')) {
-    new Chart(ctx('fig-waves'), {
-      type: 'bar',
-      data: {
-        labels: eraStart,
-        datasets: [{
-          data: APTS,
-          backgroundColor: BLUE,
-          maxBarThickness: 24,
-          categoryPercentage: 0.8,
-          borderRadius: { topLeft: 4, topRight: 4 },
-          borderSkipped: 'bottom'
-        }]
-      },
-      options: {
-        barValues: 'max',
-        layout: { padding: { top: 18 } },
-        plugins: {
-          legend: { display: false },
-          tooltip: { callbacks: { title: eraTip, label: function (c) { return fmt(c.parsed.y) + ' apartments completed'; } } }
-        },
-        scales: { x: eraX, y: { border: { display: false }, ticks: { callback: fmt } } }
-      }
+    SC.column(ctx('fig-waves'), {
+      labels: eraStart, data: APTS, xTick: eraXTick, yTick: fmt,
+      tipTitle: eraTip, tipLabel: function (c) { return fmt(c.parsed.y) + ' apartments completed'; }
     });
     SC.table(fig('fig-waves'), ['Completed', 'Apartments'], ERAS.map(function (e, i) { return [e.replace('-', '–'), APTS[i]]; }));
   }
@@ -172,7 +149,7 @@
           }
         },
         scales: {
-          x: eraX,
+          x: { grid: { display: false }, border: { color: INK.axis }, ticks: { maxRotation: 0, autoSkip: false, callback: eraXTick } },
           y: { border: { display: false }, title: { display: true, text: 'Acres (average per development)', color: INK.soft, font: { size: 11 } } }
         }
       }
@@ -183,28 +160,9 @@
 
   /* ---------- fig 4: apartments per building ---------- */
   if (ctx('fig-scale')) {
-    new Chart(ctx('fig-scale'), {
-      type: 'bar',
-      data: {
-        labels: eraStart,
-        datasets: [{
-          data: APT_PER_BLDG,
-          backgroundColor: BLUE,
-          maxBarThickness: 24,
-          categoryPercentage: 0.8,
-          borderRadius: { topLeft: 4, topRight: 4 },
-          borderSkipped: 'bottom'
-        }]
-      },
-      options: {
-        barValues: 'max',
-        layout: { padding: { top: 18 } },
-        plugins: {
-          legend: { display: false },
-          tooltip: { callbacks: { title: eraTip, label: function (c) { return c.parsed.y + ' apartments per building (avg)'; } } }
-        },
-        scales: { x: eraX, y: { border: { display: false } } }
-      }
+    SC.column(ctx('fig-scale'), {
+      labels: eraStart, data: APT_PER_BLDG, xTick: eraXTick,
+      tipTitle: eraTip, tipLabel: function (c) { return c.parsed.y + ' apartments per building (avg)'; }
     });
     SC.table(fig('fig-scale'), ['Completed', 'Apartments per building (avg)'],
       ERAS.map(function (e, i) { return [e.replace('-', '–'), APT_PER_BLDG[i]]; }));
@@ -212,28 +170,10 @@
 
   /* ---------- fig 5: construction cost per rental room ---------- */
   if (ctx('fig-cost')) {
-    new Chart(ctx('fig-cost'), {
-      type: 'bar',
-      data: {
-        labels: eraStart,
-        datasets: [{
-          data: PER_ROOM,
-          backgroundColor: BLUE,
-          maxBarThickness: 24,
-          categoryPercentage: 0.8,
-          borderRadius: { topLeft: 4, topRight: 4 },
-          borderSkipped: 'bottom'
-        }]
-      },
-      options: {
-        barValues: 'max',
-        layout: { padding: { top: 18 } },
-        plugins: {
-          legend: { display: false },
-          tooltip: { callbacks: { title: eraTip, label: function (c) { return '$' + fmt(c.parsed.y) + ' per rental room (avg, nominal)'; } } }
-        },
-        scales: { x: eraX, y: { border: { display: false }, ticks: { callback: function (v) { return '$' + fmt(v); } } } }
-      }
+    SC.column(ctx('fig-cost'), {
+      labels: eraStart, data: PER_ROOM, xTick: eraXTick,
+      yTick: function (v) { return '$' + fmt(v); },
+      tipTitle: eraTip, tipLabel: function (c) { return '$' + fmt(c.parsed.y) + ' per rental room (avg, nominal)'; }
     });
     SC.table(fig('fig-cost'), ['Completed', 'Avg cost per rental room (nominal $)'],
       ERAS.map(function (e, i) { return [e.replace('-', '–'), PER_ROOM[i]]; }));

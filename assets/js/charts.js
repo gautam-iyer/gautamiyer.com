@@ -176,16 +176,19 @@ window.SiteCharts = (function () {
 
   /* ---- collapsible data-table view under a figure (accessibility fallback
      for every chart) ---- */
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
   function table(figEl, head, rows) {
     var d = document.createElement('details');
     d.className = 'dp-tv';
     var html = '<summary>View the data as a table</summary><div class="dp-tv-scroll"><table><thead><tr>';
-    head.forEach(function (h) { html += '<th>' + h + '</th>'; });
+    head.forEach(function (h) { html += '<th>' + esc(h) + '</th>'; });
     html += '</tr></thead><tbody>';
     rows.forEach(function (r) {
       html += '<tr>';
       r.forEach(function (v) {
-        html += '<td>' + (typeof v === 'number' ? v.toLocaleString('en-US') : v) + '</td>';
+        html += '<td>' + (typeof v === 'number' ? v.toLocaleString('en-US') : esc(v)) + '</td>';
       });
       html += '</tr>';
     });
@@ -194,10 +197,52 @@ window.SiteCharts = (function () {
     figEl.appendChild(d);
   }
 
+  /* ---- the house column chart: single series, slot-1 blue, rounded caps,
+     peak labeled. o: {labels, data, xTick?, yTick?, tipTitle?, tipLabel?,
+     barValues?, options?} — options deep-merges last for one-off tweaks. ---- */
+  function mergeDeep(dst, src) {
+    Object.keys(src).forEach(function (k) {
+      var v = src[k];
+      if (v && typeof v === 'object' && !Array.isArray(v) && typeof dst[k] === 'object' && dst[k]) mergeDeep(dst[k], v);
+      else dst[k] = v;
+    });
+    return dst;
+  }
+  function column(canvas, o) {
+    var options = {
+      barValues: o.barValues || 'max',
+      layout: { padding: { top: 18 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { title: o.tipTitle, label: o.tipLabel } }
+      },
+      scales: {
+        x: { grid: { display: false }, border: { color: INK.axis }, ticks: { maxRotation: 0, autoSkip: false, callback: o.xTick } },
+        y: { border: { display: false }, ticks: { callback: o.yTick } }
+      }
+    };
+    if (o.options) mergeDeep(options, o.options);
+    return new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels: o.labels,
+        datasets: [{
+          data: o.data,
+          backgroundColor: PAL[0],
+          maxBarThickness: 24,
+          categoryPercentage: 0.8,
+          borderRadius: { topLeft: 4, topRight: 4 },
+          borderSkipped: 'bottom'
+        }]
+      },
+      options: options
+    });
+  }
+
   function hexA(hex, a) {
     var v = parseInt(hex.slice(1), 16);
     return 'rgba(' + (v >> 16) + ',' + ((v >> 8) & 255) + ',' + (v & 255) + ',' + a + ')';
   }
 
-  return { palette: PAL, ink: INK, family: FAMILY, ols: ols, table: table, alpha: hexA };
+  return { palette: PAL, ink: INK, family: FAMILY, ols: ols, table: table, column: column, alpha: hexA };
 })();
