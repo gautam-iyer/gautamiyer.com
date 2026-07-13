@@ -201,6 +201,32 @@ def img_number(filename):
     return int(m.group(1)) if m else None
 
 
+def camera_of(path):
+    """EXIF camera model, normalized ('Canon EOS R8' -> 'EOS R8').
+    None for film scans / missing EXIF (film carries no camera model)."""
+    try:
+        from PIL import Image
+        with Image.open(path) as im:
+            model = (im.getexif() or {}).get(0x0110)
+        if not model:
+            return None
+        model = str(model).strip().rstrip("\x00").strip()
+        if model.startswith("Canon "):
+            model = model[len("Canon "):]
+        return model or None
+    except Exception:
+        return None
+
+
+def state_map():
+    """city -> state from data/places.json (e.g. Pittsburgh -> PA)."""
+    try:
+        places = json.loads((REPO / "data" / "places.json").read_text())
+        return {p["city"]: p.get("state") for p in places if p.get("city")}
+    except Exception:
+        return {}
+
+
 # ---------- sips helpers ----------
 
 def dims(path):
@@ -268,7 +294,11 @@ def cmd_scan(args):
         if not folder.exists():
             print(f"  ! missing shoot folder: {folder}", file=sys.stderr)
             continue
-        for f in sorted(folder.glob("*.jpg")) + sorted(folder.glob("*.JPG")):
+        jpgs = []
+        for pat in ("*.jpg", "*.JPG", "*.jpeg", "*.JPEG"):
+            jpgs.extend(folder.glob(pat))
+        states = state_map()
+        for f in sorted(set(jpgs)):
             key = f"{shoot['folder']}/{f.name}"
             if key in m or key in deleted:
                 continue
@@ -278,16 +308,18 @@ def cmd_scan(args):
                 "file": f.name,
                 "shoot": shoot["slug"],
                 "city": shoot["city"],
+                "state": shoot.get("state", states.get(shoot["city"])),
                 "date": shoot["date"],
                 "img_no": img_number(f.name),
                 "width": w,
                 "height": h,
+                "camera": shoot["camera"] if "camera" in shoot else camera_of(f),
                 # tag fields (filled by tag-apply / neighborhoods)
                 "neighborhood": None,
                 "land_use": [],
                 "architecture": [],
                 "subject": [],
-                "medium": None,
+                "medium": shoot.get("medium"),
                 "tone": [],
                 "tag_notes": None,
                 "collections": [],

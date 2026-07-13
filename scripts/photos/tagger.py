@@ -94,6 +94,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .row.reviewed{border-color:#86efac;background:#f0fdf4}
  .thumb{width:100%;border-radius:6px;display:block;background:#e4e4e7}
  .imgmeta{font-size:11px;color:#a1a1aa;margin-top:6px;font-variant-numeric:tabular-nums}
+ .cam{color:#71717a} .cam-old{color:#b45309;font-weight:600}
  .imgmeta b{color:#52525b}
  .notes{font-size:12px;color:#71717a;font-style:italic;margin-top:6px}
  .dim{margin-bottom:9px}
@@ -209,7 +210,7 @@ function datalists(){
 }
 
 /* ================= TAG MODE ================= */
-const tagFilters={shoot:'',city:'',state:'',coll:'',medium:'',review:'',q:''};
+const tagFilters={shoot:'',city:'',state:'',coll:'',medium:'',camera:'',review:'',q:''};
 function tagVisible(){
   const f=tagFilters;
   return Object.keys(PHOTOS).filter(k=>{
@@ -219,6 +220,7 @@ function tagVisible(){
     if(f.state&&p.state!==f.state)return false;
     if(f.coll&&!(p.collections||[]).includes(f.coll))return false;
     if(f.medium&&(p.medium||'')!==f.medium)return false;
+    if(f.camera&&(p.camera||'')!==f.camera)return false;
     if(f.review==='un'&&p.reviewed)return false;
     if(f.review==='rev'&&!p.reviewed)return false;
     if(f.q){const q=f.q.toLowerCase();
@@ -237,13 +239,14 @@ function tagFilterBar(){
   <select id="f-state"><option value="">State</option>${opt(states.map(s=>({v:s,t:s})),tagFilters.state)}</select>
   <select id="f-coll"><option value="">Any collection</option>${opt(COLLS.slice().sort((a,b)=>a.title.localeCompare(b.title)).map(c=>({v:c.slug,t:c.title})),tagFilters.coll)}</select>
   <select id="f-medium"><option value="">Any medium</option><option value="Digital"${tagFilters.medium==='Digital'?' selected':''}>Digital</option><option value="Film"${tagFilters.medium==='Film'?' selected':''}>Film</option></select>
+  <select id="f-camera"><option value="">Any camera</option>${opt(uniq(Object.values(PHOTOS).map(p=>p.camera)).map(c=>({v:c,t:c})),tagFilters.camera)}</select>
   <select id="f-review"><option value="">All</option><option value="un"${tagFilters.review==='un'?' selected':''}>Unreviewed</option><option value="rev"${tagFilters.review==='rev'?' selected':''}>Reviewed</option></select>
   <input class="search" id="f-q" placeholder="search…" value="${esc(tagFilters.q)}">`;
 }
 function wireTagFilters(){
   const bind=(id,key,ev)=>{const el=$(id);if(!el)return;el.addEventListener(ev,()=>{tagFilters[key]=el.value;page=0;render();});};
   bind('#f-shoot','shoot','change');bind('#f-city','city','change');bind('#f-state','state','change');
-  bind('#f-coll','coll','change');bind('#f-medium','medium','change');bind('#f-review','review','change');
+  bind('#f-coll','coll','change');bind('#f-medium','medium','change');bind('#f-camera','camera','change');bind('#f-review','review','change');
   const q=$('#f-q');if(q){q.addEventListener('input',()=>{tagFilters.q=q.value;page=0;renderList();});q.focus();q.setSelectionRange(q.value.length,q.value.length);}
 }
 function geoRow(key){
@@ -327,7 +330,7 @@ function renderList(){
     const dims=TAX.map(d=>chipRow(key,d)).join('');
     return `<div class="row ${p.reviewed?'reviewed':''}" data-key="${esc(key)}">
       <div><img class="thumb" loading="lazy" src="/img/${p.thumb}">
-        <div class="imgmeta"><b>${esc(p.file)}</b> · ${esc(p.shoot)} · #${p.img_no}</div>
+        <div class="imgmeta"><b>${esc(p.file)}</b> · ${esc(p.shoot)} · #${p.img_no}${p.camera?` · <span class="cam ${p.camera==='EOS 7D'?'cam-old':''}">${esc(p.camera)}</span>`:''}</div>
         ${p.tag_notes?`<div class="notes">“${esc(p.tag_notes)}”</div>`:''}
         <button class="del small" onclick="deletePhoto('${jesc(key)}')">🗑 Delete photo</button></div>
       <div>${geoRow(key)}${rolesRow(key)}${mediumRow(key)}${dims}${collRow(key)}</div></div>`;
