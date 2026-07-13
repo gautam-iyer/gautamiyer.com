@@ -17,6 +17,7 @@
       "webp"  (printf "%s%s" $base .webp)
       "ar"    .ar
       "title" .title
-      "meta"  .meta) -}}
+      "meta"  .meta
+      "cam"   (.cam | default "")) -}}
 {{- end -}}
 {{- return $items -}}

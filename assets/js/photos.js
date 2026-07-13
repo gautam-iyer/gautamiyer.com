@@ -103,6 +103,11 @@
       const j = Math.floor(Math.random() * (i + 1));
       [items[i], items[j]] = [items[j], items[i]];
     }
+    // Camera priority: old-camera frames (data-cam="EOS 7D") sort after the
+    // rest — random within each partition. Film (no cam) is not penalized.
+    const isOld = (it) => it.dataset.cam === 'EOS 7D';
+    const biased = items.filter((it) => !isOld(it)).concat(items.filter(isOld));
+    items.length = 0; items.push(...biased);
     items.forEach((it) => gallery.appendChild(it)); // reflect new order in the DOM
   }
 

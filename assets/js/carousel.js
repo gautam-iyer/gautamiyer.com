@@ -20,11 +20,16 @@
 
     // Shuffle so each visit shows the collection's photos in a fresh order
     // (Fisher–Yates), then reflect that order in the DOM before cloning.
+    // Camera priority: frames from the old camera (data-cam="EOS 7D") are
+    // stable-partitioned AFTER everything else, so mixed collections lead with
+    // new-camera work. All-old collections (e.g. Buffalo) are unaffected.
     if (N > 1) {
       for (let x = N - 1; x > 0; x--) {
         const y = Math.floor(Math.random() * (x + 1));
         [originals[x], originals[y]] = [originals[y], originals[x]];
       }
+      const isOld = (s) => s.dataset.cam === 'EOS 7D';
+      originals = originals.filter((s) => !isOld(s)).concat(originals.filter(isOld));
       originals.forEach((s) => track.appendChild(s));
     }
 

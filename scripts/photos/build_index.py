@@ -43,6 +43,7 @@ def _coll_item(p):
         "ar": _ar(p),
         "title": _title(p),
         "meta": p.get("tag_notes") or "",
+        "cam": p.get("camera") or "",
     }
 
 
@@ -53,6 +54,7 @@ def _place_item(p):
         "thumb": p.get("thumb"),
         "avif": p.get("display_avif"),
         "webp": p.get("display_webp"),
+        "cam": p.get("camera") or "",
         "ar": _ar(p),
         "title": _title(p),
         "meta": " · ".join(meta),
@@ -79,7 +81,7 @@ def main():
                 if city not in covers or p.get("place_cover"):
                     covers[city] = {"thumb": p.get("thumb"), "ar": _ar(p)}
         if p.get("hero"):
-            hero.append({"avif": ci["avif"], "webp": ci["webp"], "ar": ci["ar"]})
+            hero.append({"avif": ci["avif"], "webp": ci["webp"], "ar": ci["ar"], "cam": ci["cam"]})
 
     index = {"collections": collections, "places": places, "hero": hero, "covers": covers}
     (DATA / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")))

@@ -9,7 +9,12 @@
     const controls = document.querySelector('[data-tilecontrols="' + grid.id + '"]');
     if (!controls) return;
 
-    const tiles = Array.from(grid.children);
+    let tiles = Array.from(grid.children);
+    // Camera priority: tiles flagged data-oldcam (majority old-camera content)
+    // are stable-partitioned to the end of the DEFAULT order before it is
+    // memorized as "original" — explicit A–Z/state sorts are untouched.
+    tiles = tiles.filter((t) => !t.dataset.oldcam).concat(tiles.filter((t) => t.dataset.oldcam));
+    tiles.forEach((t) => grid.appendChild(t));
     tiles.forEach((t, i) => (t.dataset.i = i)); // remember original order
     const sortSel = controls.querySelector('[data-role="sort"]');
     const filterSels = Array.from(controls.querySelectorAll('[data-role="filter"]'));

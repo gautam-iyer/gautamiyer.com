@@ -9,7 +9,7 @@
      back to the home-hero collection until any are flagged. */}}
 {{ $hero := slice }}
 {{ range (index hugo.Data.index "hero") }}
-  {{ $hero = $hero | append (dict "avif" (printf "%s%s" $base .avif) "webp" (printf "%s%s" $base .webp) "ar" .ar) }}
+  {{ $hero = $hero | append (dict "avif" (printf "%s%s" $base .avif) "webp" (printf "%s%s" $base .webp) "ar" .ar "cam" (.cam | default "")) }}
 {{ end }}
 {{ if not $hero }}{{ $hero = partialCached "collitems.html" (dict "slug" "home-hero" "base" $base) "home-hero" }}{{ end }}
 {{ $essays := (where (where .Site.RegularPages "Section" "writing") "Params.featured" true).ByDate.Reverse }}
@@ -50,6 +50,10 @@
       var portrait = window.matchMedia('(max-width: 700px)').matches;
       var wanted = imgs.filter(function (x) { return portrait ? x.ar < 1 : x.ar >= 1; });
       var pool = wanted.length ? wanted : imgs;
+      // Camera priority: hero only ever shows new-camera (or film) frames
+      // unless the pool has nothing else.
+      var newer = pool.filter(function (x) { return x.cam !== 'EOS 7D'; });
+      if (newer.length) pool = newer;
       var pick = pool[Math.floor(Math.random() * pool.length)];
       var media = pic.closest('.hero-media');
       if (media && pick.ar) media.style.aspectRatio = pick.ar; // box matches image → no crop, no jump

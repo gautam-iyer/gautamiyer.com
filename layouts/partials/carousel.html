@@ -10,7 +10,7 @@
   <div class="carousel-track">
     {{- range $items }}
     <button class="carousel-slide" type="button" style="--ar:{{ .ar }}"
-      data-lb data-avif="{{ .avif }}" data-webp="{{ .webp }}" data-title="{{ .title }}" data-meta="{{ .meta }}">
+      data-lb data-avif="{{ .avif }}" data-webp="{{ .webp }}" data-title="{{ .title }}" data-meta="{{ .meta }}"{{ with .cam }} data-cam="{{ . }}"{{ end }}>
       <img src="{{ .thumb }}" loading="lazy" alt="{{ .title }}">
     </button>
     {{- end }}

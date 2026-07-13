@@ -35,8 +35,11 @@
         {{ range $fi, $fc := (partialCached "featured.html" $ "featured") }}{{ if eq $fc.slug $slug }}{{ $color = index $palette (mod $fi 5) }}{{ end }}{{ end }}
         {{ $cover := index $items 0 }}
         {{ $places := $c.places | default (slice ($c.place | default "")) }}
+        {{/* Majority-old-camera collections get bumped down the default order
+             (tiles.js stable-partitions data-oldcam tiles to the end). */}}
+        {{ $old := 0 }}{{ range $items }}{{ if eq .cam "EOS 7D" }}{{ $old = add $old 1 }}{{ end }}{{ end }}
         <a href="/collections/{{ $slug }}/" class="tile" style="--tint:{{ $color }}"
-           data-title="{{ $title }}" data-places="{{ delimit $places "|" }}"{{ if gt (len $places) 1 }} data-multi="1"{{ end }}>
+           data-title="{{ $title }}" data-places="{{ delimit $places "|" }}"{{ if gt (len $places) 1 }} data-multi="1"{{ end }}{{ if gt (mul $old 2) (len $items) }} data-oldcam="1"{{ end }}>
           <div class="tile-img" style="aspect-ratio:{{ $cover.ar }}">
             <img src="{{ $cover.thumb }}" alt="{{ $title }}" loading="lazy">
           </div>

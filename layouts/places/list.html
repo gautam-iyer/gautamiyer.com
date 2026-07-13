@@ -32,7 +32,10 @@
       {{/* Places with photos become clickable album pages; the rest (no photos
            yet) stay as non-clickable colored placeholders. */}}
       {{ if $cover }}
-      <a href="/places/{{ $pl.city | urlize }}/" class="tile" style="--tint:{{ $color }}" data-city="{{ $pl.city }}" data-state="{{ $pl.state }}">
+      {{/* Majority-old-camera places get bumped down the default order. */}}
+      {{ $pitems := index (index hugo.Data.index "places") $pl.city | default slice }}
+      {{ $old := 0 }}{{ range $pitems }}{{ if eq .cam "EOS 7D" }}{{ $old = add $old 1 }}{{ end }}{{ end }}
+      <a href="/places/{{ $pl.city | urlize }}/" class="tile" style="--tint:{{ $color }}" data-city="{{ $pl.city }}" data-state="{{ $pl.state }}"{{ if gt (mul $old 2) (len $pitems) }} data-oldcam="1"{{ end }}>
         <div class="tile-img" style="aspect-ratio:{{ $cover.ar }}"><img src="{{ $cover.thumb }}" alt="{{ $pl.name }}" loading="lazy"></div>
         <div class="tile-title subsubhead" style="color:{{ $color }}">{{ $pl.name }}</div>
       </a>
