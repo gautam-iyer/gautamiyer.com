@@ -129,6 +129,26 @@
       "name": "Bronx, NY",
       "city": "Bronx",
       "state": "NY"
+    },
+    {
+      "name": "Helena, AR",
+      "city": "Helena",
+      "state": "AR"
+    },
+    {
+      "name": "Lower Miss. Delta",
+      "city": "Lower Miss. Delta",
+      "state": "MS"
+    },
+    {
+      "name": "Lisbon, Portugal",
+      "city": "Lisbon",
+      "state": "Portugal"
+    },
+    {
+      "name": "Porto, Portugal",
+      "city": "Porto",
+      "state": "Portugal"
     }
   ]
 }

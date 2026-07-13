@@ -16,6 +16,10 @@ Three modes (top-left switch):
                    jump to "Edit members".
   • Edit members — a grid for one collection: shows its photos (click to REMOVE);
                    flip "show all matching" + a place filter to ADD photos.
+  • Duplicates   — reviews near-duplicate groups found by scripts/photos/dupes.py
+                   (data/duplicates.json): keep-only-one, delete individual frames,
+                   or dismiss a group as not-duplicates. Deletes use the same
+                   full-removal path as everywhere else (manifest+R2+deny-list).
 
 AUTOSAVES every change to data/photos.json / data/collections.json and marks
 edited photos reviewed=true so the pipeline never overwrites hand edits.
@@ -38,6 +42,7 @@ COLLECTIONS = REPO / "data" / "collections.json"
 TAXONOMY = REPO / "data" / "taxonomy.json"
 PLACES = REPO / "data" / "places.json"
 DELETIONS = REPO / "data" / "deleted-photos.jsonl"  # append-only record of deletes
+DUPES = REPO / "data" / "duplicates.json"  # near-duplicate groups (scripts/photos/dupes.py)
 DERIV = REPO / ".photo-build" / "derivatives"
 PORT = 8800
 
@@ -144,6 +149,16 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .ctable tr.caprow td{padding-top:0;border-bottom:1px solid #f0f0f1}
  .caplabel{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:#a1a1aa;margin-bottom:3px}
  .deleting{opacity:.4;pointer-events:none;transition:opacity .15s}
+ .dgroup{background:#fff;border:1px solid #e4e4e7;border-radius:10px;margin:14px 18px;padding:12px 14px}
+ .dhead{font-size:13px;color:#52525b;margin-bottom:10px;display:flex;align-items:center;gap:14px}
+ .drow{display:flex;gap:12px;flex-wrap:wrap}
+ .dcard{width:270px} .dcard img{width:270px;height:270px;object-fit:contain;background:#18181b;border-radius:8px;display:block}
+ .dmeta{font-size:11px;color:#71717a;margin:6px 0;line-height:1.5}
+ .dbtns{display:flex;gap:8px;align-items:center}
+ .keep{border:1px solid #16a34a;color:#16a34a;background:#fff;border-radius:6px;font-size:12px;padding:5px 10px;cursor:pointer}
+ .keep:hover{background:#16a34a;color:#fff}
+ .keepall{border:1px solid #d4d4d8;background:#fff;border-radius:6px;font-size:12px;padding:4px 10px;cursor:pointer;color:#52525b}
+ .keepall:hover{border-color:#16a34a;color:#16a34a}
  .removing{opacity:0;transform:scale(.92);transition:opacity .25s,transform .25s}
 </style></head><body>
 <header>
@@ -151,6 +166,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  <div class="seg" id="modeseg">
    <button data-mode="tag" class="on">Tag photos</button>
    <button data-mode="colls">Collections</button>
+   <button data-mode="dupes">Duplicates</button>
  </div>
  <span id="filters"></span>
  <span class="spacer"></span>
@@ -159,7 +175,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
 </header>
 <main id="main"></main>
 <script>
-let PHOTOS={}, COLLS=[], TAX=[], SHOOTS=[];
+let PHOTOS={}, COLLS=[], TAX=[], SHOOTS=[], DUPES=[];
 let mode='tag', page=0, memberSlug=null;
 const PER=48, GRIDPER=60;                     // list page size / grid page size
 const $=s=>document.querySelector(s);
@@ -172,7 +188,7 @@ const uniq=a=>[...new Set(a.filter(Boolean))].sort();
 
 async function boot(){
   const d=await (await fetch('/api/data')).json();
-  PHOTOS=d.photos; COLLS=d.collections; TAX=d.taxonomy||[]; SHOOTS=d.shoots||[];
+  PHOTOS=d.photos; COLLS=d.collections; TAX=d.taxonomy||[]; SHOOTS=d.shoots||[]; DUPES=d.dupes||[];
   document.querySelectorAll('#modeseg button').forEach(b=>b.onclick=()=>{
     mode=b.dataset.mode; page=0; memberSlug=null;
     document.querySelectorAll('#modeseg button').forEach(x=>x.classList.toggle('on',x===b));
@@ -338,6 +354,62 @@ function renderList(){
   wirePager();
 }
 
+/* ================= DUPLICATES MODE ================= */
+// Groups come from scripts/photos/dupes.py -> data/duplicates.json.
+// Review actions: "Keep only this" deletes the rest of the group; per-photo 🗑;
+// "Not duplicates" dismisses the group. Group status persists via /api/dupes.
+async function setDupeStatus(id,status){
+  const g=DUPES.find(x=>x.id===id); if(g)g.status=status;
+  await fetch('/api/dupes',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id,status})});
+  flash();
+}
+window.dupeKeepAll=async(id)=>{await setDupeStatus(id,'kept');renderDupes();};
+window.dupeDelete=async(id,key)=>{
+  const g=DUPES.find(x=>x.id===id); if(!g)return;
+  if(!confirm('Delete '+key.split('/').pop()+' from the site + R2 for good?'))return;
+  let r=null; try{r=await fetch('/api/delete',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({key})});}catch(e){}
+  if(!r||!r.ok){alert('Delete failed — nothing was removed.');return;}
+  delete PHOTOS[key];
+  g.keys=g.keys.filter(k=>k!==key);
+  if(g.keys.length<2)await setDupeStatus(id,'resolved');
+  flash();renderDupes();
+};
+window.dupeKeepOnly=async(id,key)=>{
+  const g=DUPES.find(x=>x.id===id); if(!g)return;
+  const losers=g.keys.filter(k=>k!==key);
+  if(!confirm('Keep only '+key.split('/').pop()+' and DELETE the other '+losers.length+' from the site + R2 for good?'))return;
+  for(const k of losers){
+    let r=null; try{r=await fetch('/api/delete',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({key:k})});}catch(e){}
+    if(r&&r.ok)delete PHOTOS[k];
+  }
+  g.keys=[key];
+  await setDupeStatus(id,'resolved');
+  renderDupes();
+};
+function renderDupes(){
+  const open=DUPES.filter(g=>g.status==='open'&&g.keys.filter(k=>PHOTOS[k]).length>1);
+  const done=DUPES.length-open.length;
+  $('#stat').textContent=`${open.length} open group${open.length===1?'':'s'} · ${done} resolved/kept`;
+  if(!open.length){$('#main').innerHTML='<div class="dgroup"><em>No open duplicate groups. Re-run scripts/photos/dupes.py after new ingests.</em></div>';return;}
+  $('#main').innerHTML=open.map(g=>{
+    const cards=g.keys.filter(k=>PHOTOS[k]).map(k=>{
+      const p=PHOTOS[k];
+      return `<div class="dcard" data-key="${esc(k)}">
+        <img loading="lazy" src="/img/${p.thumb}">
+        <div class="dmeta"><b>${esc(p.file)}</b><br>#${p.img_no} · ${p.width}×${p.height}${p.camera?' · '+esc(p.camera):''}${p.reviewed?' · ✓reviewed':''}<br>${esc(p.shoot)}</div>
+        <div class="dbtns">
+          <button class="keep" onclick="dupeKeepOnly(${g.id},'${jesc(k)}')">Keep only this</button>
+          <button class="del small" onclick="dupeDelete(${g.id},'${jesc(k)}')">🗑</button>
+        </div></div>`;
+    }).join('');
+    return `<div class="dgroup" id="dg-${g.id}">
+      <div class="dhead">Group ${g.id} · ${g.keys.length} photos
+        <button class="keepall" onclick="dupeKeepAll(${g.id})">✓ Not duplicates — keep all</button></div>
+      <div class="drow">${cards}</div></div>`;
+  }).join('');
+  window.scrollTo(0,0);
+}
+
 /* ================= COLLECTIONS MODE ================= */
 function collCount(slug){return Object.values(PHOTOS).filter(p=>(p.collections||[]).includes(slug)).length;}
 function collPlacesStr(c){const a=(c.places&&c.places.length)?c.places:(c.place?[c.place]:[]);return a.join(', ');}
@@ -430,6 +502,7 @@ function render(){
   if(mode==='tag'){fbar.innerHTML=tagFilterBar();wireTagFilters();renderList();}
   else{fbar.innerHTML='';
     if(mode==='colls')renderColls();
+    else if(mode==='dupes')renderDupes();
     else renderMembers();}
 }
 boot();
@@ -461,7 +534,8 @@ class Handler(BaseHTTPRequestHandler):
                 colls = load(COLLECTIONS, {"collections": []})["collections"]
                 tax = load(TAXONOMY, {"dimensions": []})["dimensions"]
             shoots = sorted({p["shoot"] for p in m.values()})
-            return self._send(200, {"photos": m, "collections": colls, "taxonomy": tax, "shoots": shoots})
+            dupes = load(DUPES, {"groups": []})["groups"]
+            return self._send(200, {"photos": m, "collections": colls, "taxonomy": tax, "shoots": shoots, "dupes": dupes})
         if path.startswith("/img/"):
             rel = unquote(path[len("/img/"):])
             f = (DERIV / rel).resolve()
@@ -527,6 +601,16 @@ class Handler(BaseHTTPRequestHandler):
                     except FileNotFoundError:
                         pass
             threading.Thread(target=_cleanup, args=(tiers,), daemon=True).start()
+            return self._send(200, {"ok": True})
+        if path == "/api/dupes":
+            # Persist a duplicate group's review status (open | kept | resolved).
+            with _lock:
+                d = load(DUPES, {"groups": []})
+                for g in d["groups"]:
+                    if g["id"] == data["id"]:
+                        g["status"] = data["status"]
+                        break
+                atomic_write(DUPES, d)
             return self._send(200, {"ok": True})
         if path == "/api/collection/update":
             slug = data["slug"]
