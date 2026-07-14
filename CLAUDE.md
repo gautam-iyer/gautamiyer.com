@@ -8,8 +8,13 @@ Hugo static site (personal site + photography portfolio). Live at https://gautam
 
 ## Photo pipeline (`scripts/photos/`)
 - `pipeline.py` — manifest brain, keyed by relative path, idempotent, never clobbers `reviewed:true`. Subcommands: `scan [--shoot]`, `derive`, `tag-apply`, `neighborhoods`, `contact-sheet`, `prune`, `status`; global `--manifest` for staging. Add a shoot to the `SHOOTS` list, then scan→derive→tag→neighborhoods→`r2_upload.sh`→deploy.
-- `tagger.py` — local review/curation app (localhost:8800); autosaves to `data/photos.json` + `data/collections.json`, sets `reviewed:true`.
+- `tagger.py` — local review/curation app (localhost:8800); autosaves to `data/photos.json` + `data/collections.json`, sets `reviewed:true`. Modes: Tag / Collections / Edit members / **Duplicates** (reviews `data/duplicates.json` groups: keep-only-one, per-frame delete, dismiss).
+- `dupes.py` — near-duplicate detection (dHash+aHash on thumbs; burst-window within shoot + strict cross-shoot) → `data/duplicates.json`. Re-run after ingests; preserves prior review state.
 - Derivatives live in `.photo-build/` (gitignored); after R2 upload run `pipeline.py prune` (keeps thumbs).
+
+## Camera provenance & priority
+- Per-photo `camera` ("EOS 7D" = old body, "EOS R8" = new, null = film) — read from source EXIF at `scan`; per-shoot registry override (`"camera": None` for film folders). Tagger shows it (amber badge for 7D) + filter.
+- **Old-camera content is deprioritized in the UI**: carousel + /photos shuffles stable-partition `data-cam="EOS 7D"` frames after everything else; the home hero pool excludes 7D; majority-7D collection/place tiles get `data-oldcam` and sort after the rest in the DEFAULT tile order (explicit sorts untouched). Film is never penalized. `cam` flows via build_index.py items → collitems.html → carousel.html/`layouts/photos/list.html` data attrs.
 
 ## Data
 - `data/photos.json` — per-photo manifest. Tag dims land_use/architecture/subject/tone are **arrays** (multi-select); neighborhood/city/medium single. Tier paths are relative to the derivatives root; templates prepend `photo_base`.
