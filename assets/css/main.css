@@ -103,6 +103,28 @@ body.scrolled .site-name { transform: scale(0.64); }
 
 .site-name:hover { opacity: 0.6; }
 
+/* Hand-drawn name: the scan is an alpha mask (ink = opaque), tinted by
+   background-color so it stays palette-controlled like the other doodles.
+   Sized in grid units; box aspect ~1.6 matches the trimmed art so `contain`
+   fits it to the header height with no letterboxing. The scale-on-scroll and
+   hover rules above still apply — it's the same .site-name element. */
+.site-name--doodle {
+  width: calc(var(--grid) * 2.65);
+  height: calc(var(--grid) * 1.6);
+  background-color: var(--black);
+  -webkit-mask: var(--doodle-name) left center / contain no-repeat;
+  mask: var(--doodle-name) left center / contain no-repeat;
+}
+
+/* visually hidden, still read by screen readers + indexed */
+.vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden; white-space: nowrap;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+}
+
 /* ── Side navigation drawer ───────────────────────────────────────────
    A slim sliver handle hugs the left edge; hovering it (or clicking to pin,
    handled in nav.js) slides the dark panel out over the page, dimming the
@@ -1508,6 +1530,9 @@ article {
 
 @media (max-width: 700px) {
   header { padding-top: 32px; }
+  /* header content area shrinks to ~48px here (border-box - top padding);
+     scale the two-line logo down so it doesn't overflow the header */
+  .site-name--doodle { width: calc(var(--grid) * 1.85); height: calc(var(--grid) * 1.12); }
   main { padding: 32px 0 64px; }
   article { padding: 36px var(--side-padding) 64px; }
 

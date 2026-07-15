@@ -25,12 +25,17 @@
   {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
+  {{/* Hand-drawn name logo: fingerprinted URL handed to CSS as a var so the
+       mask-image cache-busts with the asset (can't fingerprint from inside main.css). */}}
+  {{ $nameDoodle := resources.Get "img/doodles/name-gautam-iyer.png" | fingerprint }}
+  <style>:root{--doodle-name:url("{{ $nameDoodle.RelPermalink }}")}</style>
+
   {{ block "head" . }}{{ end }}
 </head>
 <body{{ if .IsHome }} class="home"{{ end }}>
 
 <header>
-  <a href="/" class="site-name">{{ .Site.Title }}</a>
+  <a href="/" class="site-name site-name--doodle"><span class="vh">{{ .Site.Title }}</span></a>
 </header>
 
 {{ $featured := partialCached "featured.html" . "featured" }}
