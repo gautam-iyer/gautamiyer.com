@@ -24,7 +24,7 @@
   }
 
   const GAP = 8 // px — column gap; the search aims the row gap at this too
-  const TRIES = 160 // shuffles examined per layout (cheap: O(n) each)
+  const TRIES = 160 // candidate orders examined per layout (cheap: O(n) each)
 
   function shuffled(arr) {
     const a = arr.slice()
@@ -34,6 +34,11 @@
     }
     return a
   }
+
+  // Candidate orders are generated ONCE per visit and reused by every layout()
+  // call, so the layout is a pure function of (W, H): the same photos stay put
+  // until the page is reloaded — no reshuffling on scroll-driven resizes.
+  const ORDERS = Array.from({ length: TRIES }, () => shuffled(items))
 
   // Greedy rows at a target height with gap-aware widths; heights are EXACT
   // (h = usable width / sum of aspect ratios), never scaled afterwards.
@@ -116,20 +121,28 @@
     return a
   }
 
+  let lastW = 0
+  let lastH = 0
   function layout() {
     const W = box.clientWidth
     const H = box.clientHeight
     if (!W || !H) return
+    // Deterministic in (W, H) + already rendered → nothing to do. Mobile
+    // browsers fire resize when the URL bar shows/hides; the box height uses
+    // svh so its size doesn't change — skip instead of rebuilding the DOM.
+    if (W === lastW && H === lastH) return
+    lastW = W
+    lastH = H
     const mobile = W < 700
     const base = mobile ? H / 2.8 : H / 2.2
 
-    // Search: for each shuffle × row-height target × mode, refine to a unified
-    // gap (column gap == row gap) and keep the arrangement whose gap is
+    // Search: for each candidate order × row-height target × mode, refine to a
+    // unified gap (column gap == row gap) and keep the arrangement whose gap is
     // closest to the design GAP. Flush layouts win ties; framed mode rescues
     // pools whose aspect mix can't tile the box flush.
     let best = null
     for (let t = 0; t < TRIES; t++) {
-      const order = shuffled(items)
+      const order = ORDERS[t]
       for (const f of [0.8, 0.95, 1.1, 1.3]) {
         for (const mode of ['flush', 'framed']) {
           const p = refine(order, W, H, base * f, GAP, mode)
@@ -176,7 +189,12 @@
   let t
   window.addEventListener('resize', () => {
     clearTimeout(t)
-    t = setTimeout(layout, 150)
+    t = setTimeout(() => {
+      // Relayout only on real width changes (rotation / window resize). Mobile
+      // URL-bar show/hide only nudges heights — the collage must not change
+      // underneath a scrolling reader.
+      if (box.clientWidth !== lastW) layout()
+    }, 150)
   })
   layout()
 })()

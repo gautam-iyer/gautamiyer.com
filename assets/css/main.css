@@ -1570,11 +1570,13 @@ article {
 }
 
 @media (max-width: 700px) {
-  header { padding-top: 32px; }
-  /* header content area shrinks to ~48px here (border-box - top padding);
-     scale the two-line logo down so it doesn't overflow the header */
+  /* The name mark centers in the fixed-height header via flex — equal space
+     above and below it (the old 32px top padding predates the doodle and
+     shoved it against the content). */
   .site-name--doodle { width: calc(var(--grid) * 1.85); height: calc(var(--grid) * 1.12); }
   main { padding: 32px 0 64px; }
+  /* (body.home main keeps its 40px padding-top by specificity, so the
+     collage's -40px margin still cancels exactly on mobile.) */
   article { padding: 36px var(--side-padding) 64px; }
 
   .featured-grid { grid-template-columns: 1fr; gap: 40px; }
