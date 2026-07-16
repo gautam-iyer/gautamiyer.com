@@ -147,12 +147,20 @@
   // inconsistent gaps accumulate points; crop counts ~1.6 points per % of crop
   // so it only wins when gap-based layouts are genuinely poor.
   function badness(c) {
-    if (c.mode === 'crop') return Math.abs(1 - c.k) * 160 + 2
+    // Sparse layouts look absurd (two giant photos filling the hero): penalize
+    // showing fewer photos than the pool could reasonably support.
+    const count = c.rows.reduce((s, r) => s + r.row.length, 0)
+    const wantMin = Math.min(6, items.length)
+    // quadratic: 1 photo short is mild, 3-4 short (two giant photos) is
+    // prohibitive — a denser layout with moderate crop must win instead
+    const sparse = Math.pow(Math.max(0, wantMin - count), 2) * 2.2
+    if (c.mode === 'crop') return Math.abs(1 - c.k) * 160 + 2 + sparse
     return (
       Math.abs(c.v - c.g) * 4 +
       Math.abs(c.v - GAP) * 0.15 +
       Math.max(0, c.v - 34) * 1.5 +
-      (c.mode === 'framed' ? 1 : 0)
+      (c.mode === 'framed' ? 1 : 0) +
+      sparse
     )
   }
 

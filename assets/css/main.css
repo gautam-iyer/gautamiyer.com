@@ -83,14 +83,17 @@ header {
   z-index: 30;
   width: 100%;
   height: var(--header-h);     /* constant — never shifts layout below */
-  padding: 0 var(--page-gutter);
+  padding: 0 12px;             /* name hugs the screen edge, tiny standard pad */
   pointer-events: none;        /* the transparent strip must not block clicks */
 }
 header::before {
   content: '';
   position: absolute;
-  inset: 0 0 auto 0;
-  height: var(--hdr-vis, var(--header-h));
+  /* extends TWO GRID CELLS above the viewport: iOS reveals a sliver above
+     sticky elements while the URL bar collapses — keep it painted white.
+     (-80px is a multiple of --grid so the grid-sync math stays aligned.) */
+  inset: -80px 0 auto 0;
+  height: calc(var(--hdr-vis, var(--header-h)) + 80px);
   background-color: var(--bg);
   background-image:
     linear-gradient(to right, var(--grid-color) 1px, transparent 1px),

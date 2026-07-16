@@ -34,7 +34,7 @@
     },
     {
       "slug": "bridges-of-pittsburgh",
-      "title": "Bridges of Pittsburgh",
+      "title": "The Bridges",
       "description": "",
       "featured": true,
       "cover": null,
@@ -162,14 +162,14 @@
     },
     {
       "slug": "sprawling-austin",
-      "title": "Sprawling Austin",
+      "title": "Texas Sprawl",
       "description": "",
       "featured": true,
       "cover": null,
       "order": 2,
       "type": "curated",
       "place": "Austin",
-      "caption": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia."
+      "caption": "As I drove past Austin on TX-183, I was struck at how legibly the city and its sprawl presented themselves. In the distance, a glittering, modern skyline; in the foreground, the mundane engines of 21st century American growth: suburban subdivisions, logistics hubs, cement mixers, highways, construction equipment, and the odd stretch of virgin hill country land."
     },
     {
       "slug": "churches-of-newark",
@@ -314,7 +314,8 @@
       "cover": null,
       "order": 0,
       "type": "curated",
-      "place": "Buffalo"
+      "place": "Buffalo",
+      "collage": true
     },
     {
       "slug": "buffalo-city-hall",
@@ -345,6 +346,17 @@
       "order": 5,
       "type": "curated",
       "place": "San Antonio",
+      "collage": true
+    },
+    {
+      "slug": "temples-of-newark",
+      "title": "Temples of Newark",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Newark",
       "collage": true
     }
   ]
