@@ -145,18 +145,20 @@
       "cover": null,
       "order": 0,
       "type": "curated",
-      "place": "San Antonio"
+      "place": "San Antonio",
+      "archived": true
     },
     {
       "slug": "greenery-of-san-antonio",
       "title": "Green King William",
       "description": "",
-      "featured": true,
+      "featured": false,
       "cover": null,
-      "order": 5,
+      "order": 0,
       "type": "curated",
       "place": "San Antonio",
-      "caption": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis."
+      "caption": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+      "collage": false
     },
     {
       "slug": "sprawling-austin",
@@ -279,7 +281,8 @@
       "order": 3,
       "type": "curated",
       "place": "New York",
-      "caption": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est."
+      "caption": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.",
+      "collage": true
     },
     {
       "slug": "art-deco-fidi",
@@ -289,7 +292,8 @@
       "cover": null,
       "order": 0,
       "type": "curated",
-      "place": "New York"
+      "place": "New York",
+      "archived": true
     },
     {
       "slug": "beaux-arts-fidi",
@@ -330,6 +334,17 @@
       "order": 0,
       "type": "curated",
       "place": "Buffalo"
+    },
+    {
+      "slug": "denver-heights",
+      "title": "Denver Heights",
+      "description": "",
+      "featured": true,
+      "cover": null,
+      "order": 5,
+      "type": "curated",
+      "place": "San Antonio",
+      "collage": true
     }
   ]
 }
