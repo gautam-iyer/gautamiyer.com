@@ -476,6 +476,19 @@ window.toggleCollage=(ev,key)=>{ev.stopPropagation();
   const b=document.querySelector(`.cell[data-key="${CSS.escape(key)}"] .cbadge`);
   if(b)b.classList.toggle('on',p.collage);
   memberStat();};
+/* Empty a collection's MEMBERSHIP (not collage flags): remove every photo from
+   this collection so it can be rebuilt one-by-one via "show all photos".
+   Regular collections only — not the ★/⚑ pseudo-sets. */
+window.emptyCollection=async()=>{const t=memberSlug;
+  if(t==='__hero'||t==='__cover')return;
+  const keys=Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(t));
+  if(!keys.length)return;
+  const c=COLLS.find(x=>x.slug===t);
+  if(!confirm(`Remove ALL ${keys.length} photos from “${(c&&c.title)||t}”?\n\nPhotos are NOT deleted — this only clears membership. Re-add them one by one via “show all photos” (turned on for you after this).`))return;
+  await Promise.all(keys.map(k=>{const s=(PHOTOS[k].collections||[]).filter(x=>x!==t);PHOTOS[k].collections=s;
+    return fetch('/api/save',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({key:k,patch:{collections:s}})});}));
+  memberFilter.all=true;
+  render();};
 window.deselectAllCollage=async()=>{const t=memberSlug;
   const keys=Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(t)&&PHOTOS[k].collage);
   if(!keys.length)return;
@@ -500,6 +513,7 @@ function renderMembers(){
       <label style="font-size:13px"><input type="checkbox" id="m-all" ${memberFilter.all?'checked':''}> show all photos (to add)</label>
       <select id="m-city"><option value="">All cities</option>${cities.map(c=>`<option value="${esc(c)}"${c===memberFilter.city?' selected':''}>${esc(c)}</option>`).join('')}</select>
       ${showCollage?`<button class="keepall" onclick="deselectAllCollage()" title="Clear every ▦ collage flag in this collection">✕ Deselect all ▦</button>`:''}
+      ${(t!=='__hero'&&t!=='__cover')?`<button class="keepall" onclick="emptyCollection()" title="Remove every photo from this collection (membership only — nothing is deleted) so you can rebuild it one by one">⊘ Empty collection…</button>`:''}
     </div>
     <div class="grid">`+slice.map(key=>{const p=PHOTOS[key];const inn=isIn(key,t);
       const cb=showCollage&&inn?`<span class="cbadge${p.collage?' on':''}" title="Include in home-page collage" onclick="toggleCollage(event,'${jesc(key)}')">▦</span>`:'';
