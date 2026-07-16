@@ -441,7 +441,11 @@ function renderColls(){
    <datalist id="dl-place">${cities.map(c=>`<option value="${esc(c)}">`).join('')}</datalist>`;
 }
 function collageCount(slug){return Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(slug)&&PHOTOS[k].collage).length;}
-window.editMembers=(slug)=>{mode='members';memberSlug=slug;page=0;memberFilter.city='';memberFilter.all=false;render();};
+window.editMembers=(slug)=>{mode='members';memberSlug=slug;page=0;memberFilter.city='';memberFilter.all=false;emptiedKeys=null;render();};
+/* After "Empty collection", the former members stay in the grid (as one-click
+   re-adds) — rebuilding from zero without wading through all photos. Session-
+   scoped; cleared when switching collections. */
+let emptiedKeys=null;
 
 /* ============ EDIT-MEMBERS GRID (collections + Hero / Place-cover) ============
    memberSlug is a collection slug, or the pseudo-targets "__hero" / "__cover"
@@ -458,7 +462,7 @@ function setIn(key,t,on){const p=PHOTOS[key];
   else{const s=new Set(p.collections||[]);on?s.add(t):s.delete(t);p.collections=[...s];save(key,{collections:[...s]});}}
 function memberList(){
   const t=memberSlug;
-  let keys=memberFilter.all?Object.keys(PHOTOS):Object.keys(PHOTOS).filter(k=>isIn(k,t));
+  let keys=memberFilter.all?Object.keys(PHOTOS):Object.keys(PHOTOS).filter(k=>isIn(k,t)||(emptiedKeys&&emptiedKeys.has(k)));
   if(memberFilter.city)keys=keys.filter(k=>PHOTOS[k].city===memberFilter.city);
   return keys.sort((a,b)=>(PHOTOS[a].shoot||'').localeCompare(PHOTOS[b].shoot||'')||(PHOTOS[a].img_no-PHOTOS[b].img_no));
 }
@@ -484,10 +488,10 @@ window.emptyCollection=async()=>{const t=memberSlug;
   const keys=Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(t));
   if(!keys.length)return;
   const c=COLLS.find(x=>x.slug===t);
-  if(!confirm(`Remove ALL ${keys.length} photos from “${(c&&c.title)||t}”?\n\nPhotos are NOT deleted — this only clears membership. Re-add them one by one via “show all photos” (turned on for you after this).`))return;
+  if(!confirm(`Remove ALL ${keys.length} photos from “${(c&&c.title)||t}”?\n\nPhotos are NOT deleted — they STAY in this grid so you can click your keepers straight back in.`))return;
   await Promise.all(keys.map(k=>{const s=(PHOTOS[k].collections||[]).filter(x=>x!==t);PHOTOS[k].collections=s;
     return fetch('/api/save',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({key:k,patch:{collections:s}})});}));
-  memberFilter.all=true;
+  emptiedKeys=new Set(keys);
   render();};
 window.deselectAllCollage=async()=>{const t=memberSlug;
   const keys=Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(t)&&PHOTOS[k].collage);

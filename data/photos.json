@@ -36846,7 +36846,8 @@
     "reviewed": true,
     "state": "NY",
     "hero": true,
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "FiDi 4:20:26/Edited/IMG_3648.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3648.jpg",
@@ -37273,9 +37274,10 @@
     "display_avif": "fidi-2026-04-20/img_3689.display.avif",
     "display_webp": "fidi-2026-04-20/img_3689.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "FiDi 4:20:26/Edited/IMG_3690.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3690.jpg",
@@ -37503,9 +37505,10 @@
     "display_avif": "fidi-2026-04-20/img_3704.display.avif",
     "display_webp": "fidi-2026-04-20/img_3704.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "FiDi 4:20:26/Edited/IMG_3707.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3707.jpg",
@@ -37537,8 +37540,7 @@
     "tag_notes": "A polished black glass storefront wall at left frames a narrow view of a pale stone Beaux-Arts office tower and a street with a yellow DHL van and pedestrians.",
     "collections": [
       "art-deco-fidi",
-      "beaux-arts-fidi",
-      "skyscrapers-of-fidi"
+      "beaux-arts-fidi"
     ],
     "thumb": "fidi-2026-04-20/img_3707.thumb.webp",
     "display_avif": "fidi-2026-04-20/img_3707.display.avif",
@@ -37622,9 +37624,10 @@
     "display_avif": "fidi-2026-04-20/img_3713.display.avif",
     "display_webp": "fidi-2026-04-20/img_3713.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "FiDi 4:20:26/Edited/IMG_3717.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3717.jpg",
@@ -37661,9 +37664,10 @@
     "display_avif": "fidi-2026-04-20/img_3717.display.avif",
     "display_webp": "fidi-2026-04-20/img_3717.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "FiDi 4:20:26/Edited/IMG_3719.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3719.jpg",
@@ -37744,7 +37748,8 @@
     "state": "NY",
     "hero": true,
     "place_cover": true,
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "FiDi 4:20:26/Edited/IMG_3722.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3722.jpg",
@@ -37785,7 +37790,8 @@
     "tagged": true,
     "reviewed": true,
     "state": "NY",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "FiDi 4:20:26/Edited/IMG_3724.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3724.jpg",
@@ -38139,9 +38145,10 @@
     "display_avif": "fidi-2026-04-20/img_3741.display.avif",
     "display_webp": "fidi-2026-04-20/img_3741.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "FiDi 4:20:26/Edited/IMG_3744.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3744.jpg",
@@ -38375,7 +38382,8 @@
     "reviewed": true,
     "state": "NY",
     "hero": true,
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "FiDi 4:20:26/Edited/IMG_3757.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3757.jpg",
@@ -38770,7 +38778,8 @@
     "reviewed": true,
     "state": "NY",
     "hero": true,
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "FiDi 4:20:26/Edited/IMG_3786.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3786.jpg",
@@ -38966,9 +38975,10 @@
     "display_avif": "fidi-2026-04-20/img_3796.display.avif",
     "display_webp": "fidi-2026-04-20/img_3796.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "FiDi 4:20:26/Edited/IMG_3799.jpg": {
     "key": "FiDi 4:20:26/Edited/IMG_3799.jpg",
@@ -42550,7 +42560,7 @@
     "key": "Newark 5:14:26/Final JPEGs/IMG_4203.jpg",
     "file": "IMG_4203.jpg",
     "shoot": "newark-2026-05-14",
-    "city": "Newark",
+    "city": "New York",
     "date": "2026-05-14",
     "img_no": 4203,
     "width": 3768,
@@ -42580,8 +42590,8 @@
     "display_avif": "newark-2026-05-14/img_4203.display.avif",
     "display_webp": "newark-2026-05-14/img_4203.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NJ",
+    "reviewed": true,
+    "state": "NY",
     "camera": "EOS R8"
   },
   "Newark 5:14:26/Final JPEGs/IMG_4205.jpg": {
@@ -42624,7 +42634,7 @@
     "key": "Newark 5:14:26/Final JPEGs/IMG_4210.jpg",
     "file": "IMG_4210.jpg",
     "shoot": "newark-2026-05-14",
-    "city": "Newark",
+    "city": "New York",
     "date": "2026-05-14",
     "img_no": 4210,
     "width": 3997,
@@ -42651,15 +42661,15 @@
     "display_avif": "newark-2026-05-14/img_4210.display.avif",
     "display_webp": "newark-2026-05-14/img_4210.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NJ",
+    "reviewed": true,
+    "state": "NY",
     "camera": "EOS R8"
   },
   "Newark 5:14:26/Final JPEGs/IMG_4216.jpg": {
     "key": "Newark 5:14:26/Final JPEGs/IMG_4216.jpg",
     "file": "IMG_4216.jpg",
     "shoot": "newark-2026-05-14",
-    "city": "Newark",
+    "city": "New Yoek",
     "date": "2026-05-14",
     "img_no": 4216,
     "width": 5682,
@@ -42691,15 +42701,15 @@
     "display_avif": "newark-2026-05-14/img_4216.display.avif",
     "display_webp": "newark-2026-05-14/img_4216.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NJ",
+    "reviewed": true,
+    "state": "NY",
     "camera": "EOS R8"
   },
   "Newark 5:14:26/Final JPEGs/IMG_4218.jpg": {
     "key": "Newark 5:14:26/Final JPEGs/IMG_4218.jpg",
     "file": "IMG_4218.jpg",
     "shoot": "newark-2026-05-14",
-    "city": "Newark",
+    "city": "New York",
     "date": "2026-05-14",
     "img_no": 4218,
     "width": 3804,
@@ -42732,14 +42742,14 @@
     "display_webp": "newark-2026-05-14/img_4218.display.webp",
     "tagged": true,
     "reviewed": true,
-    "state": "NJ",
+    "state": "NY",
     "camera": "EOS R8"
   },
   "Newark 5:14:26/Final JPEGs/IMG_4221.jpg": {
     "key": "Newark 5:14:26/Final JPEGs/IMG_4221.jpg",
     "file": "IMG_4221.jpg",
     "shoot": "newark-2026-05-14",
-    "city": "Newark",
+    "city": "New York",
     "date": "2026-05-14",
     "img_no": 4221,
     "width": 5979,
@@ -42771,14 +42781,14 @@
     "display_webp": "newark-2026-05-14/img_4221.display.webp",
     "tagged": true,
     "reviewed": true,
-    "state": "NJ",
+    "state": "NY",
     "camera": "EOS R8"
   },
   "Newark 5:14:26/Final JPEGs/IMG_4225.jpg": {
     "key": "Newark 5:14:26/Final JPEGs/IMG_4225.jpg",
     "file": "IMG_4225.jpg",
     "shoot": "newark-2026-05-14",
-    "city": "Newark",
+    "city": "New York",
     "date": "2026-05-14",
     "img_no": 4225,
     "width": 3917,
@@ -42813,15 +42823,15 @@
     "display_avif": "newark-2026-05-14/img_4225.display.avif",
     "display_webp": "newark-2026-05-14/img_4225.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NJ",
+    "reviewed": true,
+    "state": "NY",
     "camera": "EOS R8"
   },
   "Newark 5:14:26/Final JPEGs/IMG_4233.jpg": {
     "key": "Newark 5:14:26/Final JPEGs/IMG_4233.jpg",
     "file": "IMG_4233.jpg",
     "shoot": "newark-2026-05-14",
-    "city": "Newark",
+    "city": "New York",
     "date": "2026-05-14",
     "img_no": 4233,
     "width": 3985,
@@ -42855,8 +42865,8 @@
     "display_avif": "newark-2026-05-14/img_4233.display.avif",
     "display_webp": "newark-2026-05-14/img_4233.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NJ",
+    "reviewed": true,
+    "state": "NY",
     "camera": "EOS R8"
   },
   "Newark 5:14:26/Final JPEGs/IMG_4242.jpg": {
@@ -42933,7 +42943,7 @@
     "display_avif": "newark-2026-05-14/img_4246.display.avif",
     "display_webp": "newark-2026-05-14/img_4246.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -42973,7 +42983,7 @@
     "display_avif": "newark-2026-05-14/img_4247.display.avif",
     "display_webp": "newark-2026-05-14/img_4247.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -43013,7 +43023,7 @@
     "display_avif": "newark-2026-05-14/img_4248.display.avif",
     "display_webp": "newark-2026-05-14/img_4248.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -43095,7 +43105,7 @@
     "display_avif": "newark-2026-05-14/img_4251.display.avif",
     "display_webp": "newark-2026-05-14/img_4251.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -43136,7 +43146,7 @@
     "display_avif": "newark-2026-05-14/img_4252.display.avif",
     "display_webp": "newark-2026-05-14/img_4252.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -43386,7 +43396,7 @@
     "display_avif": "newark-2026-05-14/img_4260.display.avif",
     "display_webp": "newark-2026-05-14/img_4260.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -43933,7 +43943,7 @@
     "display_avif": "newark-2026-05-14/img_4291.display.avif",
     "display_webp": "newark-2026-05-14/img_4291.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -44157,7 +44167,7 @@
     "display_avif": "newark-2026-05-14/img_4305.display.avif",
     "display_webp": "newark-2026-05-14/img_4305.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -44376,7 +44386,7 @@
     "display_avif": "newark-2026-05-14/img_4323.display.avif",
     "display_webp": "newark-2026-05-14/img_4323.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -44526,7 +44536,7 @@
     "display_avif": "newark-2026-05-14/img_4330.display.avif",
     "display_webp": "newark-2026-05-14/img_4330.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -44598,7 +44608,7 @@
     "display_avif": "newark-2026-05-14/img_4332.display.avif",
     "display_webp": "newark-2026-05-14/img_4332.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -44633,7 +44643,7 @@
     "display_avif": "newark-2026-05-14/img_4338.display.avif",
     "display_webp": "newark-2026-05-14/img_4338.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -44668,7 +44678,7 @@
     "display_avif": "newark-2026-05-14/img_4339.display.avif",
     "display_webp": "newark-2026-05-14/img_4339.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -44771,7 +44781,7 @@
     "display_avif": "newark-2026-05-14/img_4342.display.avif",
     "display_webp": "newark-2026-05-14/img_4342.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -44918,7 +44928,7 @@
     "display_avif": "newark-2026-05-14/img_4353.display.avif",
     "display_webp": "newark-2026-05-14/img_4353.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -44989,7 +44999,7 @@
     "display_avif": "newark-2026-05-14/img_4357.display.avif",
     "display_webp": "newark-2026-05-14/img_4357.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46158,7 +46168,7 @@
     "display_avif": "newark-2026-05-14/img_4438.display.avif",
     "display_webp": "newark-2026-05-14/img_4438.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46195,7 +46205,7 @@
     "display_avif": "newark-2026-05-14/img_4440.display.avif",
     "display_webp": "newark-2026-05-14/img_4440.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46231,7 +46241,7 @@
     "display_avif": "newark-2026-05-14/img_4441.display.avif",
     "display_webp": "newark-2026-05-14/img_4441.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46268,7 +46278,7 @@
     "display_avif": "newark-2026-05-14/img_4443.display.avif",
     "display_webp": "newark-2026-05-14/img_4443.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46305,7 +46315,7 @@
     "display_avif": "newark-2026-05-14/img_4445.display.avif",
     "display_webp": "newark-2026-05-14/img_4445.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46343,7 +46353,7 @@
     "display_avif": "newark-2026-05-14/img_4447.display.avif",
     "display_webp": "newark-2026-05-14/img_4447.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46380,7 +46390,7 @@
     "display_avif": "newark-2026-05-14/img_4450.display.avif",
     "display_webp": "newark-2026-05-14/img_4450.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46419,7 +46429,7 @@
     "display_avif": "newark-2026-05-14/img_4451.display.avif",
     "display_webp": "newark-2026-05-14/img_4451.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46457,7 +46467,7 @@
     "display_avif": "newark-2026-05-14/img_4453.display.avif",
     "display_webp": "newark-2026-05-14/img_4453.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46494,7 +46504,7 @@
     "display_avif": "newark-2026-05-14/img_4454.display.avif",
     "display_webp": "newark-2026-05-14/img_4454.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46531,7 +46541,7 @@
     "display_avif": "newark-2026-05-14/img_4457.display.avif",
     "display_webp": "newark-2026-05-14/img_4457.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46569,7 +46579,7 @@
     "display_avif": "newark-2026-05-14/img_4460.display.avif",
     "display_webp": "newark-2026-05-14/img_4460.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46642,7 +46652,7 @@
     "display_avif": "newark-2026-05-14/img_4466.display.avif",
     "display_webp": "newark-2026-05-14/img_4466.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46753,7 +46763,7 @@
     "display_avif": "newark-2026-05-14/img_4475.display.avif",
     "display_webp": "newark-2026-05-14/img_4475.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46793,7 +46803,7 @@
     "display_avif": "newark-2026-05-14/img_4477.display.avif",
     "display_webp": "newark-2026-05-14/img_4477.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46832,7 +46842,7 @@
     "display_avif": "newark-2026-05-14/img_4478.display.avif",
     "display_webp": "newark-2026-05-14/img_4478.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46872,7 +46882,7 @@
     "display_avif": "newark-2026-05-14/img_4480.display.avif",
     "display_webp": "newark-2026-05-14/img_4480.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46947,7 +46957,7 @@
     "display_avif": "newark-2026-05-14/img_4483.display.avif",
     "display_webp": "newark-2026-05-14/img_4483.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -46986,7 +46996,7 @@
     "display_avif": "newark-2026-05-14/img_4486.display.avif",
     "display_webp": "newark-2026-05-14/img_4486.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47023,7 +47033,7 @@
     "display_avif": "newark-2026-05-14/img_4487.display.avif",
     "display_webp": "newark-2026-05-14/img_4487.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47060,7 +47070,7 @@
     "display_avif": "newark-2026-05-14/img_4489.display.avif",
     "display_webp": "newark-2026-05-14/img_4489.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47134,7 +47144,7 @@
     "display_avif": "newark-2026-05-14/img_4497.display.avif",
     "display_webp": "newark-2026-05-14/img_4497.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47208,7 +47218,7 @@
     "display_avif": "newark-2026-05-14/img_4502.display.avif",
     "display_webp": "newark-2026-05-14/img_4502.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47245,7 +47255,7 @@
     "display_avif": "newark-2026-05-14/img_4505.display.avif",
     "display_webp": "newark-2026-05-14/img_4505.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47321,7 +47331,7 @@
     "display_avif": "newark-2026-05-14/img_4509.display.avif",
     "display_webp": "newark-2026-05-14/img_4509.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47361,7 +47371,7 @@
     "display_avif": "newark-2026-05-14/img_4512.display.avif",
     "display_webp": "newark-2026-05-14/img_4512.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47401,7 +47411,7 @@
     "display_avif": "newark-2026-05-14/img_4516.display.avif",
     "display_webp": "newark-2026-05-14/img_4516.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47441,7 +47451,7 @@
     "display_avif": "newark-2026-05-14/img_4518.display.avif",
     "display_webp": "newark-2026-05-14/img_4518.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47480,7 +47490,7 @@
     "display_avif": "newark-2026-05-14/img_4521.display.avif",
     "display_webp": "newark-2026-05-14/img_4521.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47516,7 +47526,7 @@
     "display_avif": "newark-2026-05-14/img_4522.display.avif",
     "display_webp": "newark-2026-05-14/img_4522.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47553,7 +47563,7 @@
     "display_avif": "newark-2026-05-14/img_4525.display.avif",
     "display_webp": "newark-2026-05-14/img_4525.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47589,7 +47599,7 @@
     "display_avif": "newark-2026-05-14/img_4528.display.avif",
     "display_webp": "newark-2026-05-14/img_4528.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47625,7 +47635,7 @@
     "display_avif": "newark-2026-05-14/img_4531.display.avif",
     "display_webp": "newark-2026-05-14/img_4531.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47735,7 +47745,7 @@
     "display_avif": "newark-2026-05-14/img_4538.display.avif",
     "display_webp": "newark-2026-05-14/img_4538.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -47993,7 +48003,7 @@
     "display_avif": "newark-2026-05-14/img_4554.display.avif",
     "display_webp": "newark-2026-05-14/img_4554.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -48030,7 +48040,7 @@
     "display_avif": "newark-2026-05-14/img_4555.display.avif",
     "display_webp": "newark-2026-05-14/img_4555.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -48068,7 +48078,7 @@
     "display_avif": "newark-2026-05-14/img_4558.display.avif",
     "display_webp": "newark-2026-05-14/img_4558.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -48108,7 +48118,7 @@
     "display_avif": "newark-2026-05-14/img_4563.display.avif",
     "display_webp": "newark-2026-05-14/img_4563.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -48255,7 +48265,7 @@
     "display_avif": "newark-2026-05-14/img_4570.display.avif",
     "display_webp": "newark-2026-05-14/img_4570.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -48367,7 +48377,7 @@
     "display_avif": "newark-2026-05-14/img_4575.display.avif",
     "display_webp": "newark-2026-05-14/img_4575.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -48482,7 +48492,7 @@
     "display_avif": "newark-2026-05-14/img_4581.display.avif",
     "display_webp": "newark-2026-05-14/img_4581.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -48520,7 +48530,7 @@
     "display_avif": "newark-2026-05-14/img_4583.display.avif",
     "display_webp": "newark-2026-05-14/img_4583.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -48667,7 +48677,7 @@
     "display_avif": "newark-2026-05-14/img_4589.display.avif",
     "display_webp": "newark-2026-05-14/img_4589.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -48706,7 +48716,7 @@
     "display_avif": "newark-2026-05-14/img_4592.display.avif",
     "display_webp": "newark-2026-05-14/img_4592.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -49796,7 +49806,7 @@
     "display_avif": "newark-2026-05-14/img_4657.display.avif",
     "display_webp": "newark-2026-05-14/img_4657.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -49975,7 +49985,7 @@
     "display_avif": "newark-2026-05-14/img_4665.display.avif",
     "display_webp": "newark-2026-05-14/img_4665.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -50050,7 +50060,7 @@
     "display_avif": "newark-2026-05-14/img_4669.display.avif",
     "display_webp": "newark-2026-05-14/img_4669.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -52468,7 +52478,7 @@
     "display_avif": "newark-2026-05-14/img_4788.display.avif",
     "display_webp": "newark-2026-05-14/img_4788.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -52505,7 +52515,7 @@
     "display_avif": "newark-2026-05-14/img_4791.display.avif",
     "display_webp": "newark-2026-05-14/img_4791.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -52543,7 +52553,7 @@
     "display_avif": "newark-2026-05-14/img_4793.display.avif",
     "display_webp": "newark-2026-05-14/img_4793.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -52723,7 +52733,7 @@
     "display_avif": "newark-2026-05-14/img_4799.display.avif",
     "display_webp": "newark-2026-05-14/img_4799.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -52761,7 +52771,7 @@
     "display_avif": "newark-2026-05-14/img_4800.display.avif",
     "display_webp": "newark-2026-05-14/img_4800.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -52798,7 +52808,7 @@
     "display_avif": "newark-2026-05-14/img_4801.display.avif",
     "display_webp": "newark-2026-05-14/img_4801.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -52835,7 +52845,7 @@
     "display_avif": "newark-2026-05-14/img_4802.display.avif",
     "display_webp": "newark-2026-05-14/img_4802.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -52980,7 +52990,7 @@
     "display_avif": "newark-2026-05-14/img_4809.display.avif",
     "display_webp": "newark-2026-05-14/img_4809.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -53317,7 +53327,7 @@
     "display_avif": "newark-2026-05-14/img_4824.display.avif",
     "display_webp": "newark-2026-05-14/img_4824.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -58483,7 +58493,7 @@
     "display_avif": "newark-2026-05-14/img_5087.display.avif",
     "display_webp": "newark-2026-05-14/img_5087.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8"
   },
@@ -59986,8 +59996,7 @@
     ],
     "tag_notes": "The yellow steel tied-arch of the Fort Pitt Bridge and the concrete Fort Pitt Tunnel portal below a green hillside topped by modern Mount Washington apartment buildings.",
     "collections": [
-      "industrial-pittsburgh",
-      "modern-apartments-of-pittsburgh"
+      "industrial-pittsburgh"
     ],
     "thumb": "pittsburgh-2026-06-16/img_6129.thumb.webp",
     "display_avif": "pittsburgh-2026-06-16/img_6129.display.avif",
@@ -60367,7 +60376,8 @@
     "reviewed": true,
     "state": "PA",
     "hero": true,
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6153.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6153.jpg",
@@ -60559,9 +60569,10 @@
     "display_avif": "pittsburgh-2026-06-16/img_6164.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6164.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6168.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6168.jpg",
@@ -60637,9 +60648,10 @@
     "display_avif": "pittsburgh-2026-06-16/img_6174.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6174.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6174-2.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6174-2.jpg",
@@ -60936,7 +60948,8 @@
     "state": "PA",
     "hero": true,
     "place_cover": true,
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6186-2.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6186-2.jpg",
@@ -62765,14 +62778,14 @@
     ],
     "tag_notes": "Ornate cream-painted steel bridge portal with crenellated cornice and gilded finial pylons topped by starburst ornaments, likely the Smithfield Street Bridge over the Monongahela River in Pittsburgh.",
     "collections": [
-      "bridges-of-pittsburgh",
-      "rivers-of-pittsburgh"
+      "rivers-of-pittsburgh",
+      "bridges-of-pittsburgh"
     ],
     "thumb": "pittsburgh-2026-06-16/img_6313.thumb.webp",
     "display_avif": "pittsburgh-2026-06-16/img_6313.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6313.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -62852,9 +62865,10 @@
     "display_avif": "pittsburgh-2026-06-16/img_6316.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6316.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6319.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6319.jpg",
@@ -63062,9 +63076,7 @@
       "Color"
     ],
     "tag_notes": "Large multi-gabled Victorian brick apartment house/duplex with dormers, wood balconies and an exterior stair on a corner lot, with a yellow SUV parked at the curb, in a Pittsburgh residential neighborhood.",
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "thumb": "pittsburgh-2026-06-16/img_6327.thumb.webp",
     "display_avif": "pittsburgh-2026-06-16/img_6327.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6327.display.webp",
@@ -63275,14 +63287,12 @@
       "Color"
     ],
     "tag_notes": "Jonny's Bar, a two-story painted red-brick corner tavern with a decorative brick cornice, upstairs apartment windows, and a white awning sign, adjoined to a vinyl-sided rowhouse.",
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "thumb": "pittsburgh-2026-06-16/img_6337.thumb.webp",
     "display_avif": "pittsburgh-2026-06-16/img_6337.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6337.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -63751,16 +63761,16 @@
     "tag_notes": "View over the Monongahela River of multiple stacked bridges including a steel through-truss span and the yellow tied-arch of the Birmingham Bridge, with riverside apartments in the foreground.",
     "collections": [
       "bridges-of-pittsburgh",
-      "modern-apartments-of-pittsburgh",
       "rivers-of-pittsburgh"
     ],
     "thumb": "pittsburgh-2026-06-16/img_6356.thumb.webp",
     "display_avif": "pittsburgh-2026-06-16/img_6356.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6356.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6357.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6357.jpg",
@@ -63918,9 +63928,10 @@
     "display_avif": "pittsburgh-2026-06-16/img_6361.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6361.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6365.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6365.jpg",
@@ -64915,9 +64926,10 @@
     "display_avif": "pittsburgh-2026-06-16/img_6415.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6415.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6416.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6416.jpg",
@@ -65075,9 +65087,10 @@
     "display_avif": "pittsburgh-2026-06-16/img_6427.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6427.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6429.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6429.jpg",
@@ -66071,9 +66084,7 @@
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -66321,9 +66332,7 @@
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -66357,9 +66366,7 @@
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -66899,13 +66906,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_6526.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6526.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -66969,13 +66974,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_6531.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6531.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -67143,13 +67146,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_6538.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6538.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -68361,13 +68362,12 @@
     "display_avif": "pittsburgh-2026-06-16/img_6589.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6589.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
-      "churches-of-pittsburgh",
-      "modern-apartments-of-pittsburgh"
+      "churches-of-pittsburgh"
     ],
     "state": "PA",
     "camera": "EOS R8"
@@ -68540,9 +68540,7 @@
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "hero": true,
     "camera": "EOS R8"
@@ -68574,13 +68572,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_6601.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6601.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -68646,13 +68642,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_6605.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6605.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -68683,13 +68677,12 @@
     "display_avif": "pittsburgh-2026-06-16/img_6607.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6607.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
-      "churches-of-pittsburgh",
-      "modern-apartments-of-pittsburgh"
+      "churches-of-pittsburgh"
     ],
     "state": "PA",
     "camera": "EOS R8"
@@ -69740,13 +69733,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_6662.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6662.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -70622,13 +70613,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_6709.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6709.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -70657,13 +70646,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_6711.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6711.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -70803,9 +70790,7 @@
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -70971,13 +70956,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_6730.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6730.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -72205,8 +72188,7 @@
       "Color"
     ],
     "collections": [
-      "churches-of-pittsburgh",
-      "modern-apartments-of-pittsburgh"
+      "churches-of-pittsburgh"
     ],
     "state": "PA",
     "hero": true,
@@ -74792,13 +74774,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_6921.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6921.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -74866,9 +74846,7 @@
     "tone": [
       "Color"
     ],
-    "collections": [
-      "modern-apartments-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -76272,7 +76250,6 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh",
       "industrial-pittsburgh"
     ],
     "state": "PA",
@@ -76308,7 +76285,6 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh",
       "industrial-pittsburgh"
     ],
     "state": "PA",
@@ -76348,7 +76324,8 @@
       "industrial-pittsburgh"
     ],
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_7008.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7008.jpg",
@@ -77628,7 +77605,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_7067.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_7067.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -77637,7 +77614,8 @@
       "ppg-place-pittsburgh"
     ],
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_7069.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7069.jpg",
@@ -77737,7 +77715,7 @@
     "display_avif": "pittsburgh-2026-06-16/img_7072.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_7072.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
@@ -77747,7 +77725,8 @@
       "rivers-of-pittsburgh"
     ],
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_7074.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7074.jpg",
@@ -77811,12 +77790,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_7076.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_7076.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh",
       "churches-of-pittsburgh",
       "ppg-place-pittsburgh"
     ],
@@ -77890,7 +77868,6 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh",
       "churches-of-pittsburgh",
       "ppg-place-pittsburgh",
       "upmc-building-pittsburgh"
@@ -77924,12 +77901,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_7082.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_7082.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh",
       "industrial-pittsburgh",
       "ppg-place-pittsburgh"
     ],
@@ -77967,7 +77943,6 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh",
       "ppg-place-pittsburgh",
       "rivers-of-pittsburgh"
     ],
@@ -78525,13 +78500,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_7111.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_7111.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
-    "collections": [
-      "bridges-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -78672,7 +78645,6 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh",
       "industrial-pittsburgh",
       "ppg-place-pittsburgh",
       "rap-murals"
@@ -78924,9 +78896,7 @@
     "tone": [
       "Color"
     ],
-    "collections": [
-      "bridges-of-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -78956,12 +78926,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_7136.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_7136.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh",
       "ppg-place-pittsburgh"
     ],
     "state": "PA",
@@ -78998,7 +78967,6 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh",
       "ppg-place-pittsburgh"
     ],
     "state": "PA",
@@ -79030,12 +78998,11 @@
     "display_avif": "pittsburgh-2026-06-16/img_7138.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_7138.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh",
       "ppg-place-pittsburgh"
     ],
     "state": "PA",
@@ -79721,7 +79688,6 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh",
       "churches-of-pittsburgh"
     ],
     "state": "PA",
@@ -79758,7 +79724,6 @@
       "Color"
     ],
     "collections": [
-      "bridges-of-pittsburgh",
       "churches-of-pittsburgh"
     ],
     "state": "PA",
@@ -79800,7 +79765,8 @@
       "upmc-building-pittsburgh"
     ],
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_7180.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7180.jpg",
