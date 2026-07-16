@@ -31,7 +31,18 @@
       {{ $cover := index $covers $pl.city }}
       {{/* Places with photos become clickable album pages; the rest (no photos
            yet) stay as non-clickable colored placeholders. */}}
-      {{ if $cover }}
+      {{ $doodle := "" }}{{ with $pl.doodle }}{{ $doodle = . }}{{ end }}
+      {{ if and $doodle $cover }}
+      {{/* Hand-drawn place cover: transparent-ink PNG on a paper-white card.
+           The SAME ::after veil as photo covers washes it toward the tile's
+           tint; hover lifts the veil to full-intensity ink. */}}
+      {{ $dimg := resources.Get (printf "img/doodles/%s.png" $doodle) }}
+      {{ $dfp := $dimg | fingerprint }}
+      <a href="/places/{{ $pl.city | urlize }}/" class="tile" style="--tint:{{ $color }}" data-city="{{ $pl.city }}" data-state="{{ $pl.state }}">
+        <div class="tile-img doodle" style="aspect-ratio:{{ div (float $dimg.Width) $dimg.Height }}"><img src="{{ $dfp.RelPermalink }}" alt="{{ $pl.name }} (hand-drawn)" loading="lazy"></div>
+        <div class="tile-title subsubhead" style="color:{{ $color }}">{{ $pl.name }}</div>
+      </a>
+      {{ else if $cover }}
       {{/* Majority-old-camera places get bumped down the default order. */}}
       {{ $pitems := index (index hugo.Data.index "places") $pl.city | default slice }}
       {{ $old := 0 }}{{ range $pitems }}{{ if eq .cam "EOS 7D" }}{{ $old = add $old 1 }}{{ end }}{{ end }}

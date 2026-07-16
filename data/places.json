@@ -53,7 +53,8 @@
     {
       "name": "San Antonio, TX",
       "city": "San Antonio",
-      "state": "TX"
+      "state": "TX",
+      "doodle": "place-san-antonio"
     },
     {
       "name": "Austin, TX",
