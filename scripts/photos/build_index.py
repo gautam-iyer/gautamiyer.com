@@ -90,7 +90,7 @@ def main():
     COLLAGE_MIN = 8
     registry = json.loads((DATA / "collections.json").read_text())["collections"]
     collage = {}
-    for slug in (c["slug"] for c in registry if c.get("collage")):
+    for slug in (c["slug"] for c in registry if c.get("collage") and not c.get("archived")):
         members = [p for p in recs if slug in (p.get("collections") or [])]
         flagged = [p for p in members if p.get("collage")]
         if not flagged:            # nothing curated yet -> whole collection

@@ -1,5 +1,6 @@
 {{/* Generate one page per collection from data/collections.json (auto-syncs). */}}
 {{ range (index hugo.Data.collections "collections") }}
+  {{ if .archived }}{{ continue }}{{ end }}
   {{ $page := dict
       "kind" "page"
       "path" .slug

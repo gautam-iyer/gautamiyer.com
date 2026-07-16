@@ -141,6 +141,9 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .cell .cbadge{position:absolute;top:32px;left:6px;font-size:12px;line-height:1;padding:4px 6px;border-radius:6px;background:#fff;border:1px solid #d4d4d8;color:#a1a1aa;cursor:pointer;z-index:2}
  .cell .cbadge.on{background:#16a34a;border-color:#16a34a;color:#fff}
  .cell .cbadge:hover{border-color:#16a34a}
+ .linkbtn.arch{color:#a1a1aa} .linkbtn.arch:hover{color:#dc2626}
+ .archhead{padding:14px 8px 6px;font-size:12px;font-weight:700;color:#a1a1aa;text-transform:uppercase;letter-spacing:.04em;border-top:2px solid #e4e4e7}
+ .archrow td{color:#a1a1aa;background:#fafafa}
  .cell.out:hover{opacity:.85}
  .cell .cmbtn{position:absolute;top:6px;left:6px;z-index:2;width:22px;height:22px;padding:0;border-radius:6px;background:rgba(255,255,255,.92);border:1px solid #d4d4d8;font-size:13px;line-height:1;cursor:pointer}
  .cell .cmenu{position:absolute;top:30px;left:6px;z-index:4;background:#fff;border:1px solid #d4d4d8;border-radius:8px;padding:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);display:flex;flex-direction:column;gap:6px;width:180px}
@@ -418,8 +421,9 @@ function collCount(slug){return Object.values(PHOTOS).filter(p=>(p.collections||
 function collPlacesStr(c){const a=(c.places&&c.places.length)?c.places:(c.place?[c.place]:[]);return a.join(', ');}
 window.savePlaces=(slug,val)=>{const a=val.split(',').map(s=>s.trim()).filter(Boolean);updateColl(slug,{places:a,place:a[0]||''});};
 function renderColls(){
-  $('#stat').textContent=`${COLLS.length} collections`;
-  const rows=COLLS.slice().sort((a,b)=>(a.featured===b.featured)?(a.order-b.order)||a.title.localeCompare(b.title):(a.featured?-1:1))
+  const active=COLLS.filter(c=>!c.archived), archived=COLLS.filter(c=>c.archived);
+  $('#stat').textContent=`${active.length} collections${archived.length?` · ${archived.length} archived`:''}`;
+  const rows=active.slice().sort((a,b)=>(a.featured===b.featured)?(a.order-b.order)||a.title.localeCompare(b.title):(a.featured?-1:1))
    .map(c=>`<tr class="${c.featured?'feat':''}">
      <td><input class="title" value="${esc(c.title)}" onchange="updateColl('${esc(c.slug)}',{title:this.value})"></td>
      <td><input class="place" list="dl-place" value="${esc(collPlacesStr(c))}" placeholder="e.g. Newark, Brooklyn" onchange="savePlaces('${esc(c.slug)}',this.value)"></td>
@@ -427,9 +431,19 @@ function renderColls(){
      <td><input type="checkbox" ${c.featured?'checked':''} onchange="updateColl('${esc(c.slug)}',{featured:this.checked})"></td>
      <td><input class="order" type="number" min="0" value="${c.order||0}" onchange="updateColl('${esc(c.slug)}',{order:+this.value})"></td>
      <td title="Eligible for the home-page collage hero. Curate which members show via the ▦ toggle in Edit members."><input type="checkbox" ${c.collage?'checked':''} onchange="updateColl('${esc(c.slug)}',{collage:this.checked})"> <span class="ct">${c.collage?collageCount(c.slug)+' ▦':''}</span></td>
-     <td><button class="linkbtn" onclick="editMembers('${esc(c.slug)}')">Edit members →</button></td>
+     <td><button class="linkbtn" onclick="editMembers('${esc(c.slug)}')">Edit members →</button>
+         <button class="linkbtn arch" title="Remove from the site (membership kept; restore anytime from the Archived list below)" onclick="archiveColl('${esc(c.slug)}')">Archive</button></td>
    </tr>
    <tr class="caprow${c.featured?' feat':''}"><td colspan="7"><div class="caplabel">Caption${c.featured?' — shown on the home page':''}</div><textarea class="caption" placeholder="Write a 2–10 sentence caption…" onchange="updateColl('${esc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea></td></tr>`).join('');
+  const archRows=archived.slice().sort((a,b)=>a.title.localeCompare(b.title))
+   .map(c=>`<tr class="archrow">
+     <td class="ct">${esc(c.title)}</td>
+     <td class="ct">${esc(collPlacesStr(c))}</td>
+     <td class="ct">${collCount(c.slug)}</td>
+     <td class="ct" colspan="3">archived — not on the site; membership preserved</td>
+     <td><button class="linkbtn" onclick="restoreColl('${esc(c.slug)}')">Restore</button></td>
+   </tr>`).join('');
+  const archBlock=archived.length?`<tr><td colspan="7" class="archhead">Archived (${archived.length})</td></tr>${archRows}`:'';
   const cities=uniq(Object.values(PHOTOS).map(p=>p.city));
   // Two special "sets" browsable in the same grid: the home Hero rotation and
   // the per-place cover photos.
@@ -437,10 +451,15 @@ function renderColls(){
    <tr class="role-row"><td><b>★ Hero</b> <span class="ct">— home hero rotation</span></td><td class="ct">any</td><td class="ct">${targetCount('__hero')}</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__hero')">Edit set →</button></td></tr>
    <tr class="role-row"><td><b>⚑ Place cover</b> <span class="ct">— one per place</span></td><td class="ct">per city</td><td class="ct">${targetCount('__cover')}</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__cover')">Edit set →</button></td></tr>`;
   $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — type one or several <b>comma-separated</b> locations (e.g. “Newark, Brooklyn”) to span multiple; the site’s Collections filter then lists it under each. Tick <b>Featured</b> + set <b>Order</b> (1,2,3…) to choose the home-page 5 and their sequence. Tick <b>Collage</b> to make a collection eligible for the home-page collage hero — then curate WHICH photos show with the ▦ toggle inside “Edit members” (aim for 12–18; fewer than 8 gets topped up automatically). “Edit members / set” opens the add/remove grid — that includes the two special sets at the top: ★ Hero and ⚑ Place cover.</p>
-   <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th>Collage</th><th></th></tr></thead><tbody>${roleRows}${rows}</tbody></table>
+   <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th>Collage</th><th></th></tr></thead><tbody>${roleRows}${rows}${archBlock}</tbody></table>
    <datalist id="dl-place">${cities.map(c=>`<option value="${esc(c)}">`).join('')}</datalist>`;
 }
 function collageCount(slug){return Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(slug)&&PHOTOS[k].collage).length;}
+window.archiveColl=async(slug)=>{const c=COLLS.find(x=>x.slug===slug);if(!c)return;
+  let msg=`Archive “${c.title}”? It disappears from the site (collections page, place pages${c.featured?', AND the home page — it is currently FEATURED':''}${c.collage?', and the collage pool':''}). Membership is kept; restore anytime.`;
+  if(!confirm(msg))return;
+  await updateColl(slug,{archived:true});render();};
+window.restoreColl=async(slug)=>{await updateColl(slug,{archived:false});render();};
 window.editMembers=(slug)=>{mode='members';memberSlug=slug;page=0;memberFilter.city='';memberFilter.all=false;emptiedKeys=null;render();};
 /* After "Empty collection", the former members stay in the grid (as one-click
    re-adds) — rebuilding from zero without wading through all photos. Session-
@@ -663,7 +682,7 @@ class Handler(BaseHTTPRequestHandler):
                 reg = load(COLLECTIONS, {"collections": []})
                 for c in reg["collections"]:
                     if c["slug"] == slug:
-                        for f in ("title", "featured", "order", "place", "places", "description", "caption", "collage"):
+                        for f in ("title", "featured", "order", "place", "places", "description", "caption", "collage", "archived"):
                             if f in data:
                                 c[f] = data[f]
                         break

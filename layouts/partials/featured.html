@@ -4,6 +4,6 @@
          {{ $featured := partialCached "featured.html" . "featured" }} */ -}}
 {{- $f := slice -}}
 {{- range (index hugo.Data.collections "collections") -}}
-  {{- if .featured -}}{{- $f = $f | append . -}}{{- end -}}
+  {{- if and .featured (not .archived) -}}{{- $f = $f | append . -}}{{- end -}}
 {{- end -}}
 {{- return (sort $f "order") -}}

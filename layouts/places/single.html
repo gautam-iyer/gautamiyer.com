@@ -39,7 +39,7 @@
         {{ if and (not $cplace) (in (or $p.collections slice) $c.slug) }}{{ $cplace = $p.city }}{{ end }}
       {{ end }}
     {{ end }}
-    {{ if eq $cplace $place }}{{ $colls = $colls | append $c }}{{ end }}
+    {{ if and (eq $cplace $place) (not $c.hidden) (not $c.archived) }}{{ $colls = $colls | append $c }}{{ end }}
   {{ end }}
 
   {{ with $colls }}

@@ -28,7 +28,7 @@
       {{ $slug := $c.slug }}
       {{ $title := $c.title }}
       {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
-      {{ if and (gt (len $items) 0) (not $c.hidden) }}
+      {{ if and (gt (len $items) 0) (not $c.hidden) (not $c.archived) }}
         {{/* Same accent rule as collections/single.html: palette by registry
              index, overridden to the featured-slot colour when featured. */}}
         {{ $color := index $palette (mod $ri 5) }}
