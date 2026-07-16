@@ -476,6 +476,13 @@ window.toggleCollage=(ev,key)=>{ev.stopPropagation();
   const b=document.querySelector(`.cell[data-key="${CSS.escape(key)}"] .cbadge`);
   if(b)b.classList.toggle('on',p.collage);
   memberStat();};
+window.deselectAllCollage=async()=>{const t=memberSlug;
+  const keys=Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(t)&&PHOTOS[k].collage);
+  if(!keys.length)return;
+  if(!confirm(`Clear the ▦ collage flag on ${keys.length} photo${keys.length===1?'':'s'} in this collection?`))return;
+  await Promise.all(keys.map(k=>{PHOTOS[k].collage=false;
+    return fetch('/api/save',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({key:k,patch:{collage:false}})});}));
+  render();};
 function memberStat(){const t=memberSlug;let s=`${targetCount(t)} in set`;
   if(collActive())s+=` · ${collageCount(t)} ▦ in collage`;
   $('#stat').textContent=s;}
@@ -492,6 +499,7 @@ function renderMembers(){
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
       <label style="font-size:13px"><input type="checkbox" id="m-all" ${memberFilter.all?'checked':''}> show all photos (to add)</label>
       <select id="m-city"><option value="">All cities</option>${cities.map(c=>`<option value="${esc(c)}"${c===memberFilter.city?' selected':''}>${esc(c)}</option>`).join('')}</select>
+      ${showCollage?`<button class="keepall" onclick="deselectAllCollage()" title="Clear every ▦ collage flag in this collection">✕ Deselect all ▦</button>`:''}
     </div>
     <div class="grid">`+slice.map(key=>{const p=PHOTOS[key];const inn=isIn(key,t);
       const cb=showCollage&&inn?`<span class="cbadge${p.collage?' on':''}" title="Include in home-page collage" onclick="toggleCollage(event,'${jesc(key)}')">▦</span>`:'';
