@@ -34,11 +34,26 @@
     {{ end }}
     {{ $pools = merge $pools (dict $slug $pool) }}
   {{ end }}
+  {{/* Caption metadata per pool: collection title + "City, ST" + link. */}}
+  {{ $cmeta := dict }}
+  {{ range (index hugo.Data.collections "collections") }}
+    {{ if and .collage (not .archived) }}
+      {{ $pl := .place | default "" }}
+      {{ $cmeta = merge $cmeta (dict .slug (dict
+          "title" .title
+          "place" (index $placeNames $pl | default $pl)
+          "href" (printf "/collections/%s/" .slug))) }}
+    {{ end }}
+  {{ end }}
   {{ with $pools }}
   <section class="hero-collage" aria-label="Photo collage">
     <div class="collage" data-collage></div>
+    <a class="collage-caption" data-collage-caption hidden></a>
   </section>
-  <script>window.COLLAGE_POOLS = {{ . | jsonify | safeJS }};</script>
+  <script>
+    window.COLLAGE_POOLS = {{ . | jsonify | safeJS }};
+    window.COLLAGE_META = {{ $cmeta | jsonify | safeJS }};
+  </script>
   {{ end }}
 
   {{/* Featured Writing — short section above the photos, lines aligned to grid. */}}

@@ -276,6 +276,26 @@ footer p {
   background: var(--bg); /* white grout between crop-free cells */
 }
 body.home { overflow-x: clip; } /* 100vw includes the scrollbar gutter */
+/* No divider between the name mark and the collage — they read as one unit. */
+body.home header { border-bottom: none; }
+.hero-collage { position: relative; }
+/* Small gray caption (backlink-style) naming the collage's collection, pinned
+   bottom-right over the photos; a translucent pill keeps it legible. */
+.collage-caption {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.86);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.collage-caption:hover { color: var(--black); }
 .collage { width: 100%; height: 100%; display: flex; flex-direction: column; }
 /* space-between absorbs sub-pixel width rounding into the gaps invisibly */
 .collage-row { display: flex; width: 100%; justify-content: space-between; }

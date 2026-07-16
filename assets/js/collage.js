@@ -11,7 +11,17 @@
   const slugs = pools ? Object.keys(pools).filter((s) => (pools[s] || []).length) : []
   if (!box || !slugs.length) return
   // One eligible collection per visit, at random.
-  const items = pools[slugs[Math.floor(Math.random() * slugs.length)]]
+  const slug = slugs[Math.floor(Math.random() * slugs.length)]
+  const items = pools[slug]
+
+  // Caption: collection name + place, linking to the collection page.
+  const cap = document.querySelector('[data-collage-caption]')
+  const meta = (window.COLLAGE_META || {})[slug]
+  if (cap && meta) {
+    cap.textContent = meta.place ? `${meta.title} · ${meta.place}` : meta.title
+    cap.href = meta.href
+    cap.hidden = false
+  }
 
   const GAP = 8 // px — column gap; the search aims the row gap at this too
   const TRIES = 160 // shuffles examined per layout (cheap: O(n) each)
