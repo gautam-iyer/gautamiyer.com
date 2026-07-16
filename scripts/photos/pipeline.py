@@ -392,7 +392,7 @@ def cmd_scan(args):
     # Deny-list: photos deleted via the tagger (data/deleted-photos.jsonl) must
     # not be re-added on a re-scan, even though the source JPEG still exists.
     deleted = set()
-    dlog = REPO / "data" / "deleted-photos.jsonl"
+    dlog = REPO / "deleted-photos.jsonl"
     if dlog.exists():
         for line in dlog.read_text().splitlines():
             line = line.strip()

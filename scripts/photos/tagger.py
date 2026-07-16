@@ -41,7 +41,7 @@ MANIFEST = REPO / "data" / "photos.json"
 COLLECTIONS = REPO / "data" / "collections.json"
 TAXONOMY = REPO / "data" / "taxonomy.json"
 PLACES = REPO / "data" / "places.json"
-DELETIONS = REPO / "data" / "deleted-photos.jsonl"  # append-only record of deletes
+DELETIONS = REPO / "deleted-photos.jsonl"  # append-only record of deletes
 DUPES = REPO / "data" / "duplicates.json"  # near-duplicate groups (scripts/photos/dupes.py)
 DERIV = REPO / ".photo-build" / "derivatives"
 PORT = 8800
@@ -321,7 +321,7 @@ window.toggleColl=(key,slug)=>{const s=new Set(PHOTOS[key].collections||[]);s.ha
 window.toggleMenu=(key)=>{const el=document.getElementById('menu-'+cssid(key));if(el)el.style.display=(el.style.display==='none'?'block':'none');};
 window.addToColl=(key,slug)=>{if(!slug)return;const s=new Set(PHOTOS[key].collections||[]);s.add(slug);PHOTOS[key].collections=[...s];save(key,{collections:[...s]});};
 window.deletePhoto=async(key)=>{
-  if(!confirm('Delete this photo from the site + R2 for good? (Recorded in data/deleted-photos.jsonl.)'))return;
+  if(!confirm('Delete this photo from the site + R2 for good? (Recorded in deleted-photos.jsonl.)'))return;
   const els=[...document.querySelectorAll(`[data-key="${CSS.escape(key)}"]`)];
   els.forEach(e=>e.classList.add('deleting'));           // instant feedback
   let r=null; try{r=await fetch('/api/delete',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({key})});}catch(e){}
@@ -639,7 +639,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(200, {"slug": slug, "collections": reg["collections"]})
         if path == "/api/delete":
             # Remove a photo everywhere: manifest, R2 (all tiers), local cache,
-            # and append it to data/deleted-photos.jsonl (deny-list + record).
+            # and append it to deleted-photos.jsonl (deny-list + record).
             key = data["key"]
             with _lock:
                 m = load(MANIFEST, {})

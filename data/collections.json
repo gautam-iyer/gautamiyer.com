@@ -220,7 +220,8 @@
       "order": 4,
       "type": "curated",
       "place": "Durham",
-      "caption": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint."
+      "caption": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.",
+      "collage": true
     },
     {
       "slug": "beaux-arts-durham",

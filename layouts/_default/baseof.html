@@ -25,17 +25,23 @@
   {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
-  {{/* Hand-drawn name logo: fingerprinted URL handed to CSS as a var so the
-       mask-image cache-busts with the asset (can't fingerprint from inside main.css). */}}
-  {{ $nameDoodle := resources.Get "img/doodles/name-gautam-iyer.png" | fingerprint }}
-  <style>:root{--doodle-name:url("{{ $nameDoodle.RelPermalink }}")}</style>
+  {{/* Hand-drawn name logo, split into two word marks so the header can morph
+       between stacked (GAUTAM over IYER) and one-line layouts. Fingerprinted
+       URLs handed to CSS as vars (can't fingerprint from inside main.css). */}}
+  {{ $ng := resources.Get "img/doodles/name-gautam.png" | fingerprint }}
+  {{ $ni := resources.Get "img/doodles/name-iyer.png" | fingerprint }}
+  <style>:root{--doodle-g:url("{{ $ng.RelPermalink }}");--doodle-i:url("{{ $ni.RelPermalink }}")}</style>
 
   {{ block "head" . }}{{ end }}
 </head>
 <body{{ if .IsHome }} class="home"{{ end }}>
 
 <header>
-  <a href="/" class="site-name site-name--doodle"><span class="vh">{{ .Site.Title }}</span></a>
+  <a href="/" class="site-name site-name--doodle">
+    <span class="vh">{{ .Site.Title }}</span>
+    <span class="mark mark-g" aria-hidden="true"></span>
+    <span class="mark mark-i" aria-hidden="true"></span>
+  </a>
 </header>
 
 {{ $featured := partialCached "featured.html" . "featured" }}
@@ -99,8 +105,9 @@
       ticking = false;
       var y = window.scrollY;
       // Keep the sticky header's grid lined up with the page grid scrolling
-      // behind it, so the grid reads as continuous beneath the name.
-      if (header) header.style.backgroundPositionY = (-(y % GRID)) + 'px';
+      // behind it, so the grid reads as continuous beneath the name. The bar
+      // is painted by header::before, so hand the offset over via a CSS var.
+      if (header) header.style.setProperty('--hdr-grid-y', (-(y % GRID)) + 'px');
       // Hysteresis: shrink past 90px, restore below 30px. The dead zone prevents
       // the flip-flop a single threshold causes; the shrink is a CSS transform
       // (no layout change) so it can't feed back into scroll position.

@@ -59,61 +59,102 @@ body {
   background-size: var(--grid) var(--grid);
 }
 
-/* ── Header (just the name; shrinks on scroll) ──
-   Fixed height of exactly 2 grid cells, so the line under the name lands on a
-   grid line. Full-bleed white base hides content scrolling underneath, while
-   the same grid is painted on top of that base (background-position-y synced to
-   scroll in JS) so the grid appears continuous behind the name. Transform-only
-   shrink: changing only `transform` (not size/padding) can't shift layout, so
-   it never feeds back into scroll position and jitters. */
+/* ── Header (the name mark; morphs on scroll) ──
+   The header ELEMENT keeps a constant layout height (--header-h) so the
+   document never reflows — the jitter-free principle. The visible white bar is
+   painted by header::before, whose height animates from two-line to one-line;
+   scrolled content shows through the transparent remainder beneath it. The
+   name is two hand-drawn word masks: stacked (GAUTAM over IYER) at the top of
+   the page; on scroll IYER glides up beside GAUTAM into one line.
+   Word aspect ratios (baked from the prepped assets):
+     GAUTAM 3.125 · IYER 2.6316 · one-line total 5.7566 + word gap. */
+:root {
+  --nh2: 27px;                 /* per-word height, stacked */
+  --nline-gap: 5px;            /* vertical gap between stacked words */
+  --nword-gap: 12px;           /* horizontal gap, one line */
+  /* one-line word height; min() guards absurdly narrow viewports */
+  --nh1: min(25px, calc((100vw - 2 * var(--page-gutter) - 12px) / 5.7566));
+  --header-one: 54px;          /* visible bar height once on one line */
+  --nstack-top: calc((var(--header-h) - (2 * var(--nh2) + var(--nline-gap))) / 2);
+}
 header {
   position: sticky;
   top: 0;
   z-index: 30;
   width: 100%;
-  height: var(--header-h);
+  height: var(--header-h);     /* constant — never shifts layout below */
   padding: 0 var(--page-gutter);
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--border);
+  pointer-events: none;        /* the transparent strip must not block clicks */
+}
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: var(--hdr-vis, var(--header-h));
   background-color: var(--bg);
   background-image:
     linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
   background-size: var(--grid) var(--grid);
-  transition: background-color 0.4s ease, border-color 0.4s ease;
+  background-position-y: var(--hdr-grid-y, 0);
+  border-bottom: 1px solid var(--border);
+  transition: height 0.35s ease, background-color 0.4s ease, border-color 0.4s ease;
 }
+body.scrolled header { --hdr-vis: var(--header-one); }
+body.home header::before { border-bottom: none; }
 
 /* Home: the name stays in the header (as elsewhere); the hero sits just below. */
 body.home main { padding-top: var(--grid); }
 
 .site-name {
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
   color: var(--black);
   text-decoration: none;
-  display: inline-block;
-  transform-origin: left center;
-  transition: transform 0.3s ease, opacity 0.2s;
+  transition: opacity 0.2s;
 }
-
-body.scrolled .site-name { transform: scale(0.64); }
 
 .site-name:hover { opacity: 0.6; }
 
-/* Hand-drawn name: the scan is an alpha mask (ink = opaque), tinted by
-   background-color so it stays palette-controlled like the other doodles.
-   Sized in grid units; box aspect ~1.6 matches the trimmed art so `contain`
-   fits it to the header height with no letterboxing. The scale-on-scroll and
-   hover rules above still apply — it's the same .site-name element. */
+/* The two word marks: alpha-mask spans tinted by background-color, absolutely
+   positioned so both states are pure top/left/size targets — one shared
+   transition tweens the morph smoothly in either direction (hysteresis in the
+   scroll handler prevents flapping). */
 .site-name--doodle {
-  width: calc(var(--grid) * 2.65);
-  height: calc(var(--grid) * 1.6);
+  pointer-events: auto;
+  position: relative;
+  display: block;
+  height: 100%;
+  width: calc(var(--nh1) * 5.7566 + var(--nword-gap)); /* one-line width, constant */
+}
+.mark {
+  position: absolute;
+  left: 0;
   background-color: var(--black);
-  -webkit-mask: var(--doodle-name) left center / contain no-repeat;
-  mask: var(--doodle-name) left center / contain no-repeat;
+  transition: top 0.35s ease, left 0.35s ease, width 0.35s ease, height 0.35s ease;
+}
+.mark-g {
+  -webkit-mask: var(--doodle-g) left center / contain no-repeat;
+  mask: var(--doodle-g) left center / contain no-repeat;
+  top: var(--nstack-top);
+  height: var(--nh2);
+  width: calc(var(--nh2) * 3.125);
+}
+.mark-i {
+  -webkit-mask: var(--doodle-i) left center / contain no-repeat;
+  mask: var(--doodle-i) left center / contain no-repeat;
+  top: calc(var(--nstack-top) + var(--nh2) + var(--nline-gap));
+  height: var(--nh2);
+  width: calc(var(--nh2) * 2.6316);
+}
+body.scrolled .mark-g {
+  top: calc((var(--header-one) - var(--nh1)) / 2);
+  height: var(--nh1);
+  width: calc(var(--nh1) * 3.125);
+}
+body.scrolled .mark-i {
+  top: calc((var(--header-one) - var(--nh1)) / 2);
+  left: calc(var(--nh1) * 3.125 + var(--nword-gap));
+  height: var(--nh1);
+  width: calc(var(--nh1) * 2.6316);
 }
 
 /* visually hidden, still read by screen readers + indexed */
@@ -1570,10 +1611,14 @@ article {
 }
 
 @media (max-width: 700px) {
-  /* The name mark centers in the fixed-height header via flex — equal space
-     above and below it (the old 32px top padding predates the doodle and
-     shoved it against the content). */
-  .site-name--doodle { width: calc(var(--grid) * 1.85); height: calc(var(--grid) * 1.12); }
+  /* Smaller word marks on phones; the stacked block stays centered in the
+     constant-height header (equal space north/south of the name). */
+  :root {
+    --nh2: 20px;
+    --nline-gap: 4px;
+    --nh1: min(19px, calc((100vw - 2 * var(--page-gutter) - 12px) / 5.7566));
+    --header-one: 46px;
+  }
   main { padding: 32px 0 64px; }
   /* (body.home main keeps its 40px padding-top by specificity, so the
      collage's -40px margin still cancels exactly on mobile.) */
