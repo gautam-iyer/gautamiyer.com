@@ -138,6 +138,9 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .cell .cap{font-size:11px;color:#52525b;padding:4px 7px;font-variant-numeric:tabular-nums}
  .cell .badge{position:absolute;top:6px;right:6px;font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:999px;background:#7c3aed;color:#fff}
  .cell.out{border-color:#e4e4e7;opacity:.5} .cell.out .badge{background:#94a3b8}
+ .cell .cbadge{position:absolute;top:6px;left:6px;font-size:12px;line-height:1;padding:4px 6px;border-radius:6px;background:#fff;border:1px solid #d4d4d8;color:#a1a1aa;cursor:pointer;z-index:2}
+ .cell .cbadge.on{background:#16a34a;border-color:#16a34a;color:#fff}
+ .cell .cbadge:hover{border-color:#16a34a}
  .cell.out:hover{opacity:.85}
  .cell .cmbtn{position:absolute;top:6px;left:6px;z-index:2;width:22px;height:22px;padding:0;border-radius:6px;background:rgba(255,255,255,.92);border:1px solid #d4d4d8;font-size:13px;line-height:1;cursor:pointer}
  .cell .cmenu{position:absolute;top:30px;left:6px;z-index:4;background:#fff;border:1px solid #d4d4d8;border-radius:8px;padding:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);display:flex;flex-direction:column;gap:6px;width:180px}
@@ -423,19 +426,21 @@ function renderColls(){
      <td class="ct">${collCount(c.slug)}</td>
      <td><input type="checkbox" ${c.featured?'checked':''} onchange="updateColl('${esc(c.slug)}',{featured:this.checked})"></td>
      <td><input class="order" type="number" min="0" value="${c.order||0}" onchange="updateColl('${esc(c.slug)}',{order:+this.value})"></td>
+     <td title="Eligible for the home-page collage hero. Curate which members show via the ▦ toggle in Edit members."><input type="checkbox" ${c.collage?'checked':''} onchange="updateColl('${esc(c.slug)}',{collage:this.checked})"> <span class="ct">${c.collage?collageCount(c.slug)+' ▦':''}</span></td>
      <td><button class="linkbtn" onclick="editMembers('${esc(c.slug)}')">Edit members →</button></td>
    </tr>
-   <tr class="caprow${c.featured?' feat':''}"><td colspan="6"><div class="caplabel">Caption${c.featured?' — shown on the home page':''}</div><textarea class="caption" placeholder="Write a 2–10 sentence caption…" onchange="updateColl('${esc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea></td></tr>`).join('');
+   <tr class="caprow${c.featured?' feat':''}"><td colspan="7"><div class="caplabel">Caption${c.featured?' — shown on the home page':''}</div><textarea class="caption" placeholder="Write a 2–10 sentence caption…" onchange="updateColl('${esc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea></td></tr>`).join('');
   const cities=uniq(Object.values(PHOTOS).map(p=>p.city));
   // Two special "sets" browsable in the same grid: the home Hero rotation and
   // the per-place cover photos.
   const roleRows=`
-   <tr class="role-row"><td><b>★ Hero</b> <span class="ct">— home hero rotation</span></td><td class="ct">any</td><td class="ct">${targetCount('__hero')}</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__hero')">Edit set →</button></td></tr>
-   <tr class="role-row"><td><b>⚑ Place cover</b> <span class="ct">— one per place</span></td><td class="ct">per city</td><td class="ct">${targetCount('__cover')}</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__cover')">Edit set →</button></td></tr>`;
-  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — type one or several <b>comma-separated</b> locations (e.g. “Newark, Brooklyn”) to span multiple; the site’s Collections filter then lists it under each. Tick <b>Featured</b> + set <b>Order</b> (1,2,3…) to choose the home-page 5 and their sequence. “Edit members / set” opens the add/remove grid — that includes the two special sets at the top: ★ Hero and ⚑ Place cover.</p>
-   <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th></th></tr></thead><tbody>${roleRows}${rows}</tbody></table>
+   <tr class="role-row"><td><b>★ Hero</b> <span class="ct">— home hero rotation</span></td><td class="ct">any</td><td class="ct">${targetCount('__hero')}</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__hero')">Edit set →</button></td></tr>
+   <tr class="role-row"><td><b>⚑ Place cover</b> <span class="ct">— one per place</span></td><td class="ct">per city</td><td class="ct">${targetCount('__cover')}</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__cover')">Edit set →</button></td></tr>`;
+  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — type one or several <b>comma-separated</b> locations (e.g. “Newark, Brooklyn”) to span multiple; the site’s Collections filter then lists it under each. Tick <b>Featured</b> + set <b>Order</b> (1,2,3…) to choose the home-page 5 and their sequence. Tick <b>Collage</b> to make a collection eligible for the home-page collage hero — then curate WHICH photos show with the ▦ toggle inside “Edit members” (aim for 12–18; fewer than 8 gets topped up automatically). “Edit members / set” opens the add/remove grid — that includes the two special sets at the top: ★ Hero and ⚑ Place cover.</p>
+   <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th>Collage</th><th></th></tr></thead><tbody>${roleRows}${rows}</tbody></table>
    <datalist id="dl-place">${cities.map(c=>`<option value="${esc(c)}">`).join('')}</datalist>`;
 }
+function collageCount(slug){return Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(slug)&&PHOTOS[k].collage).length;}
 window.editMembers=(slug)=>{mode='members';memberSlug=slug;page=0;memberFilter.city='';memberFilter.all=false;render();};
 
 /* ============ EDIT-MEMBERS GRID (collections + Hero / Place-cover) ============
@@ -462,22 +467,36 @@ window.toggleMember=(key)=>{const t=memberSlug;const on=!isIn(key,t);setIn(key,t
   const cell=document.querySelector(`.cell[data-key="${CSS.escape(key)}"]`);
   if(cell){cell.classList.toggle('out',!on);cell.querySelector('.badge').textContent=on?'in':'add';}
   $('#stat').textContent=`${targetCount(t)} in set`;};
+/* Per-photo collage inclusion (photo.collage). Only shown for collage-enabled
+   collections. NOTE: the flag is per-PHOTO — a photo in two collage-enabled
+   collections shows in both pools. */
+function collActive(){const c=COLLS.find(x=>x.slug===memberSlug);return !!(c&&c.collage);}
+window.toggleCollage=(ev,key)=>{ev.stopPropagation();
+  const p=PHOTOS[key];p.collage=!p.collage;save(key,{collage:p.collage});
+  const b=document.querySelector(`.cell[data-key="${CSS.escape(key)}"] .cbadge`);
+  if(b)b.classList.toggle('on',p.collage);
+  memberStat();};
+function memberStat(){const t=memberSlug;let s=`${targetCount(t)} in set`;
+  if(collActive())s+=` · ${collageCount(t)} ▦ in collage`;
+  $('#stat').textContent=s;}
 function renderMembers(){
   const t=memberSlug;
   const cities=uniq(Object.values(PHOTOS).map(p=>p.city));
   const all=memberList(), pages=Math.max(1,Math.ceil(all.length/GRIDPER));
   if(page>=pages)page=pages-1;
   const slice=all.slice(page*GRIDPER,page*GRIDPER+GRIDPER);
-  $('#stat').textContent=`${targetCount(t)} in set`;
+  memberStat();
+  const showCollage=collActive();
   $('#main').innerHTML=`<p class="hint"><button class="linkbtn" onclick="backToColls()">← Collections</button> &nbsp; Editing <b>${esc(targetLabel(t))}</b>.
-     Click a photo to ${memberFilter.all?'add/remove':'remove'} it. Autosaves.</p>
+     Click a photo to ${memberFilter.all?'add/remove':'remove'} it. Autosaves.${showCollage?' &nbsp;·&nbsp; <b>▦</b> = include in the home-page collage (click the corner chip).':''}</p>
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
       <label style="font-size:13px"><input type="checkbox" id="m-all" ${memberFilter.all?'checked':''}> show all photos (to add)</label>
       <select id="m-city"><option value="">All cities</option>${cities.map(c=>`<option value="${esc(c)}"${c===memberFilter.city?' selected':''}>${esc(c)}</option>`).join('')}</select>
     </div>
     <div class="grid">`+slice.map(key=>{const p=PHOTOS[key];const inn=isIn(key,t);
+      const cb=showCollage&&inn?`<span class="cbadge${p.collage?' on':''}" title="Include in home-page collage" onclick="toggleCollage(event,'${jesc(key)}')">▦</span>`:'';
       return `<div class="cell ${inn?'':'out'}" data-key="${esc(key)}" onclick="toggleMember('${jesc(key)}')">
-        <span class="badge">${inn?'in':'add'}</span>${cellMenu(key)}<img loading="lazy" src="/img/${p.thumb}">
+        <span class="badge">${inn?'in':'add'}</span>${cb}${cellMenu(key)}<img loading="lazy" src="/img/${p.thumb}">
         <div class="cap">${esc(p.city||'')} · #${p.img_no}</div></div>`;}).join('')+`</div>`+pager(page,pages,all.length);
   $('#m-all').onchange=e=>{memberFilter.all=e.target.checked;page=0;render();};
   $('#m-city').onchange=e=>{memberFilter.city=e.target.value;page=0;render();};
@@ -618,7 +637,7 @@ class Handler(BaseHTTPRequestHandler):
                 reg = load(COLLECTIONS, {"collections": []})
                 for c in reg["collections"]:
                     if c["slug"] == slug:
-                        for f in ("title", "featured", "order", "place", "places", "description", "caption"):
+                        for f in ("title", "featured", "order", "place", "places", "description", "caption", "collage"):
                             if f in data:
                                 c[f] = data[f]
                         break

@@ -42,7 +42,8 @@
       "type": "curated",
       "place": "Pittsburgh",
       "color": "#a8842c",
-      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      "collage": true
     },
     {
       "slug": "churches-of-pittsburgh",
