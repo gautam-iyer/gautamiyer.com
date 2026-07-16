@@ -1,10 +1,12 @@
-// Hero collage: pack one collection's photos into the full-bleed hero box with
-// ZERO cropping. Every photo keeps its exact aspect ratio; a fixed horizontal
-// gap separates cells, and the leftover vertical space is distributed as the
-// row gap. The layout search tries many shuffles × row-height targets and
-// keeps the arrangement whose solved row gap lands closest to the column gap,
-// so the grout reads as one consistent padding. (This replaces the old
-// scale-to-fit approach, which cropped up to ~10% at low photo counts.)
+// Hero collage: pack one collection's photos into the full-bleed hero box.
+// Tiered layout guarantee (best first, blank impossible):
+//   1. flush   — exact aspect ratios, ONE solved unified gap (row == column)
+//   2. framed  — same, with the gap also above/below (rescues stubborn pools)
+//   3. crop    — justified rows at the design gap, scaled to fit; prefix and
+//                pool-derived row-split targets keep the crop minimal (sweep-
+//                verified ≤ ~16% worst-case, typically a few %)
+// A unified badness score picks across tiers; crop pays ~1.6 pts per % so
+// gap-perfect layouts always win when they exist.
 (() => {
   const box = document.querySelector('[data-collage]')
   const pools = window.COLLAGE_POOLS
@@ -117,8 +119,41 @@
       if (!c) return null
       a = c
     }
-    if (a.v < 2 || a.v > 34 || Math.abs(a.v - a.g) > 1.5) return null
+    if (a.v < 2 || a.v > 48 || Math.abs(a.v - a.g) > 3) return null
     return a
+  }
+
+  // Guaranteed fallback: justified rows at the design GAP, prefix chosen to
+  // minimize the exact-fill scale |1-k| — object-fit absorbs the (small) crop.
+  // Always yields a layout, so the hero can never render blank.
+  function cropCandidate(order, W, H, targetH) {
+    const p = plan(order, W, H, targetH, GAP)
+    if (!p.rows.length) return null
+    let best = null
+    let sumH = 0
+    for (let R = 1; R <= p.rows.length; R++) {
+      sumH += p.rows[R - 1].h
+      const avail = H - GAP * (R - 1)
+      if (avail <= 0) break
+      const k = avail / sumH
+      if (!best || Math.abs(1 - k) < Math.abs(1 - best.k)) {
+        best = { rows: p.rows.slice(0, R), g: GAP, v: GAP, k, mode: 'crop' }
+      }
+    }
+    return best
+  }
+
+  // Unified "badness" across tiers: perfect unified gap ≈ 0; oversized or
+  // inconsistent gaps accumulate points; crop counts ~1.6 points per % of crop
+  // so it only wins when gap-based layouts are genuinely poor.
+  function badness(c) {
+    if (c.mode === 'crop') return Math.abs(1 - c.k) * 160 + 2
+    return (
+      Math.abs(c.v - c.g) * 4 +
+      Math.abs(c.v - GAP) * 0.15 +
+      Math.max(0, c.v - 34) * 1.5 +
+      (c.mode === 'framed' ? 1 : 0)
+    )
   }
 
   let lastW = 0
@@ -136,33 +171,39 @@
     const mobile = W < 700
     const base = mobile ? H / 2.8 : H / 2.2
 
-    // Search: for each candidate order × row-height target × mode, refine to a
-    // unified gap (column gap == row gap) and keep the arrangement whose gap is
-    // closest to the design GAP. Flush layouts win ties; framed mode rescues
-    // pools whose aspect mix can't tile the box flush.
+    // Search: for each candidate order × row-height target, try the no-crop
+    // modes (flush, then framed) and the guaranteed crop fallback; keep the
+    // lowest unified badness. The crop tier always yields SOMETHING, so a
+    // blank hero is impossible at any viewport size.
     let best = null
+    const consider = (c) => {
+      if (!c) return
+      const score = badness(c)
+      if (!best || score < best.score) best = { ...c, score }
+    }
+    // Row-split targets derived from the pool itself: the row height that
+    // divides the whole pool's aspect mass into exactly R rows. Rescues extreme
+    // viewports (very wide/short) where the density ladder can't force a split.
+    const totalAr = items.reduce((s, i) => s + i.ar, 0)
     for (let t = 0; t < TRIES; t++) {
       const order = ORDERS[t]
-      for (const f of [0.8, 0.95, 1.1, 1.3]) {
-        for (const mode of ['flush', 'framed']) {
-          const p = refine(order, W, H, base * f, GAP, mode)
-          if (!p) continue
-          const score =
-            Math.abs(p.v - p.g) * 4 + Math.abs(p.v - GAP) * 0.25 + (mode === 'framed' ? 1 : 0)
-          if (!best || score < best.score) best = { ...p, score }
-        }
+      for (const f of [0.55, 0.7, 0.85, 1, 1.15, 1.3]) {
+        for (const mode of ['flush', 'framed']) consider(refine(order, W, H, base * f, GAP, mode))
+        consider(cropCandidate(order, W, H, base * f))
       }
-      if (best && best.score < 0.6) break
+      for (let R = 1; R <= 6; R++) consider(cropCandidate(order, W, H, (W * R) / totalAr))
+      if (best && best.score < 0.8) break
     }
     if (!best) return
 
+    const k = best.mode === 'crop' ? best.k : 1
     box.style.rowGap = best.v + 'px'
     box.style.paddingTop = box.style.paddingBottom = best.mode === 'framed' ? best.v + 'px' : '0'
     box.textContent = ''
     for (const { row, h } of best.rows) {
       const r = document.createElement('div')
       r.className = 'collage-row'
-      r.style.height = h + 'px'
+      r.style.height = h * k + 'px'
       r.style.columnGap = best.g + 'px'
       for (const it of row) {
         const cell = document.createElement('button')
