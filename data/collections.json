@@ -9,7 +9,8 @@
       "order": 1,
       "type": "curated",
       "place": "Pittsburgh",
-      "color": "#1d3a5f"
+      "color": "#1d3a5f",
+      "collage": true
     },
     {
       "slug": "cathedral-of-learning-pittsburgh",
