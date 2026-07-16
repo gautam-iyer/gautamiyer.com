@@ -58655,7 +58655,8 @@
     "tagged": true,
     "reviewed": true,
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6120.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6120.jpg",
@@ -60603,7 +60604,8 @@
     "tagged": true,
     "reviewed": true,
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6243.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6243.jpg",
@@ -61395,9 +61397,7 @@
       "Color"
     ],
     "tag_notes": "Rusticated stone wall of a Richardsonian Romanesque building with an arched niche and its tall round stone tower, behind a wayfinding sign listing Duquesne University, Allegheny County Courthouse and PPG Paints Arena in downtown Pittsburgh.",
-    "collections": [
-      "ppg-place-pittsburgh"
-    ],
+    "collections": [],
     "thumb": "pittsburgh-2026-06-16/img_6297.thumb.webp",
     "display_avif": "pittsburgh-2026-06-16/img_6297.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6297.display.webp",
@@ -61668,7 +61668,8 @@
     "tagged": true,
     "reviewed": true,
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6316.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6316.jpg",
@@ -61739,7 +61740,6 @@
     ],
     "tag_notes": "Downtown Pittsburgh skyline led by the blue-glass PWC-signed tower (One PPG-area / Fifth Avenue Place), Tower Two-Sixty and other high-rises rising above the river and tree line.",
     "collections": [
-      "ppg-place-pittsburgh",
       "rivers-of-pittsburgh"
     ],
     "thumb": "pittsburgh-2026-06-16/img_6319.thumb.webp",
@@ -62562,8 +62562,7 @@
     ],
     "tag_notes": "Large brick church (Pittsburgh Baptist, per sign) with twin steeply pitched pinnacled tower spires, pointed-arch windows, a stone base, and a 'Prepare to Meet Thy God' sign, in golden light.",
     "collections": [
-      "churches-of-pittsburgh",
-      "ppg-place-pittsburgh"
+      "churches-of-pittsburgh"
     ],
     "thumb": "pittsburgh-2026-06-16/img_6355.thumb.webp",
     "display_avif": "pittsburgh-2026-06-16/img_6355.display.avif",
@@ -62642,7 +62641,6 @@
     ],
     "tag_notes": "Downtown Pittsburgh skyline detail showing the K&L Gates tower, the faceted-crown Tower at PNC Plaza, and the green-glass Fifth Avenue Place spire above riverfront buildings.",
     "collections": [
-      "ppg-place-pittsburgh",
       "rivers-of-pittsburgh"
     ],
     "thumb": "pittsburgh-2026-06-16/img_6357.thumb.webp",
@@ -62652,7 +62650,8 @@
     "reviewed": true,
     "state": "PA",
     "hero": false,
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": false
   },
   "Pittsburgh 6:16:26/Edited/IMG_6358.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6358.jpg",
@@ -62682,8 +62681,8 @@
     ],
     "tag_notes": "Broad Pittsburgh Golden Triangle skyline with the neo-Gothic PPG Place spires, K&L Gates, and the UPMC/US Steel tower, above the Monongahela River and a steel truss bridge at right.",
     "collections": [
-      "ppg-place-pittsburgh",
-      "rivers-of-pittsburgh"
+      "rivers-of-pittsburgh",
+      "ppg-place-pittsburgh"
     ],
     "thumb": "pittsburgh-2026-06-16/img_6358.thumb.webp",
     "display_avif": "pittsburgh-2026-06-16/img_6358.display.avif",
@@ -62692,7 +62691,8 @@
     "reviewed": true,
     "state": "PA",
     "hero": true,
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6359.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6359.jpg",
@@ -63439,7 +63439,6 @@
     ],
     "tag_notes": "Downtown Pittsburgh skyline with the UPMC/US Steel Tower and the yellow arched Fort Pitt Bridge over the Monongahela River, bathed in warm golden-hour light.",
     "collections": [
-      "ppg-place-pittsburgh",
       "rivers-of-pittsburgh"
     ],
     "thumb": "pittsburgh-2026-06-16/img_6399.thumb.webp",
@@ -63597,9 +63596,7 @@
       "Color"
     ],
     "tag_notes": "Downtown Pittsburgh skyline led by the UPMC/US Steel Tower and PPG Place, with the yellow Fort Pitt Bridge and a red Duquesne Incline funicular car descending in the foreground.",
-    "collections": [
-      "ppg-place-pittsburgh"
-    ],
+    "collections": [],
     "thumb": "pittsburgh-2026-06-16/img_6407.thumb.webp",
     "display_avif": "pittsburgh-2026-06-16/img_6407.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6407.display.webp",
@@ -63637,9 +63634,7 @@
       "Color"
     ],
     "tag_notes": "Vertical view of the downtown Pittsburgh skyline with the yellow Fort Pitt Bridge and a red Duquesne Incline car descending its track through trees at golden hour.",
-    "collections": [
-      "ppg-place-pittsburgh"
-    ],
+    "collections": [],
     "thumb": "pittsburgh-2026-06-16/img_6408.thumb.webp",
     "display_avif": "pittsburgh-2026-06-16/img_6408.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6408.display.webp",
@@ -63808,7 +63803,8 @@
     "tagged": true,
     "reviewed": true,
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6418.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6418.jpg",
@@ -63930,45 +63926,6 @@
     "camera": "EOS R8",
     "collage": true
   },
-  "Pittsburgh 6:16:26/Edited/IMG_6429.jpg": {
-    "key": "Pittsburgh 6:16:26/Edited/IMG_6429.jpg",
-    "file": "IMG_6429.jpg",
-    "shoot": "pittsburgh-2026-06-16",
-    "city": "Pittsburgh",
-    "date": "2026-06-16",
-    "img_no": 6429,
-    "width": 5900,
-    "height": 3933,
-    "neighborhood": null,
-    "land_use": [
-      "Commercial",
-      "Infrastructure"
-    ],
-    "architecture": [
-      "Skyscraper",
-      "Modern"
-    ],
-    "subject": [
-      "Skyline",
-      "Detail"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Downtown Pittsburgh skyline (including the gabled BNY Mellon / One Mellon Center and Fifth Avenue Place towers) framed through a weathered window, viewed from Mount Washington above the river and its bridges.",
-    "collections": [
-      "ppg-place-pittsburgh",
-      "rivers-of-pittsburgh"
-    ],
-    "thumb": "pittsburgh-2026-06-16/img_6429.thumb.webp",
-    "display_avif": "pittsburgh-2026-06-16/img_6429.display.avif",
-    "display_webp": "pittsburgh-2026-06-16/img_6429.display.webp",
-    "tagged": true,
-    "reviewed": true,
-    "state": "PA",
-    "camera": "EOS R8"
-  },
   "Pittsburgh 6:16:26/Edited/IMG_6430.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6430.jpg",
     "file": "IMG_6430.jpg",
@@ -64006,7 +63963,8 @@
       "ppg-place-pittsburgh"
     ],
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6432.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6432.jpg",
@@ -64115,8 +64073,7 @@
       "Color"
     ],
     "collections": [
-      "churches-of-pittsburgh",
-      "ppg-place-pittsburgh"
+      "churches-of-pittsburgh"
     ],
     "state": "PA",
     "camera": "EOS R8"
@@ -67553,8 +67510,7 @@
     ],
     "collections": [
       "cathedral-of-learning-pittsburgh",
-      "churches-of-pittsburgh",
-      "ppg-place-pittsburgh"
+      "churches-of-pittsburgh"
     ],
     "state": "PA",
     "camera": "EOS R8"
@@ -67703,8 +67659,7 @@
     ],
     "collections": [
       "cathedral-of-learning-pittsburgh",
-      "churches-of-pittsburgh",
-      "ppg-place-pittsburgh"
+      "churches-of-pittsburgh"
     ],
     "state": "PA",
     "camera": "EOS R8"
@@ -67959,8 +67914,7 @@
     ],
     "collections": [
       "cathedral-of-learning-pittsburgh",
-      "churches-of-pittsburgh",
-      "ppg-place-pittsburgh"
+      "churches-of-pittsburgh"
     ],
     "state": "PA",
     "camera": "EOS R8"
@@ -71089,9 +71043,7 @@
     "tone": [
       "Color"
     ],
-    "collections": [
-      "ppg-place-pittsburgh"
-    ],
+    "collections": [],
     "state": "PA",
     "camera": "EOS R8"
   },
@@ -71459,13 +71411,12 @@
     "display_avif": "pittsburgh-2026-06-16/img_6811.display.avif",
     "display_webp": "pittsburgh-2026-06-16/img_6811.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "tone": [
       "Color"
     ],
     "collections": [
-      "industrial-pittsburgh",
-      "ppg-place-pittsburgh"
+      "industrial-pittsburgh"
     ],
     "state": "PA",
     "camera": "EOS R8"
@@ -76600,7 +76551,8 @@
       "ppg-place-pittsburgh"
     ],
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_7077.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7077.jpg",
@@ -76670,7 +76622,6 @@
     ],
     "collections": [
       "churches-of-pittsburgh",
-      "ppg-place-pittsburgh",
       "upmc-building-pittsburgh"
     ],
     "state": "PA",
@@ -76707,8 +76658,7 @@
       "Color"
     ],
     "collections": [
-      "industrial-pittsburgh",
-      "ppg-place-pittsburgh"
+      "industrial-pittsburgh"
     ],
     "state": "PA",
     "camera": "EOS R8"
@@ -76744,7 +76694,6 @@
       "Color"
     ],
     "collections": [
-      "ppg-place-pittsburgh",
       "rivers-of-pittsburgh"
     ],
     "state": "PA",
@@ -77451,7 +77400,8 @@
       "rap-murals"
     ],
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_7117.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7117.jpg",
@@ -77771,7 +77721,8 @@
       "ppg-place-pittsburgh"
     ],
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_7138.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7138.jpg",
@@ -77807,7 +77758,8 @@
       "ppg-place-pittsburgh"
     ],
     "state": "PA",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_7140.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_7140.jpg",

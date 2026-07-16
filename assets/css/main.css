@@ -78,14 +78,20 @@ body {
   --nstack-top: calc((var(--header-h) - (2 * var(--nh2) + var(--nline-gap))) / 2);
 }
 header {
-  position: sticky;
+  /* FIXED, not sticky: iOS repositions sticky elements a frame late while the
+     URL bar collapses (the bar visibly lags the scroll); fixed elements stay
+     glued to the visual viewport. The body spacer below replaces the height
+     the header no longer occupies in flow. */
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 30;
-  width: 100%;
   height: var(--header-h);     /* constant — never shifts layout below */
   padding: 0 12px;             /* name hugs the screen edge, tiny standard pad */
   pointer-events: none;        /* the transparent strip must not block clicks */
 }
+body { padding-top: var(--header-h); }
 header::before {
   content: '';
   position: absolute;
