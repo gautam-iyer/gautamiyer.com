@@ -138,7 +138,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .cell .cap{font-size:11px;color:#52525b;padding:4px 7px;font-variant-numeric:tabular-nums}
  .cell .badge{position:absolute;top:6px;right:6px;font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:999px;background:#7c3aed;color:#fff}
  .cell.out{border-color:#e4e4e7;opacity:.5} .cell.out .badge{background:#94a3b8}
- .cell .cbadge{position:absolute;top:6px;left:6px;font-size:12px;line-height:1;padding:4px 6px;border-radius:6px;background:#fff;border:1px solid #d4d4d8;color:#a1a1aa;cursor:pointer;z-index:2}
+ .cell .cbadge{position:absolute;top:32px;left:6px;font-size:12px;line-height:1;padding:4px 6px;border-radius:6px;background:#fff;border:1px solid #d4d4d8;color:#a1a1aa;cursor:pointer;z-index:2}
  .cell .cbadge.on{background:#16a34a;border-color:#16a34a;color:#fff}
  .cell .cbadge:hover{border-color:#16a34a}
  .cell.out:hover{opacity:.85}
