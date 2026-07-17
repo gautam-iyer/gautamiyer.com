@@ -84,11 +84,18 @@
 </div>
 <div class="sidenav-backdrop" data-sidenav-backdrop></div>
 
+{{/* Horizontal-overflow clip lives HERE, not on <body>: setting overflow on
+     the document scroller breaks position:fixed on iOS Safari (the header would
+     detach from the viewport top). This wrapper clips the collage's 100vw
+     full-bleed sliver at true viewport width; the fixed header + sidenav sit
+     OUTSIDE it so they're never clipped/contained. */}}
+<div class="xflow">
 {{ block "main" . }}{{ end }}
 
 <footer data-snap>
   <p>&copy; {{ now.Year }} {{ .Site.Params.author | default .Site.Title }}</p>
 </footer>
+</div>
 
 {{ block "scripts" . }}{{ end }}
 {{ partial "asset-js.html" "js/nav.js" }}

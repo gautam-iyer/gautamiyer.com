@@ -329,7 +329,11 @@ footer p {
   height: calc(100svh - var(--header-h) - 30px);
   overflow: hidden;
 }
-body.home { overflow-x: clip; } /* 100vw includes the scrollbar gutter */
+/* Clip the collage's 100vw breakout sliver on a wrapper (NOT <body> — overflow
+   on the root scroller breaks position:fixed on iOS). overflow-x:clip pairs
+   with visible-y (no new vertical scroll container) and does not create a
+   containing block for the fixed header/sidenav that sit outside it. */
+.xflow { overflow-x: clip; }
 /* No divider between the name mark and the collage — they read as one unit. */
 body.home header { border-bottom: none; }
 .hero-collage { position: relative; }
