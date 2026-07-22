@@ -84,19 +84,16 @@ def main():
             hero.append({"avif": ci["avif"], "webp": ci["webp"], "ar": ci["ar"], "cam": ci["cam"]})
 
     # Collage pools: for every collection flagged collage-eligible in the
-    # registry, the curated members (photo.collage) — topped up with unflagged
-    # members if fewer than COLLAGE_MIN are checked, so the hero can always
-    # fill the viewport without harsh crops.
-    COLLAGE_MIN = 8
+    # registry, EXACTLY the curated members (photo.collage) — no top-up. A
+    # deliberately small curation (e.g. "Free": 4 kids-running close-ups) must
+    # stay small; the collage solver's tiered fallbacks guarantee a layout at
+    # any pool size, small ones just render fewer, larger cells (possibly with
+    # some crop). A collection with NOTHING curated pools its whole membership.
     registry = json.loads((DATA / "collections.json").read_text())["collections"]
     collage = {}
     for slug in (c["slug"] for c in registry if c.get("collage") and not c.get("archived")):
         members = [p for p in recs if slug in (p.get("collections") or [])]
-        flagged = [p for p in members if p.get("collage")]
-        if not flagged:            # nothing curated yet -> whole collection
-            pool = members
-        else:                      # curated; top up only if below the floor
-            pool = flagged + [p for p in members if not p.get("collage")][: max(0, COLLAGE_MIN - len(flagged))]
+        pool = [p for p in members if p.get("collage")] or members
         if pool:
             collage[slug] = [_coll_item(p) for p in pool]
 

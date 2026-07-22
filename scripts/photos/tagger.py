@@ -431,27 +431,28 @@ function renderColls(){
      <td><input type="checkbox" ${c.featured?'checked':''} onchange="updateColl('${esc(c.slug)}',{featured:this.checked})"></td>
      <td><input class="order" type="number" min="0" value="${c.order||0}" onchange="updateColl('${esc(c.slug)}',{order:+this.value})"></td>
      <td title="Eligible for the home-page collage hero. Curate which members show via the ▦ toggle in Edit members."><input type="checkbox" ${c.collage?'checked':''} onchange="updateColl('${esc(c.slug)}',{collage:this.checked})"> <span class="ct">${c.collage?collageCount(c.slug)+' ▦':''}</span></td>
+     <td>${c.collage?`<input class="order" type="number" min="0" placeholder="—" value="${c.collage_rank||''}" onchange="updateColl('${esc(c.slug)}',{collage_rank:+this.value||0})" title="Home-collage priority: 1 = most likely to appear, 2 next, and so on — weighted, still random. Blank/0 = unranked (all unranked share the tier below the last ranked).">`:''}</td>
      <td><button class="linkbtn" onclick="editMembers('${esc(c.slug)}')">Edit members →</button>
          <button class="linkbtn arch" title="Remove from the site (membership kept; restore anytime from the Archived list below)" onclick="archiveColl('${esc(c.slug)}')">Archive</button></td>
    </tr>
-   <tr class="caprow${c.featured?' feat':''}"><td colspan="7"><div class="caplabel">Caption${c.featured?' — shown on the home page':''}</div><textarea class="caption" placeholder="Write a 2–10 sentence caption…" onchange="updateColl('${esc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea></td></tr>`).join('');
+   <tr class="caprow${c.featured?' feat':''}"><td colspan="8"><div class="caplabel">Caption${c.featured?' — shown on the home page':''}</div><textarea class="caption" placeholder="Write a 2–10 sentence caption…" onchange="updateColl('${esc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea></td></tr>`).join('');
   const archRows=archived.slice().sort((a,b)=>a.title.localeCompare(b.title))
    .map(c=>`<tr class="archrow">
      <td class="ct">${esc(c.title)}</td>
      <td class="ct">${esc(collPlacesStr(c))}</td>
      <td class="ct">${collCount(c.slug)}</td>
-     <td class="ct" colspan="3">archived — not on the site; membership preserved</td>
+     <td class="ct" colspan="4">archived — not on the site; membership preserved</td>
      <td><button class="linkbtn" onclick="restoreColl('${esc(c.slug)}')">Restore</button></td>
    </tr>`).join('');
-  const archBlock=archived.length?`<tr><td colspan="7" class="archhead">Archived (${archived.length})</td></tr>${archRows}`:'';
+  const archBlock=archived.length?`<tr><td colspan="8" class="archhead">Archived (${archived.length})</td></tr>${archRows}`:'';
   const cities=uniq(Object.values(PHOTOS).map(p=>p.city));
   // Two special "sets" browsable in the same grid: the home Hero rotation and
   // the per-place cover photos.
   const roleRows=`
-   <tr class="role-row"><td><b>★ Hero</b> <span class="ct">— home hero rotation</span></td><td class="ct">any</td><td class="ct">${targetCount('__hero')}</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__hero')">Edit set →</button></td></tr>
-   <tr class="role-row"><td><b>⚑ Place cover</b> <span class="ct">— one per place</span></td><td class="ct">per city</td><td class="ct">${targetCount('__cover')}</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__cover')">Edit set →</button></td></tr>`;
-  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — type one or several <b>comma-separated</b> locations (e.g. “Newark, Brooklyn”) to span multiple; the site’s Collections filter then lists it under each. Tick <b>Featured</b> + set <b>Order</b> (1,2,3…) to choose the home-page 5 and their sequence. Tick <b>Collage</b> to make a collection eligible for the home-page collage hero — then curate WHICH photos show with the ▦ toggle inside “Edit members” (aim for 12–18; fewer than 8 gets topped up automatically). “Edit members / set” opens the add/remove grid — that includes the two special sets at the top: ★ Hero and ⚑ Place cover.</p>
-   <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th>Collage</th><th></th></tr></thead><tbody>${roleRows}${rows}${archBlock}</tbody></table>
+   <tr class="role-row"><td><b>★ Hero</b> <span class="ct">— home hero rotation</span></td><td class="ct">any</td><td class="ct">${targetCount('__hero')}</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__hero')">Edit set →</button></td></tr>
+   <tr class="role-row"><td><b>⚑ Place cover</b> <span class="ct">— one per place</span></td><td class="ct">per city</td><td class="ct">${targetCount('__cover')}</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__cover')">Edit set →</button></td></tr>`;
+  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — type one or several <b>comma-separated</b> locations (e.g. “Newark, Brooklyn”) to span multiple; the site’s Collections filter then lists it under each. Tick <b>Featured</b> + set <b>Order</b> (1,2,3…) to choose the home-page 5 and their sequence. Tick <b>Collage</b> to make a collection eligible for the home collage walls — then curate WHICH photos show with the ▦ toggle inside “Edit members”: ONLY flagged photos appear (12–18 tiles gap-perfectly; a handful renders as a short wall of big cells, possibly with some crop). <b>Home rank</b> skews which collections the three walls draw: 1 = most likely, 2 next, etc — weighted but still random; blank = unranked. “Edit members / set” opens the add/remove grid — that includes the two special sets at the top: ★ Hero and ⚑ Place cover.</p>
+   <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th>Collage</th><th>Home rank</th><th></th></tr></thead><tbody>${roleRows}${rows}${archBlock}</tbody></table>
    <datalist id="dl-place">${cities.map(c=>`<option value="${esc(c)}">`).join('')}</datalist>`;
 }
 function collageCount(slug){return Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(slug)&&PHOTOS[k].collage).length;}
@@ -682,7 +683,7 @@ class Handler(BaseHTTPRequestHandler):
                 reg = load(COLLECTIONS, {"collections": []})
                 for c in reg["collections"]:
                     if c["slug"] == slug:
-                        for f in ("title", "featured", "order", "place", "places", "description", "caption", "collage", "archived"):
+                        for f in ("title", "featured", "order", "place", "places", "description", "caption", "collage", "collage_rank", "archived"):
                             if f in data:
                                 c[f] = data[f]
                         break

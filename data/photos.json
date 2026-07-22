@@ -85636,12 +85636,12 @@
     "key": "SoBro + Riverside 4:18:26/Edited/IMG_3367.jpg",
     "file": "IMG_3367.jpg",
     "shoot": "sobro-riverside-2026",
-    "city": "Bronx",
+    "city": "New York",
     "date": "2026-04-18",
     "img_no": 3367,
     "width": 3856,
     "height": 2571,
-    "neighborhood": null,
+    "neighborhood": "Upper West Side",
     "land_use": [
       "Park",
       "Infrastructure"
@@ -85659,7 +85659,9 @@
       "Color"
     ],
     "tag_notes": "Aerial view of a waterfront park plaza with stone-block seating, benches and pedestrians walking dogs; Bronx riverside greenway.",
-    "collections": [],
+    "collections": [
+      "free"
+    ],
     "thumb": "sobro-riverside-2026/img_3367.thumb.webp",
     "display_avif": "sobro-riverside-2026/img_3367.display.avif",
     "display_webp": "sobro-riverside-2026/img_3367.display.webp",
@@ -85672,12 +85674,12 @@
     "key": "SoBro + Riverside 4:18:26/Edited/IMG_3376.jpg",
     "file": "IMG_3376.jpg",
     "shoot": "sobro-riverside-2026",
-    "city": "Bronx",
+    "city": "New York",
     "date": "2026-04-18",
     "img_no": 3376,
     "width": 3447,
     "height": 5170,
-    "neighborhood": null,
+    "neighborhood": "Upper West Side",
     "land_use": [
       "Park"
     ],
@@ -85693,7 +85695,9 @@
       "Color"
     ],
     "tag_notes": "Aerial of a waterfront park playground with a sculptural white slide, rope-climb structure and paved paths; Bronx riverside park.",
-    "collections": [],
+    "collections": [
+      "free"
+    ],
     "thumb": "sobro-riverside-2026/img_3376.thumb.webp",
     "display_avif": "sobro-riverside-2026/img_3376.display.avif",
     "display_webp": "sobro-riverside-2026/img_3376.display.webp",
@@ -85706,12 +85710,12 @@
     "key": "SoBro + Riverside 4:18:26/Edited/IMG_3378.jpg",
     "file": "IMG_3378.jpg",
     "shoot": "sobro-riverside-2026",
-    "city": "Bronx",
+    "city": "New York",
     "date": "2026-04-18",
     "img_no": 3378,
     "width": 3243,
     "height": 4865,
-    "neighborhood": null,
+    "neighborhood": "Upper West Side",
     "land_use": [
       "Infrastructure",
       "Park"
@@ -85728,7 +85732,9 @@
       "Color"
     ],
     "tag_notes": "Aerial of a green-painted steel elevated highway/viaduct over a crosswalk and greenway path with cyclists and pedestrians; Bronx waterfront.",
-    "collections": [],
+    "collections": [
+      "free"
+    ],
     "thumb": "sobro-riverside-2026/img_3378.thumb.webp",
     "display_avif": "sobro-riverside-2026/img_3378.display.avif",
     "display_webp": "sobro-riverside-2026/img_3378.display.webp",
@@ -85741,12 +85747,12 @@
     "key": "SoBro + Riverside 4:18:26/Edited/IMG_3380.jpg",
     "file": "IMG_3380.jpg",
     "shoot": "sobro-riverside-2026",
-    "city": "Bronx",
+    "city": "New York",
     "date": "2026-04-18",
     "img_no": 3380,
     "width": 3149,
     "height": 4723,
-    "neighborhood": null,
+    "neighborhood": "Upper West Side",
     "land_use": [
       "Infrastructure",
       "Park"
@@ -85763,7 +85769,9 @@
       "Color"
     ],
     "tag_notes": "Aerial of the green steel elevated roadway with concrete piers over a crossing and path with cars above and cyclists below; Bronx.",
-    "collections": [],
+    "collections": [
+      "free"
+    ],
     "thumb": "sobro-riverside-2026/img_3380.thumb.webp",
     "display_avif": "sobro-riverside-2026/img_3380.display.avif",
     "display_webp": "sobro-riverside-2026/img_3380.display.webp",
@@ -85776,12 +85784,12 @@
     "key": "SoBro + Riverside 4:18:26/Edited/IMG_3381.jpg",
     "file": "IMG_3381.jpg",
     "shoot": "sobro-riverside-2026",
-    "city": "Bronx",
+    "city": "New York",
     "date": "2026-04-18",
     "img_no": 3381,
     "width": 1478,
     "height": 2217,
-    "neighborhood": null,
+    "neighborhood": "Upper West Side",
     "land_use": [
       "Park"
     ],
@@ -85797,25 +85805,28 @@
       "Color"
     ],
     "tag_notes": "Aerial close-up of a playground's teal-checkered surfacing with a metal slide and rope climber casting long tree shadows; Bronx park.",
-    "collections": [],
+    "collections": [
+      "free"
+    ],
     "thumb": "sobro-riverside-2026/img_3381.thumb.webp",
     "display_avif": "sobro-riverside-2026/img_3381.display.avif",
     "display_webp": "sobro-riverside-2026/img_3381.display.webp",
     "tagged": true,
     "reviewed": false,
     "state": "NY",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "SoBro + Riverside 4:18:26/Edited/IMG_3382.jpg": {
     "key": "SoBro + Riverside 4:18:26/Edited/IMG_3382.jpg",
     "file": "IMG_3382.jpg",
     "shoot": "sobro-riverside-2026",
-    "city": "Bronx",
+    "city": "New York",
     "date": "2026-04-18",
     "img_no": 3382,
     "width": 2482,
     "height": 3723,
-    "neighborhood": null,
+    "neighborhood": "Upper West Side",
     "land_use": [
       "Park"
     ],
@@ -85831,7 +85842,9 @@
       "Color"
     ],
     "tag_notes": "Aerial of a playground with a star-shaped rope-climb structure, slide and green spring-riders; children playing, Bronx park.",
-    "collections": [],
+    "collections": [
+      "free"
+    ],
     "thumb": "sobro-riverside-2026/img_3382.thumb.webp",
     "display_avif": "sobro-riverside-2026/img_3382.display.avif",
     "display_webp": "sobro-riverside-2026/img_3382.display.webp",
@@ -85844,12 +85857,12 @@
     "key": "SoBro + Riverside 4:18:26/Edited/IMG_3383.jpg",
     "file": "IMG_3383.jpg",
     "shoot": "sobro-riverside-2026",
-    "city": "Bronx",
+    "city": "New York",
     "date": "2026-04-18",
     "img_no": 3383,
     "width": 1915,
     "height": 2873,
-    "neighborhood": null,
+    "neighborhood": "Upper West Side",
     "land_use": [
       "Park"
     ],
@@ -85865,25 +85878,28 @@
       "Color"
     ],
     "tag_notes": "Aerial of a playground plaza with a child running, metal slide and fenced planting beds; Bronx riverside park.",
-    "collections": [],
+    "collections": [
+      "free"
+    ],
     "thumb": "sobro-riverside-2026/img_3383.thumb.webp",
     "display_avif": "sobro-riverside-2026/img_3383.display.avif",
     "display_webp": "sobro-riverside-2026/img_3383.display.webp",
     "tagged": true,
     "reviewed": false,
     "state": "NY",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "SoBro + Riverside 4:18:26/Edited/IMG_3384.jpg": {
     "key": "SoBro + Riverside 4:18:26/Edited/IMG_3384.jpg",
     "file": "IMG_3384.jpg",
     "shoot": "sobro-riverside-2026",
-    "city": "Bronx",
+    "city": "New York",
     "date": "2026-04-18",
     "img_no": 3384,
     "width": 4000,
     "height": 6000,
-    "neighborhood": null,
+    "neighborhood": "Upper West Side",
     "land_use": [
       "Park"
     ],
@@ -85899,7 +85915,9 @@
       "Color"
     ],
     "tag_notes": "Wide aerial of the full waterfront playground with rope climber, slide and surrounding paths, benches and trees; Bronx park.",
-    "collections": [],
+    "collections": [
+      "free"
+    ],
     "thumb": "sobro-riverside-2026/img_3384.thumb.webp",
     "display_avif": "sobro-riverside-2026/img_3384.display.avif",
     "display_webp": "sobro-riverside-2026/img_3384.display.webp",
@@ -85912,12 +85930,12 @@
     "key": "SoBro + Riverside 4:18:26/Edited/IMG_3384-2.jpg",
     "file": "IMG_3384-2.jpg",
     "shoot": "sobro-riverside-2026",
-    "city": "Bronx",
+    "city": "New York",
     "date": "2026-04-18",
     "img_no": 3384,
     "width": 1850,
     "height": 2775,
-    "neighborhood": null,
+    "neighborhood": "Upper West Side",
     "land_use": [
       "Park"
     ],
@@ -85933,25 +85951,28 @@
       "Color"
     ],
     "tag_notes": "Aerial of the playground's star rope-climb structure, green spring-riders and sculptural slide on teal-checkered paving; Bronx park.",
-    "collections": [],
+    "collections": [
+      "free"
+    ],
     "thumb": "sobro-riverside-2026/img_3384-2.thumb.webp",
     "display_avif": "sobro-riverside-2026/img_3384-2.display.avif",
     "display_webp": "sobro-riverside-2026/img_3384-2.display.webp",
     "tagged": true,
     "reviewed": false,
     "state": "NY",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "SoBro + Riverside 4:18:26/Edited/IMG_3385.jpg": {
     "key": "SoBro + Riverside 4:18:26/Edited/IMG_3385.jpg",
     "file": "IMG_3385.jpg",
     "shoot": "sobro-riverside-2026",
-    "city": "Bronx",
+    "city": "New York",
     "date": "2026-04-18",
     "img_no": 3385,
     "width": 2959,
     "height": 4439,
-    "neighborhood": null,
+    "neighborhood": "Upper West Side",
     "land_use": [
       "Park"
     ],
@@ -85967,7 +85988,9 @@
       "Color"
     ],
     "tag_notes": "Aerial of the playground plaza with rope climber, benches and a person crossing the promenade above; Bronx riverside park.",
-    "collections": [],
+    "collections": [
+      "free"
+    ],
     "thumb": "sobro-riverside-2026/img_3385.thumb.webp",
     "display_avif": "sobro-riverside-2026/img_3385.display.avif",
     "display_webp": "sobro-riverside-2026/img_3385.display.webp",
@@ -85980,12 +86003,12 @@
     "key": "SoBro + Riverside 4:18:26/Edited/IMG_3386.jpg",
     "file": "IMG_3386.jpg",
     "shoot": "sobro-riverside-2026",
-    "city": "Bronx",
+    "city": "New York",
     "date": "2026-04-18",
     "img_no": 3386,
     "width": 1527,
     "height": 2290,
-    "neighborhood": null,
+    "neighborhood": "Upper West Side",
     "land_use": [
       "Park"
     ],
@@ -86001,25 +86024,28 @@
       "Color"
     ],
     "tag_notes": "Aerial of the playground with a double stroller, green spring-riders, sculptural slide and children; Bronx park.",
-    "collections": [],
+    "collections": [
+      "free"
+    ],
     "thumb": "sobro-riverside-2026/img_3386.thumb.webp",
     "display_avif": "sobro-riverside-2026/img_3386.display.avif",
     "display_webp": "sobro-riverside-2026/img_3386.display.webp",
     "tagged": true,
     "reviewed": false,
     "state": "NY",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "collage": true
   },
   "SoBro + Riverside 4:18:26/Edited/IMG_3390.jpg": {
     "key": "SoBro + Riverside 4:18:26/Edited/IMG_3390.jpg",
     "file": "IMG_3390.jpg",
     "shoot": "sobro-riverside-2026",
-    "city": "Bronx",
+    "city": "New York",
     "date": "2026-04-18",
     "img_no": 3390,
     "width": 2625,
     "height": 3937,
-    "neighborhood": null,
+    "neighborhood": "Upper West Side",
     "land_use": [
       "Infrastructure",
       "Park"
@@ -86036,7 +86062,9 @@
       "Color"
     ],
     "tag_notes": "Aerial of the green steel elevated highway on a concrete pier with cars above and a fenced swing set with families below; Bronx waterfront park.",
-    "collections": [],
+    "collections": [
+      "free"
+    ],
     "thumb": "sobro-riverside-2026/img_3390.thumb.webp",
     "display_avif": "sobro-riverside-2026/img_3390.display.avif",
     "display_webp": "sobro-riverside-2026/img_3390.display.webp",

@@ -23,9 +23,21 @@
   }
 
   // Each wall on the page gets a DIFFERENT collection, assigned in DOM order
-  // from one shuffle per visit (repeats only if there are more walls than
-  // eligible pools).
-  const picks = shuffled(allSlugs)
+  // from one WEIGHTED shuffle per visit (repeats only if there are more walls
+  // than eligible pools). Collections carry an optional home rank set in the
+  // tagger's "Home rank" column (1 = most likely): rank r → weight 0.75^(r−1),
+  // so ranked pools are likelier — never certain — and unranked pools all sit
+  // one step below the last ranked one. Efraimidis–Spirakis keys
+  // (rand^(1/w), sort desc) give a weighted shuffle without replacement, so
+  // the walls stay distinct. With no ranks set anywhere this is uniform.
+  const cmeta = window.COLLAGE_META || {}
+  const ranks = allSlugs.map((s) => (cmeta[s] && cmeta[s].rank) || 0).filter((r) => r > 0)
+  const unranked = (ranks.length ? Math.max(...ranks) : 0) + 1
+  const weight = (s) => Math.pow(0.75, ((cmeta[s] && cmeta[s].rank) || unranked) - 1)
+  const picks = allSlugs
+    .map((s) => ({ s, key: Math.pow(Math.random(), 1 / weight(s)) }))
+    .sort((a, b) => b.key - a.key)
+    .map((x) => x.s)
   boxes.forEach((box, n) => initCollage(box, picks[n % picks.length]))
 
   function initCollage(box, slug) {

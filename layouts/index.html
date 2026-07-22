@@ -25,7 +25,9 @@
     {{ end }}
     {{ $pools = merge $pools (dict $slug $pool) }}
   {{ end }}
-  {{/* Caption metadata per pool: collection title + "City, ST" + link. */}}
+  {{/* Caption metadata per pool: collection title + "City, ST" + link, plus
+       the optional home rank (tagger "Home rank" column, 1 = most likely) that
+       collage.js turns into pick weights. */}}
   {{ $cmeta := dict }}
   {{ range (index hugo.Data.collections "collections") }}
     {{ if and .collage (not .archived) }}
@@ -33,7 +35,8 @@
       {{ $cmeta = merge $cmeta (dict .slug (dict
           "title" .title
           "place" (index $placeNames $pl | default $pl)
-          "href" (printf "/collections/%s/" .slug))) }}
+          "href" (printf "/collections/%s/" .slug)
+          "rank" (.collage_rank | default 0))) }}
     {{ end }}
   {{ end }}
   {{ with $pools }}

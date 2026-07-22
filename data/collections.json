@@ -44,7 +44,8 @@
       "place": "Pittsburgh",
       "color": "#a8842c",
       "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-      "collage": true
+      "collage": true,
+      "collage_rank": 3
     },
     {
       "slug": "churches-of-pittsburgh",
@@ -358,7 +359,8 @@
       "order": 0,
       "type": "curated",
       "place": "Newark",
-      "collage": true
+      "collage": true,
+      "collage_rank": 2
     },
     {
       "slug": "fair-park-36",
@@ -371,6 +373,19 @@
       "place": "Dallas",
       "color": "#2e7f93",
       "collage": true
+    },
+    {
+      "slug": "free",
+      "title": "Free",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "New York",
+      "color": "#b23a48",
+      "collage": true,
+      "collage_rank": 1
     }
   ]
 }
