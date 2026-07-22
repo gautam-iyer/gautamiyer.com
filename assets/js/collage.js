@@ -246,6 +246,18 @@
         cell.style.flex = 'none'
         const img = document.createElement('img')
         img.src = it.thumb
+        // Crisp big cells without new derivatives: offer BOTH existing tiers
+        // (thumb 1000px, display 3500px — longest-edge sized, so width =
+        // edge×ar for portraits) and tell the browser the cell's laid-out CSS
+        // width. It factors in devicePixelRatio itself: small cells keep the
+        // cheap thumb, big cells on retina pull the display tier — the
+        // zoomed-in shots stop looking soft.
+        if (it.webp) {
+          const tw = Math.round(it.ar >= 1 ? 1000 : 1000 * it.ar)
+          const dw = Math.round(it.ar >= 1 ? 3500 : 3500 * it.ar)
+          img.srcset = `${it.thumb} ${tw}w, ${it.webp} ${dw}w`
+          img.sizes = Math.round(it.ar * h) + 'px'
+        }
         img.alt = it.title || ''
         img.decoding = 'async'
         cell.appendChild(img)
