@@ -319,6 +319,10 @@ html:has(> body.home) {
   scroll-behavior: smooth;
 }
 .hero-collage--follow { scroll-snap-align: start; }
+/* Footer tucks right under the third wall's caption — one grid cell of air,
+   not the default main bottom padding + wall margin. */
+body.home main { padding-bottom: 0; }
+body.home .hero-collage { margin-bottom: var(--grid); }
 /* Clip the collage's 100vw breakout sliver on a wrapper (NOT <body> — overflow
    on the root scroller breaks position:fixed on iOS). overflow-x:clip pairs
    with visible-y (no new vertical scroll container) and does not create a
