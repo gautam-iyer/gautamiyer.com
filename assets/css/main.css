@@ -109,7 +109,10 @@ header::before {
   border-bottom: 1px solid var(--border);
   transition: height 0.35s ease, background-color 0.4s ease, border-color 0.4s ease;
 }
-body.scrolled header { --hdr-vis: var(--header-one); }
+/* body.compact = every non-home page: the bar lives permanently in its
+   one-line state (name on one line, menu shown) — no scroll morphing. */
+body.scrolled header,
+body.compact header { --hdr-vis: var(--header-one); }
 body.home header::before { border-bottom: none; }
 
 /* Home: the name stays in the header (as elsewhere); the hero sits just below. */
@@ -154,12 +157,14 @@ body.home main { padding-top: var(--grid); }
   height: var(--nh2);
   width: calc(var(--nh2) * 2.6316);
 }
-body.scrolled .mark-g {
+body.scrolled .mark-g,
+body.compact .mark-g {
   top: calc((var(--header-one) - var(--nh1)) / 2);
   height: var(--nh1);
   width: calc(var(--nh1) * 3.125);
 }
-body.scrolled .mark-i {
+body.scrolled .mark-i,
+body.compact .mark-i {
   top: calc((var(--header-one) - var(--nh1)) / 2);
   left: calc(var(--nh1) * 3.125 + var(--nword-gap));
   height: var(--nh1);
@@ -175,100 +180,66 @@ body.scrolled .mark-i {
   clip: rect(0 0 0 0); clip-path: inset(50%);
 }
 
-/* ── Side navigation drawer ───────────────────────────────────────────
-   A slim sliver handle hugs the left edge; hovering it (or clicking to pin,
-   handled in nav.js) slides the dark panel out over the page, dimming the
-   rest with a backdrop. Keeps the chrome minimal so photos + writing lead. */
-.sidenav {
-  position: fixed;
+/* ── Top menu ─────────────────────────────────────────────────────────
+   Black Inter (semibold) on the same white bar as the name, right-aligned,
+   vertically centered in the one-line bar height. On home it starts hidden
+   and fades in on the SAME body.scrolled flag — and the same 0.35s ease —
+   that collapses the name to one line, so the two motions read as one. On
+   compact (non-home) pages it is simply always there. Photos/Projects grow
+   small white dropdowns on hover so Collections/Places/Walking Tours stay
+   one hop away without cluttering the bar. */
+.topnav {
+  pointer-events: auto; /* header itself is pointer-events:none */
+  position: absolute;
   top: 0;
-  left: 0;
-  height: 100vh;
-  z-index: 50;
+  right: 12px; /* mirror the name's edge padding */
+  height: var(--header-one);
   display: flex;
   align-items: center;
+  gap: clamp(12px, 2.4vw, 30px);
+  transition: opacity 0.35s ease; /* matches .mark's morph timing */
 }
-.sidenav-handle {
-  width: 26px;
-  height: 40vh;
-  border: 0;
-  border-radius: 0 10px 10px 0;
-  background: rgba(0, 0, 0, 0.07);
-  color: var(--mid);
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, color 0.2s, width 0.2s;
-}
-.sidenav-handle:hover { background: rgba(0, 0, 0, 0.14); color: var(--black); width: 30px; }
-.sidenav-arrow { transition: transform 0.32s ease; }
-.sidenav.open .sidenav-arrow { transform: rotate(180deg); }
-
-.sidenav-panel {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: max(220px, 11vw);
-  background: #1b1b1d;
-  color: #e7e7e9;
-  padding: 84px 26px 32px;
-  overflow-y: auto;
-  transform: translateX(-100%);
-  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
-  box-shadow: 2px 0 24px rgba(0, 0, 0, 0.18);
-}
-.sidenav.open .sidenav-panel { transform: translateX(0); }
-
-.sidenav-list, .submenu { list-style: none; margin: 0; padding: 0; }
-.sidenav-list > li { margin-bottom: 2px; }
-.sidenav-list a {
-  display: block;
-  padding: 8px 0;
-  font-size: 1.08rem;
-  letter-spacing: 0.02em;
-  color: #cdcdd2;
+.topnav a {
+  /* visually ≈ the one-line name mark's stroke height */
+  font-size: clamp(0.78rem, 2.1vw, 0.98rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--black);
   text-decoration: none;
-  transition: color 0.18s;
+  transition: opacity 0.18s;
 }
-.sidenav-list a:hover { color: #fff; }
-.sidenav-list a.active { color: #fff; font-weight: 600; }
+.topnav a:hover { opacity: 0.55; }
+.topnav > a.active,
+.topnav .has-drop > a.active { text-decoration: underline; text-underline-offset: 5px; }
+body.home .topnav { opacity: 0; pointer-events: none; }
+body.home.scrolled .topnav { opacity: 1; pointer-events: auto; }
 
-/* Submenus reveal on hover of an ANCESTOR (descendant combinator), so hovering
-   "Home" pops the whole tree open at once — collections included, no second
-   hover. max-height + opacity keeps it smooth without a JS height measure. */
-.submenu {
-  max-height: 0;
+/* hover dropdowns — quiet white cards hanging off the bar */
+.topnav .has-drop { position: relative; display: flex; align-items: center; height: 100%; }
+.topnav .drop {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  min-width: 138px;
+  padding: 6px 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
   opacity: 0;
-  overflow: hidden;
-  margin-left: 14px;
-  border-left: 1px solid rgba(255, 255, 255, 0.14);
-  /* Slow open, and a delay before collapsing so it lingers (stickier). */
-  transition: max-height 0.8s ease 0.3s, opacity 0.6s ease 0.3s;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s;
 }
-.has-sub:hover .submenu { max-height: 640px; opacity: 1; transition-delay: 0s; }
-.submenu a {
-  font-size: 0.98rem;
-  color: #9a9aa2;
-  padding: 6px 0 6px 12px;
+.topnav .has-drop:hover .drop,
+.topnav .has-drop:focus-within .drop { opacity: 1; visibility: visible; }
+.topnav .drop a {
+  padding: 7px 16px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  white-space: nowrap;
 }
-.submenu a:hover { color: #e7e7e9; }
-.submenu .submenu a { font-size: 0.92rem; }
-.submenu a.active,
-.submenu a.current { color: #fff; font-weight: 600; }
-
-.sidenav-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 40;
-  background: rgba(0, 0, 0, 0.34);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-}
-.sidenav-backdrop.show { opacity: 1; pointer-events: auto; }
 
 /* ── Main (default) ── */
 main {
@@ -329,10 +300,29 @@ footer p {
   height: calc(100svh - var(--header-h) - 30px);
   overflow: hidden;
 }
+/* Walls 2 and 3: a considerable band of white separates them from the wall
+   above, and their height is sized against the ONE-LINE bar (that's the
+   header state once you've scrolled to them). Scrolling pushes the previous
+   wall up through the white; root scroll-snap (below) settles each wall
+   flush under the bar. */
+.hero-collage--follow { margin-top: calc(var(--grid) * 6); }
+.hero-collage--follow .collage {
+  height: calc(100vh - var(--header-one) - 30px);
+  height: calc(100svh - var(--header-one) - 30px);
+}
+/* Gentle snap: proximity (never traps a scroll mid-band), smooth motion,
+   and the snap line sits at the bottom edge of the one-line bar. Only the
+   follow walls snap — the first wall's rest state is the top of the page. */
+html:has(> body.home) {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: var(--header-one);
+  scroll-behavior: smooth;
+}
+.hero-collage--follow { scroll-snap-align: start; }
 /* Clip the collage's 100vw breakout sliver on a wrapper (NOT <body> — overflow
    on the root scroller breaks position:fixed on iOS). overflow-x:clip pairs
    with visible-y (no new vertical scroll container) and does not create a
-   containing block for the fixed header/sidenav that sit outside it. */
+   containing block for the fixed header that sits outside it. */
 .xflow { overflow-x: clip; }
 /* No divider between the name mark and the collage — they read as one unit. */
 body.home header { border-bottom: none; }

@@ -8,25 +8,10 @@
 // A unified badness score picks across tiers; crop pays ~1.6 pts per % so
 // gap-perfect layouts always win when they exist.
 (() => {
-  const box = document.querySelector('[data-collage]')
+  const boxes = Array.from(document.querySelectorAll('[data-collage]'))
   const pools = window.COLLAGE_POOLS
-  const slugs = pools ? Object.keys(pools).filter((s) => (pools[s] || []).length) : []
-  if (!box || !slugs.length) return
-  // One eligible collection per visit, at random.
-  const slug = slugs[Math.floor(Math.random() * slugs.length)]
-  const items = pools[slug]
-
-  // Caption: collection name + place, linking to the collection page.
-  const cap = document.querySelector('[data-collage-caption]')
-  const meta = (window.COLLAGE_META || {})[slug]
-  if (cap && meta) {
-    cap.textContent = meta.place ? `${meta.title} · ${meta.place}` : meta.title
-    cap.href = meta.href
-    cap.hidden = false
-  }
-
-  const GAP = 8 // px — column gap; the search aims the row gap at this too
-  const TRIES = 160 // candidate orders examined per layout (cheap: O(n) each)
+  const allSlugs = pools ? Object.keys(pools).filter((s) => (pools[s] || []).length) : []
+  if (!boxes.length || !allSlugs.length) return
 
   function shuffled(arr) {
     const a = arr.slice()
@@ -36,6 +21,29 @@
     }
     return a
   }
+
+  // Each wall on the page gets a DIFFERENT collection, assigned in DOM order
+  // from one shuffle per visit (repeats only if there are more walls than
+  // eligible pools).
+  const picks = shuffled(allSlugs)
+  boxes.forEach((box, n) => initCollage(box, picks[n % picks.length]))
+
+  function initCollage(box, slug) {
+  const items = pools[slug]
+
+  // Caption: collection name + place, linking to the collection page.
+  // Scoped to this wall's section — every wall captions itself.
+  const section = box.closest('.hero-collage') || document
+  const cap = section.querySelector('[data-collage-caption]')
+  const meta = (window.COLLAGE_META || {})[slug]
+  if (cap && meta) {
+    cap.textContent = meta.place ? `${meta.title} · ${meta.place}` : meta.title
+    cap.href = meta.href
+    cap.hidden = false
+  }
+
+  const GAP = 8 // px — column gap; the search aims the row gap at this too
+  const TRIES = 160 // candidate orders examined per layout (cheap: O(n) each)
 
   // Candidate orders are generated ONCE per visit and reused by every layout()
   // call, so the layout is a pure function of (W, H): the same photos stay put
@@ -246,4 +254,5 @@
     }, 150)
   })
   layout()
+  } // initCollage
 })()

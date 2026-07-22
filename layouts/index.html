@@ -1,27 +1,18 @@
 {{ define "main" }}
 {{ $base := .Site.Params.photo_base | default "/img/" }}
-{{ $palette := .Site.Params.palette }}
-{{/* city → "City, ST" for the small place label next to each collection name */}}
+{{/* city → "City, ST" for the small place label in each collage caption */}}
 {{ $placeNames := dict }}
 {{ range (index hugo.Data.places "places") }}{{ $placeNames = merge $placeNames (dict .city .name) }}{{ end }}
-{{ $featured := partialCached "featured.html" . "featured" }}
-{{/* Hero rotation = photos flagged hero:true in the tagger (any number). Falls
-     back to the home-hero collection until any are flagged. */}}
-{{ $hero := slice }}
-{{ range (index hugo.Data.index "hero") }}
-  {{ $hero = $hero | append (dict "avif" (printf "%s%s" $base .avif) "webp" (printf "%s%s" $base .webp) "ar" .ar "cam" (.cam | default "")) }}
-{{ end }}
-{{ if not $hero }}{{ $hero = partialCached "collitems.html" (dict "slug" "home-hero" "base" $base) "home-hero" }}{{ end }}
-{{ $essays := (where (where .Site.RegularPages "Section" "writing") "Params.featured" true).ByDate.Reverse }}
-{{ $featuredProjects := sort (where (index hugo.Data.projects "projects") "featured" true) "order" }}
 <main>
 
-  {{/* HERO COLLAGE — one collage-eligible collection (picked at random per
-       visit by collage.js) packed edge-to-edge into a full-bleed,
-       full-viewport-height rectangle. Pools come from data/index.json
-       "collage" (build_index.py): collections flagged in the tagger's Collage
-       checkbox, photos curated with the ▦ toggle. Every cell opens the shared
-       lightbox. */}}
+  {{/* THE HOME PAGE IS THREE COLLAGES — nothing else. Each full-bleed wall
+       draws a DIFFERENT collage-eligible collection at random per visit
+       (collage.js assigns distinct pools in DOM order). Pools come from
+       data/index.json "collage" (build_index.py): collections flagged in the
+       tagger's Collage checkbox, photos curated with the ▦ toggle. Scrolling
+       pushes each wall up to reveal the next through a band of white; the
+       root scroll-snaps so a wall settles flush under the one-line bar.
+       Every cell opens the shared lightbox. */}}
   {{ $pools := dict }}
   {{ range $slug, $items := (index hugo.Data.index "collage" | default dict) }}
     {{ $pool := slice }}
@@ -50,71 +41,23 @@
     <div class="collage" data-collage></div>
     <a class="collage-caption" data-collage-caption hidden></a>
   </section>
+  <section class="hero-collage hero-collage--follow" aria-label="Photo collage">
+    <div class="collage" data-collage></div>
+    <a class="collage-caption" data-collage-caption hidden></a>
+  </section>
+  <section class="hero-collage hero-collage--follow" aria-label="Photo collage">
+    <div class="collage" data-collage></div>
+    <a class="collage-caption" data-collage-caption hidden></a>
+  </section>
   <script>
     window.COLLAGE_POOLS = {{ . | jsonify | safeJS }};
     window.COLLAGE_META = {{ $cmeta | jsonify | safeJS }};
   </script>
   {{ end }}
-
-  {{/* Featured Writing — short section above the photos, lines aligned to grid. */}}
-  {{ with $essays }}
-  <section id="featured-writing" data-reveal>
-    <div class="fc-head">Featured Writing <a class="fc-head-link" href="/writing/">All Writing</a></div>
-    <div class="home-essays">
-      {{ range . }}
-      <a href="{{ .RelPermalink }}" class="home-essay">
-        <div class="home-essay-title">{{ .Title }}</div>
-        {{ with .Params.subtitle }}<div class="home-essay-sub">{{ . }}</div>{{ end }}
-      </a>
-      {{ end }}
-    </div>
-  </section>
-  {{ end }}
-
-  {{/* Featured Projects — same chip treatment as Featured Writing. */}}
-  {{ with $featuredProjects }}
-  <section id="featured-projects" data-reveal>
-    <div class="fc-head">Featured Projects <a class="fc-head-link" href="/projects/">All Projects</a></div>
-    <div class="home-essays">
-      {{ range . }}
-      {{ $href := printf "/projects/%s/" .slug }}
-      {{ if eq .type "Walking Tours" }}{{ $href = printf "/projects/walking-tours/%s/" .slug }}{{ end }}
-      <a href="{{ $href }}" class="home-essay">
-        <div class="home-essay-title">{{ .title }}</div>
-        {{ with .subtitle }}<div class="home-essay-sub">{{ . }}</div>{{ end }}
-      </a>
-      {{ end }}
-    </div>
-  </section>
-  {{ end }}
-
-  {{ with $featured }}
-  <section id="featured-photos" class="home-featured">
-  <div class="fc-head">Featured Photos <a class="fc-head-link" href="/photos/">All Photos</a></div>
-  {{ range $i, $c := . }}
-    {{ $slug := $c.slug }}
-    {{ $title := $c.title }}
-    {{ $color := index $palette (mod $i 5) }}
-    {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
-    {{ with $items }}
-    {{ $pls := $c.places | default (slice ($c.place | default "")) }}
-    {{ $plinks := slice }}
-    {{ range $pls }}{{ if . }}{{ $plinks = $plinks | append (dict "name" (index $placeNames . | default .) "slug" (urlize .)) }}{{ end }}{{ end }}
-    <div class="fc-collection" id="collection-{{ $slug }}" data-reveal>
-      <a class="fc-name subsubhead" href="/collections/{{ $slug }}/" style="color:{{ $color }}">{{ $title }}</a>{{ with $plinks }}<span class="fc-place">{{ range $j, $pk := . }}{{ if $j }} · {{ end }}<a href="/places/{{ $pk.slug }}/">{{ $pk.name }}</a>{{ end }}</span>{{ end }}
-      <hr class="fc-rule" style="background:{{ $color }}" data-snap>
-      {{ partial "carousel.html" (dict "items" . "color" $color "limit" 15) }}
-      {{ with $c.caption }}<p class="fc-caption">{{ . }}</p>{{ end }}
-    </div>
-    {{ end }}
-  {{ end }}
-  </section>
-  {{ end }}
 </main>
 {{ end }}
 
 {{ define "scripts" }}
-{{ partial "asset-js.html" "js/carousel.js" }}
 {{/* collage must run before lightbox so its cells exist when the lightbox
      captures its [data-lb] trigger list (deferred scripts run in order). */}}
 {{ partial "asset-js.html" "js/collage.js" }}
