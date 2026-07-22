@@ -96522,6 +96522,2119 @@
     "state": "NY",
     "camera": "EOS R8"
   },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5279.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5279.jpg",
+    "file": "IMG_5279.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5279,
+    "width": 4307,
+    "height": 2871,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Infrastructure"
+    ],
+    "architecture": [
+      "Skyscraper"
+    ],
+    "subject": [
+      "Streetscape",
+      "Skyline",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Downtown Dallas skyline rises behind a freeway overpass and a striped red-and-white radio tower, seen across an empty striped parking lot with a semi truck. Orange shipping containers carry a RUJO 'Be Brave' cowboy-boot ad (rujoboots.com), with a yellow 14'-1\" clearance sign at left.",
+    "collections": [],
+    "thumb": "san-antonio-2026-06-14/img_5279.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5279.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5279.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5283.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5283.jpg",
+    "file": "IMG_5283.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5283,
+    "width": 2673,
+    "height": 4009,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Infrastructure"
+    ],
+    "architecture": [
+      "Skyscraper",
+      "Industrial"
+    ],
+    "subject": [
+      "Infrastructure",
+      "Skyline"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Concrete freeway viaduct piers and a steel truss sign bridge frame the downtown Dallas skyline, with a glass tower and a tan brick warehouse-era high-rise peeking over the deck. Scrubby green lawn under the elevated highway in the foreground.",
+    "collections": [],
+    "thumb": "san-antonio-2026-06-14/img_5283.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5283.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5283.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5293.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5293.jpg",
+    "file": "IMG_5293.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5293,
+    "width": 3811,
+    "height": 5717,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Infrastructure",
+      "Civic"
+    ],
+    "architecture": [
+      "Spanish Colonial / Mission"
+    ],
+    "subject": [
+      "Streetscape",
+      "Infrastructure",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A yellow-and-white DART light-rail train (car 173, destination 'NORTH') slides past under catenary wires at Fair Park, with a blue 'First Ave' sign on the mast and a '20 / W' placard center frame. Behind it rises the ochre dome and carved Spanish Baroque tower of a Fair Park exhibition building, a second dome peeking in at left.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5293.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5293.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5293.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5296.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5296.jpg",
+    "file": "IMG_5296.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5296,
+    "width": 3408,
+    "height": 5112,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Infrastructure",
+      "Civic"
+    ],
+    "architecture": [
+      "Spanish Colonial / Mission"
+    ],
+    "subject": [
+      "Streetscape",
+      "Infrastructure"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A DART train slides left past a railroad crossing signal, with two domed Spanish Baroque towers of a Fair Park hall filling the background. The '20 W' sign and galvanized catenary mast anchor the middle of the frame.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5296.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5296.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5296.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5298.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5298.jpg",
+    "file": "IMG_5298.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5298,
+    "width": 3778,
+    "height": 5667,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Infrastructure"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Infrastructure",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Gold Art Deco letters spell 'FAIR PARK STATION' across the limestone canopy fascia of the DART stop, held up by fluted piers. A yellow-and-white DART train numbered 221 waits at the platform beyond.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5298.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5298.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5298.display.webp",
+    "tagged": true,
+    "reviewed": false,
+    "collage": true
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5300.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5300.jpg",
+    "file": "IMG_5300.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5300,
+    "width": 5180,
+    "height": 3453,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Infrastructure"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Infrastructure",
+      "Signage",
+      "Streetscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Looking straight through the Fair Park Station canopy — deco 'FAIR PARK STATION' lettering in gold, fluted columns, yellow platform bollards and tactile strip — toward the tree-shaded park gates beyond the empty tracks.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5300.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5300.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5300.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5302.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5302.jpg",
+    "file": "IMG_5302.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5302,
+    "width": 5180,
+    "height": 3453,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Infrastructure"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Infrastructure",
+      "Signage",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A man in an olive hoodie with a shoulder bag crosses the Fair Park Station platform, the gold Art Deco 'FAIR PARK STATION' sign and fluted piers framing the park entrance behind him.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5302.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5302.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5302.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5303.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5303.jpg",
+    "file": "IMG_5303.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5303,
+    "width": 4873,
+    "height": 3249,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Beaux-Arts / Neoclassical"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The 1907 'NO. 5 HOOK AND LADDER CO.' firehouse — now the Dallas Firefighter's Museum — a symmetrical tan brick façade with a carved DFD cartouche at the parapet and an American flag flying above. Two orange-red trucks are parked in front of the old apparatus bays.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5303.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5303.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5303.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5306.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5306.jpg",
+    "file": "IMG_5306.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5306,
+    "width": 5139,
+    "height": 3426,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Quiet Art Deco still life at the base of a Fair Park exhibition building: a stepped pink-and-blue painted fountain form with a scalloped white wave cap, set between buff stucco pilasters, rust-brown planter walls, and a strip of green lawn.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5306.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5306.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5306.display.webp",
+    "tagged": true,
+    "reviewed": false,
+    "collage": true
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5309.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5309.jpg",
+    "file": "IMG_5309.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5309,
+    "width": 5487,
+    "height": 3658,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A graffiti-tagged teal-blue paneled door set in a granite surround on a Fair Park building, flanked by bands of red-and-white cast ornament — striped panels, medallions, and stylized foliage — above a mottled marble wainscot.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5309.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5309.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5309.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5311.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5311.jpg",
+    "file": "IMG_5311.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5311,
+    "width": 5334,
+    "height": 3556,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "'1836' incised into the buff stucco parapet of a Fair Park Texas Centennial building, beneath a running frieze of white longhorn skulls and scrolled foliage against the clouds.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5311.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5311.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5311.display.webp",
+    "tagged": true,
+    "reviewed": false,
+    "collage": true
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5313.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5313.jpg",
+    "file": "IMG_5313.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5313,
+    "width": 3721,
+    "height": 5581,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Carved limestone flagpole base with stepped Art Deco geometric relief and rosette band, tucked into a stucco corner of a Fair Park building beside a red-and-white sgraffito ornament panel; the steel pole above is streaked with rust.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5313.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5313.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5313.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5315.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5315.jpg",
+    "file": "IMG_5315.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5315,
+    "width": 4841,
+    "height": 3227,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "White cast-relief frieze of cowboys on horseback driving longhorn cattle across a terracotta ground, banded by ornamental palmettes, on a Fair Park Esplanade pavilion above a polished red-granite base. Flagpoles and a blooming crape myrtle stand at left.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5315.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5315.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5315.display.webp",
+    "tagged": true,
+    "reviewed": false,
+    "collage": true
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5316.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5316.jpg",
+    "file": "IMG_5316.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5316,
+    "width": 5980,
+    "height": 3987,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A cluster of bare aluminum flagpoles and a purple-blooming crape myrtle press against the weathered stucco corner of a Fair Park Centennial hall, its cornice traced with a red-and-white ornamental frieze band.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5316.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5316.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5316.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5319.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5319.jpg",
+    "file": "IMG_5319.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5319,
+    "width": 3353,
+    "height": 5030,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Murals",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The Women's Museum at Fair Park: a stepped Art Deco façade lettered 'THE WOMEN'S MUSEUM', its great arched niche holding a 1936 Texas Centennial mural with lone star and state map behind the white 'Spirit of the Centennial' statue and cascading fountain, flanked by flowering trees.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5319.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5319.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5319.display.webp",
+    "tagged": true,
+    "reviewed": false,
+    "collage": true
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5322.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5322.jpg",
+    "file": "IMG_5322.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5322,
+    "width": 3249,
+    "height": 4874,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Murals",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The arched niche of the Women's Museum at Fair Park: the 1836-dated Centennial mural of a longhorn, gold Texas map, and radiating star behind the white 'Spirit of the Centennial' nude statue rising over a cactus, with a leaping-fish fountain arch in the empty basin below.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5322.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5322.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5322.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5325.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5325.jpg",
+    "file": "IMG_5325.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5325,
+    "width": 4694,
+    "height": 3129,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Murals",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Close view of the Women's Museum mural at Fair Park — a brown longhorn head, gold Texas map, and starburst dated 1836 — with the marble head of the Spirit of the Centennial statue emerging from a white-flowering crape myrtle.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5325.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5325.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5325.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5328.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5328.jpg",
+    "file": "IMG_5328.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5328,
+    "width": 5750,
+    "height": 3833,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Institutional"
+    ],
+    "architecture": [
+      "Colonial Revival"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The white clapboard 'CONTINENTAL DAR HOUSE' at Fair Park, a Colonial Revival portico of slender columns hung with patriotic bunting, a US flag and a Texas flag, fronted by a deep green lawn and trimmed shrubs.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5328.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5328.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5328.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5332.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5332.jpg",
+    "file": "IMG_5332.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5332,
+    "width": 3519,
+    "height": 5278,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Murals",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A faded 1936 Centennial fresco in a tall Fair Park portal: a reclining draped female figure floats above a farmer driving a crawler tractor and plow, over a pair of weathered teal double doors.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5332.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5332.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5332.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5333.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5333.jpg",
+    "file": "IMG_5333.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5333,
+    "width": 2913,
+    "height": 4369,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Murals",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Mural detail at Fair Park: a dark-haired woman in a yellow dress stands arms outstretched on a winged Deco pedestal wreathed in clouds, blue diagonal bands cutting across the terracotta ground.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5333.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5333.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5333.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5334.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5334.jpg",
+    "file": "IMG_5334.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5334,
+    "width": 5419,
+    "height": 3613,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Park"
+    ],
+    "architecture": [
+      "Other"
+    ],
+    "subject": [
+      "Detail",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Red sandstone cornerstone at Fair Park inscribed 'Erected A.D. 1908 by the Park Board, C.P. Smith Mayor, M.N. Baker, J.J. Eckford, Emil Fretz, Ben Irelson', sitting on a concrete plinth in patchy sunlit grass.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5334.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5334.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5334.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5335.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5335.jpg",
+    "file": "IMG_5335.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5335,
+    "width": 3091,
+    "height": 4636,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Portico of Spain on the Centennial Building at Fair Park, Dallas — wall lettering reads 'PORTICO OF SPAIN / HALL OF TRANSPORTATION'. View through the monumental Art Deco portal, with its gold-and-black square frieze band, to a sunlit tree and colonnade beyond.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5335.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5335.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5335.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5339.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5339.jpg",
+    "file": "IMG_5339.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5339,
+    "width": 2985,
+    "height": 4477,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Murals",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A tall portal in the cream stucco Centennial Building at Fair Park, Dallas, framing a 1936 mural of a woman in a yellow dress against blue zigzag rays, under a deep-blue stepped Art Deco soffit; 'CENTENNIAL' lettering is visible on the right wall.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5339.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5339.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5339.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5341.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5341.jpg",
+    "file": "IMG_5341.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5341,
+    "width": 3917,
+    "height": 5875,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Park"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The blue-painted Art Deco cascade fountain and pylon at the head of the Esplanade reflecting pool at Fair Park, Dallas, its tiered marbled-blue basins drained, with brown Aztec-key ornament on the near pylon and a mural fragment at left. Water/pool basin and greek-fret detail throughout.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5341.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5341.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5341.display.webp",
+    "tagged": true,
+    "reviewed": false,
+    "collage": true
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5343.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5343.jpg",
+    "file": "IMG_5343.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5343,
+    "width": 3423,
+    "height": 5134,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Park"
+    ],
+    "architecture": [
+      "Art Deco",
+      "Spanish Colonial / Mission"
+    ],
+    "subject": [
+      "Detail",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A worn blue-and-gold fluted fountain scupper of Fair Park's Esplanade cuts across the frame, with the pale reflecting pool below and a Spanish Baroque-style dome with lantern rising over the live-oak canopy beyond, under heavy storm clouds. Fountain, water, park benches.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5343.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5343.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5343.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5347.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5347.jpg",
+    "file": "IMG_5347.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5347,
+    "width": 3752,
+    "height": 5628,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Raoul Josset's monumental limestone 'Spain' figure at Fair Park, Dallas — a crowned female allegory holding a small castle — standing in a sky-blue niche edged with gold, teal, and black zigzag Art Deco ornament on the Centennial Building's cream stucco wall.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5347.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5347.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5347.display.webp",
+    "tagged": true,
+    "reviewed": false,
+    "collage": true
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5348.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5348.jpg",
+    "file": "IMG_5348.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5348,
+    "width": 3701,
+    "height": 5552,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Symmetrical elevation of a Centennial Building portico on Fair Park's Esplanade of State, Dallas: a monumental stone allegorical statue centered in a blue arched niche, flanked by square pilasters, mural panels, and flagpoles, with the aqua reflecting pool and clipped hedges in the foreground. Water, pool.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5348.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5348.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5348.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5349.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5349.jpg",
+    "file": "IMG_5349.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5349,
+    "width": 3633,
+    "height": 5450,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Closer symmetrical view of the same Fair Park Esplanade portico in Dallas — the crowned Art Deco heroine statue in her blue niche with gold Greek-key frieze above, 1936 murals glimpsed between the pilasters, and the milky-turquoise reflecting pool below. Water, pool.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5349.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5349.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5349.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5351.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5351.jpg",
+    "file": "IMG_5351.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5351,
+    "width": 3551,
+    "height": 5327,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Looking up at Josset's crowned 'Spain' statue at Fair Park, Dallas, castle in her left hand and scrolled drapery curling like waves at her arms, set against the vivid blue niche with its stepped gold-teal-black zigzag border and tiled parapet frieze.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5351.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5351.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5351.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5353.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5353.jpg",
+    "file": "IMG_5353.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5353,
+    "width": 3781,
+    "height": 5672,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Tight low-angle crop of the 'Spain' figure on Fair Park's Esplanade, Dallas — serene stylized face under a crown-and-veil headdress, banded drapery, a castle cradled at her side — filling the blue Art Deco niche with zigzag trim.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5353.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5353.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5353.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5354.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5354.jpg",
+    "file": "IMG_5354.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5354,
+    "width": 3711,
+    "height": 5566,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Murals",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Glimpsed between cream portico columns at Fair Park, Dallas: a restored 1936 Texas Centennial mural of a bare-chested man and a seated woman in green drapery beside a great gold-and-blue wheel, in muted fresco tones.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5354.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5354.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5354.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5356.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5356.jpg",
+    "file": "IMG_5356.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5356,
+    "width": 3903,
+    "height": 5855,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Low-angle profile of a monumental Art Deco heroine statue at Fair Park, Dallas, her carved headdress and scrolled forms silhouetted against the huge arched niche with its bold teal-blue and gold zigzag reveal, clouds drifting behind the parapet.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5356.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5356.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5356.display.webp",
+    "tagged": true,
+    "reviewed": false,
+    "collage": true
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5358.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5358.jpg",
+    "file": "IMG_5358.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5358,
+    "width": 3689,
+    "height": 5534,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Signage",
+      "Murals"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Wall lettering at Fair Park, Dallas reads 'PORTICO OF SPAIN / HALL OF TRANSPORTATION / (NOW CENTENNIAL BUILDING)', beside a shaded loggia with a Centennial mural of a gold-draped man reaching toward a bell, under a deep blue ceiling.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5358.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5358.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5358.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5359.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5359.jpg",
+    "file": "IMG_5359.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5359,
+    "width": 5065,
+    "height": 3377,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Murals"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Carlo Ciampaglia's restored transportation mural on the Centennial Building at Fair Park, Dallas — a muscular figure gripping a driveshaft between huge blue locomotive wheels, a streamlined eagle overhead, on a sunburst of gold rays — above three blue service doors and clipped hedges.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5359.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5359.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5359.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5360.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5360.jpg",
+    "file": "IMG_5360.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5360,
+    "width": 5133,
+    "height": 3422,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Murals",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Close crop of the Fair Park transportation mural in Dallas: the terracotta-skinned figure straining at the driveshaft between spoked blue wheels, a stylized black eagle diving across radiating gold-and-white sunburst stripes — pure 1936 Texas Centennial deco muralism.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5360.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5360.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5360.display.webp",
+    "tagged": true,
+    "reviewed": false,
+    "collage": true
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5361.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5361.jpg",
+    "file": "IMG_5361.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5361,
+    "width": 5371,
+    "height": 3581,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Murals"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Wide symmetrical view of the Centennial Building's mural bay at Fair Park, Dallas — the eagle-and-wheels transportation mural centered over three recessed blue doors, stepped cream stucco walls, brown planter walls, and a live-oak branch overhanging the walk.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5361.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5361.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5361.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5362.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5362.jpg",
+    "file": "IMG_5362.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5362,
+    "width": 3174,
+    "height": 4761,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Signage",
+      "Murals"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Under an oak bough at Fair Park, Dallas, wall lettering reads 'PORTICO OF CONFEDERATE STATES / HALL OF TRANSPORTATION / (NOW CENTENNIAL BUILDING)', with a pale 1936 mural of a reclining figure visible in the loggia at left.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5362.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5362.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5362.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5365.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5365.jpg",
+    "file": "IMG_5365.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5365,
+    "width": 3573,
+    "height": 5359,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Murals",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Raking view along a faded Texas Centennial mural inside a Fair Park loggia in Dallas — a ghostly zeppelin-like airship with portholes borne by reaching figures over a mapped globe and clouds — beneath deep-blue soffit panels.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5365.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5365.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5365.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5367.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5367.jpg",
+    "file": "IMG_5367.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5367,
+    "width": 2589,
+    "height": 3883,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Signage",
+      "People"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The Portico of Texas at Fair Park, Dallas — lettering reads 'PORTICO OF TEXAS / HALL OF TRANSPORTATION' — a cyclist rolling through the towering gold-friezed portal toward a colonnaded Esplanade building beyond, with one of the monumental statues in profile at right.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5367.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5367.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5367.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5368.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5368.jpg",
+    "file": "IMG_5368.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5368,
+    "width": 3846,
+    "height": 5769,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Murals",
+      "Signage",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Painted roundel inside Fair Park's Portico of Confederate States, Dallas: a Confederate flag and magnolia branch in a wreathed medallion, with lettering below — 'CONFEDERATE STATES OF AMERICA, 1861–1865, TEXAS THE SEVENTH STATE ADMITTED TO THE CONFEDERACY' — beside an orange column.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5368.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5368.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5368.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5370.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5370.jpg",
+    "file": "IMG_5370.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5370,
+    "width": 3889,
+    "height": 5834,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Framed between a foreground column and stucco wall at Fair Park, Dallas: a monumental limestone allegorical statue with paired bird figures at her shoulders, centered in a slate-blue niche with Greek-key frieze, a Centennial mural showing in the shadowed bay at left.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5370.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5370.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5370.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5375.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5375.jpg",
+    "file": "IMG_5375.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5375,
+    "width": 5732,
+    "height": 3821,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Murals",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Two winged figures in flowing blue drapery soar across a cream stucco wall of the Centennial Building at Fair Park, Dallas — a restored 1936 aviation-themed mural above a brown-banded entrance — with green park benches and clipped shrubs in the foreground.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5375.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5375.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5375.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5378.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5378.jpg",
+    "file": "IMG_5378.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5378,
+    "width": 3939,
+    "height": 5909,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail",
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Looking up at another of the Esplanade's monumental heroines at Fair Park, Dallas — arm arched over her head, a great scrolled spiral at her side — centered in the tall blue niche between gold Greek-key friezes under a bright cloud-broken sky.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5378.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5378.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5378.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5379.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5379.jpg",
+    "file": "IMG_5379.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5379,
+    "width": 3780,
+    "height": 5670,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Full symmetrical elevation on Fair Park's Esplanade of State, Dallas: a limestone allegorical figure flanked by two carved eagles in her blue arched niche, flagpoles and dark pilaster bays to either side, and the pale-turquoise reflecting pool with its ring of fountain jets in the foreground. Water, pool.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5379.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5379.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5379.display.webp",
+    "tagged": true,
+    "reviewed": false,
+    "collage": true,
+    "place_cover": true
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5437.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5437.jpg",
+    "file": "IMG_5437.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5437,
+    "width": 4000,
+    "height": 2667,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Interior",
+      "Detail",
+      "Murals"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Glimpse between fluted limestone columns inside the Hall of State at Fair Park, Dallas: the Mexican flag and Texas flag hang in shadow before a gilded history mural, a haloed allegorical figure peering out from behind the drapery. Skylight glow rakes the 1936 Texas Centennial interior.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5437.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5437.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5437.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5440.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5440.jpg",
+    "file": "IMG_5440.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5440,
+    "width": 5527,
+    "height": 3685,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Bronze letters reading HALL OF STATE set into fossil-flecked Texas shellstone at Fair Park, Dallas — a tight detail of the 1936 Texas Centennial building's limestone wall, seashell impressions pocking the surface around the lettering.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5440.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5440.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5440.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5484.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5484.jpg",
+    "file": "IMG_5484.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5484,
+    "width": 2270,
+    "height": 3405,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Interior",
+      "Murals"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Scale diorama of the Battle of the Alamo — hundreds of miniature soldiers storming the mission compound's walls — displayed inside the Hall of State at Fair Park, Dallas; above the wood-paneled doorway glows a gold-leaf Art Deco mural of a giant cowboy-hatted figure presiding over a Texan family, skyscrapers, wheat and machinery.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5484.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5484.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5484.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5484-2.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5484-2.jpg",
+    "file": "IMG_5484-2.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5484,
+    "width": 1486,
+    "height": 2229,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Interior",
+      "Murals"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Tighter frame of the same Hall of State gallery at Fair Park, Dallas: the gilded Art Deco mural — a cowboy-hatted colossus holding skyscrapers and gears over a family group — looms above the Alamo battle diorama spreading across the foreground.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5484-2.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5484-2.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5484-2.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5519.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5519.jpg",
+    "file": "IMG_5519.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5519,
+    "width": 3633,
+    "height": 5450,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Looking straight up the Art Deco pylon of Fair Park's Tower Building in Dallas, its gold-leafed fluted spine splitting a churning storm sky — 1936 Texas Centennial exposition architecture at its most monumental.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5519.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5519.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5519.display.webp",
+    "tagged": true,
+    "reviewed": false,
+    "collage": true
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5522.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5522.jpg",
+    "file": "IMG_5522.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5522,
+    "width": 2473,
+    "height": 3710,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Base of the Hall of State's limestone colonnade at Fair Park, Dallas: fluted piers under a frieze carved with Texas hero names — ZAVALA, BOWIE, REAGAN — and the word ADVENTVRE incised in Roman letters on the plinth beside the entry stairs.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5522.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5522.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5522.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5522-2.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5522-2.jpg",
+    "file": "IMG_5522-2.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5522,
+    "width": 5253,
+    "height": 3502,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic",
+      "Institutional"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Wide view of the Hall of State's monumental steps at Fair Park, Dallas, framed by live-oak leaves; twin limestone plinths carved FORTVNE and ADVENTVRE flank the stair while a lone visitor rests near the entrance column.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5522-2.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5522-2.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5522-2.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5523.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5523.jpg",
+    "file": "IMG_5523.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5523,
+    "width": 3894,
+    "height": 5841,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Façade"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Monumental tan-stucco piers and deep shadow bays of one of Fair Park's 1936 Texas Centennial exhibition halls in Dallas, its recessed entrances painted a dusty teal-blue — stripped-classical Art Deco rhythm under harsh midday sun.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5523.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5523.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5523.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5543.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5543.jpg",
+    "file": "IMG_5543.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5543,
+    "width": 3779,
+    "height": 5669,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Spanish Colonial / Mission"
+    ],
+    "subject": [
+      "Façade",
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "A winged bronze fountain figure throws fanning arcs of water in front of the gold Spanish Baroque dome and yellow brick of the Music Hall at Fair Park, Dallas, storm clouds massing over the theater's red-tile roofline.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5543.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5543.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5543.display.webp",
+    "tagged": true,
+    "reviewed": false,
+    "collage": true
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5547.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5547.jpg",
+    "file": "IMG_5547.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5547,
+    "width": 5759,
+    "height": 3839,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Art Deco"
+    ],
+    "subject": [
+      "Detail"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Cast ornamental urn-and-scroll frieze running along the parapet of a stuccoed Fair Park exhibition building in Dallas, half-swallowed by a crape myrtle in full magenta bloom and feathery bald-cypress foliage.",
+    "collections": [
+      "fair-park-36"
+    ],
+    "thumb": "san-antonio-2026-06-14/img_5547.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5547.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5547.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5573.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5573.jpg",
+    "file": "IMG_5573.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5573,
+    "width": 3673,
+    "height": 5510,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Industrial",
+      "Commercial"
+    ],
+    "architecture": [
+      "Industrial",
+      "Commercial Vernacular"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Faded ghost sign for McMurray Metals Co. painted on an orange-brick warehouse wall in Dallas — boarded sash windows, security cameras, a brown board fence, and Russian sage blooming purple across the foreground.",
+    "collections": [],
+    "thumb": "san-antonio-2026-06-14/img_5573.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5573.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5573.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5681.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5681.jpg",
+    "file": "IMG_5681.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5681,
+    "width": 3835,
+    "height": 5753,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Commercial",
+      "Infrastructure"
+    ],
+    "architecture": [
+      "Skyscraper",
+      "Beaux-Arts / Neoclassical"
+    ],
+    "subject": [
+      "Streetscape",
+      "Infrastructure",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "Two yellow-and-white DART light-rail trains cross in a downtown Dallas street canyon beneath a Waymo billboard reading 'Hello, Dallas — Autonomous rides'; the red Pegasus flying-horse sign atop the 1922 Magnolia Building crowns the skyline behind a web of catenary wires.",
+    "collections": [],
+    "thumb": "san-antonio-2026-06-14/img_5681.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5681.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5681.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5754.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5754.jpg",
+    "file": "IMG_5754.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5754,
+    "width": 6000,
+    "height": 4000,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Civic"
+    ],
+    "architecture": [
+      "Brutalist"
+    ],
+    "subject": [
+      "Façade",
+      "Signage"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The vast sloping concrete flank of I.M. Pei's inverted-pyramid Dallas City Hall, DALLAS CITY HALL lettered across the raw wall, with a single Lime scooter parked against the Brutalist plinth on an empty sunlit plaza.",
+    "collections": [],
+    "thumb": "san-antonio-2026-06-14/img_5754.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5754.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5754.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
+  "Texas 6:14:26/Dump 1/Edited/IMG_5827.jpg": {
+    "key": "Texas 6:14:26/Dump 1/Edited/IMG_5827.jpg",
+    "file": "IMG_5827.jpg",
+    "shoot": "san-antonio-2026-06-14",
+    "city": "Dallas",
+    "state": "TX",
+    "date": "2026-06-14",
+    "img_no": 5827,
+    "width": 2953,
+    "height": 4430,
+    "camera": "EOS R8",
+    "neighborhood": null,
+    "land_use": [
+      "Infrastructure"
+    ],
+    "architecture": [
+      "Modern",
+      "Skyscraper"
+    ],
+    "subject": [
+      "Infrastructure",
+      "Skyline",
+      "Landscape"
+    ],
+    "medium": "Digital",
+    "tone": [
+      "Color"
+    ],
+    "tag_notes": "The white pylon and cables of Calatrava's Margaret Hunt Hill Bridge sweep over the green Trinity River wetlands in Dallas, an egret wading in the marshy water below while the blue glass prism of Fountain Place and the downtown skyline rise behind an American flag.",
+    "collections": [],
+    "thumb": "san-antonio-2026-06-14/img_5827.thumb.webp",
+    "display_avif": "san-antonio-2026-06-14/img_5827.display.avif",
+    "display_webp": "san-antonio-2026-06-14/img_5827.display.webp",
+    "tagged": true,
+    "reviewed": false
+  },
   "Texas 6:14:26/Dump 1/Edited/IMG_5963.jpg": {
     "key": "Texas 6:14:26/Dump 1/Edited/IMG_5963.jpg",
     "file": "IMG_5963.jpg",

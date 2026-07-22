@@ -359,6 +359,18 @@
       "type": "curated",
       "place": "Newark",
       "collage": true
+    },
+    {
+      "slug": "fair-park-36",
+      "title": "Fair Park '36",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Dallas",
+      "color": "#2e7f93",
+      "collage": true
     }
   ]
 }
