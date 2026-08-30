@@ -160,24 +160,55 @@ def main():
               for g in groups.values() if len(g) > 1]
     groups.sort(key=lambda g: (m[g[0]]["shoot"], m[g[0]].get("img_no") or 0))
 
-    # preserve prior review state for identical member sets
-    prior = {}
+    # Carry forward EVERY human/QA judgement on a group, keyed by its member set:
+    # `status` (open/kept/resolved) plus the `verdict`/`verdict_note` the QA audit
+    # writes. Re-detection must never silently discard review work.
+    CARRY = ("status", "verdict", "verdict_note")
+    prior, prior_groups = {}, []
     if OUT.exists():
         try:
             for g in json.loads(OUT.read_text())["groups"]:
-                prior[tuple(sorted(g["keys"]))] = g.get("status", "open")
+                prior[tuple(sorted(g["keys"]))] = {k: g[k] for k in CARRY if k in g}
+                prior_groups.append(g)
         except Exception:
             pass
-    out = {"groups": [
-        {"id": i + 1,
-         "keys": g,
-         "status": prior.get(tuple(sorted(g)), "open")}
-        for i, g in enumerate(groups)
-    ]}
+
+    detected = {tuple(sorted(g)) for g in groups}
+    out_groups = []
+    for g in groups:
+        rec = {"id": len(out_groups) + 1, "keys": g, "status": "open"}
+        rec.update(prior.get(tuple(sorted(g)), {}))
+        rec.setdefault("status", "open")
+        out_groups.append(rec)
+
+    # Groups this pass did NOT re-detect but that a human curated (a judgement, or
+    # a hand-merged set like the same-negative film pairs) are KEPT. Detection
+    # thresholds change and hand-built groups aren't derivable — dropping them
+    # would throw away work no re-run can reproduce. Only never-reviewed,
+    # no-longer-detected groups whose photos still exist are dropped.
+    live = set(m)
+    for g in prior_groups:
+        ks = tuple(sorted(g["keys"]))
+        if ks in detected:
+            continue
+        reviewed = g.get("status", "open") != "open" or g.get("verdict")
+        if not reviewed:
+            continue
+        keys = [k for k in g["keys"] if k in live]   # drop deleted photos
+        if len(keys) < 2:
+            continue
+        rec = dict(g); rec["keys"] = keys; rec["id"] = len(out_groups) + 1
+        rec["carried"] = True                        # not re-detected this pass
+        out_groups.append(rec)
+
+    out = {"groups": out_groups}
     OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
-    open_n = sum(1 for g in out["groups"] if g["status"] == "open")
-    print(f"{pairs} near-pairs -> {len(groups)} groups "
-          f"({sum(len(g) for g in groups)} photos involved), {open_n} open")
+    open_n = sum(1 for g in out_groups if g["status"] == "open" and not g.get("verdict"))
+    carried = sum(1 for g in out_groups if g.get("carried"))
+    print(f"{pairs} near-pairs -> {len(groups)} detected groups "
+          f"({sum(len(g) for g in groups)} photos involved); "
+          f"{len(out_groups)} total after carrying {carried} reviewed-but-undetected, "
+          f"{open_n} awaiting review")
 
 
 if __name__ == "__main__":

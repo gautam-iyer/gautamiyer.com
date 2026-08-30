@@ -175,6 +175,16 @@
       "name": "Trenton, NJ",
       "city": "Trenton",
       "state": "NJ"
+    },
+    {
+      "name": "Springfield, MA",
+      "city": "Springfield",
+      "state": "MA"
+    },
+    {
+      "name": "Hartford, CT",
+      "city": "Hartford",
+      "state": "CT"
     }
   ]
 }

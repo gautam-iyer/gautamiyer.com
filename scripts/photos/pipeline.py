@@ -274,6 +274,15 @@ SHOOTS = [
         "date": "2025-12-05",
         "title": "Porto",
     },
+    {
+        # Multi-city New England trip — city is resolved PER PHOTO at tagging
+        # time, so the shoot default is left unset.
+        "folder": "New England 8:23:26/Edited",
+        "slug": "new-england-2026-08-23",
+        "city": None,
+        "date": "2026-08-23",
+        "title": "New England",
+    },
 ]
 
 TAG_FIELDS = ["neighborhood", "land_use", "architecture", "subject", "medium", "tone", "tag_notes"]

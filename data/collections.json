@@ -398,6 +398,18 @@
       "place": null,
       "hidden": true,
       "withheld": true
+    },
+    {
+      "slug": "staging",
+      "title": "Staging (not yet published)",
+      "description": "Freshly ingested photos held out of the site until tagged, QA'd, and released.",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": null,
+      "hidden": true,
+      "withheld": true
     }
   ]
 }

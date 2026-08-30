@@ -168,6 +168,25 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .vd-dupe{background:#fef3c7;color:#92400e} .vd-distinct{background:#dcfce7;color:#166534}
  .keepall:hover{border-color:#16a34a;color:#16a34a}
  .removing{opacity:0;transform:scale(.92);transition:opacity .25s,transform .25s}
+ /* ---- Cull mode: mark-then-delete. Marking is reversible and does NOT
+    affect the site; only "Delete marked" removes anything. ---- */
+ .cullgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+ .cullcell{position:relative;border:2px solid #e4e4e7;border-radius:10px;overflow:hidden;cursor:pointer;background:#fff}
+ .cullcell img{width:100%;height:190px;object-fit:cover;display:block}
+ .cullcell .cap{font-size:11px;color:#52525b;padding:4px 7px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .cullcell.marked{border-color:#dc2626}
+ .cullcell.marked img{opacity:.45;filter:grayscale(.7)}
+ .cullcell.cursor{outline:3px solid #2563eb;outline-offset:-3px}
+ .cullcell .xmark{position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:50%;
+   background:#dc2626;color:#fff;font-size:15px;font-weight:700;line-height:26px;text-align:center;display:none}
+ .cullcell.marked .xmark{display:block}
+ .cullbar{display:flex;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+ .danger{border:1px solid #dc2626;background:#fff;color:#dc2626;border-radius:6px;font-size:12px;padding:5px 12px;cursor:pointer;font-weight:600}
+ .danger:hover{background:#dc2626;color:#fff}
+ .danger[disabled]{opacity:.4;cursor:default}
+ .danger[disabled]:hover{background:#fff;color:#dc2626}
+ .cullnote{font-size:12px;color:#52525b;background:#fafafa;border:1px solid #e4e4e7;border-radius:8px;padding:8px 11px;margin-bottom:12px}
+ kbd{background:#f4f4f5;border:1px solid #d4d4d8;border-bottom-width:2px;border-radius:4px;padding:1px 5px;font-size:11px;font-family:ui-monospace,monospace}
 </style></head><body>
 <header>
  <h1>Photo Tagger</h1>
@@ -175,6 +194,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
    <button data-mode="tag" class="on">Tag photos</button>
    <button data-mode="colls">Collections</button>
    <button data-mode="dupes">Duplicates</button>
+   <button data-mode="cull">Cull</button>
  </div>
  <span id="filters"></span>
  <span class="spacer"></span>
@@ -185,6 +205,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
 <script>
 let PHOTOS={}, COLLS=[], TAX=[], SHOOTS=[], DUPES=[];
 let mode='tag', page=0, memberSlug=null;
+let cullFilter={shoot:'',city:'',coll:'',show:'all'}, cullCursor=0;
 const PER=48, GRIDPER=60;                     // list page size / grid page size
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;');
@@ -553,6 +574,92 @@ function renderMembers(){
 }
 window.backToColls=()=>{mode='colls';memberSlug=null;document.querySelectorAll('#modeseg button').forEach(x=>x.classList.toggle('on',x.dataset.mode==='colls'));render();};
 
+/* ============================ CULL MODE ============================
+   A two-step cull: MARK photos (reversible, no effect on the site), review the
+   marked set, then delete them in one batch. `photo.cull` is the mark. Deleting
+   goes through the same path as the single-photo delete — manifest, R2, local
+   cache, and an append to deleted-photos.jsonl so a re-scan can't resurrect it.
+   Keyboard: arrows/hjkl move, X or Space marks, Enter opens the photo big. */
+function cullList(){
+  let keys=Object.keys(PHOTOS);
+  if(cullFilter.shoot)keys=keys.filter(k=>PHOTOS[k].shoot===cullFilter.shoot);
+  if(cullFilter.city)keys=keys.filter(k=>(PHOTOS[k].city||'')===cullFilter.city);
+  if(cullFilter.coll)keys=keys.filter(k=>(PHOTOS[k].collections||[]).includes(cullFilter.coll));
+  if(cullFilter.show==='marked')keys=keys.filter(k=>PHOTOS[k].cull);
+  if(cullFilter.show==='unmarked')keys=keys.filter(k=>!PHOTOS[k].cull);
+  return keys.sort((a,b)=>(PHOTOS[a].shoot||'').localeCompare(PHOTOS[b].shoot||'')||(PHOTOS[a].img_no-PHOTOS[b].img_no));
+}
+function cullCount(){return Object.values(PHOTOS).filter(p=>p.cull).length;}
+window.toggleCull=(key)=>{const p=PHOTOS[key];p.cull=!p.cull;save(key,{cull:!!p.cull});
+  const cell=document.querySelector(`.cullcell[data-key="${CSS.escape(key)}"]`);
+  if(cell)cell.classList.toggle('marked',!!p.cull);
+  cullStat();
+  const b=$('#cull-del');if(b){const n=cullCount();b.disabled=!n;b.textContent=`Delete ${n} marked photo${n===1?'':'s'}…`;}};
+function cullStat(){const n=cullCount();$('#stat').textContent=`${n} marked for culling`;}
+window.setCullCursor=(i)=>{const cells=[...document.querySelectorAll('.cullcell')];
+  if(!cells.length)return; cullCursor=Math.max(0,Math.min(i,cells.length-1));
+  cells.forEach((c,j)=>c.classList.toggle('cursor',j===cullCursor));
+  cells[cullCursor].scrollIntoView({block:'nearest'});};
+function renderCull(){
+  const shoots=uniq(Object.values(PHOTOS).map(p=>p.shoot));
+  const cities=uniq(Object.values(PHOTOS).map(p=>p.city));
+  const colls=COLLS.slice().sort((a,b)=>a.title.localeCompare(b.title));
+  const all=cullList(), pages=Math.max(1,Math.ceil(all.length/GRIDPER));
+  if(page>=pages)page=pages-1;
+  const slice=all.slice(page*GRIDPER,page*GRIDPER+GRIDPER);
+  const n=cullCount();
+  cullStat();
+  $('#main').innerHTML=`
+    <div class="cullnote">Click a photo to mark it for culling — the mark is just a mark, it changes nothing on the site
+      and you can unmark freely. When you're happy with the set, switch <b>Show</b> to <b>marked only</b>, look it over,
+      and hit <b>Delete</b>. That step is permanent: the photo leaves the manifest and R2 and is written to
+      <code>deleted-photos.jsonl</code> so a re-scan can't bring it back.
+      &nbsp;·&nbsp; Keys: <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> move &nbsp; <kbd>X</kbd>/<kbd>space</kbd> mark &nbsp; <kbd>Enter</kbd> open full size</div>
+    <div class="cullbar">
+      <select id="c-shoot"><option value="">All shoots</option>${shoots.map(x=>`<option value="${esc(x)}"${x===cullFilter.shoot?' selected':''}>${esc(x)}</option>`).join('')}</select>
+      <select id="c-city"><option value="">All cities</option>${cities.map(x=>`<option value="${esc(x)}"${x===cullFilter.city?' selected':''}>${esc(x)}</option>`).join('')}</select>
+      <select id="c-coll"><option value="">Any collection</option>${colls.map(c=>`<option value="${esc(c.slug)}"${c.slug===cullFilter.coll?' selected':''}>${esc(c.title)}</option>`).join('')}</select>
+      <select id="c-show">
+        <option value="all"${cullFilter.show==='all'?' selected':''}>Show: all</option>
+        <option value="unmarked"${cullFilter.show==='unmarked'?' selected':''}>Show: unmarked only</option>
+        <option value="marked"${cullFilter.show==='marked'?' selected':''}>Show: marked only</option>
+      </select>
+      <span class="spacer" style="flex:1"></span>
+      <button class="keepall" onclick="clearCullMarks()" ${n?'':'disabled'}>Unmark all ${n?`(${n})`:''}</button>
+      <button class="danger" id="cull-del" onclick="deleteCulled()" ${n?'':'disabled'}>Delete ${n} marked photo${n===1?'':'s'}…</button>
+    </div>
+    <div class="cullgrid">`+slice.map((key,i)=>{const p=PHOTOS[key];
+      return `<div class="cullcell${p.cull?' marked':''}" data-key="${esc(key)}" onclick="toggleCull('${jesc(key)}')">
+        <span class="xmark">✕</span><img loading="lazy" src="/img/${p.thumb}">
+        <div class="cap">${esc(p.city||'—')} · ${esc(p.neighborhood||'')} #${p.img_no}</div></div>`;}).join('')
+    +`</div>`+pager(page,pages,all.length);
+  $('#c-shoot').onchange=e=>{cullFilter.shoot=e.target.value;page=0;render();};
+  $('#c-city').onchange=e=>{cullFilter.city=e.target.value;page=0;render();};
+  $('#c-coll').onchange=e=>{cullFilter.coll=e.target.value;page=0;render();};
+  $('#c-show').onchange=e=>{cullFilter.show=e.target.value;page=0;render();};
+  wirePager(); setCullCursor(0);
+}
+window.clearCullMarks=async()=>{const keys=Object.keys(PHOTOS).filter(k=>PHOTOS[k].cull);
+  if(!keys.length)return;
+  if(!confirm(`Unmark all ${keys.length} photos? (Nothing is deleted — this just clears the marks.)`))return;
+  keys.forEach(k=>PHOTOS[k].cull=false);
+  await Promise.all(keys.map(k=>fetch('/api/save',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({key:k,patch:{cull:false}})})));
+  render();};
+window.deleteCulled=async()=>{
+  const keys=Object.keys(PHOTOS).filter(k=>PHOTOS[k].cull);
+  if(!keys.length)return;
+  const byCity={};keys.forEach(k=>{const c=PHOTOS[k].city||'(no city)';byCity[c]=(byCity[c]||0)+1;});
+  const breakdown=Object.entries(byCity).sort((a,b)=>b[1]-a[1]).map(([c,n])=>`  ${c}: ${n}`).join('\n');
+  if(!confirm(`Permanently delete ${keys.length} photos?\n\n${breakdown}\n\nThis removes them from the manifest and R2 and logs them to deleted-photos.jsonl. It cannot be undone from here.`))return;
+  if(!confirm(`Last check — really delete ${keys.length} photos?`))return;
+  const r=await fetch('/api/cull/delete',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({keys})});
+  const res=await r.json();
+  if(!r.ok){alert('Delete failed: '+(res.error||r.status));return;}
+  res.deleted.forEach(k=>{delete PHOTOS[k];});
+  alert(`Deleted ${res.deleted.length} photos.${res.missing.length?` (${res.missing.length} were already gone.)`:''}`);
+  page=0;render();};
+
 /* ---------- pager ---------- */
 function pager(pg,pages,total){
   if(pages<=1)return `<div class="pager"><span class="stat">${total} items</span></div>`;
@@ -571,8 +678,32 @@ function render(){
   else{fbar.innerHTML='';
     if(mode==='colls')renderColls();
     else if(mode==='dupes')renderDupes();
+    else if(mode==='cull')renderCull();
     else renderMembers();}
 }
+
+/* Cull-mode keyboard: culling 4,000 photos by mouse alone is not realistic. */
+document.addEventListener('keydown',e=>{
+  if(mode!=='cull')return;
+  if(/^(INPUT|SELECT|TEXTAREA)$/.test((e.target.tagName||'')))return;
+  const cells=[...document.querySelectorAll('.cullcell')];
+  if(!cells.length)return;
+  const style=getComputedStyle(document.querySelector('.cullgrid'));
+  const cols=Math.max(1,style.gridTemplateColumns.split(' ').length);
+  let i=cullCursor, handled=true;
+  switch(e.key){
+    case 'ArrowRight': case 'l': i++; break;
+    case 'ArrowLeft':  case 'h': i--; break;
+    case 'ArrowDown':  case 'j': i+=cols; break;
+    case 'ArrowUp':    case 'k': i-=cols; break;
+    case 'x': case 'X': case ' ':
+      toggleCull(cells[cullCursor].dataset.key); break;
+    case 'Enter':
+      window.open('/img/'+PHOTOS[cells[cullCursor].dataset.key].display_webp,'_blank'); break;
+    default: handled=false;
+  }
+  if(handled){e.preventDefault(); if(i!==cullCursor)setCullCursor(i);}
+});
 boot();
 </script></body></html>"""
 
@@ -670,6 +801,43 @@ class Handler(BaseHTTPRequestHandler):
                         pass
             threading.Thread(target=_cleanup, args=(tiers,), daemon=True).start()
             return self._send(200, {"ok": True})
+        if path == "/api/cull/delete":
+            # Batch delete for Cull mode. Same semantics as /api/delete but for
+            # many keys under ONE manifest lock — deleting 400 photos as 400
+            # separate read-modify-write cycles would be slow and would risk
+            # interleaving with a concurrent tagger save.
+            keys = data.get("keys") or []
+            deleted, missing, tiers = [], [], []
+            with _lock:
+                m = load(MANIFEST, {})
+                with open(DELETIONS, "a") as fh:
+                    for key in keys:
+                        rec = m.pop(key, None)
+                        if rec is None:
+                            missing.append(key)
+                            continue
+                        fh.write(json.dumps({
+                            "key": key, "deleted_at": datetime.now(timezone.utc).isoformat(),
+                            "city": rec.get("city"), "shoot": rec.get("shoot"),
+                            "thumb": rec.get("thumb"), "tag_notes": rec.get("tag_notes"),
+                            "culled": True,
+                        }, ensure_ascii=False) + "\n")
+                        deleted.append(key)
+                        tiers += [rec.get(t) for t in ("thumb", "display_avif", "display_webp") if rec.get(t)]
+                if deleted:
+                    save_manifest(m)
+
+            def _cleanup(paths):
+                for rel in paths:
+                    subprocess.run(["npx", "wrangler", "r2", "object", "delete",
+                                    f"gautamiyer-photos/{rel}", "--remote"], capture_output=True)
+                    try:
+                        (DERIV / rel).unlink()
+                    except FileNotFoundError:
+                        pass
+            if tiers:
+                threading.Thread(target=_cleanup, args=(tiers,), daemon=True).start()
+            return self._send(200, {"deleted": deleted, "missing": missing})
         if path == "/api/dupes":
             # Persist a duplicate group's review status (open | kept | resolved).
             with _lock:

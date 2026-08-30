@@ -63,8 +63,8 @@
     {
       "id": 6,
       "keys": [
-        "Buffalo '26/Film Drop 2/iyer5882-R1-00-0A.JPG",
-        "Buffalo '26/Film Drop 2/iyer5882-R1-01-1A.JPG"
+        "Buffalo '26/Film Drop 2/iyer5882-R1-01-1A.JPG",
+        "Buffalo '26/Film Drop 2/iyer5882-R1-00-0A.JPG"
       ],
       "status": "open",
       "verdict": "near-identical",
@@ -297,8 +297,8 @@
     {
       "id": 29,
       "keys": [
-        "Pittsburgh 6:16:26/Edited/IMG_6236.jpg",
-        "Pittsburgh 6:16:26/Edited/IMG_6236-2.jpg"
+        "Pittsburgh 6:16:26/Edited/IMG_6236-2.jpg",
+        "Pittsburgh 6:16:26/Edited/IMG_6236.jpg"
       ],
       "status": "open",
       "verdict": "near-identical",
@@ -317,8 +317,8 @@
     {
       "id": 31,
       "keys": [
-        "Pittsburgh 6:16:26/Edited/IMG_6353-2.jpg",
-        "Pittsburgh 6:16:26/Edited/IMG_6353.jpg"
+        "Pittsburgh 6:16:26/Edited/IMG_6353.jpg",
+        "Pittsburgh 6:16:26/Edited/IMG_6353-2.jpg"
       ],
       "status": "open",
       "verdict": "near-identical",
@@ -397,16 +397,6 @@
     {
       "id": 39,
       "keys": [
-        "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870010.JPG",
-        "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870010.jpg"
-      ],
-      "status": "open",
-      "verdict": "near-identical",
-      "verdict_note": "Same film scan in both folders - St. Mary's memorial stone with Ukrainian flag; Edited copy marginally cropped."
-    },
-    {
-      "id": 40,
-      "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870009.jpg",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870009.jpg"
       ],
@@ -415,7 +405,7 @@
       "verdict_note": "Same film scan in both folders - gold-domed St. Mary's Orthodox Church with bell arches; Edited copy slightly tighter."
     },
     {
-      "id": 41,
+      "id": 40,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870015.jpg",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870015.jpg"
@@ -425,7 +415,7 @@
       "verdict_note": "Same film scan in both folders - brick ranch house, white split-rail fence, valley beyond; Edited copy slightly cropped."
     },
     {
-      "id": 42,
+      "id": 41,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870012.JPG",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870012.jpg"
@@ -435,17 +425,17 @@
       "verdict_note": "Same film scan in both folders - rose window and gold church doors between columns; Edited copy slightly cropped."
     },
     {
-      "id": 43,
+      "id": 42,
       "keys": [
-        "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870019.JPG",
-        "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870019.jpg"
+        "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870010.JPG",
+        "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870010.jpg"
       ],
       "status": "open",
       "verdict": "near-identical",
-      "verdict_note": "Same film scan in both folders - 'Beauty Bar' pole sign against blue sky; Edited copy slightly cropped."
+      "verdict_note": "Same film scan in both folders - St. Mary's memorial stone with Ukrainian flag; Edited copy marginally cropped."
     },
     {
-      "id": 44,
+      "id": 43,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870018.JPG",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870018.jpg"
@@ -453,6 +443,16 @@
       "status": "open",
       "verdict": "near-identical",
       "verdict_note": "Same film scan in both folders - red door across the cracked lot with painted stripes; Edited copy slightly cropped."
+    },
+    {
+      "id": 44,
+      "keys": [
+        "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870019.JPG",
+        "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870019.jpg"
+      ],
+      "status": "open",
+      "verdict": "near-identical",
+      "verdict_note": "Same film scan in both folders - 'Beauty Bar' pole sign against blue sky; Edited copy slightly cropped."
     },
     {
       "id": 45,
@@ -527,16 +527,6 @@
     {
       "id": 52,
       "keys": [
-        "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890008.JPG",
-        "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890008.jpg"
-      ],
-      "status": "open",
-      "verdict": "near-identical",
-      "verdict_note": "Same frame twice: worm's-eye Art Deco tower against clouds. Edited version cooler in the sky. Same exposure, keep one."
-    },
-    {
-      "id": 53,
-      "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890005.jpg",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890005.jpg"
       ],
@@ -545,17 +535,17 @@
       "verdict_note": "Same frame twice: Niagara Mohawk Building entrance, symmetrical. Film scan shows a touch more sidewalk; otherwise identical."
     },
     {
-      "id": 54,
+      "id": 53,
       "keys": [
-        "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890012.JPG",
-        "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890012.jpg"
+        "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890008.JPG",
+        "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890008.jpg"
       ],
       "status": "open",
       "verdict": "near-identical",
-      "verdict_note": "Same frame twice: Syracuse Savings Bank gables/spire against cumulus. Only grading differs. Keep the edit."
+      "verdict_note": "Same frame twice: worm's-eye Art Deco tower against clouds. Edited version cooler in the sky. Same exposure, keep one."
     },
     {
-      "id": 55,
+      "id": 54,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890013.JPG",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890013.jpg"
@@ -563,6 +553,16 @@
       "status": "open",
       "verdict": "near-identical",
       "verdict_note": "Same frame twice: Soldiers' and Sailors' Monument over the ice rink. Same vantage and light; keep one."
+    },
+    {
+      "id": 55,
+      "keys": [
+        "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890012.JPG",
+        "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890012.jpg"
+      ],
+      "status": "open",
+      "verdict": "near-identical",
+      "verdict_note": "Same frame twice: Syracuse Savings Bank gables/spire against cumulus. Only grading differs. Keep the edit."
     },
     {
       "id": 56,
@@ -587,22 +587,22 @@
     {
       "id": 58,
       "keys": [
-        "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890023.JPG",
-        "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890023.jpg"
-      ],
-      "status": "open",
-      "verdict": "near-identical",
-      "verdict_note": "Same frame twice: two lakeside benches with weeping tree at dusk. Same frame, minor tonal delta."
-    },
-    {
-      "id": 59,
-      "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890021.jpg",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890021.jpg"
       ],
       "status": "open",
       "verdict": "near-identical",
       "verdict_note": "Same frame twice: dark brick alley opening onto the lake ('PRIVATE' painted on asphalt). Identical vantage."
+    },
+    {
+      "id": 59,
+      "keys": [
+        "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890023.JPG",
+        "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890023.jpg"
+      ],
+      "status": "open",
+      "verdict": "near-identical",
+      "verdict_note": "Same frame twice: two lakeside benches with weeping tree at dusk. Same frame, minor tonal delta."
     },
     {
       "id": 60,
@@ -617,16 +617,6 @@
     {
       "id": 61,
       "keys": [
-        "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890032.jpg",
-        "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890032.jpg"
-      ],
-      "status": "open",
-      "verdict": "near-identical",
-      "verdict_note": "Same K400 frame of the red-striped industrial plant with smokestacks; Edited/ copy is very slightly warmer and tighter than the Film/ scan. One scan, two folders."
-    },
-    {
-      "id": 62,
-      "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890028.JPG",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890028.jpg"
       ],
@@ -635,7 +625,7 @@
       "verdict_note": "Same 'Endwell Motel' sign frame; Edited/ version is marginally cropped/warmer vs the raw Film/ scan. One scan, two folders."
     },
     {
-      "id": 63,
+      "id": 62,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890027.JPG",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890027.jpg"
@@ -643,6 +633,16 @@
       "status": "open",
       "verdict": "near-identical",
       "verdict_note": "Same Skaneateles-style lakeshore-at-golden-hour frame; identical vantage and reflections, Edited/ copy slightly cooler and tighter."
+    },
+    {
+      "id": 63,
+      "keys": [
+        "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890032.jpg",
+        "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890032.jpg"
+      ],
+      "status": "open",
+      "verdict": "near-identical",
+      "verdict_note": "Same K400 frame of the red-striped industrial plant with smokestacks; Edited/ copy is very slightly warmer and tighter than the Film/ scan. One scan, two folders."
     },
     {
       "id": 64,
@@ -678,12 +678,9 @@
       "id": 67,
       "keys": [
         "November '25 Road Trip/Edited/IMG_9033.jpg",
-        "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880005.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880005.jpg"
       ],
-      "status": "open",
-      "verdict": "near-identical",
-      "verdict_note": "Yellow Colonial Revival house at 1606, all three same vantage: one digital frame plus the same K200 film scan duplicated across Edited/ and Film/. Only the digital vs film rendering differs."
+      "status": "open"
     },
     {
       "id": 68,
@@ -698,8 +695,8 @@
     {
       "id": 69,
       "keys": [
-        "November '25 Road Trip/Edited/IMG_9284 2.jpg",
-        "November '25 Road Trip/Edited/IMG_9284.jpg"
+        "November '25 Road Trip/Edited/IMG_9284.jpg",
+        "November '25 Road Trip/Edited/IMG_9284 2.jpg"
       ],
       "status": "open",
       "verdict": "near-identical",
@@ -729,8 +726,8 @@
       "id": 72,
       "keys": [
         "South BK 4:6:26/Edited/JPEGs/IMG_2429-3.jpg",
-        "South BK 4:6:26/Edited/JPEGs/IMG_2429-2.jpg",
-        "South BK 4:6:26/Edited/JPEGs/IMG_2429.jpg"
+        "South BK 4:6:26/Edited/JPEGs/IMG_2429.jpg",
+        "South BK 4:6:26/Edited/JPEGs/IMG_2429-2.jpg"
       ],
       "status": "open",
       "verdict": "near-identical",
@@ -760,16 +757,29 @@
     {
       "id": 75,
       "keys": [
+        "November '25 Road Trip/Edited/IMG_9033.jpg",
+        "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880005.jpg",
+        "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880005.jpg"
+      ],
+      "status": "open",
+      "verdict": "near-identical",
+      "verdict_note": "Yellow Colonial Revival house at 1606, all three same vantage: one digital frame plus the same K200 film scan duplicated across Edited/ and Film/. Only the digital vs film rendering differs.",
+      "carried": true
+    },
+    {
+      "id": 76,
+      "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870003.jpg",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870003.jpg"
       ],
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "'Carousel Capital of the World' bench frame; Edited/ and Film/ hold the same K200 scan, Edited/ a hair tighter and warmer."
+      "verdict_note": "'Carousel Capital of the World' bench frame; Edited/ and Film/ hold the same K200 scan, Edited/ a hair tighter and warmer.",
+      "carried": true
     },
     {
-      "id": 76,
+      "id": 77,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870016.jpg",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870016.jpg"
@@ -777,10 +787,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Same frame of the downhill street toward the domed tower; Edited is cropped tighter and lifted, Film scan is the wider warmer original."
+      "verdict_note": "Same frame of the downhill street toward the domed tower; Edited is cropped tighter and lifted, Film scan is the wider warmer original.",
+      "carried": true
     },
     {
-      "id": 77,
+      "id": 78,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870020.jpg",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870020.jpg"
@@ -788,10 +799,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Identical vantage on the white windowless big-box wall with lamppost; only crop/color grade differs."
+      "verdict_note": "Identical vantage on the white windowless big-box wall with lamppost; only crop/color grade differs.",
+      "carried": true
     },
     {
-      "id": 78,
+      "id": 79,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870023.JPG",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870023.jpg"
@@ -799,10 +811,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Same low angle on the 'Home of the Square Deal' arch; Film scan is marginally wider, otherwise interchangeable."
+      "verdict_note": "Same low angle on the 'Home of the Square Deal' arch; Film scan is marginally wider, otherwise interchangeable.",
+      "carried": true
     },
     {
-      "id": 79,
+      "id": 80,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870024.jpg",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870024.jpg"
@@ -810,10 +823,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Same EUROPEAN FOOD storefront frame; Film scan includes more road/car-hood at the bottom, Edited crops it out."
+      "verdict_note": "Same EUROPEAN FOOD storefront frame; Film scan includes more road/car-hood at the bottom, Edited crops it out.",
+      "carried": true
     },
     {
-      "id": 80,
+      "id": 81,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870025.jpg",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870025.jpg"
@@ -821,10 +835,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Same onion-domed building behind the hedge; identical vantage, Edited just cropped and cooled."
+      "verdict_note": "Same onion-domed building behind the hedge; identical vantage, Edited just cropped and cooled.",
+      "carried": true
     },
     {
-      "id": 81,
+      "id": 82,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870032.JPG",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870032.jpg"
@@ -832,10 +847,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Same colonnaded boarded-up bank facade with walking figure in the same stride; pure grade/crop variant."
+      "verdict_note": "Same colonnaded boarded-up bank facade with walking figure in the same stride; pure grade/crop variant.",
+      "carried": true
     },
     {
-      "id": 82,
+      "id": 83,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870033.jpg",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870033.jpg"
@@ -843,10 +859,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Same Gothic Revival house frontal; Film scan slightly wider at right, same vantage and light."
+      "verdict_note": "Same Gothic Revival house frontal; Film scan slightly wider at right, same vantage and light.",
+      "carried": true
     },
     {
-      "id": 83,
+      "id": 84,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870035.jpg",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870035.jpg"
@@ -854,10 +871,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Camelot Jewelers corner, same frame and shadow position; Edited is a tighter crop of the same scan."
+      "verdict_note": "Camelot Jewelers corner, same frame and shadow position; Edited is a tighter crop of the same scan.",
+      "carried": true
     },
     {
-      "id": 84,
+      "id": 85,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257201_002558870036.jpg",
         "November '25 Road Trip/Film/K200 - ST/kodak_200_c_41_34848_113790_257201_002558870036.jpg"
@@ -865,10 +883,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Same 'Hair Styling' storefront; Film scan pulls back to include the upper story, Edited crops to the ground floor - same vantage, interchangeable."
+      "verdict_note": "Same 'Hair Styling' storefront; Film scan pulls back to include the upper story, Edited crops to the ground floor - same vantage, interchangeable.",
+      "carried": true
     },
     {
-      "id": 85,
+      "id": 86,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880002.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880002.jpg"
@@ -876,10 +895,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Maria's Pasta Shop facade, identical frame; only slight crop and warmth difference."
+      "verdict_note": "Maria's Pasta Shop facade, identical frame; only slight crop and warmth difference.",
+      "carried": true
     },
     {
-      "id": 86,
+      "id": 87,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880003.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880003.jpg"
@@ -887,10 +907,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Uptown theater marquee, identical vantage and framing; Edited is the graded crop of the Film scan."
+      "verdict_note": "Uptown theater marquee, identical vantage and framing; Edited is the graded crop of the Film scan.",
+      "carried": true
     },
     {
-      "id": 87,
+      "id": 88,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880004.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880004.jpg"
@@ -898,10 +919,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Same brick school/church building with bare tree; Film scan is wider left and right, same shot."
+      "verdict_note": "Same brick school/church building with bare tree; Film scan is wider left and right, same shot.",
+      "carried": true
     },
     {
-      "id": 88,
+      "id": 89,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880008.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880008.jpg"
@@ -909,10 +931,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Boarded green Italianate house with lamppost, identical frame; Film scan a touch wider."
+      "verdict_note": "Boarded green Italianate house with lamppost, identical frame; Film scan a touch wider.",
+      "carried": true
     },
     {
-      "id": 89,
+      "id": 90,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880010.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880010.jpg"
@@ -920,10 +943,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Same mansard-roofed mansion frontal; identical vantage, Film scan slightly wider at both edges."
+      "verdict_note": "Same mansard-roofed mansion frontal; identical vantage, Film scan slightly wider at both edges.",
+      "carried": true
     },
     {
-      "id": 90,
+      "id": 91,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880011.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880011.jpg"
@@ -931,10 +955,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Same church entrance with saint mosaic; identical frame, only crop/grade differs."
+      "verdict_note": "Same church entrance with saint mosaic; identical frame, only crop/grade differs.",
+      "carried": true
     },
     {
-      "id": 91,
+      "id": 92,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880013.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880013.jpg"
@@ -942,10 +967,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Hemstrought's Bakeries storefront - same negative; Edited is a tighter crop + warmer grade of the raw K200 scan. Keep the edit."
+      "verdict_note": "Hemstrought's Bakeries storefront - same negative; Edited is a tighter crop + warmer grade of the raw K200 scan. Keep the edit.",
+      "carried": true
     },
     {
-      "id": 92,
+      "id": 93,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880015.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880015.jpg"
@@ -953,10 +979,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Rusty sign frame / smokestack alley - same negative; Edited is slightly cropped and straightened vs raw scan."
+      "verdict_note": "Rusty sign frame / smokestack alley - same negative; Edited is slightly cropped and straightened vs raw scan.",
+      "carried": true
     },
     {
-      "id": 93,
+      "id": 94,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880016.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880016.jpg"
@@ -964,10 +991,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Disha Vu Diner corner - same negative; Edited crops out the roofline/trees and grades warmer."
+      "verdict_note": "Disha Vu Diner corner - same negative; Edited crops out the roofline/trees and grades warmer.",
+      "carried": true
     },
     {
-      "id": 94,
+      "id": 95,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880017.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880017.jpg"
@@ -975,10 +1003,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Utica Cutlery Company facade - same negative; Edited is only a color/contrast pass, framing essentially identical."
+      "verdict_note": "Utica Cutlery Company facade - same negative; Edited is only a color/contrast pass, framing essentially identical.",
+      "carried": true
     },
     {
-      "id": 95,
+      "id": 96,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880020.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880020.jpg"
@@ -986,10 +1015,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Doric colonnade - same negative; Edited is the raw scan rotated 90 deg and cropped upright. Same frame, keep the corrected edit."
+      "verdict_note": "Doric colonnade - same negative; Edited is the raw scan rotated 90 deg and cropped upright. Same frame, keep the corrected edit.",
+      "carried": true
     },
     {
-      "id": 96,
+      "id": 97,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880023.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880023.jpg"
@@ -997,10 +1027,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Utica Club brewery behind hedge - same negative; Edited crops slightly tighter, same vantage."
+      "verdict_note": "Utica Club brewery behind hedge - same negative; Edited crops slightly tighter, same vantage.",
+      "carried": true
     },
     {
-      "id": 97,
+      "id": 98,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880024.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880024.jpg"
@@ -1008,10 +1039,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "FX Matt Brewing smokestack - same negative; Edited is a marginal crop plus warmer grade."
+      "verdict_note": "FX Matt Brewing smokestack - same negative; Edited is a marginal crop plus warmer grade.",
+      "carried": true
     },
     {
-      "id": 98,
+      "id": 99,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880026.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880026.jpg"
@@ -1019,10 +1051,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Surestop Brake Service - same negative; Edited is a hair tighter with lifted color, otherwise identical."
+      "verdict_note": "Surestop Brake Service - same negative; Edited is a hair tighter with lifted color, otherwise identical.",
+      "carried": true
     },
     {
-      "id": 99,
+      "id": 100,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880028.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880028.jpg"
@@ -1030,10 +1063,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "315 porch house - same negative; Edited crops in on the facade, drops some foreground lawn."
+      "verdict_note": "315 porch house - same negative; Edited crops in on the facade, drops some foreground lawn.",
+      "carried": true
     },
     {
-      "id": 100,
+      "id": 101,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880029.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880029.jpg"
@@ -1041,10 +1075,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Iglesia Pentecostal doorway - same negative; Edited is a tighter crop excluding the upper balcony."
+      "verdict_note": "Iglesia Pentecostal doorway - same negative; Edited is a tighter crop excluding the upper balcony.",
+      "carried": true
     },
     {
-      "id": 101,
+      "id": 102,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880031.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880031.jpg"
@@ -1052,10 +1087,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Fresh & Fried Seafood - same negative; Edited is a slight crop with a cooler/cleaner grade."
+      "verdict_note": "Fresh & Fried Seafood - same negative; Edited is a slight crop with a cooler/cleaner grade.",
+      "carried": true
     },
     {
-      "id": 102,
+      "id": 103,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880033.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880033.jpg"
@@ -1063,10 +1099,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Bench in front of concrete plant - same negative; Edited crops a touch tighter, identical composition."
+      "verdict_note": "Bench in front of concrete plant - same negative; Edited crops a touch tighter, identical composition.",
+      "carried": true
     },
     {
-      "id": 103,
+      "id": 104,
       "keys": [
         "November '25 Road Trip/Edited/kodak_200_c_41_34848_113790_257202_002558880036.jpg",
         "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880036.jpg"
@@ -1074,10 +1111,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "'Happy 50th Anniversary' shop interior - same negative; Edited is brighter/warmer, framing unchanged."
+      "verdict_note": "'Happy 50th Anniversary' shop interior - same negative; Edited is brighter/warmer, framing unchanged.",
+      "carried": true
     },
     {
-      "id": 104,
+      "id": 105,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890003.jpg",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890003.jpg"
@@ -1085,10 +1123,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Dominican Barbershop / Bossone's - same negative; Edited crops off the right-hand neighbor building."
+      "verdict_note": "Dominican Barbershop / Bossone's - same negative; Edited crops off the right-hand neighbor building.",
+      "carried": true
     },
     {
-      "id": 105,
+      "id": 106,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890006.jpg",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890006.jpg"
@@ -1096,10 +1135,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Niagara Mohawk Art Deco facade - same negative; Edited is a minimal crop with slightly punchier color."
+      "verdict_note": "Niagara Mohawk Art Deco facade - same negative; Edited is a minimal crop with slightly punchier color.",
+      "carried": true
     },
     {
-      "id": 106,
+      "id": 107,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890009.jpg",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890009.jpg"
@@ -1107,10 +1147,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Syracuse Savings Bank + Christmas tree at Clinton Sq. Same negative; Edited is the straightened/cropped portrait version, Film copy is the unrotated raw scan. Keep the edit."
+      "verdict_note": "Syracuse Savings Bank + Christmas tree at Clinton Sq. Same negative; Edited is the straightened/cropped portrait version, Film copy is the unrotated raw scan. Keep the edit.",
+      "carried": true
     },
     {
-      "id": 107,
+      "id": 108,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890010.jpg",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890010.jpg"
@@ -1118,10 +1159,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Clinton Sq rink reflection with flag + red brick block. Identical frame, Edited is slightly tighter/warmer crop of the same scan."
+      "verdict_note": "Clinton Sq rink reflection with flag + red brick block. Identical frame, Edited is slightly tighter/warmer crop of the same scan.",
+      "carried": true
     },
     {
-      "id": 108,
+      "id": 109,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890017.jpg",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890017.jpg"
@@ -1129,10 +1171,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "'THE PATIO at the Gem' diner facade, dead-on. Same frame; only a hair of edge crop and contrast separates them."
+      "verdict_note": "'THE PATIO at the Gem' diner facade, dead-on. Same frame; only a hair of edge crop and contrast separates them.",
+      "carried": true
     },
     {
-      "id": 109,
+      "id": 110,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890018.jpg",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890018.jpg"
@@ -1140,10 +1183,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "The Gem diner wide with black Ford + neon sign. Same frame, Edited crops the bottom road slightly and lifts contrast."
+      "verdict_note": "The Gem diner wide with black Ford + neon sign. Same frame, Edited crops the bottom road slightly and lifts contrast.",
+      "carried": true
     },
     {
-      "id": 110,
+      "id": 111,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890019.jpg",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890019.jpg"
@@ -1151,10 +1195,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Crucible plant silhouette at sunset. Same frame; raw scan shows the car dashboard at bottom edge that the edit crops out."
+      "verdict_note": "Crucible plant silhouette at sunset. Same frame; raw scan shows the car dashboard at bottom edge that the edit crops out.",
+      "carried": true
     },
     {
-      "id": 111,
+      "id": 112,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890026.JPG",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890026.jpg"
@@ -1162,10 +1207,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Boot propped over Skaneateles-style lake at golden hour. Same frame, essentially identical exposure; edit is marginally cropped."
+      "verdict_note": "Boot propped over Skaneateles-style lake at golden hour. Same frame, essentially identical exposure; edit is marginally cropped.",
+      "carried": true
     },
     {
-      "id": 112,
+      "id": 113,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890030.JPG",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890030.jpg"
@@ -1173,10 +1219,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Industrial plant behind chain-link, 'CLEARANCE 14'' gantry. Same frame, trivial crop/tone difference."
+      "verdict_note": "Industrial plant behind chain-link, 'CLEARANCE 14'' gantry. Same frame, trivial crop/tone difference.",
+      "carried": true
     },
     {
-      "id": 113,
+      "id": 114,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890034.jpg",
         "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890034.jpg"
@@ -1184,10 +1231,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "PHOTONIX storefront, dead-on portrait. Same frame; Edited is a tighter crop losing a little street and the neighbor's sign."
+      "verdict_note": "PHOTONIX storefront, dead-on portrait. Same frame; Edited is a tighter crop losing a little street and the neighbor's sign.",
+      "carried": true
     },
     {
-      "id": 114,
+      "id": 115,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257205_002558900004.jpg",
         "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900004.jpg"
@@ -1195,10 +1243,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Troy riverfront at dusk with moored paddle-steamer. Same frame, near-identical; only a slight crop/level shift."
+      "verdict_note": "Troy riverfront at dusk with moored paddle-steamer. Same frame, near-identical; only a slight crop/level shift.",
+      "carried": true
     },
     {
-      "id": 115,
+      "id": 116,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257205_002558900011.jpg",
         "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900011.jpg"
@@ -1206,10 +1255,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Green painted brick wall with arched windows and Moore Paints sign. Same frame, tiny crop difference only."
+      "verdict_note": "Green painted brick wall with arched windows and Moore Paints sign. Same frame, tiny crop difference only.",
+      "carried": true
     },
     {
-      "id": 116,
+      "id": 117,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257205_002558900013.jpg",
         "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900013.jpg"
@@ -1217,10 +1267,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Troy rowhouses with flagpole and blue Forester. Same frame; Edited crops a bit tighter on the left."
+      "verdict_note": "Troy rowhouses with flagpole and blue Forester. Same frame; Edited crops a bit tighter on the left.",
+      "carried": true
     },
     {
-      "id": 117,
+      "id": 118,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257205_002558900015.jpg",
         "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900015.jpg"
@@ -1228,10 +1279,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Orange VW bus parked by the round brick gasholder house. Same frame, Edited is a slightly tighter crop of the same scan."
+      "verdict_note": "Orange VW bus parked by the round brick gasholder house. Same frame, Edited is a slightly tighter crop of the same scan.",
+      "carried": true
     },
     {
-      "id": 118,
+      "id": 119,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257205_002558900019.jpg",
         "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900019.jpg"
@@ -1239,10 +1291,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Gurley Memorial Hall entrance arch through autumn leaves. Same frame, effectively indistinguishable apart from minor crop."
+      "verdict_note": "Gurley Memorial Hall entrance arch through autumn leaves. Same frame, effectively indistinguishable apart from minor crop.",
+      "carried": true
     },
     {
-      "id": 119,
+      "id": 120,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257205_002558900020.jpg",
         "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900020.jpg"
@@ -1250,10 +1303,11 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Soldiers' monument column against deep blue sky. Same frame; Edited crops in slightly, cutting the '1862' plinth detail."
+      "verdict_note": "Soldiers' monument column against deep blue sky. Same frame; Edited crops in slightly, cutting the '1862' plinth detail.",
+      "carried": true
     },
     {
-      "id": 120,
+      "id": 121,
       "keys": [
         "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257205_002558900021.jpg",
         "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900021.jpg"
@@ -1261,7 +1315,8 @@
       "status": "open",
       "kind": "same-negative",
       "verdict": "near-identical",
-      "verdict_note": "Corner mansard commercial block with red car, Troy. Same frame; only a slight crop and saturation difference."
+      "verdict_note": "Corner mansard commercial block with red car, Troy. Same frame; only a slight crop and saturation difference.",
+      "carried": true
     }
   ]
 }
