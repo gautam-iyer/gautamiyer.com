@@ -63,10 +63,18 @@ def _place_item(p):
 
 def main():
     photos = json.loads((DATA / "photos.json").read_text())
+    registry = json.loads((DATA / "collections.json").read_text())["collections"]
+    # Quarantine gate: photos in a `withheld` collection never reach the site.
+    # The manifest itself is the publish list (nothing filters on tagged/reviewed),
+    # so this is the one place un-QA'd or flagged frames can be held back while
+    # still living in the manifest and the tagger. Mirrors layouts/partials/withheld.html.
+    withheld = {c["slug"] for c in registry if c.get("withheld")}
     # Match Hugo's `range hugo.Data.photos` order (a map ranged by SORTED KEY) so
     # the generated lists render in the same order the templates did when they
     # scanned the manifest directly.
-    recs = [photos[k] for k in sorted(photos) if photos[k].get("thumb")]
+    recs = [photos[k] for k in sorted(photos)
+            if photos[k].get("thumb") and not (withheld & set(photos[k].get("collections") or []))]
+    held = sum(1 for k in photos if withheld & set(photos[k].get("collections") or []))
 
     collections, places, hero, covers = {}, {}, [], {}
     for p in recs:
@@ -89,7 +97,6 @@ def main():
     # stay small; the collage solver's tiered fallbacks guarantee a layout at
     # any pool size, small ones just render fewer, larger cells (possibly with
     # some crop). A collection with NOTHING curated pools its whole membership.
-    registry = json.loads((DATA / "collections.json").read_text())["collections"]
     collage = {}
     for slug in (c["slug"] for c in registry if c.get("collage") and not c.get("archived")):
         members = [p for p in recs if slug in (p.get("collections") or [])]
@@ -101,7 +108,8 @@ def main():
              "covers": covers, "collage": collage}
     (DATA / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")))
     print(f"index: {len(collections)} collections, {len(places)} places, "
-          f"{len(hero)} hero, {len(covers)} covers, {len(collage)} collage pools -> data/index.json")
+          f"{len(hero)} hero, {len(covers)} covers, {len(collage)} collage pools, "
+          f"{held} withheld -> data/index.json")
 
 
 if __name__ == "__main__":

@@ -164,6 +164,8 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .keep{border:1px solid #16a34a;color:#16a34a;background:#fff;border-radius:6px;font-size:12px;padding:5px 10px;cursor:pointer}
  .keep:hover{background:#16a34a;color:#fff}
  .keepall{border:1px solid #d4d4d8;background:#fff;border-radius:6px;font-size:12px;padding:4px 10px;cursor:pointer;color:#52525b}
+ .dverdict{font-size:11.5px;padding:2px 8px;border-radius:9px}
+ .vd-dupe{background:#fef3c7;color:#92400e} .vd-distinct{background:#dcfce7;color:#166534}
  .keepall:hover{border-color:#16a34a;color:#16a34a}
  .removing{opacity:0;transform:scale(.92);transition:opacity .25s,transform .25s}
 </style></head><body>
@@ -410,6 +412,7 @@ function renderDupes(){
     }).join('');
     return `<div class="dgroup" id="dg-${g.id}">
       <div class="dhead">Group ${g.id} · ${g.keys.length} photos
+        ${g.verdict?`<span class="dverdict ${g.verdict==='near-identical'?'vd-dupe':'vd-distinct'}">${esc(g.verdict)}${g.verdict_note?' — '+esc(g.verdict_note):''}</span>`:''}
         <button class="keepall" onclick="dupeKeepAll(${g.id})">✓ Not duplicates — keep all</button></div>
       <div class="drow">${cards}</div></div>`;
   }).join('');

@@ -1,0 +1,15 @@
+{{/* Slugs of registry collections marked `withheld` — a quarantine bucket whose
+     photos must NOT render anywhere on the site.
+
+     Distinct from `hidden`, which only keeps the COLLECTION itself off the
+     collections index while its photos still publish normally (home-hero).
+     `withheld` is about the PHOTOS: presence in the manifest would otherwise
+     publish them, since the gallery/place templates render every record that
+     has a thumbnail. Keep this the single definition of that gate.
+
+     Call as: {{ $withheld := partialCached "withheld.html" . "withheld" }} */}}
+{{ $s := slice }}
+{{ range $c := (index hugo.Data.collections "collections") }}
+  {{ if $c.withheld }}{{ $s = $s | append $c.slug }}{{ end }}
+{{ end }}
+{{ return $s }}

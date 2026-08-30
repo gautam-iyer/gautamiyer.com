@@ -8,11 +8,15 @@
     {{ end }}
   </div>
 
-  {{/* Collect derived photos from the manifest (only those with a thumbnail). */}}
+  {{/* Collect derived photos from the manifest (only those with a thumbnail,
+       and never one quarantined in a `withheld` collection — see the partial). */}}
   {{ $base := .Site.Params.photo_base | default "/img/" }}
+  {{ $withheld := partialCached "withheld.html" . "withheld" }}
   {{ $photos := slice }}
   {{ range $key, $p := hugo.Data.photos }}
-    {{ if $p.thumb }}{{ $photos = $photos | append $p }}{{ end }}
+    {{ if and $p.thumb (eq 0 (len (intersect $withheld (or $p.collections slice)))) }}
+      {{ $photos = $photos | append $p }}
+    {{ end }}
   {{ end }}
 
   {{/* Filterable dimensions. multi=true means the manifest stores an array of values. */}}

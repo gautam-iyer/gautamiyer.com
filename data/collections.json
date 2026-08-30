@@ -386,6 +386,18 @@
       "color": "#b23a48",
       "collage": true,
       "collage_rank": 1
+    },
+    {
+      "slug": "needs-review",
+      "title": "Needs Review (QA flags)",
+      "description": "QA-flagged photos: possibly personal/broken frames. Hidden from the site.",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": null,
+      "hidden": true,
+      "withheld": true
     }
   ]
 }
