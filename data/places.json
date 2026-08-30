@@ -155,6 +155,26 @@
       "name": "Porto, Portugal",
       "city": "Porto",
       "state": "Portugal"
+    },
+    {
+      "name": "Philadelphia, PA",
+      "city": "Philadelphia",
+      "state": "PA"
+    },
+    {
+      "name": "West, TX",
+      "city": "West",
+      "state": "TX"
+    },
+    {
+      "name": "Altoona, PA",
+      "city": "Altoona",
+      "state": "PA"
+    },
+    {
+      "name": "Trenton, NJ",
+      "city": "Trenton",
+      "state": "NJ"
     }
   ]
 }
