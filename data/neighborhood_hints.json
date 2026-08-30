@@ -1,0 +1,37 @@
+{
+  "_note": "Suggestions for the tagger's Neighborhoods mode. Each hint proposes a neighborhood starting at an IMG number and carries the evidence in the frame that produced it. These are NOT applied to any photo — the tagger shows them as dashed amber bands you accept or ignore. Neighborhoods remain Gautam's call.",
+  "shoots": {
+    "new-england-2026-08-23": [
+      {
+        "from_img": 7494,
+        "neighborhood": "McKnight",
+        "evidence": "Dense unbroken blocks of grand Queen Anne / Stick / Second Empire houses on tree-lined streets — Springfield's McKnight district is the city's large intact Victorian tract. Verify the street names."
+      },
+      {
+        "from_img": 7583,
+        "neighborhood": "Springfield Armory",
+        "evidence": "The long brick arsenal ranges with slate roofs and cupolas around the parade green, and the corbelled brick tower — the Armory National Historic Site grounds."
+      },
+      {
+        "from_img": 7596,
+        "neighborhood": "Old Hill",
+        "evidence": "Shift to State St-corridor commercial vernacular (D&W Fashions, Italian Bread Shop at Oakland/Orange, Sang Phở Gà at 2 Wilmont St) and brick walk-ups. Wilmont St sits in Springfield's Old Hill/Bay area — confirm which side."
+      },
+      {
+        "from_img": 7622,
+        "neighborhood": "Metro Center",
+        "evidence": "The Campanile clock tower of the Springfield Municipal Group, downtown."
+      },
+      {
+        "from_img": 7629,
+        "neighborhood": "Coltsville",
+        "evidence": "Hartford: the Colt Armory's blue star-spangled onion dome and the lettered COLT chimney — Coltsville National Historical Park. NOTE 7629/7630 (generating plant, Eversource yard) sit just before the Colt frames and could still be Springfield riverfront; check before applying."
+      },
+      {
+        "from_img": 7644,
+        "neighborhood": "Downtown",
+        "evidence": "Hartford skyline frames dominated by the Travelers Tower, UnitedHealthcare and Infosys signage — downtown Hartford seen from the Coltsville side. Applies to the skyline shots, not the Colt-dome ones."
+      }
+    ]
+  }
+}

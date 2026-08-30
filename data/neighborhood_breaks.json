@@ -1,0 +1,4 @@
+{
+  "_note": "Per-shoot neighborhood breakpoints set in the tagger's Neighborhoods mode. A breakpoint owns every photo from its from_img until the next one. Written by the tagger; applied to data/photos.json only when you press Apply.",
+  "shoots": {}
+}

@@ -43,6 +43,8 @@ TAXONOMY = REPO / "data" / "taxonomy.json"
 PLACES = REPO / "data" / "places.json"
 DELETIONS = REPO / "deleted-photos.jsonl"  # append-only record of deletes
 DUPES = REPO / "data" / "duplicates.json"  # near-duplicate groups (scripts/photos/dupes.py)
+BREAKS = REPO / "data" / "neighborhood_breaks.json"   # per-shoot neighborhood breakpoints (Neighborhoods mode)
+HINTS = REPO / "data" / "neighborhood_hints.json"     # evidence-backed suggestions, accept-or-ignore
 DERIV = REPO / ".photo-build" / "derivatives"
 PORT = 8800
 
@@ -186,6 +188,30 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .danger[disabled]{opacity:.4;cursor:default}
  .danger[disabled]:hover{background:#fff;color:#dc2626}
  .cullnote{font-size:12px;color:#52525b;background:#fafafa;border:1px solid #e4e4e7;border-radius:8px;padding:8px 11px;margin-bottom:12px}
+ /* ---- Neighborhoods mode: breakpoint runs over a shoot in IMG order ---- */
+ .nbgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+ .nbcell{position:relative;border:1px solid #e4e4e7;border-radius:8px;overflow:hidden;background:#fff}
+ .nbcell img{width:100%;height:110px;object-fit:cover;display:block}
+ .nbcell .cap{font-size:10.5px;color:#52525b;padding:3px 6px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .nbcell .cut{position:absolute;top:5px;left:5px;font-size:11px;line-height:1;padding:3px 6px;border-radius:6px;
+   background:rgba(255,255,255,.93);border:1px solid #d4d4d8;color:#71717a;cursor:pointer}
+ .nbcell .cut:hover{border-color:#2563eb;color:#2563eb}
+ .nbcell.isbreak{border-color:#2563eb;border-width:2px}
+ .nbcell.isbreak .cut{background:#2563eb;border-color:#2563eb;color:#fff}
+ .nbcell.hashint{border-color:#b3872a}
+ .runband{grid-column:1/-1;display:flex;gap:10px;align-items:center;margin:10px 0 2px;
+   padding:6px 11px;border-radius:8px;background:#eff6ff;border:1px solid #bfdbfe;font-size:13px}
+ .runband b{color:#1d4ed8}
+ .runband .rm{margin-left:auto;border:0;background:none;color:#94a3b8;cursor:pointer;font-size:12px}
+ .runband .rm:hover{color:#dc2626}
+ .hintband{grid-column:1/-1;display:flex;gap:10px;align-items:center;margin:10px 0 2px;
+   padding:6px 11px;border-radius:8px;background:#fffbeb;border:1px dashed #fcd34d;font-size:12.5px;color:#78350f}
+ .hintband button{border:1px solid #b3872a;background:#fff;color:#92400e;border-radius:6px;font-size:11.5px;padding:3px 9px;cursor:pointer}
+ .hintband button:hover{background:#b3872a;color:#fff}
+ .nbbar{display:flex;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+ .apply{border:1px solid #16a34a;background:#fff;color:#16a34a;border-radius:6px;font-size:12px;padding:5px 12px;cursor:pointer;font-weight:600}
+ .apply:hover{background:#16a34a;color:#fff}
+ .apply[disabled]{opacity:.4;cursor:default} .apply[disabled]:hover{background:#fff;color:#16a34a}
  kbd{background:#f4f4f5;border:1px solid #d4d4d8;border-bottom-width:2px;border-radius:4px;padding:1px 5px;font-size:11px;font-family:ui-monospace,monospace}
 </style></head><body>
 <header>
@@ -195,6 +221,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
    <button data-mode="colls">Collections</button>
    <button data-mode="dupes">Duplicates</button>
    <button data-mode="cull">Cull</button>
+   <button data-mode="nbhd">Neighborhoods</button>
  </div>
  <span id="filters"></span>
  <span class="spacer"></span>
@@ -206,6 +233,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
 let PHOTOS={}, COLLS=[], TAX=[], SHOOTS=[], DUPES=[];
 let mode='tag', page=0, memberSlug=null;
 let cullFilter={shoot:'',city:'',coll:'',show:'all'}, cullCursor=0;
+let BREAKS={}, HINTS={}, nbShoot='', nbDirty=false;
 const PER=48, GRIDPER=60;                     // list page size / grid page size
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;');
@@ -218,11 +246,20 @@ const uniq=a=>[...new Set(a.filter(Boolean))].sort();
 async function boot(){
   const d=await (await fetch('/api/data')).json();
   PHOTOS=d.photos; COLLS=d.collections; TAX=d.taxonomy||[]; SHOOTS=d.shoots||[]; DUPES=d.dupes||[];
+  BREAKS=d.breaks||{}; HINTS=d.hints||{};
   document.querySelectorAll('#modeseg button').forEach(b=>b.onclick=()=>{
     mode=b.dataset.mode; page=0; memberSlug=null;
+    location.hash=mode;
     document.querySelectorAll('#modeseg button').forEach(x=>x.classList.toggle('on',x===b));
     render();
   });
+  // The mode lives in the URL hash so a view is bookmarkable and survives reload
+  // (#tag #colls #dupes #cull #nbhd).
+  const want=(location.hash||'').replace('#','');
+  if(want && [...document.querySelectorAll('#modeseg button')].some(b=>b.dataset.mode===want)){
+    mode=want;
+    document.querySelectorAll('#modeseg button').forEach(x=>x.classList.toggle('on',x.dataset.mode===want));
+  }
   render();
 }
 function flash(){const f=$('#flash');f.classList.add('on');setTimeout(()=>f.classList.remove('on'),800);}
@@ -660,6 +697,124 @@ window.deleteCulled=async()=>{
   alert(`Deleted ${res.deleted.length} photos.${res.missing.length?` (${res.missing.length} were already gone.)`:''}`);
   page=0;render();};
 
+/* ======================= NEIGHBOURHOODS MODE =======================
+   Photos are shot in walking order, so a contiguous run of IMG numbers is a
+   contiguous piece of ground. Rather than label 4,000 photos one by one, you
+   walk a shoot in order and drop a breakpoint where the ground changes: "from
+   here on, Allentown". Each breakpoint owns every frame until the next one.
+
+   Vision HINTS are shown as dashed amber bands with the evidence that produced
+   them (a landmark, a street sign). They are suggestions only — one click turns
+   a hint into a real breakpoint, and ignoring them costs nothing. Nothing is
+   written to a photo until you press Apply.                                  */
+const NBPER=150;
+function nbBreaks(){return (BREAKS[nbShoot]||[]).slice().sort((a,b)=>a.from_img-b.from_img);}
+function nbHints(){return (HINTS[nbShoot]||[]).slice().sort((a,b)=>a.from_img-b.from_img);}
+function nbKeys(){return Object.keys(PHOTOS).filter(k=>PHOTOS[k].shoot===nbShoot)
+  .sort((a,b)=>(PHOTOS[a].img_no||0)-(PHOTOS[b].img_no||0));}
+function nbKnownNames(){
+  const fromPhotos=Object.values(PHOTOS).map(p=>p.neighborhood);
+  const fromBreaks=Object.values(BREAKS).flat().map(b=>b.neighborhood);
+  const fromHints=Object.values(HINTS).flat().map(h=>h.neighborhood);
+  return uniq([...fromPhotos,...fromBreaks,...fromHints]);
+}
+function nbAt(img){let n=null;for(const b of nbBreaks()){if(img>=b.from_img)n=b.neighborhood;else break;}return n;}
+async function nbSave(bps){
+  BREAKS[nbShoot]=bps;
+  await fetch('/api/neighborhood/breaks',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({shoot:nbShoot,breaks:bps})});
+  nbDirty=true; flash();
+}
+window.nbSetBreak=async(img)=>{
+  const cur=nbBreaks().find(b=>b.from_img===img);
+  const name=prompt(`Neighborhood starting at IMG ${img}?\n\nKnown: ${nbKnownNames().slice(0,25).join(', ')||'(none yet)'}\n\nLeave blank to remove this breakpoint.`,
+                    cur?cur.neighborhood:(nbAt(img)||''));
+  if(name===null)return;
+  let bps=nbBreaks().filter(b=>b.from_img!==img);
+  if(name.trim())bps.push({from_img:img,neighborhood:name.trim()});
+  bps.sort((a,b)=>a.from_img-b.from_img);
+  await nbSave(bps); render();
+};
+window.nbAcceptHint=async(i)=>{
+  const h=nbHints()[i]; if(!h)return;
+  let bps=nbBreaks().filter(b=>b.from_img!==h.from_img);
+  bps.push({from_img:h.from_img,neighborhood:h.neighborhood});
+  bps.sort((a,b)=>a.from_img-b.from_img);
+  await nbSave(bps); render();
+};
+window.nbRemoveBreak=async(img)=>{await nbSave(nbBreaks().filter(b=>b.from_img!==img));render();};
+window.nbApply=async(overwrite)=>{
+  const bps=nbBreaks();
+  if(!bps.length){alert('No breakpoints set for this shoot yet.');return;}
+  const keys=nbKeys(), covered=keys.filter(k=>nbAt(PHOTOS[k].img_no)!==null);
+  const already=covered.filter(k=>PHOTOS[k].neighborhood);
+  let msg=`Apply ${bps.length} run${bps.length===1?'':'s'} to ${covered.length} photos in this shoot?`;
+  if(keys.length-covered.length)msg+=`\n\n${keys.length-covered.length} photos sit before the first breakpoint and stay untouched.`;
+  if(already.length)msg+= overwrite
+      ? `\n\n${already.length} already have a neighborhood and WILL BE OVERWRITTEN.`
+      : `\n\n${already.length} already have a neighborhood and will be kept as they are.`;
+  if(!confirm(msg))return;
+  const r=await fetch('/api/neighborhood/apply',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({shoot:nbShoot,overwrite:!!overwrite})});
+  const res=await r.json();
+  if(!r.ok){alert('Apply failed: '+(res.error||r.status));return;}
+  Object.entries(res.changed||{}).forEach(([k,v])=>{if(PHOTOS[k])PHOTOS[k].neighborhood=v;});
+  nbDirty=false;
+  alert(`Set the neighborhood on ${res.set} photos.${res.kept?` Kept ${res.kept} that already had one.`:''}`);
+  render();
+};
+function renderNbhd(){
+  const shoots=SHOOTS.slice();
+  if(!nbShoot)nbShoot=shoots[0]||'';
+  const keys=nbKeys(), bps=nbBreaks(), hints=nbHints();
+  const pages=Math.max(1,Math.ceil(keys.length/NBPER));
+  if(page>=pages)page=pages-1;
+  const slice=keys.slice(page*NBPER,page*NBPER+NBPER);
+  const done=keys.filter(k=>PHOTOS[k].neighborhood).length;
+  $('#stat').textContent=`${done}/${keys.length} have a neighborhood · ${bps.length} breakpoint${bps.length===1?'':'s'}`;
+  const bpAt=new Map(bps.map(b=>[b.from_img,b]));
+  const hintAt=new Map(); hints.forEach((h,i)=>hintAt.set(h.from_img,{h,i}));
+  const cityOf=keys.length?(PHOTOS[keys[0]].city||''):'';
+
+  let cells='', runShown=null;
+  slice.forEach(key=>{
+    const p=PHOTOS[key], img=p.img_no;
+    const hb=hintAt.get(img);
+    if(hb && !bpAt.has(img))
+      cells+=`<div class="hintband">Suggested from IMG ${img}: <b>${esc(hb.h.neighborhood)}</b>
+        — ${esc(hb.h.evidence||'')} <button onclick="nbAcceptHint(${hb.i})">Use this</button></div>`;
+    const b=bpAt.get(img);
+    if(b){ runShown=b.neighborhood;
+      cells+=`<div class="runband">From IMG ${img}: <b>${esc(b.neighborhood)}</b>
+        <button class="rm" onclick="nbRemoveBreak(${img})">remove</button></div>`;
+    } else if(runShown===null){
+      const cur=nbAt(img);
+      if(cur!==null){runShown=cur;
+        cells+=`<div class="runband">…continuing: <b>${esc(cur)}</b></div>`;}
+    }
+    cells+=`<div class="nbcell${b?' isbreak':''}${hb&&!b?' hashint':''}" data-key="${esc(key)}">
+      <span class="cut" title="Start a neighborhood here" onclick="nbSetBreak(${img})">${b?'▸':'✂'}</span>
+      <img loading="lazy" src="/img/${p.thumb}">
+      <div class="cap">#${img}${p.neighborhood?' · '+esc(p.neighborhood):''}</div></div>`;
+  });
+
+  $('#main').innerHTML=`
+    <div class="cullnote">Walk the shoot in shooting order and drop a breakpoint (<b>✂</b>) wherever the ground changes.
+      Each one owns every frame until the next, so a whole street costs one click. Amber bands are
+      <b>suggestions</b> with the evidence behind them — take them or ignore them.
+      Nothing touches a photo until you press <b>Apply</b>, and a neighborhood you already set is kept unless you say otherwise.</div>
+    <div class="nbbar">
+      <select id="nb-shoot">${shoots.map(x=>`<option value="${esc(x)}"${x===nbShoot?' selected':''}>${esc(x)}</option>`).join('')}</select>
+      <span class="ct">${esc(cityOf)} · ${keys.length} photos</span>
+      <span class="spacer" style="flex:1"></span>
+      <button class="apply" onclick="nbApply(false)" ${bps.length?'':'disabled'}>Apply to unset photos</button>
+      <button class="keepall" onclick="nbApply(true)" ${bps.length?'':'disabled'} title="Also replace neighborhoods that are already set">Apply, overwriting existing</button>
+    </div>
+    <div class="nbgrid">${cells}</div>`+pager(page,pages,keys.length);
+  $('#nb-shoot').onchange=e=>{nbShoot=e.target.value;page=0;render();};
+  wirePager();
+}
+
 /* ---------- pager ---------- */
 function pager(pg,pages,total){
   if(pages<=1)return `<div class="pager"><span class="stat">${total} items</span></div>`;
@@ -679,6 +834,7 @@ function render(){
     if(mode==='colls')renderColls();
     else if(mode==='dupes')renderDupes();
     else if(mode==='cull')renderCull();
+    else if(mode==='nbhd')renderNbhd();
     else renderMembers();}
 }
 
@@ -734,7 +890,11 @@ class Handler(BaseHTTPRequestHandler):
                 tax = load(TAXONOMY, {"dimensions": []})["dimensions"]
             shoots = sorted({p["shoot"] for p in m.values()})
             dupes = load(DUPES, {"groups": []})["groups"]
-            return self._send(200, {"photos": m, "collections": colls, "taxonomy": tax, "shoots": shoots, "dupes": dupes})
+            breaks = load(BREAKS, {"shoots": {}})["shoots"]
+            hints = load(HINTS, {"shoots": {}})["shoots"]
+            return self._send(200, {"photos": m, "collections": colls, "taxonomy": tax,
+                                    "shoots": shoots, "dupes": dupes,
+                                    "breaks": breaks, "hints": hints})
         if path.startswith("/img/"):
             rel = unquote(path[len("/img/"):])
             f = (DERIV / rel).resolve()
@@ -838,6 +998,56 @@ class Handler(BaseHTTPRequestHandler):
             if tiers:
                 threading.Thread(target=_cleanup, args=(tiers,), daemon=True).start()
             return self._send(200, {"deleted": deleted, "missing": missing})
+        if path == "/api/neighborhood/breaks":
+            # Persist one shoot's breakpoint list. A breakpoint is
+            # {"from_img": <img_no>, "neighborhood": "..."} and owns every photo
+            # from that IMG number until the next breakpoint — photos shot in
+            # walking order means contiguous IMG ranges are contiguous ground.
+            shoot = data["shoot"]
+            bps = sorted([b for b in data.get("breaks", []) if b.get("neighborhood")],
+                         key=lambda b: b["from_img"])
+            with _lock:
+                d = load(BREAKS, {"shoots": {}})
+                if bps:
+                    d["shoots"][shoot] = bps
+                else:
+                    d["shoots"].pop(shoot, None)
+                atomic_write(BREAKS, d)
+            return self._send(200, {"ok": True, "breaks": bps})
+        if path == "/api/neighborhood/apply":
+            # Write the shoot's breakpoint runs onto its photos. An existing
+            # neighborhood is a human's answer and is kept unless overwrite is
+            # explicitly asked for.
+            shoot = data["shoot"]
+            overwrite = bool(data.get("overwrite"))
+            with _lock:
+                d = load(BREAKS, {"shoots": {}})
+                bps = sorted(d["shoots"].get(shoot, []), key=lambda b: b["from_img"])
+                if not bps:
+                    return self._send(400, {"error": "no breakpoints for this shoot"})
+                m = load(MANIFEST, {})
+                setn = kept = 0
+                changed = {}
+                for key, rec in m.items():
+                    if rec.get("shoot") != shoot or rec.get("img_no") is None:
+                        continue
+                    nb = None
+                    for b in bps:
+                        if rec["img_no"] >= b["from_img"]:
+                            nb = b["neighborhood"]
+                        else:
+                            break
+                    if nb is None:
+                        continue            # before the first breakpoint: untouched
+                    if rec.get("neighborhood") and not overwrite:
+                        kept += 1
+                        continue
+                    if rec.get("neighborhood") != nb:
+                        rec["neighborhood"] = nb
+                        changed[key] = nb
+                        setn += 1
+                save_manifest(m)
+            return self._send(200, {"set": setn, "kept": kept, "changed": changed})
         if path == "/api/dupes":
             # Persist a duplicate group's review status (open | kept | resolved).
             with _lock:

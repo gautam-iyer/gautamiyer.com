@@ -533,11 +533,17 @@ def cmd_neighborhoods(args):
     breaks = sorted(mapping["breakpoints"], key=lambda b: b["upto"])
     shoot = mapping["shoot"]
     m = load_manifest()
-    n = 0
+    n = kept = 0
     for rec in m.values():
         if rec["shoot"] != shoot or rec["img_no"] is None:
             continue
-        if rec["reviewed"]:
+        # Only an EXISTING neighborhood is protected — not `reviewed`. The tagger
+        # sets reviewed on every save, so skipping reviewed records made this a
+        # no-op on exactly the photos that had been curated most. A neighborhood
+        # already on the record is a human's answer and still wins; pass
+        # --overwrite to replace it.
+        if rec.get("neighborhood") and not getattr(args, "overwrite", False):
+            kept += 1
             continue
         for b in breaks:
             if rec["img_no"] <= b["upto"]:
@@ -545,7 +551,8 @@ def cmd_neighborhoods(args):
                 n += 1
                 break
     save_manifest(m)
-    print(f"neighborhoods: set on {n} records for {shoot}")
+    print(f"neighborhoods: set on {n} records for {shoot}"
+          + (f", kept {kept} already set (--overwrite to replace)" if kept else ""))
 
 
 def cmd_tag_apply(args):
@@ -647,6 +654,8 @@ def main():
     d.add_argument("--force", action="store_true")
     n = sub.add_parser("neighborhoods")
     n.add_argument("map")
+    n.add_argument("--overwrite", action="store_true",
+                   help="replace neighborhoods that are already set (default: keep them)")
     t = sub.add_parser("tag-apply")
     t.add_argument("batch")
     cs = sub.add_parser("contact-sheet")
