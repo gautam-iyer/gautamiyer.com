@@ -1,4 +1,179 @@
 {
   "_note": "Per-shoot neighborhood breakpoints set in the tagger's Neighborhoods mode. A breakpoint owns every photo from its from_img until the next one. Written by the tagger; applied to data/photos.json only when you press Apply.",
-  "shoots": {}
+  "shoots": {
+    "bk-broad-channel-2026": [
+      {
+        "from_img": 789,
+        "neighborhood": "Williamsburg"
+      },
+      {
+        "from_img": 881,
+        "neighborhood": "Bedford-Stuyvesant"
+      },
+      {
+        "from_img": 969,
+        "neighborhood": "Crown Heights"
+      },
+      {
+        "from_img": 984,
+        "neighborhood": "Ocean Hill"
+      },
+      {
+        "from_img": 1051,
+        "neighborhood": "Broad Channel"
+      }
+    ],
+    "buffalo-2026-drop1": [
+      {
+        "from_img": 2111,
+        "neighborhood": "New Orleans CBD"
+      },
+      {
+        "from_img": 2128,
+        "neighborhood": "Buffalo Outer Harbor"
+      },
+      {
+        "from_img": 2261,
+        "neighborhood": "Lackawanna"
+      },
+      {
+        "from_img": 2349,
+        "neighborhood": "Blasdell"
+      },
+      {
+        "from_img": 2403,
+        "neighborhood": "Lackawanna"
+      },
+      {
+        "from_img": 2621,
+        "neighborhood": "Buffalo City Hall"
+      },
+      {
+        "from_img": 2803,
+        "neighborhood": "Lakeview"
+      },
+      {
+        "from_img": 2825,
+        "neighborhood": "Canalside"
+      },
+      {
+        "from_img": 2907,
+        "neighborhood": "Old First Ward"
+      },
+      {
+        "from_img": 3109,
+        "neighborhood": "Eastside Buffalo"
+      }
+    ],
+    "buffalo-2026-drop2": [
+      {
+        "from_img": 3262,
+        "neighborhood": "West Side Buffalo"
+      },
+      {
+        "from_img": 3354,
+        "neighborhood": "Allentown"
+      },
+      {
+        "from_img": 3367,
+        "neighborhood": "Buffalo Lower West Side"
+      },
+      {
+        "from_img": 3525,
+        "neighborhood": "Allentown"
+      },
+      {
+        "from_img": 3633,
+        "neighborhood": "Downtown Buffalo"
+      },
+      {
+        "from_img": 3854,
+        "neighborhood": "Eastside Buffalo"
+      },
+      {
+        "from_img": 4038,
+        "neighborhood": "Delaware Park"
+      },
+      {
+        "from_img": 4241,
+        "neighborhood": "Elmwood"
+      }
+    ],
+    "durham-2026-04-24": [
+      {
+        "from_img": 3875,
+        "neighborhood": "Burch Avenue"
+      },
+      {
+        "from_img": 3879,
+        "neighborhood": "East Durham"
+      },
+      {
+        "from_img": 3920,
+        "neighborhood": "Downtown Durham"
+      },
+      {
+        "from_img": 3963,
+        "neighborhood": "Brightleaf"
+      },
+      {
+        "from_img": 3981,
+        "neighborhood": "Trinity Park"
+      },
+      {
+        "from_img": 4129,
+        "neighborhood": "Duke Park"
+      },
+      {
+        "from_img": 4140,
+        "neighborhood": "Durham Central Park"
+      },
+      {
+        "from_img": 4149,
+        "neighborhood": "Duke University East Campus"
+      }
+    ],
+    "fidi-2026-04-20": [
+      {
+        "from_img": 3620,
+        "neighborhood": "Battery Park City"
+      },
+      {
+        "from_img": 3702,
+        "neighborhood": "Financial District"
+      }
+    ],
+    "flatbush-2026": [
+      {
+        "from_img": 1935,
+        "neighborhood": "Canarsie"
+      },
+      {
+        "from_img": 1974,
+        "neighborhood": "Flatbush"
+      },
+      {
+        "from_img": 1987,
+        "neighborhood": "Ditmas Park"
+      }
+    ],
+    "funky-south-2026-drop3": [
+      {
+        "from_img": 1392,
+        "neighborhood": "Belhaven"
+      },
+      {
+        "from_img": 1506,
+        "neighborhood": "Farish Street"
+      },
+      {
+        "from_img": 1546,
+        "neighborhood": "Downtown Jackson"
+      },
+      {
+        "from_img": 1616,
+        "end": true
+      }
+    ]
+  }
 }

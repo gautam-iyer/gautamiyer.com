@@ -212,6 +212,15 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .apply{border:1px solid #16a34a;background:#fff;color:#16a34a;border-radius:6px;font-size:12px;padding:5px 12px;cursor:pointer;font-weight:600}
  .apply:hover{background:#16a34a;color:#fff}
  .apply[disabled]{opacity:.4;cursor:default} .apply[disabled]:hover{background:#fff;color:#16a34a}
+ .bpedit{grid-column:1/-1;display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;margin:10px 0 2px;
+   padding:10px 12px;border-radius:8px;background:#fff;border:2px solid #2563eb}
+ .bpedit label{display:flex;flex-direction:column;gap:3px;font-size:11px;color:#71717a}
+ .bpedit input{font-size:13px;padding:4px 7px;border:1px solid #d4d4d8;border-radius:6px}
+ .bpedit .wide{width:190px} .bpedit .narrow{width:56px}
+ .bpedit .go{border:1px solid #2563eb;background:#2563eb;color:#fff;border-radius:6px;font-size:12px;padding:6px 13px;cursor:pointer;font-weight:600}
+ .bpedit .cancel{border:1px solid #d4d4d8;background:#fff;color:#52525b;border-radius:6px;font-size:12px;padding:6px 11px;cursor:pointer}
+ .bpedit .del{border:1px solid #dc2626;background:#fff;color:#dc2626;border-radius:6px;font-size:12px;padding:6px 11px;cursor:pointer}
+ .bpedit .hintline{flex-basis:100%;font-size:11.5px;color:#78350f;background:#fffbeb;border:1px dashed #fcd34d;border-radius:6px;padding:5px 8px}
  kbd{background:#f4f4f5;border:1px solid #d4d4d8;border-bottom-width:2px;border-radius:4px;padding:1px 5px;font-size:11px;font-family:ui-monospace,monospace}
 </style></head><body>
 <header>
@@ -718,27 +727,78 @@ function nbKnownNames(){
   const fromHints=Object.values(HINTS).flat().map(h=>h.neighborhood);
   return uniq([...fromPhotos,...fromBreaks,...fromHints]);
 }
-function nbAt(img){let n=null;for(const b of nbBreaks()){if(img>=b.from_img)n=b.neighborhood;else break;}return n;}
+function nbRunAt(img){let r=null;for(const b of nbBreaks()){if(img>=b.from_img)r=b;else break;}return r;}
+function nbAt(img){const r=nbRunAt(img);return (r&&!r.end)?(r.neighborhood||null):null;}
+function runLabel(b){
+  if(b.end)return '— run ends —';
+  // Show the run for what it actually sets. A town-level run reads as the town.
+  const bits=[];
+  if(b.neighborhood)bits.push(b.neighborhood);
+  if(b.city)bits.push(b.city+(b.state?', '+b.state:''));
+  return bits.join(' · ')||'(empty)';
+}
 async function nbSave(bps){
   BREAKS[nbShoot]=bps;
   await fetch('/api/neighborhood/breaks',{method:'POST',headers:{'content-type':'application/json'},
     body:JSON.stringify({shoot:nbShoot,breaks:bps})});
   nbDirty=true; flash();
 }
-window.nbSetBreak=async(img)=>{
-  const cur=nbBreaks().find(b=>b.from_img===img);
-  const name=prompt(`Neighborhood starting at IMG ${img}?\n\nKnown: ${nbKnownNames().slice(0,25).join(', ')||'(none yet)'}\n\nLeave blank to remove this breakpoint.`,
-                    cur?cur.neighborhood:(nbAt(img)||''));
-  if(name===null)return;
+/* Which levels a run sets is up to the run. A big city's districts get a
+   neighborhood; a small town that has no districts just gets a city and leaves
+   neighborhood empty — "Vicksburg" is a city, not a neighborhood of somewhere
+   else, and putting it in the neighborhood field would render "Vicksburg,
+   Mississippi Delta, MS" and deny it a place page. Blank fields are left alone,
+   so a run can correct only the city without touching neighborhoods. */
+let bpEditAt=null;
+window.nbSetBreak=(img)=>{bpEditAt=(bpEditAt===img?null:img);render();
+  const el=document.querySelector('.bpedit input'); if(el)el.focus();};
+window.nbCancelEdit=()=>{bpEditAt=null;render();};
+window.nbEndRun=async(img)=>{
   let bps=nbBreaks().filter(b=>b.from_img!==img);
-  if(name.trim())bps.push({from_img:img,neighborhood:name.trim()});
+  bps.push({from_img:img,end:true});
   bps.sort((a,b)=>a.from_img-b.from_img);
-  await nbSave(bps); render();
+  bpEditAt=null; await nbSave(bps); render();
 };
+window.nbCommitBreak=async(img)=>{
+  const g=id=>(document.getElementById(id)||{}).value||'';
+  const city=g('bp-city').trim(), st=g('bp-state').trim().toUpperCase(), nb=g('bp-nbhd').trim();
+  let bps=nbBreaks().filter(b=>b.from_img!==img);
+  if(city||nb){
+    const rec={from_img:img};
+    if(city)rec.city=city;
+    if(st)rec.state=st;
+    if(nb)rec.neighborhood=nb;
+    bps.push(rec);
+  }
+  bps.sort((a,b)=>a.from_img-b.from_img);
+  bpEditAt=null; await nbSave(bps); render();
+};
+function bpEditor(img){
+  const cur=nbBreaks().find(b=>b.from_img===img)||{};
+  const keys=nbKeys(), here=keys.find(k=>PHOTOS[k].img_no===img);
+  const p=here?PHOTOS[here]:{};
+  const cities=uniq(Object.values(PHOTOS).map(x=>x.city));
+  const hint=nbHints().find(h=>h.from_img===img);
+  return `<div class="bpedit">
+    ${hint?`<div class="hintline"><b>Suggested:</b> ${esc(hint.neighborhood)} — ${esc(hint.evidence||'')}</div>`:''}
+    <label>City (leave blank to keep)
+      <input id="bp-city" class="wide" list="dl-nbcity" value="${esc(cur.city||'')}" placeholder="${esc(p.city||'')}"></label>
+    <label>State<input id="bp-state" class="narrow" value="${esc(cur.state||'')}" placeholder="${esc(p.state||'')}" maxlength="2"></label>
+    <label>Neighborhood (blank = none)
+      <input id="bp-nbhd" class="wide" list="dl-nbname" value="${esc(cur.neighborhood||(hint?hint.neighborhood:'')||'')}" placeholder="small towns: leave empty"></label>
+    <button class="go" onclick="nbCommitBreak(${img})">Set run from IMG ${img}</button>
+    <button class="cancel" onclick="nbEndRun(${img})" title="Everything from here has no run until the next breakpoint — use it where the shoot leaves the area">End run here</button>
+    <button class="cancel" onclick="nbCancelEdit()">Cancel</button>
+    ${(cur.city||cur.neighborhood)?`<button class="del" onclick="nbRemoveBreak(${img})">Remove</button>`:''}
+    <datalist id="dl-nbcity">${cities.map(c=>`<option value="${esc(c)}">`).join('')}</datalist>
+    <datalist id="dl-nbname">${nbKnownNames().map(c=>`<option value="${esc(c)}">`).join('')}</datalist>
+  </div>`;
+}
 window.nbAcceptHint=async(i)=>{
   const h=nbHints()[i]; if(!h)return;
+  const prev=nbBreaks().find(b=>b.from_img===h.from_img)||{};
   let bps=nbBreaks().filter(b=>b.from_img!==h.from_img);
-  bps.push({from_img:h.from_img,neighborhood:h.neighborhood});
+  bps.push(Object.assign({},prev,{from_img:h.from_img,neighborhood:h.neighborhood}));
   bps.sort((a,b)=>a.from_img-b.from_img);
   await nbSave(bps); render();
 };
@@ -771,7 +831,8 @@ function renderNbhd(){
   if(page>=pages)page=pages-1;
   const slice=keys.slice(page*NBPER,page*NBPER+NBPER);
   const done=keys.filter(k=>PHOTOS[k].neighborhood).length;
-  $('#stat').textContent=`${done}/${keys.length} have a neighborhood · ${bps.length} breakpoint${bps.length===1?'':'s'}`;
+  const cityn=uniq(keys.map(k=>PHOTOS[k].city)).length;
+  $('#stat').textContent=`${done}/${keys.length} have a neighborhood · ${cityn} cit${cityn===1?'y':'ies'} · ${bps.length} run${bps.length===1?'':'s'}`;
   const bpAt=new Map(bps.map(b=>[b.from_img,b]));
   const hintAt=new Map(); hints.forEach((h,i)=>hintAt.set(h.from_img,{h,i}));
   const cityOf=keys.length?(PHOTOS[keys[0]].city||''):'';
@@ -784,25 +845,29 @@ function renderNbhd(){
       cells+=`<div class="hintband">Suggested from IMG ${img}: <b>${esc(hb.h.neighborhood)}</b>
         — ${esc(hb.h.evidence||'')} <button onclick="nbAcceptHint(${hb.i})">Use this</button></div>`;
     const b=bpAt.get(img);
-    if(b){ runShown=b.neighborhood;
-      cells+=`<div class="runband">From IMG ${img}: <b>${esc(b.neighborhood)}</b>
+    if(b){ runShown=runLabel(b);
+      cells+=`<div class="runband">From IMG ${img}: <b>${esc(runLabel(b))}</b>
         <button class="rm" onclick="nbRemoveBreak(${img})">remove</button></div>`;
     } else if(runShown===null){
-      const cur=nbAt(img);
-      if(cur!==null){runShown=cur;
-        cells+=`<div class="runband">…continuing: <b>${esc(cur)}</b></div>`;}
+      const cur=nbRunAt(img);
+      if(cur&&!cur.end){runShown=runLabel(cur);
+        cells+=`<div class="runband">…continuing: <b>${esc(runLabel(cur))}</b></div>`;}
     }
+    if(bpEditAt===img)cells+=bpEditor(img);
     cells+=`<div class="nbcell${b?' isbreak':''}${hb&&!b?' hashint':''}" data-key="${esc(key)}">
-      <span class="cut" title="Start a neighborhood here" onclick="nbSetBreak(${img})">${b?'▸':'✂'}</span>
+      <span class="cut" title="Start a run here" onclick="nbSetBreak(${img})">${b?'▸':'✂'}</span>
       <img loading="lazy" src="/img/${p.thumb}">
-      <div class="cap">#${img}${p.neighborhood?' · '+esc(p.neighborhood):''}</div></div>`;
+      <div class="cap">#${img} · ${esc(p.neighborhood||p.city||'—')}</div></div>`;
   });
 
   $('#main').innerHTML=`
-    <div class="cullnote">Walk the shoot in shooting order and drop a breakpoint (<b>✂</b>) wherever the ground changes.
-      Each one owns every frame until the next, so a whole street costs one click. Amber bands are
-      <b>suggestions</b> with the evidence behind them — take them or ignore them.
-      Nothing touches a photo until you press <b>Apply</b>, and a neighborhood you already set is kept unless you say otherwise.</div>
+    <div class="cullnote">Walk the shoot in shooting order and drop a run (<b>✂</b>) wherever the ground changes.
+      Each run owns every frame until the next, so a whole street — or a whole town — costs one click.
+      A run can set the <b>city</b>, the <b>neighborhood</b>, or both: a big city's districts get a neighborhood,
+      while a small town that has no districts just gets a city and leaves neighborhood empty.
+      Blank fields are left alone, so you can correct a city without disturbing neighborhoods.
+      Amber bands are <b>suggestions</b> with the evidence behind them — take them or ignore them.
+      Nothing touches a photo until you press <b>Apply</b>, and values you already set are kept unless you say otherwise.</div>
     <div class="nbbar">
       <select id="nb-shoot">${shoots.map(x=>`<option value="${esc(x)}"${x===nbShoot?' selected':''}>${esc(x)}</option>`).join('')}</select>
       <span class="ct">${esc(cityOf)} · ${keys.length} photos</span>
@@ -1004,8 +1069,9 @@ class Handler(BaseHTTPRequestHandler):
             # from that IMG number until the next breakpoint — photos shot in
             # walking order means contiguous IMG ranges are contiguous ground.
             shoot = data["shoot"]
-            bps = sorted([b for b in data.get("breaks", []) if b.get("neighborhood")],
-                         key=lambda b: b["from_img"])
+            bps = sorted([b for b in data.get("breaks", [])
+                           if b.get("neighborhood") or b.get("city") or b.get("end")],
+                          key=lambda b: b["from_img"])
             with _lock:
                 d = load(BREAKS, {"shoots": {}})
                 if bps:
@@ -1031,21 +1097,46 @@ class Handler(BaseHTTPRequestHandler):
                 for key, rec in m.items():
                     if rec.get("shoot") != shoot or rec.get("img_no") is None:
                         continue
-                    nb = None
+                    run = None
                     for b in bps:
                         if rec["img_no"] >= b["from_img"]:
-                            nb = b["neighborhood"]
+                            run = b
                         else:
                             break
-                    if nb is None:
-                        continue            # before the first breakpoint: untouched
-                    if rec.get("neighborhood") and not overwrite:
-                        kept += 1
+                    if run is None:
+                        continue            # before the first run: untouched
+                    if run.get("end"):
+                        # Past an explicit end marker. A run owns frames until the
+                        # NEXT breakpoint, so without an end it runs off the end of
+                        # the shoot and labels the next town with the last town's
+                        # neighborhood. On overwrite the end marker also CLEARS a
+                        # neighborhood in its region — that is the only way to undo
+                        # an overrun. City is never cleared: a photo with no city is
+                        # worse off than one with an imperfect city.
+                        if overwrite and rec.get("neighborhood"):
+                            rec["neighborhood"] = None
+                            changed.setdefault(key, {})["neighborhood"] = None
+                            setn += 1
                         continue
-                    if rec.get("neighborhood") != nb:
-                        rec["neighborhood"] = nb
-                        changed[key] = nb
+                    # A breakpoint carries whichever levels it was given. Small
+                    # towns get a city and no neighborhood; a city district gets
+                    # both. Only non-empty fields are written, so a run can
+                    # correct the city without disturbing neighborhoods.
+                    touched = False
+                    for field in ("city", "state", "neighborhood"):
+                        val = run.get(field)
+                        if not val:
+                            continue
+                        if rec.get(field) and not overwrite:
+                            continue
+                        if rec.get(field) != val:
+                            rec[field] = val
+                            changed.setdefault(key, {})[field] = val
+                            touched = True
+                    if touched:
                         setn += 1
+                    elif any(run.get(f) and rec.get(f) for f in ("city", "state", "neighborhood")):
+                        kept += 1
                 save_manifest(m)
             return self._send(200, {"set": setn, "kept": kept, "changed": changed})
         if path == "/api/dupes":

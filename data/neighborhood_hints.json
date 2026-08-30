@@ -1,5 +1,5 @@
 {
-  "_note": "Suggestions for the tagger's Neighborhoods mode. Each hint proposes a neighborhood starting at an IMG number and carries the evidence in the frame that produced it. These are NOT applied to any photo — the tagger shows them as dashed amber bands you accept or ignore. Neighborhoods remain Gautam's call.",
+  "_note": "Suggestions for the tagger's Neighborhoods mode. A hint proposes a run starting at an IMG number and carries the evidence in the frame that produced it. Hints are NEVER applied automatically — they render as dashed amber bands you accept or ignore. A hint may propose a city (small towns), a neighborhood (districts of a big city), or both. Placing a town in the neighborhood field would render 'Vicksburg, Mississippi Delta, MS' and deny it a place page, so towns are proposed as CITIES.",
   "shoots": {
     "new-england-2026-08-23": [
       {
@@ -31,6 +31,43 @@
         "from_img": 7644,
         "neighborhood": "Downtown",
         "evidence": "Hartford skyline frames dominated by the Travelers Tower, UnitedHealthcare and Infosys signage — downtown Hartford seen from the Coltsville side. Applies to the skyline shots, not the Colt-dome ones."
+      }
+    ],
+    "funky-south-2026-drop3": [
+      {
+        "from_img": 1407,
+        "neighborhood": "",
+        "city": "Jackson",
+        "state": "MS",
+        "evidence": "Your Jackson run already starts here. The 8 frames before it (1392–1405) are still city='Mississippi Delta' but carry your 'Belhaven' label — decide whether the run should start earlier or those 8 are something else."
+      },
+      {
+        "from_img": 1616,
+        "neighborhood": "",
+        "city": "Vicksburg",
+        "state": "MS",
+        "evidence": "Shoot leaves Jackson. Notes name Vicksburg from 1627 (LD's Kitchen at 1111 Mulberry St, the floodwall FLOOD MARKS gauge, the Riverfront Murals panels). 1616–1626 name no town — likely the approach, your call."
+      },
+      {
+        "from_img": 1704,
+        "neighborhood": "",
+        "city": "Port Gibson",
+        "state": "MS",
+        "evidence": "Notes name Port Gibson from here through 1818, with unnamed detail frames interleaved (1710–1716, 1764–1767) that sit inside the run."
+      },
+      {
+        "from_img": 1831,
+        "neighborhood": "",
+        "city": "Natchez",
+        "state": "MS",
+        "evidence": "Notes name Natchez 1831–1878. The gap before it (1819–1830) names no town — between Port Gibson and Natchez, your call."
+      },
+      {
+        "from_img": 1881,
+        "neighborhood": "",
+        "city": "Baton Rouge",
+        "state": "LA",
+        "evidence": "Already tagged Baton Rouge. Ends the shoot — worth an 'End run here' so no Mississippi run spills into Louisiana."
       }
     ]
   }
