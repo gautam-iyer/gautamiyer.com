@@ -172,10 +172,13 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .removing{opacity:0;transform:scale(.92);transition:opacity .25s,transform .25s}
  /* ---- Cull mode: mark-then-delete. Marking is reversible and does NOT
     affect the site; only "Delete marked" removes anything. ---- */
- .cullgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
- .cullcell{position:relative;border:2px solid #e4e4e7;border-radius:10px;overflow:hidden;cursor:pointer;background:#fff}
- .cullcell img{width:100%;height:190px;object-fit:cover;display:block}
- .cullcell .cap{font-size:11px;color:#52525b;padding:4px 7px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .cullgrid{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
+ .cullcell{position:relative;border:2px solid #e4e4e7;border-radius:10px;overflow:hidden;cursor:pointer;background:#fff;flex:0 0 auto}
+ :root{--cullh:230px}
+ .cullcell img{height:var(--cullh);width:auto;display:block;background:#f4f4f5}
+ /* width:0 + min-width:100% keeps a long caption from widening the card —
+    the image alone decides the cell width, so shape stays truthful. */
+ .cullcell .cap{font-size:11px;color:#52525b;padding:4px 7px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:0;min-width:100%;box-sizing:border-box}
  .cullcell.marked{border-color:#dc2626}
  .cullcell.marked img{opacity:.45;filter:grayscale(.7)}
  .cullcell.cursor{outline:3px solid #2563eb;outline-offset:-3px}
@@ -676,7 +679,7 @@ function renderCull(){
     </div>
     <div class="cullgrid">`+slice.map((key,i)=>{const p=PHOTOS[key];
       return `<div class="cullcell${p.cull?' marked':''}" data-key="${esc(key)}" onclick="toggleCull('${jesc(key)}')">
-        <span class="xmark">✕</span><img loading="lazy" src="/img/${p.thumb}">
+        <span class="xmark">✕</span><img loading="lazy" src="/img/${p.thumb}" style="aspect-ratio:${(p.width||3)}/${(p.height||2)}">
         <div class="cap">${esc(p.city||'—')} · ${esc(p.neighborhood||'')} #${p.img_no}</div></div>`;}).join('')
     +`</div>`+pager(page,pages,all.length);
   $('#c-shoot').onchange=e=>{cullFilter.shoot=e.target.value;page=0;render();};
@@ -909,14 +912,27 @@ document.addEventListener('keydown',e=>{
   if(/^(INPUT|SELECT|TEXTAREA)$/.test((e.target.tagName||'')))return;
   const cells=[...document.querySelectorAll('.cullcell')];
   if(!cells.length)return;
-  const style=getComputedStyle(document.querySelector('.cullgrid'));
-  const cols=Math.max(1,style.gridTemplateColumns.split(' ').length);
+  // Cells are variable-width now, so a row isn't a fixed column count — group by
+  // vertical position and step to the neighbour nearest the current x-centre.
+  const box=c=>c.getBoundingClientRect();
+  const rowOf=c=>Math.round(box(c).top);
+  const rows=[...new Set(cells.map(rowOf))].sort((a,b)=>a-b);
+  const vstep=(dir)=>{
+    const cur=cells[cullCursor], r=rows.indexOf(rowOf(cur)), tgt=rows[r+dir];
+    if(tgt===undefined)return cullCursor;
+    const cx=box(cur).left+box(cur).width/2;
+    let best=cullCursor, bd=Infinity;
+    cells.forEach((c,j)=>{ if(rowOf(c)!==tgt)return;
+      const d=Math.abs(box(c).left+box(c).width/2-cx);
+      if(d<bd){bd=d;best=j;} });
+    return best;
+  };
   let i=cullCursor, handled=true;
   switch(e.key){
     case 'ArrowRight': case 'l': i++; break;
     case 'ArrowLeft':  case 'h': i--; break;
-    case 'ArrowDown':  case 'j': i+=cols; break;
-    case 'ArrowUp':    case 'k': i-=cols; break;
+    case 'ArrowDown':  case 'j': i=vstep(1); break;
+    case 'ArrowUp':    case 'k': i=vstep(-1); break;
     case 'x': case 'X': case ' ':
       toggleCull(cells[cullCursor].dataset.key); break;
     case 'Enter':

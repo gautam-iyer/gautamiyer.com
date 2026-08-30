@@ -210,40 +210,6 @@
     "state": "NY",
     "camera": "EOS R8"
   },
-  "BK + Broad Channel Feb '26/Edited/IMG_0818.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0818.jpg",
-    "file": "IMG_0818.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 818,
-    "width": 4000,
-    "height": 6000,
-    "neighborhood": "Williamsburg",
-    "land_use": [
-      "Commercial"
-    ],
-    "architecture": [
-      "Industrial"
-    ],
-    "subject": [
-      "Detail",
-      "Murals"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Faded ghost-sign and graffiti on a distressed stucco/brick wall with two sticker-covered utility boxes and artificial flowers, snow at the base of the alley.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0818.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0818.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0818.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
   "BK + Broad Channel Feb '26/Edited/IMG_0820.jpg": {
     "key": "BK + Broad Channel Feb '26/Edited/IMG_0820.jpg",
     "file": "IMG_0820.jpg",
@@ -275,80 +241,10 @@
     "display_avif": "bk-broad-channel-2026/img_0820.display.avif",
     "display_webp": "bk-broad-channel-2026/img_0820.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0824.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0824.jpg",
-    "file": "IMG_0824.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 824,
-    "width": 3971,
-    "height": 5956,
-    "neighborhood": "Williamsburg",
-    "land_use": [
-      "Residential",
-      "Infrastructure"
-    ],
-    "architecture": [
-      "Skyscraper"
-    ],
-    "subject": [
-      "Streetscape",
-      "Skyline"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Bare winter trees and a traffic-sensor pole framing a distant brick high-rise tower, fire escape and elevated-line structure at right; wrought-iron fence in the foreground.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0824.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0824.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0824.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0827.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0827.jpg",
-    "file": "IMG_0827.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 827,
-    "width": 6000,
-    "height": 4000,
-    "neighborhood": "Williamsburg",
-    "land_use": [
-      "Commercial"
-    ],
-    "architecture": [
-      "Beaux-Arts / Neoclassical",
-      "Commercial Vernacular"
-    ],
-    "subject": [
-      "Façade",
-      "Detail",
-      "Signage"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Upper-story facades behind sidewalk scaffolding, with a red 'STORE' banner and dark 'Income Tax' / 'Del Valle' awnings; ornate carved cornice on the pale building at right.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0827.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0827.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0827.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
+    "camera": "EOS R8",
+    "cull": false
   },
   "BK + Broad Channel Feb '26/Edited/IMG_0832.jpg": {
     "key": "BK + Broad Channel Feb '26/Edited/IMG_0832.jpg",
@@ -381,183 +277,6 @@
     "thumb": "bk-broad-channel-2026/img_0832.thumb.webp",
     "display_avif": "bk-broad-channel-2026/img_0832.display.avif",
     "display_webp": "bk-broad-channel-2026/img_0832.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0837.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0837.jpg",
-    "file": "IMG_0837.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 837,
-    "width": 3539,
-    "height": 5308,
-    "neighborhood": "Williamsburg",
-    "land_use": [
-      "Religious",
-      "Infrastructure"
-    ],
-    "architecture": [
-      "Religious",
-      "Beaux-Arts / Neoclassical"
-    ],
-    "subject": [
-      "Skyline",
-      "Streetscape",
-      "Infrastructure"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Copper church dome rising behind an elevated subway line and street lamps, with One World Trade Center visible on the far horizon; parked cars and plowed snow. Williamsburg, Brooklyn looking toward Lower Manhattan.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0837.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0837.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0837.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0839.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0839.jpg",
-    "file": "IMG_0839.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 839,
-    "width": 3995,
-    "height": 5993,
-    "neighborhood": "Williamsburg",
-    "land_use": [
-      "Residential",
-      "Commercial"
-    ],
-    "architecture": [
-      "Commercial Vernacular",
-      "Rowhouse"
-    ],
-    "subject": [
-      "Streetscape"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Snow-choked street of parked cars under scaffolding, with 'Goldberger's Grocery' storefront and a green 'Division Ave' street sign against red-brick walk-ups. Williamsburg/South Williamsburg, Brooklyn.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0839.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0839.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0839.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0841.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0841.jpg",
-    "file": "IMG_0841.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 841,
-    "width": 3637,
-    "height": 5455,
-    "neighborhood": "Williamsburg",
-    "land_use": [
-      "Residential",
-      "Park"
-    ],
-    "architecture": [
-      "Skyscraper"
-    ],
-    "subject": [
-      "Streetscape",
-      "Landscape"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Tan-brick housing-project towers seen through bare sycamore trees above a fenced playground with a colorful play structure; superblock public housing.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0841.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0841.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0841.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0850.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0850.jpg",
-    "file": "IMG_0850.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 850,
-    "width": 3979,
-    "height": 5969,
-    "neighborhood": "Williamsburg",
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "Modern"
-    ],
-    "subject": [
-      "Façade",
-      "Detail"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Blank tan-brick side wall of a mid-rise apartment building with graffiti tag, adjoining an older stucco tenement with a rusted fire escape; red-painted brick wall in the foreground.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0850.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0850.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0850.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0863.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0863.jpg",
-    "file": "IMG_0863.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 863,
-    "width": 6000,
-    "height": 4000,
-    "neighborhood": "Williamsburg",
-    "land_use": [
-      "Industrial",
-      "Infrastructure"
-    ],
-    "architecture": [
-      "Industrial"
-    ],
-    "subject": [
-      "Streetscape",
-      "Detail",
-      "Signage"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Graffiti-covered industrial lot beside an elevated line, with a faded ghost-sign ('Tinsmiths... Factories') on a brick warehouse, roll-down gate and stacked wood pallets in snow.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0863.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0863.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0863.display.webp",
     "tagged": true,
     "reviewed": false,
     "state": "NY",
@@ -599,42 +318,6 @@
     "state": "NY",
     "camera": "EOS R8"
   },
-  "BK + Broad Channel Feb '26/Edited/IMG_0871.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0871.jpg",
-    "file": "IMG_0871.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 871,
-    "width": 5837,
-    "height": 3891,
-    "neighborhood": "Williamsburg",
-    "land_use": [
-      "Residential",
-      "Infrastructure"
-    ],
-    "architecture": [
-      "Skyscraper",
-      "Modern"
-    ],
-    "subject": [
-      "Skyline",
-      "Infrastructure"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "View from an elevated subway platform of tall red-brick apartment towers-in-the-park with an M/J train approaching on the curving tracks; likely the Lower East Side co-op superblocks across the Williamsburg Bridge in Manhattan.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0871.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0871.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0871.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
   "BK + Broad Channel Feb '26/Edited/IMG_0873.jpg": {
     "key": "BK + Broad Channel Feb '26/Edited/IMG_0873.jpg",
     "file": "IMG_0873.jpg",
@@ -671,113 +354,6 @@
     "state": "NY",
     "camera": "EOS R8"
   },
-  "BK + Broad Channel Feb '26/Edited/IMG_0874.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0874.jpg",
-    "file": "IMG_0874.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 874,
-    "width": 5806,
-    "height": 3871,
-    "neighborhood": "Williamsburg",
-    "land_use": [
-      "Residential",
-      "Infrastructure"
-    ],
-    "architecture": [
-      "Skyscraper",
-      "Gothic Revival"
-    ],
-    "subject": [
-      "Skyline",
-      "Infrastructure"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Elevated tracks curving toward brick apartment towers with a Gothic Revival church spire at left and a green signal ('J1 174') in the foreground; likely the Lower East Side, Manhattan seen from the J/M/Z line.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0874.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0874.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0874.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0878.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0878.jpg",
-    "file": "IMG_0878.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 878,
-    "width": 5752,
-    "height": 3835,
-    "neighborhood": "Williamsburg",
-    "land_use": [
-      "Infrastructure",
-      "Commercial"
-    ],
-    "architecture": [
-      "Beaux-Arts / Neoclassical",
-      "Commercial Vernacular"
-    ],
-    "subject": [
-      "Infrastructure",
-      "Façade",
-      "People"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Hewes Street elevated station platform with a lone waiting passenger, backed by an ornate white terra-cotta/Corinthian-detailed commercial building topped with satellite dishes. Williamsburg, Brooklyn (J/M line).",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0878.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0878.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0878.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0881.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0881.jpg",
-    "file": "IMG_0881.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 881,
-    "width": 3936,
-    "height": 5904,
-    "neighborhood": "Bedford-Stuyvesant",
-    "land_use": [
-      "Infrastructure"
-    ],
-    "architecture": [
-      "Industrial"
-    ],
-    "subject": [
-      "Infrastructure",
-      "Detail"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Close study of the rusted riveted steel bents and columns of the elevated subway viaduct receding down the avenue, with graffiti and conduit; distant tower on the horizon. Broadway elevated, Brooklyn.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0881.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0881.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0881.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
   "BK + Broad Channel Feb '26/Edited/IMG_0882.jpg": {
     "key": "BK + Broad Channel Feb '26/Edited/IMG_0882.jpg",
     "file": "IMG_0882.jpg",
@@ -809,41 +385,6 @@
     "thumb": "bk-broad-channel-2026/img_0882.thumb.webp",
     "display_avif": "bk-broad-channel-2026/img_0882.display.avif",
     "display_webp": "bk-broad-channel-2026/img_0882.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0884.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0884.jpg",
-    "file": "IMG_0884.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 884,
-    "width": 6000,
-    "height": 4000,
-    "neighborhood": "Bedford-Stuyvesant",
-    "land_use": [
-      "Infrastructure"
-    ],
-    "architecture": [
-      "NA"
-    ],
-    "subject": [
-      "Interior",
-      "People",
-      "Streetscape"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Interior of a moving subway car seen through the stainless-steel doorway, seated riders in winter coats, with the elevated street and buildings visible through the far window.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0884.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0884.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0884.display.webp",
     "tagged": true,
     "reviewed": false,
     "state": "NY",
@@ -921,42 +462,6 @@
     "state": "NY",
     "camera": "EOS R8"
   },
-  "BK + Broad Channel Feb '26/Edited/IMG_0892.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0892.jpg",
-    "file": "IMG_0892.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 892,
-    "width": 3477,
-    "height": 5216,
-    "neighborhood": "Bedford-Stuyvesant",
-    "land_use": [
-      "Institutional",
-      "Residential"
-    ],
-    "architecture": [
-      "Gothic Revival",
-      "Other"
-    ],
-    "subject": [
-      "Façade",
-      "Skyline"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Upward view of a masonry institutional building with a stone cross finial and window-mounted AC units, with a taller brick apartment tower and brick chimney behind against a clear sky.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0892.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0892.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0892.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
   "BK + Broad Channel Feb '26/Edited/IMG_0897.jpg": {
     "key": "BK + Broad Channel Feb '26/Edited/IMG_0897.jpg",
     "file": "IMG_0897.jpg",
@@ -993,42 +498,6 @@
     "state": "NY",
     "camera": "EOS R8"
   },
-  "BK + Broad Channel Feb '26/Edited/IMG_0899.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0899.jpg",
-    "file": "IMG_0899.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 899,
-    "width": 3889,
-    "height": 5833,
-    "neighborhood": "Bedford-Stuyvesant",
-    "land_use": [
-      "Residential",
-      "Institutional"
-    ],
-    "architecture": [
-      "Modern",
-      "Italianate"
-    ],
-    "subject": [
-      "Streetscape",
-      "Façade"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Street corner with a tall midcentury brick apartment slab and a dark modern tower behind, over a low 19th-century Italianate brick building housing a charter school; parked cars in foreground.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0899.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0899.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0899.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
   "BK + Broad Channel Feb '26/Edited/IMG_0903.jpg": {
     "key": "BK + Broad Channel Feb '26/Edited/IMG_0903.jpg",
     "file": "IMG_0903.jpg",
@@ -1060,76 +529,6 @@
     "thumb": "bk-broad-channel-2026/img_0903.thumb.webp",
     "display_avif": "bk-broad-channel-2026/img_0903.display.avif",
     "display_webp": "bk-broad-channel-2026/img_0903.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0904.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0904.jpg",
-    "file": "IMG_0904.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 904,
-    "width": 3976,
-    "height": 5964,
-    "neighborhood": "Bedford-Stuyvesant",
-    "land_use": [
-      "Residential",
-      "Civic"
-    ],
-    "architecture": [
-      "Modern",
-      "NA"
-    ],
-    "subject": [
-      "Signage",
-      "Streetscape"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Wider view of the red 'Eleanor Roosevelt Houses' NYCHA sign under a bare tree, with the brick public-housing block filling the background and snow on the ground.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0904.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0904.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0904.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0907.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0907.jpg",
-    "file": "IMG_0907.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 907,
-    "width": 5572,
-    "height": 3715,
-    "neighborhood": "Bedford-Stuyvesant",
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "Modern",
-      "NA"
-    ],
-    "subject": [
-      "Streetscape"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Brick NYCHA-style public-housing towers around a parking area with cars and a locked bicycle; bird in flight over a clear blue sky, snow piles at curb.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0907.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0907.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0907.display.webp",
     "tagged": true,
     "reviewed": false,
     "state": "NY",
@@ -1242,42 +641,6 @@
     "state": "NY",
     "camera": "EOS R8"
   },
-  "BK + Broad Channel Feb '26/Edited/IMG_0915.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0915.jpg",
-    "file": "IMG_0915.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 915,
-    "width": 3993,
-    "height": 5990,
-    "neighborhood": "Bedford-Stuyvesant",
-    "land_use": [
-      "Commercial",
-      "Residential"
-    ],
-    "architecture": [
-      "Italianate",
-      "Rowhouse"
-    ],
-    "subject": [
-      "Façade",
-      "Streetscape"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Corner flatiron-shaped brick building at Greene Ave with 'Nancy Food Deli / Los Cuernitos' ground-floor bodega, bracketed cornice, bay windows and iron fire escapes.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0915.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0915.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0915.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
   "BK + Broad Channel Feb '26/Edited/IMG_0916.jpg": {
     "key": "BK + Broad Channel Feb '26/Edited/IMG_0916.jpg",
     "file": "IMG_0916.jpg",
@@ -1381,41 +744,6 @@
     "thumb": "bk-broad-channel-2026/img_0924.thumb.webp",
     "display_avif": "bk-broad-channel-2026/img_0924.display.avif",
     "display_webp": "bk-broad-channel-2026/img_0924.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": "EOS R8"
-  },
-  "BK + Broad Channel Feb '26/Edited/IMG_0931.jpg": {
-    "key": "BK + Broad Channel Feb '26/Edited/IMG_0931.jpg",
-    "file": "IMG_0931.jpg",
-    "shoot": "bk-broad-channel-2026",
-    "city": "Brooklyn",
-    "date": "2026-02-01",
-    "img_no": 931,
-    "width": 3919,
-    "height": 5879,
-    "neighborhood": "Bedford-Stuyvesant",
-    "land_use": [
-      "Religious"
-    ],
-    "architecture": [
-      "Romanesque",
-      "Religious"
-    ],
-    "subject": [
-      "Detail",
-      "Façade"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Detail of a golden-lit church corner with a Romanesque arcaded porch of columns with carved capitals, a slate roof and stained-glass lancet window, iron fence and dirty snow pile below.",
-    "collections": [],
-    "thumb": "bk-broad-channel-2026/img_0931.thumb.webp",
-    "display_avif": "bk-broad-channel-2026/img_0931.display.avif",
-    "display_webp": "bk-broad-channel-2026/img_0931.display.webp",
     "tagged": true,
     "reviewed": false,
     "state": "NY",
