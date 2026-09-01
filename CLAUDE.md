@@ -7,9 +7,15 @@ Hugo static site (personal site + photography portfolio). Live at https://gautam
 - CSS/JS are **fingerprinted** via Hugo's asset pipeline (`assets/css`, `assets/js` → `resources.Get | minify | fingerprint`). URLs are content-hashed, so deploys cache-bust automatically — **no hard-refresh needed**. Never link `/css` or `/js` directly; use the `asset-js.html` partial (JS) or the head block (CSS).
 
 ## Photo pipeline (`scripts/photos/`)
-- `pipeline.py` — manifest brain, keyed by relative path, idempotent, never clobbers `reviewed:true`. Subcommands: `scan [--shoot]`, `derive`, `tag-apply`, `neighborhoods`, `contact-sheet`, `prune`, `status`; global `--manifest` for staging. Add a shoot to the `SHOOTS` list, then scan→derive→tag→neighborhoods→`r2_upload.sh`→deploy.
-- `tagger.py` — local review/curation app (localhost:8800); autosaves to `data/photos.json` + `data/collections.json`, sets `reviewed:true`. Modes: Tag / Collections / Edit members / **Duplicates** (reviews `data/duplicates.json` groups: keep-only-one, per-frame delete, dismiss).
-- `dupes.py` — near-duplicate detection (dHash+aHash on thumbs; burst-window within shoot + strict cross-shoot) → `data/duplicates.json`. Re-run after ingests; preserves prior review state.
+- `pipeline.py` — manifest brain, keyed by relative path, idempotent, never clobbers `reviewed:true`. Subcommands: `scan [--shoot]`, `derive`, `tag-apply`, `neighborhoods [--overwrite]`, `contact-sheet`, `prune`, `status`; global `--manifest` for staging. Add a shoot to the `SHOOTS` list, then scan → **add it to the `staging` collection** → derive → tag → neighborhoods → `r2_upload.sh` → **`status`** → deploy.
+  - `neighborhoods` protects an EXISTING neighborhood (not `reviewed`, which the tagger sets on every save and which used to make this a no-op on the most-curated photos); `--overwrite` replaces.
+  - `scan` also **prunes** deny-listed records from the manifest, and `status` warns loudly if any are present. **Run `status` before every deploy.**
+- `tagger.py` — local review/curation app (localhost:8800); autosaves to `data/photos.json` + `data/collections.json`, sets `reviewed:true`. **Mode lives in the URL hash — `#tag #colls #dupes #cull #nbhd` — so a view is bookmarkable.**
+  - **Tag / Collections / Edit members** — chips, geo, ★hero/⚑cover; collection rename, multi-place, Featured+Order, Collage + **Home rank**, caption, archive; ▦ per-photo collage curation.
+  - **Duplicates** — `data/duplicates.json` groups: keep-only-one, per-frame delete, dismiss, QA verdict chips.
+  - **Cull** — mark-then-delete. `photo.cull` is a reversible mark with NO site effect; review `Show: marked only`, then delete the batch. Arrows move, `X`/space marks, `Enter` opens full size. Thumbnails render at true aspect (uniform height, width from the manifest) so shape is judgeable; cell height = `--cullh`.
+  - **Neighborhoods** — walk a shoot in IMG order dropping **runs**. A run owns every frame to the next breakpoint and sets `city`/`state`/`neighborhood` in any combination (a small town gets a CITY and no neighborhood — a town in the neighborhood field would render "Vicksburg, Mississippi Delta, MS" and deny it a place page). `{"end":true}` markers stop a run, and on overwrite clear the neighborhood in their region — **without one, the last run spills into the next town.** Nothing touches a photo until **Apply**. `/api/neighborhood/breaks` REPLACES a shoot's whole entry — snapshot the file before POSTing.
+- `dupes.py` — near-duplicate detection (dHash+aHash on thumbs; burst-window within shoot + strict cross-shoot) → `data/duplicates.json`. Re-run after ingests. It carries `status` **and** `verdict`/`verdict_note` forward by member set, and KEEPS reviewed groups it no longer detects (flagged `carried`) — hand-merged groups aren't reproducible by any re-run. It previously kept only `status`, so a re-run silently destroyed 120 QA verdicts and 46 hand-merged film groups.
 - Derivatives live in `.photo-build/` (gitignored); after R2 upload run `pipeline.py prune` (keeps thumbs).
 
 ## Camera provenance & priority
@@ -19,7 +25,18 @@ Hugo static site (personal site + photography portfolio). Live at https://gautam
 ## Data
 - `data/photos.json` — per-photo manifest. Tag dims land_use/architecture/subject/tone are **arrays** (multi-select); neighborhood/city/medium single. Tier paths are relative to the derivatives root; templates prepend `photo_base`.
 - `data/taxonomy.json` — **single source of truth** for tag dimensions/values (drives tagger + gallery filters). Edit here to add a category.
-- `data/collections.json` — collection registry `{slug,title,place,featured,order,color,type,...}`. Membership is per-photo in `photos.json` (`collections:[]`).
+- `data/collections.json` — collection registry `{slug,title,place,places[],featured,order,color,type,caption,hidden,archived,collage,collage_rank,withheld}`. Membership is per-photo in `photos.json` (`collections:[]`).
+  - **`hidden`** keeps the COLLECTION off the index; its photos still publish (e.g. `home-hero`). **`withheld`** is the opposite and much stronger — its PHOTOS render nowhere. **`archived`** removes it from the site but keeps membership.
+  - `featured` no longer affects the home page (home v2 dropped the carousels); it only tints collection-page accents. **`collage` + `collage_rank` are what drive the home walls** — rank 1 = most likely, weight `0.75^(rank-1)`, unranked one tier below the last ranked.
+- `deleted-photos.jsonl` — **at the REPO ROOT, not `data/`** (Hugo parses everything under `data/` and dies on JSONL). Append-only log of deletions, and the **authoritative deny-list**: a key in here must never be in the manifest, however it got there. `scan` prunes them; `status` reports them.
+- `data/neighborhood_breaks.json` — per-shoot runs from the tagger's Neighborhoods mode. Source of truth for runs; applied to the manifest only on **Apply**.
+- `data/neighborhood_hints.json` — evidence-backed neighborhood suggestions shown as amber bands. **Never auto-applied.** Neighborhoods are Gautam's call, not a vision guess.
+
+## The publish gate (read before touching the manifest)
+**`data/photos.json` IS the publish list.** There is no `tagged`/`reviewed` filter anywhere in the build — every record with a `thumb` renders on `/photos`, on its place album, and can become a place cover. Two consequences that have both bitten in production:
+- To hold photos back, they must be in a collection marked **`withheld`** in the registry (`staging` for in-flight ingests, `needs-review` for QA-flagged frames). Holding back a *commit* does nothing if the records are in an ancestor — 1,556 un-QA'd photos published that way in July.
+- A **deleted** photo sitting in the manifest is a photo on the site. 19 deleted frames were resurrected by a scan and went live in August. `pipeline.py status` exists to catch exactly this; run it before every deploy.
+The gate is defined once in `layouts/partials/withheld.html` and mirrored in `build_index.py` (and inlined in `content/places/_content.gotmpl`, which is a content adapter and has no partials).
 
 ## Templates / front-end
 - `partials/collitems.html` — returns a collection's photos as lightbox-ready dicts; **always call via `partialCached … $slug`** (dedupes + speeds the build). Use it instead of re-scanning `hugo.Data.photos`.
@@ -41,3 +58,10 @@ Hugo static site (personal site + photography portfolio). Live at https://gautam
 - Embed JSON for JS as `{{ $m | jsonify | safeJS }}` inline — the **minifier double-encodes** `<script type="application/json">`.
 - Vision taggers emit `"Facade"` (no cedilla) — normalize to `"Façade"` after a tagging pass.
 - Use `hugo.Data`, not deprecated `.Site.Data`.
+- **Never put non-Hugo-parseable files under `data/`** — Hugo loads everything in there and a stray `.jsonl` kills the build.
+- A manifest record with tier paths but **no derivatives usually means DELETED, not un-derived** — check the deny-list before re-deriving anything.
+- `scripts/deploy.sh` **exits without pushing if the tree is clean.** If you've already committed, run the preflight (`build_index.py` + `rm -rf public && hugo --gc --minify`) and `git push origin main` yourself.
+- `hugo` does **not** clean `public/` — stale directories from earlier builds survive and mislead. `rm -rf public` before inspecting what actually builds.
+- No `404.html` in the build → Cloudflare Pages serves the **homepage with HTTP 200** for any unknown URL. Check `ls public/<path>`, never the live status code.
+- `gh`'s active account drifts back to `gautam175` → push 403. Fix: `gh auth switch --user gautam-iyer && gh auth setup-git`.
+- macOS `xargs -I{} bash -c '<long script>'` dies with "command line cannot be assembled"; use a helper script. And `xargs -n1` splits on whitespace — some derivative filenames contain spaces, so pipe `tr '\n' '\0' | xargs -0`.
