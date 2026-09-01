@@ -292,6 +292,24 @@ MULTI_FIELDS = ["land_use", "architecture", "subject", "tone"]
 
 # ---------- manifest io ----------
 
+DENYLIST = REPO / "deleted-photos.jsonl"
+
+
+def deleted_keys():
+    """Keys the human has deleted. The deny-list is AUTHORITATIVE: a key in here
+    must never be in the manifest, however it got there."""
+    out = set()
+    if DENYLIST.exists():
+        for line in DENYLIST.read_text().splitlines():
+            line = line.strip()
+            if line:
+                try:
+                    out.add(json.loads(line)["key"])
+                except Exception:
+                    pass
+    return out
+
+
 def load_manifest():
     if MANIFEST.exists():
         return json.loads(MANIFEST.read_text())
@@ -398,18 +416,19 @@ def resize_to(src, dst, longest_edge):
 def cmd_scan(args):
     m = load_manifest()
     added = 0
-    # Deny-list: photos deleted via the tagger (data/deleted-photos.jsonl) must
-    # not be re-added on a re-scan, even though the source JPEG still exists.
-    deleted = set()
-    dlog = REPO / "deleted-photos.jsonl"
-    if dlog.exists():
-        for line in dlog.read_text().splitlines():
-            line = line.strip()
-            if line:
-                try:
-                    deleted.add(json.loads(line)["key"])
-                except Exception:
-                    pass
+    # Deny-list: photos deleted via the tagger must not be re-added on a re-scan,
+    # even though the source JPEG still exists.
+    deleted = deleted_keys()
+    # ...and any that DID get back in are removed now. Skipping on add was not
+    # enough once: 19 photos deleted 2026-07-16 were resurrected by a scan while
+    # the deny-list was moving from data/ to the repo root, and stayed in the
+    # manifest until they published.
+    resurrected = [k for k in m if k in deleted]
+    for k in resurrected:
+        del m[k]
+    if resurrected:
+        print(f"scan: removed {len(resurrected)} deny-listed records that were back "
+              f"in the manifest ({resurrected[0]}{'...' if len(resurrected) > 1 else ''})")
     shoots = [s for s in SHOOTS if (not args.shoot or s["slug"] == args.shoot)]
     for shoot in shoots:
         folder = PHOTOS_ROOT / shoot["folder"]
@@ -630,6 +649,16 @@ def cmd_status(args):
     print(f"tagged:       {tagged}")
     print(f"neighborhood: {hood}")
     print(f"reviewed:     {reviewed}")
+    # The manifest is the publish list, so a deleted photo sitting in it is
+    # live on the site. Surface that loudly rather than waiting for a scan.
+    back = sorted(k for k in m if k in deleted_keys())
+    if back:
+        print(f"\n!! {len(back)} DELETED photos are back in the manifest — they will publish.")
+        for k in back[:10]:
+            print(f"     {k}")
+        if len(back) > 10:
+            print(f"     ...and {len(back) - 10} more")
+        print("   Run `pipeline.py scan` to remove them (the deny-list wins).")
 
 
 def cmd_prune(args):

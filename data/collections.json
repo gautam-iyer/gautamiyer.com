@@ -45,7 +45,7 @@
       "color": "#a8842c",
       "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
       "collage": true,
-      "collage_rank": 3
+      "collage_rank": 2
     },
     {
       "slug": "churches-of-pittsburgh",
@@ -223,7 +223,8 @@
       "type": "curated",
       "place": "Durham",
       "caption": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.",
-      "collage": true
+      "collage": true,
+      "collage_rank": 3
     },
     {
       "slug": "beaux-arts-durham",
@@ -285,7 +286,8 @@
       "type": "curated",
       "place": "New York",
       "caption": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.",
-      "collage": true
+      "collage": true,
+      "collage_rank": 5
     },
     {
       "slug": "art-deco-fidi",
@@ -348,7 +350,8 @@
       "order": 5,
       "type": "curated",
       "place": "San Antonio",
-      "collage": true
+      "collage": true,
+      "collage_rank": 4
     },
     {
       "slug": "temples-of-newark",
@@ -410,6 +413,18 @@
       "place": null,
       "hidden": true,
       "withheld": true
+    },
+    {
+      "slug": "mcknight",
+      "title": "McKnight",
+      "description": "",
+      "featured": true,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Springfield",
+      "collage": true,
+      "collage_rank": 1
     }
   ]
 }
