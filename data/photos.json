@@ -22172,9 +22172,10 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-00-36.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-00-36.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 180
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-01-35.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-01-35.JPG",
@@ -22242,9 +22243,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-02-34.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-02-34.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 0,
+    "flip": "v",
+    "derived_at": 1788622256
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-03-33.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-03-33.JPG",
@@ -22253,8 +22257,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Infrastructure",
@@ -22277,9 +22281,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-03-33.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-03-33.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788622263
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-04-32.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-04-32.JPG",
@@ -22288,8 +22295,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Infrastructure",
@@ -22312,9 +22319,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-04-32.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-04-32.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788622265
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-05-31.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-05-31.JPG",
@@ -22323,8 +22333,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Infrastructure",
@@ -22347,9 +22357,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-05-31.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-05-31.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788622268
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-06-30.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-06-30.JPG",
@@ -22358,8 +22371,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Institutional",
@@ -22383,9 +22396,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-06-30.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-06-30.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788622270
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-07-29.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-07-29.JPG",
@@ -22394,8 +22410,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Civic",
@@ -22419,9 +22435,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-07-29.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-07-29.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788623712
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-08-28.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-08-28.JPG",
@@ -22454,9 +22473,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-08-28.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-08-28.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 0,
+    "flip": "v",
+    "derived_at": 1788623718
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-09-27.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-09-27.JPG",
@@ -22489,9 +22511,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-09-27.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-09-27.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 0,
+    "flip": "v",
+    "derived_at": 1788623722
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-10-26.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-10-26.JPG",
@@ -22500,8 +22525,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Institutional",
@@ -22525,9 +22550,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-10-26.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-10-26.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788623780
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-11-25.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-11-25.JPG",
@@ -22559,9 +22587,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-11-25.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-11-25.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 0,
+    "flip": "v",
+    "derived_at": 1788623786
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-12-24.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-12-24.JPG",
@@ -22594,9 +22625,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-12-24.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-12-24.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 0,
+    "flip": "v",
+    "derived_at": 1788623791
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-13-23.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-13-23.JPG",
@@ -22605,8 +22639,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Infrastructure",
@@ -22630,9 +22664,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-13-23.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-13-23.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788623794
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-14-22.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-14-22.JPG",
@@ -22661,14 +22698,19 @@
       "Color"
     ],
     "tag_notes": "Rows of Buffalo's concrete grain elevators / silos along the waterfront, with steel headhouse structure and faded painted lettering, weathered and disused.",
-    "collections": [],
+    "collections": [
+      "grain-siloes-of-buffalo"
+    ],
     "thumb": "buffalo-2026-film1/iyer5883-r1-14-22.thumb.webp",
     "display_avif": "buffalo-2026-film1/iyer5883-r1-14-22.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-14-22.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 0,
+    "flip": "v",
+    "derived_at": 1788623798
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-15-21.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-15-21.JPG",
@@ -22677,8 +22719,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Industrial",
@@ -22696,14 +22738,19 @@
       "Color"
     ],
     "tag_notes": "Buffalo grain elevators seen across a field of dry winter reeds with a deer in the foreground; rusted steel and stained concrete silos of the abandoned complex.",
-    "collections": [],
+    "collections": [
+      "grain-siloes-of-buffalo"
+    ],
     "thumb": "buffalo-2026-film1/iyer5883-r1-15-21.thumb.webp",
     "display_avif": "buffalo-2026-film1/iyer5883-r1-15-21.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-15-21.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "h",
+    "derived_at": 1788623806
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-16-20.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-16-20.JPG",
@@ -22712,8 +22759,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Industrial",
@@ -22731,14 +22778,19 @@
       "Color"
     ],
     "tag_notes": "Abandoned Buffalo grain elevator complex with concrete silos and rusted steel conveyor galleries, a deer standing in the dry grass in front.",
-    "collections": [],
+    "collections": [
+      "grain-siloes-of-buffalo"
+    ],
     "thumb": "buffalo-2026-film1/iyer5883-r1-16-20.thumb.webp",
     "display_avif": "buffalo-2026-film1/iyer5883-r1-16-20.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-16-20.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788623806
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-17-19.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-17-19.JPG",
@@ -22771,9 +22823,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-17-19.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-17-19.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 0,
+    "flip": "v",
+    "derived_at": 1788623810
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-18-18.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-18-18.JPG",
@@ -22801,14 +22856,19 @@
       "Color"
     ],
     "tag_notes": "Buffalo grain elevators behind a bare tree and snowy scrubland, weathered concrete silos with steel structure receding along the waterfront.",
-    "collections": [],
+    "collections": [
+      "grain-siloes-of-buffalo"
+    ],
     "thumb": "buffalo-2026-film1/iyer5883-r1-18-18.thumb.webp",
     "display_avif": "buffalo-2026-film1/iyer5883-r1-18-18.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-18-18.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 0,
+    "flip": "v",
+    "derived_at": 1788623812
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-19-17.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-19-17.JPG",
@@ -22836,14 +22896,19 @@
       "Color"
     ],
     "tag_notes": "Distant Buffalo grain elevators and dockside industrial structures across a snowy expanse under an overcast sky.",
-    "collections": [],
+    "collections": [
+      "grain-siloes-of-buffalo"
+    ],
     "thumb": "buffalo-2026-film1/iyer5883-r1-19-17.thumb.webp",
     "display_avif": "buffalo-2026-film1/iyer5883-r1-19-17.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-19-17.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 0,
+    "flip": "v",
+    "derived_at": 1788623815
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-20-16.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-20-16.JPG",
@@ -22852,8 +22917,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Industrial",
@@ -22871,14 +22936,19 @@
       "Color"
     ],
     "tag_notes": "Buffalo grain elevators and steel loading gantries seen across snow-covered ground under a flat gray winter sky.",
-    "collections": [],
+    "collections": [
+      "grain-siloes-of-buffalo"
+    ],
     "thumb": "buffalo-2026-film1/iyer5883-r1-20-16.thumb.webp",
     "display_avif": "buffalo-2026-film1/iyer5883-r1-20-16.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-20-16.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "v",
+    "derived_at": 1788623826
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-21-15.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-21-15.JPG",
@@ -22887,8 +22957,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Industrial",
@@ -22906,14 +22976,19 @@
       "Color"
     ],
     "tag_notes": "Concrete grain elevators with a steel headhouse tower beside a snowy railroad or roadway corridor, overhead wires crossing the gray sky.",
-    "collections": [],
+    "collections": [
+      "grain-siloes-of-buffalo"
+    ],
     "thumb": "buffalo-2026-film1/iyer5883-r1-21-15.thumb.webp",
     "display_avif": "buffalo-2026-film1/iyer5883-r1-21-15.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-21-15.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788623821
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-22-14.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-22-14.JPG",
@@ -22941,14 +23016,19 @@
       "Color"
     ],
     "tag_notes": "Rows of Buffalo's cylindrical concrete grain silos along the water, weathered and stained, receding in a long industrial wall.",
-    "collections": [],
+    "collections": [
+      "grain-siloes-of-buffalo"
+    ],
     "thumb": "buffalo-2026-film1/iyer5883-r1-22-14.thumb.webp",
     "display_avif": "buffalo-2026-film1/iyer5883-r1-22-14.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-22-14.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 0,
+    "flip": "v",
+    "derived_at": 1788623824
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-23-13.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-23-13.JPG",
@@ -22957,8 +23037,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Industrial",
@@ -22976,14 +23056,19 @@
       "Color"
     ],
     "tag_notes": "Buffalo grain elevator complex with pitched-roof and blue-clad ancillary buildings and concrete silos behind, seen from a snowy adjacent lot.",
-    "collections": [],
+    "collections": [
+      "grain-siloes-of-buffalo"
+    ],
     "thumb": "buffalo-2026-film1/iyer5883-r1-23-13.thumb.webp",
     "display_avif": "buffalo-2026-film1/iyer5883-r1-23-13.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-23-13.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788623828
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-24-12.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-24-12.JPG",
@@ -23013,14 +23098,19 @@
       "Color"
     ],
     "tag_notes": "Inverted film frame of a snowy industrial/commercial strip with low-rise brick and metal-clad buildings and utility poles; an orange dumpster and awnings visible along the street.",
-    "collections": [],
+    "collections": [
+      "grain-siloes-of-buffalo"
+    ],
     "thumb": "buffalo-2026-film1/iyer5883-r1-24-12.thumb.webp",
     "display_avif": "buffalo-2026-film1/iyer5883-r1-24-12.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-24-12.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 0,
+    "flip": "v",
+    "derived_at": 1788623831
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-25-11.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-25-11.JPG",
@@ -23048,14 +23138,19 @@
       "Color"
     ],
     "tag_notes": "Inverted film frame of a large corrugated-metal grain elevator or industrial storage structure beside a steel truss bridge and lattice tower against snow.",
-    "collections": [],
+    "collections": [
+      "grain-siloes-of-buffalo"
+    ],
     "thumb": "buffalo-2026-film1/iyer5883-r1-25-11.thumb.webp",
     "display_avif": "buffalo-2026-film1/iyer5883-r1-25-11.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-25-11.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 180,
+    "flip": "",
+    "derived_at": 1788623843
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-26-10.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-26-10.JPG",
@@ -23090,9 +23185,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-26-10.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-26-10.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 180,
+    "flip": "",
+    "derived_at": 1788623848
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-27-9.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-27-9.JPG",
@@ -23125,9 +23223,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-27-9.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-27-9.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 180,
+    "flip": "",
+    "derived_at": 1788623853
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-28-8.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-28-8.JPG",
@@ -23158,61 +23259,29 @@
       "Color"
     ],
     "tag_notes": "Inverted film frame of a yellow front-end loader beside a long tan corrugated-metal warehouse, lattice towers, a poster-covered billboard, and pole-mounted transformers.",
-    "collections": [],
+    "collections": [
+      "grain-siloes-of-buffalo"
+    ],
     "thumb": "buffalo-2026-film1/iyer5883-r1-28-8.thumb.webp",
     "display_avif": "buffalo-2026-film1/iyer5883-r1-28-8.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-28-8.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
-  },
-  "Buffalo '26/Film Drop 1/iyer5883-R1-29-6.JPG": {
-    "key": "Buffalo '26/Film Drop 1/iyer5883-R1-29-6.JPG",
-    "file": "iyer5883-R1-29-6.JPG",
-    "shoot": "buffalo-2026-film1",
-    "city": "Buffalo",
-    "date": "2026-01-01",
-    "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
-    "neighborhood": null,
-    "land_use": [
-      "Commercial",
-      "Residential"
-    ],
-    "architecture": [
-      "Modern",
-      "Skyscraper"
-    ],
-    "subject": [
-      "Interior",
-      "People",
-      "Skyline"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Backlit interior of a high-rise apartment/office with a silhouetted figure by a window overlooking a distant residential tower and waterfront, likely from an upper-floor Buffalo condominium.",
-    "collections": [],
-    "thumb": "buffalo-2026-film1/iyer5883-r1-29-6.thumb.webp",
-    "display_avif": "buffalo-2026-film1/iyer5883-r1-29-6.display.avif",
-    "display_webp": "buffalo-2026-film1/iyer5883-r1-29-6.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 180,
+    "flip": "",
+    "derived_at": 1788623858
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-30-5.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-30-5.JPG",
     "file": "iyer5883-R1-30-5.JPG",
     "shoot": "buffalo-2026-film1",
-    "city": "Buffalo",
+    "city": "Scranton",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Commercial",
@@ -23238,15 +23307,18 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-30-5.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-30-5.display.webp",
     "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": null
+    "reviewed": true,
+    "state": "PA",
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788623860
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-31-4.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-31-4.JPG",
     "file": "iyer5883-R1-31-4.JPG",
     "shoot": "buffalo-2026-film1",
-    "city": "Buffalo",
+    "city": "Binghamton",
     "date": "2026-01-01",
     "img_no": 5883,
     "width": 3601,
@@ -23274,15 +23346,18 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-31-4.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-31-4.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 180,
+    "flip": "",
+    "derived_at": 1788623877
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-32-3.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-32-3.JPG",
     "file": "iyer5883-R1-32-3.JPG",
     "shoot": "buffalo-2026-film1",
-    "city": "Buffalo",
+    "city": "Binghamton",
     "date": "2026-01-01",
     "img_no": 5883,
     "width": 3601,
@@ -23310,19 +23385,22 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-32-3.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-32-3.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 180,
+    "flip": "",
+    "derived_at": 1788623892
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-33-2.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-33-2.JPG",
     "file": "iyer5883-R1-33-2.JPG",
     "shoot": "buffalo-2026-film1",
-    "city": "Buffalo",
+    "city": "Binghamton",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Institutional",
@@ -23346,19 +23424,22 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-33-2.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-33-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788623892
   },
   "Buffalo '26/Film Drop 1/iyer5883-R1-34-1.JPG": {
     "key": "Buffalo '26/Film Drop 1/iyer5883-R1-34-1.JPG",
     "file": "iyer5883-R1-34-1.JPG",
     "shoot": "buffalo-2026-film1",
-    "city": "Buffalo",
+    "city": "Binghamton",
     "date": "2026-01-01",
     "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Institutional",
@@ -23382,45 +23463,12 @@
     "display_avif": "buffalo-2026-film1/iyer5883-r1-34-1.display.avif",
     "display_webp": "buffalo-2026-film1/iyer5883-r1-34-1.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
-  },
-  "Buffalo '26/Film Drop 1/iyer5883-R1-35-0.JPG": {
-    "key": "Buffalo '26/Film Drop 1/iyer5883-R1-35-0.JPG",
-    "file": "iyer5883-R1-35-0.JPG",
-    "shoot": "buffalo-2026-film1",
-    "city": "Buffalo",
-    "date": "2026-01-01",
-    "img_no": 5883,
-    "width": 3601,
-    "height": 2433,
-    "neighborhood": null,
-    "land_use": [
-      "Religious",
-      "Institutional"
-    ],
-    "architecture": [
-      "Gothic Revival",
-      "Religious"
-    ],
-    "subject": [
-      "Façade",
-      "Detail"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Rotated, heavily light-leaked silhouette of a Gothic Revival stone church or institutional tower with a pointed-arch window against bright washed-out sky.",
-    "collections": [],
-    "thumb": "buffalo-2026-film1/iyer5883-r1-35-0.thumb.webp",
-    "display_avif": "buffalo-2026-film1/iyer5883-r1-35-0.display.avif",
-    "display_webp": "buffalo-2026-film1/iyer5883-r1-35-0.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 90,
+    "flip": "",
+    "derived_at": 1788623898
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-01-1A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-01-1A.JPG",
@@ -23464,8 +23512,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Residential"
@@ -23487,9 +23535,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-02-2a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-02-2a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788623938
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-03-3A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-03-3A.JPG",
@@ -23678,8 +23729,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Residential"
@@ -23702,9 +23753,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-08-8a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-08-8a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788623948
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-09-9A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-09-9A.JPG",
@@ -23713,8 +23767,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Residential"
@@ -23736,9 +23790,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-09-9a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-09-9a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788623951
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-10-10A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-10-10A.JPG",
@@ -23747,8 +23804,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Residential",
@@ -23772,9 +23829,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-10-10a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-10-10a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788623955
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-11-11A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-11-11A.JPG",
@@ -23817,8 +23877,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Residential"
@@ -23841,9 +23901,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-12-12a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-12-12a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788623959
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-13-13A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-13-13A.JPG",
@@ -23852,8 +23915,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Residential",
@@ -23877,9 +23940,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-13-13a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-13-13a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788623961
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-14-14A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-14-14A.JPG",
@@ -23888,8 +23954,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Residential",
@@ -23913,9 +23979,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-14-14a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-14-14a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624014
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-15-15A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-15-15A.JPG",
@@ -23958,8 +24027,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Commercial",
@@ -23986,9 +24055,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-16-16a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-16-16a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624019
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-17-17A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-17-17A.JPG",
@@ -24037,8 +24109,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Commercial",
@@ -24063,9 +24135,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-18-18a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-18-18a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624021
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-19-19A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-19-19A.JPG",
@@ -24108,8 +24183,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Institutional",
@@ -24134,9 +24209,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-20-20a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-20-20a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624026
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-21-21A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-21-21A.JPG",
@@ -24145,8 +24223,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Commercial",
@@ -24170,9 +24248,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-21-21a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-21-21a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624028
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-22-22A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-22-22A.JPG",
@@ -24181,8 +24262,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Commercial",
@@ -24206,9 +24287,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-22-22a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-22-22a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624032
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-23-23A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-23-23A.JPG",
@@ -24217,8 +24301,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Residential",
@@ -24242,9 +24326,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-23-23a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-23-23a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624034
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-24-24A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-24-24A.JPG",
@@ -24289,8 +24376,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Commercial",
@@ -24316,9 +24403,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-25-25a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-25-25a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624038
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-26-26A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-26-26A.JPG",
@@ -24431,8 +24521,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Institutional",
@@ -24456,9 +24546,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-29-29a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-29-29a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624043
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-30-30A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-30-30A.JPG",
@@ -24503,8 +24596,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Industrial",
@@ -24529,9 +24622,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-31-31a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-31-31a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624052
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-32-32A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-32-32A.JPG",
@@ -24540,8 +24636,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Industrial",
@@ -24566,9 +24662,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-32-32a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-32-32a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624054
   },
   "Buffalo '26/Film Drop 2/iyer5882-R1-33-33A.JPG": {
     "key": "Buffalo '26/Film Drop 2/iyer5882-R1-33-33A.JPG",
@@ -24651,8 +24750,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5882,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Commercial",
@@ -24676,45 +24775,12 @@
     "display_avif": "buffalo-2026-film2/iyer5882-r1-35-35a.display.avif",
     "display_webp": "buffalo-2026-film2/iyer5882-r1-35-35a.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
-  },
-  "Buffalo '26/Film Drop 3/iyer5881-R1-00-00.JPG": {
-    "key": "Buffalo '26/Film Drop 3/iyer5881-R1-00-00.JPG",
-    "file": "iyer5881-R1-00-00.JPG",
-    "shoot": "buffalo-2026-film3",
-    "city": "Buffalo",
-    "date": "2026-01-01",
-    "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
-    "neighborhood": null,
-    "land_use": [
-      "Residential",
-      "Institutional"
-    ],
-    "architecture": [
-      "Modern",
-      "Vernacular"
-    ],
-    "subject": [
-      "Façade",
-      "Landscape"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Distant low-slung horizontal building at the Frank Lloyd Wright Martin House complex, Buffalo, seen across a winter lawn with the left half of the frame overexposed by a light leak.",
-    "collections": [],
-    "thumb": "buffalo-2026-film3/iyer5881-r1-00-00.thumb.webp",
-    "display_avif": "buffalo-2026-film3/iyer5881-r1-00-00.display.avif",
-    "display_webp": "buffalo-2026-film3/iyer5881-r1-00-00.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624062
   },
   "Buffalo '26/Film Drop 3/iyer5881-R1-01-0.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-01-0.JPG",
@@ -24794,8 +24860,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Residential",
@@ -24818,9 +24884,12 @@
     "display_avif": "buffalo-2026-film3/iyer5881-r1-03-2.display.avif",
     "display_webp": "buffalo-2026-film3/iyer5881-r1-03-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624091
   },
   "Buffalo '26/Film Drop 3/iyer5881-R1-04-3.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-04-3.JPG",
@@ -24934,8 +25003,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Residential",
@@ -24958,9 +25027,12 @@
     "display_avif": "buffalo-2026-film3/iyer5881-r1-07-6.display.avif",
     "display_webp": "buffalo-2026-film3/iyer5881-r1-07-6.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624097
   },
   "Buffalo '26/Film Drop 3/iyer5881-R1-08-7.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-08-7.JPG",
@@ -25282,8 +25354,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Institutional",
@@ -25306,9 +25378,12 @@
     "display_avif": "buffalo-2026-film3/iyer5881-r1-17-16.display.avif",
     "display_webp": "buffalo-2026-film3/iyer5881-r1-17-16.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624128
   },
   "Buffalo '26/Film Drop 3/iyer5881-R1-18-17.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-18-17.JPG",
@@ -25317,8 +25392,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Institutional",
@@ -25341,9 +25416,12 @@
     "display_avif": "buffalo-2026-film3/iyer5881-r1-18-17.display.avif",
     "display_webp": "buffalo-2026-film3/iyer5881-r1-18-17.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624130
   },
   "Buffalo '26/Film Drop 3/iyer5881-R1-19-18.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-19-18.JPG",
@@ -25387,8 +25465,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Institutional",
@@ -25411,9 +25489,12 @@
     "display_avif": "buffalo-2026-film3/iyer5881-r1-20-19.display.avif",
     "display_webp": "buffalo-2026-film3/iyer5881-r1-20-19.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624136
   },
   "Buffalo '26/Film Drop 3/iyer5881-R1-21-20.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-21-20.JPG",
@@ -25457,8 +25538,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Residential",
@@ -25482,9 +25563,12 @@
     "display_avif": "buffalo-2026-film3/iyer5881-r1-22-21.display.avif",
     "display_webp": "buffalo-2026-film3/iyer5881-r1-22-21.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624142
   },
   "Buffalo '26/Film Drop 3/iyer5881-R1-23-22.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-23-22.JPG",
@@ -25493,8 +25577,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Residential",
@@ -25517,9 +25601,12 @@
     "display_avif": "buffalo-2026-film3/iyer5881-r1-23-22.display.avif",
     "display_webp": "buffalo-2026-film3/iyer5881-r1-23-22.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624144
   },
   "Buffalo '26/Film Drop 3/iyer5881-R1-24-23.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-24-23.JPG",
@@ -25528,8 +25615,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Park",
@@ -25553,9 +25640,12 @@
     "display_avif": "buffalo-2026-film3/iyer5881-r1-24-23.display.avif",
     "display_webp": "buffalo-2026-film3/iyer5881-r1-24-23.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624146
   },
   "Buffalo '26/Film Drop 3/iyer5881-R1-25-24.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-25-24.JPG",
@@ -25630,40 +25720,6 @@
     "state": "NY",
     "camera": null
   },
-  "Buffalo '26/Film Drop 3/iyer5881-R1-27-26.JPG": {
-    "key": "Buffalo '26/Film Drop 3/iyer5881-R1-27-26.JPG",
-    "file": "iyer5881-R1-27-26.JPG",
-    "shoot": "buffalo-2026-film3",
-    "city": "Buffalo",
-    "date": "2026-01-01",
-    "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
-    "neighborhood": null,
-    "land_use": [
-      "Commercial"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "Detail",
-      "Signage"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Rotated, soft-focus shot of a decorative metal gate/screen with a stylized monstera-leaf design set in an arched frame, fronting a white storefront reading 'I Dwell Seeds' amid conifer shrubs.",
-    "collections": [],
-    "thumb": "buffalo-2026-film3/iyer5881-r1-27-26.thumb.webp",
-    "display_avif": "buffalo-2026-film3/iyer5881-r1-27-26.display.avif",
-    "display_webp": "buffalo-2026-film3/iyer5881-r1-27-26.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": null
-  },
   "Buffalo '26/Film Drop 3/iyer5881-R1-28-27.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-28-27.JPG",
     "file": "iyer5881-R1-28-27.JPG",
@@ -25706,8 +25762,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Commercial"
@@ -25730,9 +25786,12 @@
     "display_avif": "buffalo-2026-film3/iyer5881-r1-29-28.display.avif",
     "display_webp": "buffalo-2026-film3/iyer5881-r1-29-28.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624158
   },
   "Buffalo '26/Film Drop 3/iyer5881-R1-30-29.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-30-29.JPG",
@@ -25741,8 +25800,8 @@
     "city": "Buffalo",
     "date": "2026-01-01",
     "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
+    "width": 2433,
+    "height": 3601,
     "neighborhood": null,
     "land_use": [
       "Commercial"
@@ -25764,9 +25823,12 @@
     "display_avif": "buffalo-2026-film3/iyer5881-r1-30-29.display.avif",
     "display_webp": "buffalo-2026-film3/iyer5881-r1-30-29.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "state": "NY",
-    "camera": null
+    "camera": null,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624161
   },
   "Buffalo '26/Film Drop 3/iyer5881-R1-31-30.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-31-30.JPG",
@@ -25798,41 +25860,6 @@
     "thumb": "buffalo-2026-film3/iyer5881-r1-31-30.thumb.webp",
     "display_avif": "buffalo-2026-film3/iyer5881-r1-31-30.display.avif",
     "display_webp": "buffalo-2026-film3/iyer5881-r1-31-30.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": null
-  },
-  "Buffalo '26/Film Drop 3/iyer5881-R1-32-31.JPG": {
-    "key": "Buffalo '26/Film Drop 3/iyer5881-R1-32-31.JPG",
-    "file": "iyer5881-R1-32-31.JPG",
-    "shoot": "buffalo-2026-film3",
-    "city": "Buffalo",
-    "date": "2026-01-01",
-    "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
-    "neighborhood": null,
-    "land_use": [
-      "Religious"
-    ],
-    "architecture": [
-      "Vernacular",
-      "Religious"
-    ],
-    "subject": [
-      "Façade",
-      "Detail"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Soft-focus dusk shot of a shingled synagogue with a large arched Palladian-style window containing a Star of David stained-glass panel above a gabled portico with a green signboard; a hipped-roof house sits at left.",
-    "collections": [],
-    "thumb": "buffalo-2026-film3/iyer5881-r1-32-31.thumb.webp",
-    "display_avif": "buffalo-2026-film3/iyer5881-r1-32-31.display.avif",
-    "display_webp": "buffalo-2026-film3/iyer5881-r1-32-31.display.webp",
     "tagged": true,
     "reviewed": false,
     "state": "NY",
@@ -25872,41 +25899,6 @@
     "state": "NY",
     "camera": null
   },
-  "Buffalo '26/Film Drop 3/iyer5881-R1-34-33.JPG": {
-    "key": "Buffalo '26/Film Drop 3/iyer5881-R1-34-33.JPG",
-    "file": "iyer5881-R1-34-33.JPG",
-    "shoot": "buffalo-2026-film3",
-    "city": "Buffalo",
-    "date": "2026-01-01",
-    "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
-    "neighborhood": null,
-    "land_use": [
-      "Commercial"
-    ],
-    "architecture": [
-      "Commercial Vernacular"
-    ],
-    "subject": [
-      "Signage",
-      "Façade",
-      "Streetscape"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Blurry night shot of a corner takeout storefront with a glowing 'OPEN' neon and lit window display, an adjacent illuminated 'Fresh Bites & Smoothies' sign, on a painted-brick building.",
-    "collections": [],
-    "thumb": "buffalo-2026-film3/iyer5881-r1-34-33.thumb.webp",
-    "display_avif": "buffalo-2026-film3/iyer5881-r1-34-33.display.avif",
-    "display_webp": "buffalo-2026-film3/iyer5881-r1-34-33.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": null
-  },
   "Buffalo '26/Film Drop 3/iyer5881-R1-35-34.JPG": {
     "key": "Buffalo '26/Film Drop 3/iyer5881-R1-35-34.JPG",
     "file": "iyer5881-R1-35-34.JPG",
@@ -25937,80 +25929,6 @@
     "thumb": "buffalo-2026-film3/iyer5881-r1-35-34.thumb.webp",
     "display_avif": "buffalo-2026-film3/iyer5881-r1-35-34.display.avif",
     "display_webp": "buffalo-2026-film3/iyer5881-r1-35-34.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": null
-  },
-  "Buffalo '26/Film Drop 3/iyer5881-R1-36-35.JPG": {
-    "key": "Buffalo '26/Film Drop 3/iyer5881-R1-36-35.JPG",
-    "file": "iyer5881-R1-36-35.JPG",
-    "shoot": "buffalo-2026-film3",
-    "city": "Buffalo",
-    "date": "2026-01-01",
-    "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
-    "neighborhood": null,
-    "land_use": [
-      "Commercial",
-      "Institutional"
-    ],
-    "architecture": [
-      "Modern",
-      "International Style"
-    ],
-    "subject": [
-      "Façade",
-      "Interior",
-      "Detail"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Moody night view of a modern concrete/glass building with an angled clerestory-glazed corner, lit interiors visible through large windows, and a landscaped forecourt tree uplit below.",
-    "collections": [],
-    "thumb": "buffalo-2026-film3/iyer5881-r1-36-35.thumb.webp",
-    "display_avif": "buffalo-2026-film3/iyer5881-r1-36-35.display.avif",
-    "display_webp": "buffalo-2026-film3/iyer5881-r1-36-35.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "state": "NY",
-    "camera": null
-  },
-  "Buffalo '26/Film Drop 3/iyer5881-R1-37-36.JPG": {
-    "key": "Buffalo '26/Film Drop 3/iyer5881-R1-37-36.JPG",
-    "file": "iyer5881-R1-37-36.JPG",
-    "shoot": "buffalo-2026-film3",
-    "city": "Buffalo",
-    "date": "2026-01-01",
-    "img_no": 5881,
-    "width": 3601,
-    "height": 2433,
-    "neighborhood": null,
-    "land_use": [
-      "Commercial",
-      "Institutional"
-    ],
-    "architecture": [
-      "Modern",
-      "International Style"
-    ],
-    "subject": [
-      "Façade",
-      "Detail",
-      "Signage"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Night exterior of the same modern concrete-and-glass building with an angled glazed corner and lit interior, an uplit forecourt tree, and a red/blue illuminated sign at lower right.",
-    "collections": [],
-    "thumb": "buffalo-2026-film3/iyer5881-r1-37-36.thumb.webp",
-    "display_avif": "buffalo-2026-film3/iyer5881-r1-37-36.display.avif",
-    "display_webp": "buffalo-2026-film3/iyer5881-r1-37-36.display.webp",
     "tagged": true,
     "reviewed": false,
     "state": "NY",
@@ -92923,8 +92841,8 @@
     "state": "NY",
     "date": "2025-11-17",
     "img_no": 200,
-    "width": 3017,
-    "height": 2000,
+    "width": 2000,
+    "height": 3017,
     "camera": null,
     "neighborhood": null,
     "land_use": [
@@ -92950,7 +92868,10 @@
     "display_avif": "road-trip-2025-11-film-k200-utica/kodak_200_c_41_34848_113790_257202_002558880012.display.avif",
     "display_webp": "road-trip-2025-11-film-k200-utica/kodak_200_c_41_34848_113790_257202_002558880012.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624491
   },
   "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880013.jpg": {
     "key": "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880013.jpg",
@@ -93197,8 +93118,8 @@
     "state": "NY",
     "date": "2025-11-17",
     "img_no": 200,
-    "width": 3017,
-    "height": 2000,
+    "width": 2000,
+    "height": 3017,
     "camera": null,
     "neighborhood": null,
     "land_use": [
@@ -93223,7 +93144,10 @@
     "display_avif": "road-trip-2025-11-film-k200-utica/kodak_200_c_41_34848_113790_257202_002558880020.display.avif",
     "display_webp": "road-trip-2025-11-film-k200-utica/kodak_200_c_41_34848_113790_257202_002558880020.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624460
   },
   "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880021.jpg": {
     "key": "November '25 Road Trip/Film/K200 - Utica/kodak_200_c_41_34848_113790_257202_002558880021.jpg",
@@ -93807,76 +93731,6 @@
     "tagged": true,
     "reviewed": false
   },
-  "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900001.jpg": {
-    "key": "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900001.jpg",
-    "file": "kodak_400_c_41_34848_113790_257205_002558900001.jpg",
-    "shoot": "road-trip-2025-11-film-k400-troy",
-    "city": "Troy",
-    "state": "NY",
-    "date": "2025-11-20",
-    "img_no": 400,
-    "width": 3017,
-    "height": 2000,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "NA"
-    ],
-    "subject": [
-      "Interior"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Private domestic interior, not documentary street/architecture: corner of an apartment/room with a vase of faux blossoms, a potted monstera on a white shelf, tied-back curtain and venetian blinds, plus personal odds and ends (water bottle, small dish) on the shelf edge. Reads as a personal snapshot of where the photographer stayed. — Quiet apartment interior corner: a vase of faux pink blossoms and eucalyptus beside a potted monstera on a white shelf, with an olive curtain tied back with rope over white venetian blinds. Warm tungsten light on film.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900001.thumb.webp",
-    "display_avif": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900001.display.avif",
-    "display_webp": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900001.display.webp",
-    "tagged": true,
-    "reviewed": false
-  },
-  "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900002.jpg": {
-    "key": "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900002.jpg",
-    "file": "kodak_400_c_41_34848_113790_257205_002558900002.jpg",
-    "shoot": "road-trip-2025-11-film-k400-troy",
-    "city": "Troy",
-    "state": "NY",
-    "date": "2025-11-20",
-    "img_no": 400,
-    "width": 3017,
-    "height": 2000,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "NA"
-    ],
-    "subject": [
-      "Interior"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Same private apartment interior as frame 001 — a curtained window on a blank tungsten-lit wall with no documentary or architectural subject. Personal/room-interior frame, and thin as an image on its own. — Interior study of a single window in the same apartment: olive curtains tied back with rope over closed white blinds, warm yellow-green wall tones. Companion frame to the flower-vase shot.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900002.thumb.webp",
-    "display_avif": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900002.display.avif",
-    "display_webp": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900002.display.webp",
-    "tagged": true,
-    "reviewed": false
-  },
   "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900003.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900003.jpg",
     "file": "kodak_400_c_41_34848_113790_257205_002558900003.jpg",
@@ -94013,78 +93867,6 @@
     "thumb": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900006.thumb.webp",
     "display_avif": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900006.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900006.display.webp",
-    "tagged": true,
-    "reviewed": false
-  },
-  "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900007.jpg": {
-    "key": "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900007.jpg",
-    "file": "kodak_400_c_41_34848_113790_257205_002558900007.jpg",
-    "shoot": "road-trip-2025-11-film-k400-troy",
-    "city": "Troy",
-    "state": "NY",
-    "date": "2025-11-20",
-    "img_no": 400,
-    "width": 2000,
-    "height": 3017,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Industrial"
-    ],
-    "architecture": [
-      "Industrial",
-      "Romanesque"
-    ],
-    "subject": [
-      "Façade",
-      "Signage"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Blue New York State historic marker reading 'GASHOLDER HOUSE — within this 19th century structure was a telescoping iron tank that stored manufactured coal gas until needed to illuminate streets and buildings in Troy,' in front of the round brick landmark. A red light leak flares across the upper wall.",
-    "collections": [],
-    "thumb": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900007.thumb.webp",
-    "display_avif": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900007.display.avif",
-    "display_webp": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900007.display.webp",
-    "tagged": true,
-    "reviewed": false
-  },
-  "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900008.jpg": {
-    "key": "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900008.jpg",
-    "file": "kodak_400_c_41_34848_113790_257205_002558900008.jpg",
-    "shoot": "road-trip-2025-11-film-k400-troy",
-    "city": "Troy",
-    "state": "NY",
-    "date": "2025-11-20",
-    "img_no": 400,
-    "width": 3017,
-    "height": 2000,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "Rowhouse",
-      "Italianate"
-    ],
-    "subject": [
-      "Façade",
-      "Signage"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(review): Technically compromised: a severe red/orange light leak floods the left third of the frame (the Italianate rowhouse facade is barely readable through it) and a second flare blows out the right edge to near-white. Much heavier than the acceptable edge leaks in frames 007/009/024 — borderline unusable, keep only if the leak is wanted as an effect. — Boarded-up brick rowhouses — one with ornate Italianate window hoods, its neighbor painted pale green with plywood-filled frames — behind a utility pole carrying a 'SLOW Children at Play' sign and a John King campaign poster. A heavy red-orange film light leak washes the left and right edges.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900008.thumb.webp",
-    "display_avif": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900008.display.avif",
-    "display_webp": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900008.display.webp",
     "tagged": true,
     "reviewed": false
   },
@@ -94574,7 +94356,7 @@
     "key": "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900023.jpg",
     "file": "kodak_400_c_41_34848_113790_257205_002558900023.jpg",
     "shoot": "road-trip-2025-11-film-k400-troy",
-    "city": "Troy",
+    "city": "Schenectady",
     "state": "NY",
     "date": "2025-11-20",
     "img_no": 400,
@@ -94602,13 +94384,13 @@
     "display_avif": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900023.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900023.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900024.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900024.jpg",
     "file": "kodak_400_c_41_34848_113790_257205_002558900024.jpg",
     "shoot": "road-trip-2025-11-film-k400-troy",
-    "city": "Troy",
+    "city": "Schenectady",
     "state": "NY",
     "date": "2025-11-20",
     "img_no": 400,
@@ -94635,78 +94417,7 @@
     "display_avif": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900024.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900024.display.webp",
     "tagged": true,
-    "reviewed": false
-  },
-  "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900025.jpg": {
-    "key": "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900025.jpg",
-    "file": "kodak_400_c_41_34848_113790_257205_002558900025.jpg",
-    "shoot": "road-trip-2025-11-film-k400-troy",
-    "city": "Troy",
-    "state": "NY",
-    "date": "2025-11-20",
-    "img_no": 400,
-    "width": 2000,
-    "height": 3017,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Commercial"
-    ],
-    "architecture": [
-      "Art Deco",
-      "Commercial Vernacular"
-    ],
-    "subject": [
-      "Façade"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(review): Severe full-frame orange/magenta film light leak saturates the entire image edge to edge; all real color information is gone and the sky renders as a hot orange-to-pink gradient. Composition and façade detail (parapet frieze, 267 entry) are still legible, so this is borderline rather than unusable - curator call on whether the leak reads as intentional film character or as a damaged frame. — Two-story early-20th-century stone commercial building at street address 267, with a scalloped Art Deco parapet frieze, large multi-pane industrial windows, and a recessed dark-tile storefront entry; a 2-hour parking sign stands at the curb. Heavy orange film light leak washes over the whole frame.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900025.thumb.webp",
-    "display_avif": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900025.display.avif",
-    "display_webp": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900025.display.webp",
-    "tagged": true,
-    "reviewed": false
-  },
-  "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900026.jpg": {
-    "key": "November '25 Road Trip/Film/K400 - Troy/kodak_400_c_41_34848_113790_257205_002558900026.jpg",
-    "file": "kodak_400_c_41_34848_113790_257205_002558900026.jpg",
-    "shoot": "road-trip-2025-11-film-k400-troy",
-    "city": "Troy",
-    "state": "NY",
-    "date": "2025-11-20",
-    "img_no": 400,
-    "width": 2000,
-    "height": 3016,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Commercial"
-    ],
-    "architecture": [
-      "Beaux-Arts / Neoclassical",
-      "Commercial Vernacular"
-    ],
-    "subject": [
-      "Façade",
-      "Signage"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "Looking up at the upper floors of an early-20th-century stone department-store-style commercial block with oversized scrolled console brackets over an arched window bay; a vertical sign ending in \"...EYS\" (likely the old Stanleys department store sign) clings to the adjacent brick party wall. A bright film light leak blows out the top of the frame, with a street tree in the lower left.",
-    "collections": [],
-    "thumb": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900026.thumb.webp",
-    "display_avif": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900026.display.avif",
-    "display_webp": "road-trip-2025-11-film-k400-troy/kodak_400_c_41_34848_113790_257205_002558900026.display.webp",
-    "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890001.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890001.jpg",
@@ -94986,8 +94697,8 @@
     "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
-    "width": 3017,
-    "height": 2000,
+    "width": 2000,
+    "height": 3017,
     "camera": null,
     "neighborhood": null,
     "land_use": [
@@ -95013,7 +94724,10 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890009.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890009.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true,
+    "rotate": 270,
+    "flip": "",
+    "derived_at": 1788624533
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890010.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890010.jpg",
@@ -95356,8 +95070,8 @@
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890020.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890020.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Skaneateles",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 3017,
@@ -95384,14 +95098,14 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890020.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890020.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890021.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890021.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890021.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Skaneateles",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 2000,
@@ -95417,14 +95131,14 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890021.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890021.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890022.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890022.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890022.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Skaneateles",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 3017,
@@ -95450,14 +95164,14 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890022.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890022.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890023.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890023.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890023.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Skaneateles",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 3017,
@@ -95483,14 +95197,14 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890023.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890023.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890024.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890024.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890024.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Skaneateles",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 3017,
@@ -95516,14 +95230,14 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890024.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890024.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890025.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890025.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890025.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Skaneateles",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 2000,
@@ -95549,14 +95263,14 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890025.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890025.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890026.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890026.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890026.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Skaneateles",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 3017,
@@ -95584,14 +95298,14 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890026.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890026.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890027.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890027.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890027.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Skaneateles",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 3017,
@@ -95617,7 +95331,7 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890027.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890027.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890028.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890028.jpg",
@@ -95659,8 +95373,8 @@
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890029.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890029.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Endicott",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 3017,
@@ -95686,14 +95400,14 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890029.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890029.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890030.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890030.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890030.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Endicott",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 3017,
@@ -95719,14 +95433,14 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890030.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890030.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890031.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890031.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890031.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Endicott",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 3017,
@@ -95752,14 +95466,14 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890031.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890031.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890032.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890032.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890032.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Endicott",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 3017,
@@ -95785,14 +95499,14 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890032.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890032.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890033.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890033.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890033.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Endicott",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 3017,
@@ -95819,7 +95533,7 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890033.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890033.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890034.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890034.jpg",
@@ -95928,8 +95642,8 @@
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890037.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890037.jpg",
     "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": null,
-    "state": null,
+    "city": "Endicott",
+    "state": "NY",
     "date": "2025-11-19",
     "img_no": 400,
     "width": 3017,
@@ -95958,7 +95672,7 @@
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890037.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890037.display.webp",
     "tagged": true,
-    "reviewed": false
+    "reviewed": true
   },
   "Pittsburgh 6:16:26/Edited/IMG_6110.jpg": {
     "key": "Pittsburgh 6:16:26/Edited/IMG_6110.jpg",
