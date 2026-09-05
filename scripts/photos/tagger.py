@@ -29,12 +29,18 @@ import json
 import os
 import re
 import subprocess
+import sys
 import threading
+import time
 import webbrowser
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse, unquote
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import pipeline as PIPE      # SHOOTS registry + the derive/rotate primitives
 
 REPO = Path(__file__).resolve().parents[2]
 MANIFEST = REPO / "data" / "photos.json"
@@ -49,6 +55,74 @@ DERIV = REPO / ".photo-build" / "derivatives"
 PORT = 8800
 
 _lock = threading.Lock()
+
+# ---- rotation ---------------------------------------------------------------
+# Rotation is stored as data (`rotate`, clockwise degrees) and re-applied on every
+# derive, so the source library in ~/Documents is never touched. Re-deriving one
+# photo is ~9s (a 6000px decode dominates), far too slow to block a click, so the
+# request only writes the manifest and the pixels are rebuilt on this pool.
+_ROT_POOL = ThreadPoolExecutor(max_workers=max(2, (os.cpu_count() or 4) - 2))
+_rot_state = {}                       # key -> "pending" | "done" | "error: ..."
+_rot_meta = threading.Lock()          # guards _rot_state and _rot_active
+_rot_active = set()                   # keys with a full re-derive in flight
+_SHOOT_BY_SLUG = {x["slug"]: x for x in PIPE.SHOOTS}
+
+
+def _orient_of(rec):
+    return (PIPE.norm_rotate(rec.get("rotate")), PIPE.norm_flip(rec.get("flip")))
+
+
+def _rotate_job(key):
+    """Rebuild all three tiers from source at the photo's CURRENT orientation.
+
+    COALESCING: clicking ↻ four times must not queue four 9s derives. Only one job
+    per key is ever in flight; when it finishes it re-reads the manifest, and if
+    more clicks landed while it was encoding it goes round again. So N fast clicks
+    cost one or two derives, not N.
+
+    Deliberately does NOT hold `_lock` across the encode, and does NOT call
+    pipeline's cmd_derive: that rewrites the WHOLE manifest from a stale in-memory
+    copy on exit, which is how a past session lost a batch of tags."""
+    try:
+        while True:
+            with _lock:
+                rec = load(MANIFEST, {}).get(key)
+                rec = dict(rec) if rec else None
+            if rec is None:
+                raise KeyError("photo is no longer in the manifest")
+            shoot = _SHOOT_BY_SLUG.get(rec.get("shoot"))
+            if shoot is None:
+                raise KeyError(f"shoot {rec.get('shoot')!r} is not in pipeline.SHOOTS")
+            want = _orient_of(rec)
+            res = PIPE._derive_one(rec, shoot, force=True)
+            if res is None:
+                raise RuntimeError("source file missing")
+            thumb, avif, webp, _present = res
+            # Re-read under the lock: the record may have been edited (or deleted)
+            # during the ~9s encode, so patch the LIVE record, never write back the
+            # snapshot.
+            with _lock:
+                m = load(MANIFEST, {})
+                live = m.get(key)
+                still = _orient_of(live) if live is not None else want
+                if live is not None:
+                    PIPE._set_local_paths(live, thumb, avif, webp)
+                    # The derivative keeps its filename, so the R2 object key is
+                    # unchanged and nothing about the URL says it is stale. This
+                    # flag is the only record that the live pixels are now wrong.
+                    live["needs_upload"] = True
+                    live["derived_at"] = int(time.time())
+                    save_manifest(m)
+            with _rot_meta:
+                if still == want:          # nothing new arrived — we are current
+                    _rot_state[key] = "done"
+                    _rot_active.discard(key)
+                    return
+            # else: more clicks landed mid-encode, go again at the newer value
+    except Exception as e:
+        with _rot_meta:
+            _rot_state[key] = f"error: {e}"
+            _rot_active.discard(key)
 
 
 def slugify(s):
@@ -176,6 +250,27 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .cullcell{position:relative;border:2px solid #e4e4e7;border-radius:10px;overflow:hidden;cursor:pointer;background:#fff;flex:0 0 auto}
  :root{--cullh:230px}
  .cullcell img{height:var(--cullh);width:auto;display:block;background:#f4f4f5}
+ /* Rotation controls: hover-only so they never compete with the cull mark, which
+    is what this grid is actually for. */
+ .rot{position:absolute;bottom:24px;right:5px;display:none;gap:4px;z-index:3}
+ .cullcell:hover .rot,.row:hover .rot{display:flex}
+ .rot button{width:25px;height:25px;padding:0;border-radius:6px;background:rgba(255,255,255,.94);
+   border:1px solid #d4d4d8;font-size:14px;line-height:1;cursor:pointer}
+ .rot button:hover{background:#fff;border-color:#71717a}
+ /* The photo stays fully visible and clickable while the full-quality tiers
+    rebuild — the thumbnail is already correct, so dimming it would only hide a
+    finished picture and make the tool feel stuck. A corner dot says "still
+    working" without taking the photo away. */
+ .rotating .rotdot{display:block}
+ .rotdot{display:none;position:absolute;top:6px;right:6px;width:9px;height:9px;border-radius:50%;
+   background:#2563eb;box-shadow:0 0 0 2px #fff;z-index:5;animation:rotpulse 1s ease-in-out infinite}
+ @keyframes rotpulse{0%,100%{opacity:1}50%{opacity:.25}}
+ .roterr{outline:2px solid #dc2626;outline-offset:-2px}
+ .row .rot{position:static;display:flex;margin-top:6px}
+ .upbanner{background:#fef3c7;border:1px solid #fcd34d;color:#78350f;padding:9px 12px;
+   border-radius:8px;font-size:12.5px;line-height:1.7;margin:0 0 12px}
+ .upbanner code{background:#fffbeb;border:1px solid #fde68a;border-radius:4px;padding:1px 5px;
+   font-size:11.5px;font-family:ui-monospace,monospace}
  /* width:0 + min-width:100% keeps a long caption from widening the card —
     the image alone decides the cell width, so shape stays truthful. */
  .cullcell .cap{font-size:11px;color:#52525b;padding:4px 7px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:0;min-width:100%;box-sizing:border-box}
@@ -246,6 +341,7 @@ let PHOTOS={}, COLLS=[], TAX=[], SHOOTS=[], DUPES=[];
 let mode='tag', page=0, memberSlug=null;
 let cullFilter={shoot:'',city:'',coll:'',show:'all'}, cullCursor=0;
 let BREAKS={}, HINTS={}, nbShoot='', nbDirty=false;
+let NEEDUP=0, ROTPOLL=null; const ROTSEEN=new Set();   // rotation -> R2 debt tracking
 const PER=48, GRIDPER=60;                     // list page size / grid page size
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;');
@@ -259,6 +355,8 @@ async function boot(){
   const d=await (await fetch('/api/data')).json();
   PHOTOS=d.photos; COLLS=d.collections; TAX=d.taxonomy||[]; SHOOTS=d.shoots||[]; DUPES=d.dupes||[];
   BREAKS=d.breaks||{}; HINTS=d.hints||{};
+  NEEDUP=Object.values(PHOTOS).filter(p=>p.needs_upload).length;
+  startRotPoll();   // a reload mid-rotation should still pick up the finished pixels
   document.querySelectorAll('#modeseg button').forEach(b=>b.onclick=()=>{
     mode=b.dataset.mode; page=0; memberSlug=null;
     location.hash=mode;
@@ -403,12 +501,99 @@ window.deletePhoto=async(key)=>{
   flash();
   if(mode==='members')setTimeout(()=>{$('#stat').textContent=`${targetCount(memberSlug)} in set`;},280);
 };
+/* ======================= ROTATION =======================
+   `rotate` is a manifest field (clockwise degrees) re-applied on every derive —
+   the source JPEG is never modified, so this is reversible and shows in a diff.
+   The catch it must never hide: the rebuilt derivative keeps its filename, so the
+   R2 object key is unchanged and the LIVE SITE keeps serving the old pixels until
+   the file is re-uploaded and Cloudflare's edge cache is purged. That debt is what
+   the amber banner counts.                                                     */
+const cellsFor=key=>[...document.querySelectorAll(`[data-key="${CSS.escape(key)}"]`)];
+// A re-oriented derivative keeps its FILENAME, so a plain /img/<path> would be
+// served from the browser cache showing the old orientation — which looked like
+// "the rotation didn't take" until you hard-refreshed. `derived_at` is persisted
+// on the record, so the buster survives a reload and a re-render too.
+const imgu=(p)=>'/img/'+p.thumb+(p.derived_at?('?v='+p.derived_at):'');
+function rotBtns(key){
+  const b=(t,fn)=>`<button title="${t}" onclick="event.stopPropagation();${fn}">`;
+  return `<span class="rot">`+
+    b('Rotate 90° counter-clockwise',`rotatePhoto('${jesc(key)}',-90)`)+`↺</button>`+
+    b('Rotate 90° clockwise',`rotatePhoto('${jesc(key)}',90)`)+`↻</button>`+
+    b('Flip left ⇄ right',`flipPhoto('${jesc(key)}','h')`)+`⇋</button>`+
+    b('Flip top ⇅ bottom',`flipPhoto('${jesc(key)}','v')`)+`⇵</button></span>`;
+}
+// Click as many times as you like — each click is ~0.3s (the server re-orients the
+// existing thumbnail) and the full-quality rebuild coalesces server-side, so four
+// fast clicks cost one or two derives rather than four. Nothing blocks.
+window.rotatePhoto=(key,delta)=>reorient(key,{delta});
+window.flipPhoto=(key,axis)=>reorient(key,{flip:axis});
+async function reorient(key,body){
+  const els=cellsFor(key);
+  els.forEach(e=>{e.classList.add('rotating');e.classList.remove('roterr');});
+  let r,res;
+  try{
+    r=await fetch('/api/rotate',{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify(Object.assign({key},body))});
+    res=await r.json();
+  }catch(e){ els.forEach(x=>x.classList.remove('rotating')); alert('Failed: '+e); return; }
+  if(!r.ok){els.forEach(x=>x.classList.remove('rotating'));alert('Failed: '+(res.error||r.status));return;}
+  const p=PHOTOS[key];
+  p.rotate=res.rotate; p.flip=res.flip; p.width=res.width; p.height=res.height;
+  p.derived_at=res.derived_at;
+  // The thumbnail on disk is ALREADY correct, so show it now rather than waiting
+  // on the 9s full-quality pass.
+  els.forEach(e=>{const img=e.querySelector('img');
+    if(img){img.src=imgu(p); img.style.aspectRatio=`${p.width||3}/${p.height||2}`;}});
+  ROTSEEN.delete(key); startRotPoll();
+}
+function startRotPoll(){
+  if(ROTPOLL)return;
+  ROTPOLL=setInterval(async()=>{
+    let st; try{ st=await (await fetch('/api/rotate/status')).json(); }catch(e){ return; }
+    let pending=0;
+    Object.entries(st.state||{}).forEach(([k,v])=>{
+      if(v==='pending'){pending++;return;}
+      if(ROTSEEN.has(k))return;         // terminal states persist server-side; apply once
+      ROTSEEN.add(k);
+      const p=PHOTOS[k]; if(!p)return;
+      cellsFor(k).forEach(e=>{
+        e.classList.remove('rotating');
+        if(v!=='done'){e.classList.add('roterr');e.title=v;return;}
+        const img=e.querySelector('img');
+        // Swap the quick thumbnail for the one rebuilt from source. Same filename,
+        // new bytes — the version stamp is what defeats the cache.
+        if(img){p.derived_at=Math.floor(Date.now()/1000);
+                img.src=imgu(p);
+                img.style.aspectRatio=`${p.width||3}/${p.height||2}`;}
+      });
+      if(v==='done'&&!p.needs_upload){p.needs_upload=true;NEEDUP++;paintBanner();}
+    });
+    if(!pending){clearInterval(ROTPOLL);ROTPOLL=null;}
+  },1200);
+}
+function upBanner(){return `<div id="upb"${NEEDUP?' class="upbanner"':''}>${NEEDUP?upText():''}</div>`;}
+function upText(){
+  return `<b>${NEEDUP} photo${NEEDUP===1?'':'s'} rotated locally but not yet on R2</b> — `+
+    `the live site still shows the old orientation. To publish:<br>`+
+    `<code>python3 scripts/photos/pipeline.py upload-pending --out /tmp/pending.txt</code> · `+
+    `<code>scripts/photos/upload_targeted.sh /tmp/pending.txt</code><br>`+
+    `then purge those URLs in Cloudflare (same key, new bytes — the edge serves stale until TTL), `+
+    `then <code>pipeline.py upload-pending --clear</code>.`;
+}
+function paintBanner(){const el=$('#upb'); if(!el)return;
+  el.className=NEEDUP?'upbanner':''; el.innerHTML=NEEDUP?upText():'';}
+
 function cellMenu(key){
   return `<button class="cmbtn" title="More…" onclick="event.stopPropagation();toggleMenu('${jesc(key)}')">⋯</button>
     <div class="cmenu" id="menu-${cssid(key)}" style="display:none" onclick="event.stopPropagation()">
       <select onchange="addToColl('${jesc(key)}',this.value);this.value=''"><option value="">+ Add to collection…</option>`+
       COLLS.slice().sort((a,b)=>a.title.localeCompare(b.title)).map(c=>`<option value="${esc(c.slug)}">${esc(c.title)}</option>`).join('')+
-      `</select><button class="del" onclick="deletePhoto('${jesc(key)}')">🗑 Delete photo</button></div>`;
+      `</select>`+
+      `<button onclick="rotatePhoto('${jesc(key)}',-90)">↺ Rotate left</button>`+
+      `<button onclick="rotatePhoto('${jesc(key)}',90)">↻ Rotate right</button>`+
+      `<button onclick="flipPhoto('${jesc(key)}','h')">⇋ Flip left/right</button>`+
+      `<button onclick="flipPhoto('${jesc(key)}','v')">⇵ Flip top/bottom</button>`+
+      `<button class="del" onclick="deletePhoto('${jesc(key)}')">🗑 Delete photo</button></div>`;
 }
 function repaint(key,dim,html){const row=document.querySelector(`.row[data-key="${CSS.escape(key)}"]`);
   if(row){const el=row.querySelector(`[data-dim="${dim}"]`);if(el)el.outerHTML=html;}}
@@ -419,14 +604,15 @@ function renderList(){
   const slice=all.slice(page*PER,page*PER+PER);
   const rev=all.filter(k=>PHOTOS[k].reviewed).length;
   $('#stat').textContent=`${rev}/${all.length} reviewed`;
-  $('#main').innerHTML=slice.map(key=>{
+  $('#main').innerHTML=upBanner()+slice.map(key=>{
     const p=PHOTOS[key];
     const dims=TAX.map(d=>chipRow(key,d)).join('');
     return `<div class="row ${p.reviewed?'reviewed':''}" data-key="${esc(key)}">
-      <div><img class="thumb" loading="lazy" src="/img/${p.thumb}">
+      <div><span class="rotdot"></span><img class="thumb" loading="lazy" src="${imgu(p)}">
         <div class="imgmeta"><b>${esc(p.file)}</b> · ${esc(p.shoot)} · #${p.img_no}${p.camera?` · <span class="cam ${p.camera==='EOS 7D'?'cam-old':''}">${esc(p.camera)}</span>`:''}</div>
         ${p.tag_notes?`<div class="notes">“${esc(p.tag_notes)}”</div>`:''}
-        <button class="del small" onclick="deletePhoto('${jesc(key)}')">🗑 Delete photo</button></div>
+        <button class="del small" onclick="deletePhoto('${jesc(key)}')">🗑 Delete photo</button>
+        ${rotBtns(key)}</div>
       <div>${geoRow(key)}${rolesRow(key)}${mediumRow(key)}${dims}${collRow(key)}</div></div>`;
   }).join('')+pager(page,pages,all.length)+datalists();
   wirePager();
@@ -615,7 +801,7 @@ function renderMembers(){
     <div class="grid">`+slice.map(key=>{const p=PHOTOS[key];const inn=isIn(key,t);
       const cb=showCollage&&inn?`<span class="cbadge${p.collage?' on':''}" title="Include in home-page collage" onclick="toggleCollage(event,'${jesc(key)}')">▦</span>`:'';
       return `<div class="cell ${inn?'':'out'}" data-key="${esc(key)}" onclick="toggleMember('${jesc(key)}')">
-        <span class="badge">${inn?'in':'add'}</span>${cb}${cellMenu(key)}<img loading="lazy" src="/img/${p.thumb}">
+        <span class="badge">${inn?'in':'add'}</span>${cb}${cellMenu(key)}<span class="rotdot"></span><img loading="lazy" src="${imgu(p)}">
         <div class="cap">${esc(p.city||'')} · #${p.img_no}</div></div>`;}).join('')+`</div>`+pager(page,pages,all.length);
   $('#m-all').onchange=e=>{memberFilter.all=e.target.checked;page=0;render();};
   $('#m-city').onchange=e=>{memberFilter.city=e.target.value;page=0;render();};
@@ -658,12 +844,16 @@ function renderCull(){
   const slice=all.slice(page*GRIDPER,page*GRIDPER+GRIDPER);
   const n=cullCount();
   cullStat();
-  $('#main').innerHTML=`
+  $('#main').innerHTML=upBanner()+`
     <div class="cullnote">Click a photo to mark it for culling — the mark is just a mark, it changes nothing on the site
       and you can unmark freely. When you're happy with the set, switch <b>Show</b> to <b>marked only</b>, look it over,
       and hit <b>Delete</b>. That step is permanent: the photo leaves the manifest and R2 and is written to
       <code>deleted-photos.jsonl</code> so a re-scan can't bring it back.
-      &nbsp;·&nbsp; Keys: <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> move &nbsp; <kbd>X</kbd>/<kbd>space</kbd> mark &nbsp; <kbd>Enter</kbd> open full size</div>
+      &nbsp;·&nbsp; Keys: <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> move &nbsp; <kbd>X</kbd>/<kbd>space</kbd> mark &nbsp; <kbd>Enter</kbd> open full size
+      &nbsp; <kbd>[</kbd><kbd>]</kbd> rotate &nbsp; <kbd>f</kbd> flip ⇋ &nbsp; <kbd>F</kbd> flip ⇵
+      <br>Hover a photo for <b>↺ ↻ ⇋ ⇵</b>. Click as many times as you need — each one lands in about a third of a
+      second and you never have to wait between them; the blue dot just means the full-size version is still
+      rebuilding. It never touches your source file, so any of it can be undone.</div>
     <div class="cullbar">
       <select id="c-shoot"><option value="">All shoots</option>${shoots.map(x=>`<option value="${esc(x)}"${x===cullFilter.shoot?' selected':''}>${esc(x)}</option>`).join('')}</select>
       <select id="c-city"><option value="">All cities</option>${cities.map(x=>`<option value="${esc(x)}"${x===cullFilter.city?' selected':''}>${esc(x)}</option>`).join('')}</select>
@@ -679,7 +869,9 @@ function renderCull(){
     </div>
     <div class="cullgrid">`+slice.map((key,i)=>{const p=PHOTOS[key];
       return `<div class="cullcell${p.cull?' marked':''}" data-key="${esc(key)}" onclick="toggleCull('${jesc(key)}')">
-        <span class="xmark">✕</span><img loading="lazy" src="/img/${p.thumb}" style="aspect-ratio:${(p.width||3)}/${(p.height||2)}">
+        <span class="xmark">✕</span><span class="rotdot"></span>
+        <img loading="lazy" src="${imgu(p)}" style="aspect-ratio:${(p.width||3)}/${(p.height||2)}">
+        ${rotBtns(key)}
         <div class="cap">${esc(p.city||'—')} · ${esc(p.neighborhood||'')} #${p.img_no}</div></div>`;}).join('')
     +`</div>`+pager(page,pages,all.length);
   $('#c-shoot').onchange=e=>{cullFilter.shoot=e.target.value;page=0;render();};
@@ -937,6 +1129,10 @@ document.addEventListener('keydown',e=>{
       toggleCull(cells[cullCursor].dataset.key); break;
     case 'Enter':
       window.open('/img/'+PHOTOS[cells[cullCursor].dataset.key].display_webp,'_blank'); break;
+    case '[': rotatePhoto(cells[cullCursor].dataset.key,-90); break;
+    case ']': rotatePhoto(cells[cullCursor].dataset.key,90); break;
+    case 'f': flipPhoto(cells[cullCursor].dataset.key,'h'); break;
+    case 'F': flipPhoto(cells[cullCursor].dataset.key,'v'); break;
     default: handled=false;
   }
   if(handled){e.preventDefault(); if(i!==cullCursor)setCullCursor(i);}
@@ -976,6 +1172,12 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(200, {"photos": m, "collections": colls, "taxonomy": tax,
                                     "shoots": shoots, "dupes": dupes,
                                     "breaks": breaks, "hints": hints})
+        if path == "/api/rotate/status":
+            # Cheap on purpose — polled every ~1.2s while a rotation is in flight.
+            # Deliberately does NOT recount needs_upload: that would mean parsing
+            # the 4.4MB manifest on every tick. The page tracks that count itself.
+            with _rot_meta:
+                return self._send(200, {"state": dict(_rot_state)})
         if path.startswith("/img/"):
             rel = unquote(path[len("/img/"):])
             f = (DERIV / rel).resolve()
@@ -999,6 +1201,66 @@ class Handler(BaseHTTPRequestHandler):
                 rec["reviewed"] = True
                 save_manifest(m)
             return self._send(200, {"ok": True})
+        if path == "/api/rotate":
+            # Permanently rotate a photo WITHOUT touching the source JPEG. The
+            # manifest (rotate + w/h) updates synchronously so the grid can reflow
+            # immediately; the pixels are rebuilt on the pool and the page polls
+            # /api/rotate/status for the swap.
+            key = data["key"]
+            with _lock:
+                m = load(MANIFEST, {})
+                rec = m.get(key)
+                if rec is None:
+                    return self._send(404, {"error": "unknown key"})
+                cur, curf = _orient_of(rec)
+                axis = data.get("flip")
+                to = data.get("to")
+                if axis:
+                    new, newf = cur, PIPE.toggle_flip(curf, axis)
+                elif to is not None:
+                    new, newf = PIPE.norm_rotate(to), curf
+                else:
+                    # On a mirrored photo a clockwise turn READS counter-clockwise
+                    # (mirroring conjugates a rotation to its inverse), so the stored
+                    # value moves the other way and the arrow keeps its promise.
+                    d = int(data.get("delta") or 90)
+                    new = PIPE.norm_rotate(cur - d if PIPE.is_mirrored(curf) else cur + d)
+                    newf = curf
+                rec["rotate"], rec["flip"] = new, newf
+                shoot = _SHOOT_BY_SLUG.get(rec.get("shoot"))
+                w = h = None
+                if shoot:
+                    w, h = PIPE.dims(PIPE.PHOTOS_ROOT / shoot["folder"] / rec["file"], new)
+                if w and h:
+                    rec["width"], rec["height"] = w, h
+                elif (cur % 180) != (new % 180):
+                    # Source unreadable — fall back to swapping what we already hold
+                    # rather than leaving the aspect ratio lying about the photo.
+                    rec["width"], rec["height"] = rec.get("height"), rec.get("width")
+                # Re-orient the EXISTING thumbnail in place (~0.3s) so the grid is
+                # right almost immediately. The background job then rebuilds all
+                # three tiers from source and overwrites this one, so the extra
+                # generation of WebP loss is only ever a few seconds old.
+                thumb_rel = rec.get("thumb")
+                if thumb_rel and (cur, curf) != (new, newf):
+                    try:
+                        PIPE.retransform_thumb(DERIV / thumb_rel, cur, curf, new, newf)
+                    except Exception:
+                        pass          # the full re-derive below is the real answer
+                rec["reviewed"] = True
+                rec["derived_at"] = int(time.time())
+                save_manifest(m)
+                out = {"ok": True, "rotate": new, "flip": newf,
+                       "width": rec.get("width"), "height": rec.get("height"),
+                       "derived_at": rec["derived_at"]}
+            with _rot_meta:
+                _rot_state[key] = "pending"
+                fresh = key not in _rot_active      # one job per key; it re-loops
+                if fresh:                           # if more clicks land mid-encode
+                    _rot_active.add(key)
+            if fresh:
+                _ROT_POOL.submit(_rotate_job, key)
+            return self._send(200, out)
         if path == "/api/collection":
             title = data["title"].strip()
             slug = slugify(title)

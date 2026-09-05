@@ -22,6 +22,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
@@ -369,36 +370,128 @@ def state_map():
 
 # ---------- sips helpers ----------
 
-def dims(path):
+ROTATIONS = (0, 90, 180, 270)      # clockwise degrees; the only legal `rotate` values
+# PIL's ROTATE_* transposes are COUNTER-clockwise, so a clockwise quarter-turn is
+# ROTATE_270 and vice versa. Getting this backwards is silent on a 180 — always
+# eyeball a 90 against the source.
+_PIL_ROTATE = {90: "ROTATE_270", 180: "ROTATE_180", 270: "ROTATE_90"}
+
+
+def norm_flip(v):
+    """Normalise a mirror spec to '', 'h', 'v' or 'hv'. Both mirrors together is
+    the same picture as a 180 rotation — that is fine, they compose as a group."""
+    v = str(v or "").lower()
+    return ("h" if "h" in v else "") + ("v" if "v" in v else "")
+
+
+def toggle_flip(cur, axis):
+    """Add/remove one mirror axis, so the button is a toggle rather than a set."""
+    cur, axis = norm_flip(cur), norm_flip(axis)
+    return norm_flip("".join(c for c in "hv" if (c in cur) != (c in axis)))
+
+
+def is_mirrored(flip):
+    """True when an ODD number of mirrors is applied — the case where rotation
+    reverses on screen, because mirroring conjugates a rotation to its inverse.
+    Two mirrors ('hv') is a 180 turn and reads the right way round again."""
+    return len(norm_flip(flip)) == 1
+
+
+def _apply_ops(im, rotate, flip):
+    """The canonical order: rotate, then mirror in the FINAL (rotated) frame —
+    which is what 'flip horizontally' means to someone looking at the photo."""
+    from PIL import Image
+    rotate, flip = norm_rotate(rotate), norm_flip(flip)
+    if rotate:
+        im = im.transpose(getattr(Image, _PIL_ROTATE[rotate]))
+    if "h" in flip:
+        im = im.transpose(Image.FLIP_LEFT_RIGHT)
+    if "v" in flip:
+        im = im.transpose(Image.FLIP_TOP_BOTTOM)
+    return im
+
+
+def _unapply_ops(im, rotate, flip):
+    """Exact inverse of _apply_ops — undo in reverse order. Geometrically lossless
+    (only the re-encode costs anything), which is what lets a thumbnail be
+    re-transformed in place instead of rebuilt from a 6000px source."""
+    from PIL import Image
+    rotate, flip = norm_rotate(rotate), norm_flip(flip)
+    if "v" in flip:
+        im = im.transpose(Image.FLIP_TOP_BOTTOM)
+    if "h" in flip:
+        im = im.transpose(Image.FLIP_LEFT_RIGHT)
+    if rotate:
+        im = im.transpose(getattr(Image, _PIL_ROTATE[(360 - rotate) % 360]))
+    return im
+
+
+def retransform_thumb(path, old_rotate, old_flip, new_rotate, new_flip):
+    """Re-orient an EXISTING thumbnail in place: ~0.3s, against ~9s to rebuild
+    from source. Used for immediate feedback in the tagger; the background job
+    then re-derives all three tiers from source and overwrites this, so the extra
+    generation of WebP loss lives for a few seconds only."""
+    from PIL import Image
+    with Image.open(path) as im:
+        im.load()
+        im = _unapply_ops(im, old_rotate, old_flip)
+        im = _apply_ops(im, new_rotate, new_flip)
+        im.save(path, "WEBP", quality=THUMB_WEBP_Q)
+
+
+def norm_rotate(v):
+    """Coerce anything to a legal clockwise rotation. Junk becomes 0 rather than
+    raising — one bad value must never abort a derive of 4,000 photos."""
+    try:
+        v = int(v or 0) % 360
+    except (TypeError, ValueError):
+        return 0
+    return v if v in ROTATIONS else 0
+
+
+def dims(path, rotate=0):
     """ORIENTED pixel dims — honors the EXIF orientation flag so a portrait shot
-    (landscape sensor + orientation 6/8) reports portrait. Reads size + the
-    orientation tag WITHOUT decoding pixels (fast at scale). Falls back to sips."""
+    (landscape sensor + orientation 6/8) reports portrait, then applies the
+    record's manual `rotate` on top. Reads size + the orientation tag WITHOUT
+    decoding pixels (fast at scale). Falls back to sips.
+
+    These are SOURCE dims, not derivative dims — the tiers are pure downscales,
+    so the ASPECT RATIO is what the site consumes (build_index `_ar`, the Cull
+    grid's inline aspect-ratio, the collage srcset width math)."""
+    w = h = None
     try:
         from PIL import Image
         with Image.open(path) as im:
             w, h = im.size  # lazy — no full decode
             orient = (im.getexif() or {}).get(0x0112, 1)  # 0x0112 = Orientation
-            return (h, w) if orient in (5, 6, 7, 8) else (w, h)
+            if orient in (5, 6, 7, 8):
+                w, h = h, w
     except Exception:
-        pass
-    out = subprocess.run(
-        ["sips", "-g", "pixelWidth", "-g", "pixelHeight", str(path)],
-        capture_output=True, text=True,
-    ).stdout
-    w = re.search(r"pixelWidth:\s*(\d+)", out)
-    h = re.search(r"pixelHeight:\s*(\d+)", out)
-    return (int(w.group(1)), int(h.group(1))) if w and h else (None, None)
+        out = subprocess.run(
+            ["sips", "-g", "pixelWidth", "-g", "pixelHeight", str(path)],
+            capture_output=True, text=True,
+        ).stdout
+        mw = re.search(r"pixelWidth:\s*(\d+)", out)
+        mh = re.search(r"pixelHeight:\s*(\d+)", out)
+        w, h = (int(mw.group(1)), int(mh.group(1))) if mw and mh else (None, None)
+    if w and h and norm_rotate(rotate) in (90, 270):
+        w, h = h, w
+    return (w, h)
 
 
-def resize_to(src, dst, longest_edge):
+def resize_to(src, dst, longest_edge, rotate=0, flip=""):
     """High-quality downscale to longest_edge, HONORING EXIF orientation — bakes
     the rotation into the pixels (and strips the flag) so straight-from-camera
-    verticals aren't stored sideways. Never upscales. Falls back to sips."""
+    verticals aren't stored sideways. `rotate` (clockwise degrees) is the manual
+    correction applied ON TOP, for sources whose flag is wrong or absent — film
+    scans carry no orientation tag at all. Never upscales. Falls back to sips."""
     dst.parent.mkdir(parents=True, exist_ok=True)
+    rotate, flip = norm_rotate(rotate), norm_flip(flip)
     try:
         from PIL import Image, ImageOps
         with Image.open(src) as im:
             im = ImageOps.exif_transpose(im)            # apply orientation to pixels
+            im = _apply_ops(im, rotate, flip)           # then the manual correction
             if im.mode not in ("RGB", "L"):
                 im = im.convert("RGB")
             im.thumbnail((longest_edge, longest_edge), Image.LANCZOS)  # downscale only
@@ -406,7 +499,11 @@ def resize_to(src, dst, longest_edge):
         return
     except Exception:
         subprocess.run(
-            ["sips", "-s", "format", "png", "-Z", str(longest_edge), str(src), "--out", str(dst)],
+            ["sips", "-s", "format", "png", "-Z", str(longest_edge),
+             *(["-r", str(rotate)] if rotate else []),   # sips -r is clockwise too
+             *(["-f", "horizontal"] if "h" in flip else []),
+             *(["-f", "vertical"] if "v" in flip else []),
+             str(src), "--out", str(dst)],
             capture_output=True, text=True, check=True,
         )
 
@@ -454,6 +551,8 @@ def cmd_scan(args):
                 "img_no": img_number(f.name),
                 "width": w,
                 "height": h,
+                "rotate": 0,        # manual clockwise correction, applied at derive
+                "flip": "",         # '' | 'h' | 'v' | 'hv' — mirror, applied after rotate
                 "camera": shoot["camera"] if "camera" in shoot else camera_of(f),
                 # tag fields (filled by tag-apply / neighborhoods)
                 "neighborhood": None,
@@ -477,23 +576,31 @@ def cmd_scan(args):
     print(f"scan: +{added} new, {len(m)} total")
 
 
-def _derive_one(rec, shoot):
-    """Generate the three tiers for one record. Returns (thumb, avif, webp) paths or None if skipped/missing."""
+def _derive_one(rec, shoot, force=False):
+    """Generate the three tiers for one record. Returns (thumb, avif, webp, was_present)
+    or None if skipped/missing. `force` regenerates even when the files already
+    exist — REQUIRED after a `rotate` change, because the output filenames never
+    change (which is also why the R2 objects then need replacing)."""
     src = PHOTOS_ROOT / shoot["folder"] / rec["file"]
     slug = name_slug(rec["file"])
     out_dir = DERIV / rec["shoot"]
     thumb = out_dir / f"{slug}.thumb.webp"
     d_avif = out_dir / f"{slug}.display.avif"
     d_webp = out_dir / f"{slug}.display.webp"
-    if thumb.exists() and d_avif.exists() and d_webp.exists():
+    if not force and thumb.exists() and d_avif.exists() and d_webp.exists():
         return (thumb, d_avif, d_webp, True)
     if not src.exists():
         print(f"  ! missing source: {src}", file=sys.stderr)
         return None
-    t_thumb = TMP / f"{slug}.thumb.png"
-    t_disp = TMP / f"{slug}.disp.png"
-    resize_to(src, t_thumb, THUMB_EDGE)
-    resize_to(src, t_disp, DISPLAY_EDGE)
+    # IMG numbers repeat across shoots, so the slug alone is NOT unique — two
+    # threads would write the same temp PNG and swap each other's pixels. Only
+    # reachable once --force re-encodes existing files, but it is silent, so
+    # namespace the temps by shoot.
+    t_thumb = TMP / f"{rec['shoot']}__{slug}.thumb.png"
+    t_disp = TMP / f"{rec['shoot']}__{slug}.disp.png"
+    rotate, flip = norm_rotate(rec.get("rotate")), norm_flip(rec.get("flip"))
+    resize_to(src, t_thumb, THUMB_EDGE, rotate, flip)
+    resize_to(src, t_disp, DISPLAY_EDGE, rotate, flip)
     out_dir.mkdir(parents=True, exist_ok=True)
     subprocess.run(["cwebp", "-quiet", "-q", str(THUMB_WEBP_Q), str(t_thumb), "-o", str(thumb)], check=True)
     subprocess.run(["cwebp", "-quiet", "-q", str(DISPLAY_WEBP_Q), str(t_disp), "-o", str(d_webp)], check=True)
@@ -514,7 +621,8 @@ def cmd_derive(args):
     workers = max(2, (os.cpu_count() or 4) - 2)
     done = skipped = 0
     with ThreadPoolExecutor(max_workers=workers) as ex:
-        futs = {ex.submit(_derive_one, rec, shoot_by_slug[rec["shoot"]]): rec for rec in items}
+        futs = {ex.submit(_derive_one, rec, shoot_by_slug[rec["shoot"]],
+                          bool(getattr(args, "force", False))): rec for rec in items}
         for fut in as_completed(futs):
             rec = futs[fut]
             res = fut.result()
@@ -649,6 +757,20 @@ def cmd_status(args):
     print(f"tagged:       {tagged}")
     print(f"neighborhood: {hood}")
     print(f"reviewed:     {reviewed}")
+    rotated = sum(1 for r in m.values() if norm_rotate(r.get("rotate")) or norm_flip(r.get("flip")))
+    if rotated:
+        print(f"reoriented:   {rotated}")
+    # A rotation reuses the SAME R2 object key, so nothing about the URL says it
+    # is stale — this flag is the only record that the live pixels are wrong.
+    pend = [k for k, r in m.items() if r.get("needs_upload")]
+    if pend:
+        print(f"\n!! {len(pend)} photo{'s' if len(pend) != 1 else ''} re-derived locally but NOT "
+              f"re-uploaded — the site still shows the old pixels.")
+        print("   python3 scripts/photos/pipeline.py upload-pending --out /tmp/pending.txt")
+        print("   scripts/photos/upload_targeted.sh /tmp/pending.txt")
+        print("   then PURGE those URLs in Cloudflare (images.gautamiyer.com is edge-cached,")
+        print("   and an overwrite at the same key serves stale until TTL), then:")
+        print("   python3 scripts/photos/pipeline.py upload-pending --clear")
     # The manifest is the publish list, so a deleted photo sitting in it is
     # live on the site. Surface that loudly rather than waiting for a scan.
     back = sorted(k for k in m if k in deleted_keys())
@@ -659,6 +781,85 @@ def cmd_status(args):
         if len(back) > 10:
             print(f"     ...and {len(back) - 10} more")
         print("   Run `pipeline.py scan` to remove them (the deny-list wins).")
+
+
+def cmd_rotate(args):
+    """Rotate photos permanently, WITHOUT touching the source library.
+
+    Rotation is stored as data (`rotate`, clockwise degrees) and re-applied every
+    time the photo is derived, so it is reversible, diffable, and survives a
+    re-derive. The source JPEG in ~/Documents is never modified — that library is
+    the one layer this pipeline treats as read-only."""
+    m = load_manifest()
+    shoot_by_slug = {s["slug"]: s for s in SHOOTS}
+    TMP.mkdir(parents=True, exist_ok=True)
+    unknown = [k for k in args.keys if k not in m]
+    if unknown:
+        print(f"  ! unknown key: {unknown[0]}", file=sys.stderr)
+        return 1
+    changed = 0
+    for k in args.keys:
+        rec = m[k]
+        cur = norm_rotate(rec.get("rotate"))
+        curf = norm_flip(rec.get("flip"))
+        newf = toggle_flip(curf, args.flip) if args.flip else curf
+        if args.to is not None:
+            new = norm_rotate(args.to)
+        elif args.flip:
+            new = cur                       # a pure flip leaves the rotation alone
+        else:
+            # On a mirrored photo a clockwise turn READS counter-clockwise, so the
+            # stored value moves the other way to keep --by matching what you see.
+            new = norm_rotate(cur - args.by if is_mirrored(curf) else cur + args.by)
+        shoot = shoot_by_slug[rec["shoot"]]
+        rec["rotate"] = new
+        rec["flip"] = newf
+        w, h = dims(PHOTOS_ROOT / shoot["folder"] / rec["file"], new)
+        if w and h:
+            rec["width"], rec["height"] = w, h
+        res = _derive_one(rec, shoot, force=True)
+        if res is None:
+            print(f"  ! could not derive {k}", file=sys.stderr)
+            continue
+        _set_local_paths(rec, *res[:3])
+        rec["needs_upload"] = True      # local pixels changed; R2 still has the old ones
+        rec["derived_at"] = int(time.time())   # cache-buster: same filename, new bytes
+        changed += 1
+        fl = f"  flip {curf or '-'} -> {newf or '-'}" if curf != newf else (f"  flip {newf}" if newf else "")
+        print(f"{k}: {cur}\u00b0 -> {new}\u00b0{fl}  ({rec['width']}x{rec['height']})")
+    if changed:
+        save_manifest(m)
+        print(f"\nrotate: {changed} re-derived locally. They are NOT live yet — "
+              f"run `pipeline.py upload-pending` for the R2 step.")
+    return 0
+
+
+def cmd_upload_pending(args):
+    """List (or clear) derivatives whose pixels changed but whose R2 objects have
+    not been replaced. A rotation reuses the same object key, so the flag is the
+    ONLY thing that knows the live bytes are stale."""
+    m = load_manifest()
+    pend = {k: r for k, r in m.items() if r.get("needs_upload")}
+    if args.clear:
+        for r in pend.values():
+            r.pop("needs_upload", None)
+        if pend:
+            save_manifest(m)
+        print(f"upload-pending: cleared the flag on {len(pend)} photo"
+              f"{'s' if len(pend) != 1 else ''}")
+        return 0
+    paths = []
+    for r in pend.values():
+        paths += [r[t] for t in ("thumb", "display_avif", "display_webp") if r.get(t)]
+    text = "".join(x + "\n" for x in paths)
+    if not args.out:
+        sys.stdout.write(text)
+        return 0
+    Path(args.out).write_text(text)
+    print(f"upload-pending: {len(paths)} files ({len(pend)} photos) -> {args.out}")
+    print(f"   scripts/photos/upload_targeted.sh {args.out}")
+    print("   then PURGE those URLs in Cloudflare, then `upload-pending --clear`")
+    return 0
 
 
 def cmd_prune(args):
@@ -680,7 +881,18 @@ def main():
     sc.add_argument("--shoot", default=None)
     d = sub.add_parser("derive")
     d.add_argument("--limit", type=int, default=0)
-    d.add_argument("--force", action="store_true")
+    d.add_argument("--force", action="store_true",
+                   help="re-encode even when the derivatives already exist")
+    ro = sub.add_parser("rotate", help="permanently rotate photos (source file untouched)")
+    ro.add_argument("keys", nargs="+", help="manifest keys, e.g. \"Buffalo '26/Drop 1/IMG_2124.jpg\"")
+    rg = ro.add_mutually_exclusive_group()
+    rg.add_argument("--by", type=int, default=90, help="clockwise degrees to ADD (default 90)")
+    rg.add_argument("--to", type=int, default=None, help="absolute clockwise rotation (0/90/180/270)")
+    rg.add_argument("--flip", choices=("h", "v"), default=None,
+                    help="toggle a mirror instead of rotating (h = left/right, v = top/bottom)")
+    up = sub.add_parser("upload-pending", help="derivatives changed locally but stale on R2")
+    up.add_argument("--out", default=None, help="write the path list here (for upload_targeted.sh)")
+    up.add_argument("--clear", action="store_true", help="clear the flag after a verified upload")
     n = sub.add_parser("neighborhoods")
     n.add_argument("map")
     n.add_argument("--overwrite", action="store_true",
@@ -703,6 +915,8 @@ def main():
         "contact-sheet": cmd_contact_sheet,
         "prune": cmd_prune,
         "status": cmd_status,
+        "rotate": cmd_rotate,
+        "upload-pending": cmd_upload_pending,
     }[args.cmd](args)
 
 
