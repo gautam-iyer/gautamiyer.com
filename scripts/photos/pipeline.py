@@ -629,7 +629,8 @@ def cmd_derive(args):
             if res is None:
                 continue
             thumb, d_avif, d_webp, was_present = res
-            _set_local_paths(rec, thumb, d_avif, d_webp)
+            _set_local_paths(rec, thumb, d_avif, d_webp,
+                             PHOTOS_ROOT / shoot_by_slug[rec["shoot"]]["folder"] / rec["file"])
             if was_present:
                 skipped += 1
             else:
@@ -641,13 +642,31 @@ def cmd_derive(args):
     print(f"derive: {done} generated, {skipped} already present ({workers} workers)")
 
 
-def _set_local_paths(rec, thumb, d_avif, d_webp):
+def src_fingerprint(src):
+    """Cheap identity for a source file: size + mtime, no read.
+
+    A content hash would be stricter, but hashing 4,000+ full-size JPEGs on every
+    check is minutes of IO for a question that size+mtime answers. A Lightroom
+    re-export always changes mtime, and almost always size too."""
+    try:
+        st = Path(src).stat()
+    except OSError:
+        return {}
+    return {"src_size": st.st_size, "src_mtime": int(st.st_mtime)}
+
+
+def _set_local_paths(rec, thumb, d_avif, d_webp, src=None):
     # store paths RELATIVE TO THE DERIVATIVES ROOT (e.g. "pittsburgh-2026-06-16/img_6430.thumb.webp").
     # Templates prepend site param `photo_base` (a local path during dev, the R2 public URL in prod),
     # and R2 upload mirrors this same structure, so the manifest never needs rewriting.
     rec["thumb"] = str(thumb.relative_to(DERIV))
     rec["display_avif"] = str(d_avif.relative_to(DERIV))
     rec["display_webp"] = str(d_webp.relative_to(DERIV))
+    if src is not None:
+        # Stamp WHAT was derived, so a later re-export of the same filename is
+        # detectable. Without this, `derive` short-circuits on the derivatives
+        # existing and a replaced source is silently ignored forever.
+        rec.update(src_fingerprint(src))
 
 
 def cmd_neighborhoods(args):
@@ -821,7 +840,7 @@ def cmd_rotate(args):
         if res is None:
             print(f"  ! could not derive {k}", file=sys.stderr)
             continue
-        _set_local_paths(rec, *res[:3])
+        _set_local_paths(rec, *res[:3], src=PHOTOS_ROOT / shoot["folder"] / rec["file"])
         rec["needs_upload"] = True      # local pixels changed; R2 still has the old ones
         rec["derived_at"] = int(time.time())   # cache-buster: same filename, new bytes
         changed += 1
@@ -832,6 +851,124 @@ def cmd_rotate(args):
         print(f"\nrotate: {changed} re-derived locally. They are NOT live yet — "
               f"run `pipeline.py upload-pending` for the R2 step.")
     return 0
+
+
+def _changed_sources(m, shoots, keys=None):
+    """Records whose source file no longer matches what was derived from it.
+    Returns (changed, unstamped, missing)."""
+    changed, unstamped, missing = [], [], []
+    for k, rec in m.items():
+        if keys and k not in keys:
+            continue
+        shoot = shoots.get(rec.get("shoot"))
+        if shoot is None:
+            continue
+        src = PHOTOS_ROOT / shoot["folder"] / rec["file"]
+        fp = src_fingerprint(src)
+        if not fp:
+            missing.append(k)
+        elif "src_size" not in rec:
+            unstamped.append(k)                 # never fingerprinted — run `fingerprint`
+        elif (rec.get("src_size"), rec.get("src_mtime")) != (fp["src_size"], fp["src_mtime"]):
+            changed.append(k)
+    return changed, unstamped, missing
+
+
+def cmd_fingerprint(args):
+    """Backfill size+mtime for every record, so future re-exports are detectable.
+    Stat only — no decoding, no re-derive."""
+    m = load_manifest()
+    shoots = {s["slug"]: s for s in SHOOTS}
+    stamped = missing = 0
+    for rec in m.values():
+        shoot = shoots.get(rec.get("shoot"))
+        if shoot is None:
+            continue
+        fp = src_fingerprint(PHOTOS_ROOT / shoot["folder"] / rec["file"])
+        if fp:
+            if args.force or "src_size" not in rec:
+                rec.update(fp)
+                stamped += 1
+        else:
+            missing += 1
+    save_manifest(m)
+    print(f"fingerprint: stamped {stamped}"
+          + (f", {missing} sources missing" if missing else ""))
+
+
+def cmd_refresh(args):
+    """Re-derive photos whose SOURCE FILE changed — the Lightroom re-export path.
+
+    Export over the original filename in the original folder and everything the
+    record holds (tags, geo, collections, notes, hero/cover flags) is kept, because
+    the manifest is keyed by that path. Only the pixels are rebuilt."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    m = load_manifest()
+    shoots = {s["slug"]: s for s in SHOOTS}
+    keys = set(args.keys) if args.keys else None
+    if keys:
+        unknown = keys - set(m)
+        if unknown:
+            print(f"  ! unknown key: {sorted(unknown)[0]}", file=sys.stderr)
+            return 1
+    if args.shoot:
+        keys = {k for k, r in m.items() if r.get("shoot") == args.shoot} & (keys or set(m))
+    changed, unstamped, missing = _changed_sources(m, shoots, keys)
+    if unstamped:
+        print(f"  ! {len(unstamped)} records have no source fingerprint yet — a change to "
+              f"those CANNOT be detected.\n    Run `pipeline.py fingerprint` first.")
+    if missing:
+        print(f"  ! {len(missing)} source files are missing (e.g. {m[missing[0]]['file']})")
+    if not changed:
+        print("refresh: no source files have changed")
+        return 0
+    print(f"refresh: {len(changed)} source file{'s' if len(changed) != 1 else ''} changed")
+    oriented = [k for k in changed if norm_rotate(m[k].get("rotate")) or norm_flip(m[k].get("flip"))]
+    for k in changed:
+        rec = m[k]
+        mark = ""
+        if k in oriented:
+            mark = f"   [carries rotate={norm_rotate(rec.get('rotate'))} flip={norm_flip(rec.get('flip')) or '-'}]"
+        print(f"   {rec['file']}  ({rec['shoot']}){mark}")
+    if oriented and not args.reset_orientation:
+        print(f"\n  ! {len(oriented)} of these carry a rotation/flip from the tagger. It will be "
+              f"RE-APPLIED\n    on top of the new file. If you already straightened them in "
+              f"Lightroom, that\n    double-applies — re-run with --reset-orientation.")
+    if args.dry_run:
+        print("\n(dry run — nothing re-derived)")
+        return 0
+    TMP.mkdir(parents=True, exist_ok=True)
+    done, failed = [], []
+    def work(k):
+        rec = dict(m[k])
+        if args.reset_orientation:
+            rec["rotate"], rec["flip"] = 0, ""
+        shoot = shoots[rec["shoot"]]
+        res = _derive_one(rec, shoot, force=True)
+        return k, rec, shoot, res
+    workers = max(2, (os.cpu_count() or 4) - 2)
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        for fut in as_completed([ex.submit(work, k) for k in changed]):
+            k, rec, shoot, res = fut.result()
+            if res is None:
+                failed.append(k)
+                continue
+            src = PHOTOS_ROOT / shoot["folder"] / rec["file"]
+            live = m[k]
+            if args.reset_orientation:
+                live["rotate"], live["flip"] = 0, ""
+            _set_local_paths(live, *res[:3], src=src)
+            w, h = dims(src, norm_rotate(live.get("rotate")))
+            if w and h:                       # a crop changes the aspect ratio
+                live["width"], live["height"] = w, h
+            live["needs_upload"] = True
+            live["derived_at"] = int(time.time())
+            done.append(k)
+    save_manifest(m)
+    print(f"\nrefresh: {len(done)} re-derived"
+          + (f", {len(failed)} FAILED" if failed else ""))
+    print("They are NOT live yet — run `pipeline.py upload-pending` for the R2 step.")
+    return 1 if failed else 0
 
 
 def cmd_upload_pending(args):
@@ -890,6 +1027,14 @@ def main():
     rg.add_argument("--to", type=int, default=None, help="absolute clockwise rotation (0/90/180/270)")
     rg.add_argument("--flip", choices=("h", "v"), default=None,
                     help="toggle a mirror instead of rotating (h = left/right, v = top/bottom)")
+    fp = sub.add_parser("fingerprint", help="record source size+mtime so re-exports are detectable")
+    fp.add_argument("--force", action="store_true", help="restamp records that already have one")
+    rf = sub.add_parser("refresh", help="re-derive photos whose SOURCE file changed (Lightroom re-export)")
+    rf.add_argument("keys", nargs="*", help="limit to these manifest keys (default: every record)")
+    rf.add_argument("--shoot", default=None)
+    rf.add_argument("--dry-run", action="store_true", help="list what changed, derive nothing")
+    rf.add_argument("--reset-orientation", action="store_true",
+                    help="clear rotate/flip — use when the new export is already straightened")
     up = sub.add_parser("upload-pending", help="derivatives changed locally but stale on R2")
     up.add_argument("--out", default=None, help="write the path list here (for upload_targeted.sh)")
     up.add_argument("--clear", action="store_true", help="clear the flag after a verified upload")
@@ -916,6 +1061,8 @@ def main():
         "prune": cmd_prune,
         "status": cmd_status,
         "rotate": cmd_rotate,
+        "fingerprint": cmd_fingerprint,
+        "refresh": cmd_refresh,
         "upload-pending": cmd_upload_pending,
     }[args.cmd](args)
 
