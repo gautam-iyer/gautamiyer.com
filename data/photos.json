@@ -27103,14 +27103,12 @@
       "Color"
     ],
     "tag_notes": "A life-size painted rabbit in overalls leaning against a post inside a bakery counter room, under hand-painted signs reading Form One Line and Hop to the Right, with staff working the teal counter behind.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "durham-2026-04-24/img_3817.thumb.webp",
     "display_avif": "durham-2026-04-24/img_3817.display.avif",
     "display_webp": "durham-2026-04-24/img_3817.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 32565469,
     "src_mtime": 1788729732
   },
@@ -36819,14 +36817,12 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Shot from inside a moving car: the car's dark window frame/A-pillar intrudes across the lower-left and lower-right corners, and the subject (Butts Tamales trailer) is grabbed through the glass. Content itself is legitimate roadside-vernacular signage, so this is a framing/quality call rather than a privacy one - keep only if the car-interior edges are cropped out. — Bright yellow Butts Tamales & Grill food trailer painted with 'Taste of the Mississippi Delta,' 'Come Eat Your Butts Off,' a chef-tamale mascot, social handles and a 662 phone number, parked under bare winter trees.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "funky-south-2026-drop1/img_0812.thumb.webp",
     "display_avif": "funky-south-2026-drop1/img_0812.display.avif",
     "display_webp": "funky-south-2026-drop1/img_0812.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 3968233,
     "src_mtime": 1767500908
   },
@@ -58369,43 +58365,6 @@
     "src_size": 13111489,
     "src_mtime": 1775066205
   },
-  "June '26 Film/Edited/kodak_200_c_41_34848_137148_305631_000008830001.jpg": {
-    "key": "June '26 Film/Edited/kodak_200_c_41_34848_137148_305631_000008830001.jpg",
-    "file": "kodak_200_c_41_34848_137148_305631_000008830001.jpg",
-    "shoot": "june-2026-film",
-    "city": null,
-    "state": null,
-    "date": "2026-06-01",
-    "img_no": 200,
-    "width": 2000,
-    "height": 3017,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "Victorian"
-    ],
-    "subject": [
-      "Façade"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Technically broken frame: the bottom ~45% of the negative is featureless pure white (light-leak / scan defect, with a fuzzy gradient boundary), and the surviving top half of the mansion is itself heavily obscured by foliage. Nothing legible in the lower half; frame 02 covers the same subject cleanly. Keep only if the film light-leak is wanted deliberately as an aesthetic. — NOT NYC — this roll is Pittsburgh, PA. Cream stone mansion with slate mansard roof, arched dormers and bracketed cornice (Second Empire) glimpsed through dense green and copper-beech foliage; the bottom half of the frame is blown out white — scan/light-leak defect.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "june-2026-film/kodak_200_c_41_34848_137148_305631_000008830001.thumb.webp",
-    "display_avif": "june-2026-film/kodak_200_c_41_34848_137148_305631_000008830001.display.avif",
-    "display_webp": "june-2026-film/kodak_200_c_41_34848_137148_305631_000008830001.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 4430034,
-    "src_mtime": 1782158857
-  },
   "June '26 Film/Edited/kodak_200_c_41_34848_137148_305631_000008830002.jpg": {
     "key": "June '26 Film/Edited/kodak_200_c_41_34848_137148_305631_000008830002.jpg",
     "file": "kodak_200_c_41_34848_137148_305631_000008830002.jpg",
@@ -59711,44 +59670,6 @@
     "reviewed": false,
     "src_size": 6157113,
     "src_mtime": 1782158859
-  },
-  "June '26 Film/Edited/kodak_200_c_41_34848_137148_305633_000008840001.jpg": {
-    "key": "June '26 Film/Edited/kodak_200_c_41_34848_137148_305633_000008840001.jpg",
-    "file": "kodak_200_c_41_34848_137148_305633_000008840001.jpg",
-    "shoot": "june-2026-film",
-    "city": null,
-    "state": null,
-    "date": "2026-06-01",
-    "img_no": 200,
-    "width": 2000,
-    "height": 3017,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Residential",
-      "Park"
-    ],
-    "architecture": [
-      "Mid-century"
-    ],
-    "subject": [
-      "Landscape"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(review): Technically compromised frame: a film light leak blows the bottom ~45% of the image to featureless pure white, and the surviving top band is only a screen of backlit sycamore leaves with a partly obscured brick apartment block. Nothing in the frame reads as a deliberate subject once half of it is gone. Keep only if the leak is wanted as a stylistic artifact; otherwise it is unusable. — NOT NYC — Pittsburgh, PA. View through big sycamores in a park toward mid-rise brick apartment blocks, a fenced court, and a distant dome peeking between the trees; a heavy film light leak washes out the entire lower half of the frame.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "june-2026-film/kodak_200_c_41_34848_137148_305633_000008840001.thumb.webp",
-    "display_avif": "june-2026-film/kodak_200_c_41_34848_137148_305633_000008840001.display.avif",
-    "display_webp": "june-2026-film/kodak_200_c_41_34848_137148_305633_000008840001.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 4403322,
-    "src_mtime": 1782158842
   },
   "June '26 Film/Edited/kodak_200_c_41_34848_137148_305633_000008840002.jpg": {
     "key": "June '26 Film/Edited/kodak_200_c_41_34848_137148_305633_000008840002.jpg",
@@ -63150,45 +63071,6 @@
     "src_size": 6107290,
     "src_mtime": 1782158835
   },
-  "June '26 Film/Edited/kodak_400_c_41_34848_137148_305635_000008860026.jpg": {
-    "key": "June '26 Film/Edited/kodak_400_c_41_34848_137148_305635_000008860026.jpg",
-    "file": "kodak_400_c_41_34848_137148_305635_000008860026.jpg",
-    "shoot": "june-2026-film",
-    "city": null,
-    "state": null,
-    "date": "2026-06-01",
-    "img_no": 400,
-    "width": 2000,
-    "height": 3017,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Commercial"
-    ],
-    "architecture": [
-      "Commercial Vernacular"
-    ],
-    "subject": [
-      "People",
-      "Signage",
-      "Façade"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Posed group portrait of three friends/companions facing the camera under the Buc-ee's sign (one throwing a peace sign) - a personal travel snapshot, not documentary street work. Also technically compromised: a film frame-overlap/double-exposure band repeats the sign across the bottom third. — NOT NYC — Texas highway stop: three friends pose in front of a BUC-EE'S travel center, the giant red beaver logo and lettering overhead; one wears a 'USA' tee, another a Knicks NBA Finals shirt. Film frame-overlap artifact repeats the sign at the bottom of the frame.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "june-2026-film/kodak_400_c_41_34848_137148_305635_000008860026.thumb.webp",
-    "display_avif": "june-2026-film/kodak_400_c_41_34848_137148_305635_000008860026.display.avif",
-    "display_webp": "june-2026-film/kodak_400_c_41_34848_137148_305635_000008860026.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 6042906,
-    "src_mtime": 1782158834
-  },
   "June '26 Film/Edited/kodak_400_c_41_34848_137148_305635_000008860027.jpg": {
     "key": "June '26 Film/Edited/kodak_400_c_41_34848_137148_305635_000008860027.jpg",
     "file": "kodak_400_c_41_34848_137148_305635_000008860027.jpg",
@@ -63507,14 +63389,12 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Borderline: shot inside a private residential backyard/carport (El Camino under corrugated roof, tarped object, work bench, personal patio clutter) - appears to be the same private yard as the friends-hangout frame 8870003, i.e. property of someone the photographer knows rather than a public streetscape. — NOT NYC — Texas backyard vignette (CITY? best guess Dallas, TX). A maroon 1970s Chevrolet El Camino parked under a corrugated carport beside a tarp-shrouded shape, wooden work benches and a chain-link fence in dappled pecan-tree shade.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "june-2026-film/kodak_400_c_41_34848_137148_305635_000008860035.thumb.webp",
     "display_avif": "june-2026-film/kodak_400_c_41_34848_137148_305635_000008860035.display.avif",
     "display_webp": "june-2026-film/kodak_400_c_41_34848_137148_305635_000008860035.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 5843548,
     "src_mtime": 1782158834
   },
@@ -63544,276 +63424,14 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Borderline: same private backyard/driveway as 8860035 - car grille behind personal plastic patio chairs, household items and fencing. Strong graphic frame but it is private-property domestic space, not public street. — NOT NYC — Texas backyard, likely the same driveway as the previous frame (CITY? best guess Dallas, TX). The chrome grille and dusty hood of a maroon 1970s coupe stares head-on from behind a row of three white plastic patio chairs; folding chairs, fencing and stacked jars behind.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "june-2026-film/kodak_400_c_41_34848_137148_305635_000008860036.thumb.webp",
     "display_avif": "june-2026-film/kodak_400_c_41_34848_137148_305635_000008860036.display.avif",
     "display_webp": "june-2026-film/kodak_400_c_41_34848_137148_305635_000008860036.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 6619714,
     "src_mtime": 1782158832
-  },
-  "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870002.jpg": {
-    "key": "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870002.jpg",
-    "file": "kodak_400_c_41_34848_137148_305636_000008870002.jpg",
-    "shoot": "june-2026-film",
-    "city": null,
-    "state": null,
-    "date": "2026-06-01",
-    "img_no": 400,
-    "width": 3017,
-    "height": 2000,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "NA"
-    ],
-    "subject": [
-      "Interior"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Private apartment kitchen interior (cabinets, fridge, personal water jugs, hallway wall decor), dim and underexposed. Domestic private interior with no documentary subject. — NOT NYC — roll shot in Texas (CITY? best guess Dallas, TX). Dim apartment kitchen interior: white cabinets over a black refrigerator, gallon jugs of purified water on granite counters, and metal leaf wall sculptures in the lamplit hallway beyond.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870002.thumb.webp",
-    "display_avif": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870002.display.avif",
-    "display_webp": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870002.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 6524179,
-    "src_mtime": 1782158837
-  },
-  "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870003.jpg": {
-    "key": "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870003.jpg",
-    "file": "kodak_400_c_41_34848_137148_305636_000008870003.jpg",
-    "shoot": "june-2026-film",
-    "city": null,
-    "state": null,
-    "date": "2026-06-01",
-    "img_no": 400,
-    "width": 3017,
-    "height": 2000,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "People"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Private backyard hangout: three friends standing with beer cans in a fenced yard, clearly the photographer's companions (candid but in a private setting, personalized tee/jersey). Personal, not public-street documentary. — NOT NYC — Texas backyard hangout (CITY? best guess Dallas, TX). Three friends with beers on a shaded dirt-and-grass yard beside a whitewashed board-and-batten shed with a corrugated metal roof; one wears an 'Apologize to Melo' tee and another a Knicks Brunson #11 jersey — NY fandom, TX setting.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870003.thumb.webp",
-    "display_avif": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870003.display.avif",
-    "display_webp": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870003.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 7109946,
-    "src_mtime": 1782158837
-  },
-  "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870004.jpg": {
-    "key": "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870004.jpg",
-    "file": "kodak_400_c_41_34848_137148_305636_000008870004.jpg",
-    "shoot": "june-2026-film",
-    "city": null,
-    "state": null,
-    "date": "2026-06-01",
-    "img_no": 400,
-    "width": 3017,
-    "height": 2000,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "People"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Personal, not documentary: two friends posed with beer cans in a private backyard, the man in the Knicks '30' tee looking directly at the camera. Private setting + subjects clearly known to the photographer. — NOT NYC — this roll is Texas, almost certainly San Antonio (Lone Star beer here, Frost Bank Center later in the roll). Two friends with beer cans in a scrubby backyard beside a white clapboard outbuilding; one wears a blue New York Knicks '30' tee, the other holds a Lone Star tallboy.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870004.thumb.webp",
-    "display_avif": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870004.display.avif",
-    "display_webp": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870004.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 6415777,
-    "src_mtime": 1782158837
-  },
-  "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870005.jpg": {
-    "key": "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870005.jpg",
-    "file": "kodak_400_c_41_34848_137148_305636_000008870005.jpg",
-    "shoot": "june-2026-film",
-    "city": null,
-    "state": null,
-    "date": "2026-06-01",
-    "img_no": 400,
-    "width": 3017,
-    "height": 2000,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "People"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Personal party snapshot: friend in a Knicks '6' jersey in a private backyard, foreground table of Lone Star cans and a Marlboro pack, family truck in the drive. Reads as a private gathering, not street work. — NOT NYC — Texas backyard party, likely San Antonio. A guy in a blue New York Knicks '6' jersey mid-sentence in a dirt-and-grass yard; foreground table stacked with Lone Star cans and a Marlboro pack, white pickup truck parked behind.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870005.thumb.webp",
-    "display_avif": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870005.display.avif",
-    "display_webp": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870005.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 6431558,
-    "src_mtime": 1782158837
-  },
-  "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870006.jpg": {
-    "key": "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870006.jpg",
-    "file": "kodak_400_c_41_34848_137148_305636_000008870006.jpg",
-    "shoot": "june-2026-film",
-    "city": null,
-    "state": null,
-    "date": "2026-06-01",
-    "img_no": 400,
-    "width": 3017,
-    "height": 2000,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "People"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Personal: candid of a friend drinking a beer in a private fenced backyard, plus a second companion's head at frame edge. Same private gathering as 0004/0005/0007. — NOT NYC — Texas backyard, likely San Antonio. A guy in a gray 'Apologize to Melo Five' tee drinks from a beer can in a patchy green yard, white clapboard shed at the edge of frame; same party as the surrounding frames.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870006.thumb.webp",
-    "display_avif": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870006.display.avif",
-    "display_webp": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870006.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 7000060,
-    "src_mtime": 1782158838
-  },
-  "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870007.jpg": {
-    "key": "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870007.jpg",
-    "file": "kodak_400_c_41_34848_137148_305636_000008870007.jpg",
-    "shoot": "june-2026-film",
-    "city": null,
-    "state": null,
-    "date": "2026-06-01",
-    "img_no": 400,
-    "width": 3017,
-    "height": 2000,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "People"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Personal: effectively a posed portrait of a friend in a private backyard, subject facing and addressing the camera, beer in hand. No documentary street/architecture content. — NOT NYC — Texas backyard, likely San Antonio. The same guy in the 'Apologize to Melo Five' tee faces the camera, hair damp with sweat, beer in hand; worn grass, dirt patches, and a concrete fire pit corner at right.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870007.thumb.webp",
-    "display_avif": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870007.display.avif",
-    "display_webp": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870007.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 7078961,
-    "src_mtime": 1782158836
-  },
-  "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870008.jpg": {
-    "key": "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870008.jpg",
-    "file": "kodak_400_c_41_34848_137148_305636_000008870008.jpg",
-    "shoot": "june-2026-film",
-    "city": null,
-    "state": null,
-    "date": "2026-06-01",
-    "img_no": 400,
-    "width": 2514,
-    "height": 1667,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Infrastructure"
-    ],
-    "architecture": [
-      "NA"
-    ],
-    "subject": [
-      "People",
-      "Interior"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Car-interior/dashboard shot from the back seat: companions' silhouetted heads, driver's face in the rearview mirror, and the CarPlay nav screen filling the lower frame. Explicitly the private-companion/car-interior category, and the exterior through the windshield is incidental. — NOT NYC — Texas roll, likely San Antonio. Shot from the back seat of a car: driver and passenger silhouetted, driver's sunglasses caught in the rearview mirror, CarPlay map on the dash directing a turn onto a Mesquite St; pickup trucks and a stop sign through the windshield.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870008.thumb.webp",
-    "display_avif": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870008.display.avif",
-    "display_webp": "june-2026-film/kodak_400_c_41_34848_137148_305636_000008870008.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 4698488,
-    "src_mtime": 1782158835
   },
   "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870009.jpg": {
     "key": "June '26 Film/Edited/kodak_400_c_41_34848_137148_305636_000008870009.jpg",
@@ -76998,7 +76616,7 @@
     "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8",
-    "collage": true,
+    "collage": false,
     "src_size": 18022539,
     "src_mtime": 1779476429
   },
@@ -79442,7 +79060,7 @@
     "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8",
-    "collage": true,
+    "collage": false,
     "src_size": 10547109,
     "src_mtime": 1779476581
   },
@@ -80701,7 +80319,7 @@
     "reviewed": true,
     "state": "NJ",
     "camera": "EOS R8",
-    "collage": true,
+    "collage": false,
     "src_size": 15467982,
     "src_mtime": 1779476655
   },
@@ -88037,44 +87655,6 @@
     "src_size": 1344424,
     "src_mtime": 1764063018
   },
-  "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890026.JPG": {
-    "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890026.JPG",
-    "file": "kodak_400_c_41_34848_113790_257204_002558890026.JPG",
-    "shoot": "road-trip-2025-11",
-    "city": null,
-    "state": null,
-    "date": "2025-11-17",
-    "img_no": 400,
-    "width": 2318,
-    "height": 1537,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Park"
-    ],
-    "architecture": [
-      "NA"
-    ],
-    "subject": [
-      "Landscape",
-      "People"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(review): Personal first-person frame: the photographer's own tan boot and denim cuff propped up in the foreground over the lake. Frame 27 is the same lakeshore view without the leg, so this reads as a private travel/rest-stop snapshot rather than documentary work. Borderline - the landscape behind is competent, so leaving the call to the owner, but it is the one frame in the batch that is about the photographer rather than the place. — CITY? best guess Skaneateles — a tan leather boot and denim cuff propped in the foreground over placid lake water, with boathouses and a small white pavilion catching sunset light along the left shore. Playful first-person rest-stop frame.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890026.thumb.webp",
-    "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890026.display.avif",
-    "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890026.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 1112153,
-    "src_mtime": 1764063020
-  },
   "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890027.JPG": {
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890027.JPG",
     "file": "kodak_400_c_41_34848_113790_257204_002558890027.JPG",
@@ -89012,14 +88592,12 @@
       "Color"
     ],
     "tag_notes": "FLAG(remove): Posed personal portrait, not documentary street/architecture: an older man grins directly at the camera holding up a CVT Soft Serve ice cream packet inside a warmly uplit private banquet hall (draped round tables, twinkle-lit potted tree). Reads unmistakably as someone the photographer knows in a private/event interior; nothing urban or architectural in the frame. — CITY? best guess Albany — A silver-haired, mustachioed man grins mid-sentence while holding up a chocolate 'CVT Soft Serve Ice Cream' packet inside a warmly uplit marble-walled banquet hall or lobby, with draped round tables and a twinkle-lit potted tree behind him.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "road-trip-2025-11/img_8251.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8251.display.avif",
     "display_webp": "road-trip-2025-11/img_8251.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 719214,
     "src_mtime": 1763408481
   },
@@ -93129,14 +92707,12 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Pixel-identical duplicate of IMG_9284.jpg (same Caffe Caruso corner, same light, same framing) - would publish the same frame twice in the gallery/lightbox. Nothing personal or broken about the content itself; keep one, drop the '2' copy. — Sunlit corner inside Caffe Caruso, the Bleecker Street Italian pastry shop in Utica: framed newspaper clippings ('Caffe Caruso savors the flavors of Italy', 'The pastry business has been good to Carusos'), family photo collages, a nutcracker and a big rubber plant over a floral-clothed radiator cover. Duplicate frame of IMG_9284.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "road-trip-2025-11/img_9284 2.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9284 2.display.avif",
     "display_webp": "road-trip-2025-11/img_9284 2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 981587,
     "src_mtime": 1763575280
   },
@@ -93203,14 +92779,12 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Pixel-identical duplicate of IMG_9286.jpg (Caffe Caruso memory wall with Mrs. Claus doll) - duplicate publish risk only, content is fine. — Memory wall inside Caffe Caruso in Utica: two big frames of black-and-white family bakery photographs above a radiator cover dressed in red, with a Mrs. Claus doll holding a candle, a tiny decorated Christmas tree and a houseplant against a red curtain. Duplicate frame of IMG_9286.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "road-trip-2025-11/img_9286 2.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9286 2.display.avif",
     "display_webp": "road-trip-2025-11/img_9286 2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 901688,
     "src_mtime": 1763575305
   },
@@ -93277,14 +92851,12 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Pixel-identical duplicate of IMG_9287.jpg (Caffe Caruso keepsake wall, 'Holy cannoli!' clipping) - duplicate publish risk only, content is fine. — Cluttered keepsake wall at Caffe Caruso in Utica: a framed clipping headlined 'Holy cannoli! Caffe Caruso always a happening place' with a cannoli photo, a folk-art painting of the caffe's green storefront, a black-and-white portrait of a baker in whites, and wedding and team photos around a lampshade. Duplicate frame of IMG_9287.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "road-trip-2025-11/img_9287 2.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9287 2.display.avif",
     "display_webp": "road-trip-2025-11/img_9287 2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 858182,
     "src_mtime": 1763575336
   },
@@ -96678,14 +96250,12 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Frame appears to be shot from inside a vehicle: a dark out-of-focus curve of car body/window frame intrudes into the lower-right corner. The content itself is legitimate documentary (EUROPEAN FOOD storefront, stranger on the neighboring porch), so this is a technical/crop call rather than a privacy issue - keep if cropped, otherwise borderline. — A corner 'EUROPEAN FOOD' shop advertising smoked meats, fish, kielbasy, pierogies, kolbasa, and homemade kielbasa on sandwich boards, occupying the ground floor of a clapboard two-story with an iron-railed balcony. Next door, a deep-green foursquare house with a matching enclosed porch anchors the wire-crossed block.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "road-trip-2025-11-film-k200-st/kodak_200_c_41_34848_113790_257201_002558870024.thumb.webp",
     "display_avif": "road-trip-2025-11-film-k200-st/kodak_200_c_41_34848_113790_257201_002558870024.display.avif",
     "display_webp": "road-trip-2025-11-film-k200-st/kodak_200_c_41_34848_113790_257201_002558870024.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 5577959,
     "src_mtime": 1764104880
   },
@@ -97587,9 +97157,7 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Frame is published sideways: the negative is rotated 90 degrees (ground/garden bed runs up the left edge, sky and tree at right). Content is fine (Ukrainian Catholic Auditorium entrance) but it reads as a broken frame until rotated 90 deg counter-clockwise. — Entrance of the Ukrainian Catholic Auditorium (black-and-gold sign dated 1964) in the St. Volodymyr church complex, decorated for autumn with pumpkins, corn stalks, and hanging mums under a metal canopy; a white cross tops the tan-brick parapet. Frame is rotated 90 degrees on the negative.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "road-trip-2025-11-film-k200-utica/kodak_200_c_41_34848_113790_257202_002558880012.thumb.webp",
     "display_avif": "road-trip-2025-11-film-k200-utica/kodak_200_c_41_34848_113790_257202_002558880012.display.avif",
     "display_webp": "road-trip-2025-11-film-k200-utica/kodak_200_c_41_34848_113790_257202_002558880012.display.webp",
@@ -97879,9 +97447,7 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Frame is published sideways: Old Main's Doric columns run horizontally with the sky along the right edge, i.e. the negative is rotated 90 degrees. Needs rotation before it goes on the site. — Looking up the giant Doric columns and pediment edge of Old Main at the former Utica State Hospital, weathered gray stone against the sky with chain-link fencing at the base. Frame is rotated 90 degrees on the negative.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "road-trip-2025-11-film-k200-utica/kodak_200_c_41_34848_113790_257202_002558880020.thumb.webp",
     "display_avif": "road-trip-2025-11-film-k200-utica/kodak_200_c_41_34848_113790_257202_002558880020.display.avif",
     "display_webp": "road-trip-2025-11-film-k200-utica/kodak_200_c_41_34848_113790_257202_002558880020.display.webp",
@@ -99551,9 +99117,7 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Derivative is stored 90 degrees rotated (Syracuse Savings Bank lies on its side, sky on the right edge). Content is fine and worth keeping, but it will render sideways in the gallery/lightbox - needs the source re-oriented and derivatives rebuilt before publishing. — The 1876 Syracuse Savings Bank on Clinton Square, a High Victorian Gothic pile of sandstone with pointed arches and a slender spire, an American flag flying and the square's Christmas tree set up at its base (frame is rotated 90 degrees on the negative).",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890009.thumb.webp",
     "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890009.display.avif",
     "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890009.display.webp",
@@ -100132,43 +99696,6 @@
     "reviewed": true,
     "src_size": 6681326,
     "src_mtime": 1764063018
-  },
-  "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890026.jpg": {
-    "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890026.jpg",
-    "file": "kodak_400_c_41_34848_113790_257204_002558890026.jpg",
-    "shoot": "road-trip-2025-11-film-k400-mixed",
-    "city": "Skaneateles",
-    "state": "NY",
-    "date": "2025-11-19",
-    "img_no": 400,
-    "width": 3017,
-    "height": 2000,
-    "camera": null,
-    "neighborhood": null,
-    "land_use": [
-      "Park"
-    ],
-    "architecture": [
-      "NA"
-    ],
-    "subject": [
-      "Landscape"
-    ],
-    "medium": "Film",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(review): Photographer's own leg/boot (tan work boot over blue jeans) propped into the bottom-center of the frame, filling roughly a quarter of the image over an otherwise empty lake view. Reads as a personal travel/self snapshot rather than documentary street or architecture work; no urban subject in the frame. Borderline (could be read as deliberate composition), so review rather than remove. — A tan work boot juts into the frame over a wide, glassy lake at dusk, with a white pier gazebo and boathouses on the shoreline at left and low hills on the horizon. The pier pavilion resembles Clift Park on Skaneateles Lake; water dominates the frame.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890026.thumb.webp",
-    "display_avif": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890026.display.avif",
-    "display_webp": "road-trip-2025-11-film-k400-mixed/kodak_400_c_41_34848_113790_257204_002558890026.display.webp",
-    "tagged": true,
-    "reviewed": true,
-    "src_size": 5459125,
-    "src_mtime": 1764063020
   },
   "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890027.jpg": {
     "key": "November '25 Road Trip/Film/K400 - Utica + Cuse + ST/kodak_400_c_41_34848_113790_257204_002558890027.jpg",
@@ -122559,44 +122086,6 @@
     "src_size": 2973197,
     "src_mtime": 1766753020
   },
-  "Portugal Dec '25/Lisbon 1/IMG_0052.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_0052.JPG",
-    "file": "IMG_0052.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 52,
-    "width": 2304,
-    "height": 3456,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Civic"
-    ],
-    "architecture": [
-      "Other"
-    ],
-    "subject": [
-      "People",
-      "Detail"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Posed portrait of a travel companion, not documentary photography: a young woman stands centered in the archway, body squared to the lens and smiling directly at the camera, filling the frame while the Pena cloister behind her is reduced to backdrop. The first-pass note ('a visitor smiles in silhouette') reads it as an anonymous visitor, but the framing is a snapshot of someone the photographer knows. — A visitor smiles in silhouette under a stone arch of Pena Palace's Manueline cloister, Sintra: behind her, the two-tier arcaded patio with green geometric azulejo walls, a blue-and-white mosaic floor, potted ferns and palms.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_0052.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_0052.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_0052.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 3293202,
-    "src_mtime": 1766753087
-  },
   "Portugal Dec '25/Lisbon 1/IMG_0055.JPG": {
     "key": "Portugal Dec '25/Lisbon 1/IMG_0055.JPG",
     "file": "IMG_0055.JPG",
@@ -122702,120 +122191,6 @@
     "reviewed": false,
     "src_size": 3161868,
     "src_mtime": 1766753829
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_0060.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_0060.JPG",
-    "file": "IMG_0060.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 60,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Civic"
-    ],
-    "architecture": [
-      "Other"
-    ],
-    "subject": [
-      "People",
-      "Façade"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Posed family group portrait: four people arm-in-arm, all looking at the camera and smiling, on the Pena Palace terrace. Classic vacation snapshot of the photographer's own family, not documentary street work. — Family of four posing on a terrace of Pena Palace, Sintra, beneath the saturated yellow wall, zigzag white battlements, and the red Manueline Revival clock tower. Personal group portrait — likely not a portfolio frame.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_0060.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_0060.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_0060.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 3107064,
-    "src_mtime": 1766753909
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_0066.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_0066.JPG",
-    "file": "IMG_0066.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 66,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Civic"
-    ],
-    "architecture": [
-      "Other"
-    ],
-    "subject": [
-      "People",
-      "Façade"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Candid of the same four family members joking on the Pena terrace, filling both edges of the frame with faces cut off at the border. Personal group snapshot, not a public street candid. — Candid of four people chatting on the same Pena Palace terrace in Sintra, hard winter sun raking the yellow wall and an arched leaded window behind a white lamppost. Candid family frame.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_0066.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_0066.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_0066.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 2649373,
-    "src_mtime": 1766754076
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_0068.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_0068.JPG",
-    "file": "IMG_0068.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 68,
-    "width": 2304,
-    "height": 3456,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Civic"
-    ],
-    "architecture": [
-      "Other"
-    ],
-    "subject": [
-      "People",
-      "Façade"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Couple posing arm-in-arm at the bottom of the frame, both smiling at the camera, with the Pena clock tower behind. Personal 'us at the landmark' portrait. — Couple posing on Pena Palace's terrace in Sintra with the crenellated red clock tower and its conical turrets towering against a deep blue sky. Same yellow wall and zigzag battlements as the adjacent frames.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_0068.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_0068.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_0068.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 2784804,
-    "src_mtime": 1766754089
   },
   "Portugal Dec '25/Lisbon 1/IMG_0072.JPG": {
     "key": "Portugal Dec '25/Lisbon 1/IMG_0072.JPG",
@@ -122961,82 +122336,6 @@
     "src_size": 3091290,
     "src_mtime": 1766764850
   },
-  "Portugal Dec '25/Lisbon 1/IMG_0095.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_0095.JPG",
-    "file": "IMG_0095.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 95,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Civic"
-    ],
-    "architecture": [
-      "Other"
-    ],
-    "subject": [
-      "People",
-      "Detail"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Both broken and personal: a companion smiling in a Castelo dos Mouros archway, so severely underexposed that only a sliver of her face is legible against near-black. Unusable frame. — A smiling woman stands in a rough stone archway on the Castelo dos Mouros walls in Sintra, tangled winter branches visible through the opening behind her. Severely underexposed — face barely emerges from shadow.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_0095.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_0095.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_0095.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 1768655,
-    "src_mtime": 1766764857
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_0097.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_0097.JPG",
-    "file": "IMG_0097.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 97,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Civic"
-    ],
-    "architecture": [
-      "Other"
-    ],
-    "subject": [
-      "People",
-      "Detail"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Same underexposed archway setup: a couple embracing and laughing, faces barely emerging from shadow. Personal portrait plus unusable exposure. — A couple huddles in the same lichen-mottled stone arch of the Castelo dos Mouros in Sintra, moss on the granite voussoirs and pale sky breaking through at left. Underexposed personal portrait.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_0097.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_0097.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_0097.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 2415374,
-    "src_mtime": 1766764881
-  },
   "Portugal Dec '25/Lisbon 1/IMG_0100.JPG": {
     "key": "Portugal Dec '25/Lisbon 1/IMG_0100.JPG",
     "file": "IMG_0100.JPG",
@@ -123141,80 +122440,6 @@
     "reviewed": false,
     "src_size": 3381219,
     "src_mtime": 1766765088
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_0107.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_0107.JPG",
-    "file": "IMG_0107.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 107,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Civic"
-    ],
-    "architecture": [
-      "Other"
-    ],
-    "subject": [
-      "People"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Tight head-and-shoulders portrait of an older couple cheek-to-cheek filling the frame, looking into the lens. Unambiguously a family portrait; the loggia is only backdrop. — Close portrait of a couple beneath a carved stone loggia — squat columns with foliate Romanesque-style capitals — on the Quinta da Regaleira grounds in Sintra, wooded hillside and villas soft in the background.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_0107.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_0107.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_0107.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 2384505,
-    "src_mtime": 1766765161
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_0108.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_0108.JPG",
-    "file": "IMG_0108.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 108,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Civic"
-    ],
-    "architecture": [
-      "Other"
-    ],
-    "subject": [
-      "People"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Second frame of the same close couple portrait at Quinta da Regaleira, subject mid-speech with eyes half-shut. Personal portrait and a weak frame at that. — Second frame of the same couple under the carved-capital stone loggia at Quinta da Regaleira, Sintra, with the green Serra de Sintra slope filling the arches behind them.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_0108.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_0108.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_0108.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 2222444,
-    "src_mtime": 1766765166
   },
   "Portugal Dec '25/Lisbon 1/IMG_0113.JPG": {
     "key": "Portugal Dec '25/Lisbon 1/IMG_0113.JPG",
@@ -123431,43 +122656,6 @@
     "src_size": 3340093,
     "src_mtime": 1766768024
   },
-  "Portugal Dec '25/Lisbon 1/IMG_0127.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_0127.JPG",
-    "file": "IMG_0127.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 127,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Civic"
-    ],
-    "architecture": [
-      "Other"
-    ],
-    "subject": [
-      "People"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Two young companions posed on either side of a balustrade column, hands on hips, plainly aware of and arranged for the camera. Reads as a travel-companion portrait rather than a public candid. — Two people flank a carved stone column on a terrace balustrade at Quinta da Regaleira, Sintra, the lush palm-and-fern gardens and statuary of the estate dropping away behind the wrought-iron rail.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_0127.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_0127.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_0127.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 3655392,
-    "src_mtime": 1766768300
-  },
   "Portugal Dec '25/Lisbon 1/IMG_0131.JPG": {
     "key": "Portugal Dec '25/Lisbon 1/IMG_0131.JPG",
     "file": "IMG_0131.JPG",
@@ -123578,82 +122766,6 @@
     "reviewed": false,
     "src_size": 2980035,
     "src_mtime": 1766769444
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_0135.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_0135.JPG",
-    "file": "IMG_0135.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 135,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Infrastructure"
-    ],
-    "architecture": [
-      "NA"
-    ],
-    "subject": [
-      "People",
-      "Interior"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(review): Very tight (near-frame-filling) shot of a young man asleep against a metro pole - intimacy of the framing plus continuity with IMG_0136 (a shared restaurant table two frames later, same evening) reads as a travel companion dozing rather than an anonymous public candid. Borderline: could be legitimate subway-sleeper street photography, so review rather than remove. — A young man in a quilted Patagonia jacket and pinstriped scarf dozes against a metal pole inside a metro car, bathed in the warm yellow light of the train interior. Candid transit portrait on the Lisbon Metro.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_0135.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_0135.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_0135.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 3014370,
-    "src_mtime": 1766772955
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_0136.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_0136.JPG",
-    "file": "IMG_0136.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 136,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Commercial"
-    ],
-    "architecture": [
-      "NA"
-    ],
-    "subject": [
-      "Interior",
-      "Detail"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Private-meal food close-up, not documentary street/architecture: a francesinha in a skillet fills the frame on a restaurant table, with the photographer's party's shared fries baskets, water glasses, a half-drunk Delirium beer and another diner's hand/arm visible at the top edge. Explicitly a food close-up / restaurant-table shot. — Restaurant table detail: a francesinha smothered in melted cheese and orange beer-tomato sauce served in a cast-iron skillet, with baskets of fries, water glasses, and a Delirium-branded beer glass (pink elephant logo) on a green marble tabletop.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_0136.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_0136.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_0136.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 3180975,
-    "src_mtime": 1766783576
   },
   "Portugal Dec '25/Lisbon 1/IMG_0138.JPG": {
     "key": "Portugal Dec '25/Lisbon 1/IMG_0138.JPG",
@@ -124955,14 +124067,12 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Not personal or technically broken - this is legitimate documentary architecture. Flagging only for the owner's editorial judgment: 'DEATH TO THE IDF' is scrawled legibly at lower left and is fully readable at web size, so publishing the frame puts a call for violence on the site. The sibling frame IMG_0212 covers the same Estado Novo facade-plus-protest-graffiti idea without that text, if a substitute is wanted. — Stern faculty entrance in Coimbra's Cidade Universitária: carved figurative relief panels flanking a dark grilled portal, streaked limestone, 'DEATH TO THE IDF' scrawled at left, and a rank of parked cars pressed against the Estado Novo façade.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "portugal-2025-12-lisbon1/img_0213.thumb.webp",
     "display_avif": "portugal-2025-12-lisbon1/img_0213.display.avif",
     "display_webp": "portugal-2025-12-lisbon1/img_0213.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 3292451,
     "src_mtime": 1766859257
   },
@@ -125186,44 +124296,6 @@
     "reviewed": false,
     "src_size": 4186350,
     "src_mtime": 1766581652
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_9858.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_9858.JPG",
-    "file": "IMG_9858.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 9858,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Mixed"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "People",
-      "Streetscape"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Reads as a personal family snapshot, not a street candid. Three people walk abreast straight at the camera, centered and filling the frame on a telephoto compression, with no other subject in the scene; the woman at right is looking into the lens with a slight smile and the young man in the middle is gesturing mid-story as if talking to the photographer. Group composition (older man with daypack, younger man, woman) reads as the photographer's own travel companions rather than strangers. First pass rationalized this as a 'candid' in the notes; recommend pulling it from a public portfolio. — Candid of three walkers on a broad tree-lined Lisbon avenue sidewalk — a man in the middle gesturing skyward mid-story — with café terrace planters at left and traffic signals down the boulevard; the flat riverside grid suggests Avenida 24 de Julho near Santos.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_9858.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_9858.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_9858.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 3350162,
-    "src_mtime": 1766586699
   },
   "Portugal Dec '25/Lisbon 1/IMG_9861.JPG": {
     "key": "Portugal Dec '25/Lisbon 1/IMG_9861.JPG",
@@ -125559,45 +124631,6 @@
     "src_size": 3544356,
     "src_mtime": 1766589176
   },
-  "Portugal Dec '25/Lisbon 1/IMG_9878.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_9878.JPG",
-    "file": "IMG_9878.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 9878,
-    "width": 2304,
-    "height": 3456,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Civic",
-      "Park"
-    ],
-    "architecture": [
-      "Other"
-    ],
-    "subject": [
-      "People",
-      "Streetscape"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(review): Borderline: the four 'strollers' walking the Belem promenade are almost certainly the photographer's own companions, not strangers - the leftmost woman's long black coat with white socks and black shoes, and the man's black-and-orange jacket, match the posed couple in IMG_9883 from the same sequence. Faces are not visible and it does work as a documentary silhouette toward the monument, so keep-or-cut is a judgement call rather than a clear removal. — Strollers on the patterned calçada of the Belém riverfront promenade head toward the Padrão dos Descobrimentos, the monument's stone caravel prow of navigators rising ahead beside the open Tagus river. Estado Novo modernist monument (1960).",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_9878.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_9878.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_9878.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 2931361,
-    "src_mtime": 1766589194
-  },
   "Portugal Dec '25/Lisbon 1/IMG_9879.JPG": {
     "key": "Portugal Dec '25/Lisbon 1/IMG_9879.JPG",
     "file": "IMG_9879.JPG",
@@ -125670,44 +124703,6 @@
     "reviewed": false,
     "src_size": 3489443,
     "src_mtime": 1766589359
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_9883.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_9883.JPG",
-    "file": "IMG_9883.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 9883,
-    "width": 2304,
-    "height": 3456,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Civic"
-    ],
-    "architecture": [
-      "Other"
-    ],
-    "subject": [
-      "People",
-      "Detail"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Posed personal portrait, not documentary: a couple stands centered in the lower frame with arms around each other, facing and smiling at the camera, in front of the Padrao dos Descobrimentos frieze. Reads as a travel snapshot of people the photographer knows (same two figures reappear in IMG_9878), not a street/architecture frame. — A couple poses on the wave-patterned calçada portuguesa below the Padrão dos Descobrimentos in Belém, the Estado Novo limestone frieze of kneeling kings, friars and navigators looming in raking light overhead.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_9883.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_9883.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_9883.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 4572768,
-    "src_mtime": 1766590023
   },
   "Portugal Dec '25/Lisbon 1/IMG_9886.JPG": {
     "key": "Portugal Dec '25/Lisbon 1/IMG_9886.JPG",
@@ -126291,82 +125286,6 @@
     "src_size": 4265375,
     "src_mtime": 1766594091
   },
-  "Portugal Dec '25/Lisbon 1/IMG_9911.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_9911.JPG",
-    "file": "IMG_9911.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 9911,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Commercial"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "Interior",
-      "People"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Personal, not documentary: tight candid of three travel companions (young woman in profile at left, young man on his phone, older man with glasses at right) around a café table with the pastry box and galão. Reads as a family/friends snapshot inside a restaurant, no architectural or street content. — Inside the crowded Pastéis de Belém café: two companions huddle over a phone at the table, with a branded pastry box, a galão glass of milky coffee, and a framed azulejo panel on the white wall behind.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_9911.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_9911.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_9911.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 2865538,
-    "src_mtime": 1766595968
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_9912.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_9912.JPG",
-    "file": "IMG_9912.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 9912,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Commercial"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "Interior",
-      "People"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Same personal café table as IMG_9911: companion at right smiling toward the lens with her hand to her ear, another companion in profile, the photographer's own coffee/pastry box in the foreground. Private-group restaurant interior with food close-up, not street photography. — Wider view of the same table at Pastéis de Belém in Belém — the white 'Pastéis de Belém' box and galão in the foreground, timber-trussed ceiling and a busy room of patrons behind, one face turned in profile at right.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_9912.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_9912.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_9912.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 2962199,
-    "src_mtime": 1766595971
-  },
   "Portugal Dec '25/Lisbon 1/IMG_9915.JPG": {
     "key": "Portugal Dec '25/Lisbon 1/IMG_9915.JPG",
     "file": "IMG_9915.JPG",
@@ -126735,82 +125654,6 @@
     "reviewed": false,
     "src_size": 3293329,
     "src_mtime": 1766600690
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_9941.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_9941.JPG",
-    "file": "IMG_9941.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 9941,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "People",
-      "Streetscape"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Flash-lit group shot of the photographer's companions at a dusk corner: the young woman centre-frame is posed and looking straight at the camera, the young man at right is turned toward the photographer, two more of the party stand in the near foreground. Reads unmistakably as a personal travel-group photo, not a public candid. — Blue-hour street corner in western Lisbon: three friends chat beside a rough rubble-stone wall and an old carved stone alameda marker, with a no-left-turn sign and a pink-washed house with terracotta roof behind.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_9941.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_9941.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_9941.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 3093550,
-    "src_mtime": 1766600979
-  },
-  "Portugal Dec '25/Lisbon 1/IMG_9942.JPG": {
-    "key": "Portugal Dec '25/Lisbon 1/IMG_9942.JPG",
-    "file": "IMG_9942.JPG",
-    "shoot": "portugal-2025-12-lisbon1",
-    "city": "Lisbon",
-    "state": "Portugal",
-    "date": "2025-12-01",
-    "img_no": 9942,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "People",
-      "Streetscape"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Second frame of the same personal group at the same corner, with one companion caught mid-yawn with his mouth wide open and the same two figures in the foreground. Unflattering candid of people the photographer knows; no documentary value beyond the stone marker. — Second frame at the same dusk street corner — one friend mid-yawn under the streetlight, the weathered stone wall and alameda marker between them, the pink house and traffic signs at left.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-lisbon1/img_9942.thumb.webp",
-    "display_avif": "portugal-2025-12-lisbon1/img_9942.display.avif",
-    "display_webp": "portugal-2025-12-lisbon1/img_9942.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 3512695,
-    "src_mtime": 1766600986
   },
   "Portugal Dec '25/Lisbon 1/IMG_9943.JPG": {
     "key": "Portugal Dec '25/Lisbon 1/IMG_9943.JPG",
@@ -129801,45 +128644,6 @@
     "src_size": 3946578,
     "src_mtime": 1766925972
   },
-  "Portugal Dec '25/Porto 1/IMG_0280.JPG": {
-    "key": "Portugal Dec '25/Porto 1/IMG_0280.JPG",
-    "file": "IMG_0280.JPG",
-    "shoot": "portugal-2025-12-porto1",
-    "city": "Porto",
-    "state": "Portugal",
-    "date": "2025-12-05",
-    "img_no": 280,
-    "width": 2304,
-    "height": 3456,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Commercial",
-      "Mixed"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "People",
-      "Streetscape"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Personal rather than documentary: a woman with long dark hair occupies the whole foreground at the photographer's own café table, stirring a drink, with a second companion's arm/shoulder in the right edge of frame at the same table. She is the same woman as in IMG_0355, so this is a companion snapshot plus a food/drink close-up, not a public street candid, even though the Rua das Flores streetscape behind is good. — A woman at a sidewalk café table stirs a bright orange drink on a pedestrianized Baixa shopping street (likely Rua das Flores) — the sign 'Neves & Filha, Lda.' hangs over an old dark-green shopfront behind her. Tiled townhouse façades with wrought-iron balconies recede down the street full of strolling shoppers.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-porto1/img_0280.thumb.webp",
-    "display_avif": "portugal-2025-12-porto1/img_0280.display.avif",
-    "display_webp": "portugal-2025-12-porto1/img_0280.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 2826749,
-    "src_mtime": 1766927607
-  },
   "Portugal Dec '25/Porto 1/IMG_0284.JPG": {
     "key": "Portugal Dec '25/Porto 1/IMG_0284.JPG",
     "file": "IMG_0284.JPG",
@@ -130494,43 +129298,6 @@
     "src_size": 3872168,
     "src_mtime": 1766934510
   },
-  "Portugal Dec '25/Porto 1/IMG_0355.JPG": {
-    "key": "Portugal Dec '25/Porto 1/IMG_0355.JPG",
-    "file": "IMG_0355.JPG",
-    "shoot": "portugal-2025-12-porto1",
-    "city": "Porto",
-    "state": "Portugal",
-    "date": "2025-12-05",
-    "img_no": 355,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Infrastructure"
-    ],
-    "architecture": [
-      "NA"
-    ],
-    "subject": [
-      "People"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Tight telephoto two-person portrait of what are clearly the photographer's travel companions/family, not documentary street: grey-haired man in glasses raising a phone toward the camera's direction and a dark-haired woman beside him looking down, both filling the frame with no urban content behind them (just river water). The woman is the same person as in IMG_0280, confirming she is known to the photographer. Reads as a personal snapshot. — Candid pair on the granite quay of the Douro river: a grey-haired man in glasses holds his phone up to shoot one-eyed like a viewfinder while a younger woman beside him looks down at her lap, dark water shimmering behind them. The yellow tip of a boat spar cuts the top corner.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-porto1/img_0355.thumb.webp",
-    "display_avif": "portugal-2025-12-porto1/img_0355.display.avif",
-    "display_webp": "portugal-2025-12-porto1/img_0355.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 2767033,
-    "src_mtime": 1766934765
-  },
   "Portugal Dec '25/Porto 1/IMG_0357.JPG": {
     "key": "Portugal Dec '25/Porto 1/IMG_0357.JPG",
     "file": "IMG_0357.JPG",
@@ -131011,44 +129778,6 @@
     "src_size": 4139268,
     "src_mtime": 1766938721
   },
-  "Portugal Dec '25/Porto 1/IMG_0390.JPG": {
-    "key": "Portugal Dec '25/Porto 1/IMG_0390.JPG",
-    "file": "IMG_0390.JPG",
-    "shoot": "portugal-2025-12-porto1",
-    "city": "Porto",
-    "state": "Portugal",
-    "date": "2025-12-05",
-    "img_no": 390,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Mixed"
-    ],
-    "architecture": [
-      "Vernacular"
-    ],
-    "subject": [
-      "People",
-      "Skyline"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(review): Borderline: gray-haired man with backpack sits centered in the immediate foreground of the Gaia viewpoint with an empty Super Bock bottle beside him, reading as a travel companion rather than a stranger (same sequence as the flagged IMG_0397 portrait). Face is not visible and the Douro/Arrabida panorama carries the frame, so it can defensibly stay as documentary; owner's call. — A gray-haired man with a black backpack gazes from a Vila Nova de Gaia viewpoint down the Douro river, the concrete arch of the Arrábida Bridge spanning the valley downstream and Porto's Ribeira glowing on the right bank. Onlookers lean on the wall where an empty Super Bock bottle catches the late sun.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-porto1/img_0390.thumb.webp",
-    "display_avif": "portugal-2025-12-porto1/img_0390.display.avif",
-    "display_webp": "portugal-2025-12-porto1/img_0390.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 2994778,
-    "src_mtime": 1766939545
-  },
   "Portugal Dec '25/Porto 1/IMG_0391.JPG": {
     "key": "Portugal Dec '25/Porto 1/IMG_0391.JPG",
     "file": "IMG_0391.JPG",
@@ -131121,43 +129850,6 @@
     "reviewed": false,
     "src_size": 3139375,
     "src_mtime": 1766940025
-  },
-  "Portugal Dec '25/Porto 1/IMG_0397.JPG": {
-    "key": "Portugal Dec '25/Porto 1/IMG_0397.JPG",
-    "file": "IMG_0397.JPG",
-    "shoot": "portugal-2025-12-porto1",
-    "city": "Porto",
-    "state": "Portugal",
-    "date": "2025-12-05",
-    "img_no": 397,
-    "width": 3456,
-    "height": 2304,
-    "camera": "EOS 7D",
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "NA"
-    ],
-    "subject": [
-      "People"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "FLAG(remove): Extreme close-up posed portrait: a young man's face fills the frame, eyes locked on the lens from arm's length. Personal snapshot of a travel companion, not documentary street/architecture work; no urban content beyond a blurred railing. — Extreme close-up portrait of a young mustached man staring into the lens, the low sun flaring over his shoulder and scattering prismatic specks across his face. A rooftop railing and white hillside houses blur in the background.",
-    "collections": [
-      "needs-review"
-    ],
-    "thumb": "portugal-2025-12-porto1/img_0397.thumb.webp",
-    "display_avif": "portugal-2025-12-porto1/img_0397.display.avif",
-    "display_webp": "portugal-2025-12-porto1/img_0397.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 2508144,
-    "src_mtime": 1766940046
   },
   "Portugal Dec '25/Porto 1/IMG_0400.JPG": {
     "key": "Portugal Dec '25/Porto 1/IMG_0400.JPG",
@@ -132286,14 +130978,12 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Roughly 80% of the frame is near-black with no recoverable detail, and the center is dominated by a large out-of-focus silhouetted head/shoulder shot through/past a person immediately in front of the lens. Only the mirrored 'Farmacia' neon reads. Defensible as a deliberate near-abstract night study, but borderline unusable underexposure plus an obstructing foreground body — worth a human look before it goes public. — Near-abstract night frame: the red cursive neon of the Farmácia Sá da Bandeira sign appears mirrored in a dark shop window, ghosting twice across the glass while passersby read only as soft silhouettes. A smear of green LED ticker floats at right.",
-    "collections": [
-      "needs-review"
-    ],
+    "collections": [],
     "thumb": "portugal-2025-12-porto1/img_0500.thumb.webp",
     "display_avif": "portugal-2025-12-porto1/img_0500.display.avif",
     "display_webp": "portugal-2025-12-porto1/img_0500.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1630904,
     "src_mtime": 1766958459
   },

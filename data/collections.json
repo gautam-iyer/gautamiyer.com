@@ -224,7 +224,7 @@
       "place": "Durham",
       "caption": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.",
       "collage": true,
-      "collage_rank": 3
+      "collage_rank": 4
     },
     {
       "slug": "beaux-arts-durham",
@@ -287,7 +287,7 @@
       "place": "New York",
       "caption": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.",
       "collage": true,
-      "collage_rank": 5
+      "collage_rank": 7
     },
     {
       "slug": "art-deco-fidi",
@@ -319,7 +319,8 @@
       "order": 3,
       "type": "curated",
       "place": "Buffalo",
-      "collage": true
+      "collage": true,
+      "collage_rank": 3
     },
     {
       "slug": "buffalo-city-hall",
@@ -351,19 +352,19 @@
       "type": "curated",
       "place": "San Antonio",
       "collage": true,
-      "collage_rank": 4
+      "collage_rank": 6
     },
     {
       "slug": "temples-of-newark",
       "title": "Temples of Newark",
       "description": "",
-      "featured": false,
+      "featured": true,
       "cover": null,
-      "order": 0,
+      "order": 5,
       "type": "curated",
       "place": "Newark",
       "collage": true,
-      "collage_rank": 2
+      "collage_rank": 5
     },
     {
       "slug": "fair-park-36",
