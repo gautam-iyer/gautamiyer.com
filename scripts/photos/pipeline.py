@@ -56,22 +56,11 @@ SHOOTS = [
         "title": "Buffalo",
     },
     {
-        "folder": "Buffalo '26/Film Drop 1",
-        "slug": "buffalo-2026-film1",
-        "city": "Buffalo",
-        "date": "2026-01-01",
-        "title": "Buffalo",
-    },
-    {
-        "folder": "Buffalo '26/Film Drop 2",
-        "slug": "buffalo-2026-film2",
-        "city": "Buffalo",
-        "date": "2026-01-01",
-        "title": "Buffalo",
-    },
-    {
-        "folder": "Buffalo '26/Film Drop 3",
-        "slug": "buffalo-2026-film3",
+        # All three Buffalo rolls, re-edited in Lightroom and exported into ONE
+        # folder — the Film Drop 1/2/3 split is gone. Frame names carry the roll
+        # (iyer5881/5882/5883), so the rolls stay legible without three shoots.
+        "folder": "Buffalo '26/Edited Film",
+        "slug": "buffalo-2026-film",
         "city": "Buffalo",
         "date": "2026-01-01",
         "title": "Buffalo",
