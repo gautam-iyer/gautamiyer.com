@@ -69,6 +69,28 @@
         "state": "LA",
         "evidence": "Already tagged Baton Rouge. Ends the shoot — worth an 'End run here' so no Mississippi run spills into Louisiana."
       }
+    ],
+    "durham-2026-04-24": [
+      {
+        "from_img": 3803,
+        "neighborhood": "",
+        "evidence": "UNRESOLVED — I could not place these from the frames. IMG 3803-3814 are quiet residential blocks (brick ranch, frame bungalow at 841, rose gardens), a sandwich shop chalkboard, the White Star Laundrymat pylon sign and a strip-mall dry cleaner reading 'Welcome Students'. The laundromat sign is the only searchable name and I did not want to guess a district from it. Your call."
+      },
+      {
+        "from_img": 3815,
+        "neighborhood": "Old West Durham",
+        "evidence": "The Ninth Street business row, named in frame: Monuts' sunburst mural (3815-3816), Elmo's Diner's blade sign (3827), Barnes Supply Co.'s checkerboard wall sign (3831) and The Regulator Bookshop's book-spine sign (3838). IMG_3830 carries the neighborhood's own sign — 'Old West Durham · History · Harmony · Community' — beside the Business US-70 shield. Fisher Signs at 2606 (3847) is on Hillsborough Rd on the same walk. Durham Fire Station 2 (3822-3824) and the picnic yard (3825-3826) fall inside this stretch but were shot before the sign, so check where you want the run to start."
+      },
+      {
+        "from_img": 3843,
+        "neighborhood": "",
+        "evidence": "Grey Stone Church, with the street blades HILLSBOROUGH and FIFTEENTH ST 700 legible in the frame. That corner is the eastern edge of the Ninth Street walk — it may belong to the Old West Durham run above or to whatever you call the block across Hillsborough. Street names are the evidence; the district is your call."
+      },
+      {
+        "from_img": 3852,
+        "neighborhood": "Duke University",
+        "evidence": "Duke's campus, continuous to the end of the new frames: Sarah P. Duke Gardens' terraced beds and pergola with the chapel tower over the tree line (3852-3857), West Campus quad and the Collegiate Gothic bluestone ranges (3858-3863), the 'Edens is good' bench and the 'EDENS 2C' stair sign (3864-3865), and Duke Chapel's tower and traceried flank (3867-3871). NOTE: end the run at 3871 or 3873 — IMG_3873 is already tagged Duke University, but IMG_3875 is Burch Avenue, so an open-ended run will overrun it."
+      }
     ]
   }
 }
