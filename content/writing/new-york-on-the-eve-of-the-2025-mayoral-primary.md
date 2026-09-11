@@ -8,9 +8,7 @@ source_url: "https://gautamiyer.substack.com/p/new-york-on-the-eve-of-the-2025-m
 hero_image: ""
 ---
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb10a04e5-7c16-4f04-b659-8643652d74a2_3017x2000.heic)
-
-*Williamsburg Houses at 128 Maujer Street, a pioneering piece of modernist architecture hailed at the time as the future of American public housing*
+![Williamsburg Houses at 128 Maujer Street, a pioneering piece of modernist architecture hailed at the time as the future of American public housing](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb10a04e5-7c16-4f04-b659-8643652d74a2_3017x2000.heic)
 
 In 1936, hundreds of workers began construction on Williamsburg Houses, the crown jewel of the New Deal’s unprecedented investment in New York City’s public infrastructure. For the project’s design, the City turned to prolific and renowned architects Richmond Shreve and William Lescaze, known for designing the Empire State Building and the tallest building in Philadelphia, respectively. When the complex opened two years later, City officials buried in its cornerstone an autographed copy of *How the Other Half Lives,* Jacob Riis’s seminal work of urban photography and the catalyst for a generation of progressive reformers who dedicated their lives to improving the living conditions of New York’s burgeoning urban poor. This was not just a declaration from the City that it was going to support the livelihoods of its most vulnerable people - it was an ideological crusade to win the City back from the Tammany Hall machine and industrial robber barons and build in their wake a social democracy.
 

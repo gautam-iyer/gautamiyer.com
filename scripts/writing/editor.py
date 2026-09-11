@@ -18,7 +18,8 @@ you can repoint which frame a reference means without touching the prose.
 AUTOSAVES to the markdown file on every change (atomic write + .bak).
 """
 
-import json, os, re, shutil, sys, threading, webbrowser
+import json, os, re, shutil, sys, threading, time, webbrowser
+from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse, unquote, parse_qs
@@ -109,6 +110,25 @@ def md_to_blocks(body):
             blocks.append({"type": "photo", "ref": attrs.get("ref", ""),
                            "caption": attrs.get("caption", "")})
             i += 1; continue
+        # Fenced code: keep the whole fence verbatim. The paragraph collector
+        # would otherwise strip each line and join them with spaces, turning a
+        # code block into one unrunnable line.
+        mf = re.match(r'^(```|~~~)', s)
+        if mf:
+            fence = mf.group(1)
+            buf = [lines[i]]; i += 1
+            while i < len(lines):
+                buf.append(lines[i])
+                if lines[i].strip().startswith(fence): i += 1; break
+                i += 1
+            blocks.append({"type": "raw", "md": "\n".join(buf)}); continue
+        # Table rows and indented code: also verbatim, same reason.
+        if s.startswith("|") or re.match(r'^ {4,}\S', line):
+            buf = []
+            while i < len(lines) and (lines[i].strip().startswith("|")
+                                      or re.match(r'^ {4,}\S', lines[i])):
+                buf.append(lines[i]); i += 1
+            blocks.append({"type": "raw", "md": "\n".join(buf)}); continue
         mi = IMAGE_RE.match(s)
         if mi:
             blocks.append({"type": "image", "src": mi.group(2),
@@ -116,17 +136,27 @@ def md_to_blocks(body):
             i += 1; continue
         if re.match(r'^(---|\*\*\*|___)\s*$', s):
             blocks.append({"type": "hr"}); i += 1; continue
-        if s.startswith("### "):
-            blocks.append({"type": "h3", "html": inline_to_html(s[4:])}); i += 1; continue
-        if s.startswith("## "):
-            blocks.append({"type": "h2", "html": inline_to_html(s[3:])}); i += 1; continue
+        # Any ATX heading. h1 maps to h2 (the page supplies the h1) and h4-h6
+        # to h3, so every heading round-trips as SOMETHING rather than falling
+        # through to the paragraph collector, which used to spin forever on it.
+        mh = re.match(r'^(#{1,6})\s+(.*)$', s)
+        if mh:
+            lvl = len(mh.group(1))
+            blocks.append({"type": "h2" if lvl <= 2 else "h3",
+                           "html": inline_to_html(mh.group(2))})
+            i += 1; continue
         if s.startswith("> "):
             buf = []
             while i < len(lines) and lines[i].strip().startswith(">"):
                 buf.append(lines[i].strip().lstrip(">").strip()); i += 1
             blocks.append({"type": "quote", "html": inline_to_html(" ".join(buf))}); continue
-        if re.match(r'^[-*+] ', s) or re.match(r'^\d+\. ', s):
-            ordered = bool(re.match(r'^\d+\. ', s))
+        mo = re.match(r'^(\d+)\. ', s)
+        if re.match(r'^[-*+] ', s) or mo:
+            ordered = bool(mo)
+            # Preserve where an ordered list STARTS. The essays split their
+            # numbered sections into single-item lists (2., 3., 4. …), so
+            # renumbering from 1 on every save silently relabelled them all.
+            start = int(mo.group(1)) if mo else 1
             items = []
             while i < len(lines):
                 t = lines[i].strip()
@@ -134,19 +164,30 @@ def md_to_blocks(body):
                 elif not ordered and re.match(r'^[-*+] ', t): items.append(inline_to_html(t[2:]))
                 else: break
                 i += 1
-            blocks.append({"type": "ol" if ordered else "ul", "items": items}); continue
-        # paragraph: consume until a blank line or a block starter
+            b = {"type": "ol" if ordered else "ul", "items": items}
+            if ordered and start != 1: b["start"] = start
+            blocks.append(b); continue
+        # Paragraph: consume until a blank line or a block starter.
+        start = i
         buf = []
         while i < len(lines):
             t = lines[i].strip()
             if not t or PHOTO_RE.match(t) or IMAGE_RE.match(t) \
                or re.match(r'^(---|\*\*\*|___)\s*$', t) \
-               or t.startswith("#") or t.startswith("> ") \
+               or re.match(r'^#{1,6}(\s|$)', t) or t.startswith("> ") \
                or re.match(r'^[-*+] ', t) or re.match(r'^\d+\. ', t):
                 break
             buf.append(t); i += 1
         if buf:
             blocks.append({"type": "p", "html": inline_to_html(" ".join(buf))})
+        elif i == start:
+            # NOTHING was consumed and nothing matched a known block: this line
+            # is something we do not model (a bare '#', a code fence, a table).
+            # Keep it verbatim as a `raw` block and ALWAYS advance. Without this
+            # the loop spun forever, and because essay_list() parses every file
+            # a single such line bricked the whole editor, not just one essay.
+            blocks.append({"type": "raw", "md": lines[i]})
+            i += 1
     return blocks
 
 
@@ -179,7 +220,12 @@ def blocks_html_to_md(blocks):
         if "html" in b and "md" not in b:
             b["md"] = html_to_md(b["html"])
         if b.get("type") in ("ul", "ol"):
-            b["items"] = [html_to_md(x) for x in b.get("items", [])]
+            # Only convert items that are still HTML. The editor's harvest()
+            # already sends markdown, and converting twice ran the tag-stripper
+            # and entity-unescaper over plain text: "Use <div> tags" lost the
+            # <div>, and a literal &amp; collapsed to &.
+            b["items"] = [x if b.get("items_are_md") else html_to_md(x)
+                          for x in b.get("items", [])]
         out.append(b)
     return out
 
@@ -189,11 +235,17 @@ def blocks_to_md(blocks):
     out = []
     for b in blocks:
         t = b.get("type")
-        if t == "p":     out.append(b.get("md", "").strip())
-        elif t == "h2":  out.append("## " + b.get("md", "").strip())
-        elif t == "h3":  out.append("### " + b.get("md", "").strip())
+        md = (b.get("md") or "").strip()
+        if t == "p":     out.append(md)
+        elif t in ("h2", "h3"):
+            # An EMPTY heading must not serialise to a bare "## ". That line is
+            # not a heading to any markdown parser, and it used to feed straight
+            # back into the block reader as an unparseable line. Insert a
+            # heading, type nothing, autosave -> the essay became unopenable.
+            if md:
+                out.append(("## " if t == "h2" else "### ") + md)
         elif t == "quote":
-            for ln in (b.get("md", "").strip() or "").split("\n"):
+            for ln in (md or "").split("\n"):
                 out.append("> " + ln)
         elif t == "hr":  out.append("---")
         elif t == "image":
@@ -201,6 +253,9 @@ def blocks_to_md(blocks):
         elif t == "photo":
             ref = (b.get("ref") or "").strip()
             cap = (b.get("caption") or "").strip()
+            # A double quote in the caption would close the attribute early and
+            # silently truncate it on the next read.
+            cap = cap.replace('"', "&quot;")
             attrs = f'ref="{ref}"' + (f' caption="{cap}"' if cap else "")
             out.append("{{< photo " + attrs + " >}}")
         elif t in ("ul", "ol"):
@@ -209,10 +264,11 @@ def blocks_to_md(blocks):
             # render a LOOSE list (every <li> wrapped in its own <p>).
             items = [it.strip() for it in b.get("items", []) if it.strip()]
             if items:
+                first = int(b.get("start") or 1)
                 out.append("\n".join((f"{n}. " if t == "ol" else "- ") + it
-                                      for n, it in enumerate(items, 1)))
+                                      for n, it in enumerate(items, first)))
         elif t == "raw":
-            out.append(b.get("md", ""))
+            out.append(b.get("md") or "")
     return "\n\n".join(x for x in out if x is not None) + "\n"
 
 
@@ -239,15 +295,52 @@ def essay_list():
 def essay_load(slug):
     p = WRITING / f"{slug}.md"
     fm, raw, body = split_front(p.read_text())
-    return {"slug": slug, "front": fm, "raw_front": raw, "blocks": md_to_blocks(body)}
+    return {"slug": slug, "front": fm, "blocks": md_to_blocks(body)}
+
+
+BAKDIR = REPO / ".photo-build" / "writing-bak"
+_last_bak = {}          # slug -> monotonic time of its last backup
+BAK_EVERY = 120         # seconds
+
+
+class SaveRefused(Exception):
+    """A save that would destroy the essay. Surfaced to the client, not written."""
 
 
 def essay_save(slug, front_updates, blocks):
-    p = WRITING / f"{slug}.md"
-    fm, raw, body = split_front(p.read_text())
-    bak = p.with_suffix(".md.bak")
-    shutil.copy2(p, bak)                       # one-deep undo on disk
+    # Refuse a slug that escapes content/writing. The endpoint is localhost-only
+    # but unauthenticated, and any page in the browser can POST to it.
+    if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]*', slug or ""):
+        raise SaveRefused(f"bad slug {slug!r}")
+    p = (WRITING / f"{slug}.md").resolve()
+    if p.parent != WRITING.resolve() or not p.exists():
+        raise SaveRefused(f"no such essay {slug!r}")
+
+    old_text = p.read_text()
+    fm, raw, body = split_front(old_text)
     text = join_front(raw, front_updates) + blocks_to_md(blocks)
+    _, _, new_body = split_front(text)
+
+    # Guard against a catastrophic shrink. The client defaults `blocks` to [],
+    # and blocks_to_md([]) is just "\n" — an empty harvest, a 404'd load or a
+    # JS error upstream would otherwise silently empty an 11,000-word essay.
+    ow, nw = len(body.split()), len(new_body.split())
+    if ow >= 200 and nw < ow * 0.5:
+        raise SaveRefused(
+            f"refusing to save: body would shrink {ow} -> {nw} words. "
+            f"Nothing was written. Reload the editor.")
+
+    # Backups live OUTSIDE content/ (Hugo reads everything under content/, and
+    # deploy.sh does `git add -A`), and are rate-limited: the old one-per-save
+    # .bak was overwritten by the next autosave ~1s later, so the "undo" never
+    # survived long enough to undo anything.
+    BAKDIR.mkdir(parents=True, exist_ok=True)
+    now = time.monotonic()
+    if now - _last_bak.get(slug, -1e9) > BAK_EVERY:
+        stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+        shutil.copy2(p, BAKDIR / f"{slug}.{stamp}.md.bak")
+        _last_bak[slug] = now
+
     tmp = p.with_suffix(".md.tmp")
     tmp.write_text(text)
     os.replace(tmp, p)
@@ -255,15 +348,30 @@ def essay_save(slug, front_updates, blocks):
 
 
 def photo_refs():
-    """Photos that carry an essay_ref, for the insert-photo picker."""
+    """Photos that carry an essay_ref, for the insert-photo picker.
+
+    Mirrors the publish gate. build_index.py builds the site's `refs` map from
+    withheld-gated records, so a ref on a `staging`/`needs-review` photo
+    resolves to NOTHING once published. The picker used to offer those happily
+    and walk the writer straight into a "Missing photo reference" block — the
+    mistake is made here, but the warning only arrived at deploy time. Now they
+    are marked, and duplicates (which resolve arbitrarily) are marked too."""
     m = json.loads((DATA / "photos.json").read_text())
-    out = []
+    reg = json.loads((DATA / "collections.json").read_text())["collections"]
+    withheld = {c["slug"] for c in reg if c.get("withheld")}
+    seen = {}
     for k, r in m.items():
         ref = (r.get("essay_ref") or "").strip()
-        if ref:
-            out.append({"ref": ref, "key": k, "thumb": r.get("thumb"),
-                        "city": r.get("city"), "file": r.get("file"),
-                        "notes": (r.get("tag_notes") or "")[:140]})
+        if not ref:
+            continue
+        seen.setdefault(ref, []).append((k, r))
+    out = []
+    for ref, owners in seen.items():
+        k, r = sorted(owners)[0]                 # build_index picks the same one
+        out.append({"ref": ref, "thumb": r.get("thumb"),
+                    "city": r.get("city") or "",
+                    "withheld": bool(withheld & set(r.get("collections") or [])),
+                    "dupes": len(owners) - 1})
     out.sort(key=lambda x: x["ref"])
     return out
 
@@ -299,9 +407,6 @@ class Handler(BaseHTTPRequestHandler):
             if not str(f).startswith(str(DERIV.resolve())) or not f.exists():
                 return self._send(404, {"error": "no"})
             return self._send(200, f.read_bytes(), "image/webp")
-        if path == "/api/css":
-            return self._send(200, (REPO / "assets" / "css" / "main.css").read_bytes(),
-                              "text/css; charset=utf-8")
         return self._send(404, {"error": "not found"})
 
     def do_POST(self):
@@ -309,8 +414,12 @@ class Handler(BaseHTTPRequestHandler):
         n = int(self.headers.get("Content-Length", 0))
         data = json.loads(self.rfile.read(n) or "{}")
         if u.path == "/api/save":
-            with _lock:
-                size = essay_save(data["slug"], data.get("front", {}), data.get("blocks", []))
+            try:
+                with _lock:
+                    size = essay_save(data["slug"], data.get("front", {}),
+                                      data.get("blocks", []))
+            except SaveRefused as e:
+                return self._send(409, {"ok": False, "error": str(e)})
             return self._send(200, {"ok": True, "bytes": size})
         return self._send(404, {"error": "not found"})
 

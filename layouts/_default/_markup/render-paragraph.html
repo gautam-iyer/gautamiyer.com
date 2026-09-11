@@ -1,0 +1,7 @@
+{{/* Goldmark wraps a lone image in a paragraph, so the image render hook emitted
+     <p><figure>…</figure></p>. The browser closes the <p> at <figure> and
+     materialises a second empty one from the stray </p> — 64 junk paragraphs on
+     Psychic Highway Part 1 alone, and the leading one stole the drop cap from
+     every essay that opens with a photo. Unwrap a paragraph whose entire
+     content is one image. */}}
+{{ if and (eq (len .Text) 0) (findRE "^\\s*<figure>" .Inner) }}{{ .Inner | safeHTML }}{{ else }}<p>{{ .Inner | safeHTML }}</p>{{ end }}

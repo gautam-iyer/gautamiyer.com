@@ -117,12 +117,17 @@ def main():
             ref_dupes.setdefault(r, 1)
             ref_dupes[r] += 1
             continue
+        # No caption here on purpose: it would be tag_notes, and photo.html
+        # documents at length why an essay caption must never fall back to
+        # internal QA prose. Shipping the field invites exactly that wiring.
         refs[r] = {"thumb": p.get("thumb"), "avif": p.get("display_avif"),
-                   "webp": p.get("display_webp"), "ar": _ar(p),
-                   "caption": p.get("tag_notes") or "",
-                   "city": p.get("city") or "", "key": p.get("key") or ""}
-    held_refs = sorted({(photos[k].get("essay_ref") or "").strip() for k in photos
-                        if (photos[k].get("essay_ref") or "").strip()
+                   "webp": p.get("display_webp"), "ar": _ar(p)}
+    # Only warn about a ref that resolves NOWHERE. A ref carried by both a
+    # withheld and a published photo resolves fine to the published one, and
+    # announcing it as broken points at the wrong problem.
+    held_refs = sorted({r for k in photos
+                        for r in [(photos[k].get("essay_ref") or "").strip()]
+                        if r and r not in refs
                         and withheld & set(photos[k].get("collections") or [])})
 
     index = {"collections": collections, "places": places, "hero": hero,

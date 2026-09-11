@@ -9,29 +9,22 @@ source_url: "https://gautamiyer.substack.com/p/the-psychic-highway-part-2-troy-a
 hero_image: ""
 ---
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F61d4eeda-6322-4496-a473-8d7aa21f13c8_1537x2318.jpeg)
-
-*A late November sunrise over the Troy Gasholder House, one of thousands it has seen since its construction in 1873.*
+![A late November sunrise over the Troy Gasholder House, one of thousands it has seen since its construction in 1873.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F61d4eeda-6322-4496-a473-8d7aa21f13c8_1537x2318.jpeg)
 
 ---
 
 **Contents**
 
-**Gehry and the Machine**
-
-**Land, People, and the Machine**
-
-**Troy**
-
-**Schenectady**
-
-**Mohawk**
-
-**Moon and River**
+1. **Gehry and the Machine**
+2. **Land, People, and the Machine**
+3. **Troy**
+4. **Schenectady**
+5. **Mohawk**
+6. **Moon and River**
 
 ---
 
-***Gehry and The Machine***
+1. ***Gehry and The Machine***
 
 FRANK GEHRY passed away today as I was sitting down to write about Troy, New York — December 5th, 2025. Gehry was a movement on his own, a whirlwind force that helped revive architecture at the end of the 20th century by insisting that architecture is art. I’m not an architecture student and know little about these issues formally, but I do have my opinions. It’s unfortunate to be writing this on the occasion of his death, but I don’t feel great about Gehry’s buildings. If the building is a self-contained artistic unit, is the city a museum, or even an exhibition? The answer to the latter, independently, is “certainly not,” which should cast doubts on such a vision for architecture.
 
@@ -41,7 +34,7 @@ I first encountered Gehry’s works in *City of Quartz*, Mike Davis’s stirring
 
 When I lived in Atlanta, I felt John Portman’s Downtown buildings engender a similar sort of implacable psychological discomfort, as if I didn’t know what I was looking at and that someone was laughing at me for trying to make sense of them. Following the gradual migration of financial capital Northwards, from Downtown Atlanta to Midtown and then Buckhead, I discovered increasingly opaque architecture that offers less and less information about the relationship between buildings and people. Going Northwards, this occurs both at the theoretical level, in that the buildings become less attributable to any one time or architectural style, as well as at the practical level, in that they are generally unfriendly at the street level and alienating from afar. The late Fredric Jameson wrote about both Gehry and Portman in the early 1990s and had this to say about the relationship between postmodern architecture and people:
 
-*“This latest mutation in space… [transcends] the capacities of the individual human body to locate itself, to organize its immediate surroundings perceptually, and cognitively to map its position in a mappable external world… this alarming disjunction point between the body and its built environment… can itself stand as the symbol and analogue of that even sharper dilemma which is the incapacity of our minds, at least at present, to map the great global multinational and decentred communicational network in which we find ourselves caught as individual subjects.”*
+*“This latest mutation in space… \[transcends\] the capacities of the individual human body to locate itself, to organize its immediate surroundings perceptually, and cognitively to map its position in a mappable external world… this alarming disjunction point between the body and its built environment… can itself stand as the symbol and analogue of that even sharper dilemma which is the incapacity of our minds, at least at present, to map the great global multinational and decentred communicational network in which we find ourselves caught as individual subjects.”*
 
 I’ve been trying to understand why I’m so taken with industrial history and industrial forms, and I think Gehry’s passing and the subsequent appraisal of his work happened to shed some light on the matter, if only in providing a foil. About a year ago, I wrote about the historical “legibility” of Allentown and Pennsylvania steel mills and the relative “illegibility” of Atlanta’s skyscraper architecture. Now, I understand what it is I meant by legibility, which, for a physical place, is really about its articulation of human relationships: what does the built environment suggest I do for you and you for me, and what does that mean for how we view one another? This question has been rendered incoherent by the omnipotence of the global real estate market, which flattens our relationships — and thus our architecture — in the service of land rents.
 
@@ -59,11 +52,9 @@ In traveling the Psychic Highway of industrial Upstate New York, I got a glimpse
 
 ---
 
-***Land, People, and the Machine***
+2. ***Land, People, and the Machine***
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F96969de3-68a0-407b-8e1a-2d957867103d_2318x1537.jpeg)
-
-*Sunrise from Watervliet, facing Troy from across the Hudson River.*
+![Sunrise from Watervliet, facing Troy from across the Hudson River.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F96969de3-68a0-407b-8e1a-2d957867103d_2318x1537.jpeg)
 
 Troy, New York was nicknamed the “Collar City", as it produced 90% of America’s detachable shirt collars during the late 19th and early 20th centuries. Gloversville, NY, was the “Glove City” for similar reasons; Cohoes, NY was the “Spindle City,” Rome, NY, the “Copper City;” Syracuse, NY, the “Salt City,” and so forth.
 
@@ -93,25 +84,21 @@ I hope to have established two frameworks here that may help us understand the c
 
 *As Gilbert and co. usher in further postmodern downtown skyscrapers, Whole Foods outlets, and performing arts centers, you may in the future visit a Detroit that, as Jameson prophesied, “transcends the capacities of the individual human body to locate itself, to organize its immediate surroundings perceptually, and cognitively to map its position in a mappable external world.” Then Detroit will no longer be the Motor City, heartland of American industry, but something else entirely or maybe nothing at all.*
 
-** My one attempted nod towards impartiality on this matter is that Gilbert is clearly personally invested in the preservation of historic architecture, and he has invested a great deal of personal capital into the rehabilitation of some of Detroit’s great Downtown buildings. But of course this is part of the larger trend just described.**
+*\* My one attempted nod towards impartiality on this matter is that Gilbert is clearly personally invested in the preservation of historic architecture, and he has invested a great deal of personal capital into the rehabilitation of some of Detroit’s great Downtown buildings. But of course this is part of the larger trend just described.* \*
 
 ---
 
-***Troy***
+3. ***Troy***
 
 In Troy, I found one of the core oddities of Upstate New York, at least to my suburbanite sensibilities: urban decay is the norm, even to people who in other places might have “addressed” it comprehensively or moved away altogether. I have two key demographics in mind here: one is the affluent white pseudo-hipster, whose presence was marked clearly by a Montessori school right near Downtown. I know these folks very well, as I myself am in constant denial about being one, and because I live in Williamsburg in 2025, where high-paying marketing and other “creative” jobs fuel a spectrum of activities from Carhartt collecting to concierge chiropractic visits. In Williamsburg, these types of people are protected from the advances of the savages of Bushwick and Bed-Stuy by several blocks of buffer residents, whereas in Troy, I saw 2022 Subarus parked in front of condemned buildings. There was a period in the early 2000s when hipsters shacked up in the first confectioner’s warehouse they could find, but that type of person is largely gone, having been bought off by ascendant corporate living, much like the disaffected rebels of the 1960s.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc2c7c7a3-4eea-4665-8d39-e2fe3380b195_1536x2304.jpeg)
-
-*Vacant apartment block in front of a Church, near Troy’s Downtown.*
+![Vacant apartment block in front of a Church, near Troy’s Downtown.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc2c7c7a3-4eea-4665-8d39-e2fe3380b195_1536x2304.jpeg)
 
 The other key demographic is the University, of which Troy has two conveniently located near its tight, compact Downtown: Rensselaer Polytechnic Institute (RPI), and Russell Sage College. In Durham, NC, where I went to undergraduate school, Duke University had taken radical action against urban decay more than two decades before my arrival, purchasing and flipping 75% of the homes in Walltown, the neighborhood adjacent to Duke’s East Campus. This led to near-instant gentrification and the loss of a neighborhood fabric that was integral to Durham’s broader history and identity. It was hard to conclude, at least in my first impression, that either of Troy’s institutions had embarked on similar missions.
 
 Their presence alone, however, did facilitate some pedestrian activity on a wind-swept November morning, as well as a youthful vigor that made me nostalgic for the good old days (two years ago). Though Albany is home to the University of Albany and Excelsior College, both of those institutions are at the extreme Western end of the city’s panhandle, such that the city boundaries appear to have been extended solely for the purpose of integrating the two universities. They are minimally engaged with the city’s urban fabric, unlike Troy’s two universities, whose footprints are firmly visible in the city’s core.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdcfe9f7f-62e5-4457-ab67-11ffe715d7fc_1537x2318.jpeg)
-
-*On the campus of Russell Sage College, which was gorgeous and active in the morning November light.*
+![On the campus of Russell Sage College, which was gorgeous and active in the morning November light.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdcfe9f7f-62e5-4457-ab67-11ffe715d7fc_1537x2318.jpeg)
 
 Despite the consistent presence of abandoned rowhouses, Troy’s residential streets felt very different from Albany's. I realized this was visually about the quality of the mostly fantastic row homes, which proudly retained their original punch and splendor. In many, plywood lay where windows once were, and in some cases there was nothing but a void in the frame. But in almost all of them, you could see the wealth that once endowed them, as well as some neatly navigated historic preservation programs that had kept them from complete dilapidation. I found out only after leaving that Troy was once the fourth-wealthiest city in the country, per capita, which certainly distinguishes it materially from Albany.
 
@@ -119,11 +106,9 @@ Despite the consistent presence of abandoned rowhouses, Troy’s residential str
 
 ![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1755df91-ee68-412b-a139-e11d4ac2bfe8_2318x1536.jpeg)
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad9fd022-b2f6-4960-a49d-55aeff6043a6_1536x2318.jpeg)
+![The Victorian rowhomes of Troy, a few streets over from Downtown.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad9fd022-b2f6-4960-a49d-55aeff6043a6_1536x2318.jpeg)
 
-*The Victorian rowhomes of Troy, a few streets over from Downtown.*
-
-Troy came into such fabulous wealth on the backs of its industrial workers, including the mostly Irish women who worked in the city’s detachable collar factories. That’s right — detachable collar factories. Throughout the 19th century, men trudged to work in factories wearing collared shirts and vests that covered their torsos. When they returned home, their collars were stained with various types of industrial discharge, but the shirts themselves were “clean,” earning the ire of their wives, who had to clean whole shirts just to scrub out some soot from collars. So scornful was one woman, Ms. Hannah Lord Montague of Troy, New York, that she took a pair of scissors to one of her husband’s blue shirts and cut the collar clean off. One hundred years later, the women of Troy were manufacturing “100 per cent of the detachable collars worn in the world of men, and [had] caused the sign of ‘Troy Laundry’ to be seen from the snow-covered wastes of the Arctic to the golden sands of Guam (New York Times, 1925).” *(Look at how NYT used to write!)*
+Troy came into such fabulous wealth on the backs of its industrial workers, including the mostly Irish women who worked in the city’s detachable collar factories. That’s right — detachable collar factories. Throughout the 19th century, men trudged to work in factories wearing collared shirts and vests that covered their torsos. When they returned home, their collars were stained with various types of industrial discharge, but the shirts themselves were “clean,” earning the ire of their wives, who had to clean whole shirts just to scrub out some soot from collars. So scornful was one woman, Ms. Hannah Lord Montague of Troy, New York, that she took a pair of scissors to one of her husband’s blue shirts and cut the collar clean off. One hundred years later, the women of Troy were manufacturing “100 per cent of the detachable collars worn in the world of men, and \[had\] caused the sign of ‘Troy Laundry’ to be seen from the snow-covered wastes of the Arctic to the golden sands of Guam (New York Times, 1925).” *(Look at how NYT used to write!)*
 
 Shortly after the detachable collar took the world by storm, mid-19th century industrial practices came for Troy’s women. They routinely worked 14-hour days in the city’s collar factories, where they daily burned their fingers and arms and inhaled the cruel vapors of industrialized clothing production. In February 1864, a 19-year-old Irish immigrant woman (a girl, we might say now) named Kate Mullany organized about 300 female collar workers in Troy into the Collar Laundry Union, the first all-female labor union in the country. Within the same month, the women went on a six-day strike and achieved a 25% raise in wages, which would be replicated across the East Coast as Mullany dispatched members of the Collar Laundry Union to help organize women in other factories.
 
@@ -135,15 +120,11 @@ Troy’s “firsts” don’t stop there. If we go back in time a bit farther, w
 
 ![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F46e0c38b-ee70-4c26-b745-c78fd83b9ca8_2304x1536.jpeg)
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F03c29847-de09-4f61-a46d-48f993608cfe_2304x1536.jpeg)
-
-*Some physical reminders of Troy’s industrial past.*
+![Some physical reminders of Troy’s industrial past.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F03c29847-de09-4f61-a46d-48f993608cfe_2304x1536.jpeg)
 
 ![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd797a70b-3921-414e-adb0-68430112fa59_2304x1536.jpeg)
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06188fdb-fc71-4111-9756-362eefde4758_1536x2304.jpeg)
-
-*Troy Savings Bank Music Hall, still operating, is a physical reminder of Troy’s former wealth.*
+![Troy Savings Bank Music Hall, still operating, is a physical reminder of Troy’s former wealth.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06188fdb-fc71-4111-9756-362eefde4758_1536x2304.jpeg)
 
 We’ve now pieced together almost enough to explain why there is a Montessori school in Downtown Troy: historical affluence, small-time industry (that led to a dilapidated waterfront but not an empty city), anchor institutions in the form of universities (though they have not been terribly involved with Troy’s urban trajectory, they have kept folks in Troy), and a small but burgeoning arts scene that has attracted well-to-do white families from downstate. The last piece of the puzzle, I realized as I walked around the city, is more a question of what’s missing than what’s there: urban freeways.
 
@@ -157,11 +138,9 @@ Enthusiasm Guy #1 had a long history with Schenectady: his grandfather had moved
 
 ---
 
-***Schenectady***
+4. ***Schenectady***
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Face4f3b8-04f1-4505-8f4c-6d6bf6506c31_1536x2304.jpeg)
-
-*A strange painting in the window of a building in Downtown Schenectady.*
+![A strange painting in the window of a building in Downtown Schenectady.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Face4f3b8-04f1-4505-8f4c-6d6bf6506c31_1536x2304.jpeg)
 
 I’ve had “Schenectady” stuck in my head for a long, long time. Since I was a kid in elementary school and we learned a little bit about the cities dotting the rest of New York State, I’ve been fascinated by the way that Schenectady rolls off my tongue. The feeling of saying Schenectady is not dissimilar to the feeling of saying other American place names with Indigenous roots, which is to say about half of the places in America east of the Mississippi (try “Mississippi”).
 
@@ -173,9 +152,7 @@ To begin with, the colonial versions of Indigenous words are butchered. Much of 
 
 There is, too, the matter of the meanings of these words to Indigenous peoples, as assembled by their own and disaggregated and spliced by the English, Dutch, and French: skahnéhtati, in Mohawk, is roughly translated as “beyond the pines,” as was immortalized by Ryan Gosling’s jawline in *The Place Beyond the Pines* but is otherwise illegible or forgotten. Today, the place beyond the pines is Schenectady. This is not to toot my own horn for having done the paltry work of reading Wikipedia pages and archived web articles, but really just to mourn a loss of meaning. The palimpsest that is a map of Upstate New York is a middle finger to the people who lived here first, and to all of us who have followed in their absence without the mental faculties to make sense of such strange syllables. *(A concrete example of this is that most Iroquoian languages did not make use of spoken words formed by the touching of upper and lower lips, which is standard in spoken English.)*
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0920e168-4a6d-453e-bac6-f38b5081f8fa_1536x2304.jpeg)
-
-*The Seneca Block building in Schenectady, recently transformed into a mixed-use development with 16 rental units.*
+![The Seneca Block building in Schenectady, recently transformed into a mixed-use development with 16 rental units.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0920e168-4a6d-453e-bac6-f38b5081f8fa_1536x2304.jpeg)
 
 You may read the above and find nothing aberrant to your historical expectation: of course, settlers came and did their best to “honor” Indigenous naming traditions. It is the crucial context of the *formalized naming tradition* that emerged in the late 19th and 20th centuries that makes this history more sinister and reveals it as clearly part of the broader American imperial tradition.
 
@@ -187,15 +164,11 @@ There is, finally, the simple fact that the Indigenous naming schemes of Upstate
 
 *(The earlier, slightly less morose naming tradition of Upstate New York is after classical antiquity, which was common across the American Frontier. That’s why you have Great Lakes towns in Ohio called Mentor and Homer. It’s why you have, in New York, Troy, Syracuse, Utica, and Ithaca, and, less famously, Camillus, Cicero, Fabius, Manlius, Marcellus, Pompey, Tully, and Lysander (thank you, Reddit, for the latter list). It is said that a single early Revolutionary War veteran, who himself was born in Ireland, assigned most of these names in New York, though that claim is difficult to verify.)*
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc55a0afa-01ff-446d-8b12-11d9551836cf_1536x2304.jpeg)
-
-*Some final fall colors in Downtown Schenectady.*
+![Some final fall colors in Downtown Schenectady.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc55a0afa-01ff-446d-8b12-11d9551836cf_1536x2304.jpeg)
 
 After all this, I can tell you now with confidence that it’s pronounced “Skeh-NECK-tuh-dee”. While its name takes some finagling of the tongue to master, Schenectady is an easy town to figure out as “The City That Lights and Hauls the World.” Lighting — that’s electricity, the domain of General Electric (GE). Hauling — that’s the prerogative of the railroad.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F36e89244-723e-4ce2-a865-099a17c8e254_3456x2304.jpeg)
-
-*Schenectady’s GE Power building, which was the headquarters of GE Power until 2000 when operations were moved to Atlanta, GA.*
+![Schenectady’s GE Power building, which was the headquarters of GE Power until 2000 when operations were moved to Atlanta, GA.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F36e89244-723e-4ce2-a865-099a17c8e254_3456x2304.jpeg)
 
 Schenectady has a long industrial history due to its location on the Mohawk River and at the confluence of several major rail lines, but it is ultimately a company town. When I first looked at a map of Schenectady, laid out helter-skelter along a gentle bulge in the Mohawk River, I identified the historic Downtown and followed Union Street eastwards through the *GE Realty Plot* neighborhood. Strange name for a community, but, as I hope to have established, hyper-legible. GE purchased this tract from Union College many moons ago and housed its upwardly ascendant managerial class in quaint parlor homes, which today comprise one of Schenectady’s two immaculately preserved local historic districts (more on the other one later).
 
@@ -203,9 +176,7 @@ In 1928, America’s first public television broadcast soared triumphantly throu
 
 Thomas Edison’s General Electric built, crowned, and abandoned Schenectady in less than 100 years. Some folks in Schenectady have lived to see the entire lifecycle of a place and its people. They’ve been present for the invention of the X-ray and the loudspeaker, and for the decline of a downtown area that is often incredulously described as the victim of an invisible bombing. They agitated and struck as Schenectady grew to house the highest concentration of union members in the country. They watched, powerless, as late-20th-century GE CEO Jack “Neutron Jack” Welch became famous for his love of union-busting, overseeing a decline in GE union membership from about 70% of the workforce to 35%. They’ve seen a city that was nearly 99% white in the mid-century become about 50% white, with the majority of its non-white residents living in downtown-adjacent neighborhoods that were redlined to hell during the New Deal, before Irish and Italian workers became “white.” This *is* the ominous shuttered behemoth — not the death of a niche garment industry as in Troy, but the supernova of one of America’s fantastical industrial visions.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdc49ab77-5f15-471f-8cf6-69ed01dacee5_2304x1536.jpeg)
-
-*Somewhere near Downtown / Hamilton Hill, Schenectady.*
+![Somewhere near Downtown / Hamilton Hill, Schenectady.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdc49ab77-5f15-471f-8cf6-69ed01dacee5_2304x1536.jpeg)
 
 Of course, the death throes of America’s golden age are not limited to such fluffy human concepts as labor rights and demographic change. Beginning in 1947, GE spent decades pissing battery acid straight into the Hudson River. Well, not quite — GE’s major environmental sin was actually the release of Polychlorinated biphenyl (PCB), which was used heavily in early industrial processes as a coolant and was widely known to be toxic by the 1930s, decades before GE stopped dumping it in the Hudson.
 
@@ -219,9 +190,7 @@ As I walked the blocks of Hamilton Hill down towards the Mohawk River, skirting 
 
 While I bloviate about ghosts, let me bring you to some real ones. At the end of my journey down to the riverfront, I entered Schenectady’s other major historic residential neighborhood, The Stockade. Plaques, signs, and online brochures shared several versions of the same truth, which is that in some way, shape, or form, The Stockade is one of the oldest residential neighborhoods in the United States. Spanning no more than a handful of blocks in either direction, the neighborhood is packed with glorious residences from the 17th, 18th, and 19th centuries, which, in American historical terms, is prehistoric.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe3729c2-02db-48e0-afde-2914bfd29329_1536x2304.jpeg)
-
-*First Reformed Church, established 1680.*
+![First Reformed Church, established 1680.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe3729c2-02db-48e0-afde-2914bfd29329_1536x2304.jpeg)
 
 As I meandered the streets alone, the wind continued to whisper, and time appeared to pause. There weren’t any other pedestrians, but there were a whole lot of important-sounding historical plaques. *George Washington slept here*, read one. *Dutch Church, founded before 1680*, read another. I also read that the neighborhood was mostly burned to the ground during the 1690 “Schenectady Massacre,” and that its prompt rebuilding shortly thereafter is what allowed it to stand today, unlike many other contemporary areas that were decaying by the early 18th century.
 
@@ -231,9 +200,7 @@ The houses were blue, pink, yellow, and purple. They looked like they had all be
 
 ![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1f146747-2501-45d0-9cec-3875ac6ab485_1536x2304.jpeg)
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff42de970-f547-4105-9558-99b108e5d6a2_1536x2304.jpeg)
-
-*Some homes in The Stockade.*
+![Some homes in The Stockade.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff42de970-f547-4105-9558-99b108e5d6a2_1536x2304.jpeg)
 
 The sunlight poked and prodded playfully from behind the clouds as I entered the grounds of a church cemetery, just as placid as the surrounding neighborhood but all the more dreamlike. There was a small statue of a Benedictine Monk with his hands folded together in humility; a yellow Elm leaf fell and caught on his thumb. I imagined the chaotic, soot-filled Downtown Schenectady of the 1920s, and caught a glimpse of the now-tamed Mohawk River through a hole in the Church’s fence. For a century, the River had played host to wars between colonists and the soon-to-be colonized. Then for another century it bequeathed onto European immigrants a hundred thousand jobs and lives. And now, for who knows how long, it provides a stable basis for the property values of a handful of Stockade homes that are inhabited by who knows who.
 
@@ -241,9 +208,7 @@ The sunlight poked and prodded playfully from behind the clouds as I entered the
 
 ![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4015e35f-cc89-4051-b85f-aea8d79037ae_1536x2304.jpeg)
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb23c2a18-82ca-4aca-94b6-f2611ef07732_1536x2304.jpeg)
-
-*In the Church Cemetery.*
+![In the Church Cemetery.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb23c2a18-82ca-4aca-94b6-f2611ef07732_1536x2304.jpeg)
 
 I was caught in my own world when an older man approached me to ask why I was there. Startled, I jumped back and laughed; he recoiled and mumbled an apology. A more timid Enthusiasm Guy, but #2 no less. We talked for a couple of minutes before he unceremoniously departed — I presumed from my life altogether. But I was standing in front of the “Lawrence the Indian” statue in the middle of the neighborhood when he squeaked back around the curb in an old, brown SUV. “Want a tour of historic Schenectady?” I got in the stranger’s car — *see Enthusiasm Guy Tenet No. 1: the rules of modern life are off the table* — and he drove me around The Stockade in not even the slightest rush. He paused in the middle of the street and pointed at a house: “That’s the second-oldest house in Schenectady.” Not much of a conversationalist, he was a veritable fact machine: he knew things, and he knew that I needed to know them.
 
@@ -251,11 +216,9 @@ I learned a great deal from Paul and felt that he was about ready for me to get 
 
 ---
 
-***Mohawk***
+5. ***Mohawk***
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcdc62d9f-0f7c-4dd7-8ffe-f8ef4cab5b7c_2304x3456.jpeg)
-
-*Schenectady’s “Lawrence the Indian.”*
+![Schenectady’s “Lawrence the Indian.”](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcdc62d9f-0f7c-4dd7-8ffe-f8ef4cab5b7c_2304x3456.jpeg)
 
 As it turns out, Lawrence the Indian does not really have a history. In fact, he is just “No. 53 Indian Chief,” from the catalogue of the J.L. Mott Iron Works in The Bronx. 75 years after his installation in The Stockade, however, he was reborn as Lawrence. “Lawrence” was a Mohawk warrior who traced French attackers back to Montreal after the Schenectady Massacre in the hopes of retrieving Mohawk and British hostages. If you’re paying attention, you’ll recall that the French battalion that initially attacked Schenectady also included Mohawk fighters, meaning the Mohawk were aligned on both sides of the conflict. This is what Paul told me:
 
@@ -265,11 +228,11 @@ From the first days of European exploration of New York State, colonists sought 
 
 Only later did I find out the gravity of this schism in Mohawk history. The Kahnawake Mohawk Territory, which is today one of the largest self-governing Mohawk territories in Canada, maintained close familial ties with the Mohawks in New York. Many of the Mohawks who converted and moved North left their brothers and sisters behind in the Mohawk Valley, only to encounter them again during the French and Indian War. When meeting each other on the battlefield, their blood bond was sometimes too much to overcome, as in this account from a British General:
 
-*“In this confusion, a Mohawk Warrior happened to encounter his friend, a [Kahnawake]…they saluted each other, and shook hands. In the meantime another came up, who made a Blow at the Mohawk…the latter parried it and killed him… A Second instantly rushed on, making a similar effort…he killed him also; His friend stood a passive Spectator of the Slaughter of his Comrades: so strong was the Band of Friendship, that even when meeting in hostile array, it obliged them to spare each other. The [Kahnawake] then exclaimed “Oh – my friend, we have met in disagreeable circumstances: Let us then part.”*
+*“In this confusion, a Mohawk Warrior happened to encounter his friend, a \[Kahnawake\]…they saluted each other, and shook hands. In the meantime another came up, who made a Blow at the Mohawk…the latter parried it and killed him… A Second instantly rushed on, making a similar effort…he killed him also; His friend stood a passive Spectator of the Slaughter of his Comrades: so strong was the Band of Friendship, that even when meeting in hostile array, it obliged them to spare each other. The \[Kahnawake\] then exclaimed “Oh – my friend, we have met in disagreeable circumstances: Let us then part.”*
 
 Scenes of anguished encounters were common throughout the French and Indian Wars as, by and large, New York Mohawks fought with the British against the French and the allied Kahnawake Mohawks.
 
-The world-historical forces unleashed by the Erie Canal had been bubbling for centuries before its completion and eventual obsolescence. If those forces in Upstate New York ushered in the modern era, they were experienced first by the tribes of the Iroquois Confederacy. The Mohawk people, specifically, whose traditions and notions of peoplehood had developed for thousands of years, were rended in just a century after their first contact with Christian European settlers. And just as the Erie Canal comprised a political economy that led to apocalyptic and utopian religious fervor, the entrance of the Mohawk people into the theatre of Western modernity was a cataclysmic event. Remembered by Mohawk historian Darren Bonaparte as “[The Darkest Day in Mohawk History](https://www.wampumchronicles.com/darkestday.html),” the Battle of Lake George saw “Mohawks fighting Mohawks in hand-to-hand combat with terrible losses on each side.” On that day, “a branch of [their] family tree was struck by lightning and utterly destroyed.”
+The world-historical forces unleashed by the Erie Canal had been bubbling for centuries before its completion and eventual obsolescence. If those forces in Upstate New York ushered in the modern era, they were experienced first by the tribes of the Iroquois Confederacy. The Mohawk people, specifically, whose traditions and notions of peoplehood had developed for thousands of years, were rended in just a century after their first contact with Christian European settlers. And just as the Erie Canal comprised a political economy that led to apocalyptic and utopian religious fervor, the entrance of the Mohawk people into the theatre of Western modernity was a cataclysmic event. Remembered by Mohawk historian Darren Bonaparte as “[The Darkest Day in Mohawk History](https://www.wampumchronicles.com/darkestday.html),” the Battle of Lake George saw “Mohawks fighting Mohawks in hand-to-hand combat with terrible losses on each side.” On that day, “a branch of \[their\] family tree was struck by lightning and utterly destroyed.”
 
 That is where Paul’s narrative concluded, but it would not be the final appearance of the Kahnawake Mohawks on the stage of modernity. In the Roaring 20s, 170 years after the Battle of Lake George, the Kahnawake Mohawks would again find themselves working at the vanguard of American empire. Only this time, it was in America’s self-assertion as the pre-eminent global cultural and financial hegemon, and it would occur thousands of feet in the air, rather than amongst the ancient woods of the Adirondacks.
 
@@ -291,17 +254,13 @@ Like Mr. McComber, many Kanahwake men spent most of their lives away from their 
 
 Though I imagined the Psychic Highway initially as a psychological representation of the Erie Canal, maybe more broadly construed as the geography of New York State, I realize now it refers to the outcomes of history under capitalism. These outcomes are defined by an unfathomable rate of acceleration: the Mohawk people joined the Iroquois Confederacy sometime in the 1100s and remained a largely coherent group until the European colonization of America 600 years later, when some converted to Catholicism and moved upriver; Brooklyn’s Little Kahnawake, dependent as it was upon the ebbs and flows of real estate capital, came and went in less than 100 years. The Psychic Highway is really a description of the exponentially swelling flow of capital across space and time, and the way in which it swallows people and places to the bewilderment and awe of us all. It’s not an evil force, nor is it correct to describe it as a necessarily harmful one (see the image below in which folks from Kahnawake touchingly commune in YouTube comments). It just doesn’t care about anything other than accumulation; damned be those that stand in its way.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1699cb7b-ae27-4451-a53f-6619b241914c_1880x796.png)
-
-*In the YouTube comments for a trailer for Reagan Tarbell’s documentary about Little Kahnawake, “Little Caughnawaga: To Brooklyn and Back.”*
+![In the YouTube comments for a trailer for Reagan Tarbell’s documentary about Little Kahnawake, “Little Caughnawaga: To Brooklyn and Back.”](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1699cb7b-ae27-4451-a53f-6619b241914c_1880x796.png)
 
 ---
 
-***Moon and River***
+6. ***Moon and River***
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5194862-dd02-4630-966e-6098c408a03d_2304x1536.jpeg)
-
-*A façade, a few streets over from The Stockade.*
+![A façade, a few streets over from The Stockade.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5194862-dd02-4630-966e-6098c408a03d_2304x1536.jpeg)
 
 One man who’s done his best to stand in the way of capitalist accumulation — though I wouldn’t describe him as damned — is Richard, the owner and sole employee of Moon and River Café in Schenectady. Whenever I visit a new town or city, I always try to find a vegan or hipster café of some kind, as they’ll often shed light on the state of local politics and reveal the undercurrents of local organizing, or lack thereof. (Fine. I also like things like vegan chicken sandwiches and seitan subs.)
 
@@ -315,9 +274,7 @@ There was an orderliness to the clutter, which was united not in color or textur
 
 ![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3953a8ac-db25-4be1-af38-d990669216c8_1536x2304.jpeg)
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5df34e24-d116-43b3-bdcd-755f99f63f4f_2304x1536.jpeg)
-
-*Moon and River Café, interior.*
+![Moon and River Café, interior.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5df34e24-d116-43b3-bdcd-755f99f63f4f_2304x1536.jpeg)
 
 Richard, as he’d soon introduce himself to me, gingerly placed his book on the seat of his couch and arose to greet me. “Hello, young man!” I like being called “young man” by older folks because it gives me a sense of agency and vitality. He shook my hand and gently pressed down on my shoulder to seat me at the table with the four chairs. He had a slight hunch that gave away his age, but he also had a twinkle in his eyes and a mouth creased from decades of smiling and perhaps formerly grinning. There was something from deep within him that animated him and gave his life meaning, which I learned to detect from the Enthusiasm Guys of earlier in the day.
 
@@ -335,13 +292,11 @@ From there, our conversation narrowed slightly to the domain of American politic
 
 ![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdcc3df63-fc9e-48f7-a1dc-a44cfbbcb646_2304x1536.jpeg)
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe62e85d9-8b3e-4d8c-a90c-8a473cc3f8a9_2304x1536.jpeg)
-
-*Moon and River Café, interior, postcards, stickers, and magnets.*
+![Moon and River Café, interior, postcards, stickers, and magnets.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe62e85d9-8b3e-4d8c-a90c-8a473cc3f8a9_2304x1536.jpeg)
 
 He knew a lot about Schenectady’s political history, of which two figures are worthy of description here. First is Schenectady’s own Mamdani, George Lunn. The first socialist elected to office in New York State, Lunn was the Mayor of Schenectady for three terms in the 1910s and 1920s. He campaigned and won on the issues that would define the “Sewer Socialist” platform of Milwaukee’s contemporary Mayors and Councilmembers, and New York City’s Mayor 100 years later. Lunn declined to accept the Democratic nomination for New York State Governor in 1928, which then went to the slightly more famous Franklin Delano Roosevelt. He has been rescued from relative obscurity in the 2020s as news outlets have performed some cursory historical research and found that there is, indeed, a precedent for socialism in electoral politics that cannot be hidden by the cult of Fiorello LaGuardia’s personality.
 
-Richard was especially thrilled to tell me about his friend, Orlondo Hundley, whose name I could not remember for the life of me until I hit the right combination of “Schenectady Rapper Mayor Candidate” on Google. Orlondo technically co-owns Moon & River Café with Richard, but he’s only in his late 20s and is a poet, rapper, and Schenectady native whose advocacy and dedication to his hometown have crystallized in a 2027 campaign for Mayor that is reminiscent of George Lunn’s. His website’s [Policy page](https://www.orlondoformayor.com/policy) includes such straightforward Sewer Socialist-y declarations as “Improving Sidewalks Is Public Safety, Economic Policy, and Basic Dignity” and “[We Must] Cut Waste Through a Full City Audit.”
+Richard was especially thrilled to tell me about his friend, Orlondo Hundley, whose name I could not remember for the life of me until I hit the right combination of “Schenectady Rapper Mayor Candidate” on Google. Orlondo technically co-owns Moon & River Café with Richard, but he’s only in his late 20s and is a poet, rapper, and Schenectady native whose advocacy and dedication to his hometown have crystallized in a 2027 campaign for Mayor that is reminiscent of George Lunn’s. His website’s [Policy page](https://www.orlondoformayor.com/policy) includes such straightforward Sewer Socialist-y declarations as “Improving Sidewalks Is Public Safety, Economic Policy, and Basic Dignity” and “\[We Must\] Cut Waste Through a Full City Audit.”
 
 You should never attach yourself to politicians, in general, and you especially should not form opinions based only on things you see online, but Orlondo’s campaign and persona have moved me considerably. He pairs a human conviction in progressive beliefs with technocratic interest at a time when it’s easier to vigorously pursue one instead of the other. He’s orchestrated material wins for Schenectady despite never holding elected office, including the redevelopment of blighted Downtown properties for local artists during COVID. He’s written over 90 songs and 400 poems, and since launching his Mayoral Campaign, he’s advocated [tirelessly](https://www.wamc.org/news/2026-01-04/schenectady-mayoral-hopeful-sheds-line-on-the-citys-homeless-population-with-social-media-stint) to end homelessness in Schenectady.
 
@@ -392,6 +347,8 @@ There is no doubt who Orlondo, aka 97OTIS, seeks to serve. Posing in front of a 
 [https://www.academia.edu/28225142/1901_Kahnawake_census_Chateauguay_district_Sault_St_Louis](https://www.academia.edu/28225142/1901_Kahnawake_census_Chateauguay_district_Sault_St_Louis)
 
 [https://brooklynrail.org/2018/09/field-notes/LITTLE-CAUGHNAWAGA/](https://brooklynrail.org/2018/09/field-notes/LITTLE-CAUGHNAWAGA/)
+
+[https://www.youtube-nocookie.com/embed/Nuymh2_Gfs4?rel=0&autoplay=0&showinfo=0&enablejsapi=0](https://www.youtube-nocookie.com/embed/Nuymh2_Gfs4?rel=0&autoplay=0&showinfo=0&enablejsapi=0)
 
 **Detroit**
 

@@ -98,6 +98,8 @@ figure.fig .ref{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.7);col
 #pick .cell{border:1px solid var(--line);border-radius:7px;overflow:hidden;cursor:pointer;background:none;padding:0;text-align:left}
 #pick .cell:hover{border-color:var(--ink)}
 #pick .cell img{width:100%;display:block;aspect-ratio:3/2;object-fit:cover;background:#eee}
+#pick .cell .warn{font-size:10.5px;color:#b3872a;margin-top:3px;line-height:1.3}
+#pick .cell[data-withheld]{opacity:.55}
 #pick .cell .r{font-family:ui-monospace,monospace;font-size:11px;padding:5px 7px;color:var(--ink)}
 #pick .empty{padding:28px;color:var(--mid);line-height:1.6}
 #pick .empty code{background:#f2f2f2;padding:1px 5px;border-radius:3px}
@@ -160,7 +162,7 @@ async function boot(){
        <div class="t">${esc(e.title)}</div>
        <div class="m">${(e.date||'').slice(0,10)} · ${e.words} words · ${e.blocks} blocks</div>
      </button>`).join('');
-  open(ESSAYS[0].slug);
+  openEssay(ESSAYS[0].slug);
 }
 function fmtDate(v){
   if (!v) return '';
@@ -170,7 +172,7 @@ function fmtDate(v){
 }
 const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-async function open(slug){
+async function openEssay(slug){
   if (dirty) await save(true);
   const d = await (await fetch('/api/essay?slug='+encodeURIComponent(slug))).json();
   CUR = d; BLOCKS = d.blocks;
@@ -230,8 +232,14 @@ function inlineMD(el){
     if (n.nodeType === 3){ out += n.nodeValue; return; }
     const t = n.tagName ? n.tagName.toLowerCase() : '';
     const inner = inlineMD(n);
-    if (t==='b'||t==='strong') out += '**'+inner.trim()+'**';
-    else if (t==='i'||t==='em') out += '*'+inner.trim()+'*';
+    if (t==='b'||t==='strong' || t==='i'||t==='em'){
+      // Move whitespace OUTSIDE the markers instead of discarding it. Chrome's
+      // double-click selection includes the trailing space, so trimming it
+      // turned "say hello world" into "say **hello**world" -> "helloworld".
+      const m = inner.match(/^(\s*)([\s\S]*?)(\s*)$/);
+      const mk = (t==='b'||t==='strong') ? '**' : '*';
+      out += m[2] ? m[1]+mk+m[2]+mk+m[3] : inner;
+    }
     else if (t==='a') out += '['+inner+']('+(n.getAttribute('href')||'')+')';
     else if (t==='br') out += ' ';
     else out += inner;
@@ -250,7 +258,8 @@ function harvest(){
     if (!el) return;
     if (b.type==='ul'||b.type==='ol'){
       b.items = [...el.querySelectorAll('li')].map(li=>inlineMD(li).trim()).filter(Boolean);
-      b.md = null;
+      b.items_are_md = true;
+      b.md = '';
     } else {
       b.md = inlineMD(el).replace(/\s+/g,' ').trim();
       b.html = el.innerHTML;
@@ -272,7 +281,13 @@ async function save(sync){
   setStatus('saving','saving…');
   try{
     const r = await fetch('/api/save',{method:'POST',headers:{'content-type':'application/json'},body});
-    const j = await r.json();
+    const j = await r.json().catch(()=>({}));
+    if (!r.ok || j.ok === false){
+      // A refusal (e.g. the server's shrink guard) must NOT read as "saved" —
+      // the editor would keep going and the work would exist nowhere.
+      setStatus('saving', 'NOT SAVED — ' + (j.error || r.status));
+      return;
+    }
     dirty = false;
     setStatus('saved', 'saved · '+new Date().toLocaleTimeString());
   }catch(e){ setStatus('saving','SAVE FAILED — '+e.message); }
@@ -332,7 +347,18 @@ bub.addEventListener('mousedown', e=>{
   else {
     const s=getSelection();
     const el = s.anchorNode && (s.anchorNode.nodeType===1?s.anchorNode:s.anchorNode.parentElement).closest('.blk');
-    if (el){ harvest(); BLOCKS[+el.dataset.i].type = c; render(); focusBlock(+el.dataset.i, true); }
+    if (el){
+      harvest();
+      const bi = +el.dataset.i, blk = BLOCKS[bi];
+      // Converting a list to a heading/quote/paragraph used to drop every item
+      // on the floor: items live in .items, but the new type renders .html.
+      if (blk.items && blk.items.length){
+        blk.md = blk.items.join(' ');
+        blk.html = blk.md.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+        delete blk.items; delete blk.items_are_md;
+      }
+      blk.type = c; render(); focusBlock(bi, true);
+    }
   }
   touch();
 });
@@ -375,9 +401,12 @@ function openPicker(){
   const q = ($('#pq').value||'').toLowerCase();
   const rows = REFS.filter(r=>!q || (r.ref+' '+(r.city||'')).toLowerCase().includes(q));
   $('#pgrid').innerHTML = rows.length ? rows.map(r=>
-      `<button class="cell" data-r="${esc(r.ref)}">
+      `<button class="cell" data-r="${esc(r.ref)}" ${r.withheld?'data-withheld':''}>
          <img src="/thumb/${esc(r.thumb)}" loading="lazy" alt="">
-         <div class="r">#${esc(r.ref)}<br><span style="color:#999">${esc(r.city||'')}</span></div>
+         <div class="r">#${esc(r.ref)}<br><span style="color:#999">${esc(r.city||'')}</span>
+         ${r.withheld?'<div class="warn">⦸ withheld — renders nothing</div>':''}
+         ${r.dupes?`<div class="warn">⚠ ${r.dupes} other photo${r.dupes>1?'s':''} share this ref</div>`:''}
+         </div>
        </button>`).join('')
     : `<div class="empty">No photos carry an essay ref yet.<br><br>
         Open the photo tagger on <code>:8800</code>, find a photo, and put a slug like
@@ -395,7 +424,7 @@ $('#pgrid').addEventListener('click', e=>{
 });
 
 $('#list').addEventListener('click', e=>{
-  const b = e.target.closest('.ess'); if(b) open(b.dataset.s);
+  const b = e.target.closest('.ess'); if(b) openEssay(b.dataset.s);
 });
 $('#preview').addEventListener('click', async ()=>{
   await save();

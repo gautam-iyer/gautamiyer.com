@@ -84,7 +84,19 @@ PACKET.photos.forEach(p => BASE[p.key] = p);
 let EDITS = {};             // key -> {field: value} (only what differs)
 try { EDITS = JSON.parse(localStorage.getItem(LSKEY) || "{}"); } catch (e) { EDITS = {}; }
 
-const eq = (a,b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+function norm(v){
+  // Compare by MEANING, not by serialisation. Arrays are sets here (chips), so
+  // order must not count: toggleIn() sorts, but 57% of manifest records store
+  // their tag arrays unsorted, so a plain stringify compare reported every
+  // chip re-toggle as a change. And an absent flag (undefined/null) is the
+  // same thing as false — 4,178 records have no hero/place_cover/cull key, so
+  // toggling one twice used to "change" null into false.
+  if (Array.isArray(v)) return JSON.stringify(v.slice().sort());
+  if (v === undefined || v === null || v === false) return 'EMPTY';
+  if (v === '') return 'EMPTY';
+  return JSON.stringify(v);
+}
+const eq = (a,b) => norm(a) === norm(b);
 const cur = (k,f) => (EDITS[k] && f in EDITS[k]) ? EDITS[k][f] : BASE[k][f];
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
@@ -205,9 +217,9 @@ document.addEventListener("click", e => {
   if (!t) return;
   const a = t.dataset.act;
   if (a === "chip")      { toggleIn(t.dataset.k, t.dataset.f, t.dataset.v); t.classList.toggle("on");
-                           document.getElementById("c-"+CSS.escape(t.dataset.k))?.classList.toggle("changed", !!EDITS[t.dataset.k]); }
+                           cardEl(t.dataset.k)?.classList.toggle("changed", !!EDITS[t.dataset.k]); }
   else if (a === "flag") { const k=t.dataset.k, f=t.dataset.f; set(k,f,!cur(k,f)); t.classList.toggle("on");
-                           document.getElementById("c-"+CSS.escape(k))?.classList.toggle("changed", !!EDITS[k]); }
+                           cardEl(k)?.classList.toggle("changed", !!EDITS[k]); }
   else if (a === "zoom") { const lb=document.getElementById("lb"); lb.querySelector("img").src=t.dataset.src; lb.style.display="flex"; }
   else if (a === "pg")   { page = +t.dataset.p; render(); }
 });
@@ -218,7 +230,7 @@ document.addEventListener("input", e => {
   if (!t) return;
   const v = t.value.trim();
   set(t.dataset.k, t.dataset.f, v === "" ? null : v);
-  document.getElementById("c-"+CSS.escape(t.dataset.k))?.classList.toggle("changed", !!EDITS[t.dataset.k]);
+  cardEl(t.dataset.k)?.classList.toggle("changed", !!EDITS[t.dataset.k]);
 });
 ["shoot","city","coll","rev","q"].forEach(id => {
   document.getElementById("f-"+id).addEventListener("input", e => { F[id]=e.target.value; page=0; render(); });

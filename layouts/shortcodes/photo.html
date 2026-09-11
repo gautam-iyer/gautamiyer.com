@@ -9,7 +9,10 @@
      A ref that resolves to nothing is a WRITING error, not a silent gap: it
      renders a visible marker in the page and warns during the build. Refs on
      withheld photos deliberately do not resolve — the publish gate still wins. */}}
-{{ $ref := .Get "ref" }}
+{{/* `.Get` returns NIL, not "", when the attribute is absent — and `index`
+     rejects a nil key, so a bare {{< photo >}} aborted the whole site build
+     instead of rendering the missing marker this file promises. */}}
+{{ $ref := .Get "ref" | default "" }}
 {{ $base := .Site.Params.photo_base | default "/img/" }}
 {{ $p := index (index hugo.Data.index "refs" | default dict) $ref }}
 {{ with $p }}
@@ -22,7 +25,7 @@
     <img src="{{ printf "%s%s" $base (or .webp .thumb) }}"
          alt="{{ $cap }}" loading="lazy" decoding="async"
          {{ with .ar }}style="aspect-ratio:{{ . }}"{{ end }}>
-    {{ with $cap }}<figcaption>{{ . | safeHTML }}</figcaption>{{ end }}
+    {{ with $cap }}<figcaption>{{ . }}</figcaption>{{ end }}
   </figure>
 {{ else }}
   {{ warnf "photo shortcode: essay ref %q resolves to nothing (page %s) — is it set in the tagger, and is the photo un-withheld?" $ref $.Page.File.Path }}

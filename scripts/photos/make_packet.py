@@ -13,27 +13,20 @@ Size guide at the default 360px/q60 (~24 KB a photo):
   170 photos ≈ 4 MB · 600 ≈ 14 MB · 900 ≈ 21 MB · the whole library ≈ 97 MB.
 Most mail servers cap attachments at 25 MB, so --limit 800 is a safe packet.
 """
-import argparse, base64, hashlib, json, os, shutil, subprocess, sys, tempfile, zipfile
+import argparse, datetime, hashlib, json, os, shutil, subprocess, sys, tempfile, zipfile
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from packet_common import EDITABLE, MULTI, FLAGS, rev  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
 DATA = REPO / "data"
 DERIV = REPO / ".photo-build" / "derivatives"
 TEMPLATE = Path(__file__).resolve().parent / "packet_tagger.html"
 
-# The per-photo fields a packet may change. Mirrors pipeline.TAG_FIELDS plus the
-# geo + curation flags the tagger's Tag mode edits.
-EDITABLE = ["sub_neighborhood", "neighborhood", "city", "state",
-            "land_use", "architecture", "subject", "medium", "tone",
-            "tag_notes", "collections", "hero", "place_cover", "cull"]
 
 
-def rev(rec):
-    """Short hash of the editable state — lets apply_packet spot a photo that
-    moved in the live manifest while the packet was out."""
-    payload = json.dumps({f: rec.get(f) for f in EDITABLE}, sort_keys=True, ensure_ascii=False)
-    return hashlib.sha1(payload.encode()).hexdigest()[:10]
 
 
 def encode(args_tuple):
@@ -65,7 +58,7 @@ def main():
     ap.add_argument("--unreviewed", action="store_true", help="only reviewed:false records")
     ap.add_argument("--untagged", action="store_true", help="only tagged:false records")
     ap.add_argument("--limit", type=int, help="cap the number of photos")
-    ap.add_argument("--width", type=int, default=360, help="thumbnail long edge (default 360)")
+    ap.add_argument("--width", type=int, default=360, help="thumbnail WIDTH in px (default 360); portrait frames end up taller")
     ap.add_argument("--quality", type=int, default=60, help="webp quality (default 60)")
     ap.add_argument("--out", default=None, help="output zip path")
     ap.add_argument("--manifest", default=None, help="manifest to read (default data/photos.json)")
@@ -75,7 +68,6 @@ def main():
     photos = json.loads(man_path.read_text())
     colls = json.loads((DATA / "collections.json").read_text())["collections"]
     tax = json.loads((DATA / "taxonomy.json").read_text())
-    places = json.loads((DATA / "places.json").read_text())
 
     # ---- select
     sel = []
@@ -123,16 +115,21 @@ def main():
             if e: errs.append(e)
             if n % 100 == 0: print(f"  encoded {n}/{len(jobs)}")
     if errs:
-        print(f"  !! {len(errs)} encode failures"); [print("   ", e) for e in errs[:5]]
+        # Shipping a zip whose images are missing means tagging a photo you
+        # cannot see. Refuse rather than hand over a quietly broken packet.
+        print(f"  !! {len(errs)} encode failures:")
+        for e in errs[:8]:
+            print("   ", e)
+        shutil.rmtree(staging, ignore_errors=True)
+        sys.exit("aborted — no packet written")
 
     payload = {
-        "generated_at": __import__("datetime").datetime.now().astimezone().isoformat(timespec="seconds"),
+        "generated_at": datetime.datetime.now().astimezone().isoformat(timespec="seconds"),
         "label": label,
         "manifest_md5": hashlib.md5(man_path.read_bytes()).hexdigest(),
         "photos": records,
-        "collections": [{k: c.get(k) for k in ("slug", "title", "withheld", "archived", "hidden")} for c in colls],
+        "collections": [{k: c.get(k) for k in ("slug", "title", "withheld", "archived")} for c in colls],
         "taxonomy": tax["dimensions"],
-        "places": places["places"] if isinstance(places, dict) else places,
     }
 
     html = TEMPLATE.read_text()

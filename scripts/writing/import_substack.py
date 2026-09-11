@@ -12,11 +12,11 @@ and images with their captions.
   python3 scripts/writing/import_substack.py the-california-story
   python3 scripts/writing/import_substack.py --all
 
-Frontmatter is preserved byte-for-byte; only the body is replaced. Every file
-is copied to <name>.md.bak first, and git is the real safety net.
+Frontmatter is preserved byte-for-byte; only the body is replaced. The first
+run copies each file to .photo-build/writing-bak/ (gitignored, never
+overwritten afterwards); git is the real safety net.
 """
 import argparse, json, re, shutil, subprocess, sys, urllib.parse
-from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -58,6 +58,7 @@ class Sub2MD(HTMLParser):
     def flush(self):
         txt = "".join(self.buf)
         txt = re.sub(r'[ \t ]+', ' ', txt).strip()
+        txt = self.escape_block_start(txt)
         self.buf = []
         if not txt:
             self.block = None
@@ -107,10 +108,28 @@ class Sub2MD(HTMLParser):
             self.a_href = href
             self.buf.append("[")
             return
+        if tag == "p" and self.block == "li":
+            # Substack wraps every list item as <li><p>…</p></li>. Letting the
+            # <p> reset the block type turned all 54 list items in the corpus
+            # into bare paragraphs — the Psychic Highway tables of contents
+            # shipped as loose bold lines instead of lists.
+            return
         if tag in ("p", "h1", "h2", "h3", "h4", "h5", "h6", "blockquote", "li"):
             self.flush(); self.block = tag; return
         if tag in ("ul", "ol"):
-            self.flush(); self.list_stack.append(tag); self.li_index.append(0); return
+            self.flush(); self.list_stack.append(tag)
+            # <ol start="N"> — the Psychic Highway posts split their numbered
+            # sections into single-item lists with start=2,3,4… Ignoring it
+            # renumbered every one of them to "1.".
+            try: start = int(a.get("start", 1))
+            except ValueError: start = 1
+            self.li_index.append(start - 1); return
+        if tag == "iframe":
+            src = a.get("src") or ""
+            if src:
+                self.flush()
+                self.out.append(f"[{a.get('title') or src}]({src})")
+            return
         if tag == "hr":
             self.flush(); self.out.append("---"); return
         if tag in ("strong", "b"):
@@ -144,6 +163,8 @@ class Sub2MD(HTMLParser):
                 self.buf.append(f"]({self.a_href})")
                 self.a_href = None
             return
+        if tag == "p" and self.block == "li":
+            return
         if tag in ("p", "h1", "h2", "h3", "h4", "h5", "h6", "blockquote", "li"):
             self.flush(); return
         if tag in ("ul", "ol"):
@@ -172,6 +193,13 @@ class Sub2MD(HTMLParser):
         del self.buf[start:]
         self.buf.extend([lead, marker, inner.strip(), marker, trail])
 
+    ESC_INLINE = str.maketrans({"*": "\\*", "`": "\\`", "[": "\\[", "]": "\\]"})
+
+    @staticmethod
+    def escape_block_start(txt):
+        """Neutralise markdown BLOCK syntax that prose happens to begin with."""
+        return re.sub(r'^(\s*)([-+>#]|\d+\.)(\s)', r'\1\\\2\3', txt)
+
     def handle_data(self, d):
         if self.dropping:
             return
@@ -179,7 +207,7 @@ class Sub2MD(HTMLParser):
             self.fig["cap"].append(d); return
         if self.fig is not None:
             return                        # stray text inside a figure: ignore
-        self.buf.append(d)
+        self.buf.append(d.translate(self.ESC_INLINE))
 
     def markdown(self):
         self.flush()
@@ -188,9 +216,47 @@ class Sub2MD(HTMLParser):
             b = b.strip()
             if not b: continue
             if b == "---" and prev == "---": continue     # collapse doubled rules
-            blocks.append(b); prev = b
+            # Consecutive list items are ONE block. Joined with a blank line
+            # they form a "loose" list and markdown wraps each item in a <p>.
+            if (prev is not None
+                    and re.match(r'^(?:[-+*] |\d+\. )', b)
+                    and re.match(r'^(?:[-+*] |\d+\. )', prev)):
+                blocks[-1] += "\n" + b
+            else:
+                blocks.append(b)
+            prev = b
         while blocks and blocks[-1] == "---": blocks.pop()
+        blocks = self.attach_captions(blocks)
         return "\n\n".join(blocks) + "\n"
+
+    @staticmethod
+    def attach_captions(blocks):
+        """Fold a wholly-italic paragraph that FOLLOWS an uncaptioned image into
+        that image's caption.
+
+        Substack posts carry captions two different ways: inside <figcaption>
+        (which the parser already picks up) or as a separate italic paragraph
+        underneath. 96 of 104 images in this corpus use the second form, so they
+        arrived with an empty alt and the caption rendered as ordinary body
+        prose — 15px near-black, wrapping like a sentence, instead of the small
+        grey figcaption the stylesheet has for exactly this."""
+        out, i = [], 0
+        img_empty = re.compile(r'^!\[\]\((.+)\)$')
+        italic_only = re.compile(r'^\*([^*].*?)\*$', re.S)
+        while i < len(blocks):
+            b = blocks[i]
+            m = img_empty.match(b)
+            if m and i + 1 < len(blocks):
+                mc = italic_only.match(blocks[i + 1].strip())
+                if mc:
+                    cap = mc.group(1).strip()
+                    # An alt is markdown link text: an unescaped ] would end it.
+                    cap = cap.replace("\\", "\\\\").replace("]", "\\]")
+                    out.append(f'![{cap}]({m.group(1)})')
+                    i += 2
+                    continue
+            out.append(b); i += 1
+        return out
 
 
 CDN = ("https://substackcdn.com/image/fetch/"
@@ -267,6 +333,10 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
+    if not args.slugs and not args.all:
+        sys.exit("refusing to rewrite every essay implicitly — pass --all "
+                 "(or name the slugs). Add --dry-run to preview.")
+
     targets = []
     for p in sorted(WRITING.glob("*.md")):
         if p.name == "_index.md": continue
@@ -300,7 +370,12 @@ def main():
         if args.dry_run: continue
         bakdir = REPO / ".photo-build" / "writing-bak"
         bakdir.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(p, bakdir / (p.name + ".bak"))
+        bak = bakdir / (p.name + ".bak")
+        # Only ever write the FIRST backup. Re-running used to copy the current
+        # (already-imported) file over the pristine pre-import copy, destroying
+        # the only record of what the essay looked like before.
+        if not bak.exists():
+            shutil.copy2(p, bak)
         p.write_text((front or "") + "\n\n" + md)
 
     if args.dry_run: print("\n(dry run — nothing written)")

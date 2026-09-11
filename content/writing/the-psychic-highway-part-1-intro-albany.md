@@ -9,31 +9,23 @@ source_url: "https://gautamiyer.substack.com/p/the-psychic-highway-part-1-intro"
 hero_image: ""
 ---
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F065bf09e-9ec4-4108-b5bb-a46fd524c56d_1536x2304.jpeg)
-
-*A vacant lot in Rensselaer facing Albany from across the Hudson River. Empire State Plaza rises in the background.*
+![A vacant lot in Rensselaer facing Albany from across the Hudson River. Empire State Plaza rises in the background.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F065bf09e-9ec4-4108-b5bb-a46fd524c56d_1536x2304.jpeg)
 
 ---
 
 **Contents**
 
-**Nelson (intro)**
-
-**Erie**
-
-**Albany**
-
-**The Plaza**
-
-**Rocky’s last… edifice**
-
-**The Gut**
-
-**Dinner**
+1. **Nelson (intro)**
+2. **Erie**
+3. **Albany**
+4. **The Plaza**
+5. **Rocky’s last… edifice**
+6. **The Gut**
+7. **Dinner**
 
 ---
 
-***Nelson (intro)***
+1. ***Nelson (intro)***
 
 NELSON ROCKEFELLER was a megalomaniac. This much was clear to me as soon as I stepped foot in Albany, New York State’s capital and a living, breathing testament to the failures of American governance in the latter half of the 20th century. Over the course of his long, influential career in national, New York State, and New York City politics, Nelson treated the world like a little lego set. He would swoop in from the Rockefeller estate in Pocantico Hills to schmooze with Latin American oil tycoons, amass and sell enormous collections of art, or spearhead statewide urban renewal in New York with little accountability or personal consequence.
 
@@ -43,9 +35,7 @@ Through positions in the FDR, Truman, and Eisenhower administrations, as well as
 
 From my first step into Albany’s South End neighborhood, I understood that the idea of “negotiation” with and under the Powers That Be would frame my trip. Upstate New York offers a stage for the historical negotiations that define urban America, beginning as far back as North America’s first settlement by Europeans and extending into the forever wars of the 21st Century. The fate of central Albany was settled by negotiation: residents of “The Gut” pleaded with Nelson’s state government and its army to protest the demolition of their neighborhood to make way for The Plaza. They lost.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6180fd0b-6ac0-4503-a607-fe9b22922515_1536x2304.jpeg)
-
-*One of the thirty-two businesses housed at the Port of Albany is Buckeye Partners, one of the nation’s largest petroleum distributors and a direct descendant of Standard Oil (Nelson’s great-grandfather’s company).*
+![One of the thirty-two businesses housed at the Port of Albany is Buckeye Partners, one of the nation’s largest petroleum distributors and a direct descendant of Standard Oil (Nelson’s great-grandfather’s company).](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6180fd0b-6ac0-4503-a607-fe9b22922515_1536x2304.jpeg)
 
 These negotiations are better understood as pleas for the spoils of a done deal: if the modern history of New York begins with the wrenching of a pre-market world into the cold rationalism of a market-based economy, these are the subsequent conversations, thrashings, and revolutions of affected parties.
 
@@ -53,7 +43,7 @@ In this process of negotiation, ancient, pre-European worlds collided with a nas
 
 ---
 
-***Erie***
+2. ***Erie***
 
 There’s no better way to frame this than by diving into the Erie Canal, which was explained to me in succinct terms by a book in Syracuse’s Erie Canal Museum titled “The Psychic Highway: How the Erie Canal Changed America.” In 2025 — the 200th anniversary of the opening of the Canal — it is little more than a novelty for the quirky tourist. But for at least 100 years, the Erie Canal transformed the physical and psychological reality of early America, thrusting an agrarian and largely homogenous society into mills and factories alongside people from heretofore unknown corners of the earth.
 
@@ -61,9 +51,7 @@ The idea of the Canal had been tossed around for almost a century, but it wasn�
 
 It was indubitably not a waste of money, as toll revenues from its first year of operation quickly covered debts incurred by its construction. Along the Canal, which followed the route of the Mohawk River between the Adirondack Mountains to the North and the Catskills to the South, new cities and towns sprang up almost overnight, and existing villages became minor metropolises.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff664a8a4-6645-4442-8175-5cf20edba1d2_2304x1536.jpeg)
-
-*A lock of the Erie Canal near Herkimer, New York.*
+![A lock of the Erie Canal near Herkimer, New York.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff664a8a4-6645-4442-8175-5cf20edba1d2_2304x1536.jpeg)
 
 ---
 
@@ -97,39 +85,29 @@ Today, the Psychic Highway continues to guide travelers across New York State, o
 
 ---
 
-***Albany***
+3. ***Albany***
 
 Albany, the oldest continuously chartered city in America, was blessed by its location near the confluence of the Hudson and Mohawk Rivers, where the Erie Canal turned South towards New York City and an engorged steamboat could chart a profitable course in three of the four cardinal directions. For some time through the 1940s, you might reasonably estimate that the surplus of Northeastern industry and trade was so great that Albany existed in an informal truce with New York City. Capital (in the form of immigrant labor or bank reserves) accumulated in both places with no hints of the zero-sum game that would emerge through the malaise of the post-post-war years.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F28e01309-11e2-4199-be33-3b60aa0d4a49_1536x2304.jpeg)
-
-*An 1880 Victorian home in Rensselaer.*
+![An 1880 Victorian home in Rensselaer.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F28e01309-11e2-4199-be33-3b60aa0d4a49_1536x2304.jpeg)
 
 Returning, now, to my sensory experience, I began my day in Albany by parking my car at the city’s Southern edge, near the Port of Albany. Passing mid-20th-century low-rise housing developments on the city’s outskirts and charting a course directly towards the heart of the city, I recalled a simple fact of life on Earth: things age. Subjects of this force include but are not limited to explosive point guards, Gouda cheese, and the built environment. Given enough time, insufficient capital expenditure, and a governing apparatus at best disinterested and at worst actively inclined to contribute to the aging process, an old city will become unsuitable for habitation.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7d915e27-799b-4ee0-bfea-8ab87d6e40b9_1537x2306.jpeg)
-
-*Early 20th-century single-family homes in Rensselaer in front of a smokestack from the nearby Empire Generating Co. power plant.*
+![Early 20th-century single-family homes in Rensselaer in front of a smokestack from the nearby Empire Generating Co. power plant.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7d915e27-799b-4ee0-bfea-8ab87d6e40b9_1537x2306.jpeg)
 
 Way back in the day, the South End was a classically Northeastern working-class neighborhood, inhabited by a procession of upwardly mobile European laborers whose first efforts at wealth-building were rebuffed by redlining: first German, then Irish, then Jewish and Italian workers settled on the dense streets South of the Capitol. Short-term tenants of the neighborhood as they were, the German and Irish contingents left an indelible mark on the area and on the city: Dan O’Connell, the long-time Chairman of the County Democratic Party and the Albany area’s preeminent political kingmaker, was born in the South End and ran his political operations from there for decades. O’Connell was one half of the Corning-O’Connell machine that dictated Albany politics for the better part of a century, alongside mayor Erastus Corning II (namesake of Corning Tower), whose great-grandfather founded the New York Central Railroad, a key arm of the continent-bestriding Vanderbilt octopus.
 
 Over the course of his forty-two years in office — making him the longest-serving mayor of any big city in American history — Corning presided over the decline of the South End and ultimately the city. Faced with the existential threats of deindustrialization and white flight, Corning’s Rube Goldberg machine had no tools at its disposal, nor any sort of institutional willpower, to halt the incoming demographic freight train. As middle-class white families left the city’s core for the suburbs, they sold their homes to absentee landlords who devised two brilliant strategies to squeeze profits from the wave of Black migrants blown in from the last gasps of the Great Migration: refuse to repair or maintain occupied dwellings, and neglect to pay city property taxes on vacant buildings. Corning’s machine aided such negligence by dumping the balance of unpaid taxes onto Albany County, which by 1961 owed the largest sum of delinquent tax dollars to New York State of any county.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F98135f7d-d5de-4d67-922a-99a2c4d6a40b_1536x2304.jpeg)
-
-*A condemned former public school in the South End.*
+![A condemned former public school in the South End.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F98135f7d-d5de-4d67-922a-99a2c4d6a40b_1536x2304.jpeg)
 
 I traversed the South End on foot, heading up towards the hill that hosts The Plaza. I passed a row of rotting houses bearing the mark of the beast: a white “X” on a red metal sheet indicating condemnation, or a determination by the city that the building is not safe for entry. I went several blocks without hearing any signs of life other than the regular rumble of CDTA (Capitol District Transportation Authority) buses, whose stalwart operators continue to serve Albany’s working class against all odds. A mom and her jubilant kid — ten years old, maybe — boarded a bus in front of an abandoned lot, which in its emptiness revealed a ramshackle wooden rowhouse standing askew under the distant gaze of Corning Tower. Framed by vacant lots and the occasional collapsed roof, Corning Tower’s unbroken vertical lines and blast-proof concrete thrusted upwards into the background of every street corner in the South End.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F80ddb9e7-d8ed-4a37-bc9c-22f7ea06ed1d_2304x3456.jpeg)
-
-*View from Second Avenue facing Northeast towards the Empire State Plaza.*
+![View from Second Avenue facing Northeast towards the Empire State Plaza.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F80ddb9e7-d8ed-4a37-bc9c-22f7ea06ed1d_2304x3456.jpeg)
 
 Albany’s range and volume of abandoned properties — which number, shockingly, over one thousand — tell a clear story that is contextualized in its urgency by demographic data. In Brandeis University’s 2010 Child Opportunity Index study, neighborhoods across the country were assigned a score from 1-100 based on factors including educational opportunities and health outcomes. Arbor Hill, a predominantly Black and Hispanic Albany neighborhood just on the other side of the Capitol, scored a 1, not far below the South End and several other census tracts within Albany’s core.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8bfa03e2-f98e-4884-ba58-dc5bfbb36255_2304x1536.jpeg)
-
-*A collapsed church in front of a new apartment development just North of downtown.*
+![A collapsed church in front of a new apartment development just North of downtown.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8bfa03e2-f98e-4884-ba58-dc5bfbb36255_2304x1536.jpeg)
 
 On the opposite side of the city, by the Hudson, derelict rowhouses, seas of asphalt, and shuttered warehouses dominated the landscape, orbiting around the black sun of The Plaza and punctuated only by the colossal civic infrastructure of downtown. The stunning, castle-like SUNY Administration building (formerly the Delaware & Hudson Railroad Company Building) revealed itself at the foot of State Street, a half-mile down the road from The Plaza. As I glanced down the street towards the SUNY building, the last throes of fall foliage on an invasive Nordic Maple (planted at the behest of Nelson Rockefeller) could not have looked more out of place.
 
@@ -139,31 +117,21 @@ You could say that Albany experienced the post-industrial transition relatively 
 
 But the fact is that the poorest neighborhoods in Albany form an outer ring around The Empire State Plaza, as if The Plaza shrouds its environs in a slowly-strangling airborne toxin. Did The Plaza kill Albany? Maybe, but The Plaza is a collection of inanimate objects. More likely, the Nelson Rockefellers of the world killed Albany.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2620673e-6f4c-4bf1-811c-2eed5705ab9a_1536x2304.jpeg)
-
-*Looking Southeast on State Street towards the SUNY Administration building.*
+![Looking Southeast on State Street towards the SUNY Administration building.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2620673e-6f4c-4bf1-811c-2eed5705ab9a_1536x2304.jpeg)
 
 ---
 
-***The Plaza***
+4. ***The Plaza***
 
 As I trudged back up the hill on State Street, The Plaza began to emerge from the thin gaps between a ring of brutalist civic structures. Arranged in a rectangle around a drained, skeletal reflecting pool, The Plaza is anchored on one side by the New York State Capitol, a magnificent 1899 Beaux-Arts behemoth. It was, at the time of its completion, the most expensive American government building ever constructed. The Capitol’s delicate ornamentation — milky stained glass windows, tiered columns of varying shapes and styles — is easy to lose within the sheer scale of the building. Though the other buildings in The Plaza post-date the Capitol, they seem to build on the Capitol’s ideal that civic infrastructure ought to dwarf the humans that it serves.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F46b6a0eb-e972-45af-a995-9d2494d15f00_1536x2304.jpeg)
+![The Robert Abrams Building for Law and Justice on the edge of The Plaza.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F46b6a0eb-e972-45af-a995-9d2494d15f00_1536x2304.jpeg)
 
-*The Robert Abrams Building for Law and Justice on the edge of The Plaza.*
+![The UFO-like Egg.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05ef3cea-522d-4565-8623-e4a0a350097c_2304x1536.jpeg)
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05ef3cea-522d-4565-8623-e4a0a350097c_2304x1536.jpeg)
+![The Capitol Building as seen from inside The Plaza. It’s so large that it’s difficult to capture in a single photo.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd00c7465-746d-49ca-8bc7-a977150c19c0_3456x2304.jpeg)
 
-*The UFO-like Egg.*
-
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd00c7465-746d-49ca-8bc7-a977150c19c0_3456x2304.jpeg)
-
-*The Capitol Building as seen from inside The Plaza. It’s so large that it’s difficult to capture in a single photo.*
-
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F62cb3036-165c-42ff-861b-ec153be3435b_2304x1536.jpeg)
-
-*The tiered colonnades of the Capitol Building.*
+![The tiered colonnades of the Capitol Building.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F62cb3036-165c-42ff-861b-ec153be3435b_2304x1536.jpeg)
 
 The Plaza itself is raised maybe 100 feet above its surrounds by a sheer stone wall. This provides visitors with a terrific view of the Capitol area and the gentle Mohawk lowlands, while rendering The Plaza completely inaccessible from its two sides that border actual Albany residents. It doesn’t take a veteran urban planner to imagine what that might do for the city’s residents. But then again, The Plaza seems uninterested in addressing them at all.
 
@@ -171,39 +139,25 @@ As I entered The Plaza, the Capitol on my right, all of its core buildings becam
 
 About a quarter-mile across The Plaza, facing the Capitol Building, is the solemn, hulking New York State Museum, which houses a wonderful collection of cultural artifacts from around the state in a concrete fortress. The Mohawk longhouses stored inside the minimally-trafficked museum are highlighted for their energy efficiency and ease of construction, something that could never be said about The Plaza, which blew past its mumbo-jumbo budget estimate of $250 million to ultimately cost taxpayers over $2 billion.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F77927b3e-6bfb-424b-8cbc-9338c9061419_3456x2304.jpeg)
-
-*The very back-lit New York State Museum.*
+![The very back-lit New York State Museum.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F77927b3e-6bfb-424b-8cbc-9338c9061419_3456x2304.jpeg)
 
 Flanking the long sides of The Plaza are its remaining six buildings, which are the real showstoppers. On one side, dropped uneasily over The Plaza’s ravine walls, are Corning Tower and The Egg. I had observed Corning Tower, the tallest building in the state outside of New York City, all day from around the city, but approaching such stark verticality from its base elicited a new feeling of vertigo; I was subsumed by it and rendered its subject, rather than the other way around. Viewing The Egg had a similarly alienating effect, though not from any sense of diminution. The Egg’s impossibly smooth curves, ending abruptly in a flat, diagonal plane, pleased my eyes but felt inhumane, as if their domineering creator had sought to eliminate the possibility of variance or human error.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38fe8148-5368-4cca-8290-3c3d84747a9c_2304x1536.jpeg)
+![Looking up at Corning Tower. I’m just now noticing the mutations in the 5,000 pound marble exterior that have emerged over time from the shrinkage and expansion of the building’s steel frame.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38fe8148-5368-4cca-8290-3c3d84747a9c_2304x1536.jpeg)
 
-*Looking up at Corning Tower. I’m just now noticing the mutations in the 5,000 pound marble exterior that have emerged over time from the shrinkage and expansion of the building’s steel frame.*
+![The Egg.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fef40300a-d172-42d4-b04d-993edf3e2217_2304x1536.jpeg)
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fef40300a-d172-42d4-b04d-993edf3e2217_2304x1536.jpeg)
-
-*The Egg.*
-
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcd115cf6-090f-4a53-bfbc-187a2be284d9_2304x1536.jpeg)
-
-*Looking straight at The Egg with Corning Tower behind.*
+![Looking straight at The Egg with Corning Tower behind.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcd115cf6-090f-4a53-bfbc-187a2be284d9_2304x1536.jpeg)
 
 On the other long side of The Plaza are the four symmetrical Agency Towers, arranged in a straight line like a row of bureaucratic dominoes. Unfortunately, having marinated my brain in American propaganda for 24 years or so, I have no choice but to describe these buildings as Soviet-adjacent. Each labeled with its respective number (“Agency Building 1,” “Agency Building 2,” etc.), the Agency Towers are uncompromisingly opaque about their functions. Knowing now fairly well that the New York State government has ceded most of its development authority to the private sector, it’s funny to consider the powerful, clandestine operations that the Towers were supposed to house. “Agency Building 1” — this might be where elite teams of analysts and operatives reshaped the financial fabric of the state. “Agency Building 2” — this could be where the State, having observed price-gouging activities from a terrible private enterprise, laid down the long arm of the law. In reality, life on The Plaza consists of State employees sheepishly ripping Elder Wand-esque vapes five to ten feet from the door of a Tower before quickly scuttling back inside. *(No disrespect to State workers, who do very important and difficult work. But imagine the State building a plaza like this today.)*
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563a13fc-d86e-40da-8add-7d317508a3c9_2304x1536.jpeg)
+![Agency Building 2.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563a13fc-d86e-40da-8add-7d317508a3c9_2304x1536.jpeg)
 
-*Agency Building 2.*
-
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5ce1d838-1d95-4cfc-a1f6-43a9b478e0c0_2304x1536.jpeg)
-
-*Three of the four Agency Towers in sequence.*
+![Three of the four Agency Towers in sequence.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5ce1d838-1d95-4cfc-a1f6-43a9b478e0c0_2304x1536.jpeg)
 
 Accordingly, noise in The Plaza is muted. Like ants, the slow, irregular churn of State employees made no noise and was barely registered by my eyes as flecks in the distance. The roar of a truck engine, the screeching of tires around a bend — all were far-off and slight. I had the feeling that I was alone in that space, floating above the more complex urbanity below. And what an enormous space, stretching some 60 years of architectural history and 1,500 feet between the titanic Capitol on the East end to the cold, futuristic New York State Museum on the West. Navigation on foot was disorienting and confusing, inducing a trance-like state. *Where did I enter again? Where is my car? When did I get here?* Frigid evening winds shooting through the air carried no sounds but tossed about the splendid maple leaves in serene and hypnotic arrangements.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa3bf11a4-5515-4cb5-b55f-a670fe42bb73_2304x1536.jpeg)
-
-*The most easy-to-remember naming scheme ever. The New York State Museum is in the left background.*
+![The most easy-to-remember naming scheme ever. The New York State Museum is in the left background.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa3bf11a4-5515-4cb5-b55f-a670fe42bb73_2304x1536.jpeg)
 
 Striking as it is in 2025, The Plaza was about a decade late to the modernist tower movement and nearly twenty years late to installing the short-lived but eternally ruinous ideas of modernist city design. Though The Plaza was widely panned by architectural critics, who by the early 1970s had already observed the full lifecycle of the “tower in the park” modality conclude with the demolition of St. Louis’s Pruitt-Igoe Towers, The Plaza’s material impact would have made Le Corbusier blush. Corbusier’s modernism saw in an industrialized Western world two truths: material and building technology that had progressed beyond anything previously fathomed by the discipline of architecture, and a raw, volatile mass of humanity that was at constant risk of breaking out into war, disease, or, perhaps most unsavory of all, dynamic and spontaneous interaction with an Other.
 
@@ -211,7 +165,7 @@ Nelson Rockefeller clearly agreed with Corbusier’s interpretations, as The Pla
 
 ---
 
-***Rocky’s last… edifice***
+5. ***Rocky’s last… edifice***
 
 We return now to Nelson Rockefeller, a man whom I first met in reading about New York City’s 1975 fiscal crisis and whom I feel I now know about as well as you could from reading secondary sources and watching a few campaign speeches on YouTube. Throughout the pages of Bob Fitch’s *The Assassination of New York,* which chronicles the city’s mid-20th-century deindustrialization and slide into the “Fear City” of the 1970s, Nelson makes for a compelling enemy of the people. Paying great respect to Robert Caro’s *The Power Broker*, Fitch argues that Robert Moses was a bowling ball for the ambitions and desires of more powerful, more moneyed forces in New York, whose own interests better explain the trajectory of New York City’s urban development. The Rockefellers, not Moses, are Fitch’s central bogeyman, with Nelson channeling family power at the helm of Rockefeller Center and then New York State, and David similarly leveraging the heft of Chase Manhattan Bank.
 
@@ -235,9 +189,7 @@ The “community crushing juggernaut,” as Bob Fitch calls the UDC, mostly buil
 
 The UDC built almost no new housing in the Bronx, despite its rapid overcrowding in the early 1970s that, alongside myriad policy failures, led to widespread arson and the loss of ~80% of the Bronx’s low-income housing stock.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2e8debf5-06e1-49ff-b4ba-78f7a4bb61be_1536x2304.jpeg)
-
-*Looking East from Corning Tower’s 42nd floor observation deck, you can see how I-787 and the South Mall Arterial swallow urban space by the Hudson and block city residents from accessing the riverfront.*
+![Looking East from Corning Tower’s 42nd floor observation deck, you can see how I-787 and the South Mall Arterial swallow urban space by the Hudson and block city residents from accessing the riverfront.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2e8debf5-06e1-49ff-b4ba-78f7a4bb61be_1536x2304.jpeg)
 
 In 1975, unable to service over $100M in debt, the UDC defaulted and collapsed, becoming the first State agency to do so. *Morally obligated* to step in, the State legislature bailed out the UDC. Two years earlier, sensing impending catastrophe as the Nixon administration abruptly halted federal housing spending, Nelson had resigned as Governor. He had handed stewardship of the UDC to Ed Logue, Boston’s great urban renewer, who had also helped New Haven attract more urban renewal dollars than any city in the country. When the UDC defaulted, Logue took the blame, and the failure of such a potent, trusted urban development engine contributed greatly to New York City’s fiscal crisis. The post-’75 transformation of the UDC into a relatively tame entity capable mostly of poking and prodding the private sector tracks the broader trajectory of public investment since then. The legacy of the UDC requires significantly further discussion than I’m able to provide here, so I’ll conclude by noting again how incongruent this type of massive public spending campaign feels in today’s environment of bone-deep austerity.
 
@@ -245,9 +197,7 @@ At last we may return to Albany and The Plaza, which were something of a trainin
 
 Two vignettes illustrate the impetus for Nelson’s vision of The Plaza. In the first, Nelson was visited in Albany by the Queen of the Netherlands, who remarked that the area around the Capitol was not fitting for a man of his stature. In the second, Nelson responded to the Queen’s provocation like a wounded child, hastily drawing up the Corning and Agency Towers on a cocktail napkin. He added in The Egg when he observed a grape seductively perched on a bowl of cream. The world, again, was his lego set.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faefc213b-93a2-4831-a3a7-4f2cfa68a0b5_2304x1536.jpeg)
-
-*Viewed from Corning Tower’s 42nd floor, you can see some of the historic urban fabric of Albany. You can also see blocks of boarded up, dilapidated buildings, just steps from The Plaza.*
+![Viewed from Corning Tower’s 42nd floor, you can see some of the historic urban fabric of Albany. You can also see blocks of boarded up, dilapidated buildings, just steps from The Plaza.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faefc213b-93a2-4831-a3a7-4f2cfa68a0b5_2304x1536.jpeg)
 
 In 1962, four years before the UDC began its dominant run, Nelson Rockefeller and Mayor Erastus Corning II concocted their funding scheme for The Plaza. Corning staunchly opposed The Plaza at first, but changed course after witnessing Nelson take a wrecking ball to civic procedure downstate in earlier urban development schemes. As he had done for two decades to that point, he also identified an opportunity to distribute kickback contracts to County buddies and allies.
 
@@ -259,7 +209,7 @@ Locals in Albany had their own name for The Plaza: “Rocky’s final erection.�
 
 ---
 
-***The Gut***
+6. ***The Gut***
 
 **To make way for The Plaza, the State demolished 1,500 households and apartment buildings, 350 businesses, four churches, and 29 taverns. 98 acres in the heart of Albany, housing between 7,000 to 9,000 people, were cleared.** That represents, unbelievably, nearly 10% of Albany’s population today.
 
@@ -271,17 +221,13 @@ In other words: real, ordinary people, of whom Nelson had no conception. The luc
 
 There were protests, of course, but they have remarkably little traction in the fossil record. Most of what you see when looking for an organized response to The Plaza consists of the State Comptroller’s reliable objections to ballooning cost estimates. 50 years later, it appears almost as if The Plaza had always been there, no Earth or man flayed in the process.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fff8c5f31-5040-4710-8d82-d2c049e8110c_4032x3024.jpeg)
-
-*Atop Corning Tower, a lone sentence suggesting The Plaza’s construction was “encircled in controversy” is all that is left to inform visitors about what once stood in its place.*
+![Atop Corning Tower, a lone sentence suggesting The Plaza’s construction was “encircled in controversy” is all that is left to inform visitors about what once stood in its place.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fff8c5f31-5040-4710-8d82-d2c049e8110c_4032x3024.jpeg)
 
 Some former residents were relocated closeby to Lincoln Square Homes, a classic “tower in the park”-style public housing tower that I passed when walking through the South End earlier in the day. Earlier this year, the City of Albany passed a resolution to demolish Lincoln Square Homes, which had been shuttered for years after gaining a reputation for crime and neglect.
 
 Cruelly, you likely know “Lincoln Square” from its more famous Manhattan counterpart. Lincoln Center, today the performing arts mecca of Eastern liberalism, was lobbied extensively for by Nelson Rockefeller and built by Wallace Harrison over the corpse of San Juan Hill, a Black and Puerto Rican neighborhood on Manhattan’s West Side. There, too, they called the neighborhood “The Gut.” At least 7,000 families were displaced by Lincoln Center’s construction, and there, unlike in Albany, families failed to receive any monetary compensation.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5fad0cd-e8a2-4666-a4da-fcd3c3a60c6a_2304x1536.jpeg)
-
-*1 Lincoln Square, part of the Lincoln Square Homes in Albany.*
+![1 Lincoln Square, part of the Lincoln Square Homes in Albany.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5fad0cd-e8a2-4666-a4da-fcd3c3a60c6a_2304x1536.jpeg)
 
 I felt in The Plaza the same thing I felt circling Atlanta on its interstate highways and observing Downtown’s postmodern towers, which were designed almost entirely by John Portman. Portman’s towers shock and awe the interstate viewer in their bizarre, anachronistic forms, but on the ground they create a deadzone with minimal commercial activity and skybridges that dissuade usage of the street grid. Building on a legacy of urban renewal that saw the construction of I-95 along the legendary Sweet Auburn neighborhood, Portman’s towers demand intense scrutiny. What does it mean for one man to have dictatorial control of the cityscape? In the United States, the freest of free countries, how free are we when the urban landscapes we inhabit were wrecked and rebuilt behind closed doors? And why are the same people always rendered profoundly unfree by the consequences of those back-room decisions? The deals are done, and all that’s left to negotiate for are the spoils.
 
@@ -291,7 +237,7 @@ A block over from Central Avenue, a couple of (seemingly) Bangladeshi kids hoppe
 
 ---
 
-***Dinner***
+7. ***Dinner***
 
 After the sun faded over the horizon, I drove to my Airbnb in Watervliet (pronounced “water fleet”), a Northern “suburb” of Albany. “Suburb,” I say, because the suburbs I know are the sprawling, manicured subdivisions of Dallas-Fort Worth, which make Watervliet look like Kowloon Walled City. At its core are lovely 19th-century row-houses, some with slightly bigger lots, surrounded by duplexes and more spacious multi-family arrangements farther out. Colonie, another suburb 15 minutes West of the Hudson River, is more of a “suburb” to me as it checks off two core requirements in the Real American Suburb framework: origins in exclusionary racial covenants, and/or exclusively post-war development. When Albany’s population plummeted by about 40,000 between 1950 and 1980, Colonie’s population grew by the same margin. This [Times Union article](https://www.timesunion.com/projects/2021/albany-divided/) describes the experience of a Black State employee who moved to Colonie from Albany in 1976 before experiencing enough racism that he moved his family back to Albany within three years.
 
@@ -299,9 +245,7 @@ I fiddled around on Google Maps for a bit before finding “Nihari Point,” a P
 
 A few minutes later, the kid returned with the naan and a heaping carton of chickpeas, oozing microplastics and flavor. I asked the kid if this was his dad’s business. He confirmed and added that the business’s entire labor force comprised him, his dad, and the other fellow in the kitchen, who popped out to say hello and ask if I was South Indian. “Yes,” I said, “from Tamil Nadu.” He happened to be from Andhra Pradesh, the neighboring state, and lobbed me a couple of fastballs in Tamil that I homered to left field.
 
-![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3a0753a4-e7aa-4401-8f3e-f5977aea6783_4032x3024.jpeg)
-
-*“May Allah awaken the people…” — Donald Trump*
+![“May Allah awaken the people…” — Donald Trump](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3a0753a4-e7aa-4401-8f3e-f5977aea6783_4032x3024.jpeg)
 
 I finished the food in ten minutes. The glee must have been palpable on my face, because when I looked up the kid was grinning. “Good, isn’t it? I made it. Can I get you another naan? On us.” At this point, my eyeballs were popping out of their sockets, but I said no, thank you, and started asking him about the restaurant and his life in Watervliet. His family moved to Watervliet from Flushing Meadows in Queens about four years ago, where they were packing nine people into their grandmother’s three-bedroom apartment: him, his parents, an aunt, uncle, two cousins, and their grandparents. Seeking more space, his parents moved the family up to the Capital Area, where his dad figured he could capitalize on a growing South Asian and Muslim population by starting a family-style Pakistani restaurant. The kid didn’t seem too pleased. “The city was lit bro. Everybody here just drinks, smokes weed, and plays video games. I don’t really know what to do with them.” I thought about noting that the first two activities seemed to be commonplace everywhere I’ve been, but decided not to out myself that way. He mentioned that he’s applying to college this year and is looking for a good forensics program in Upstate New York, because Dexter is his favorite show of all time (“You HAVE to watch it.”) He again offered a free naan and another round of Aloo Chole, but I had to be the adult in the room, so I wished him the best on his college applications and went on my way back to my Airbnb.
 

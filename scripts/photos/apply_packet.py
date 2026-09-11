@@ -17,23 +17,18 @@ Safety:
     running tagger cannot be clobbered.
   * Sets reviewed:true on every photo it touches, matching the desktop tagger.
 """
-import argparse, hashlib, json, sys, time
+import argparse, hashlib, json, os, sys, time
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from packet_common import EDITABLE, MULTI, FLAGS, rev  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
 DATA = REPO / "data"
 MANIFEST = DATA / "photos.json"
 
-EDITABLE = ["sub_neighborhood", "neighborhood", "city", "state",
-            "land_use", "architecture", "subject", "medium", "tone",
-            "tag_notes", "collections", "hero", "place_cover", "cull"]
-MULTI = ["land_use", "architecture", "subject", "tone", "collections"]
-FLAGS = ["hero", "place_cover", "cull"]
 
 
-def rev(rec):
-    payload = json.dumps({f: rec.get(f) for f in EDITABLE}, sort_keys=True, ensure_ascii=False)
-    return hashlib.sha1(payload.encode()).hexdigest()[:10]
 
 
 def main():
@@ -42,7 +37,14 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--force-conflicts", action="store_true",
                     help="apply even where the live record changed since the packet was built")
+    ap.add_argument("--manifest", default=None,
+                    help="manifest to write (default data/photos.json). make_packet.py "
+                         "has the same flag; without it a packet built from a staging "
+                         "manifest would silently apply to the live one.")
     args = ap.parse_args()
+    global MANIFEST
+    if args.manifest:
+        MANIFEST = Path(args.manifest)
 
     doc = json.loads(Path(args.changes).read_text())
     if doc.get("kind") != "tagging-packet-changes":
@@ -52,9 +54,13 @@ def main():
     print(f"exported {doc.get('exported_at')} — {len(changes)} photos changed\n")
 
     man = json.loads(MANIFEST.read_text())
+    live_md5 = hashlib.md5(MANIFEST.read_bytes()).hexdigest()
+    if doc.get("manifest_md5") and doc["manifest_md5"] != live_md5:
+        print(f"note: the manifest has changed since this packet was built\n"
+              f"      packet {doc['manifest_md5'][:12]} vs live {live_md5[:12]} "
+              f"({MANIFEST}) — per-photo rev checks below still apply.\n")
     tax = {d["key"]: set(d["values"]) for d in json.loads((DATA / "taxonomy.json").read_text())["dimensions"]}
     slugs = {c["slug"] for c in json.loads((DATA / "collections.json").read_text())["collections"]}
-    cities = {p["city"] for p in (json.loads((DATA / "places.json").read_text()) or {}).get("places", [])}
 
     errs, conflicts, plan = [], [], {}
     for key, entry in changes.items():
@@ -122,15 +128,31 @@ def main():
         missing = [k for k in plan if k not in live]
         if missing: sys.exit(f"record vanished mid-apply: {missing[:3]}")
         for k, fields in plan.items():
+            changed = False
             for f, v in fields.items():
-                live[k][f] = sorted(v) if f in MULTI and isinstance(v, list) else v
-            live[k]["reviewed"] = True
-            if any(f not in FLAGS for f in fields): live[k]["tagged"] = True
+                new = sorted(v) if f in MULTI and isinstance(v, list) else v
+                cur = live[k].get(f)
+                cur_cmp = sorted(cur) if f in MULTI and isinstance(cur, list) else cur
+                if new != cur_cmp:
+                    changed = True
+                live[k][f] = new
+            # reviewed:true is a ONE-WAY exclusion from vision tagging
+            # (pipeline.cmd_tag_apply skips reviewed records forever), so only
+            # set it when a field genuinely moved. A no-op edit used to lock a
+            # photo out of tagging permanently.
+            if changed:
+                live[k]["reviewed"] = True
+                if any(f not in FLAGS for f in fields):
+                    live[k]["tagged"] = True
         ordered = dict(sorted(live.items(), key=lambda kv: (kv[1].get("shoot") or "", kv[1].get("img_no") or 0, kv[0])))
         payload = json.dumps(ordered, indent=2, ensure_ascii=False) + "\n"
         if hashlib.md5(MANIFEST.read_bytes()).hexdigest() != before:
             print("  live manifest moved (tagger is running) — retrying"); time.sleep(0.4); continue
-        MANIFEST.write_text(payload)
+        # Atomic, matching tagger.atomic_write: data/photos.json IS the publish
+        # list, and a truncating write interrupted midway leaves it unparseable.
+        tmp = MANIFEST.with_suffix(".json.tmp")
+        tmp.write_text(payload)
+        os.replace(tmp, MANIFEST)
         print(f"\nAPPLIED: {len(plan)} photos updated, reviewed:true set on each.")
         print("Next: python3 scripts/photos/build_index.py && python3 scripts/photos/pipeline.py status")
         return

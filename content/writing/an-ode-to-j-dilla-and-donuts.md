@@ -39,34 +39,46 @@ And they both affirm, ultimately, not just that life has meaning and is worth li
 
 **P.S.**
 
-- You can listen to *Donuts* on Youtube (listen to the whole thing in order). The comments on the songs are awesome:
+\- You can listen to *Donuts* on Youtube (listen to the whole thing in order). The comments on the songs are awesome:
+
+[https://www.youtube-nocookie.com/embed/5nO7IA1DeeI?rel=0&autoplay=0&showinfo=0&enablejsapi=0](https://www.youtube-nocookie.com/embed/5nO7IA1DeeI?rel=0&autoplay=0&showinfo=0&enablejsapi=0)
 
 ---
 
-- *Donuts* was released on February 7th, 2006 (Dilla’s 32nd birthday), 3 days before Dilla passed. Accordingly, there’s a lot of debate about the lore of *Donuts*. Some of it was likely edited and cleared by Jeff Jank, one of the founders of Stone’s Throw Records, the label that released *Donuts* and many other hip-hop classics. Ultimately, I don’t really care and am happy to succumb to the mythos whenever possible.
+\- *Donuts* was released on February 7th, 2006 (Dilla’s 32nd birthday), 3 days before Dilla passed. Accordingly, there’s a lot of debate about the lore of *Donuts*. Some of it was likely edited and cleared by Jeff Jank, one of the founders of Stone’s Throw Records, the label that released *Donuts* and many other hip-hop classics. Ultimately, I don’t really care and am happy to succumb to the mythos whenever possible.
 
 ---
 
 *- Donuts* is different from most of J Dilla’s other work, a little less hip-hop and a little more psychedelia, plunderphonics. So while you might correctly say that Dilla’s other work (the beats on Slum Village tapes for example) is more definitively Dilla, I still think *Donuts* is a signature Dilla project in that it contains many of the musical ideas and innovations that define Dilla. I also think it’s something of a synthesis of all of his previous musical ideas. If you are interested in checking out other Dilla work, try these songs:
 
-- J Dilla feat. Common and D’Angelo “So Far to Go”:
+\- J Dilla feat. Common and D’Angelo “So Far to Go”:
 
-- Slum Village “Fall in Love”:
+[https://www.youtube-nocookie.com/embed/AdZK0HeYkwM?rel=0&autoplay=0&showinfo=0&enablejsapi=0](https://www.youtube-nocookie.com/embed/AdZK0HeYkwM?rel=0&autoplay=0&showinfo=0&enablejsapi=0)
 
-- Slum Village “Get Dis Money”:
+\- Slum Village “Fall in Love”:
 
-- Erykah Badu “Didn’t Cha Know”:
+[https://www.youtube-nocookie.com/embed/s732BigTxZk?rel=0&autoplay=0&showinfo=0&enablejsapi=0](https://www.youtube-nocookie.com/embed/s732BigTxZk?rel=0&autoplay=0&showinfo=0&enablejsapi=0)
 
-- The Pharcyde “Runnin’”:
+\- Slum Village “Get Dis Money”:
+
+[https://www.youtube-nocookie.com/embed/F-oLqMwzvBY?rel=0&autoplay=0&showinfo=0&enablejsapi=0](https://www.youtube-nocookie.com/embed/F-oLqMwzvBY?rel=0&autoplay=0&showinfo=0&enablejsapi=0)
+
+\- Erykah Badu “Didn’t Cha Know”:
+
+[https://www.youtube-nocookie.com/embed/Rte5N6mF9ic?rel=0&autoplay=0&showinfo=0&enablejsapi=0](https://www.youtube-nocookie.com/embed/Rte5N6mF9ic?rel=0&autoplay=0&showinfo=0&enablejsapi=0)
+
+\- The Pharcyde “Runnin’”:
+
+[https://www.youtube-nocookie.com/embed/pwHuEDCM7xs?rel=0&autoplay=0&showinfo=0&enablejsapi=0](https://www.youtube-nocookie.com/embed/pwHuEDCM7xs?rel=0&autoplay=0&showinfo=0&enablejsapi=0)
 
 ---
 
-- People have theorized extensively about Dilla’s unique production style, with some musical theorists positing (if not confirming) that he invented an entirely new way of thinking about time in music: Dilla time is “the deliberate juxtaposition of multiple expressions of straight and swing time simultaneously, a conscious cultivation of rhythmic friction for maximum musicality and maximum surprise.”
+\- People have theorized extensively about Dilla’s unique production style, with some musical theorists positing (if not confirming) that he invented an entirely new way of thinking about time in music: Dilla time is “the deliberate juxtaposition of multiple expressions of straight and swing time simultaneously, a conscious cultivation of rhythmic friction for maximum musicality and maximum surprise.”
 
-- This article summarizes that thought well, and, as I realized after writing this, echoes many of the sentiments I tried to articulate in this piece:
+\- This article summarizes that thought well, and, as I realized after writing this, echoes many of the sentiments I tried to articulate in this piece:
 
 [https://thestereovision.com/content/2022/6/18/how-j-dillas-donuts-permanently-reshaped-hip-hop-production](https://thestereovision.com/content/2022/6/18/how-j-dillas-donuts-permanently-reshaped-hip-hop-production)
 
-- A literal book, “Dilla Time,” about Dilla’s life and his revolutionary work, from which I took the above quote:
+\- A literal book, “Dilla Time,” about Dilla’s life and his revolutionary work, from which I took the above quote:
 
 [https://dillati.me](https://dillati.me)

@@ -5,5 +5,5 @@
 {{ $cap := or .Title .PlainText }}
 <figure>
   <img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}" loading="lazy" decoding="async">
-  {{ with $cap }}<figcaption>{{ . | safeHTML }}</figcaption>{{ end }}
+  {{ with $cap }}<figcaption>{{ . }}</figcaption>{{ end }}
 </figure>

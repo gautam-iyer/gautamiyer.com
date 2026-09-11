@@ -23,3 +23,7 @@
 # Python cache
 __pycache__/
 *.pyc
+
+# Editor / importer backups and temp writes (deploy.sh does `git add -A`)
+*.bak
+*.md.tmp
