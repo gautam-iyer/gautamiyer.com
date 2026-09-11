@@ -1,0 +1,30 @@
+{{/* {{< photo ref="utica-1" caption="optional override" >}}
+
+     Places one of Gautam's own photos in an essay by a STABLE SLUG rather than a
+     path. The slug is set per photo in the tagger's "Essay ref" field and
+     resolved here through data/index.json's `refs` map (built by build_index.py),
+     so a reference survives re-derives, re-crops and R2 path changes, and can be
+     repointed at a different frame without editing the prose.
+
+     A ref that resolves to nothing is a WRITING error, not a silent gap: it
+     renders a visible marker in the page and warns during the build. Refs on
+     withheld photos deliberately do not resolve — the publish gate still wins. */}}
+{{ $ref := .Get "ref" }}
+{{ $base := .Site.Params.photo_base | default "/img/" }}
+{{ $p := index (index hugo.Data.index "refs" | default dict) $ref }}
+{{ with $p }}
+  {{/* The caption is whatever the essay says, and NOTHING otherwise. It must
+       not fall back to the photo's tag_notes: those are internal vision-tagging
+       notes written for QA ("CITY? best guess Utica — strip-plaza storefront…")
+       and they read as gibberish under a photo in an essay. */}}
+  {{ $cap := $.Get "caption" }}
+  <figure>
+    <img src="{{ printf "%s%s" $base (or .webp .thumb) }}"
+         alt="{{ $cap }}" loading="lazy" decoding="async"
+         {{ with .ar }}style="aspect-ratio:{{ . }}"{{ end }}>
+    {{ with $cap }}<figcaption>{{ . | safeHTML }}</figcaption>{{ end }}
+  </figure>
+{{ else }}
+  {{ warnf "photo shortcode: essay ref %q resolves to nothing (page %s) — is it set in the tagger, and is the photo un-withheld?" $ref $.Page.File.Path }}
+  <p class="photo-missing">Missing photo reference <code>#{{ $ref }}</code></p>
+{{ end }}

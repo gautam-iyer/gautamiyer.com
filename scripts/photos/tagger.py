@@ -398,11 +398,12 @@ function datalists(){
   return `<datalist id="dl-sub_neighborhood">${vals('sub_neighborhood').map(v=>`<option value="${esc(v)}">`).join('')}</datalist>
   <datalist id="dl-neighborhood">${vals('neighborhood').map(v=>`<option value="${esc(v)}">`).join('')}</datalist>
   <datalist id="dl-city">${vals('city').map(v=>`<option value="${esc(v)}">`).join('')}</datalist>
-  <datalist id="dl-state">${vals('state').map(v=>`<option value="${esc(v)}">`).join('')}</datalist>`;
+  <datalist id="dl-state">${vals('state').map(v=>`<option value="${esc(v)}">`).join('')}</datalist>
+  <datalist id="dl-essay_ref">${vals('essay_ref').map(v=>`<option value="${esc(v)}">`).join('')}</datalist>`;
 }
 
 /* ================= TAG MODE ================= */
-const tagFilters={shoot:'',city:'',state:'',coll:'',medium:'',camera:'',review:'',q:''};
+const tagFilters={shoot:'',city:'',state:'',coll:'',medium:'',camera:'',review:'',ref:'',q:''};
 function tagVisible(){
   const f=tagFilters;
   return Object.keys(PHOTOS).filter(k=>{
@@ -413,10 +414,12 @@ function tagVisible(){
     if(f.coll&&!(p.collections||[]).includes(f.coll))return false;
     if(f.medium&&(p.medium||'')!==f.medium)return false;
     if(f.camera&&(p.camera||'')!==f.camera)return false;
+    if(f.ref==='has'&&!(p.essay_ref||''))return false;
+    if(f.ref==='no'&&(p.essay_ref||''))return false;
     if(f.review==='un'&&p.reviewed)return false;
     if(f.review==='rev'&&!p.reviewed)return false;
     if(f.q){const q=f.q.toLowerCase();
-      const hay=[p.file,p.neighborhood,p.sub_neighborhood,p.city,p.tag_notes].filter(Boolean).join(' ').toLowerCase();
+      const hay=[p.file,p.neighborhood,p.sub_neighborhood,p.city,p.tag_notes,p.essay_ref].filter(Boolean).join(' ').toLowerCase();
       if(!hay.includes(q))return false;}
     return true;
   }).sort((a,b)=>(PHOTOS[a].shoot||'').localeCompare(PHOTOS[b].shoot||'')||(PHOTOS[a].img_no-PHOTOS[b].img_no));
@@ -433,12 +436,13 @@ function tagFilterBar(){
   <select id="f-medium"><option value="">Any medium</option><option value="Digital"${tagFilters.medium==='Digital'?' selected':''}>Digital</option><option value="Film"${tagFilters.medium==='Film'?' selected':''}>Film</option></select>
   <select id="f-camera"><option value="">Any camera</option>${opt(uniq(Object.values(PHOTOS).map(p=>p.camera)).map(c=>({v:c,t:c})),tagFilters.camera)}</select>
   <select id="f-review"><option value="">All</option><option value="un"${tagFilters.review==='un'?' selected':''}>Unreviewed</option><option value="rev"${tagFilters.review==='rev'?' selected':''}>Reviewed</option></select>
+  <select id="f-ref"><option value="">Any essay ref</option><option value="has"${tagFilters.ref==='has'?' selected':''}>Has a ref</option><option value="no"${tagFilters.ref==='no'?' selected':''}>No ref</option></select>
   <input class="search" id="f-q" placeholder="search…" value="${esc(tagFilters.q)}">`;
 }
 function wireTagFilters(){
   const bind=(id,key,ev)=>{const el=$(id);if(!el)return;el.addEventListener(ev,()=>{tagFilters[key]=el.value;page=0;render();});};
   bind('#f-shoot','shoot','change');bind('#f-city','city','change');bind('#f-state','state','change');
-  bind('#f-coll','coll','change');bind('#f-medium','medium','change');bind('#f-camera','camera','change');bind('#f-review','review','change');
+  bind('#f-coll','coll','change');bind('#f-medium','medium','change');bind('#f-camera','camera','change');bind('#f-review','review','change');bind('#f-ref','ref','change');
   const q=$('#f-q');if(q){q.addEventListener('input',()=>{tagFilters.q=q.value;page=0;renderList();});q.focus();q.setSelectionRange(q.value.length,q.value.length);}
 }
 function geoRow(key){
@@ -446,6 +450,46 @@ function geoRow(key){
   const inp=(f,label)=>`<div><label>${label}</label><input list="dl-${f}" value="${esc(p[f]||'')}"
      onchange="save('${jesc(key)}',{${f}:this.value||null})"></div>`;
   return `<div class="geo">${inp('sub_neighborhood','Sub-nbhd')}${inp('neighborhood','Neighborhood')}${inp('city','City')}${inp('state','State')}</div>`;
+}
+/* ---------- essay reference ----------
+   A stable slug (e.g. "utica-1") that the essay editor on :8801 uses to place
+   this photo in the prose: {{< photo ref="utica-1" >}}. Keeping the reference
+   indirect means the essay never hard-codes a filename or an R2 URL, so you can
+   repoint a reference at a different frame without touching the writing.
+   Refs must be UNIQUE — the shortcode resolves one ref to one photo. */
+function refOwners(ref){
+  if(!ref) return [];
+  return Object.keys(PHOTOS).filter(k=>(PHOTOS[k].essay_ref||'')===ref);
+}
+function slugifyRef(v){
+  return (v||'').toLowerCase().trim()
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+}
+async function setRef(key,raw){
+  const v=slugifyRef(raw);
+  await save(key,{essay_ref:v||null});
+  PHOTOS[key].essay_ref=v||null;
+  repaint(key,'essay_ref',essayRow(key));
+}
+function nextRef(key){
+  const p=PHOTOS[key];
+  const base=slugifyRef(p.city||p.shoot||'photo');
+  let n=1; while(refOwners(`${base}-${n}`).length) n++;
+  setRef(key,`${base}-${n}`);
+}
+function essayRow(key){
+  const p=PHOTOS[key], cur=p.essay_ref||'';
+  const dupes=refOwners(cur).filter(k=>k!==key);
+  const warn=cur&&dupes.length
+    ? `<span class="notes" style="color:#b3872a">⚠ also on ${dupes.length} other photo${dupes.length>1?'s':''} — refs must be unique</span>`
+    : (cur?`<span class="notes">referred to as <code>#${esc(cur)}</code></span>`:'');
+  return `<div class="dim" data-dim="essay_ref"><div class="label">Essay ref</div>
+    <div class="geo" style="grid-template-columns:1fr auto auto">
+      <div><input list="dl-essay_ref" placeholder="e.g. utica-1" value="${esc(cur)}"
+           onchange="setRef('${jesc(key)}',this.value)"></div>
+      <div><button class="small" onclick="nextRef('${jesc(key)}')">auto</button></div>
+      <div><button class="small" onclick="setRef('${jesc(key)}','')" ${cur?'':'disabled'}>clear</button></div>
+    </div>${warn}</div>`;
 }
 function chipRow(key,dim){
   const cur=arr(key,dim.key);
@@ -613,7 +657,7 @@ function renderList(){
         ${p.tag_notes?`<div class="notes">“${esc(p.tag_notes)}”</div>`:''}
         <button class="del small" onclick="deletePhoto('${jesc(key)}')">🗑 Delete photo</button>
         ${rotBtns(key)}</div>
-      <div>${geoRow(key)}${rolesRow(key)}${mediumRow(key)}${dims}${collRow(key)}</div></div>`;
+      <div>${geoRow(key)}${rolesRow(key)}${mediumRow(key)}${dims}${collRow(key)}${essayRow(key)}</div></div>`;
   }).join('')+pager(page,pages,all.length)+datalists();
   wirePager();
 }

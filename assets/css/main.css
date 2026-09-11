@@ -346,6 +346,25 @@ body.home header { border-bottom: none; }
   transition: color 0.18s;
 }
 .collage-caption:hover { text-decoration: underline; color: var(--black); }
+/* "More collections" — the way out of the five home walls. Footer-weight gray
+   (0.72rem / --light) so it reads as an aside; ROMAN, not italic, which is what
+   separates it from the caption line sitting right above it. Breaks out to the
+   full wall width and reuses the caption's 12px inset so the two gray lines
+   share a right edge instead of stepping. */
+.home-more {
+  width: 100vw;
+  margin: calc(var(--grid) * 1.5) 0 0 calc(50% - 50vw);
+  padding: 0 12px;
+  text-align: right;
+}
+.home-more a {
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--light);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.home-more a:hover { color: var(--black); text-decoration: underline; }
 .collage { width: 100%; height: 100%; display: flex; flex-direction: column; }
 /* space-between absorbs sub-pixel width rounding into the gaps invisibly */
 .collage-row { display: flex; width: 100%; justify-content: space-between; }
@@ -811,6 +830,31 @@ article {
   color: var(--light);
   margin-top: 8px;
   font-style: italic;
+}
+
+/* Section break between passages — the essays use these heavily (the Psychic
+   Highway pieces have 10-14 apiece). A centred hairline, not a full rule: it
+   should read as a breath, not a boundary. */
+.article-body hr {
+  border: 0;
+  height: 1px;
+  width: 88px;
+  margin: 40px auto;
+  background: var(--border);
+}
+
+/* An unresolved {{< photo ref >}} — loud on purpose. A reference that silently
+   renders nothing is how a photo goes missing from an essay without anyone
+   noticing; this makes it obvious in the page as well as in the build log. */
+.article-body .photo-missing {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  color: #8a5a00;
+  background: #fff8e6;
+  border: 1px dashed #e0c583;
+  border-radius: 5px;
+  padding: 10px 12px;
+  margin: 32px 0;
 }
 
 /* ── Footnotes ── */

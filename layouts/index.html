@@ -5,7 +5,7 @@
 {{ range (index hugo.Data.places "places") }}{{ $placeNames = merge $placeNames (dict .city .name) }}{{ end }}
 <main>
 
-  {{/* THE HOME PAGE IS THREE COLLAGES — nothing else. Each full-bleed wall
+  {{/* THE HOME PAGE IS FIVE COLLAGES, then a quiet link to the rest. Each full-bleed wall
        draws a DIFFERENT collage-eligible collection at random per visit
        (collage.js assigns distinct pools in DOM order). Pools come from
        data/index.json "collage" (build_index.py): collections flagged in the
@@ -52,6 +52,18 @@
     <div class="collage" data-collage></div>
     <a class="collage-caption" data-collage-caption hidden></a>
   </section>
+  <section class="hero-collage hero-collage--follow" aria-label="Photo collage">
+    <div class="collage" data-collage></div>
+    <a class="collage-caption" data-collage-caption hidden></a>
+  </section>
+  <section class="hero-collage hero-collage--follow" aria-label="Photo collage">
+    <div class="collage" data-collage></div>
+    <a class="collage-caption" data-collage-caption hidden></a>
+  </section>
+  {{/* Quiet way out of the home walls: the five above are a sample, the
+       collections index is the whole set. Footer-weight gray so it reads as
+       an aside, not a call to action. */}}
+  <p class="home-more"><a href="/collections/">More collections &rarr;</a></p>
   <script>
     window.COLLAGE_POOLS = {{ . | jsonify | safeJS }};
     window.COLLAGE_META = {{ $cmeta | jsonify | safeJS }};

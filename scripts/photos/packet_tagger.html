@@ -1,0 +1,260 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Portable tagger</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#fff;--ink:#111;--mid:#666;--light:#999;--line:#e6e6e6;--accent:#2a5c9e;--warn:#b3872a;--pad:14px}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);padding:10px var(--pad)}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar h1{font-size:15px;margin:0 8px 0 0;font-weight:600}
+select,input[type=text],input[type=search],textarea{font:inherit;color:inherit;background:#fff;border:1px solid var(--line);border-radius:5px;padding:4px 6px}
+textarea{width:100%;resize:vertical;min-height:52px}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:5px;padding:4px 9px}
+button:hover{border-color:var(--mid)}
+.primary{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.primary[disabled]{background:#ccc;border-color:#ccc;cursor:default}
+.count{color:var(--mid);font-size:12.5px}
+.dirty{color:var(--warn);font-weight:600}
+main{padding:var(--pad);display:grid;gap:var(--pad);grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
+.card{border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.card.changed{border-color:var(--warn);box-shadow:0 0 0 1px var(--warn)}
+.ph{position:relative;background:#f4f4f4;display:flex;align-items:center;justify-content:center;cursor:zoom-in}
+.ph img{display:block;width:100%;height:auto}
+.badges{position:absolute;top:6px;left:6px;display:flex;gap:4px}
+.badge{background:rgba(0,0,0,.66);color:#fff;font-size:11px;padding:1px 6px;border-radius:99px}
+.body{padding:10px;display:flex;flex-direction:column;gap:8px}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.row.geo input{flex:1 1 44%;min-width:0}
+.lab{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--light)}
+.chips{display:flex;gap:4px;flex-wrap:wrap}
+.chip{font-size:12px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);background:#fff;color:var(--mid)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.flags button.on{background:var(--warn);border-color:var(--warn);color:#fff}
+.file{font-size:12px;color:var(--mid);display:flex;justify-content:space-between;gap:8px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out}
+#lb img{max-width:96vw;max-height:96vh}
+#pager{display:flex;gap:8px;align-items:center;justify-content:center;padding:18px}
+.empty{padding:40px;text-align:center;color:var(--mid)}
+.note{padding:8px var(--pad);background:#fffbe9;border-bottom:1px solid #f0e2b0;font-size:12.5px;color:#6b5518}
+@media (prefers-color-scheme:dark){
+ :root{--bg:#151515;--ink:#eee;--mid:#a0a0a0;--light:#7c7c7c;--line:#333}
+ body,header,select,input,textarea,button,.chip{background:#151515;color:var(--ink)}
+ .ph{background:#222}.chip.on{background:#eee;color:#111;border-color:#eee}
+ .note{background:#2a2413;border-color:#4a3f1d;color:#e0cf94}
+}
+</style>
+
+<header>
+  <div class="bar">
+    <h1>Portable tagger</h1>
+    <select id="f-shoot"></select>
+    <select id="f-city"></select>
+    <select id="f-coll"></select>
+    <select id="f-rev">
+      <option value="">all</option>
+      <option value="un">unreviewed</option>
+      <option value="rev">reviewed</option>
+      <option value="chg">changed only</option>
+    </select>
+    <input type="search" id="f-q" placeholder="search notes / file…" style="width:190px">
+    <span class="count" id="count"></span>
+    <span style="flex:1"></span>
+    <span class="count" id="dirty"></span>
+    <button id="export" class="primary" disabled>Download changes</button>
+    <button id="reset" title="Discard every unsaved change in this browser">Discard</button>
+  </div>
+</header>
+<div class="note" id="banner"></div>
+<main id="grid"></main>
+<div id="pager"></div>
+<div id="lb"><img alt=""></div>
+
+<script>
+const PACKET = /*__PACKET_DATA__*/null;
+const EDITABLE = ["sub_neighborhood","neighborhood","city","state","land_use","architecture",
+                  "subject","medium","tone","tag_notes","collections","hero","place_cover","cull"];
+const MULTI = ["land_use","architecture","subject","tone"];
+const PER = 24;
+const LSKEY = "packet:" + PACKET.label + ":" + PACKET.generated_at;
+
+const BASE = {};            // key -> pristine record from the packet
+PACKET.photos.forEach(p => BASE[p.key] = p);
+let EDITS = {};             // key -> {field: value} (only what differs)
+try { EDITS = JSON.parse(localStorage.getItem(LSKEY) || "{}"); } catch (e) { EDITS = {}; }
+
+const eq = (a,b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+const cur = (k,f) => (EDITS[k] && f in EDITS[k]) ? EDITS[k][f] : BASE[k][f];
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function persist(){
+  try { localStorage.setItem(LSKEY, JSON.stringify(EDITS)); }
+  catch(e){ document.getElementById("banner").textContent =
+    "⚠ This browser refused to save locally — export your changes before closing the tab."; }
+  const n = Object.keys(EDITS).length;
+  document.getElementById("dirty").textContent = n ? n + " photo" + (n>1?"s":"") + " changed" : "";
+  document.getElementById("dirty").className = n ? "count dirty" : "count";
+  document.getElementById("export").disabled = !n;
+}
+function set(k,f,v){
+  if (eq(v, BASE[k][f])) { if (EDITS[k]) { delete EDITS[k][f]; if (!Object.keys(EDITS[k]).length) delete EDITS[k]; } }
+  else { (EDITS[k] = EDITS[k] || {})[f] = v; }
+  persist();
+}
+function toggleIn(k,f,val){
+  const arr = (cur(k,f) || []).slice();
+  const i = arr.indexOf(val);
+  if (i < 0) arr.push(val); else arr.splice(i,1);
+  arr.sort();
+  set(k,f,arr);
+}
+
+/* ---------- filters ---------- */
+const F = {shoot:"",city:"",coll:"",rev:"",q:""};
+let page = 0;
+function uniq(vals){ return [...new Set(vals.filter(Boolean))].sort(); }
+function fill(id, vals, label){
+  const el = document.getElementById(id);
+  el.innerHTML = `<option value="">${label}</option>` + vals.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join("");
+}
+function visible(){
+  return PACKET.photos.filter(p => {
+    const k = p.key;
+    if (F.shoot && p.shoot !== F.shoot) return false;
+    if (F.city && (cur(k,"city")||"") !== F.city) return false;
+    if (F.coll && !(cur(k,"collections")||[]).includes(F.coll)) return false;
+    if (F.rev === "un" && p.reviewed) return false;
+    if (F.rev === "rev" && !p.reviewed) return false;
+    if (F.rev === "chg" && !EDITS[k]) return false;
+    if (F.q) {
+      const q = F.q.toLowerCase();
+      const hay = [p.file, cur(k,"neighborhood"), cur(k,"sub_neighborhood"), cur(k,"city"), cur(k,"tag_notes")]
+        .filter(Boolean).join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+/* ---------- render ---------- */
+function card(p){
+  const k = p.key;
+  const dims = PACKET.taxonomy.map(d => `
+    <div><div class="lab">${esc(d.label)}</div><div class="chips">
+      ${d.values.map(v => `<button class="chip ${(cur(k,d.key)||[]).includes(v)?"on":""}"
+         data-act="chip" data-k="${esc(k)}" data-f="${esc(d.key)}" data-v="${esc(v)}">${esc(v)}</button>`).join("")}
+    </div></div>`).join("");
+  const collOpts = PACKET.collections.filter(c=>!c.archived).map(c =>
+    `<button class="chip ${(cur(k,"collections")||[]).includes(c.slug)?"on":""}"
+       data-act="chip" data-k="${esc(k)}" data-f="collections" data-v="${esc(c.slug)}"
+       title="${c.withheld?"withheld — photos in here render nowhere":""}">${esc(c.title)}${c.withheld?" ⦸":""}</button>`).join("");
+  return `<div class="card ${EDITS[k]?"changed":""}" id="c-${esc(k)}">
+    <div class="ph" data-act="zoom" data-src="${esc(p.img)}">
+      <img loading="lazy" src="${esc(p.img)}" alt="">
+      <div class="badges">
+        ${p.reviewed?'<span class="badge">reviewed</span>':""}
+        ${cur(k,"cull")?'<span class="badge">cull</span>':""}
+        ${cur(k,"hero")?'<span class="badge">★</span>':""}
+        ${cur(k,"place_cover")?'<span class="badge">⚑</span>':""}
+      </div>
+    </div>
+    <div class="body">
+      <div class="file"><span>${esc(p.file)}</span><span>${esc(p.shoot)}</span></div>
+      <div class="row geo">
+        <input type="text" placeholder="sub-neighborhood" value="${esc(cur(k,"sub_neighborhood"))}" data-act="in" data-k="${esc(k)}" data-f="sub_neighborhood">
+        <input type="text" placeholder="neighborhood" value="${esc(cur(k,"neighborhood"))}" data-act="in" data-k="${esc(k)}" data-f="neighborhood">
+        <input type="text" placeholder="city" value="${esc(cur(k,"city"))}" data-act="in" data-k="${esc(k)}" data-f="city">
+        <input type="text" placeholder="state" value="${esc(cur(k,"state"))}" data-act="in" data-k="${esc(k)}" data-f="state" style="flex:0 0 70px">
+      </div>
+      ${dims}
+      <div><div class="lab">Collections</div><div class="chips">${collOpts}</div></div>
+      <div class="row">
+        <select data-act="sel" data-k="${esc(k)}" data-f="medium">
+          ${["","Digital","Film"].map(v=>`<option value="${v}" ${(cur(k,"medium")||"")===v?"selected":""}>${v||"medium…"}</option>`).join("")}
+        </select>
+        <span class="flags row">
+          <button class="${cur(k,"hero")?"on":""}" data-act="flag" data-k="${esc(k)}" data-f="hero">★ hero</button>
+          <button class="${cur(k,"place_cover")?"on":""}" data-act="flag" data-k="${esc(k)}" data-f="place_cover">⚑ cover</button>
+          <button class="${cur(k,"cull")?"on":""}" data-act="flag" data-k="${esc(k)}" data-f="cull">✗ cull</button>
+        </span>
+      </div>
+      <textarea placeholder="tag notes — one descriptive sentence" data-act="in" data-k="${esc(k)}" data-f="tag_notes">${esc(cur(k,"tag_notes"))}</textarea>
+    </div></div>`;
+}
+
+function render(){
+  const vis = visible();
+  const pages = Math.max(1, Math.ceil(vis.length / PER));
+  if (page >= pages) page = pages - 1;
+  const slice = vis.slice(page*PER, page*PER + PER);
+  document.getElementById("count").textContent =
+    `${vis.length} of ${PACKET.photos.length} photos`;
+  document.getElementById("grid").innerHTML =
+    slice.length ? slice.map(card).join("") : '<div class="empty">Nothing matches those filters.</div>';
+  document.getElementById("pager").innerHTML = pages > 1
+    ? `<button data-act="pg" data-p="${page-1}" ${page?"":"disabled"}>← prev</button>
+       <span class="count">page ${page+1} / ${pages}</span>
+       <button data-act="pg" data-p="${page+1}" ${page<pages-1?"":"disabled"}>next →</button>` : "";
+  window.scrollTo({top:0});
+}
+
+/* ---------- events (delegated, so re-render is cheap) ---------- */
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-act]");
+  if (!t) return;
+  const a = t.dataset.act;
+  if (a === "chip")      { toggleIn(t.dataset.k, t.dataset.f, t.dataset.v); t.classList.toggle("on");
+                           document.getElementById("c-"+CSS.escape(t.dataset.k))?.classList.toggle("changed", !!EDITS[t.dataset.k]); }
+  else if (a === "flag") { const k=t.dataset.k, f=t.dataset.f; set(k,f,!cur(k,f)); t.classList.toggle("on");
+                           document.getElementById("c-"+CSS.escape(k))?.classList.toggle("changed", !!EDITS[k]); }
+  else if (a === "zoom") { const lb=document.getElementById("lb"); lb.querySelector("img").src=t.dataset.src; lb.style.display="flex"; }
+  else if (a === "pg")   { page = +t.dataset.p; render(); }
+});
+document.getElementById("lb").addEventListener("click", e => e.currentTarget.style.display = "none");
+document.addEventListener("keydown", e => { if (e.key === "Escape") document.getElementById("lb").style.display="none"; });
+document.addEventListener("input", e => {
+  const t = e.target.closest("[data-act='in'],[data-act='sel']");
+  if (!t) return;
+  const v = t.value.trim();
+  set(t.dataset.k, t.dataset.f, v === "" ? null : v);
+  document.getElementById("c-"+CSS.escape(t.dataset.k))?.classList.toggle("changed", !!EDITS[t.dataset.k]);
+});
+["shoot","city","coll","rev","q"].forEach(id => {
+  document.getElementById("f-"+id).addEventListener("input", e => { F[id]=e.target.value; page=0; render(); });
+});
+
+/* ---------- export ---------- */
+document.getElementById("export").addEventListener("click", () => {
+  const changes = {};
+  for (const k in EDITS) changes[k] = { rev: BASE[k].rev, fields: EDITS[k] };
+  const out = {
+    kind: "tagging-packet-changes", version: 1,
+    label: PACKET.label, packet_generated_at: PACKET.generated_at,
+    manifest_md5: PACKET.manifest_md5,
+    exported_at: new Date().toISOString(),
+    count: Object.keys(changes).length,
+    changes,
+  };
+  const blob = new Blob([JSON.stringify(out, null, 1)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `tagging-changes-${PACKET.label}-${new Date().toISOString().slice(0,10)}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 4000);
+});
+document.getElementById("reset").addEventListener("click", () => {
+  if (!Object.keys(EDITS).length) return;
+  if (!confirm("Discard every change in this packet? This cannot be undone.")) return;
+  EDITS = {}; persist(); render();
+});
+
+/* ---------- boot ---------- */
+fill("f-shoot", uniq(PACKET.photos.map(p=>p.shoot)), "all shoots");
+fill("f-city",  uniq(PACKET.photos.map(p=>p.city)),  "all cities");
+fill("f-coll",  PACKET.collections.filter(c=>!c.archived).map(c=>c.slug), "any collection");
+document.getElementById("banner").textContent =
+  `${PACKET.photos.length} photos · packet “${PACKET.label}” built ${PACKET.generated_at.slice(0,16).replace("T"," ")} · `
+  + `changes are kept in this browser automatically — click Download changes when you finish.`;
+persist(); render();
+</script>

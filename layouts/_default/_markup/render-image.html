@@ -1,0 +1,9 @@
+{{/* Markdown images in essays render as a real <figure> so the caption gets the
+     site's figcaption styling instead of vanishing into an alt attribute. The
+     Substack import puts the caption in the alt text, which is where markdown
+     can carry it. A title (the "quoted bit" after the URL) wins if present. */}}
+{{ $cap := or .Title .PlainText }}
+<figure>
+  <img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}" loading="lazy" decoding="async">
+  {{ with $cap }}<figcaption>{{ . | safeHTML }}</figcaption>{{ end }}
+</figure>

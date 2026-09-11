@@ -127,7 +127,8 @@
       "order": 0,
       "type": "curated",
       "place": "Pittsburgh",
-      "hidden": true
+      "hidden": true,
+      "archived": true
     },
     {
       "slug": "spanish-colonial-of-san-antonio",
@@ -152,14 +153,14 @@
     },
     {
       "slug": "greenery-of-san-antonio",
-      "title": "Green King William",
+      "title": "King William",
       "description": "",
       "featured": false,
       "cover": null,
       "order": 0,
       "type": "curated",
       "place": "San Antonio",
-      "caption": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+      "caption": "",
       "collage": false
     },
     {
@@ -248,7 +249,7 @@
     },
     {
       "slug": "churches-of-brooklyn",
-      "title": "Churches of Brooklyn",
+      "title": "Churches of Fulton Street",
       "description": "",
       "featured": false,
       "cover": null,
@@ -426,6 +427,27 @@
       "place": "Springfield",
       "collage": true,
       "collage_rank": 1
+    },
+    {
+      "slug": "coltsville",
+      "title": "Coltsville",
+      "description": "",
+      "featured": true,
+      "cover": null,
+      "order": 8,
+      "type": "curated",
+      "place": "Hartford",
+      "collage": true
+    },
+    {
+      "slug": "neon-soul",
+      "title": "Neon Soul",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Memphis"
     }
   ]
 }

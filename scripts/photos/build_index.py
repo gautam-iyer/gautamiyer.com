@@ -104,12 +104,38 @@ def main():
         if pool:
             collage[slug] = [_coll_item(p) for p in pool]
 
+    # Essay refs: stable slugs set in the tagger ("utica-1") that the essay
+    # shortcode {{< photo ref="utica-1" >}} resolves. Built from `recs`, so the
+    # withheld gate still applies — a ref pointing at a staged or QA-held photo
+    # deliberately resolves to NOTHING rather than leaking it onto an essay page.
+    refs, ref_dupes = {}, {}
+    for p in recs:
+        r = (p.get("essay_ref") or "").strip()
+        if not r:
+            continue
+        if r in refs:
+            ref_dupes.setdefault(r, 1)
+            ref_dupes[r] += 1
+            continue
+        refs[r] = {"thumb": p.get("thumb"), "avif": p.get("display_avif"),
+                   "webp": p.get("display_webp"), "ar": _ar(p),
+                   "caption": p.get("tag_notes") or "",
+                   "city": p.get("city") or "", "key": p.get("key") or ""}
+    held_refs = sorted({(photos[k].get("essay_ref") or "").strip() for k in photos
+                        if (photos[k].get("essay_ref") or "").strip()
+                        and withheld & set(photos[k].get("collections") or [])})
+
     index = {"collections": collections, "places": places, "hero": hero,
-             "covers": covers, "collage": collage}
+             "covers": covers, "collage": collage, "refs": refs}
     (DATA / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")))
     print(f"index: {len(collections)} collections, {len(places)} places, "
           f"{len(hero)} hero, {len(covers)} covers, {len(collage)} collage pools, "
-          f"{held} withheld -> data/index.json")
+          f"{len(refs)} essay refs, {held} withheld -> data/index.json")
+    for r, n in sorted(ref_dupes.items()):
+        print(f"  !! essay ref '{r}' is on {n} photos — one ref must mean one photo")
+    if held_refs:
+        print(f"  !! {len(held_refs)} essay ref(s) point at WITHHELD photos and will "
+              f"render nothing: {', '.join(held_refs[:6])}")
 
 
 if __name__ == "__main__":

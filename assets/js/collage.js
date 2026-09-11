@@ -47,6 +47,13 @@
   // Scoped to this wall's section — every wall captions itself.
   const section = box.closest('.hero-collage') || document
   const cap = section.querySelector('[data-collage-caption]')
+  // Only the FIRST wall is above the fold. The follow walls are a viewport or
+  // more down, so their cells load lazily — otherwise all five walls' images
+  // (~35 requests, and the retina ones pull the 3500px display tier) download
+  // before the reader has scrolled to any of them. Layout is unaffected: row
+  // heights and cell widths come from manifest aspect ratios, not from decoded
+  // images, so nothing reflows when a lazy cell arrives.
+  const lazy = section !== document && section.classList.contains('hero-collage--follow')
   const meta = (window.COLLAGE_META || {})[slug]
   if (cap && meta) {
     cap.textContent = meta.place ? `${meta.title} · ${meta.place}` : meta.title
@@ -260,6 +267,7 @@
         }
         img.alt = it.title || ''
         img.decoding = 'async'
+        if (lazy) img.loading = 'lazy'
         cell.appendChild(img)
         r.appendChild(cell)
       }
