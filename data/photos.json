@@ -31259,47 +31259,6 @@
     "src_size": 26062399,
     "src_mtime": 1788830671
   },
-  "Durham 4:24:26/Edited/IMG_4018.jpg": {
-    "key": "Durham 4:24:26/Edited/IMG_4018.jpg",
-    "file": "IMG_4018.jpg",
-    "shoot": "durham-2026-04-24",
-    "city": "Durham",
-    "state": "NC",
-    "date": "2026-04-24",
-    "img_no": 4018,
-    "width": 4000,
-    "height": 6000,
-    "rotate": 0,
-    "flip": "",
-    "camera": "EOS R8",
-    "neighborhood": null,
-    "land_use": [
-      "Residential"
-    ],
-    "architecture": [
-      "NA"
-    ],
-    "subject": [
-      "People",
-      "Streetscape"
-    ],
-    "medium": "Digital",
-    "tone": [
-      "Color"
-    ],
-    "tag_notes": "A woman walking away down a shaded sidewalk with a canvas tote on her shoulder, mulberry branches hanging overhead and a parked SUV and empty street to the left.",
-    "collections": [
-      "needs-review",
-      "staging"
-    ],
-    "thumb": "durham-2026-04-24/img_4018.thumb.webp",
-    "display_avif": "durham-2026-04-24/img_4018.display.avif",
-    "display_webp": "durham-2026-04-24/img_4018.display.webp",
-    "tagged": true,
-    "reviewed": false,
-    "src_size": 17787842,
-    "src_mtime": 1788830670
-  },
   "Durham 4:24:26/Edited/IMG_4019.jpg": {
     "key": "Durham 4:24:26/Edited/IMG_4019.jpg",
     "file": "IMG_4019.jpg",
