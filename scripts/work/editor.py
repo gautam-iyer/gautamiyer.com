@@ -80,8 +80,91 @@ INLINE_MD = [
     (re.compile(r'\[([^\]]+)\]\(([^)\s]+)\)'), r'<a href="\2">\1</a>'),
 ]
 PHOTO_RE = re.compile(r'\{\{<\s*photo\s+(.*?)\s*>\}\}')
+CHART_RE = re.compile(r'\{\{<\s*chart\s+(.*?)\s*>\}\}')
+PHOTOS_OPEN_RE = re.compile(r'^\{\{<\s*photos\s*>\}\}$')
+PHOTOS_SHUT_RE = re.compile(r'^\{\{<\s*/\s*photos\s*>\}\}$')
 IMAGE_RE = re.compile(r'^!\[([^\]]*)\]\(([^)\s]+)\)$')
 ATTR_RE = re.compile(r'(\w+)\s*=\s*"([^"]*)"')
+
+
+def front_list(raw_lines, key):
+    """Read a YAML list out of the raw front matter (`scripts:` / `contents:`).
+    split_front is deliberately line-based and only models flat `key: "value"`,
+    so a list arrives as nothing; this reads just the indented `- item` run that
+    follows `key:` and leaves everything else alone."""
+    out, collecting = [], False
+    for line in raw_lines:
+        if re.match(rf'^{key}:\s*$', line):
+            collecting = True
+            continue
+        if collecting:
+            m = re.match(r'^\s+-\s*(.*)$', line)
+            if not m:
+                break
+            v = m.group(1).strip()
+            if len(v) >= 2 and v[0] == v[-1] and v[0] in "\"'":
+                v = v[1:-1]
+            out.append(v)
+    return out
+
+
+def chart_ids(slug):
+    """The chart ids a piece's own JS binds to, for the insert-a-chart picker.
+
+    A {{< chart >}} draws nothing by itself — it is a scaffold the script finds
+    by getElementById. So the ids that actually work are exactly the ones in
+    that piece's `scripts`, and inventing one silently renders an empty box."""
+    p = WORK / f"{slug}.md"
+    if not p.exists():
+        return []
+    fm, raw, body = split_front(p.read_text())
+    ids, seen = [], set()
+    for rel in front_list(raw, "scripts"):
+        f = REPO / "assets" / rel
+        if not f.exists() or "vendor" in rel:
+            continue
+        src = f.read_text()
+        for cid in re.findall(r"""(?:ctx|fig|getElementById)\(\s*['"]([\w-]+)['"]""", src):
+            # `<id>-model` is EMITTED by the shortcode's model="true", not a
+            # figure to place. Offering it would render an empty second box.
+            if cid.endswith("-model"):
+                continue
+            if cid not in seen:
+                seen.add(cid)
+                ids.append(cid)
+    placed = set(b.get("id") for b in md_to_blocks(body) if b.get("type") == "chart")
+    return [{"id": c, "placed": c in placed} for c in ids]
+
+
+def photo_search(q, limit=120):
+    """Search the manifest for the insert-by-key picker.
+
+    Most photos have no essay_ref (one, today), so a piece that wants a specific
+    frame has to name it by manifest key. Searched server-side rather than
+    shipping 4,000+ records to the browser. Withheld photos are RETURNED but
+    marked — the publish gate means they render nothing, and the writer needs to
+    see that here rather than at deploy time."""
+    m = json.loads((DATA / "photos.json").read_text())
+    reg = json.loads((DATA / "collections.json").read_text())["collections"]
+    withheld = {c["slug"] for c in reg if c.get("withheld")}
+    terms = [t for t in (q or "").lower().split() if t]
+    out = []
+    for k, r in m.items():
+        if not r.get("thumb"):
+            continue
+        hay = " ".join(str(x) for x in (
+            k, r.get("city") or "", r.get("neighborhood") or "",
+            r.get("tag_notes") or "", r.get("essay_ref") or "")).lower()
+        if terms and not all(t in hay for t in terms):
+            continue
+        out.append({"key": k, "thumb": r.get("thumb"),
+                    "ref": (r.get("essay_ref") or "").strip(),
+                    "city": r.get("city") or "",
+                    "nbhd": r.get("neighborhood") or "",
+                    "withheld": bool(withheld & set(r.get("collections") or []))})
+        if len(out) >= limit:
+            break
+    return out
 
 
 def esc(s):
@@ -104,10 +187,37 @@ def md_to_blocks(body):
         s = line.strip()
         if not s:
             i += 1; continue
+        # A chart is a FIGURE SCAFFOLD, not a drawing: the piece's JS binds to
+        # its id. Modelling it as a block lets a figure be dragged into the
+        # argument instead of living in a fixed list under the prose.
+        mc = CHART_RE.match(s)
+        if mc:
+            a = dict(ATTR_RE.findall(mc.group(1)))
+            blocks.append({"type": "chart", "id": a.get("id", ""),
+                           "title": a.get("title", ""), "sub": a.get("sub", ""),
+                           "h": a.get("h", ""), "model": bool(a.get("model"))})
+            i += 1; continue
+        # A photo ROW: {{< photos >}} wrapping two-ish {{< photo >}}. Consumed
+        # whole so the inner shortcodes never reach the photo branch below and
+        # get flattened into separate full-width figures.
+        if PHOTOS_OPEN_RE.match(s):
+            i += 1
+            items = []
+            while i < len(lines) and not PHOTOS_SHUT_RE.match(lines[i].strip()):
+                mp = PHOTO_RE.match(lines[i].strip())
+                if mp:
+                    a = dict(ATTR_RE.findall(mp.group(1)))
+                    items.append({"ref": a.get("ref", ""), "key": a.get("key", ""),
+                                  "caption": a.get("caption", "")})
+                i += 1
+            i += 1                                   # step past the closer
+            blocks.append({"type": "photos", "items": items})
+            continue
         m = PHOTO_RE.match(s)
         if m:
             attrs = dict(ATTR_RE.findall(m.group(1)))
             blocks.append({"type": "photo", "ref": attrs.get("ref", ""),
+                           "key": attrs.get("key", ""),
                            "caption": attrs.get("caption", "")})
             i += 1; continue
         # Fenced code: keep the whole fence verbatim. The paragraph collector
@@ -173,6 +283,7 @@ def md_to_blocks(body):
         while i < len(lines):
             t = lines[i].strip()
             if not t or PHOTO_RE.match(t) or IMAGE_RE.match(t) \
+               or CHART_RE.match(t) or PHOTOS_OPEN_RE.match(t) or PHOTOS_SHUT_RE.match(t) \
                or re.match(r'^(---|\*\*\*|___)\s*$', t) \
                or re.match(r'^#{1,6}(\s|$)', t) or t.startswith("> ") \
                or re.match(r'^[-*+] ', t) or re.match(r'^\d+\. ', t):
@@ -230,6 +341,17 @@ def blocks_html_to_md(blocks):
     return out
 
 
+def _photo_tag(b, indent=""):
+    """One {{< photo >}}. `ref` is preferred and wins if both are set — it is
+    the stable name. A double quote in a caption would close the attribute
+    early and silently truncate it on the next read."""
+    ref = (b.get("ref") or "").strip()
+    key = (b.get("key") or "").strip()
+    cap = (b.get("caption") or "").strip().replace('"', "&quot;")
+    name = f'ref="{ref}"' if ref else f'key="{key}"'
+    return indent + "{{< photo " + name + (f' caption="{cap}"' if cap else "") + " >}}"
+
+
 def blocks_to_md(blocks):
     blocks = blocks_html_to_md(blocks)
     out = []
@@ -251,13 +373,23 @@ def blocks_to_md(blocks):
         elif t == "image":
             out.append(f'![{(b.get("caption") or "").strip()}]({(b.get("src") or "").strip()})')
         elif t == "photo":
-            ref = (b.get("ref") or "").strip()
-            cap = (b.get("caption") or "").strip()
-            # A double quote in the caption would close the attribute early and
-            # silently truncate it on the next read.
-            cap = cap.replace('"', "&quot;")
-            attrs = f'ref="{ref}"' + (f' caption="{cap}"' if cap else "")
-            out.append("{{< photo " + attrs + " >}}")
+            out.append(_photo_tag(b))
+        elif t == "photos":
+            items = [_photo_tag(x, indent="  ") for x in b.get("items", [])
+                     if (x.get("ref") or x.get("key"))]
+            if items:
+                out.append("{{< photos >}}\n" + "\n".join(items) + "\n{{< /photos >}}")
+        elif t == "chart":
+            cid = (b.get("id") or "").strip()
+            if cid:
+                a = [f'id="{cid}"']
+                for k in ("title", "sub", "h"):
+                    v = (b.get(k) or "").strip().replace('"', "&quot;")
+                    if v:
+                        a.append(f'{k}="{v}"')
+                if b.get("model"):
+                    a.append('model="true"')
+                out.append("{{< chart " + " ".join(a) + " >}}")
         elif t in ("ul", "ol"):
             # one string, not one per item: joining the whole `out` list with a
             # blank line would otherwise separate the items and markdown would
@@ -283,7 +415,7 @@ def essay_list():
             "slug": p.stem, "file": p.name,
             "title": fm.get("title", p.stem),
             "subtitle": fm.get("subtitle", ""),
-            "date": fm.get("date", ""), "category": fm.get("category", ""),
+            "date": fm.get("date", ""), "form": fm.get("form", "Essay"),
             "series": fm.get("series", ""),
             "words": len(body.split()),
             "blocks": len(md_to_blocks(body)),
@@ -292,10 +424,39 @@ def essay_list():
     return items
 
 
+def _thumbs(blocks):
+    """Attach a thumbnail path to every photo the editor has to draw.
+
+    md_to_blocks stays pure — it reads markdown and nothing else — so the
+    manifest lookup happens here, once, on load. A photo named by `key` has no
+    other way to show a picture; one named by `ref` resolves through the same
+    map the site uses."""
+    m = json.loads((DATA / "photos.json").read_text())
+    by_ref = {}
+    for k, r in m.items():
+        ref = (r.get("essay_ref") or "").strip()
+        if ref:
+            by_ref.setdefault(ref, r)
+
+    def thumb(item):
+        rec = by_ref.get((item.get("ref") or "").strip()) or m.get((item.get("key") or "").strip())
+        # A missing thumb is not an error here: it is exactly what a deleted or
+        # misspelled photo looks like, and the editor draws it as a gap.
+        return (rec or {}).get("thumb") or ""
+
+    for b in blocks:
+        if b.get("type") == "photo":
+            b["thumb"] = thumb(b)
+        elif b.get("type") == "photos":
+            for it in b.get("items", []):
+                it["thumb"] = thumb(it)
+    return blocks
+
+
 def essay_load(slug):
     p = WORK / f"{slug}.md"
     fm, raw, body = split_front(p.read_text())
-    return {"slug": slug, "front": fm, "blocks": md_to_blocks(body)}
+    return {"slug": slug, "front": fm, "blocks": _thumbs(md_to_blocks(body))}
 
 
 BAKDIR = REPO / ".photo-build" / "writing-bak"
@@ -401,6 +562,10 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(200, essay_load(q["slug"][0]))
             except FileNotFoundError:
                 return self._send(404, {"error": "no such essay"})
+        if path == "/api/charts":
+            return self._send(200, {"charts": chart_ids(q.get("slug", [""])[0])})
+        if path == "/api/photos":
+            return self._send(200, {"photos": photo_search(q.get("q", [""])[0])})
         if path.startswith("/thumb/"):
             rel = unquote(path[len("/thumb/"):])
             f = (DERIV / rel).resolve()
