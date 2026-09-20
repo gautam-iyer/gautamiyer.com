@@ -181,8 +181,8 @@ window.SiteCharts = (function () {
   }
   function table(figEl, head, rows) {
     var d = document.createElement('details');
-    d.className = 'dp-tv';
-    var html = '<summary>View the data as a table</summary><div class="dp-tv-scroll"><table><thead><tr>';
+    d.className = 'piece-tv';
+    var html = '<summary>View the data as a table</summary><div class="piece-tv-scroll"><table><thead><tr>';
     head.forEach(function (h) { html += '<th>' + esc(h) + '</th>'; });
     html += '</tr></thead><tbody>';
     rows.forEach(function (r) {

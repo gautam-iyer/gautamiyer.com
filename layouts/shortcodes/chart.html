@@ -1,0 +1,28 @@
+{{/* {{< chart id="fig-waves" title="…" sub="…" h="360" model="true" >}}
+
+     The figure scaffold a piece's chart JS binds to by id. It renders only the
+     frame — caption, sized canvas, and (optionally) an empty node for a model
+     table; the drawing is done by the script listed in the page's front-matter
+     `scripts`. Keeping the scaffold in the prose is the whole point of the
+     merge: a figure lands exactly where the argument needs it, not in a
+     fixed block list underneath the text. */}}
+{{ $id := .Get "id" | default "" }}
+{{ $title := .Get "title" | default "" }}
+{{ $color := index .Site.Params.palette 0 }}
+{{ if $id }}
+<figure class="piece-fig" id="{{ $id }}">
+  {{ if or $title (.Get "sub") }}
+  <figcaption>
+    {{ with $title }}<div class="piece-fig-title" style="color:{{ $color }}">{{ . }}</div>{{ end }}
+    {{ with .Get "sub" }}<div class="piece-fig-sub">{{ . }}</div>{{ end }}
+  </figcaption>
+  {{ end }}
+  <div class="piece-canvas"{{ with .Get "h" }} style="height:{{ . }}px"{{ end }}>
+    <canvas role="img" aria-label="{{ $title }}"></canvas>
+  </div>
+  {{ if .Get "model" }}<div class="piece-model" id="{{ $id }}-model"></div>{{ end }}
+</figure>
+{{ else }}
+{{ warnf "chart shortcode: no id= given (page %s) — the chart JS binds by id and cannot draw" .Page.File.Path }}
+<p class="photo-missing">Chart with no <code>id</code></p>
+{{ end }}

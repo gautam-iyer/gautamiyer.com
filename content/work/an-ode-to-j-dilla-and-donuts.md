@@ -2,11 +2,11 @@
 title: "An Ode to J Dilla and Donuts"
 date: 2023-09-28T17:01:25-04:00
 subtitle: "And maybe briefly to Bob Dylan"
-category: "Essay"
+form: "Essay"
 source_url: "https://gautamiyer.substack.com/p/an-ode-to-j-dilla-and-donuts"
 hero_image: ""
+aliases: ["/writing/an-ode-to-j-dilla-and-donuts/"]
 ---
-
 ![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffcd89ace-7485-4aa2-b210-86324d98e391_1226x1109.jpeg)
 
 For years, I’ve wanted to write about J Dilla’s *Donuts*, a work so special to me and other Dilla fans that it’s assumed a certain mythos, replete with its own creation myths, rituals, and heretics. I’ve started writing about *Donuts* many times, and each time I’ve run into a problem that must always exasperate those who write about great art: how do I capture in words something that transcends language?

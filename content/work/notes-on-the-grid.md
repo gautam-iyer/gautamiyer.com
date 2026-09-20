@@ -2,12 +2,12 @@
 title: "Notes on the Grid"
 date: 2024-08-12
 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-category: "Essay"
+form: "Essay"
 series: "American Cities"
 hero_image: ""
 hero_caption: ""
+aliases: ["/writing/notes-on-the-grid/"]
 ---
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 laboris nisi ut aliquip ex ea commodo consequat.

@@ -3,12 +3,12 @@ title: "The Psychic Highway: Part 3 - Utica"
 date: 2026-09-04T14:07:36-04:00
 featured: true
 subtitle: "One billion more immigrants"
-category: "Essay"
+form: "Essay"
 series: "The Psychic Highway"
 source_url: "https://gautamiyer.substack.com/p/the-psychic-highway-part-3-utica"
 hero_image: ""
+aliases: ["/writing/the-psychic-highway-part-3-utica/"]
 ---
-
 ![FX Matt Brewing Co., the long-time Utica-based brewer of Utica Club, a delicious local beer.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9dedd8d8-eafd-4dff-b48d-95aa3d54b40a_2318x1537.jpeg)
 
 ---

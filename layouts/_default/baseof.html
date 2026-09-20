@@ -47,10 +47,10 @@
   {{/* Top menu — black Inter on the same white bar as the name. On home it
        fades in in step with the name collapsing to one line (same 0.35s ease,
        driven by the same body.scrolled flag); on compact pages it's always
-       shown. Photos/Projects reveal small white dropdowns on hover so
-       Collections/Places/Walking Tours stay one hop away. */}}
+       shown. Photos reveals a small white dropdown on hover so
+       Collections/Places stay one hop away. Work is one section: essays,
+       walking tours and data pieces all live there. */}}
   <nav class="topnav" aria-label="Site navigation">
-    <a href="/writing/" class="{{ if eq .Section "writing" }}active{{ end }}">Writing</a>
     <span class="has-drop">
       <a href="/photos/" class="{{ if or (eq .Section "photos") (eq .Section "collections") (eq .Section "places") }}active{{ end }}">Photos</a>
       <span class="drop">
@@ -59,13 +59,7 @@
         <a href="/places/">Places</a>
       </span>
     </span>
-    <span class="has-drop">
-      <a href="/projects/" class="{{ if eq .Section "projects" }}active{{ end }}">Projects</a>
-      <span class="drop">
-        <a href="/projects/">All Projects</a>
-        <a href="/projects/walking-tours/">Walking Tours</a>
-      </span>
-    </span>
+    <a href="/work/" class="{{ if eq .Section "work" }}active{{ end }}">Work</a>
     <a href="/about/" class="{{ if eq .Section "about" }}active{{ end }}">About</a>
   </nav>
 </header>

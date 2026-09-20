@@ -3,12 +3,12 @@ title: "The Psychic Highway: Part 1 - Intro & Albany"
 date: 2025-11-26T13:39:14-05:00
 featured: true
 subtitle: "Meandering up the Hudson"
-category: "Essay"
+form: "Essay"
 series: "The Psychic Highway"
 source_url: "https://gautamiyer.substack.com/p/the-psychic-highway-part-1-intro"
 hero_image: ""
+aliases: ["/writing/the-psychic-highway-part-1-intro-albany/"]
 ---
-
 ![A vacant lot in Rensselaer facing Albany from across the Hudson River. Empire State Plaza rises in the background.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F065bf09e-9ec4-4108-b5bb-a46fd524c56d_1536x2304.jpeg)
 
 ---

@@ -1,33 +1,77 @@
-{{/* {{< photo ref="utica-1" caption="optional override" >}}
+{{/* {{< photo ref="utica-1" caption="optional" >}}
+     {{< photo key="South BK 4:6:26/Edited/JPEGs/IMG_2429.jpg" caption="…" >}}
 
-     Places one of Gautam's own photos in an essay by a STABLE SLUG rather than a
-     path. The slug is set per photo in the tagger's "Essay ref" field and
-     resolved here through data/index.json's `refs` map (built by build_index.py),
-     so a reference survives re-derives, re-crops and R2 path changes, and can be
+     Places one of Gautam's own photos in a piece. Two ways to name a frame:
+
+     `ref` — a STABLE SLUG set per photo in the tagger's "Essay ref" field and
+     resolved through data/index.json's `refs` map (built by build_index.py).
+     Preferred: it survives re-derives, re-crops and R2 path changes, and can be
      repointed at a different frame without editing the prose.
 
-     A ref that resolves to nothing is a WRITING error, not a silent gap: it
-     renders a visible marker in the page and warns during the build. Refs on
-     withheld photos deliberately do not resolve — the publish gate still wins. */}}
-{{/* `.Get` returns NIL, not "", when the attribute is absent — and `index`
-     rejects a nil key, so a bare {{< photo >}} aborted the whole site build
-     instead of rendering the missing marker this file promises. */}}
+     `key` — the raw manifest key. An escape hatch for a frame that has no ref
+     yet; it is resolved against data/photos.json AND PUT THROUGH THE SAME
+     WITHHELD GATE, because the publish gate must win however a photo is named.
+     (The old data-project template read hugo.Data.photos directly with no gate,
+     so a staged or QA-held frame named by key would have published.)
+
+     A name that resolves to nothing is a WRITING error, not a silent gap: it
+     renders a visible marker and warns during the build.
+
+     Inside {{< photos >}} it renders as a row CELL wired to the shared
+     lightbox; standalone it renders as a figure in the prose. */}}
+
+{{/* `.Get` returns NIL, not "", when an attribute is absent — and `index`
+     rejects a nil key, so both are `| default ""`. Without that, a bare
+     {{< photo >}} aborted the whole site build. */}}
 {{ $ref := .Get "ref" | default "" }}
+{{ $key := .Get "key" | default "" }}
 {{ $base := .Site.Params.photo_base | default "/img/" }}
-{{ $p := index (index hugo.Data.index "refs" | default dict) $ref }}
-{{ with $p }}
-  {{/* The caption is whatever the essay says, and NOTHING otherwise. It must
+{{ $cap := .Get "caption" | default "" }}
+{{ $cell := and .Parent (eq (string .Parent.Name) "photos") }}
+
+{{/* Normalise both sources to one shape: thumb / avif / webp / ar. */}}
+{{ $p := dict }}
+{{ if $ref }}
+  {{ with index (index hugo.Data.index "refs" | default dict) $ref }}{{ $p = . }}{{ end }}
+{{ else if $key }}
+  {{ $withheld := partialCached "withheld.html" . "withheld" }}
+  {{ with index hugo.Data.photos $key }}
+    {{ if not (intersect $withheld (.collections | default slice)) }}
+      {{ $p = dict "thumb" .thumb "avif" .display_avif "webp" .display_webp
+                   "ar" (div (float .width) (float .height)) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if $p }}
+  {{ $thumb := printf "%s%s" $base ($p.thumb | default "") }}
+  {{ $avif := printf "%s%s" $base ($p.avif | default "") }}
+  {{ $webp := printf "%s%s" $base ($p.webp | default "") }}
+  {{ if $cell }}
+  <div class="piece-photo">
+    {{ partial "lbthumb.html" (dict "thumb" $thumb "avif" $avif "webp" $webp
+                                    "ar" $p.ar "title" $cap "meta" "") }}
+    {{ with $cap }}<div class="piece-photo-cap">{{ . }}</div>{{ end }}
+  </div>
+  {{ else }}
+  {{/* The caption is whatever the piece says, and NOTHING otherwise. It must
        not fall back to the photo's tag_notes: those are internal vision-tagging
        notes written for QA ("CITY? best guess Utica — strip-plaza storefront…")
        and they read as gibberish under a photo in an essay. */}}
-  {{ $cap := $.Get "caption" }}
   <figure>
-    <img src="{{ printf "%s%s" $base (or .webp .thumb) }}"
+    <img src="{{ or $p.webp $p.thumb | printf "%s%s" $base }}"
          alt="{{ $cap }}" loading="lazy" decoding="async"
-         {{ with .ar }}style="aspect-ratio:{{ . }}"{{ end }}>
+         {{ with $p.ar }}style="aspect-ratio:{{ . }}"{{ end }}>
     {{ with $cap }}<figcaption>{{ . }}</figcaption>{{ end }}
   </figure>
+  {{ end }}
 {{ else }}
-  {{ warnf "photo shortcode: essay ref %q resolves to nothing (page %s) — is it set in the tagger, and is the photo un-withheld?" $ref $.Page.File.Path }}
-  <p class="photo-missing">Missing photo reference <code>#{{ $ref }}</code></p>
+  {{ $name := $ref | default $key }}
+  {{ if $name }}
+    {{ warnf "photo shortcode: %q resolves to nothing (page %s) — is the ref set in the tagger, the key spelled exactly, and the photo un-withheld?" $name $.Page.File.Path }}
+    <p class="photo-missing">Missing photo reference <code>#{{ $name }}</code></p>
+  {{ else }}
+    {{ warnf "photo shortcode: neither ref= nor key= given (page %s)" $.Page.File.Path }}
+    <p class="photo-missing">Photo with no <code>ref</code> or <code>key</code></p>
+  {{ end }}
 {{ end }}

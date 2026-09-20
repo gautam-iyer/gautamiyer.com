@@ -1,0 +1,122 @@
+{{ define "main" }}
+{{- /* ONE template for everything that isn't a photo: essays, walking tours,
+       data pieces. What varies between them is APPARATUS, not layout — a piece
+       renders whatever front matter it carries and nothing else, so a bare
+       essay is just a header and prose, and a data piece is the same page with
+       facts, stats and figures switched on. Charts and photos interleave with
+       the prose as shortcodes ({{< chart >}}, {{< photo >}}, {{< photos >}});
+       everything else is page furniture and sits in a fixed position. */ -}}
+{{ $base := .Site.Params.photo_base | default "/img/" }}
+{{ $palette := .Site.Params.palette }}
+{{ $color := index $palette 0 }}
+{{ $kind := .Params.form | default "Essay" }}
+
+<article class="piece">
+  <a class="backlink" href="/work/">← All Work</a>
+
+  <div class="piece-header">
+    <div class="piece-meta">
+      <span class="piece-kicker subsubhead" style="color:{{ $color }}">{{ $kind }}</span>
+      {{ if not .Date.IsZero }}<span class="meta-dot"></span>
+      <span class="piece-date">{{ .Date.Format "January 2, 2006" }}</span>{{ end }}
+    </div>
+    <h1 class="piece-title">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="piece-subtitle">{{ . }}</p>{{ end }}
+    {{ with .Params.series }}
+    <a href="/work/?series={{ . | urlize }}" class="piece-series">Series: {{ . }} ›</a>
+    {{ end }}
+  </div>
+
+  {{/* Two kinds of lead image: an essay's hero (site-relative or absolute) and
+       a tour's cover (a path under photo_base, like the guide PDF). */}}
+  {{ with .Params.hero_image }}
+  <div class="piece-hero">
+    <img src="{{ . }}" alt="{{ $.Title }}">
+    {{ with $.Params.hero_caption }}<p class="piece-hero-caption">{{ . }}</p>{{ end }}
+  </div>
+  {{ end }}
+  {{ with .Params.cover }}
+  <div class="piece-cover"><img src="{{ $base }}{{ . }}" alt="{{ $.Title }} — cover"></div>
+  {{ end }}
+
+  {{/* Fact bar: any subset. An essay carries none and the bar disappears. */}}
+  {{ $facts := slice
+      (dict "label" "When"    "val" (.Params.when    | default ""))
+      (dict "label" "Where"   "val" (.Params.where   | default ""))
+      (dict "label" "What"    "val" (.Params.summary | default ""))
+      (dict "label" "Method"  "val" (.Params.method  | default ""))
+      (dict "label" "Details" "val" (.Params.details | default "")) }}
+  {{ $shown := where $facts "val" "!=" "" }}
+  {{ with $shown }}
+  <div class="piece-facts">
+    {{ range . }}
+    <div class="piece-fact">
+      <span class="piece-fact-label">{{ .label }}</span>
+      <span class="piece-fact-val">{{ .val }}</span>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ with .Params.stats }}
+  <div class="piece-stats">
+    {{ range . }}
+    <div class="piece-stat">
+      <div class="piece-stat-label">{{ .label }}</div>
+      <div class="piece-stat-value">{{ .value }}</div>
+      {{ with .note }}<div class="piece-stat-note">{{ . }}</div>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ with .Params.contents }}
+  <div class="piece-contents">
+    <div class="piece-section-label" style="color:{{ $color }}">Contents</div>
+    <ol class="piece-toc">{{ range . }}<li>{{ . }}</li>{{ end }}</ol>
+  </div>
+  {{ end }}
+
+  {{/* The prose. `.article-body` keeps its name on purpose: it is the shared
+       typographic spine (drop cap, figures, footnotes, blockquotes) that the
+       essay editor mirrors rule-for-rule so its canvas matches the page. */}}
+  {{ with .Content }}<div class="article-body">{{ . }}</div>{{ end }}
+
+  {{/* A guide PDF is the payload of a walking tour, so it sits after the prose
+       that introduces it. Announce a missing one only for tours — an essay
+       without a PDF is not waiting on anything. */}}
+  {{ if .Params.pdf }}
+  <div class="piece-guide">
+    <div class="piece-guide-bar">
+      <div class="piece-section-label" style="color:{{ $color }}">The Guide</div>
+      <a class="piece-open" href="{{ $base }}{{ .Params.pdf }}" target="_blank" rel="noopener">Open in new tab ↗</a>
+    </div>
+    <object class="piece-pdf" data="{{ $base }}{{ .Params.pdf }}" type="application/pdf">
+      <div class="piece-pdf-fallback">
+        <p>Your browser can't display the PDF inline.</p>
+        <a class="piece-open" href="{{ $base }}{{ .Params.pdf }}" target="_blank" rel="noopener">Open the guide in a new tab ↗</a>
+      </div>
+    </object>
+  </div>
+  {{ else if eq $kind "Walking Tour" }}
+  <div class="piece-guide"><div class="piece-guide-coming">Guide coming soon.</div></div>
+  {{ end }}
+
+  {{ with .Params.datanote }}<p class="piece-note">{{ . }}</p>{{ end }}
+
+  <div class="piece-end">
+    {{ with .PrevInSection }}
+    <a href="{{ .Permalink }}"><div class="end-label">← Previous</div><div class="end-title">{{ .Title }}</div></a>
+    {{ else }}<span></span>{{ end }}
+    {{ with .NextInSection }}
+    <a href="{{ .Permalink }}" class="end-next"><div class="end-label">Next →</div><div class="end-title">{{ .Title }}</div></a>
+    {{ else }}<span></span>{{ end }}
+  </div>
+</article>
+{{ end }}
+
+{{ define "scripts" }}
+{{- /* Per-piece JS in front-matter order (vendor lib → site theme → the page's
+       own chart code → lightbox). `defer` preserves it. */ -}}
+{{ range .Params.scripts }}{{ partial "asset-js.html" . }}{{ end }}
+{{ end }}

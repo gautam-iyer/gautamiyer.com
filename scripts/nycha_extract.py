@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Splice development-level scatter data from the NYCHA analysis workbook into
-assets/js/projects/nycha.js (replaces the /*__DATA__*/[...] literal).
+assets/js/work/nycha.js (replaces the /*__DATA__*/[...] literal).
 
 Usage: python3 scripts/nycha_extract.py [path-to-xlsx]
 
@@ -18,7 +18,7 @@ import openpyxl
 
 DEFAULT_XLSX = ("/Users/gautamiyer/Documents/Key Personal Docs/"
                 "Mapping and Analysis/2026-02-04_NYCHA-Analysis.xlsx")
-JS = Path(__file__).resolve().parent.parent / "assets/js/projects/nycha.js"
+JS = Path(__file__).resolve().parent.parent / "assets/js/work/nycha.js"
 
 
 def titlecase(s):

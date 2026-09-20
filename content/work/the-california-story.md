@@ -2,11 +2,11 @@
 title: "The California Story"
 date: 2023-09-08T20:27:50-04:00
 subtitle: "is a very American story"
-category: "Essay"
+form: "Essay"
 source_url: "https://gautamiyer.substack.com/p/the-california-story"
 hero_image: ""
+aliases: ["/writing/the-california-story/"]
 ---
-
 ![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbc093225-abe4-47f7-9321-fd1df5bc9d57_1464x1600.jpeg)
 
 I wanted to write about San Francisco, but I find it difficult to think about San Francisco without thinking about the larger California context first.

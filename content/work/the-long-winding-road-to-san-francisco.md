@@ -2,12 +2,12 @@
 title: "The Long, Winding Road to San Francisco"
 date: 2024-05-31
 subtitle: "On billboards, accumulated wealth, and the sickness American cities are patient zero for."
-category: "Essay"
+form: "Essay"
 series: "American Cities"
 hero_image: ""
 hero_caption: "The San Francisco skyline from 101-North, 2024."
+aliases: ["/writing/the-long-winding-road-to-san-francisco/"]
 ---
-
 There are few things I love more than taking Northbound I-85 up towards Atlanta and watching the glittering skyline unfold in front of me. It's a neatly packaged, vaguely spiritual amalgamation of millions of people and their accompanying struggles. "Here we are!," it says, "and you are a part of this!"
 
 Also parts of this are the billboards that flank the highway, advertising diabetic supply exchanges, injury lawyers galore, and other high-margin perversities. And though the golden spires atop the 60-story high-rises hint at the exploitation and accumulation underlying it all, they require some causal inference. You need only be able to read to interpret the billboards.

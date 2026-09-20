@@ -1,7 +1,7 @@
 {{ define "main" }}
 <main>
   <h1 class="page-title">{{ .Title }}</h1>
-  <ul class="essay-list">
+  <ul class="work-list">
     {{ range .Pages }}
     <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}

@@ -1,0 +1,97 @@
+{{/* One row renderer, shared by both views. A `define` must sit at the top
+     level of the file — Go templates reject one nested inside another. */}}
+  {{ define "workrow" }}
+  {{ $p := .page }}{{ $base := .base }}{{ $fmt := .fmt }}
+  {{ $kind := $p.Params.form | default "Essay" }}
+  {{ $thumb := or ($p.Params.preview | default "") ($p.Params.cover | default "") }}
+  <a href="{{ $p.Permalink }}" class="work-item" data-kind="{{ $kind }}">
+    <div class="work-row">
+      {{ if $thumb }}
+      <div class="work-thumb"><img src="{{ $base }}{{ $thumb }}" alt="" loading="lazy"></div>
+      {{ else }}
+      <div class="work-thumb work-thumb--none" aria-hidden="true"></div>
+      {{ end }}
+      <div class="work-info">
+        <div class="work-title">{{ $p.Title }}</div>
+        {{ with $p.Params.subtitle }}<div class="work-excerpt">{{ . }}</div>{{ end }}
+        <div class="work-kind">{{ $kind }}{{ with $p.Params.where }} · {{ . }}{{ end }}</div>
+      </div>
+      {{ if not $p.Date.IsZero }}<div class="work-date">{{ $p.Date.Format $fmt }}</div>{{ end }}
+    </div>
+  </a>
+  {{ end }}
+
+{{ define "main" }}
+<main>
+  {{- /* The single index for everything written or made. Essays, tours and data
+         pieces are one list: they differ by KIND, which is a filter, not a
+         separate section. Rows carry a thumbnail only when the piece has one,
+         so a plain essay sits flush beside a tour with a cover. */ -}}
+  {{ $base := .Site.Params.photo_base | default "/img/" }}
+  {{ $palette := .Site.Params.palette }}
+  {{ $kinds := slice }}
+  {{ range .Pages }}{{ $k := .Params.form | default "Essay" }}
+    {{ if not (in $kinds $k) }}{{ $kinds = $kinds | append $k }}{{ end }}
+  {{ end }}
+
+  <a class="backlink" href="/">← Back to Home</a>
+  <h1 class="page-title">Work</h1>
+  <p class="page-desc">
+    {{ with .Content }}{{ . }}{{ else }}Essays, walking tours, and data work on cities, politics, urban history, music, and whatever else.{{ end }}
+  </p>
+
+  <div class="work-controls">
+    <div class="view-toggle">
+      <button class="toggle-btn active" data-view="all">All</button>
+      <button class="toggle-btn" data-view="series">By Series</button>
+    </div>
+    {{ if gt (len $kinds) 1 }}
+    <select class="filter-select" data-role="kind" aria-label="Filter by kind">
+      <option value="">All kinds</option>
+      {{ range (sort $kinds) }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+    </select>
+    {{ end }}
+  </div>
+
+  {{/* ── ALL (chronological by year) ── */}}
+  <div class="all-section visible" id="view-all">
+    {{ range (.Pages.GroupByDate "2006") }}
+    <div class="year-label">{{ .Key }}</div>
+    <ul class="work-list">
+      {{ range .Pages }}{{ template "workrow" (dict "page" . "base" $base "fmt" "Jan 2") }}{{ end }}
+    </ul>
+    {{ end }}
+  </div>
+
+  {{/* ── BY SERIES ── */}}
+  <div class="series-section" id="view-series">
+    {{ $withSeries := where .Pages "Params.series" "!=" nil }}
+    {{ range $withSeries.GroupByParam "series" }}
+    <div class="series-group">
+      <div class="series-header">
+        <div class="series-name">{{ .Key }}</div>
+        <div class="series-count">{{ len .Pages }} {{ if eq (len .Pages) 1 }}piece{{ else }}pieces{{ end }}</div>
+      </div>
+      <ul class="work-list">
+        {{ range .Pages }}{{ template "workrow" (dict "page" . "base" $base "fmt" "Jan 2006") }}{{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+    {{ $standalone := where .Pages "Params.series" "==" nil }}
+    {{ if $standalone }}
+    <div class="series-group">
+      <div class="series-header">
+        <div class="series-name">Standalone</div>
+        <div class="series-count">{{ len $standalone }} {{ if eq (len $standalone) 1 }}piece{{ else }}pieces{{ end }}</div>
+      </div>
+      <ul class="work-list">
+        {{ range $standalone }}{{ template "workrow" (dict "page" . "base" $base "fmt" "Jan 2006") }}{{ end }}
+      </ul>
+    </div>
+    {{ end }}
+  </div>
+</main>
+{{ end }}
+
+{{ define "scripts" }}{{ partial "asset-js.html" "js/work.js" }}{{ end }}

@@ -3,12 +3,12 @@ title: "The Psychic Highway: Part 2 - Troy and Schenectady"
 date: 2026-01-30T18:52:10-05:00
 featured: true
 subtitle: "Heading West to the Lakes"
-category: "Essay"
+form: "Essay"
 series: "The Psychic Highway"
 source_url: "https://gautamiyer.substack.com/p/the-psychic-highway-part-2-troy-and"
 hero_image: ""
+aliases: ["/writing/the-psychic-highway-part-2-troy-and-schenectady/"]
 ---
-
 ![A late November sunrise over the Troy Gasholder House, one of thousands it has seen since its construction in 1873.](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F61d4eeda-6322-4496-a473-8d7aa21f13c8_1537x2318.jpeg)
 
 ---

@@ -2,11 +2,11 @@
 title: "Ads on the New York State Contract Reporter on October 10th, 2025"
 date: 2025-10-10T10:37:22-04:00
 subtitle: "Wheel In The Sky Keeps On Turning"
-category: "Essay"
+form: "Essay"
 source_url: "https://gautamiyer.substack.com/p/ads-on-the-new-york-state-contract"
 hero_image: ""
+aliases: ["/writing/ads-on-the-new-york-state-contract-reporter-on-october-10th-2025/"]
 ---
-
 ![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F741be87a-f7ad-411f-a8ca-94dbac99535f_3456x2304.heic)
 
 **Title:** Billboard Advertising Services

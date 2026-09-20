@@ -103,11 +103,11 @@
           '</td><td>' + m.n + '</td></tr>';
       }
       el.innerHTML =
-        '<div class="dp-model-caption">OLS &mdash; <em>stories ~ completion year</em>, fitted separately around 1970</div>' +
+        '<div class="piece-model-caption">OLS &mdash; <em>stories ~ completion year</em>, fitted separately around 1970</div>' +
         '<table><thead><tr><th></th><th>Stories / yr</th><th>Std. error</th><th>p</th><th>R&sup2;</th><th>n</th></tr></thead><tbody>' +
         row('1936–1970', mUp) + row('1971–2005', mDown) +
         '</tbody></table>' +
-        '<p class="dp-model-read">The average new development gained ' + Math.round(mUp.slope * 10) +
+        '<p class="piece-model-read">The average new development gained ' + Math.round(mUp.slope * 10) +
         ' stories per decade for thirty-five years, then shed ' + Math.abs(mDown.slope * 10).toFixed(0) +
         ' per decade after 1970.</p>';
     }

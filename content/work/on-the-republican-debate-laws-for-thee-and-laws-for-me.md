@@ -2,11 +2,11 @@
 title: "On the Republican debate, laws for thee, and laws for me"
 date: 2023-08-28T16:24:45-04:00
 subtitle: "The state does a lot of illegal stuff, legally, and Republicans love it"
-category: "Essay"
+form: "Essay"
 source_url: "https://gautamiyer.substack.com/p/on-the-republican-debate-laws-for"
 hero_image: ""
+aliases: ["/writing/on-the-republican-debate-laws-for-thee-and-laws-for-me/"]
 ---
-
 The first Republican presidential debate was obviously striking for many reasons. Some of those reasons are easy to understand - exhibit A was skinny Tamil Brahmin Vivek Ganapathy Ramaswamy stitching together a bunch of incoherent political positions to create not a Republican candidate but an anti-candidate, someone you’d vote for only to vote against something. I know we’ve had Indians in national politics, but they’ve always done the obligatory whitewashing (e.g. Piyush “Bobby” (???) Jindal) and have exploited the large overlap between traditional American conservatism and the traditional Indian immigrant ethos (work hard, detach yourself from society, keep the family close, stay prayed up). Veevehk is different in that he’s not appealing to anybody in particular - just people who want to say “f\*ck you” to some vague notion of the governing order of the last few decades. Kinda like Trump, except if Trump had the most hardcore Tamilian name ever and was the actual human embodiment of a rat (Trump is more of a baboon or mandrill to me).
 
 So there were a lot of things going on in the debate, enough to *almost* distract from the more insidious currents flowing through the night.

@@ -1,0 +1,10 @@
+{{/* {{< photos >}} … two or more {{< photo >}} … {{< /photos >}}
+
+     A row of the author's own photographs, side by side, each opening in the
+     shared lightbox. Hugo renders the inner shortcodes first, so `.Inner` is
+     already their markup; the inner {{< photo >}} renders as a row CELL rather
+     than its usual standalone figure by checking `.Parent`.
+     Load js/lightbox.js via the page's front-matter `scripts` or the cells
+     will render but not open. */}}
+{{ $n := len (findRE "piece-photo\"" .Inner) }}
+<div class="piece-photos{{ if ge $n 2 }} piece-photos-2{{ end }}">{{ .Inner | safeHTML }}</div>

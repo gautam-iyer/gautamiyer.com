@@ -62,12 +62,12 @@
   {{ end }}
 
   {{/* Essays tagged with this place (writing front matter: places: ["Pittsburgh"]) */}}
-  {{ $essays := where (where .Site.RegularPages "Section" "writing") "Params.places" "intersect" (slice $place) }}
+  {{ $essays := where (where .Site.RegularPages "Section" "work") "Params.places" "intersect" (slice $place) }}
   {{ with $essays }}
   <div class="section-label">Writing</div>
   <ul class="place-essays">
     {{ range .ByDate.Reverse }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.subtitle }} <span class="essay-sub">— {{ . }}</span>{{ end }}</li>
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.subtitle }} <span class="work-sub">— {{ . }}</span>{{ end }}</li>
     {{ end }}
   </ul>
   {{ end }}

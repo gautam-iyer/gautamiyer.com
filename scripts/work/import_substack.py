@@ -8,9 +8,9 @@ This pulls `body_html` back from Substack's public post API and rebuilds proper
 markdown: paragraphs, headings, dividers, blockquotes, lists, links, emphasis,
 and images with their captions.
 
-  python3 scripts/writing/import_substack.py --all --dry-run
-  python3 scripts/writing/import_substack.py the-california-story
-  python3 scripts/writing/import_substack.py --all
+  python3 scripts/work/import_substack.py --all --dry-run
+  python3 scripts/work/import_substack.py the-california-story
+  python3 scripts/work/import_substack.py --all
 
 Frontmatter is preserved byte-for-byte; only the body is replaced. The first
 run copies each file to .photo-build/writing-bak/ (gitignored, never
@@ -21,7 +21,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-WRITING = REPO / "content" / "writing"
+WORK = REPO / "content" / "work"
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126 Safari/537.36")
 
@@ -338,7 +338,7 @@ def main():
                  "(or name the slugs). Add --dry-run to preview.")
 
     targets = []
-    for p in sorted(WRITING.glob("*.md")):
+    for p in sorted(WORK.glob("*.md")):
         if p.name == "_index.md": continue
         if args.slugs and p.stem not in args.slugs: continue
         front, body = split_front(p.read_text())

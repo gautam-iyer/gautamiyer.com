@@ -2,11 +2,11 @@
 title: "Allentown at the end of the universe"
 date: 2024-08-06T11:04:15-04:00
 subtitle: "And Atlanta at the beginning of the next one"
-category: "Essay"
+form: "Essay"
 source_url: "https://gautamiyer.substack.com/p/allentown-at-the-end-of-the-universe"
 hero_image: ""
+aliases: ["/writing/allentown-at-the-end-of-the-universe/"]
 ---
-
 A couple of weeks ago, I drove through Allentown, PA with a few friends. The very first thing we saw, on the thoroughly deracinated outskirts of town, was a bulldozer, blindly pummeling the remains of a not-too-ancient Art Deco building. The building’s relatively austere façade was marked only by a vertical column of terra cotta tiles, each adorned with a vaguely agrarian motif. Early 20th century, but lacking the ornamentation and splendor of the Art Deco of the Roaring 20s.
 
 This building embodied a sort of humility, a more muted, resolute aspiration than that of, say, the Chrysler Building, whose opulence hints at the grotesque accumulations of capital that partially caused the Great Depression the very year it was completed.

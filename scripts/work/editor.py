@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 Essay editor — a dependency-free local web app for writing and laying out the
-prose in content/writing/*.md (and the intro copy of data-projects).
+prose in content/work/*.md — essays, walking tours and data pieces alike.
 
-Run:   python3 scripts/writing/editor.py        (opens http://localhost:8801)
+Run:   python3 scripts/work/editor.py           (opens http://localhost:8801)
 
 It is a BLOCK editor in the Substack mould: a centred column styled with the
 site's own .article-body rules, so what you see is what the published page
@@ -26,7 +26,7 @@ from urllib.parse import urlparse, unquote, parse_qs
 
 PORT = 8801
 REPO = Path(__file__).resolve().parents[2]
-WRITING = REPO / "content" / "writing"
+WORK = REPO / "content" / "work"
 DATA = REPO / "data"
 DERIV = REPO / ".photo-build" / "derivatives"
 TEMPLATE = Path(__file__).resolve().parent / "editor.html"
@@ -275,7 +275,7 @@ def blocks_to_md(blocks):
 # ------------------------------------------------------------------ essay io
 def essay_list():
     items = []
-    for p in sorted(WRITING.glob("*.md")):
+    for p in sorted(WORK.glob("*.md")):
         if p.name == "_index.md":
             continue
         fm, raw, body = split_front(p.read_text())
@@ -293,7 +293,7 @@ def essay_list():
 
 
 def essay_load(slug):
-    p = WRITING / f"{slug}.md"
+    p = WORK / f"{slug}.md"
     fm, raw, body = split_front(p.read_text())
     return {"slug": slug, "front": fm, "blocks": md_to_blocks(body)}
 
@@ -308,12 +308,12 @@ class SaveRefused(Exception):
 
 
 def essay_save(slug, front_updates, blocks):
-    # Refuse a slug that escapes content/writing. The endpoint is localhost-only
+    # Refuse a slug that escapes content/work. The endpoint is localhost-only
     # but unauthenticated, and any page in the browser can POST to it.
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]*', slug or ""):
         raise SaveRefused(f"bad slug {slug!r}")
-    p = (WRITING / f"{slug}.md").resolve()
-    if p.parent != WRITING.resolve() or not p.exists():
+    p = (WORK / f"{slug}.md").resolve()
+    if p.parent != WORK.resolve() or not p.exists():
         raise SaveRefused(f"no such essay {slug!r}")
 
     old_text = p.read_text()
@@ -425,8 +425,8 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
-    if not WRITING.exists():
-        sys.exit(f"no writing directory at {WRITING}")
+    if not WORK.exists():
+        sys.exit(f"no work directory at {WORK}")
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
     url = f"http://127.0.0.1:{PORT}/"
     print(f"Essay editor running at {url}  (Ctrl-C to stop)")
