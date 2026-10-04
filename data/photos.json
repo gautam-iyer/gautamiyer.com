@@ -3682,7 +3682,8 @@
     "state": "NY",
     "camera": "EOS 7D",
     "src_size": 1475096,
-    "src_mtime": 1768229464
+    "src_mtime": 1768229464,
+    "place_cover": true
   },
   "Buffalo '26/Drop 1/IMG_2185.JPG": {
     "key": "Buffalo '26/Drop 1/IMG_2185.JPG",
@@ -38758,7 +38759,8 @@
     "tagged": true,
     "reviewed": true,
     "src_size": 3402483,
-    "src_mtime": 1767500906
+    "src_mtime": 1767500906,
+    "place_cover": true
   },
   "Funky South '26/Drop 1/IMG_0805.jpeg": {
     "key": "Funky South '26/Drop 1/IMG_0805.jpeg",
@@ -130553,7 +130555,8 @@
     "tagged": true,
     "reviewed": false,
     "src_size": 3586839,
-    "src_mtime": 1766925879
+    "src_mtime": 1766925879,
+    "place_cover": true
   },
   "Portugal Dec '25/Porto 1/IMG_0276.JPG": {
     "key": "Portugal Dec '25/Porto 1/IMG_0276.JPG",
