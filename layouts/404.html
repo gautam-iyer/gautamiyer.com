@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{- /* Hugo renders this to public/404.html, which Cloudflare Pages serves for
+       any unknown path. Without the file, Pages falls back to serving the
+       HOMEPAGE with HTTP 200 for every bad URL — so a retired page looks alive
+       and `curl -o /dev/null -w %{http_code}` can never tell you otherwise.
+       Reuses the .piece-* family so this adds no CSS of its own. */ -}}
+{{ $palette := .Site.Params.palette }}
+{{ $color := index $palette 0 }}
+
+<main>
+  <a class="backlink" href="/">← Back to Home</a>
+
+  <div class="piece-header">
+    <div class="piece-meta">
+      <span class="piece-kicker subsubhead" style="color:{{ $color }}">404</span>
+    </div>
+    <h1 class="piece-title">This page doesn&rsquo;t exist</h1>
+    <p class="piece-subtitle">The address may be mistyped, or the page may have moved.</p>
+  </div>
+
+  <div class="article-body">
+    <p>A few places to pick the thread back up:</p>
+    <ul>
+      <li><a href="/photos/">All photographs</a> &mdash; the full, filterable library</li>
+      <li><a href="/collections/">Collections</a> &mdash; grouped by building, theme or series</li>
+      <li><a href="/places/">Places</a> &mdash; browse by city</li>
+      <li><a href="/work/">Work</a> &mdash; essays, walking tours and data pieces</li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+
+  <a class="home-more" href="/photos/">Browse the photographs &rarr;</a>
+</main>
+{{ end }}
