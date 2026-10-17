@@ -326,6 +326,16 @@ html:has(> body.home) {
    unreachable by the primary scroll gesture (only the End key escaped it).
    Releasing the final wall lets the tail of the page settle normally. */
 .hero-collage--follow:last-of-type { scroll-snap-align: none; }
+/* Place pages: the place's collections as a stack of the same walls. The first
+   sits right under the place header (no white band above it), and the page
+   snaps like home so each collection settles flush under the bar. */
+.place-walls .hero-collage--follow:first-child { margin-top: 0; scroll-snap-align: none; } /* the place header must stay visible on load: a snap point this close to the top pulled the page down to the first wall */
+.place-walls .hero-collage { margin-bottom: var(--grid); }
+html:has(.place-walls) {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: var(--header-one);
+  scroll-behavior: smooth;
+}
 /* Footer tucks right under the third wall's caption — one grid cell of air,
    not the default main bottom padding + wall margin. */
 body.home main { padding-bottom: 0; }

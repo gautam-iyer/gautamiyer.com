@@ -76,16 +76,47 @@ def main():
             if photos[k].get("thumb") and not (withheld & set(photos[k].get("collections") or []))]
     held = sum(1 for k in photos if withheld & set(photos[k].get("collections") or []))
 
+    # ONE VISIBLE COLLECTION PER PHOTO. `collections` is the photo's tag list
+    # (move it around freely); it is SHOWN in exactly one of them: `shown_in`
+    # when that is still a visible membership, else its first visible
+    # membership in registry order. A photo shown nowhere stays in the manifest
+    # and the tagger but appears in no collection, wall or collage. Mirrored in
+    # scripts/validate.py and the tagger (displayColl) — keep the three agreed.
+    visible = [c["slug"] for c in registry
+               if not (c.get("hidden") or c.get("archived") or c.get("withheld"))]
+    vis_rank = {s: i for i, s in enumerate(visible)}
+
+    def shown_in(p):
+        mem = [s for s in (p.get("collections") or []) if s in vis_rank]
+        if not mem:
+            return None
+        pick = p.get("shown_in")
+        return pick if pick in mem else min(mem, key=vis_rank.get)
+
+    curated_cities = set()
+    for c in registry:
+        pls = c.get("places") or ([c["place"]] if c.get("place") else [])
+        if c["slug"] in vis_rank and len(pls) == 1:
+            curated_cities.add(pls[0])
+
     collections, places, hero, covers = {}, {}, [], {}
     for p in recs:
         ci = _coll_item(p)
+        d = shown_in(p)
+        # Hidden collections (home-hero) are not display collections, so they
+        # keep listing every member exactly as before.
         for slug in (p.get("collections") or []):
-            collections.setdefault(slug, []).append(ci)
+            if slug == d or slug not in vis_rank:
+                collections.setdefault(slug, []).append(ci)
         city = p.get("city")
         if city:
             places.setdefault(city, []).append(_place_item(p))
-            # cover: first photo of the city (needs real dims), place_cover wins
-            if p.get("width") and (p.get("height") or 0) > 0:
+            # cover: first photo of the city (needs real dims), place_cover wins.
+            # In a curated city the FALLBACK only considers photos that are
+            # actually shown (an unsorted frame renders nowhere else on the
+            # site); an explicitly flagged cover is his choice and always wins.
+            if (p.get("width") and (p.get("height") or 0) > 0
+                    and (d or p.get("place_cover") or city not in curated_cities)):
                 if city not in covers or p.get("place_cover"):
                     covers[city] = {"thumb": p.get("thumb"), "ar": _ar(p)}
         if p.get("hero"):
@@ -97,12 +128,33 @@ def main():
     # stay small; the collage solver's tiered fallbacks guarantee a layout at
     # any pool size, small ones just render fewer, larger cells (possibly with
     # some crop). A collection with NOTHING curated pools its whole membership.
-    collage = {}
-    for slug in (c["slug"] for c in registry if c.get("collage") and not c.get("archived")):
-        members = [p for p in recs if slug in (p.get("collections") or [])]
+    # Wall pools for EVERY visible collection (place pages draw one wall per
+    # collection); the home `collage` set is the subset flagged collage-eligible.
+    walls = {}
+    for slug in visible:
+        members = [p for p in recs if shown_in(p) == slug]
         pool = [p for p in members if p.get("collage")] or members
         if pool:
-            collage[slug] = [_coll_item(p) for p in pool]
+            walls[slug] = [_coll_item(p) for p in pool]
+    collage = {c["slug"]: walls[c["slug"]] for c in registry
+               if c.get("collage") and c["slug"] in walls}
+
+    # Place pages: a city's SINGLE-place collections, in display order —
+    # `place_order` (set per collection in the tagger), then home rank, then
+    # registry order. Collections spanning several places (`places` with >1
+    # entry) belong to no place page; they live on /collections/ under the
+    # "Multiple" filter. A city with no entry here keeps its legacy album.
+    place_colls = {}
+    for c in registry:
+        if c["slug"] not in walls:
+            continue
+        pls = c.get("places") or ([c["place"]] if c.get("place") else [])
+        if len(pls) == 1:
+            place_colls.setdefault(pls[0], []).append(c)
+    big = 10 ** 6
+    place_colls = {city: [c["slug"] for c in sorted(cs, key=lambda c: (
+        c.get("place_order") or big, c.get("collage_rank") or big, vis_rank[c["slug"]]))]
+        for city, cs in place_colls.items()}
 
     # Essay refs: stable slugs set in the tagger ("utica-1") that the essay
     # shortcode {{< photo ref="utica-1" >}} resolves. Built from `recs`, so the
@@ -131,10 +183,12 @@ def main():
                         and withheld & set(photos[k].get("collections") or [])})
 
     index = {"collections": collections, "places": places, "hero": hero,
-             "covers": covers, "collage": collage, "refs": refs}
+             "covers": covers, "collage": collage, "walls": walls,
+             "place_colls": place_colls, "refs": refs}
     (DATA / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")))
     print(f"index: {len(collections)} collections, {len(places)} places, "
           f"{len(hero)} hero, {len(covers)} covers, {len(collage)} collage pools, "
+          f"{len(walls)} walls, {len(place_colls)} curated places, "
           f"{len(refs)} essay refs, {held} withheld -> data/index.json")
     for r, n in sorted(ref_dupes.items()):
         print(f"  !! essay ref '{r}' is on {n} photos — one ref must mean one photo")

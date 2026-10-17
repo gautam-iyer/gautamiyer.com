@@ -9,6 +9,46 @@
     {{ with .Content }}<div class="intro place-overview">{{ . }}</div>{{ end }}
   </div>
 
+  {{/* CURATED PLACE: one full-bleed collage wall per collection, the same
+       component as the home page. data/index.json "place_colls" lists the
+       city's single-place collections in display order (build_index.py);
+       collections spanning several places live only on /collections/. Each
+       wall is pinned to its collection (data-collage="<slug>") instead of the
+       home page's random pick. A city with no collections yet falls through to
+       the legacy album below until it is curated. */}}
+  {{ $walls := index (index hugo.Data.index "place_colls" | default dict) $place }}
+  {{ if $walls }}
+  {{ $pools := dict }}
+  {{ $cmeta := dict }}
+  {{ range $c := (index hugo.Data.collections "collections") }}
+    {{ if in $walls $c.slug }}
+      {{ $pool := slice }}
+      {{ range (index (index hugo.Data.index "walls") $c.slug) }}
+        {{ $pool = $pool | append (dict
+            "thumb" (printf "%s%s" $base .thumb)
+            "avif" (printf "%s%s" $base .avif)
+            "webp" (printf "%s%s" $base .webp)
+            "ar" .ar "title" (.title | default "") "meta" (.meta | default "")) }}
+      {{ end }}
+      {{ $pools = merge $pools (dict $c.slug $pool) }}
+      {{/* no place in the caption — the page already says where we are */}}
+      {{ $cmeta = merge $cmeta (dict $c.slug (dict "title" $c.title "place" "" "href" (printf "/collections/%s/" $c.slug))) }}
+    {{ end }}
+  {{ end }}
+  <div class="place-walls">
+    {{ range $walls }}
+    <section class="hero-collage hero-collage--follow" aria-label="{{ (index $cmeta .).title }}">
+      <div class="collage" data-collage="{{ . }}"></div>
+      <a class="collage-caption" data-collage-caption hidden></a>
+    </section>
+    {{ end }}
+  </div>
+  <script>
+    window.COLLAGE_POOLS = {{ $pools | jsonify | safeJS }};
+    window.COLLAGE_META = {{ $cmeta | jsonify | safeJS }};
+  </script>
+  {{ else }}
+
   {{/* Album — every photo from this place, as a justified gallery + lightbox.
        Read from the denormalized data/index.json (build_index.py) instead of
        scanning the whole manifest per place page. */}}
@@ -61,6 +101,8 @@
   </div>
   {{ end }}
 
+  {{ end }}{{/* end legacy album + collection cards */}}
+
   {{/* Essays tagged with this place (writing front matter: places: ["Pittsburgh"]) */}}
   {{ $essays := where (where .Site.RegularPages "Section" "work") "Params.places" "intersect" (slice $place) }}
   {{ with $essays }}
@@ -75,6 +117,8 @@
 {{ end }}
 
 {{ define "scripts" }}
+{{/* collage before lightbox: its cells must exist when the lightbox collects triggers */}}
+{{ partial "asset-js.html" "js/collage.js" }}
 {{ partial "asset-js.html" "js/justify.js" }}
 {{ partial "asset-js.html" "js/lightbox.js" }}
 {{ end }}

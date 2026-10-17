@@ -229,6 +229,44 @@ def main():
             f"has the old ones. Run: pipeline.py upload-pending"
         )
 
+    # ---- 10. one VISIBLE collection per photo -----------------------------
+    # A photo may be tagged to several collections but is shown in exactly one:
+    # `shown_in` if it is still a visible membership, else the first visible
+    # membership in registry order (build_index.py). These are warnings — the
+    # fallback always renders something sane; they flag where it is silently
+    # choosing for him.
+    visible = [c["slug"] for c in cols
+               if not (c.get("hidden") or c.get("archived") or c.get("withheld"))]
+    vis = set(visible)
+    stale_pick, unpicked = [], Counter()
+    for r in published:
+        mem = [s for s in (r.get("collections") or []) if s in vis]
+        pick = r.get("shown_in")
+        if pick and pick not in mem:
+            stale_pick.append(r.get("file"))
+        elif len(mem) > 1 and not pick:
+            unpicked[" + ".join(sorted(mem))] += 1
+    if stale_pick:
+        warn(f"{len(stale_pick)} photo(s) have shown_in pointing at a collection they are not "
+             f"(visibly) in — falling back to the default: {stale_pick[:5]}")
+    if unpicked:
+        top = ", ".join(f"{k} ({n})" for k, n in unpicked.most_common(4))
+        warn(f"{sum(unpicked.values())} photo(s) sit in 2+ visible collections with no shown_in, "
+             f"so the first in registry order wins: {top} …")
+    # Curated places (≥1 single-place collection) render ONLY their collections;
+    # the rest of that city's photos are shown nowhere until sorted into one.
+    curated = set()
+    for c in cols:
+        pls = c.get("places") or ([c["place"]] if c.get("place") else [])
+        if c["slug"] in vis and len(pls) == 1:
+            curated.add(pls[0])
+    unsorted = Counter(r.get("city") for r in published if r.get("city") in curated
+                       and not vis & set(r.get("collections") or []))
+    if unsorted:
+        top = ", ".join(f"{k} ({n})" for k, n in unsorted.most_common(6))
+        warn(f"{sum(unsorted.values())} published photo(s) in curated places are in no collection "
+             f"and do not render: {top} …")
+
     report(args)
 
 

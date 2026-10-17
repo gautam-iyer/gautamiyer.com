@@ -38,7 +38,14 @@
     .map((s) => ({ s, key: Math.pow(Math.random(), 1 / weight(s)) }))
     .sort((a, b) => b.key - a.key)
     .map((x) => x.s)
-  boxes.forEach((box, n) => initCollage(box, picks[n % picks.length]))
+  // A wall can be PINNED to one collection (data-collage="<slug>", place
+  // pages); the rest draw from the weighted shuffle in DOM order (home).
+  let n = 0
+  boxes.forEach((box) => {
+    const pinned = box.dataset.collage
+    if (pinned) { if ((pools[pinned] || []).length) initCollage(box, pinned) }
+    else initCollage(box, picks[n++ % picks.length])
+  })
 
   function initCollage(box, slug) {
   const items = pools[slug]

@@ -52,6 +52,22 @@ DUPES = REPO / "data" / "duplicates.json"  # near-duplicate groups (scripts/phot
 BREAKS = REPO / "data" / "neighborhood_breaks.json"   # per-shoot neighborhood breakpoints (Neighborhoods mode)
 HINTS = REPO / "data" / "neighborhood_hints.json"     # evidence-backed suggestions, accept-or-ignore
 DERIV = REPO / ".photo-build" / "derivatives"
+
+# The display tiers live on R2 and `pipeline.py prune` deletes them locally once
+# they are uploaded (that is the normal steady state — thumbs stay, the big
+# tiers go). So /img/ must be able to fall back to the bucket, or Cull mode's
+# Enter-to-open-full-size 404s on every photo after a prune.
+def _photo_base():
+    try:
+        for line in (REPO / "hugo.toml").read_text().splitlines():
+            if line.strip().startswith("photo_base"):
+                return line.split("=", 1)[1].strip().strip('"\'')
+    except Exception:
+        pass
+    return "https://images.gautamiyer.com/"
+
+
+PHOTO_BASE = _photo_base()
 PORT = 8800
 
 _lock = threading.Lock()
@@ -207,6 +223,22 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .ctable td.ct{color:#71717a;font-variant-numeric:tabular-nums}
  .linkbtn{border:0;background:none;color:#7c3aed;padding:0;text-decoration:underline;cursor:pointer;font-size:13px}
 
+ /* Place mode: one row per collection, mirroring the site's place page */
+ .plrow{border:1px solid #e4e4e7;border-radius:10px;padding:10px 12px;margin-bottom:12px;background:#fff}
+ .plrow.target{border-color:#7c3aed;box-shadow:0 0 0 2px #ede9fe}
+ .plhead{display:flex;gap:10px;align-items:center;margin-bottom:8px;font-size:13px}
+ .plhead b{font-size:15px}
+ .plhead .n{color:#71717a}
+ .plstrip{display:flex;flex-wrap:wrap;gap:6px}
+ .plcell{position:relative;height:110px;cursor:pointer;border-radius:4px;overflow:hidden;outline:2px solid transparent}
+ .plcell img{height:100%;width:100%;object-fit:cover;display:block;background:#e4e4e7}
+ .plcell:hover{outline-color:#7c3aed}
+ .plcell.elsewhere{opacity:.35} .plcell.elsewhere:hover{opacity:.8}
+ .plcell .tagl{position:absolute;left:3px;bottom:3px;font-size:9.5px;background:rgba(255,255,255,.92);border-radius:4px;padding:1px 4px;color:#3f3f46;max-width:calc(100% - 6px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .plcell .stg{position:absolute;right:3px;top:3px;font-size:9px;font-weight:700;background:#f59e0b;color:#fff;border-radius:4px;padding:1px 4px}
+ .plsec{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#71717a;margin:22px 0 8px}
+ .tgtbtn{border:1px solid #d4d4d8;background:#fff;border-radius:999px;font-size:12px;padding:3px 10px;cursor:pointer}
+ .tgtbtn.on{background:#7c3aed;border-color:#7c3aed;color:#fff}
  /* Members grid */
  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
  .cell{position:relative;border:2px solid #7c3aed;border-radius:8px;overflow:hidden;cursor:pointer;background:#fff;transition:all .1s}
@@ -325,6 +357,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  <h1>Photo Tagger</h1>
  <div class="seg" id="modeseg">
    <button data-mode="tag" class="on">Tag photos</button>
+   <button data-mode="place">Places</button>
    <button data-mode="colls">Collections</button>
    <button data-mode="dupes">Duplicates</button>
    <button data-mode="cull">Cull</button>
@@ -846,12 +879,13 @@ function renderMembers(){
       const cb=showCollage&&inn?`<span class="cbadge${p.collage?' on':''}" title="Include in home-page collage" onclick="toggleCollage(event,'${jesc(key)}')">▦</span>`:'';
       return `<div class="cell ${inn?'':'out'}" data-key="${esc(key)}" onclick="toggleMember('${jesc(key)}')">
         <span class="badge">${inn?'in':'add'}</span>${cb}${cellMenu(key)}<span class="rotdot"></span><img loading="lazy" src="${imgu(p)}">
-        <div class="cap">${esc(p.city||'')} · #${p.img_no}</div></div>`;}).join('')+`</div>`+pager(page,pages,all.length);
+        <div class="cap">${esc(p.city||'')} · #${p.img_no}${(()=>{if(!inn||t.startsWith('__'))return '';const d=displayColl(p);return d&&d!==t?` · <b>shown in ${esc((COLLS.find(x=>x.slug===d)||{}).title||d)}</b>`:'';})()}</div></div>`;}).join('')+`</div>`+pager(page,pages,all.length);
   $('#m-all').onchange=e=>{memberFilter.all=e.target.checked;page=0;render();};
   $('#m-city').onchange=e=>{memberFilter.city=e.target.value;page=0;render();};
   wirePager();
 }
-window.backToColls=()=>{mode='colls';memberSlug=null;document.querySelectorAll('#modeseg button').forEach(x=>x.classList.toggle('on',x.dataset.mode==='colls'));render();};
+let memberReturn='colls';
+window.backToColls=()=>{mode=memberReturn;memberReturn='colls';memberSlug=null;document.querySelectorAll('#modeseg button').forEach(x=>x.classList.toggle('on',x.dataset.mode===mode));render();};
 
 /* ============================ CULL MODE ============================
    A two-step cull: MARK photos (reversible, no effect on the site), review the
@@ -1131,11 +1165,109 @@ function wirePager(){const p=$('#pg-prev'),n=$('#pg-next');
   if(n)n.onclick=()=>{page++;render();window.scrollTo(0,0);};}
 
 /* ---------- top-level render ---------- */
+/* ============================ PLACE MODE ============================
+   The curation workspace that mirrors the site's place page: pick a city, see
+   its collections as rows in the order the page shows them, plus an Unsorted
+   tray of that city's photos that are shown in no collection (on the site they
+   do not render at all once the city has a collection).
+   ONE VISIBLE COLLECTION PER PHOTO: `collections` is the photo's tag list;
+   `shown_in` picks the one it appears in. Pick a TARGET row (◎), then click any
+   photo to show it there — its other tags are kept. Clicking a photo already
+   shown in the target removes it from the target.
+   displayColl() MIRRORS build_index.py shown_in() — keep them agreed. */
+let plCity=(()=>{try{return localStorage.getItem('plCity')||''}catch(e){return ''}})(), plTarget=null;
+const visColl=c=>!!c&&!(c.hidden||c.archived||c.withheld);
+const collPlaces=c=>(c.places&&c.places.length)?c.places:(c.place?[c.place]:[]);
+function visOrder(){return COLLS.filter(visColl).map(c=>c.slug);}
+function displayColl(p,order){order=order||visOrder();
+  const mem=(p.collections||[]).filter(s=>order.includes(s));
+  if(!mem.length)return null;
+  if(p.shown_in&&mem.includes(p.shown_in))return p.shown_in;
+  return mem.sort((a,b)=>order.indexOf(a)-order.indexOf(b))[0];}
+function isStaged(p){const w=new Set(COLLS.filter(c=>c.withheld).map(c=>c.slug));return (p.collections||[]).some(s=>w.has(s));}
+function placeColls(city){const order=visOrder(), big=1e6;
+  return COLLS.filter(c=>visColl(c)&&collPlaces(c).length===1&&collPlaces(c)[0]===city)
+    .sort((a,b)=>((a.place_order||big)-(b.place_order||big))||((a.collage_rank||big)-(b.collage_rank||big))||(order.indexOf(a.slug)-order.indexOf(b.slug)));}
+function multiColls(city){return COLLS.filter(c=>visColl(c)&&collPlaces(c).length>1&&collPlaces(c).includes(city));}
+function plCell(key,label,cls){const p=PHOTOS[key];const w=Math.round(110*(p.width||3)/(p.height||2));
+  return `<div class="plcell ${cls||''}" style="width:${w}px" title="#${p.img_no}${label?' · shown in '+esc(label):''}" onclick="plClick('${jesc(key)}')">
+    <img loading="lazy" src="${imgu(p)}">${isStaged(p)?'<span class="stg">staged</span>':''}${label?`<span class="tagl">${esc(label)}</span>`:''}</div>`;}
+const byImg=(a,b)=>(PHOTOS[a].shoot||'').localeCompare(PHOTOS[b].shoot||'')||(PHOTOS[a].img_no-PHOTOS[b].img_no);
+function plRow(c,order,cityKeys,multi){
+  const shown=[],elsewhere=[];
+  for(const k of (multi?Object.keys(PHOTOS):cityKeys)){const p=PHOTOS[k];
+    if(!(p.collections||[]).includes(c.slug))continue;
+    (displayColl(p,order)===c.slug?shown:elsewhere).push(k);}
+  shown.sort(byImg);elsewhere.sort(byImg);
+  const title=t=>(COLLS.find(x=>x.slug===t)||{}).title||t;
+  const on=plTarget===c.slug;
+  return `<div class="plrow${on?' target':''}">
+    <div class="plhead"><button class="tgtbtn${on?' on':''}" onclick="plSetTarget('${jesc(c.slug)}')">${on?'◉ target':'◎ target'}</button>
+      <b>${esc(c.title)}</b><span class="n">${shown.length} shown${elsewhere.length?` · ${elsewhere.length} tagged, shown elsewhere`:''}${multi?' · '+esc(collPlaces(c).join(', ')):''}</span>
+      ${multi?'':`<button class="keepall" onclick="plMove('${jesc(c.slug)}',-1)" title="Earlier on the place page">▲</button><button class="keepall" onclick="plMove('${jesc(c.slug)}',1)" title="Later on the place page">▼</button>`}
+      <button class="linkbtn" onclick="plEdit('${jesc(c.slug)}')">edit members →</button></div>
+    <div class="plstrip">${shown.map(k=>plCell(k)).join('')||'<span class="hint">empty — pick ◎ target, then click photos below</span>'}${elsewhere.map(k=>plCell(k,title(displayColl(PHOTOS[k],order)),'elsewhere')).join('')}</div></div>`;}
+function renderPlace(){
+  const counts={};Object.values(PHOTOS).forEach(p=>{if(p.city)counts[p.city]=(counts[p.city]||0)+1;});
+  const cities=Object.keys(counts).sort();
+  if(!plCity||!counts[plCity])plCity=cities.includes('Hartford')?'Hartford':cities[0];
+  const order=visOrder();
+  const cityKeys=Object.keys(PHOTOS).filter(k=>PHOTOS[k].city===plCity);
+  const rows=placeColls(plCity), multis=multiColls(plCity);
+  if(plTarget&&![...rows,...multis].some(c=>c.slug===plTarget))plTarget=null;
+  const unsorted=cityKeys.filter(k=>!displayColl(PHOTOS[k],order)).sort(byImg);
+  $('#stat').textContent=`${plCity}: ${cityKeys.length-unsorted.length} shown · ${unsorted.length} unsorted`;
+  $('#main').innerHTML=`<p class="hint">One row per collection, in the order the place page shows them. Pick a <b>◎ target</b>, then click photos to show them there (their other tags are kept). Click a photo already in the target to take it out. Faded = tagged here but shown in another collection; click it to bring it here.</p>
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px">
+      <select id="pl-city">${cities.map(c=>`<option value="${esc(c)}"${c===plCity?' selected':''}>${esc(c)} (${counts[c]})</option>`).join('')}</select>
+      <button class="keepall" onclick="plNew(false)">+ New collection in ${esc(plCity)}</button>
+      <button class="keepall" onclick="plNew(true)">+ New multi-place collection…</button>
+    </div>
+    ${rows.length?'':`<p class="hint"><b>${esc(plCity)} has no collections yet</b> — its place page still shows the full album. It switches to collection walls as soon as one exists.</p>`}
+    ${rows.map(c=>plRow(c,order,cityKeys,false)).join('')}
+    ${multis.length?`<div class="plsec">Spanning several places — on /collections/ only (“Multiple places”), not on any place page</div>${multis.map(c=>plRow(c,order,cityKeys,true)).join('')}`:''}
+    <div class="plsec">Unsorted — ${unsorted.length} ${esc(plCity)} photo${unsorted.length===1?'':'s'} shown in no collection${rows.length?' (they do not appear on the site)':''}</div>
+    <div class="plstrip">${unsorted.map(k=>plCell(k)).join('')}</div>`;
+  $('#pl-city').onchange=e=>{plCity=e.target.value;plTarget=null;try{localStorage.setItem('plCity',plCity)}catch(_){}render();};
+}
+window.plSetTarget=(slug)=>{plTarget=plTarget===slug?null:slug;render();};
+window.plClick=async(key)=>{
+  if(!plTarget){alert('Pick a ◎ target collection first.');return;}
+  const p=PHOTOS[key], order=visOrder();
+  const mem=new Set(p.collections||[]);
+  if(displayColl(p,order)===plTarget){            // take it out of the target
+    mem.delete(plTarget);
+    await save(key,{collections:[...mem],shown_in:null});
+  }else{                                          // show it in the target, keep its other tags
+    mem.add(plTarget);
+    await save(key,{collections:[...mem],shown_in:plTarget});
+  }
+  const y=window.scrollY;render();window.scrollTo(0,y);};
+window.plMove=async(slug,dir)=>{
+  const list=placeColls(plCity).map(c=>c.slug), i=list.indexOf(slug), j=i+dir;
+  if(j<0||j>=list.length)return;
+  [list[i],list[j]]=[list[j],list[i]];
+  for(let n=0;n<list.length;n++){const c=COLLS.find(x=>x.slug===list[n]);if(c.place_order!==n+1)await updateColl(list[n],{place_order:n+1});}
+  render();};
+window.plEdit=(slug)=>{memberReturn='place';mode='members';memberSlug=slug;memberFilter.all=false;memberFilter.city='';page=0;render();};
+window.plNew=async(multi)=>{
+  const title=(prompt(multi?'Title of the new multi-place collection:':`Title of the new ${plCity} collection:`)||'').trim();
+  if(!title)return;
+  let places=[plCity];
+  if(multi){const more=(prompt('Places it spans, comma-separated (cities as in Places):',plCity)||'').split(',').map(x=>x.trim()).filter(Boolean);
+    if(more.length<2){alert('A multi-place collection needs at least two places.');return;} places=more;}
+  const r=await (await fetch('/api/collection',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({title,place:places[0]})})).json();
+  COLLS=r.collections;
+  if(multi)await updateColl(r.slug,{places});
+  plTarget=r.slug;render();};
+
 function render(){
   const fbar=$('#filters');
   if(mode==='tag'){fbar.innerHTML=tagFilterBar();wireTagFilters();renderList();}
   else{fbar.innerHTML='';
     if(mode==='colls')renderColls();
+    else if(mode==='place')renderPlace();
     else if(mode==='dupes')renderDupes();
     else if(mode==='cull')renderCull();
     else if(mode==='nbhd')renderNbhd();
@@ -1228,6 +1360,15 @@ class Handler(BaseHTTPRequestHandler):
             if DERIV.resolve() in f.parents and f.exists():
                 ct = "image/avif" if f.suffix == ".avif" else "image/webp"
                 return self._send(200, f.read_bytes(), ct)
+            # Not on disk. If it is a legitimate derivative path (the containment
+            # check above still guards against traversal, so this cannot become an
+            # open redirect), send the browser to R2 rather than 404.
+            if DERIV.resolve() in f.parents:
+                self.send_response(302)
+                self.send_header("Location", PHOTO_BASE + rel)
+                self.send_header("Content-Length", "0")
+                self.end_headers()
+                return
             return self._send(404, b"not found", "text/plain")
         return self._send(404, {"error": "not found"})
 
@@ -1311,7 +1452,17 @@ class Handler(BaseHTTPRequestHandler):
             place = (data.get("place") or "").strip()
             with _lock:
                 reg = load(COLLECTIONS, {"collections": []})
-                if not any(c["slug"] == slug for c in reg["collections"]):
+                by_slug = {c["slug"]: c for c in reg["collections"]}
+                # Typing an existing title for the SAME place reuses it (the ⋯
+                # menu relies on that). The same title in ANOTHER city
+                # ("Downtown") is a new collection — it used to merge silently.
+                hit = by_slug.get(slug)
+                if hit is not None and place and (hit.get("place") or "") != place:
+                    slug = f"{slug}-{slugify(place)}"
+                    base, n = slug, 2
+                    while slug in by_slug and (by_slug[slug].get("place") or "") != place:
+                        slug, n = f"{base}-{n}", n + 1
+                if slug not in by_slug:
                     reg["collections"].append({
                         "slug": slug, "title": title, "description": "",
                         "featured": False, "cover": None, "order": 0,
@@ -1477,7 +1628,7 @@ class Handler(BaseHTTPRequestHandler):
                 reg = load(COLLECTIONS, {"collections": []})
                 for c in reg["collections"]:
                     if c["slug"] == slug:
-                        for f in ("title", "featured", "order", "place", "places", "description", "caption", "collage", "collage_rank", "archived"):
+                        for f in ("title", "featured", "order", "place", "places", "place_order", "description", "caption", "collage", "collage_rank", "archived"):
                             if f in data:
                                 c[f] = data[f]
                         break

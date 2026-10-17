@@ -273,6 +273,16 @@ SHOOTS = [
         "date": "2026-08-23",
         "title": "New England",
     },
+    {
+        # CT '26 is split by city into subfolders. Many frames come as a colour
+        # / toned-B&W pair (IMG_####.jpg + IMG_####-2.jpg, usually but NOT
+        # always the -2 is the B&W); Hartford collections prefer the B&W twin.
+        "folder": "CT '26/Edited/Hartford",
+        "slug": "ct-2026-hartford",
+        "city": "Hartford",
+        "date": "2026-10-11",
+        "title": "Hartford",
+    },
 ]
 
 TAG_FIELDS = ["neighborhood", "land_use", "architecture", "subject", "medium", "tone", "tag_notes"]
@@ -352,6 +362,10 @@ def state_map():
     """city -> state from data/places.json (e.g. Pittsburgh -> PA)."""
     try:
         places = json.loads((REPO / "data" / "places.json").read_text())
+        # The file is {"places": [...]}; iterating the dict itself yielded its
+        # KEYS, so this silently returned {} and every scan set state: null.
+        if isinstance(places, dict):
+            places = places.get("places", [])
         return {p["city"]: p.get("state") for p in places if p.get("city")}
     except Exception:
         return {}
@@ -605,6 +619,8 @@ def cmd_derive(args):
     shoot_by_slug = {s["slug"]: s for s in SHOOTS}
     TMP.mkdir(parents=True, exist_ok=True)
     items = list(m.values())
+    if args.shoot:
+        items = [r for r in items if r["shoot"] == args.shoot]
     if args.limit:
         items = items[: args.limit]
     workers = max(2, (os.cpu_count() or 4) - 2)
@@ -1007,6 +1023,9 @@ def main():
     sc.add_argument("--shoot", default=None)
     d = sub.add_parser("derive")
     d.add_argument("--limit", type=int, default=0)
+    d.add_argument("--shoot", default=None,
+                   help="only this shoot slug. Without it, derive walks the WHOLE manifest and "
+                        "re-encodes every display tier that `prune` removed locally (~8 GB)")
     d.add_argument("--force", action="store_true",
                    help="re-encode even when the derivatives already exist")
     ro = sub.add_parser("rotate", help="permanently rotate photos (source file untouched)")

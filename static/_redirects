@@ -1,0 +1,4 @@
+# All Photos was retired 2026-10: photos now live only in collections,
+# browsed by place or collection.
+/photos    /places/  301
+/photos/   /places/  301

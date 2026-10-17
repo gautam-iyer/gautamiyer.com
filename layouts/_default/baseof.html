@@ -52,11 +52,10 @@
        walking tours and data pieces all live there. */}}
   <nav class="topnav" aria-label="Site navigation">
     <span class="has-drop">
-      <a href="/photos/" class="{{ if or (eq .Section "photos") (eq .Section "collections") (eq .Section "places") }}active{{ end }}">Photos</a>
+      <a href="/places/" class="{{ if or (eq .Section "photos") (eq .Section "collections") (eq .Section "places") }}active{{ end }}">Photos</a>
       <span class="drop">
-        <a href="/photos/">All Photos</a>
-        <a href="/collections/">Collections</a>
         <a href="/places/">Places</a>
+        <a href="/collections/">Collections</a>
       </span>
     </span>
     <a href="/work/" class="{{ if eq .Section "work" }}active{{ end }}">Work</a>
