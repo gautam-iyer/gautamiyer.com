@@ -440,6 +440,46 @@
       "collage": true
     },
     {
+      "slug": "the-perfect-six",
+      "title": "The Perfect Six",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Hartford"
+    },
+    {
+      "slug": "victorians-on-wethersfield",
+      "title": "Victorians on Wethersfield",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Hartford"
+    },
+    {
+      "slug": "downtown-hartford",
+      "title": "Downtown",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Hartford"
+    },
+    {
+      "slug": "the-stag",
+      "title": "The Stag",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Hartford"
+    },
+    {
       "slug": "neon-soul",
       "title": "Neon Soul",
       "description": "",
