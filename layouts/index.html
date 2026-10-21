@@ -21,7 +21,7 @@
           "thumb" (printf "%s%s" $base .thumb)
           "avif" (printf "%s%s" $base .avif)
           "webp" (printf "%s%s" $base .webp)
-          "ar" .ar "title" (.title | default "") "meta" (.meta | default "")) }}
+          "ar" .ar "title" (.title | default "")) }}
     {{ end }}
     {{ $pools = merge $pools (dict $slug $pool) }}
   {{ end }}

@@ -1,5 +1,5 @@
 // Generic lightbox with prev/next navigation. Any element with [data-lb]
-// (+ data-avif/data-webp/data-title/data-meta) is a slide. Navigation is scoped
+// (+ data-avif/data-webp/data-title) is a slide. Navigation is scoped
 // to the group the opened slide belongs to — a single carousel, or the gallery —
 // so on the multi-carousel home page arrows stay within one collection.
 (function () {
@@ -26,12 +26,11 @@
     '<button class="lightbox-nav prev" aria-label="Previous">←</button>' +
     '<button class="lightbox-nav next" aria-label="Next">→</button>' +
     '<div class="lightbox-image"><picture></picture></div>' +
-    '<div class="lightbox-caption"><div class="lightbox-title"></div><div class="lightbox-meta"></div></div>';
+    '<div class="lightbox-caption"><div class="lightbox-title"></div></div>';
   document.body.appendChild(lb);
 
   const pic = lb.querySelector('picture');
   const titleEl = lb.querySelector('.lightbox-title');
-  const metaEl = lb.querySelector('.lightbox-meta');
   const prevBtn = lb.querySelector('.lightbox-nav.prev');
   const nextBtn = lb.querySelector('.lightbox-nav.next');
 
@@ -55,7 +54,6 @@
     img.alt = d.title || '';
     pic.appendChild(img);
     titleEl.textContent = d.title || '';
-    metaEl.textContent = d.meta || '';
     const show = navigable();
     prevBtn.style.display = show ? '' : 'none';
     nextBtn.style.display = show ? '' : 'none';

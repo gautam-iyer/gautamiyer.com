@@ -55,11 +55,10 @@
     {{ range . }}
       <div class="gallery-item" style="--ar:{{ .ar }}" data-lb
            data-avif="{{ $base }}{{ .avif }}" data-webp="{{ $base }}{{ .webp }}"
-           data-title="{{ .title }}" data-meta="{{ .meta }}">
+           data-title="{{ .title }}">
         <div class="photo"><img src="{{ $base }}{{ .thumb }}" loading="lazy" alt="{{ .title }}"></div>
         <div class="overlay">
           <div class="overlay-title">{{ .title }}</div>
-          <div class="overlay-meta">{{ .meta }}</div>
         </div>
       </div>
     {{ end }}

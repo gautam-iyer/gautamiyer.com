@@ -1,6 +1,6 @@
 {{- /*
   Center-mode carousel (driven by assets/js/carousel.js).
-  dict: items (slice of {thumb,avif,webp,ar,title,meta}), color (accent hex),
+  dict: items (slice of {thumb,avif,webp,ar,title,cam}), color (accent hex),
         limit (optional max number of slides).
 */ -}}
 {{- $items := .items -}}
@@ -10,7 +10,7 @@
   <div class="carousel-track">
     {{- range $items }}
     <button class="carousel-slide" type="button" style="--ar:{{ .ar }}"
-      data-lb data-avif="{{ .avif }}" data-webp="{{ .webp }}" data-title="{{ .title }}" data-meta="{{ .meta }}"{{ with .cam }} data-cam="{{ . }}"{{ end }}>
+      data-lb data-avif="{{ .avif }}" data-webp="{{ .webp }}" data-title="{{ .title }}"{{ with .cam }} data-cam="{{ . }}"{{ end }}>
       <img src="{{ .thumb }}" loading="lazy" alt="{{ .title }}">
     </button>
     {{- end }}

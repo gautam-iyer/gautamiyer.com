@@ -50,7 +50,7 @@
   {{ if $cell }}
   <div class="piece-photo">
     {{ partial "lbthumb.html" (dict "thumb" $thumb "avif" $avif "webp" $webp
-                                    "ar" $p.ar "title" $cap "meta" "") }}
+                                    "ar" $p.ar "title" $cap) }}
     {{ with $cap }}<div class="piece-photo-cap">{{ . }}</div>{{ end }}
   </div>
   {{ else }}

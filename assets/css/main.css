@@ -1022,12 +1022,6 @@ article {
   font-size: 0.75rem;
   font-weight: 500;
   color: #fff;
-  margin-bottom: 2px;
-}
-
-.overlay-meta {
-  font-size: 0.65rem;
-  color: rgba(255,255,255,0.7);
 }
 
 .lightbox {
@@ -1101,13 +1095,6 @@ article {
   font-size: 0.9rem;
   font-weight: 500;
   color: #fff;
-  margin-bottom: 4px;
-}
-
-.lightbox-meta {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
-  display: none; /* hidden for now — AI-generated per-photo captions; remove this line to restore */
 }
 
 .lightbox-close {

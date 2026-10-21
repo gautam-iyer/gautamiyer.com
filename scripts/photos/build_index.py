@@ -14,11 +14,12 @@ the base/domain changes):
     "place_colls": { "<city>": [ "<slug>", ... ] },      # place-page order
     "refs":        { "<essay ref>": item }
   }
-  item = { thumb, avif, webp, ar, title, meta }  (matches partials/collitems.html)
+  item = { thumb, avif, webp, ar, title, cam }  (matches partials/collitems.html)
   A collection item's `title` is its lightbox caption: "<collection> / <city>",
   or "<photo caption> / <collection>" when the photo has its own `caption`
-  (written per photo in the tagger). `meta` stays empty — it used to carry
-  tag_notes, internal tagging prose that shipped in the page source.
+  (written per photo in the tagger). NO tag data ships to the site — the
+  vision tags (land_use/architecture/subject/tone) and tag_notes are
+  curation-only (Gautam, 2026-10-21); items used to carry them as `meta`.
 
 Run at deploy time (scripts/deploy.sh) BEFORE hugo, and commit the result so the
 index always reflects the current manifest (the tagger edits photos.json; deploy
@@ -61,14 +62,12 @@ def _coll_item(p, coll):
         "webp": p.get("display_webp"),
         "ar": _ar(p),
         "title": _coll_caption(p, coll),
-        "meta": "",
         "cam": p.get("camera") or "",
     }
 
 
 def _place_item(p):
-    """Shape consumed by layouts/places/single.html (meta = architecture · subject)."""
-    meta = list(p.get("architecture") or []) + list(p.get("subject") or [])
+    """Shape consumed by layouts/places/single.html (the legacy album)."""
     return {
         "thumb": p.get("thumb"),
         "avif": p.get("display_avif"),
@@ -78,7 +77,6 @@ def _place_item(p):
         # an uncurated place's album has no collection to name: a photo's own
         # caption leads, then its location
         "title": " / ".join(x for x in ((p.get("caption") or "").strip(), _title(p)) if x),
-        "meta": " · ".join(meta),
     }
 
 

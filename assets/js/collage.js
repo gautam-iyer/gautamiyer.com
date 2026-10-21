@@ -292,7 +292,6 @@
         cell.dataset.avif = it.avif
         cell.dataset.webp = it.webp
         cell.dataset.title = it.title || ''
-        cell.dataset.meta = it.meta || ''
         cell.style.width = it.ar * h + 'px'
         cell.style.flex = 'none'
         const img = document.createElement('img')

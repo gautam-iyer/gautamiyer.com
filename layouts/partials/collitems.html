@@ -5,7 +5,7 @@
   pass instead of scanning the whole manifest once per collection.
   Still call via partialCached so each slug builds once per render:
     {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
-  Each item: { thumb, avif, webp, ar, title, meta }.  (ar = width/height, for justified layout)
+  Each item: { thumb, avif, webp, ar, title, cam }.  (ar = width/height, for justified layout)
 */ -}}
 {{- $slug := .slug -}}
 {{- $base := .base -}}
@@ -17,7 +17,6 @@
       "webp"  (printf "%s%s" $base .webp)
       "ar"    .ar
       "title" .title
-      "meta"  .meta
       "cam"   (.cam | default "")) -}}
 {{- end -}}
 {{- return $items -}}
