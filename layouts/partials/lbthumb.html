@@ -1,4 +1,11 @@
-{{- /* Lightbox-triggering thumbnail. Expects a dict: thumb, avif, webp, ar, title, meta */ -}}
+{{- /* Lightbox-triggering thumbnail. Expects a dict: thumb, avif, webp, ar, title, meta.
+       Optional "srcset" true (place walls): also offer the display tier, so a
+       big cell on retina is crisp. Both tiers are longest-edge sized (thumb
+       1000px, display 3500px), so width = edge × ar for a portrait. `sizes` is
+       a first guess at a 360px row; justify.js sets the real laid-out width. */ -}}
+{{- $set := and .srcset .webp .ar -}}
+{{- $ar := float (.ar | default 1.5) -}}
+{{- $edge := cond (ge $ar 1.0) 1.0 $ar -}}
 <button class="lb-thumb" data-lb data-avif="{{ .avif }}" data-webp="{{ .webp }}" data-title="{{ .title }}" data-meta="{{ .meta }}"{{ with .ar }} style="--ar:{{ . }}"{{ end }}>
-  <img src="{{ .thumb }}" loading="lazy" alt="{{ .title }}">
+  <img src="{{ .thumb }}"{{ if $set }} srcset="{{ .thumb }} {{ int (math.Round (mul 1000 $edge)) }}w, {{ .webp }} {{ int (math.Round (mul 3500 $edge)) }}w" sizes="{{ int (math.Round (mul 360 $ar)) }}px"{{ end }} loading="lazy" alt="{{ .title }}">
 </button>

@@ -328,12 +328,12 @@ html:has(> body.home) {
 .hero-collage--follow:last-of-type { scroll-snap-align: none; }
 /* Place pages: a menu of the page's collections, then one full-bleed section
    per collection — its text (title in the collection's accent, caption, full
-   page width) ABOVE a wall of EVERY photo in the collection (collage.js
-   justifies them into rows; the wall is as tall as it needs), then its
-   sources. Sections are
-   separated by the same white band as the home walls and snap under the bar —
-   except the FIRST (a snap point that close to the top pulled the page past
-   the place title on load) and the LAST (same footer trap as home). */
+   page width) ABOVE a .jgallery wall of EVERY photo in the collection
+   (justify.js; the wall is as tall as its rows), then its sources. Sections
+   are separated by the same white band as the home walls. No scroll snap: a
+   section is usually taller than the screen, so snapping to its top would
+   fight the reader. --accent (set per section / menu link) is the
+   collection's colour. */
 .place-menu {
   display: flex;
   gap: 8px 28px;
@@ -352,22 +352,20 @@ html:has(> body.home) {
 .place-menu.more-right { mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); }
 .place-menu.more-left { mask-image: linear-gradient(to left, #000 calc(100% - 48px), transparent); }
 .place-menu.more-left.more-right { mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent); }
-.place-menu a { flex: none; text-decoration: none; transition: opacity 0.15s; }
+.place-menu a { flex: none; color: var(--accent); text-decoration: none; transition: opacity 0.15s; }
 .place-menu a:hover { opacity: 0.65; }
 .place-walls { width: 100vw; margin-left: calc(50% - 50vw); }
-.place-coll {
-  margin-top: calc(var(--grid) * 6);
-  scroll-snap-align: start;
-}
-.place-coll:first-child { margin-top: 0; scroll-snap-align: none; }
-.place-coll:last-child { scroll-snap-align: none; margin-bottom: var(--grid); }
+.place-coll { margin-top: calc(var(--grid) * 6); }
+.place-coll:first-child { margin-top: 0; }
+.place-coll:last-child { margin-bottom: var(--grid); }
 .place-coll-text { padding: 2px var(--page-gutter) 20px; }
 .place-coll-title { display: block; text-decoration: none; color: var(--accent); }
 .place-coll-title:hover { text-decoration: underline; }
 .place-coll-caption { position: relative; margin-top: 14px; font-size: 1rem; line-height: 1.7; color: var(--dark); }
 .place-coll-caption p + p, .coll-caption p + p { margin-top: 0.8em; }
-/* A caption of 2+ paragraphs: place.js caps it at the first paragraph plus a
-   few lines that fade to the page, with "Read more" sitting on the fade. */
+/* A long caption: place.js caps it at the first paragraph plus a few lines
+   (never over 40% of the screen) that fade to the page, with "Read more"
+   sitting on the fade. */
 .place-coll-caption.is-clamped {
   overflow: hidden;
   mask-image: linear-gradient(to bottom, #000 calc(100% - 4.2em), transparent);
@@ -389,8 +387,13 @@ html:has(> body.home) {
 .place-coll-caption:not(.is-clamped) + .read-more { margin-top: 12px; }
 /* collection page: the caption under the title, at prose width */
 .coll-caption { max-width: var(--text-width); margin: -8px 0 28px; font-size: 0.92rem; line-height: 1.7; color: var(--dark); }
-/* height is set by collage.js from the laid-out rows */
-.place-coll .collage { overflow: hidden; }
+/* The wall: flush photos (no tile border), rows near a third of a laptop
+   screen; justify.js sizes every cell. Beats the .jgallery breakpoints below
+   on specificity. */
+.place-coll .jgallery { --thumb-h: 360px; }
+.place-coll .lb-thumb { border: 0; }
+@media (max-width: 1000px) { .place-coll .jgallery { --thumb-h: 280px; } }
+@media (max-width: 640px)  { .place-coll .jgallery { --thumb-h: 210px; } }
 /* Sources: small and light, under the photos (place page and collection page) */
 .coll-sources { max-width: var(--text-width); margin-top: 14px; font-size: 0.72rem; line-height: 1.55; color: var(--light); }
 .place-coll .coll-sources { margin: 14px var(--page-gutter) 0; }
@@ -402,8 +405,8 @@ html:has(> body.home) {
 @media (max-width: 700px) {
   .place-coll-text { padding-bottom: 16px; }
 }
+/* menu links land each collection just under the one-line bar */
 html:has(.place-walls) {
-  scroll-snap-type: y proximity;
   scroll-padding-top: var(--header-one);
   scroll-behavior: smooth;
 }
@@ -961,20 +964,14 @@ article {
 .filter-select:hover { border-color: var(--black); }
 .filter-select:focus { outline: none; border-color: var(--black); }
 
-.photo-count {
-  font-size: 0.72rem;
-  color: var(--light);
-  margin-bottom: 24px;
-}
-
 /* ── Justified photo gallery (shared) ─────────────────────────────────
-   Used by /photos (.gallery). (Collection pages now use the carousel.)
-   True edge-to-edge justified rows: justify.js packs visible items into
-   rows and scales each row to fill the width exactly (flush left+right),
-   preserving every photo's real aspect ratio — no crop. It sets each
-   item's width/height inline; the rules here are the pre-JS fallback and
-   the shared image fill. --thumb-h is the target row height (one knob);
-   justify.js re-runs on resize and after filtering. */
+   Place pages: each collection's wall (.lb-thumb items) and the legacy album
+   of an uncurated place (.gallery-item). True edge-to-edge justified rows:
+   justify.js breaks the items into rows and scales each row to fill the
+   width exactly (flush left+right, last row too), preserving every photo's
+   real aspect ratio — no crop. It sets each item's width/height inline; the
+   rules here are the pre-JS fallback and the shared image fill. --thumb-h
+   is the target row height (one knob); justify.js re-runs on resize. */
 .jgallery {
   display: flex;
   flex-wrap: wrap;
@@ -1475,8 +1472,8 @@ article {
 @media (max-width: 1000px) { .carousel { --carousel-h: 380px; } }
 @media (max-width: 640px)  { .carousel { --carousel-h: 240px; } .carousel-track { gap: 12px; } }
 
-/* Lightbox-triggering thumbnail (home + collection pages). Layout — size,
-   aspect ratio, wrapping, gaps — all come from .jgallery on the container. */
+/* Lightbox-triggering thumbnail (place walls, essay photos). Inside a
+   .jgallery its size, aspect ratio, wrapping and gaps come from the gallery. */
 .lb-thumb {
   display: block;
   padding: 0;
@@ -1490,8 +1487,7 @@ article {
 }
 .lb-thumb:hover { opacity: 0.8; }
 
-/* Justified gallery scales down on narrower screens (one knob does home,
-   /photos, and collection pages at once). */
+/* Justified gallery scales down on narrower screens. */
 @media (max-width: 1000px) { .jgallery { --thumb-h: 240px; } }
 @media (max-width: 640px)  { .jgallery { --thumb-h: 165px; --jgap: 6px; } }
 

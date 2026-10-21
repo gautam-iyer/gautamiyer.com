@@ -11,48 +11,39 @@
 
   {{/* CURATED PLACE: a menu of the page's collections, then one section per
        collection — its text (title in the collection's accent, the caption
-       written in the tagger) ABOVE a collage wall pinned to that collection
-       (data-collage="<slug>", the same component as the home walls), then its
-       sources. data/index.json "place_colls" lists the city's single-place
-       collections in display order (build_index.py); collections spanning
-       several places live only on /collections/. A city with no collections
-       yet falls through to the legacy album below until it is curated. */}}
-  {{ $walls := index (index hugo.Data.index "place_colls" | default dict) $place }}
-  {{ if $walls }}
+       written in the tagger) ABOVE a justified wall of EVERY photo in the
+       collection, in sequence (justify.js), then its sources.
+       data/index.json "place_colls" lists the city's single-place collections
+       in display order (build_index.py); collections spanning several places
+       live only on /collections/. A city with no collections yet falls
+       through to the legacy album below until it is curated. */}}
+  {{ $colls := index (index hugo.Data.index "place_colls" | default dict) $place }}
+  {{ if $colls }}
   {{ $reg := dict }}
   {{ range (index hugo.Data.collections "collections") }}{{ $reg = merge $reg (dict .slug .) }}{{ end }}
-  {{ $pools := dict }}
   <nav class="place-menu" aria-label="Collections in {{ .Title }}">
-    {{ range $slug := $walls }}
-      <a href="#{{ $slug }}" style="color:{{ partialCached "accent.html" $slug $slug }}">{{ (index $reg $slug).title }}</a>
+    {{ range $slug := $colls }}
+      <a href="#{{ $slug }}" style="--accent:{{ partialCached "accent.html" $slug $slug }}">{{ (index $reg $slug).title }}</a>
     {{ end }}
   </nav>
   <div class="place-walls">
-    {{ range $slug := $walls }}
+    {{ range $slug := $colls }}
       {{ $c := index $reg $slug }}
-      {{ $color := partialCached "accent.html" $slug $slug }}
-      {{ $pool := slice }}
-      {{ range (index (index hugo.Data.index "walls") $slug) }}
-        {{ $pool = $pool | append (dict
-            "thumb" (printf "%s%s" $base .thumb)
-            "avif" (printf "%s%s" $base .avif)
-            "webp" (printf "%s%s" $base .webp)
-            "ar" .ar "title" (.title | default "") "meta" (.meta | default "")) }}
-      {{ end }}
-      {{ $pools = merge $pools (dict $slug $pool) }}
-    <section class="place-coll" id="{{ $slug }}" aria-label="{{ $c.title }}" style="--accent:{{ $color }}">
+    <section class="place-coll" id="{{ $slug }}" aria-label="{{ $c.title }}" style="--accent:{{ partialCached "accent.html" $slug $slug }}">
       <div class="place-coll-text">
         <a class="place-coll-title subsubhead" href="/collections/{{ $slug }}/">{{ $c.title }}</a>
         {{/* place.js clamps a long caption behind "Read more" */}}
         {{ with $c.caption }}<div class="place-coll-caption">{{ . | markdownify }}</div>{{ end }}
       </div>
-      {{/* every photo of the collection, justified into rows by collage.js */}}
-      <div class="collage" data-collage="{{ $slug }}"></div>
+      <div class="jgallery">
+        {{ range partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
+          {{ partial "lbthumb.html" (merge . (dict "srcset" true)) }}
+        {{ end }}
+      </div>
       {{ with $c.sources }}{{ partial "sources.html" . }}{{ end }}
     </section>
     {{ end }}
   </div>
-  <script>window.COLLAGE_POOLS = {{ $pools | jsonify | safeJS }};</script>
   {{ else }}
 
   {{/* Album — every photo from this place, as a justified gallery + lightbox.
@@ -91,9 +82,7 @@
 {{ end }}
 
 {{ define "scripts" }}
-{{/* collage before lightbox: its cells must exist when the lightbox collects triggers */}}
 {{ partial "asset-js.html" "js/place.js" }}
-{{ partial "asset-js.html" "js/collage.js" }}
 {{ partial "asset-js.html" "js/justify.js" }}
 {{ partial "asset-js.html" "js/lightbox.js" }}
 {{ end }}

@@ -1,48 +1,57 @@
-// True justified gallery layout (Flickr / Google-Photos style).
-// Packs the *visible* items of each .jgallery into full-width rows and scales
-// each row to fill the container exactly — left and right edges flush — while
-// preserving every photo's real aspect ratio (--ar = width/height), so nothing
-// is cropped. Sets width/height inline per item. Re-run on resize. Used by the
-// legacy place album (places not yet curated into collections).
+// Justified photo gallery: EVERY item of each .jgallery, in order, in rows that
+// fill the container exactly — left and right edges flush, the last row too —
+// each photo at its real aspect ratio (--ar = width/height), so nothing is
+// cropped. Row breaks are chosen by DP so every row lands as close as it can
+// to the target height (--thumb-h, px): cost = Σ log²(row h / target), at most
+// MAX photos a row. Greedy filling left a short last row at an arbitrary
+// height; the DP spreads the slack over the whole gallery instead. Sets each
+// item's width/height inline, and tells a srcset image its laid-out width so
+// big cells on retina pull the display tier. Re-run on resize.
+// Used by place pages: each collection's wall (every photo of the collection —
+// Gautam, 2026-10-21) and the legacy album of a place not yet curated.
 (function () {
-  function ar(el) {
-    return parseFloat(el.style.getPropertyValue('--ar')) || 1.5;
-  }
+  const MAX = 8;
+  const ar = (el) => parseFloat(el.style.getPropertyValue('--ar')) || 1.5;
 
   function justify(container) {
     const cs = getComputedStyle(container);
-    const targetH = parseFloat(cs.getPropertyValue('--thumb-h')) || 300;
-    const gap = parseFloat(cs.columnGap || cs.gap) || 8;
-    const W = container.clientWidth;
-    if (!W) return;
+    const T = parseFloat(cs.getPropertyValue('--thumb-h')) || 300;
+    const gap = parseFloat(cs.columnGap) || 8;
+    // 1px of slack: rows are laid out by flex-wrap, and a row whose subpixel
+    // widths summed past the container would wrap its last photo.
+    const W = container.clientWidth - 1;
+    if (W <= 0) return;
+    const items = Array.from(container.children);
+    const ars = items.map(ar);
+    const n = items.length;
+    const rowH = (i, j, A) => (W - gap * (j - i - 1)) / A;
 
-    const items = Array.from(container.children).filter(
-      (el) => el.style.display !== 'none'
-    );
-
-    let row = [];
-    let arSum = 0;
-
-    function flush(fill) {
-      if (!row.length) return;
-      const avail = W - gap * (row.length - 1);
-      const h = fill ? avail / arSum : targetH; // full rows fill width; last row keeps targetH
-      row.forEach((el) => {
-        el.style.width = Math.floor(h * ar(el)) + 'px';
-        el.style.height = Math.floor(h) + 'px';
-      });
-      row = [];
-      arSum = 0;
+    const cost = new Array(n + 1).fill(Infinity);
+    const from = new Array(n + 1).fill(0);
+    cost[0] = 0;
+    for (let j = 1; j <= n; j++) {
+      let A = 0;
+      for (let i = j - 1; i >= Math.max(0, j - MAX); i--) {
+        A += ars[i];
+        const c = cost[i] + Math.pow(Math.log(rowH(i, j, A) / T), 2);
+        if (c < cost[j]) { cost[j] = c; from[j] = i; }
+      }
     }
 
-    items.forEach((el) => {
-      row.push(el);
-      arSum += ar(el);
-      // Once the row at target height would overflow the container, commit it
-      // and stretch it to fill the width exactly.
-      if (targetH * arSum + gap * (row.length - 1) >= W) flush(true);
-    });
-    flush(false); // trailing partial row: natural height, left-aligned
+    for (let j = n; j > 0; j = from[j]) {
+      const i = from[j];
+      let A = 0;
+      for (let k = i; k < j; k++) A += ars[k];
+      const h = rowH(i, j, A);
+      for (let k = i; k < j; k++) {
+        const el = items[k];
+        const w = h * ars[k];
+        el.style.width = w + 'px';
+        el.style.height = h + 'px';
+        const img = el.querySelector('img[srcset]');
+        if (img) img.sizes = Math.round(w) + 'px';
+      }
+    }
   }
 
   function justifyGalleries() {

@@ -29,21 +29,14 @@
     .map((s) => ({ s, key: Math.pow(Math.random(), 1 / weight(s)) }))
     .sort((a, b) => b.key - a.key)
     .map((x) => x.s)
-  // A wall can be PINNED to one collection (data-collage="<slug>", place
-  // pages); the rest draw from the weighted shuffle in DOM order (home).
-  let n = 0
-  boxes.forEach((box) => {
-    const pinned = box.dataset.collage
-    if (pinned) { if ((pools[pinned] || []).length) initCollage(box, pinned) }
-    else initCollage(box, picks[n++ % picks.length])
-  })
+  boxes.forEach((box, n) => initCollage(box, picks[n % picks.length]))
 
   function initCollage(box, slug) {
   const items = pools[slug]
 
   // Caption: collection name + place, linking to the collection page.
   // Scoped to this wall's section — every wall captions itself.
-  const section = box.closest('.hero-collage, .place-coll') || document
+  const section = box.closest('.hero-collage') || document
   const cap = section.querySelector('[data-collage-caption]')
   // Only the FIRST wall is above the fold. The follow walls are a viewport or
   // more down, so their cells load lazily — otherwise all five walls' images
@@ -51,9 +44,7 @@
   // before the reader has scrolled to any of them. Layout is unaffected: row
   // heights and cell widths come from manifest aspect ratios, not from decoded
   // images, so nothing reflows when a lazy cell arrives.
-  // (Place pages: every row after the first.)
-  const lazy = section !== document && (section.classList.contains('hero-collage--follow') ||
-    (section.classList.contains('place-coll') && !!section.previousElementSibling))
+  const lazy = section !== document && section.classList.contains('hero-collage--follow')
   const meta = (window.COLLAGE_META || {})[slug]
   if (cap && meta) {
     cap.textContent = meta.place ? `${meta.title} · ${meta.place}` : meta.title
@@ -247,48 +238,10 @@
     )
   }
 
-  // Place-page walls show EVERY photo of the collection (Gautam, 2026-10-21 —
-  // the one-screen collage dropped whatever didn't fit: Police Take Notice
-  // showed 2 of 5). Justified rows of the whole sequence, in order, at one
-  // gap; the row breaks are chosen by DP so every row lands as close as it
-  // can to a target height (log-ratio cost, ≤ 8 photos a row). No crop and
-  // no fixed box: the wall is as tall as its rows. Lays out on width only.
-  const place = section !== document && section.classList.contains('place-coll')
-  function justifyAll(W) {
-    const n = items.length
-    const T = W < 700 ? Math.min(window.innerHeight / 3.2, W * 0.55) : window.innerHeight / 2.5
-    const cost = new Array(n + 1).fill(Infinity)
-    const from = new Array(n + 1).fill(0)
-    cost[0] = 0
-    for (let j = 1; j <= n; j++) {
-      let A = 0
-      for (let i = j - 1; i >= Math.max(0, j - 8); i--) {
-        A += items[i].ar
-        const h = (W - GAP * (j - i - 1)) / A
-        const c = cost[i] + Math.pow(Math.log(h / T), 2)
-        if (c < cost[j]) { cost[j] = c; from[j] = i }
-      }
-    }
-    const rows = []
-    for (let j = n; j > 0; j = from[j]) {
-      const r = items.slice(from[j], j)
-      rows.unshift({ row: r, h: (W - GAP * (r.length - 1)) / r.reduce((s, it) => s + it.ar, 0) })
-    }
-    return { rows, g: GAP, v: GAP, mode: 'flush', k: 1 }
-  }
-
   let lastW = 0
   let lastH = 0
   function layout() {
     const W = box.clientWidth
-    if (place) {
-      if (!W || W === lastW) return
-      lastW = W
-      const best = justifyAll(W)
-      box.style.height = best.rows.reduce((s, r) => s + r.h, 0) + GAP * (best.rows.length - 1) + 'px'
-      draw(best)
-      return
-    }
     const H = box.clientHeight
     if (!W || !H) return
     // Deterministic in (W, H) + already rendered → nothing to do. Mobile
@@ -320,10 +273,8 @@
     }
     for (let R = 1; R <= 6; R++) consider(cropCandidate(items, W, H, (W * R) / totalAr))
     exhaustive(W, H, consider)
-    if (best) draw(best)
-  }
+    if (!best) return
 
-  function draw(best) {
     const k = best.mode === 'crop' ? best.k : 1
     box.style.rowGap = best.v + 'px'
     box.style.paddingTop = box.style.paddingBottom = best.mode === 'framed' ? best.v + 'px' : '0'

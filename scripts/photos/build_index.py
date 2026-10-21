@@ -7,9 +7,12 @@ as the manifest grows — see the scaling assessment).
 Emits (paths RELATIVE — templates prepend photo_base, so this stays valid if
 the base/domain changes):
   {
-    "collections": { "<slug>": [ item, ... ], ... },   # in sequence (photo_order)
-    "places":      { "<city>": [ item, ... ], ... },
-    "covers":      { "<city>": item }                    # the place_cover per city
+    "collections": { "<slug>": [ item, ... ], ... },   # SHOWN photos, in sequence
+    "places":      { "<city>": [ item, ... ], ... },     # legacy (uncurated) albums
+    "covers":      { "<city>": item },                   # the place_cover per city
+    "collage":     { "<slug>": [ item, ... ], ... },     # home-wall pools (▦)
+    "place_colls": { "<city>": [ "<slug>", ... ] },      # place-page order
+    "refs":        { "<essay ref>": item }
   }
   item = { thumb, avif, webp, ar, title, meta }  (matches partials/collitems.html)
   A collection item's `title` is its lightbox caption: "<collection> / <city>",
@@ -151,29 +154,24 @@ def main():
                     covers[city] = {"thumb": p.get("thumb"), "ar": _ar(p)}
 
     titles = {c["slug"]: c.get("title") or c["slug"] for c in registry}
-    collections = {slug: [_coll_item(p, titles[slug]) for p in in_sequence(slug, ps)]
-                   for slug, ps in collections.items()}
+    shown = {slug: in_sequence(slug, ps) for slug, ps in collections.items()}
+    collections = {slug: [_coll_item(p, titles[slug]) for p in ps] for slug, ps in shown.items()}
 
-    # Wall pools for EVERY visible collection (place pages draw one wall per
-    # collection): every shown member, in sequence. ▦ (photo.collage) does NOT
-    # narrow these — it is home-page curation, and narrowing place walls by it
-    # left Coltsville showing 2 of 13 photos (its ▦ flags predate place walls).
-    # Home collage pools: for every collection flagged collage-eligible in the
-    # registry, EXACTLY the curated members (photo.collage) — no top-up. A
-    # deliberately small curation (e.g. "Free": 4 kids-running close-ups) must
-    # stay small; the collage solver's tiered fallbacks guarantee a layout at
-    # any pool size, small ones just render fewer, larger cells (possibly with
-    # some crop). A collection with NOTHING curated pools its whole membership.
-    walls, collage = {}, {}
-    eligible = {c["slug"] for c in registry if c.get("collage")}
-    for slug in visible:
-        members = in_sequence(slug, [p for p in recs if shown_in(p) == slug])
-        if not members:
-            continue
-        walls[slug] = [_coll_item(p, titles[slug]) for p in members]
-        if slug in eligible:
-            collage[slug] = [_coll_item(p, titles[slug]) for p in
-                             ([p for p in members if p.get("collage")] or members)]
+    # Home collage pools: for every visible collection flagged collage-eligible
+    # in the registry, EXACTLY its ▦-curated shown members (photo.collage) — no
+    # top-up. A deliberately small curation (e.g. "Free": 4 kids-running
+    # close-ups) must stay small; the collage solver's tiered fallbacks
+    # guarantee a layout at any pool size, small ones just render fewer, larger
+    # cells (possibly with some crop). A collection with NOTHING curated pools
+    # its whole membership. ▦ is home-only: place pages show every shown
+    # member (`collections`) — narrowing them by ▦ once left Coltsville
+    # showing 2 of 13 photos.
+    collage = {}
+    for c in registry:
+        ps = shown.get(c["slug"]) if c.get("collage") and c["slug"] in vis_rank else None
+        if ps:
+            collage[c["slug"]] = [_coll_item(p, titles[c["slug"]])
+                                  for p in ([p for p in ps if p.get("collage")] or ps)]
 
     # Place pages: a city's SINGLE-place collections, in display order —
     # `place_order` (set per collection in the tagger), then home rank, then
@@ -183,7 +181,7 @@ def main():
     place_colls = {}
     for c in registry:
         pls = _coll_places(c)
-        if c["slug"] in walls and len(pls) == 1:
+        if c["slug"] in vis_rank and shown.get(c["slug"]) and len(pls) == 1:
             place_colls.setdefault(pls[0], []).append(c)
     place_colls = {city: [c["slug"] for c in sorted(cs, key=lambda c: (
         c.get("place_order") or big, c.get("collage_rank") or big, vis_rank[c["slug"]]))]
@@ -216,12 +214,12 @@ def main():
                         and withheld & set(photos[k].get("collections") or [])})
 
     index = {"collections": collections, "places": places,
-             "covers": covers, "collage": collage, "walls": walls,
+             "covers": covers, "collage": collage,
              "place_colls": place_colls, "refs": refs}
     (DATA / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")))
     print(f"index: {len(collections)} collections, {len(places)} places, "
           f"{len(covers)} covers, {len(collage)} collage pools, "
-          f"{len(walls)} walls, {len(place_colls)} curated places, "
+          f"{len(place_colls)} curated places, "
           f"{len(refs)} essay refs, {held} withheld -> data/index.json")
     for r, n in sorted(ref_dupes.items()):
         print(f"  !! essay ref '{r}' is on {n} photos — one ref must mean one photo")

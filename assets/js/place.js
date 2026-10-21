@@ -1,11 +1,12 @@
 // Place pages: "Read more" on long captions, and the collections menu.
 (() => {
-  // A caption of 2+ paragraphs shows its first paragraph plus a few lines of the
-  // next, fading to the page, with "Read more" sitting on the fade. The button
-  // takes the collection's accent from --accent on its section. The clamp never
-  // takes more than CAP of the screen, so the photos always show on the first
-  // screen — on a phone a single long paragraph runs 15+ lines, so it is
-  // clamped too. (Markdownify returns a one-paragraph caption as bare text.)
+  // A long caption shows its first paragraph plus a few lines of the next,
+  // fading to the page, with "Read more" sitting on the fade; the button takes
+  // the collection's accent from --accent on its section. The clamp never takes
+  // more than CAP of the screen, so the photos always show on the first screen
+  // (on a phone ONE paragraph can run 15+ lines, so it is clamped too). A
+  // caption with nothing left to hide at the current width gets no fade and no
+  // button. (Markdownify returns a one-paragraph caption as bare text.)
   const PEEK = 2.6 // lines of the second paragraph that show through the fade
   const CAP = 0.4 // of the screen height
   // svh, measured once: unlike innerHeight it doesn't move with the mobile URL
@@ -15,54 +16,48 @@
   document.body.appendChild(probe)
   const screenH = probe.offsetHeight || window.innerHeight
   probe.remove()
-  const limit = (lh) => Math.max(CAP * screenH, 6 * lh)
-  const caps = []
+
+  const updates = []
   document.querySelectorAll('.place-coll-caption').forEach((cap) => {
-    const lh0 = parseFloat(getComputedStyle(cap).lineHeight) || 22
-    if (cap.children.length < 2 && cap.scrollHeight <= limit(lh0) + 2 * lh0) return
     const section = cap.closest('.place-coll')
     const btn = document.createElement('button')
     btn.type = 'button'
     btn.className = 'read-more'
-    btn.setAttribute('aria-expanded', 'false')
     cap.after(btn)
-    const clamp = () => {
-      if (!cap.classList.contains('is-clamped')) return
+    let open = false
+    const update = () => {
       const lh = parseFloat(getComputedStyle(cap).lineHeight) || 22
       // the caption is position:relative, so offsetTop is measured inside it
       const para = cap.children.length > 1 ? cap.children[1].offsetTop + PEEK * lh : Infinity
-      cap.style.maxHeight = Math.min(para, limit(lh)) + 'px'
-    }
-    const set = (clamped) => {
-      if (clamped) {
-        cap.classList.add('is-clamped')
-        clamp()
-      } else {
-        cap.classList.remove('is-clamped')
-        cap.style.maxHeight = ''
-      }
-      btn.textContent = clamped ? 'Read more' : 'Show less'
-      btn.setAttribute('aria-expanded', String(!clamped))
+      const max = Math.min(para, Math.max(CAP * screenH, 6 * lh))
+      // scrollHeight is the full text height, clamped or not
+      const long = cap.scrollHeight > max + lh
+      const clamped = long && !open
+      cap.classList.toggle('is-clamped', clamped)
+      cap.style.maxHeight = clamped ? max + 'px' : ''
+      btn.hidden = !long
+      btn.textContent = open ? 'Show less' : 'Read more'
+      btn.setAttribute('aria-expanded', String(open))
     }
     btn.addEventListener('click', () => {
-      const opening = cap.classList.contains('is-clamped')
-      set(!opening)
+      open = !open
+      update()
       // closing from far down the caption: bring the collection back into view
-      if (!opening && section.getBoundingClientRect().top < 0) section.scrollIntoView()
+      if (!open && section.getBoundingClientRect().top < 0) section.scrollIntoView()
     })
-    set(true)
-    caps.push(clamp)
+    update()
+    updates.push(update)
   })
-  if (caps.length) {
+  if (updates.length) {
     // Line breaks move with the width, and again when the web font arrives.
     // Height-only resizes (the mobile URL bar) are ignored.
     let lastW = window.innerWidth
     window.addEventListener('resize', () => {
       if (window.innerWidth === lastW) return
       lastW = window.innerWidth
-      caps.forEach((f) => f())
+      updates.forEach((f) => f())
     })
-    if (document.fonts) document.fonts.ready.then(() => caps.forEach((f) => f()))
+    if (document.fonts) document.fonts.ready.then(() => updates.forEach((f) => f()))
   }
 
   // The collections menu: one line that scrolls sideways when the titles don't
