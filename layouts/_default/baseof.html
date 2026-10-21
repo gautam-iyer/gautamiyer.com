@@ -10,6 +10,14 @@
   {{- if not .IsHome -}}
     {{- if .Title -}}
       {{- $title = printf "%s — %s" .Title .Site.Title -}}
+      {{- /* a collection page names its place: two can share a title */ -}}
+      {{- with .Params.collection -}}
+        {{- with index (where (index hugo.Data.collections "collections") "slug" .) 0 -}}
+          {{- with (partialCached "coll-where.html" . .slug).label -}}
+            {{- $title = printf "%s, %s — %s" $.Title . site.Title -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
     {{- end -}}
   {{- end }}
   <title>{{ $title }}</title>

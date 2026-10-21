@@ -1,0 +1,18 @@
+{{- /* Where a collection lives, for a label beside its bare title — several
+       collections can share a title in different places ("Little Italy" in
+       Utica and in Endicott), so the place is what tells them apart.
+       Takes the registry entry; returns {label, city}: label "Utica, NY"
+       (places.json name) or "Multiple places"; city = the bare city for a
+       single-place collection (its place page), else "". Call cached per slug:
+         {{ $where := partialCached "coll-where.html" $c $c.slug }} */ -}}
+{{- $places := .places | default (slice (.place | default "")) -}}
+{{- $where := dict "label" "" "city" "" -}}
+{{- if gt (len $places) 1 -}}
+  {{- $where = dict "label" "Multiple places" "city" "" -}}
+{{- else if index $places 0 -}}
+  {{- $city := index $places 0 -}}
+  {{- $label := $city -}}
+  {{- range (index hugo.Data.places "places") -}}{{- if eq .city $city -}}{{- $label = .name -}}{{- end -}}{{- end -}}
+  {{- $where = dict "label" $label "city" $city -}}
+{{- end -}}
+{{- return $where -}}

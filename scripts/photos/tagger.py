@@ -474,7 +474,7 @@ function tagFilterBar(){
   <select id="f-shoot"><option value="">All shoots</option>${opt(SHOOTS.map(s=>({v:s,t:s})),tagFilters.shoot)}</select>
   <select id="f-city"><option value="">All cities</option>${opt(cities.map(c=>({v:c,t:c})),tagFilters.city)}</select>
   <select id="f-state"><option value="">State</option>${opt(states.map(s=>({v:s,t:s})),tagFilters.state)}</select>
-  <select id="f-coll"><option value="">Any collection</option>${opt(COLLS.slice().sort((a,b)=>a.title.localeCompare(b.title)).map(c=>({v:c.slug,t:c.title})),tagFilters.coll)}</select>
+  <select id="f-coll"><option value="">Any collection</option>${opt(COLLS.slice().sort((a,b)=>a.title.localeCompare(b.title)).map(c=>({v:c.slug,t:collLabel(c)})),tagFilters.coll)}</select>
   <select id="f-medium"><option value="">Any medium</option><option value="Digital"${tagFilters.medium==='Digital'?' selected':''}>Digital</option><option value="Film"${tagFilters.medium==='Film'?' selected':''}>Film</option></select>
   <select id="f-camera"><option value="">Any camera</option>${opt(uniq(Object.values(PHOTOS).map(p=>p.camera)).map(c=>({v:c,t:c})),tagFilters.camera)}</select>
   <select id="f-review"><option value="">All</option><option value="un"${tagFilters.review==='un'?' selected':''}>Unreviewed</option><option value="rev"${tagFilters.review==='rev'?' selected':''}>Reviewed</option></select>
@@ -558,7 +558,7 @@ function chipRow(key,dim){
 function collRow(key){
   const cur=new Set(PHOTOS[key].collections||[]);
   const chips=COLLS.slice().sort((a,b)=>a.title.localeCompare(b.title))
-    .map(c=>`<span class="chip coll ${cur.has(c.slug)?'on':''}" onclick="toggleColl('${jesc(key)}','${c.slug}')">${esc(c.title)}</span>`).join('');
+    .map(c=>`<span class="chip coll ${cur.has(c.slug)?'on':''}" onclick="toggleColl('${jesc(key)}','${c.slug}')">${esc(collLabel(c))}</span>`).join('');
   return `<div class="dim" data-dim="collections"><div class="label">Collections</div><div class="chips">${chips||'<span class="notes">none</span>'}</div>
     <div class="newcoll"><input placeholder="New collection…" id="nc-${cssid(key)}">
     <button onclick="(()=>{const i=document.getElementById('nc-${cssid(key)}');if(i.value.trim())newCollection(i.value.trim(),'${jesc(key)}')})()">＋ create & add</button></div></div>`;
@@ -688,7 +688,7 @@ function cellMenu(key){
   return `<button class="cmbtn" title="More…" onclick="event.stopPropagation();toggleMenu('${jesc(key)}')">⋯</button>
     <div class="cmenu" id="menu-${cssid(key)}" style="display:none" onclick="event.stopPropagation()">
       <select onchange="addToColl('${jesc(key)}',this.value);this.value=''"><option value="">+ Add to collection…</option>`+
-      COLLS.slice().sort((a,b)=>a.title.localeCompare(b.title)).map(c=>`<option value="${esc(c.slug)}">${esc(c.title)}</option>`).join('')+
+      COLLS.slice().sort((a,b)=>a.title.localeCompare(b.title)).map(c=>`<option value="${esc(c.slug)}">${esc(collLabel(c))}</option>`).join('')+
       `</select>`+
       `<button onclick="rotatePhoto('${jesc(key)}',-90)">↺ Rotate left</button>`+
       `<button onclick="rotatePhoto('${jesc(key)}',90)">↻ Rotate right</button>`+
@@ -778,7 +778,13 @@ function renderDupes(){
 
 /* ================= COLLECTIONS MODE ================= */
 function collCount(slug){return Object.values(PHOTOS).filter(p=>(p.collections||[]).includes(slug)).length;}
-function collPlacesStr(c){const a=(c.places&&c.places.length)?c.places:(c.place?[c.place]:[]);return a.join(', ');}
+function collPlacesStr(c){return collPlaces(c).join(', ');}
+/* A collection's name in pickers and labels. Titles can repeat across places
+   ("Little Italy" in Utica and in Endicott), so a shared title carries its
+   place: "Little Italy · Utica". */
+function collLabel(c){
+  if(!COLLS.some(x=>x!==c&&x.title===c.title))return c.title;
+  const pl=collPlaces(c);return `${c.title} · ${pl.length>1?'Multiple places':(pl[0]||'no place')}`;}
 window.savePlaces=(slug,val)=>{const a=val.split(',').map(s=>s.trim()).filter(Boolean);updateColl(slug,{places:a,place:a[0]||''});};
 function renderColls(){
   const active=COLLS.filter(c=>!c.archived), archived=COLLS.filter(c=>c.archived);
@@ -956,7 +962,7 @@ function renderCull(){
     <div class="cullbar">
       <select id="c-shoot"><option value="">All shoots</option>${shoots.map(x=>`<option value="${esc(x)}"${x===cullFilter.shoot?' selected':''}>${esc(x)}</option>`).join('')}</select>
       <select id="c-city"><option value="">All cities</option>${cities.map(x=>`<option value="${esc(x)}"${x===cullFilter.city?' selected':''}>${esc(x)}</option>`).join('')}</select>
-      <select id="c-coll"><option value="">Any collection</option>${colls.map(c=>`<option value="${esc(c.slug)}"${c.slug===cullFilter.coll?' selected':''}>${esc(c.title)}</option>`).join('')}</select>
+      <select id="c-coll"><option value="">Any collection</option>${colls.map(c=>`<option value="${esc(c.slug)}"${c.slug===cullFilter.coll?' selected':''}>${esc(collLabel(c))}</option>`).join('')}</select>
       <select id="c-show">
         <option value="all"${cullFilter.show==='all'?' selected':''}>Show: all</option>
         <option value="unmarked"${cullFilter.show==='unmarked'?' selected':''}>Show: unmarked only</option>
@@ -1228,7 +1234,7 @@ function plRow(c,order,cityKeys,multi){
     if(!(p.collections||[]).includes(c.slug))continue;
     (displayColl(p,order)===c.slug?shown:elsewhere).push(k);}
   const seq=collSeq(c,shown);elsewhere.sort(byImg);
-  const title=t=>(COLLS.find(x=>x.slug===t)||{}).title||t;
+  const title=t=>{const c=COLLS.find(x=>x.slug===t);return c?collLabel(c):t;};
   const on=plTarget===c.slug;
   return `<div class="plrow${on?' target':''}">
     <div class="plhead"><button class="tgtbtn${on?' on':''}" onclick="plSetTarget('${jesc(c.slug)}')">${on?'◉ target':'◎ target'}</button>
@@ -1307,10 +1313,8 @@ window.plNew=async(multi)=>{
   if(multi){const more=(prompt('Places it spans, comma-separated (cities as in Places):',plCity)||'').split(',').map(x=>x.trim()).filter(Boolean);
     if(more.length<2){alert('A multi-place collection needs at least two places.');return;} places=more;}
   const r=await (await fetch('/api/collection',{method:'POST',headers:{'content-type':'application/json'},
-    body:JSON.stringify({title,place:places[0]})})).json();
-  COLLS=r.collections;
-  if(multi)await updateColl(r.slug,{places});
-  plTarget=r.slug;render();};
+    body:JSON.stringify({title,place:places[0],places:multi?places:[]})})).json();
+  COLLS=r.collections;plTarget=r.slug;render();};
 
 function render(){
   const fbar=$('#filters');
@@ -1498,26 +1502,41 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(200, out)
         if path == "/api/collection":
             title = data["title"].strip()
-            slug = slugify(title)
-            place = (data.get("place") or "").strip()
+            # A collection is (title, places): `places` (2+ cities) makes a
+            # multi-place one, else `place` is its one city.
+            places = [x.strip() for x in (data.get("places") or []) if x.strip()]
+            if len(places) < 2:
+                places = [(data.get("place") or "").strip()] if (data.get("place") or "").strip() else []
+            want = sorted(places)
             with _lock:
                 reg = load(COLLECTIONS, {"collections": []})
                 by_slug = {c["slug"]: c for c in reg["collections"]}
-                # Typing an existing title for the SAME place reuses it (the ⋯
-                # menu relies on that). The same title in ANOTHER city
-                # ("Downtown") is a new collection — it used to merge silently.
-                hit = by_slug.get(slug)
-                if hit is not None and place and (hit.get("place") or "") != place:
-                    slug = f"{slug}-{slugify(place)}"
-                    base, n = slug, 2
-                    while slug in by_slug and (by_slug[slug].get("place") or "") != place:
-                        slug, n = f"{base}-{n}", n + 1
-                if slug not in by_slug:
-                    reg["collections"].append({
-                        "slug": slug, "title": title, "description": "",
-                        "featured": False, "cover": None, "order": 0,
-                        "type": "curated", "place": place,
-                    })
+
+                def where(c):
+                    return sorted(c.get("places") or ([c["place"]] if c.get("place") else []))
+                # The same title for the same place(s) reuses that collection
+                # (the ⋯ menu relies on it). The same title anywhere else is a
+                # NEW collection — "Little Italy" in Utica and in Endicott are
+                # two: little-italy, little-italy-endicott. Matching on one city
+                # used to let a multi-place create reuse (then rewrite) a
+                # single-place collection of the same title.
+                hit = next((c for c in reg["collections"]
+                            if slugify(c["title"]) == slugify(title) and where(c) == want), None)
+                if hit is not None:
+                    slug = hit["slug"]
+                else:
+                    slug = slugify(title)
+                    if slug in by_slug:
+                        slug = f"{slug}-{slugify('-'.join(places))}" if places else slug
+                        base, n = slug, 2
+                        while slug in by_slug:
+                            slug, n = f"{base}-{n}", n + 1
+                    c = {"slug": slug, "title": title, "description": "",
+                         "featured": False, "cover": None, "order": 0,
+                         "type": "curated", "place": places[0] if places else ""}
+                    if len(places) > 1:
+                        c["places"] = places
+                    reg["collections"].append(c)
                     atomic_write(COLLECTIONS, reg)
             return self._send(200, {"slug": slug, "collections": reg["collections"]})
         if path == "/api/delete":

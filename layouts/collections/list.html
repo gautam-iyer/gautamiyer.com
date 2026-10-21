@@ -1,9 +1,6 @@
 {{ define "main" }}
 <main>
   {{ $base := .Site.Params.photo_base | default "/img/" }}
-  {{/* city → "City, ST": a bare title like "Downtown" needs its place beside it */}}
-  {{ $placeNames := dict }}
-  {{ range (index hugo.Data.places "places") }}{{ $placeNames = merge $placeNames (dict .city .name) }}{{ end }}
 
   <div class="backlinks">
     <a class="backlink" href="/">← Back to Home</a>
@@ -43,8 +40,8 @@
             <img src="{{ $cover.thumb }}" alt="{{ $title }}" loading="lazy">
           </div>
           <div class="tile-title subsubhead" style="color:{{ $color }}">{{ $title }}</div>
-          {{ $where := "" }}{{ if gt (len $places) 1 }}{{ $where = "Multiple places" }}{{ else }}{{ $pl := index $places 0 }}{{ $where = index $placeNames $pl | default $pl }}{{ end }}
-          {{ with $where }}<div class="tile-meta">{{ . }}</div>{{ end }}
+          {{/* a bare title like "Downtown" or "Little Italy" needs its place beside it */}}
+          {{ with (partialCached "coll-where.html" $c $slug).label }}<div class="tile-meta">{{ . }}</div>{{ end }}
         </a>
       {{ end }}
     {{ end }}

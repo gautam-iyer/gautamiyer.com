@@ -1,8 +1,5 @@
 {{ define "main" }}
 {{ $base := .Site.Params.photo_base | default "/img/" }}
-{{/* city → "City, ST" for the small place label in each collage caption */}}
-{{ $placeNames := dict }}
-{{ range (index hugo.Data.places "places") }}{{ $placeNames = merge $placeNames (dict .city .name) }}{{ end }}
 <main>
 
   {{/* THE HOME PAGE IS FIVE COLLAGES, then a quiet link to the rest. Each full-bleed wall
@@ -31,12 +28,9 @@
   {{ $cmeta := dict }}
   {{ range (index hugo.Data.collections "collections") }}
     {{ if and .collage (not .archived) }}
-      {{ $pl := .place | default "" }}
-      {{ $where := index $placeNames $pl | default $pl }}
-      {{ if gt (len (.places | default slice)) 1 }}{{ $where = "Multiple places" }}{{ end }}
       {{ $cmeta = merge $cmeta (dict .slug (dict
           "title" .title
-          "place" $where
+          "place" (partialCached "coll-where.html" . .slug).label
           "href" (printf "/collections/%s/" .slug)
           "rank" (.collage_rank | default 0))) }}
     {{ end }}

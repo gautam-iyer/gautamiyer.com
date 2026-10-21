@@ -1368,6 +1368,9 @@ article {
   transition: opacity 0.15s;
 }
 .fc-name:hover { opacity: 0.65; }
+/* collection page: its place under the title (links to the place page) */
+.coll-where { display: block; margin: -6px 0 12px; font-size: 0.82rem; color: var(--light); text-decoration: none; transition: color 0.15s; }
+a.coll-where:hover { color: var(--black); }
 
 .fc-rule {
   border: 0;

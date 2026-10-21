@@ -10,9 +10,11 @@
   <a class="backlink" href="/collections/">← Back to Collections</a>
 
   <div class="fc-collection">
-    <div class="fc-name subsubhead" style="color:{{ $color }}">{{ .Title }}</div>
-    <hr class="fc-rule" style="background:{{ $color }}">
     {{ $c := index (where (index hugo.Data.collections "collections") "slug" $slug) 0 }}
+    <div class="fc-name subsubhead" style="color:{{ $color }}">{{ .Title }}</div>
+    {{/* the place tells same-titled collections apart ("Little Italy") */}}
+    {{ with partialCached "coll-where.html" $c $slug }}{{ if .city }}<a class="coll-where" href="/places/{{ .city | urlize }}/">{{ .label }}</a>{{ else if .label }}<div class="coll-where">{{ .label }}</div>{{ end }}{{ end }}
+    <hr class="fc-rule" style="background:{{ $color }}">
     {{/* the same caption and sources a place page shows with this collection's wall */}}
     {{ with $c.caption }}<div class="coll-caption">{{ . | markdownify }}</div>{{ end }}
     {{ partial "carousel.html" (dict "items" $items "color" $color) }}
