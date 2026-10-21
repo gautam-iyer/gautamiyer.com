@@ -338,6 +338,16 @@
       if (box.clientWidth !== lastW) layout()
     }, 150)
   })
+  // A place-page wall is sized by the text above it (flex), which changes
+  // height without the window resizing — when the web font arrives, or a
+  // caption is clamped/released. Its svh height never moves with the mobile
+  // URL bar, so watching the box itself is safe there.
+  if (section !== document && section.classList.contains('place-coll') && window.ResizeObserver) {
+    new ResizeObserver(() => {
+      clearTimeout(t)
+      t = setTimeout(layout, 150)
+    }).observe(box)
+  }
   layout()
   } // initCollage
 })()

@@ -232,6 +232,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .plstrip{display:flex;flex-wrap:wrap;gap:6px}
  .plcap{display:block;width:100%;box-sizing:border-box;min-height:46px;font:13px/1.5 inherit;margin:0 0 8px;border:1px solid #e4e4e7;border-radius:6px;padding:6px 8px;resize:vertical;color:#27272a}
  .plcap:focus{outline:none;border-color:#7c3aed}
+ .plsrc{min-height:30px;font-size:12px;color:#71717a}
  .plcell{position:relative;height:110px;cursor:pointer;border-radius:4px;overflow:hidden;outline:2px solid transparent}
  .plcell img{height:100%;width:100%;object-fit:cover;display:block;background:#e4e4e7}
  .plcell:hover{outline-color:#7c3aed}
@@ -775,7 +776,7 @@ function renderColls(){
      <td><button class="linkbtn" onclick="editMembers('${esc(c.slug)}')">Edit members →</button>
          <button class="linkbtn arch" title="Remove from the site (membership kept; restore anytime from the Archived list below)" onclick="archiveColl('${esc(c.slug)}')">Archive</button></td>
    </tr>
-   <tr class="caprow${c.featured?' feat':''}"><td colspan="8"><div class="caplabel">Caption — shown beside the collection on its place page, and on its collection page</div><textarea class="caption" placeholder="Write a 2–10 sentence caption…" onchange="updateColl('${esc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea></td></tr>`).join('');
+   <tr class="caprow${c.featured?' feat':''}"><td colspan="8"><div class="caplabel">Caption — shown above the collection on its place page, and on its collection page</div><textarea class="caption" placeholder="Write a 2–10 sentence caption…" onchange="updateColl('${esc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea><div class="caplabel">Sources — citations for the caption, shown small under the photos</div><textarea class="caption" placeholder="One source per line, or a markdown list…" onchange="updateColl('${esc(c.slug)}',{sources:this.value})">${esc(c.sources||'')}</textarea></td></tr>`).join('');
   const archRows=archived.slice().sort((a,b)=>a.title.localeCompare(b.title))
    .map(c=>`<tr class="archrow">
      <td class="ct">${esc(c.title)}</td>
@@ -1215,7 +1216,8 @@ function plRow(c,order,cityKeys,multi){
       <b>${esc(c.title)}</b><span class="n">${shown.length} shown${elsewhere.length?` · ${elsewhere.length} tagged, shown elsewhere`:''}${multi?' · '+esc(collPlaces(c).join(', ')):''}</span>
       ${multi?'':`<button class="keepall" onclick="plMove('${jesc(c.slug)}',-1)" title="Earlier on the place page">▲</button><button class="keepall" onclick="plMove('${jesc(c.slug)}',1)" title="Later on the place page">▼</button>`}
       <button class="linkbtn" onclick="plEdit('${jesc(c.slug)}')">edit members →</button></div>
-    <textarea class="plcap" placeholder="Caption — shown beside this collection on ${multi?'its collection page':'the place page, and on its collection page'}. Saves when you click away." onchange="updateColl('${jesc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea>
+    <textarea class="plcap" placeholder="Caption — shown above this collection on ${multi?'its collection page':'the place page, and on its collection page'}. Saves when you click away." onchange="updateColl('${jesc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea>
+    <textarea class="plcap plsrc" placeholder="Sources — citations for the caption, shown small under the photos (markdown: one per line, or a list). Saves when you click away." onchange="updateColl('${jesc(c.slug)}',{sources:this.value})">${esc(c.sources||'')}</textarea>
     <div class="plstrip">${seq.map((k,i)=>plCell(k,'','',{slug:c.slug,n:i+1})).join('')||'<span class="hint">empty — pick ◎ target, then click photos below</span>'}${elsewhere.map(k=>plCell(k,title(displayColl(PHOTOS[k],order)),'elsewhere')).join('')}</div></div>`;}
 function renderPlace(){
   const counts={};Object.values(PHOTOS).forEach(p=>{if(p.city)counts[p.city]=(counts[p.city]||0)+1;});
@@ -1657,7 +1659,7 @@ class Handler(BaseHTTPRequestHandler):
                 reg = load(COLLECTIONS, {"collections": []})
                 for c in reg["collections"]:
                     if c["slug"] == slug:
-                        for f in ("title", "featured", "order", "place", "places", "place_order", "photo_order", "description", "caption", "collage", "collage_rank", "archived"):
+                        for f in ("title", "featured", "order", "place", "places", "place_order", "photo_order", "description", "caption", "sources", "collage", "collage_rank", "archived"):
                             if f in data:
                                 c[f] = data[f]
                         break

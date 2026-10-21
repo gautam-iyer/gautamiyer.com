@@ -44,7 +44,7 @@
           </div>
           <div class="tile-title subsubhead" style="color:{{ $color }}">{{ $title }}</div>
           {{ $where := "" }}{{ if gt (len $places) 1 }}{{ $where = "Multiple places" }}{{ else }}{{ $pl := index $places 0 }}{{ $where = index $placeNames $pl | default $pl }}{{ end }}
-          <div class="tile-meta">{{ with $where }}{{ . }} · {{ end }}{{ len $items }} photograph{{ if ne (len $items) 1 }}s{{ end }}</div>
+          {{ with $where }}<div class="tile-meta">{{ . }}</div>{{ end }}
         </a>
       {{ end }}
     {{ end }}

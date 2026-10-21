@@ -326,39 +326,92 @@ html:has(> body.home) {
    unreachable by the primary scroll gesture (only the End key escaped it).
    Releasing the final wall lets the tail of the page settle normally. */
 .hero-collage--follow:last-of-type { scroll-snap-align: none; }
-/* Place pages: each collection is a full-bleed row — a text column (title,
-   count, the caption written in the tagger) beside its pinned collage wall.
-   Rows are separated by the same white band as the home walls and snap under
-   the bar — except the FIRST (a snap point that close to the top pulled the
-   page past the place title on load) and the LAST (same footer trap as home). */
+/* Place pages: a menu of the page's collections, then one full-bleed section
+   per collection — its text (title in the collection's accent, caption) ABOVE
+   its pinned collage wall, then its sources. Text + wall fill one screen
+   (.place-coll-main), so a section snaps whole under the bar. Sections are
+   separated by the same white band as the home walls and snap under the bar —
+   except the FIRST (a snap point that close to the top pulled the page past
+   the place title on load) and the LAST (same footer trap as home). */
+.place-menu {
+  display: flex;
+  gap: 8px 28px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  margin: -16px 0 40px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.place-menu::-webkit-scrollbar { display: none; }
+/* place.js sets these when the titles overflow: fade whichever edge has more */
+.place-menu.more-right { mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); }
+.place-menu.more-left { mask-image: linear-gradient(to left, #000 calc(100% - 48px), transparent); }
+.place-menu.more-left.more-right { mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent); }
+.place-menu a { flex: none; text-decoration: none; transition: opacity 0.15s; }
+.place-menu a:hover { opacity: 0.65; }
 .place-walls { width: 100vw; margin-left: calc(50% - 50vw); }
 .place-coll {
-  display: grid;
-  /* minmax(0,…): a grid track defaults to min-content, so the wall's laid-out
-     cells could hold the column wider than the screen (overflowed on phones) */
-  grid-template-columns: clamp(220px, 24vw, 360px) minmax(0, 1fr);
   margin-top: calc(var(--grid) * 6);
   scroll-snap-align: start;
 }
 .place-coll:first-child { margin-top: 0; scroll-snap-align: none; }
 .place-coll:last-child { scroll-snap-align: none; margin-bottom: var(--grid); }
-.place-coll-text { padding: 2px 32px 0 var(--page-gutter); }
-.place-coll-title { display: block; text-decoration: none; }
+.place-coll-main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--header-one) - var(--grid));
+  min-height: calc(100svh - var(--header-one) - var(--grid));
+}
+.place-coll-text { padding: 2px var(--page-gutter) 20px; max-width: calc(var(--text-width) + 2 * var(--page-gutter)); }
+.place-coll-title { display: block; text-decoration: none; color: var(--accent); }
 .place-coll-title:hover { text-decoration: underline; }
-.place-coll-count { margin-top: 8px; font-size: 0.72rem; color: var(--light); }
-.place-coll-caption { margin-top: 20px; font-size: 0.88rem; line-height: 1.65; color: var(--dark); }
+.place-coll-caption { position: relative; margin-top: 14px; font-size: 0.88rem; line-height: 1.65; color: var(--dark); }
 .place-coll-caption p + p, .coll-caption p + p { margin-top: 0.8em; }
+/* A caption of 2+ paragraphs: place.js caps it at the first paragraph plus a
+   few lines that fade to the page, with "Read more" sitting on the fade. */
+.place-coll-caption.is-clamped {
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 4.2em), transparent);
+}
+.read-more {
+  margin-top: -1.6em;
+  position: relative;
+  padding: 5px 13px;
+  font-family: var(--font);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--bg);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.read-more:hover { border-color: var(--accent); }
+.place-coll-caption:not(.is-clamped) + .read-more { margin-top: 12px; }
 /* collection page: the caption under the title, at prose width */
 .coll-caption { max-width: var(--text-width); margin: -8px 0 28px; font-size: 0.92rem; line-height: 1.7; color: var(--dark); }
+/* The wall takes whatever the screen has left under the text (at least half
+   of it); place.js pins its height while a caption is expanded. */
 .place-coll .collage {
-  height: calc(100vh - var(--header-one) - var(--grid));
-  height: calc(100svh - var(--header-one) - var(--grid));
+  flex: 1 0 auto;
+  height: 50vh;
+  height: 50svh;
   overflow: hidden;
 }
+/* Sources: small and light, under the photos (place page and collection page) */
+.coll-sources { max-width: var(--text-width); margin-top: 14px; font-size: 0.72rem; line-height: 1.55; color: var(--light); }
+.place-coll .coll-sources { margin: 14px var(--page-gutter) 0; }
+.coll-sources-label { margin-bottom: 2px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.coll-sources p + p { margin-top: 0.4em; }
+.coll-sources ul, .coll-sources ol { padding-left: 1.2em; }
+.coll-sources a { color: inherit; text-underline-offset: 2px; }
+.coll-sources a:hover { color: var(--mid); }
 @media (max-width: 700px) {
-  .place-coll { grid-template-columns: minmax(0, 1fr); }
-  .place-coll-text { padding: 0 var(--page-gutter) 16px; }
-  .place-coll .collage { height: calc(100svh - var(--header-one) - 160px); }
+  .place-coll-text { padding-bottom: 16px; }
 }
 html:has(.place-walls) {
   scroll-snap-type: y proximity;

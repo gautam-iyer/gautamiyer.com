@@ -1,0 +1,8 @@
+{{- /* A collection's sources — the citations behind its caption, written in the
+       tagger (registry `sources`, markdown). Small and light, under the
+       collection's photos on its place page and on its collection page.
+         {{ with $c.sources }}{{ partial "sources.html" . }}{{ end }} */ -}}
+<div class="coll-sources">
+  <div class="coll-sources-label">Sources</div>
+  {{ . | markdownify }}
+</div>

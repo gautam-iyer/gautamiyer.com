@@ -9,24 +9,28 @@
     {{ with .Content }}<div class="intro place-overview">{{ . }}</div>{{ end }}
   </div>
 
-  {{/* CURATED PLACE: one row per collection — a text column (title in the
-       collection's accent, photo count, the caption written in the tagger)
-       beside a collage wall pinned to that collection (data-collage="<slug>",
-       the same component as the home walls). data/index.json "place_colls"
-       lists the city's single-place collections in display order
-       (build_index.py); collections spanning several places live only on
-       /collections/. A city with no collections yet falls through to the
-       legacy album below until it is curated. */}}
+  {{/* CURATED PLACE: a menu of the page's collections, then one section per
+       collection — its text (title in the collection's accent, the caption
+       written in the tagger) ABOVE a collage wall pinned to that collection
+       (data-collage="<slug>", the same component as the home walls), then its
+       sources. data/index.json "place_colls" lists the city's single-place
+       collections in display order (build_index.py); collections spanning
+       several places live only on /collections/. A city with no collections
+       yet falls through to the legacy album below until it is curated. */}}
   {{ $walls := index (index hugo.Data.index "place_colls" | default dict) $place }}
   {{ if $walls }}
   {{ $reg := dict }}
   {{ range (index hugo.Data.collections "collections") }}{{ $reg = merge $reg (dict .slug .) }}{{ end }}
   {{ $pools := dict }}
+  <nav class="place-menu" aria-label="Collections in {{ .Title }}">
+    {{ range $slug := $walls }}
+      <a href="#{{ $slug }}" style="color:{{ partialCached "accent.html" $slug $slug }}">{{ (index $reg $slug).title }}</a>
+    {{ end }}
+  </nav>
   <div class="place-walls">
     {{ range $slug := $walls }}
       {{ $c := index $reg $slug }}
       {{ $color := partialCached "accent.html" $slug $slug }}
-      {{ $n := len (index (index hugo.Data.index "collections") $slug) }}
       {{ $pool := slice }}
       {{ range (index (index hugo.Data.index "walls") $slug) }}
         {{ $pool = $pool | append (dict
@@ -36,13 +40,16 @@
             "ar" .ar "title" (.title | default "") "meta" (.meta | default "")) }}
       {{ end }}
       {{ $pools = merge $pools (dict $slug $pool) }}
-    <section class="place-coll" aria-label="{{ $c.title }}">
-      <div class="place-coll-text">
-        <a class="place-coll-title subsubhead" style="color:{{ $color }}" href="/collections/{{ $slug }}/">{{ $c.title }}</a>
-        <div class="place-coll-count">{{ $n }} photograph{{ if ne $n 1 }}s{{ end }}</div>
-        {{ with $c.caption }}<div class="place-coll-caption">{{ . | markdownify }}</div>{{ end }}
+    <section class="place-coll" id="{{ $slug }}" aria-label="{{ $c.title }}" style="--accent:{{ $color }}">
+      <div class="place-coll-main">
+        <div class="place-coll-text">
+          <a class="place-coll-title subsubhead" href="/collections/{{ $slug }}/">{{ $c.title }}</a>
+          {{/* place.js clamps a caption of 2+ paragraphs behind "Read more" */}}
+          {{ with $c.caption }}<div class="place-coll-caption">{{ . | markdownify }}</div>{{ end }}
+        </div>
+        <div class="collage" data-collage="{{ $slug }}"></div>
       </div>
-      <div class="collage" data-collage="{{ $slug }}"></div>
+      {{ with $c.sources }}{{ partial "sources.html" . }}{{ end }}
     </section>
     {{ end }}
   </div>
@@ -54,7 +61,6 @@
        scanning the whole manifest per place page. */}}
   {{ $photos := index (index hugo.Data.index "places") $place }}
   {{ with $photos }}
-  <div class="photo-count">{{ len . }} photograph{{ if ne (len .) 1 }}s{{ end }}</div>
   <div class="gallery jgallery">
     {{ range . }}
       <div class="gallery-item" style="--ar:{{ .ar }}" data-lb
@@ -86,7 +92,9 @@
 {{ end }}
 
 {{ define "scripts" }}
-{{/* collage before lightbox: its cells must exist when the lightbox collects triggers */}}
+{{/* place.js before collage: a clamped caption sets the wall's height.
+     collage before lightbox: its cells must exist when the lightbox collects triggers */}}
+{{ partial "asset-js.html" "js/place.js" }}
 {{ partial "asset-js.html" "js/collage.js" }}
 {{ partial "asset-js.html" "js/justify.js" }}
 {{ partial "asset-js.html" "js/lightbox.js" }}

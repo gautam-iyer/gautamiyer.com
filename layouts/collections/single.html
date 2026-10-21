@@ -12,10 +12,11 @@
   <div class="fc-collection">
     <div class="fc-name subsubhead" style="color:{{ $color }}">{{ .Title }}</div>
     <hr class="fc-rule" style="background:{{ $color }}">
-    <div class="photo-count">{{ len $items }} photograph{{ if ne (len $items) 1 }}s{{ end }}</div>
-    {{/* the same caption a place page shows beside this collection's wall */}}
-    {{ with (index (where (index hugo.Data.collections "collections") "slug" $slug) 0).caption }}<div class="coll-caption">{{ . | markdownify }}</div>{{ end }}
+    {{ $c := index (where (index hugo.Data.collections "collections") "slug" $slug) 0 }}
+    {{/* the same caption and sources a place page shows with this collection's wall */}}
+    {{ with $c.caption }}<div class="coll-caption">{{ . | markdownify }}</div>{{ end }}
     {{ partial "carousel.html" (dict "items" $items "color" $color) }}
+    {{ with $c.sources }}{{ partial "sources.html" . }}{{ end }}
   </div>
 </main>
 {{ end }}

@@ -139,22 +139,26 @@ def main():
     collections = {slug: [_coll_item(p) for p in in_sequence(slug, ps)]
                    for slug, ps in collections.items()}
 
-    # Collage pools: for every collection flagged collage-eligible in the
+    # Wall pools for EVERY visible collection (place pages draw one wall per
+    # collection): every shown member, in sequence. ▦ (photo.collage) does NOT
+    # narrow these — it is home-page curation, and narrowing place walls by it
+    # left Coltsville showing 2 of 13 photos (its ▦ flags predate place walls).
+    # Home collage pools: for every collection flagged collage-eligible in the
     # registry, EXACTLY the curated members (photo.collage) — no top-up. A
     # deliberately small curation (e.g. "Free": 4 kids-running close-ups) must
     # stay small; the collage solver's tiered fallbacks guarantee a layout at
     # any pool size, small ones just render fewer, larger cells (possibly with
     # some crop). A collection with NOTHING curated pools its whole membership.
-    # Wall pools for EVERY visible collection (place pages draw one wall per
-    # collection); the home `collage` set is the subset flagged collage-eligible.
-    walls = {}
+    walls, collage = {}, {}
+    eligible = {c["slug"] for c in registry if c.get("collage")}
     for slug in visible:
         members = in_sequence(slug, [p for p in recs if shown_in(p) == slug])
-        pool = [p for p in members if p.get("collage")] or members
-        if pool:
-            walls[slug] = [_coll_item(p) for p in pool]
-    collage = {c["slug"]: walls[c["slug"]] for c in registry
-               if c.get("collage") and c["slug"] in walls}
+        if not members:
+            continue
+        walls[slug] = [_coll_item(p) for p in members]
+        if slug in eligible:
+            collage[slug] = [_coll_item(p) for p in
+                             ([p for p in members if p.get("collage")] or members)]
 
     # Place pages: a city's SINGLE-place collections, in display order —
     # `place_order` (set per collection in the tagger), then home rank, then
