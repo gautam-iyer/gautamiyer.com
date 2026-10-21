@@ -43,7 +43,7 @@
       "type": "curated",
       "place": "Pittsburgh",
       "color": "#a8842c",
-      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      "caption": "",
       "collage": true,
       "collage_rank": 2
     },
@@ -223,7 +223,7 @@
       "order": 5,
       "type": "curated",
       "place": "Durham",
-      "caption": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.",
+      "caption": "",
       "collage": true,
       "collage_rank": 4
     },
@@ -286,7 +286,7 @@
       "order": 4,
       "type": "curated",
       "place": "New York",
-      "caption": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.",
+      "caption": "",
       "collage": true,
       "collage_rank": 7
     },
@@ -437,7 +437,24 @@
       "order": 8,
       "type": "curated",
       "place": "Hartford",
-      "collage": true
+      "collage": true,
+      "caption": "In 1848, Samuel Colt, inventor of the automatic revolver, built one of America's first company towns around the Colt Manufacturing Company's main factory near downtown Hartford. Enshrined in 2014 as the Coltsville National Historic District, the complex consists of the old factory (the “Armory”), currently being restored and transitioned to lofts; Colt’s sprawling Italian villa, Armsmear (literally “meadow of arms”); Colt Park, a city park on land donated to the City of Hartford by Colt’s widow, Elizabeth; a variety of tenement housing built to house the largely European immigrant workforce that made Colt’s ingenious pistols and rifles; and a row of ornate, if somewhat desolate, Victorian-era mansions originally owned by Colt and his affiliates.\n\nThe Armory itself has a long history of burning and redevelopment. Much of the original manufacturing complex is gone, but good samaritans have seen to it that its astonishing onion-shaped, deep blue dome – personally designed by Samuel Colt – has remained intact. Today, the dome and the “rampant colt” placed at its apex are a ubiquitous symbol of Hartford, though they are most visible from I-91, the six-lane highway that cuts through Downtown Hartford and permanently severs the city’s connection to its raison d’etre, the Connecticut River.\n\nColt’s story is just one of many integral to the Connecticut capital, but it is exemplary of the historical forces that shaped the city and the nation. Hartford’s early ascendance was underwritten by the profits from Colt’s pistols, and arms manufacturing itself is a deeply Yankee trade: having arrived in the New World to find not a paradise but fickle, even hostile New England soil, Europe’s enterprising refugee Anglos turned to the rivers for power and the Natives for blood.\n\nColt’s big break came in 1847 when the US federal government enlisted his help in manufacturing 1,000 revolvers for the Mexican-American War, one of the new nation’s most nakedly imperialist undertakings. After securing the title to the entirety of the American West, the government set about depopulating the land, eradicating Native Americans and replacing them with distinct European populations that would eventually come to be known simply as Americans (e.g., Czechs and Germans in Texas, Norwegians and Swedes in the Upper Midwest, and even Basque ranchers in Idaho).\n\nIt was Colt’s Single Action Army revolver, aka the Peacemaker, that meted out justice in the lawless West. Its cousin, the Winchester Lever-action Rifle, was being manufactured just down the Long Island Sound in New Haven, and together, they became known as the “gun(s) that won the West.” For 20 long, violent years, until 1892, the Peacemaker was the revolver of choice for the US Army.\n\nColt would not live to see those days. His last memories were likely of Colt’s meteoric ascension during the Civil War, when he sold his namesake arms to both Union and Confederate troops. But it was not only Colt’s amorality that allowed him to amass a fortune worthy of a Venetian villa. He displayed throughout his life an uncanny ability to marshal the burgeoning forces of industrial production for the furthering of private enterprise. Most notably, he adopted principles from the Federal Armory in Springfield, 30 miles up the Connecticut River, to hasten and standardize production. The development of interchangeable parts in Springfield arguably heralded the zenith of the American Industrial Revolution, and Colt harvested its bounty to design some of the most advanced industrial processes of his age, presaging Henry Ford’s Detroit assembly lines 50 years later.",
+      "photo_order": [
+        "New England 8:23:26/Edited/IMG_7642.jpg",
+        "New England 8:23:26/Edited/IMG_7644.jpg",
+        "New England 8:23:26/Edited/IMG_7629.jpg",
+        "New England 8:23:26/Edited/IMG_7630.jpg",
+        "CT '26/Edited/Hartford/IMG_8767.jpg",
+        "CT '26/Edited/Hartford/IMG_8764.jpg",
+        "CT '26/Edited/Hartford/IMG_8815-2.jpg",
+        "CT '26/Edited/Hartford/IMG_8759.jpg",
+        "CT '26/Edited/Hartford/IMG_8821-2.jpg",
+        "CT '26/Edited/Hartford/IMG_8826.jpg",
+        "CT '26/Edited/Hartford/IMG_8832-2.jpg",
+        "CT '26/Edited/Hartford/IMG_8847.jpg",
+        "CT '26/Edited/Hartford/IMG_8857-2.jpg"
+      ],
+      "place_order": 2
     },
     {
       "slug": "the-perfect-six",
@@ -447,7 +464,9 @@
       "cover": null,
       "order": 0,
       "type": "curated",
-      "place": "Hartford"
+      "place": "Hartford",
+      "place_order": 3,
+      "caption": "The great Hartford-specific immigrant housing scheme of the late 19th and early 20th centuries."
     },
     {
       "slug": "victorians-on-wethersfield",
@@ -457,7 +476,8 @@
       "cover": null,
       "order": 0,
       "type": "curated",
-      "place": "Hartford"
+      "place": "Hartford",
+      "place_order": 1
     },
     {
       "slug": "downtown-hartford",
@@ -467,7 +487,9 @@
       "cover": null,
       "order": 0,
       "type": "curated",
-      "place": "Hartford"
+      "place": "Hartford",
+      "place_order": 4,
+      "caption": "Views and angles."
     },
     {
       "slug": "the-stag",
@@ -477,7 +499,9 @@
       "cover": null,
       "order": 0,
       "type": "curated",
-      "place": "Hartford"
+      "place": "Hartford",
+      "place_order": 5,
+      "caption": "Hartford is the great Yankee city of yore. Like all other industrial New England cities, its history and culture has been heavily shaped by domestic and international migration – most notably, today, Puerto Rican migration. But Hartford had the unique fortune of being home both to defense manufacturing institutions and globe-bestriding financial institutions. It became by the mid-twentieth century a global nexus for the manufacture of violent objects as well as financial instruments insuring capital against loss. This led to the creation of a singularly powerful WASP establishment, known locally as “The Bishops,” who wielded power over the city’s division of labor as well as the nation’s emergent financial networks. Other New England cities simply don’t fit the bill. Boston is and was a port city – outward facing, global, and likely too Irish (though Hartford has plenty of Irish history as well). Worcester is firmly a blue collar city – in much the same way as Hartford – but it never developed a parallel white collar ecosystem as robust as Hartford’s.\n\nOne can imagine Hartford as it was at its inception: a verdant, bowl-shaped depression tucked among the rolling hills and ancient forests of New England. Rich with the archetypal flora and fauna of America – evergreens, maples, deer and bears – the natural world provided the perfect fodder for WASP self-mythologizing. As a result, Hartford’s built environment is littered with the remains of, for lack of a better word, the effluent of the local illuminati. Stags front the bizarre clubhouses that housed the city’s elite social organizations. Stags are featured prominently on the extraordinary Elizabethan-style public schools of inner Hartford, once some of the highest-achieving schools in the nation. The Hartford, one of Hartford’s preeminent insurance companies, features a Stag on its logo.\n\nCuriously, however, the Stag is not an organic symbol of Hartford. The first Hartford Stag was the one on the city’s official seal, guaranteeing ungulate ubiquity for the city’s foreseeable future. But that Stag came from the Stag that is the symbol of Hertford, England. So it was not, initially, the Wapiti that gave Hartford its logo but the great Yankee tradition of aping English culture.\n\nThe Stag entity was subsequently transposed, modified, and extended, perhaps most famously onto the logo of The Hartford. But The Hartford’s logo itself came from The Monarch of the Glen, a glorious 1851 painting made by the English artist Edwin Landseer (more points for sophisticated English names) depicting a resolute Stag in front of Scottish highland scenery. Hilariously, the Monarch of the Glen Wikipedia page contains an entire subsection dedicated to “Modern derivatives and corporate logos.”\n\nThis is Yankeedom at its finest – assumed inheritance of traditions of Olde England, applied to the deeply individualistic, economical genius of the first Americans. "
     },
     {
       "slug": "neon-soul",
@@ -488,6 +512,94 @@
       "order": 0,
       "type": "curated",
       "place": "Memphis"
+    },
+    {
+      "slug": "boricua-hartford",
+      "title": "Boricua Hartford",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Hartford",
+      "place_order": 6,
+      "photo_order": [
+        "CT '26/Edited/Hartford/IMG_8906.jpg",
+        "CT '26/Edited/Hartford/IMG_8754.jpg",
+        "CT '26/Edited/Hartford/IMG_8588.jpg",
+        "CT '26/Edited/Hartford/IMG_8722.jpg",
+        "CT '26/Edited/Hartford/IMG_8736.jpg",
+        "CT '26/Edited/Hartford/IMG_8928.jpg"
+      ],
+      "caption": "Hartford: The San Juan of New England"
+    },
+    {
+      "slug": "police-take-notice",
+      "title": "Police Take Notice",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Hartford",
+      "place_order": 7,
+      "caption": "Considering how historically disadvantaged communities are simultaneously over and under-policed."
+    },
+    {
+      "slug": "downtown-renewed",
+      "title": "Downtown, Renewed",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Hartford",
+      "place_order": 8,
+      "caption": "\"The motor car has completely overturned our old ideas of town planning\" - Le Corbusier"
+    },
+    {
+      "slug": "saturation",
+      "title": "Saturation",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Hartford",
+      "place_order": 9,
+      "photo_order": [
+        "CT '26/Edited/Hartford/IMG_8786.jpg",
+        "CT '26/Edited/Hartford/IMG_8939-2.jpg",
+        "CT '26/Edited/Hartford/IMG_8727.jpg",
+        "CT '26/Edited/Hartford/IMG_8867.jpg",
+        "CT '26/Edited/Hartford/IMG_8603.jpg",
+        "CT '26/Edited/Hartford/IMG_8733-2.jpg",
+        "CT '26/Edited/Hartford/IMG_8753.jpg",
+        "CT '26/Edited/Hartford/IMG_8893.jpg",
+        "CT '26/Edited/Hartford/IMG_8921.jpg",
+        "CT '26/Edited/Hartford/IMG_8930.jpg",
+        "CT '26/Edited/Hartford/IMG_8803.jpg"
+      ],
+      "caption": "New England in the fall."
+    },
+    {
+      "slug": "the-capitol",
+      "title": "The Capitol",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Hartford",
+      "photo_order": [
+        "CT '26/Edited/Hartford/IMG_8621.jpg",
+        "CT '26/Edited/Hartford/IMG_8615.jpg",
+        "CT '26/Edited/Hartford/IMG_8607.jpg",
+        "CT '26/Edited/Hartford/IMG_8628.jpg",
+        "CT '26/Edited/Hartford/IMG_8627.jpg",
+        "CT '26/Edited/Hartford/IMG_8599.jpg"
+      ],
+      "caption": "Much like many capital cities of the US, Hartford's capitol complex is gorgeous, serene, and completely devoid of life."
     }
   ]
 }

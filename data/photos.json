@@ -27088,14 +27088,17 @@
       "Color"
     ],
     "tag_notes": "Arcaded red-brick Romanesque Revival commercial block with ground-floor shops, Main Street side, downtown Hartford.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8586.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8586.display.avif",
     "display_webp": "ct-2026-hartford/img_8586.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 21212497,
-    "src_mtime": 1791823449
+    "src_mtime": 1791823449,
+    "shown_in": "downtown-hartford"
   },
   "CT '26/Edited/Hartford/IMG_8588.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8588.jpg",
@@ -27127,12 +27130,14 @@
       "Color"
     ],
     "tag_notes": "The Hartford tower rising behind a whitewashed brick building painted with a large portrait mural, seen across an empty lot.",
-    "collections": [],
+    "collections": [
+      "boricua-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8588.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8588.display.avif",
     "display_webp": "ct-2026-hartford/img_8588.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 8305191,
     "src_mtime": 1791823452
   },
@@ -27166,14 +27171,12 @@
       "B&W"
     ],
     "tag_notes": "The Hartford tower rising behind a whitewashed brick building painted with a large portrait mural, seen across an empty lot.",
-    "collections": [
-      "downtown-hartford"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8588-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8588-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8588-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 7026247,
     "src_mtime": 1791823453
   },
@@ -27282,12 +27285,14 @@
       "Color"
     ],
     "tag_notes": "Five-storey red-brick Romanesque Revival block with polychrome banding behind a hedge, downtown.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8591.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8591.display.avif",
     "display_webp": "ct-2026-hartford/img_8591.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 17460081,
     "src_mtime": 1791823463
   },
@@ -27361,12 +27366,14 @@
       "Color"
     ],
     "tag_notes": "Brick factory buildings under yellow autumn trees with downtown office towers behind, from an empty parking lot.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8593.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8593.display.avif",
     "display_webp": "ct-2026-hartford/img_8593.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16953012,
     "src_mtime": 1791823470
   },
@@ -27516,14 +27523,17 @@
       "Color"
     ],
     "tag_notes": "Corning Fountain's bronze stag (the hart of Hartford) atop the fountain in Bushnell Park, with the State Capitol behind.",
-    "collections": [],
+    "collections": [
+      "the-capitol"
+    ],
     "thumb": "ct-2026-hartford/img_8599.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8599.display.avif",
     "display_webp": "ct-2026-hartford/img_8599.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16607151,
-    "src_mtime": 1791823479
+    "src_mtime": 1791823479,
+    "shown_in": "the-capitol"
   },
   "CT '26/Edited/Hartford/IMG_8599-2.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8599-2.jpg",
@@ -27556,14 +27566,13 @@
     ],
     "tag_notes": "Corning Fountain's bronze stag (the hart of Hartford) atop the fountain in Bushnell Park, with the State Capitol behind.",
     "collections": [
-      "downtown-hartford",
       "the-stag"
     ],
     "thumb": "ct-2026-hartford/img_8599-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8599-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8599-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 13560196,
     "src_mtime": 1791823481,
     "shown_in": "the-stag",
@@ -27599,14 +27608,13 @@
     ],
     "tag_notes": "The Corning Fountain stag up close — the hart standing over the falling water, turrets of the Soldiers and Sailors Arch behind.",
     "collections": [
-      "downtown-hartford",
       "the-stag"
     ],
     "thumb": "ct-2026-hartford/img_8601.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8601.display.avif",
     "display_webp": "ct-2026-hartford/img_8601.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15290328,
     "src_mtime": 1791823485,
     "shown_in": "the-stag"
@@ -27639,12 +27647,14 @@
       "Color"
     ],
     "tag_notes": "Bushnell Park lawn with one bright orange maple.",
-    "collections": [],
+    "collections": [
+      "saturation"
+    ],
     "thumb": "ct-2026-hartford/img_8603.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8603.display.avif",
     "display_webp": "ct-2026-hartford/img_8603.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 24144103,
     "src_mtime": 1791767295
   },
@@ -27716,14 +27726,17 @@
       "Color"
     ],
     "tag_notes": "The Capitol's gold dome framed by autumn maple leaves.",
-    "collections": [],
+    "collections": [
+      "the-capitol"
+    ],
     "thumb": "ct-2026-hartford/img_8607.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8607.display.avif",
     "display_webp": "ct-2026-hartford/img_8607.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 18724219,
-    "src_mtime": 1791767293
+    "src_mtime": 1791767293,
+    "shown_in": "the-capitol"
   },
   "CT '26/Edited/Hartford/IMG_8608.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8608.jpg",
@@ -27792,14 +27805,17 @@
       "Color"
     ],
     "tag_notes": "The Capitol Hotel's teal-blue frontage across the street behind a black lamp post.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8609.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8609.display.avif",
     "display_webp": "ct-2026-hartford/img_8609.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 17229511,
-    "src_mtime": 1791823490
+    "src_mtime": 1791823490,
+    "shown_in": "downtown-hartford"
   },
   "CT '26/Edited/Hartford/IMG_8613.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8613.jpg",
@@ -27831,15 +27847,12 @@
       "B&W"
     ],
     "tag_notes": "The Soldiers and Sailors Memorial Arch, Bushnell Park — twin conical towers over the Gothic arch and road, city seal (the hart) at the crown.",
-    "collections": [
-      "downtown-hartford",
-      "the-stag"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8613.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8613.display.avif",
     "display_webp": "ct-2026-hartford/img_8613.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 17210137,
     "src_mtime": 1791823493,
     "shown_in": "the-stag"
@@ -27874,14 +27887,13 @@
     ],
     "tag_notes": "Soldiers and Sailors Memorial Arch close-up: the City of Hartford seal with its stag set above the Civil War frieze, anchor and crossed-rifles roundels.",
     "collections": [
-      "downtown-hartford",
       "the-stag"
     ],
     "thumb": "ct-2026-hartford/img_8614.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8614.display.avif",
     "display_webp": "ct-2026-hartford/img_8614.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 11253843,
     "src_mtime": 1791823494,
     "shown_in": "the-stag"
@@ -27953,14 +27965,17 @@
       "Color"
     ],
     "tag_notes": "Brownstone arch spandrel and anchor roundel of the Soldiers and Sailors Arch, the Capitol dome below the arch, autumn foliage.",
-    "collections": [],
+    "collections": [
+      "the-capitol"
+    ],
     "thumb": "ct-2026-hartford/img_8615.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8615.display.avif",
     "display_webp": "ct-2026-hartford/img_8615.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 7148976,
-    "src_mtime": 1791767298
+    "src_mtime": 1791767298,
+    "shown_in": "the-capitol"
   },
   "CT '26/Edited/Hartford/IMG_8618.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8618.jpg",
@@ -27997,7 +28012,7 @@
     "display_avif": "ct-2026-hartford/img_8618.display.avif",
     "display_webp": "ct-2026-hartford/img_8618.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 18478397,
     "src_mtime": 1791823501
   },
@@ -28031,14 +28046,12 @@
       "B&W"
     ],
     "tag_notes": "Downtown brick blocks and a church tower over an empty parking lot.",
-    "collections": [
-      "downtown-hartford"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8618-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8618-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8618-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15438693,
     "src_mtime": 1791823503
   },
@@ -28109,14 +28122,17 @@
       "Color"
     ],
     "tag_notes": "The gold Capitol dome above a round yellow-green tree.",
-    "collections": [],
+    "collections": [
+      "the-capitol"
+    ],
     "thumb": "ct-2026-hartford/img_8621.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8621.display.avif",
     "display_webp": "ct-2026-hartford/img_8621.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 21583004,
-    "src_mtime": 1791767302
+    "src_mtime": 1791767302,
+    "shown_in": "the-capitol"
   },
   "CT '26/Edited/Hartford/IMG_8624.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8624.jpg",
@@ -28222,14 +28238,17 @@
       "Color"
     ],
     "tag_notes": "Carved Civil War frieze and crossed-rifles roundel on the brownstone Soldiers and Sailors Arch.",
-    "collections": [],
+    "collections": [
+      "the-capitol"
+    ],
     "thumb": "ct-2026-hartford/img_8627.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8627.display.avif",
     "display_webp": "ct-2026-hartford/img_8627.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 22918529,
-    "src_mtime": 1791823511
+    "src_mtime": 1791823511,
+    "shown_in": "the-capitol"
   },
   "CT '26/Edited/Hartford/IMG_8628.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8628.jpg",
@@ -28261,14 +28280,17 @@
       "Color"
     ],
     "tag_notes": "The Travelers Tower and a gold ribbed dome seen through dark park trees.",
-    "collections": [],
+    "collections": [
+      "the-capitol"
+    ],
     "thumb": "ct-2026-hartford/img_8628.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8628.display.avif",
     "display_webp": "ct-2026-hartford/img_8628.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16960064,
-    "src_mtime": 1791823514
+    "src_mtime": 1791823514,
+    "shown_in": "the-capitol"
   },
   "CT '26/Edited/Hartford/IMG_8629.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8629.jpg",
@@ -28341,12 +28363,14 @@
       "Color"
     ],
     "tag_notes": "Center Church's white clock tower and portico pressed against the gold-glass curtain wall of the Gold Building.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8630.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8630.display.avif",
     "display_webp": "ct-2026-hartford/img_8630.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 19833865,
     "src_mtime": 1791823519
   },
@@ -28418,14 +28442,12 @@
       "B&W"
     ],
     "tag_notes": "The castellated Wadsworth Atheneum (1842) beside a white-brick office tower, Main Street.",
-    "collections": [
-      "downtown-hartford"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8633.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8633.display.avif",
     "display_webp": "ct-2026-hartford/img_8633.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 14986362,
     "src_mtime": 1791767305
   },
@@ -28457,12 +28479,14 @@
       "Color"
     ],
     "tag_notes": "The Beaux-Arts Morgan Memorial wing of the Wadsworth Atheneum, steel ring sculpture on the lawn.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8635.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8635.display.avif",
     "display_webp": "ct-2026-hartford/img_8635.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 12898753,
     "src_mtime": 1791823524
   },
@@ -28610,12 +28634,14 @@
       "Color"
     ],
     "tag_notes": "The Wadsworth Atheneum's castellated Gothic Revival front with WADSWORTH banners, Main Street.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8642.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8642.display.avif",
     "display_webp": "ct-2026-hartford/img_8642.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16530016,
     "src_mtime": 1791823532
   },
@@ -28648,14 +28674,12 @@
       "B&W"
     ],
     "tag_notes": "The Wadsworth Atheneum's castellated Gothic Revival front with WADSWORTH banners, Main Street.",
-    "collections": [
-      "downtown-hartford"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8642-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8642-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8642-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 14414114,
     "src_mtime": 1791823535
   },
@@ -28688,12 +28712,14 @@
       "Color"
     ],
     "tag_notes": "Hartford Municipal Building (City Hall), Beaux-Arts facade with a VOTE banner over the entrance.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8645.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8645.display.avif",
     "display_webp": "ct-2026-hartford/img_8645.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 14305860,
     "src_mtime": 1791823537
   },
@@ -28726,14 +28752,12 @@
       "B&W"
     ],
     "tag_notes": "Hartford Municipal Building (City Hall), Beaux-Arts facade with a VOTE banner over the entrance.",
-    "collections": [
-      "downtown-hartford"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8645-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8645-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8645-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 12977357,
     "src_mtime": 1791823539
   },
@@ -28767,14 +28791,12 @@
       "B&W"
     ],
     "tag_notes": "The Hartford Times building's colonnade, now UConn Hartford, UCONN banners between the columns.",
-    "collections": [
-      "downtown-hartford"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8648.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8648.display.avif",
     "display_webp": "ct-2026-hartford/img_8648.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 10044117,
     "src_mtime": 1791823541
   },
@@ -28848,13 +28870,13 @@
     ],
     "tag_notes": "B.P.O. Elks Lodge No. 19 — Italianate facade with stained-glass window, elk statues by the door and an elk head on the parapet.",
     "collections": [
-      "downtown-hartford"
+      "the-stag"
     ],
     "thumb": "ct-2026-hartford/img_8651-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8651-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8651-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15636690,
     "src_mtime": 1791823547
   },
@@ -28924,14 +28946,12 @@
       "B&W"
     ],
     "tag_notes": "Stripped-classical limestone wall of the Avery Memorial wing.",
-    "collections": [
-      "downtown-hartford"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8656.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8656.display.avif",
     "display_webp": "ct-2026-hartford/img_8656.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 9519484,
     "src_mtime": 1791823551
   },
@@ -28964,12 +28984,14 @@
       "Color"
     ],
     "tag_notes": "Precast-concrete office facade against a blue glass tower downtown.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8658.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8658.display.avif",
     "display_webp": "ct-2026-hartford/img_8658.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 17389774,
     "src_mtime": 1791823555
   },
@@ -29007,7 +29029,7 @@
     "display_avif": "ct-2026-hartford/img_8661.display.avif",
     "display_webp": "ct-2026-hartford/img_8661.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 18151118,
     "src_mtime": 1791823557
   },
@@ -29041,13 +29063,13 @@
     ],
     "tag_notes": "Welcome to DOWNTOWN HARTFORD sign in a crowded surface parking lot.",
     "collections": [
-      "downtown-hartford"
+      "downtown-renewed"
     ],
     "thumb": "ct-2026-hartford/img_8661-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8661-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8661-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 14999239,
     "src_mtime": 1791823560
   },
@@ -29086,7 +29108,7 @@
     "display_avif": "ct-2026-hartford/img_8662.display.avif",
     "display_webp": "ct-2026-hartford/img_8662.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 19975989,
     "src_mtime": 1791823562
   },
@@ -29121,13 +29143,13 @@
     ],
     "tag_notes": "I-84 / Springfield–New Haven highway signs at a ramp, Brutalist concrete wall behind.",
     "collections": [
-      "downtown-hartford"
+      "downtown-renewed"
     ],
     "thumb": "ct-2026-hartford/img_8662-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8662-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8662-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16498056,
     "src_mtime": 1791823565
   },
@@ -29166,7 +29188,7 @@
     "display_avif": "ct-2026-hartford/img_8664.display.avif",
     "display_webp": "ct-2026-hartford/img_8664.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 14222520,
     "src_mtime": 1791823567
   },
@@ -29201,13 +29223,13 @@
     ],
     "tag_notes": "Row of Victorian brownstone townhouses with a turret, cars parked in front.",
     "collections": [
-      "downtown-hartford"
+      "downtown-renewed"
     ],
     "thumb": "ct-2026-hartford/img_8664-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8664-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8664-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 11585684,
     "src_mtime": 1791823569
   },
@@ -29394,14 +29416,17 @@
       "B&W"
     ],
     "tag_notes": "Italianate brick house with a deep columned porch next to Capital Spirits liquor store.",
-    "collections": [],
+    "collections": [
+      "victorians-on-wethersfield"
+    ],
     "thumb": "ct-2026-hartford/img_8669-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8669-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8669-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 11857576,
-    "src_mtime": 1791823598
+    "src_mtime": 1791823598,
+    "shown_in": "victorians-on-wethersfield"
   },
   "CT '26/Edited/Hartford/IMG_8672.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8672.jpg",
@@ -29432,14 +29457,17 @@
       "Color"
     ],
     "tag_notes": "Ivy-covered Italianate brick rowhouse with an iron fence.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8672.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8672.display.avif",
     "display_webp": "ct-2026-hartford/img_8672.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 22148092,
-    "src_mtime": 1791823603
+    "src_mtime": 1791823603,
+    "shown_in": null
   },
   "CT '26/Edited/Hartford/IMG_8672-2.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8672-2.jpg",
@@ -29584,14 +29612,12 @@
       "B&W"
     ],
     "tag_notes": "Iron park fence and stairs with the Travelers Tower far off.",
-    "collections": [
-      "downtown-hartford"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8675.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8675.display.avif",
     "display_webp": "ct-2026-hartford/img_8675.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 6679496,
     "src_mtime": 1791823613
   },
@@ -29698,12 +29724,14 @@
       "Color"
     ],
     "tag_notes": "Close facade of the Gothic stone church — the star-of-David rose window over the pointed portal.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8679.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8679.display.avif",
     "display_webp": "ct-2026-hartford/img_8679.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 17427857,
     "src_mtime": 1791823622
   },
@@ -29775,12 +29803,14 @@
       "Color"
     ],
     "tag_notes": "Brick rowhouse terrace with round bays and conical turret caps.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8681.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8681.display.avif",
     "display_webp": "ct-2026-hartford/img_8681.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 19923706,
     "src_mtime": 1791823631
   },
@@ -29890,14 +29920,12 @@
       "B&W"
     ],
     "tag_notes": "Three-storey brick walk-up with a storefront base, South Green.",
-    "collections": [
-      "the-perfect-six"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8682-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8682-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8682-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 10437545,
     "src_mtime": 1791823637
   },
@@ -29931,12 +29959,14 @@
       "Color"
     ],
     "tag_notes": "South Green Station (Engine Co. 1 / Ladder Co. 6) between brick walk-ups, a masked rider blurring past.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8685.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8685.display.avif",
     "display_webp": "ct-2026-hartford/img_8685.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 13684351,
     "src_mtime": 1791823640
   },
@@ -30051,7 +30081,7 @@
     "display_avif": "ct-2026-hartford/img_8687.display.avif",
     "display_webp": "ct-2026-hartford/img_8687.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 19534817,
     "src_mtime": 1791823654
   },
@@ -30161,12 +30191,14 @@
       "Color"
     ],
     "tag_notes": "Italianate brick block cornice with three round pediments.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8691.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8691.display.avif",
     "display_webp": "ct-2026-hartford/img_8691.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16437007,
     "src_mtime": 1791835211
   },
@@ -30200,12 +30232,14 @@
       "Color"
     ],
     "tag_notes": "Abraham A. Ribicoff United States Court House, 450 Main Street, with a pedestrian.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8693.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8693.display.avif",
     "display_webp": "ct-2026-hartford/img_8693.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 19460288,
     "src_mtime": 1791767312
   },
@@ -30239,14 +30273,12 @@
       "B&W"
     ],
     "tag_notes": "Abraham A. Ribicoff United States Court House, 450 Main Street, with a pedestrian.",
-    "collections": [
-      "downtown-hartford"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8693-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8693-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8693-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15240568,
     "src_mtime": 1791767315
   },
@@ -30356,15 +30388,16 @@
     ],
     "tag_notes": "THIS PROPERTY IS PROTECTED BY SURVEILLANCE CAMERAS sign on a pole, the Travelers Tower behind.",
     "collections": [
-      "downtown-hartford"
+      "police-take-notice"
     ],
     "thumb": "ct-2026-hartford/img_8700.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8700.display.avif",
     "display_webp": "ct-2026-hartford/img_8700.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 11227153,
-    "src_mtime": 1791835219
+    "src_mtime": 1791835219,
+    "shown_in": "police-take-notice"
   },
   "CT '26/Edited/Hartford/IMG_8702.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8702.jpg",
@@ -30545,14 +30578,17 @@
       "Color"
     ],
     "tag_notes": "Cornerstone carved with a cross and '1915', brick apartments behind.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8709.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8709.display.avif",
     "display_webp": "ct-2026-hartford/img_8709.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16672260,
-    "src_mtime": 1791767320
+    "src_mtime": 1791767320,
+    "shown_in": "downtown-hartford"
   },
   "CT '26/Edited/Hartford/IMG_8710.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8710.jpg",
@@ -30697,14 +30733,17 @@
       "B&W"
     ],
     "tag_notes": "Brownstone Italianate rowhouse with twin stoops and a lamp post.",
-    "collections": [],
+    "collections": [
+      "victorians-on-wethersfield"
+    ],
     "thumb": "ct-2026-hartford/img_8712-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8712-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8712-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 12740669,
-    "src_mtime": 1791835234
+    "src_mtime": 1791835234,
+    "shown_in": "victorians-on-wethersfield"
   },
   "CT '26/Edited/Hartford/IMG_8715.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8715.jpg",
@@ -30734,14 +30773,17 @@
       "Color"
     ],
     "tag_notes": "Three-storey brick apartment building with a crest in the pediment.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8715.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8715.display.avif",
     "display_webp": "ct-2026-hartford/img_8715.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15758015,
-    "src_mtime": 1791767323
+    "src_mtime": 1791767323,
+    "shown_in": "downtown-hartford"
   },
   "CT '26/Edited/Hartford/IMG_8718.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8718.jpg",
@@ -30777,7 +30819,7 @@
     "display_avif": "ct-2026-hartford/img_8718.display.avif",
     "display_webp": "ct-2026-hartford/img_8718.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16949925,
     "src_mtime": 1791835237
   },
@@ -30810,12 +30852,14 @@
       "B&W"
     ],
     "tag_notes": "A white steeple and domes over a parking lot.",
-    "collections": [],
+    "collections": [
+      "downtown-renewed"
+    ],
     "thumb": "ct-2026-hartford/img_8718-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8718-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8718-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15110960,
     "src_mtime": 1791835241
   },
@@ -30853,7 +30897,7 @@
     "display_avif": "ct-2026-hartford/img_8720.display.avif",
     "display_webp": "ct-2026-hartford/img_8720.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 18919047,
     "src_mtime": 1791835244
   },
@@ -30886,12 +30930,14 @@
       "B&W"
     ],
     "tag_notes": "Downtown skyline down a residential street — the Travelers Tower and towers.",
-    "collections": [],
+    "collections": [
+      "downtown-renewed"
+    ],
     "thumb": "ct-2026-hartford/img_8720-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8720-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8720-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15962973,
     "src_mtime": 1791835247
   },
@@ -30923,12 +30969,14 @@
       "Color"
     ],
     "tag_notes": "Connecticut State Employees Credit Union sign over a glass entrance.",
-    "collections": [],
+    "collections": [
+      "boricua-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8722.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8722.display.avif",
     "display_webp": "ct-2026-hartford/img_8722.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 12289037,
     "src_mtime": 1791767324
   },
@@ -30997,14 +31045,17 @@
       "B&W"
     ],
     "tag_notes": "Second Empire mansard-roofed house with a porch.",
-    "collections": [],
+    "collections": [
+      "victorians-on-wethersfield"
+    ],
     "thumb": "ct-2026-hartford/img_8723-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8723-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8723-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 7722877,
-    "src_mtime": 1791835251
+    "src_mtime": 1791835251,
+    "shown_in": "victorians-on-wethersfield"
   },
   "CT '26/Edited/Hartford/IMG_8725.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8725.jpg",
@@ -31110,12 +31161,14 @@
       "Color"
     ],
     "tag_notes": "Orange maple over a lawn of fallen leaves.",
-    "collections": [],
+    "collections": [
+      "saturation"
+    ],
     "thumb": "ct-2026-hartford/img_8727.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8727.display.avif",
     "display_webp": "ct-2026-hartford/img_8727.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 24557144,
     "src_mtime": 1791835259
   },
@@ -31184,14 +31237,17 @@
       "Color"
     ],
     "tag_notes": "Teal Second Empire house with a mansard and iron fence.",
-    "collections": [],
+    "collections": [
+      "saturation"
+    ],
     "thumb": "ct-2026-hartford/img_8733-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8733-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8733-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 21199681,
-    "src_mtime": 1791835262
+    "src_mtime": 1791835262,
+    "shown_in": "saturation"
   },
   "CT '26/Edited/Hartford/IMG_8734.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8734.jpg",
@@ -31297,12 +31353,14 @@
       "Color"
     ],
     "tag_notes": "Brick apartments with a colorful mural, school-crossing signs.",
-    "collections": [],
+    "collections": [
+      "boricua-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8736.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8736.display.avif",
     "display_webp": "ct-2026-hartford/img_8736.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 12792175,
     "src_mtime": 1791835266
   },
@@ -31335,12 +31393,14 @@
       "B&W"
     ],
     "tag_notes": "Italianate brick house between frame houses, a church tower behind.",
-    "collections": [],
+    "collections": [
+      "downtown-renewed"
+    ],
     "thumb": "ct-2026-hartford/img_8739.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8739.display.avif",
     "display_webp": "ct-2026-hartford/img_8739.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 6975138,
     "src_mtime": 1791835268
   },
@@ -31409,12 +31469,14 @@
       "B&W"
     ],
     "tag_notes": "Boarded-up wooden three-family house.",
-    "collections": [],
+    "collections": [
+      "downtown-renewed"
+    ],
     "thumb": "ct-2026-hartford/img_8741-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8741-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8741-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15794195,
     "src_mtime": 1791767338
   },
@@ -31447,12 +31509,14 @@
       "B&W"
     ],
     "tag_notes": "Decaying Italianate brick house with bracketed cornice and broken windows.",
-    "collections": [],
+    "collections": [
+      "downtown-renewed"
+    ],
     "thumb": "ct-2026-hartford/img_8742.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8742.display.avif",
     "display_webp": "ct-2026-hartford/img_8742.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16299132,
     "src_mtime": 1791835272
   },
@@ -31486,14 +31550,17 @@
       "Color"
     ],
     "tag_notes": "Brick rowhouse terrace with round bays, traffic lights.",
-    "collections": [],
+    "collections": [
+      "downtown-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8743.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8743.display.avif",
     "display_webp": "ct-2026-hartford/img_8743.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15451284,
-    "src_mtime": 1791835274
+    "src_mtime": 1791835274,
+    "shown_in": "downtown-hartford"
   },
   "CT '26/Edited/Hartford/IMG_8743-2.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8743-2.jpg",
@@ -31797,14 +31864,17 @@
       "Color"
     ],
     "tag_notes": "Used-car lot in front of brick apartments.",
-    "collections": [],
+    "collections": [
+      "saturation"
+    ],
     "thumb": "ct-2026-hartford/img_8753.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8753.display.avif",
     "display_webp": "ct-2026-hartford/img_8753.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 20619515,
-    "src_mtime": 1791835293
+    "src_mtime": 1791835293,
+    "shown_in": "saturation"
   },
   "CT '26/Edited/Hartford/IMG_8754.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8754.jpg",
@@ -31835,12 +31905,14 @@
       "Color"
     ],
     "tag_notes": "Roberto Clemente mural on the field house in Colt Park.",
-    "collections": [],
+    "collections": [
+      "boricua-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8754.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8754.display.avif",
     "display_webp": "ct-2026-hartford/img_8754.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16243167,
     "src_mtime": 1791835296
   },
@@ -31873,16 +31945,15 @@
       "B&W"
     ],
     "tag_notes": "Roberto Clemente mural on the field house in Colt Park.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8754-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8754-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8754-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 12353557,
-    "src_mtime": 1791835297
+    "src_mtime": 1791835297,
+    "shown_in": null
   },
   "CT '26/Edited/Hartford/IMG_8758.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8758.jpg",
@@ -31952,13 +32023,14 @@
     ],
     "tag_notes": "Downtown skyline and Travelers Tower beyond the Colt Park fields.",
     "collections": [
-      "coltsville"
+      "coltsville",
+      "downtown-renewed"
     ],
     "thumb": "ct-2026-hartford/img_8759.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8759.display.avif",
     "display_webp": "ct-2026-hartford/img_8759.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 12379967,
     "src_mtime": 1791835302
   },
@@ -32029,12 +32101,14 @@
       "Color"
     ],
     "tag_notes": "Colt Park picnic tables, light poles and the blue Colt dome, a sunflower mural.",
-    "collections": [],
+    "collections": [
+      "coltsville"
+    ],
     "thumb": "ct-2026-hartford/img_8764.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8764.display.avif",
     "display_webp": "ct-2026-hartford/img_8764.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 7249937,
     "src_mtime": 1791835304
   },
@@ -32066,12 +32140,14 @@
       "Color"
     ],
     "tag_notes": "Cream Italianate villa among autumn trees, Wethersfield Avenue.",
-    "collections": [],
+    "collections": [
+      "coltsville"
+    ],
     "thumb": "ct-2026-hartford/img_8767.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8767.display.avif",
     "display_webp": "ct-2026-hartford/img_8767.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 21432772,
     "src_mtime": 1791835310
   },
@@ -32140,14 +32216,12 @@
       "B&W"
     ],
     "tag_notes": "Hipped-roof brick Victorian with porch, Wethersfield Avenue.",
-    "collections": [
-      "victorians-on-wethersfield"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8770-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8770-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8770-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 14571806,
     "src_mtime": 1791835312
   },
@@ -32253,14 +32327,12 @@
       "B&W"
     ],
     "tag_notes": "Shingle-style Victorian with bay windows on Wethersfield Avenue.",
-    "collections": [
-      "victorians-on-wethersfield"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8773-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8773-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8773-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 10703810,
     "src_mtime": 1791835317
   },
@@ -32449,14 +32521,12 @@
       "B&W"
     ],
     "tag_notes": "Polish Army Veterans Assoc. entrance.",
-    "collections": [
-      "victorians-on-wethersfield"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8782.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8782.display.avif",
     "display_webp": "ct-2026-hartford/img_8782.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 11000084,
     "src_mtime": 1791835330
   },
@@ -32563,14 +32633,12 @@
       "B&W"
     ],
     "tag_notes": "Gingerbread porch with spindlework on a Victorian.",
-    "collections": [
-      "victorians-on-wethersfield"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8784-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8784-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8784-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15574138,
     "src_mtime": 1791835338
   },
@@ -32602,14 +32670,17 @@
       "Color"
     ],
     "tag_notes": "Victorian with a blue turret and witch's-hat roof among autumn trees.",
-    "collections": [],
+    "collections": [
+      "saturation"
+    ],
     "thumb": "ct-2026-hartford/img_8786.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8786.display.avif",
     "display_webp": "ct-2026-hartford/img_8786.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 21031355,
-    "src_mtime": 1791835340
+    "src_mtime": 1791835340,
+    "shown_in": "saturation"
   },
   "CT '26/Edited/Hartford/IMG_8790.jpg": {
     "key": "CT '26/Edited/Hartford/IMG_8790.jpg",
@@ -32720,7 +32791,7 @@
     "display_avif": "ct-2026-hartford/img_8796.display.avif",
     "display_webp": "ct-2026-hartford/img_8796.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 7349581,
     "src_mtime": 1791835345
   },
@@ -32755,13 +32826,13 @@
     ],
     "tag_notes": "Mercy Housing sign by a Victorian porch.",
     "collections": [
-      "victorians-on-wethersfield"
+      "police-take-notice"
     ],
     "thumb": "ct-2026-hartford/img_8796-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8796-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8796-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 6426601,
     "src_mtime": 1791835345
   },
@@ -32798,7 +32869,7 @@
     "display_avif": "ct-2026-hartford/img_8797.display.avif",
     "display_webp": "ct-2026-hartford/img_8797.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 8228805,
     "src_mtime": 1791835347
   },
@@ -32831,13 +32902,13 @@
     ],
     "tag_notes": "Victorian gable with spindle bracket ornament.",
     "collections": [
-      "victorians-on-wethersfield"
+      "police-take-notice"
     ],
     "thumb": "ct-2026-hartford/img_8797-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8797-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8797-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 6897101,
     "src_mtime": 1791835350
   },
@@ -32986,14 +33057,12 @@
       "B&W"
     ],
     "tag_notes": "Shingle-style houses along the avenue.",
-    "collections": [
-      "victorians-on-wethersfield"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8801-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8801-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8801-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 14560942,
     "src_mtime": 1791835360
   },
@@ -33025,12 +33094,14 @@
       "Color"
     ],
     "tag_notes": "Italianate house behind fall color.",
-    "collections": [],
+    "collections": [
+      "saturation"
+    ],
     "thumb": "ct-2026-hartford/img_8803.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8803.display.avif",
     "display_webp": "ct-2026-hartford/img_8803.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 21803107,
     "src_mtime": 1791835363
   },
@@ -33062,12 +33133,14 @@
       "B&W"
     ],
     "tag_notes": "Brick wall with security lights.",
-    "collections": [],
+    "collections": [
+      "police-take-notice"
+    ],
     "thumb": "ct-2026-hartford/img_8804.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8804.display.avif",
     "display_webp": "ct-2026-hartford/img_8804.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 17630027,
     "src_mtime": 1791835365
   },
@@ -33100,12 +33173,14 @@
       "B&W"
     ],
     "tag_notes": "Apartment door at 155 with notices.",
-    "collections": [],
+    "collections": [
+      "police-take-notice"
+    ],
     "thumb": "ct-2026-hartford/img_8805.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8805.display.avif",
     "display_webp": "ct-2026-hartford/img_8805.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 5217336,
     "src_mtime": 1791835365
   },
@@ -33250,14 +33325,12 @@
       "B&W"
     ],
     "tag_notes": "Brick Victorian with porch and a PUSH BUTTON FOR GREEN LIGHT sign.",
-    "collections": [
-      "victorians-on-wethersfield"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8810-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8810-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8810-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 11157147,
     "src_mtime": 1791840942
   },
@@ -33290,14 +33363,12 @@
       "B&W"
     ],
     "tag_notes": "Italianate brick building with iron balconies on the Armsmear grounds, Wethersfield Avenue.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8812.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8812.display.avif",
     "display_webp": "ct-2026-hartford/img_8812.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 17329537,
     "src_mtime": 1791840950
   },
@@ -33411,14 +33482,12 @@
       "B&W"
     ],
     "tag_notes": "A cyclist passing the Armsmear grounds.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8816.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8816.display.avif",
     "display_webp": "ct-2026-hartford/img_8816.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 17153641,
     "src_mtime": 1791840951
   },
@@ -33451,14 +33520,12 @@
       "B&W"
     ],
     "tag_notes": "Armsmear — Samuel Colt's Italianate villa with arched gate and dog statues.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8819.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8819.display.avif",
     "display_webp": "ct-2026-hartford/img_8819.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 13773757,
     "src_mtime": 1791840957
   },
@@ -33842,14 +33909,12 @@
       "B&W"
     ],
     "tag_notes": "Armsmear's Italianate main block with a portico.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8834-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8834-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8834-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15761576,
     "src_mtime": 1791840980
   },
@@ -33920,14 +33985,12 @@
       "B&W"
     ],
     "tag_notes": "Armsmear window and a white dog statue behind the fence.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8838-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8838-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8838-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15906645,
     "src_mtime": 1791840984
   },
@@ -34037,13 +34100,13 @@
     ],
     "tag_notes": "Italianate villa with a belvedere tower — Armsmear grounds.",
     "collections": [
-      "coltsville"
+      "victorians-on-wethersfield"
     ],
     "thumb": "ct-2026-hartford/img_8841-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8841-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8841-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 15588229,
     "src_mtime": 1791840990
   },
@@ -34151,12 +34214,14 @@
       "B&W"
     ],
     "tag_notes": "Overgrown field behind a wooden fence.",
-    "collections": [],
+    "collections": [
+      "coltsville"
+    ],
     "thumb": "ct-2026-hartford/img_8847.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8847.display.avif",
     "display_webp": "ct-2026-hartford/img_8847.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 7206646,
     "src_mtime": 1791840995
   },
@@ -34227,14 +34292,12 @@
       "B&W"
     ],
     "tag_notes": "Queen Anne mansion with a conical tower on a corner, traffic light.",
-    "collections": [
-      "victorians-on-wethersfield"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8853-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8853-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8853-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16183020,
     "src_mtime": 1791861376
   },
@@ -34343,13 +34406,13 @@
     ],
     "tag_notes": "Two brick three-storey six-family apartment houses side by side behind an iron fence.",
     "collections": [
-      "the-perfect-six"
+      "coltsville"
     ],
     "thumb": "ct-2026-hartford/img_8857-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8857-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8857-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 17091306,
     "src_mtime": 1791861387
   },
@@ -34495,12 +34558,14 @@
       "Color"
     ],
     "tag_notes": "Modern brick building with a porte-cochère.",
-    "collections": [],
+    "collections": [
+      "saturation"
+    ],
     "thumb": "ct-2026-hartford/img_8867.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8867.display.avif",
     "display_webp": "ct-2026-hartford/img_8867.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 20823964,
     "src_mtime": 1791861401
   },
@@ -35131,12 +35196,14 @@
       "B&W"
     ],
     "tag_notes": "Victorian with a tower.",
-    "collections": [],
+    "collections": [
+      "victorians-on-wethersfield"
+    ],
     "thumb": "ct-2026-hartford/img_8884-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8884-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8884-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 12371232,
     "src_mtime": 1791861451
   },
@@ -35472,14 +35539,12 @@
       "B&W"
     ],
     "tag_notes": "Three-storey brick apartment house over the Last Stop Market.",
-    "collections": [
-      "the-perfect-six"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8891-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8891-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8891-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 11476406,
     "src_mtime": 1791861469
   },
@@ -35511,12 +35576,14 @@
       "Color"
     ],
     "tag_notes": "Brick three-storey apartment block beside autumn trees.",
-    "collections": [],
+    "collections": [
+      "saturation"
+    ],
     "thumb": "ct-2026-hartford/img_8893.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8893.display.avif",
     "display_webp": "ct-2026-hartford/img_8893.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 20375790,
     "src_mtime": 1791861475
   },
@@ -35585,14 +35652,12 @@
       "B&W"
     ],
     "tag_notes": "Street of brick three-storey apartment houses.",
-    "collections": [
-      "the-perfect-six"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8900-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8900-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8900-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 12290963,
     "src_mtime": 1791861479
   },
@@ -35629,7 +35694,7 @@
     "display_avif": "ct-2026-hartford/img_8901.display.avif",
     "display_webp": "ct-2026-hartford/img_8901.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 14218575,
     "src_mtime": 1791861484
   },
@@ -35661,12 +35726,14 @@
       "B&W"
     ],
     "tag_notes": "Ornate brick apartment building with castellated parapet.",
-    "collections": [],
+    "collections": [
+      "the-stag"
+    ],
     "thumb": "ct-2026-hartford/img_8901-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8901-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8901-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 12129688,
     "src_mtime": 1791861487
   },
@@ -35883,12 +35950,14 @@
       "Color"
     ],
     "tag_notes": "Frame houses behind large trees.",
-    "collections": [],
+    "collections": [
+      "boricua-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8906.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8906.display.avif",
     "display_webp": "ct-2026-hartford/img_8906.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16231626,
     "src_mtime": 1791945350
   },
@@ -35994,14 +36063,12 @@
       "B&W"
     ],
     "tag_notes": "Brick apartment houses with iron fences along the street.",
-    "collections": [
-      "the-perfect-six"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8908-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8908-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8908-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 5462641,
     "src_mtime": 1791945354
   },
@@ -36115,7 +36182,7 @@
     "display_avif": "ct-2026-hartford/img_8910.display.avif",
     "display_webp": "ct-2026-hartford/img_8910.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 20186766,
     "src_mtime": 1791945366
   },
@@ -36222,14 +36289,12 @@
       "B&W"
     ],
     "tag_notes": "Brick apartment house and City of Hartford trash bins.",
-    "collections": [
-      "the-perfect-six"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8912-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8912-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8912-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 6293088,
     "src_mtime": 1791945373
   },
@@ -36409,12 +36474,14 @@
       "Color"
     ],
     "tag_notes": "Yellow-and-blue Victorian three-decker with round porches.",
-    "collections": [],
+    "collections": [
+      "saturation"
+    ],
     "thumb": "ct-2026-hartford/img_8921.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8921.display.avif",
     "display_webp": "ct-2026-hartford/img_8921.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 20746859,
     "src_mtime": 1791945392
   },
@@ -36750,12 +36817,14 @@
       "Color"
     ],
     "tag_notes": "Simple gabled frame house beside a large tree.",
-    "collections": [],
+    "collections": [
+      "boricua-hartford"
+    ],
     "thumb": "ct-2026-hartford/img_8928.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8928.display.avif",
     "display_webp": "ct-2026-hartford/img_8928.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16959866,
     "src_mtime": 1791945421
   },
@@ -36863,14 +36932,12 @@
       "B&W"
     ],
     "tag_notes": "Engine Co. 15 / Ladder Co. 2 firehouse beside brick six-family apartment houses.",
-    "collections": [
-      "the-perfect-six"
-    ],
+    "collections": [],
     "thumb": "ct-2026-hartford/img_8929-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8929-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8929-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 16974369,
     "src_mtime": 1791945432
   },
@@ -36902,12 +36969,14 @@
       "Color"
     ],
     "tag_notes": "Blue gambrel-roofed Colonial Revival house.",
-    "collections": [],
+    "collections": [
+      "saturation"
+    ],
     "thumb": "ct-2026-hartford/img_8930.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8930.display.avif",
     "display_webp": "ct-2026-hartford/img_8930.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 12207263,
     "src_mtime": 1791945433
   },
@@ -37313,12 +37382,14 @@
       "Color"
     ],
     "tag_notes": "Hispanic & American Foods deli with produce stand, balloons.",
-    "collections": [],
+    "collections": [
+      "saturation"
+    ],
     "thumb": "ct-2026-hartford/img_8939-2.thumb.webp",
     "display_avif": "ct-2026-hartford/img_8939-2.display.avif",
     "display_webp": "ct-2026-hartford/img_8939-2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 8969566,
     "src_mtime": 1791945465
   },
@@ -79500,9 +79571,7 @@
       "Color"
     ],
     "tag_notes": "The Colt Armory's blue onion dome with its gold stars and rampant-colt weathervane, seen past the brick corner of a mill and the tapering COLT chimney, autumnal leaves at right.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "new-england-2026-08-23/img_7631.thumb.webp",
     "display_avif": "new-england-2026-08-23/img_7631.display.avif",
     "display_webp": "new-england-2026-08-23/img_7631.display.webp",
@@ -79537,9 +79606,7 @@
       "Color"
     ],
     "tag_notes": "The starred blue onion dome on its white colonnade riding above the Colt factory's yellow-and-red industrial glazing, the mill's sawtooth roof and a lower brick range in front.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "new-england-2026-08-23/img_7636.thumb.webp",
     "display_avif": "new-england-2026-08-23/img_7636.display.avif",
     "display_webp": "new-england-2026-08-23/img_7636.display.webp",
@@ -79574,9 +79641,7 @@
       "Color"
     ],
     "tag_notes": "The Colt dome centered over the armory complex at dusk — brick gable and standing-seam roofs below, a steel pipe bridge crossing the drive, floodlit brick walls to either side.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "new-england-2026-08-23/img_7638.thumb.webp",
     "display_avif": "new-england-2026-08-23/img_7638.display.avif",
     "display_webp": "new-england-2026-08-23/img_7638.display.webp",
@@ -79688,9 +79753,7 @@
       "Color"
     ],
     "tag_notes": "Downtown skyline at sunset: the Travelers Tower's tiered stone shaft and cupola at center, a gold-glass slab behind, corporate towers to either side over dark low brick.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "new-england-2026-08-23/img_7647.thumb.webp",
     "display_avif": "new-england-2026-08-23/img_7647.display.avif",
     "display_webp": "new-england-2026-08-23/img_7647.display.webp",
@@ -79725,9 +79788,7 @@
       "Color"
     ],
     "tag_notes": "The blue starred dome above the Colt works' yellow-framed industrial windows, the long brownstone range and lamp standards below, cars in the lot at the foot of the wall.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "new-england-2026-08-23/img_7648.thumb.webp",
     "display_avif": "new-england-2026-08-23/img_7648.display.avif",
     "display_webp": "new-england-2026-08-23/img_7648.display.webp",
@@ -79763,9 +79824,7 @@
       "Color"
     ],
     "tag_notes": "The COLT chimney alone against a pale evening sky and low cumulus, its painted letters running down the brick, the works' white parapet and lamp standard below.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "new-england-2026-08-23/img_7651.thumb.webp",
     "display_avif": "new-england-2026-08-23/img_7651.display.avif",
     "display_webp": "new-england-2026-08-23/img_7651.display.webp",
@@ -79836,9 +79895,7 @@
       "Color"
     ],
     "tag_notes": "The COLT chimney over a brick shed with the Travelers Tower small and pale in the gap beyond, a black 4x4 pickup filling the right of the frame in a parking lot.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "new-england-2026-08-23/img_7656.thumb.webp",
     "display_avif": "new-england-2026-08-23/img_7656.display.avif",
     "display_webp": "new-england-2026-08-23/img_7656.display.webp",
@@ -79873,9 +79930,7 @@
       "Color"
     ],
     "tag_notes": "A Gothic Revival brownstone church in silhouette at dusk — clustered chimney-like pinnacles, crosses on the gables, a conical-roofed apse with patterned slate — behind chain-link and a parking lot.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "new-england-2026-08-23/img_7659.thumb.webp",
     "display_avif": "new-england-2026-08-23/img_7659.display.avif",
     "display_webp": "new-england-2026-08-23/img_7659.display.webp",
@@ -79911,9 +79966,7 @@
       "Color"
     ],
     "tag_notes": "Looking up an empty street into downtown at blue hour: the Travelers Tower's floodlit cupola at center, gold-glass and corporate slabs around it, green signals down the hill.",
-    "collections": [
-      "coltsville"
-    ],
+    "collections": [],
     "thumb": "new-england-2026-08-23/img_7663 1.thumb.webp",
     "display_avif": "new-england-2026-08-23/img_7663 1.display.avif",
     "display_webp": "new-england-2026-08-23/img_7663 1.display.webp",
