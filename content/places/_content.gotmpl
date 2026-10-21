@@ -1,17 +1,12 @@
-{{/* Generate one clickable album page per place that has photos (auto-syncs
-     with data/places.json + the manifest). Slug = urlized city. */}}
+{{/* Generate one page per place that has photos (auto-syncs with
+     data/places.json + the index). Slug = urlized city. */}}
 {{ $palette := site.Params.palette }}
-{{/* Quarantined photos (member of a `withheld` collection) must not make a place
-     look populated — inlined here because content adapters have no partials. */}}
-{{ $withheld := slice }}
-{{ range $c := (index hugo.Data.collections "collections") }}
-  {{ if $c.withheld }}{{ $withheld = $withheld | append $c.slug }}{{ end }}
-{{ end }}
+{{/* A place gets a page when it has PUBLISHED photos — data/index.json
+     "places" (build_index.py) already applies the withheld gate, so no
+     manifest scan is needed here. */}}
+{{ $published := index hugo.Data.index "places" | default dict }}
 {{ range $i, $pl := (index hugo.Data.places "places") }}
-  {{ $has := false }}
-  {{ range $k, $p := hugo.Data.photos }}
-    {{ if and (not $has) $p.thumb (eq $p.city $pl.city) (eq 0 (len (intersect $withheld (or $p.collections slice)))) }}{{ $has = true }}{{ end }}
-  {{ end }}
+  {{ $has := isset $published $pl.city }}
   {{ if $has }}
     {{ $.AddPage (dict
         "kind" "page"

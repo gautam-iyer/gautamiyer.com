@@ -1,6 +1,10 @@
-{{/* Generate one page per collection from data/collections.json (auto-syncs). */}}
+{{/* Generate one page per collection that has at least one SHOWN photo
+     (data/index.json "collections", which already applies the withheld gate
+     and the one-visible-collection rule). Archived, withheld (staging,
+     needs-review) and still-empty collections get no page. */}}
+{{ $shown := index hugo.Data.index "collections" | default dict }}
 {{ range (index hugo.Data.collections "collections") }}
-  {{ if .archived }}{{ continue }}{{ end }}
+  {{ if or .archived (not (index $shown .slug)) }}{{ continue }}{{ end }}
   {{ $page := dict
       "kind" "page"
       "path" .slug

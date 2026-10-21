@@ -1,9 +1,0 @@
-{{- /* Returns the featured collections, sorted by `order`. Single source of
-       truth for "which collections are featured" — used by the home carousels,
-       the side-nav submenu, and collection accent colours. Call cached:
-         {{ $featured := partialCached "featured.html" . "featured" }} */ -}}
-{{- $f := slice -}}
-{{- range (index hugo.Data.collections "collections") -}}
-  {{- if and .featured (not .archived) -}}{{- $f = $f | append . -}}{{- end -}}
-{{- end -}}
-{{- return (sort $f "order") -}}

@@ -7,7 +7,7 @@
   if (!triggers.length) return;
 
   // The navigation group for a slide: its carousel/gallery container, else all.
-  const groupOf = (el) => el.closest('[data-carousel], .hero-collage, .jgallery, .collection-grid');
+  const groupOf = (el) => el.closest('[data-carousel], .hero-collage, .place-coll, .jgallery');
   // Precompute each slide's group ONCE (one closest() per trigger here) instead
   // of rescanning all triggers on every open — matters on /photos (1438 items).
   const groups = new Map();

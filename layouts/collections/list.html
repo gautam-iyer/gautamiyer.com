@@ -1,7 +1,6 @@
 {{ define "main" }}
 <main>
   {{ $base := .Site.Params.photo_base | default "/img/" }}
-  {{ $palette := .Site.Params.palette }}
   {{/* city → "City, ST": a bare title like "Downtown" needs its place beside it */}}
   {{ $placeNames := dict }}
   {{ range (index hugo.Data.places "places") }}{{ $placeNames = merge $placeNames (dict .city .name) }}{{ end }}
@@ -32,10 +31,7 @@
       {{ $title := $c.title }}
       {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
       {{ if and (gt (len $items) 0) (not $c.hidden) (not $c.archived) }}
-        {{/* Same accent rule as collections/single.html: palette by registry
-             index, overridden to the featured-slot colour when featured. */}}
-        {{ $color := index $palette (mod $ri 5) }}
-        {{ range $fi, $fc := (partialCached "featured.html" $ "featured") }}{{ if eq $fc.slug $slug }}{{ $color = index $palette (mod $fi 5) }}{{ end }}{{ end }}
+        {{ $color := partialCached "accent.html" $slug $slug }}
         {{ $cover := index $items 0 }}
         {{ $places := $c.places | default (slice ($c.place | default "")) }}
         {{/* Majority-old-camera collections get bumped down the default order

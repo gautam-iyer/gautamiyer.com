@@ -9,44 +9,44 @@
     {{ with .Content }}<div class="intro place-overview">{{ . }}</div>{{ end }}
   </div>
 
-  {{/* CURATED PLACE: one full-bleed collage wall per collection, the same
-       component as the home page. data/index.json "place_colls" lists the
-       city's single-place collections in display order (build_index.py);
-       collections spanning several places live only on /collections/. Each
-       wall is pinned to its collection (data-collage="<slug>") instead of the
-       home page's random pick. A city with no collections yet falls through to
-       the legacy album below until it is curated. */}}
+  {{/* CURATED PLACE: one row per collection — a text column (title in the
+       collection's accent, photo count, the caption written in the tagger)
+       beside a collage wall pinned to that collection (data-collage="<slug>",
+       the same component as the home walls). data/index.json "place_colls"
+       lists the city's single-place collections in display order
+       (build_index.py); collections spanning several places live only on
+       /collections/. A city with no collections yet falls through to the
+       legacy album below until it is curated. */}}
   {{ $walls := index (index hugo.Data.index "place_colls" | default dict) $place }}
   {{ if $walls }}
+  {{ $reg := dict }}
+  {{ range (index hugo.Data.collections "collections") }}{{ $reg = merge $reg (dict .slug .) }}{{ end }}
   {{ $pools := dict }}
-  {{ $cmeta := dict }}
-  {{ range $c := (index hugo.Data.collections "collections") }}
-    {{ if in $walls $c.slug }}
+  <div class="place-walls">
+    {{ range $slug := $walls }}
+      {{ $c := index $reg $slug }}
+      {{ $color := partialCached "accent.html" $slug $slug }}
+      {{ $n := len (index (index hugo.Data.index "collections") $slug) }}
       {{ $pool := slice }}
-      {{ range (index (index hugo.Data.index "walls") $c.slug) }}
+      {{ range (index (index hugo.Data.index "walls") $slug) }}
         {{ $pool = $pool | append (dict
             "thumb" (printf "%s%s" $base .thumb)
             "avif" (printf "%s%s" $base .avif)
             "webp" (printf "%s%s" $base .webp)
             "ar" .ar "title" (.title | default "") "meta" (.meta | default "")) }}
       {{ end }}
-      {{ $pools = merge $pools (dict $c.slug $pool) }}
-      {{/* no place in the caption — the page already says where we are */}}
-      {{ $cmeta = merge $cmeta (dict $c.slug (dict "title" $c.title "place" "" "href" (printf "/collections/%s/" $c.slug))) }}
-    {{ end }}
-  {{ end }}
-  <div class="place-walls">
-    {{ range $walls }}
-    <section class="hero-collage hero-collage--follow" aria-label="{{ (index $cmeta .).title }}">
-      <div class="collage" data-collage="{{ . }}"></div>
-      <a class="collage-caption" data-collage-caption hidden></a>
+      {{ $pools = merge $pools (dict $slug $pool) }}
+    <section class="place-coll" aria-label="{{ $c.title }}">
+      <div class="place-coll-text">
+        <a class="place-coll-title subsubhead" style="color:{{ $color }}" href="/collections/{{ $slug }}/">{{ $c.title }}</a>
+        <div class="place-coll-count">{{ $n }} photograph{{ if ne $n 1 }}s{{ end }}</div>
+        {{ with $c.caption }}<div class="place-coll-caption">{{ . | markdownify }}</div>{{ end }}
+      </div>
+      <div class="collage" data-collage="{{ $slug }}"></div>
     </section>
     {{ end }}
   </div>
-  <script>
-    window.COLLAGE_POOLS = {{ $pools | jsonify | safeJS }};
-    window.COLLAGE_META = {{ $cmeta | jsonify | safeJS }};
-  </script>
+  <script>window.COLLAGE_POOLS = {{ $pools | jsonify | safeJS }};</script>
   {{ else }}
 
   {{/* Album — every photo from this place, as a justified gallery + lightbox.
@@ -70,38 +70,7 @@
   </div>
   {{ end }}
 
-  {{/* Collections in this place. A collection's place = its `place` field, else the city of its photos. */}}
-  {{ $colls := slice }}
-  {{ range $c := (index hugo.Data.collections "collections") }}
-    {{ $cplace := $c.place }}
-    {{ if not $cplace }}
-      {{ range $k, $p := hugo.Data.photos }}
-        {{ if and (not $cplace) (in (or $p.collections slice) $c.slug) }}{{ $cplace = $p.city }}{{ end }}
-      {{ end }}
-    {{ end }}
-    {{ if and (eq $cplace $place) (not $c.hidden) (not $c.archived) (not $c.withheld) }}{{ $colls = $colls | append $c }}{{ end }}
-  {{ end }}
-
-  {{ with $colls }}
-  <div class="section-label">Collections</div>
-  <div class="featured-grid">
-    {{ range . }}
-      {{ $slug := .slug }}
-      {{ $title := .title }}
-      {{ $items := partialCached "collitems.html" (dict "slug" $slug "base" $base) $slug }}
-      {{ $count := len $items }}
-      {{ $cover := .cover }}
-      {{ if and (not $cover) (gt $count 0) }}{{ $cover = (index $items 0).thumb }}{{ end }}
-      <a href="/collections/{{ $slug }}/" class="featured-item">
-        <div class="featured-image">{{ with $cover }}<img src="{{ . }}" alt="{{ $title }}">{{ end }}</div>
-        <div class="featured-title">{{ $title }}</div>
-        <div class="featured-desc">{{ $count }} photograph{{ if ne $count 1 }}s{{ end }}</div>
-      </a>
-    {{ end }}
-  </div>
-  {{ end }}
-
-  {{ end }}{{/* end legacy album + collection cards */}}
+  {{ end }}{{/* end legacy album */}}
 
   {{/* Essays tagged with this place (writing front matter: places: ["Pittsburgh"]) */}}
   {{ $essays := where (where .Site.RegularPages "Section" "work") "Params.places" "intersect" (slice $place) }}

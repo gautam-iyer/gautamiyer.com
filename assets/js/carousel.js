@@ -1,8 +1,7 @@
-// Infinite center-mode carousels for the home featured collections, with a
-// "one at a time" spotlight: only the dominant carousel (most in view) plays
-// and is fully opaque; the others fade to white and pause. A single
-// IntersectionObserver hands off as you scroll and fires a `collectionchange`
-// event so the side-nav can highlight the matching collection.
+// Infinite center-mode carousel (collection pages), with a "one at a time"
+// spotlight when a page holds several: only the dominant carousel (most in
+// view) plays and is fully opaque; the others fade to white and pause. A single
+// IntersectionObserver hands off as you scroll.
 //
 // Each carousel loops infinitely: the track is flanked by a full clone set on
 // each side so there are always photos left and right; when a move lands in a
@@ -18,21 +17,9 @@
     const N = originals.length;
     if (N === 0) return null;
 
-    // Shuffle so each visit shows the collection's photos in a fresh order
-    // (Fisher–Yates), then reflect that order in the DOM before cloning.
-    // Camera priority: frames from the old camera (data-cam="EOS 7D") are
-    // stable-partitioned AFTER everything else, so mixed collections lead with
-    // new-camera work. All-old collections (e.g. Buffalo) are unaffected.
-    if (N > 1) {
-      for (let x = N - 1; x > 0; x--) {
-        const y = Math.floor(Math.random() * (x + 1));
-        [originals[x], originals[y]] = [originals[y], originals[x]];
-      }
-      const isOld = (s) => s.dataset.cam === 'EOS 7D';
-      originals = originals.filter((s) => !isOld(s)).concat(originals.filter(isOld));
-      originals.forEach((s) => track.appendChild(s));
-    }
-
+    // Slides arrive in the collection's sequence (build_index.py in_sequence:
+    // the order set in the tagger, old-camera frames last by default) and are
+    // never reshuffled — the carousel opens on photo 1.
     originals.forEach((s, i) => (s.dataset.idx = i));
 
     if (N > 1) {
@@ -130,14 +117,9 @@
   });
   if (!controllers.length) return;
 
-  function announce(id) { document.dispatchEvent(new CustomEvent('collectionchange', { detail: id })); }
-
   // Top carousel leads on load; the rest start dormant (dimmed).
   controllers.forEach((c, idx) => (idx === 0 ? c.activate() : c.deactivate()));
   setGrid(controllers[0].color);
-  // Defer the first highlight: nav.js's listener is a separate deferred script
-  // that runs after this one, so dispatching synchronously would be missed.
-  setTimeout(() => announce(controllers[0].id), 0);
 
   // Hand off to the most-visible carousel as the page scrolls. Runs even for a
   // single carousel so the grid tint resets to neutral when it scrolls away.
@@ -161,7 +143,6 @@
       if (winner.id === currentId) return;
       currentId = winner.id;
       controllers.forEach((c) => (c === winner ? c.activate() : c.deactivate()));
-      announce(currentId);
     }, { threshold: [0.15, 0.4, 0.7], rootMargin: '-10% 0px -10% 0px' });
 
     controllers.forEach((c) => { if (c.section) io.observe(c.section); });

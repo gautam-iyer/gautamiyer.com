@@ -230,10 +230,16 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .plhead b{font-size:15px}
  .plhead .n{color:#71717a}
  .plstrip{display:flex;flex-wrap:wrap;gap:6px}
+ .plcap{display:block;width:100%;box-sizing:border-box;min-height:46px;font:13px/1.5 inherit;margin:0 0 8px;border:1px solid #e4e4e7;border-radius:6px;padding:6px 8px;resize:vertical;color:#27272a}
+ .plcap:focus{outline:none;border-color:#7c3aed}
  .plcell{position:relative;height:110px;cursor:pointer;border-radius:4px;overflow:hidden;outline:2px solid transparent}
  .plcell img{height:100%;width:100%;object-fit:cover;display:block;background:#e4e4e7}
  .plcell:hover{outline-color:#7c3aed}
  .plcell.elsewhere{opacity:.35} .plcell.elsewhere:hover{opacity:.8}
+ .plcell[draggable=true]{cursor:grab}
+ .plcell .seq{position:absolute;left:3px;top:3px;font-size:10px;font-weight:700;background:rgba(24,24,27,.78);color:#fff;border-radius:4px;padding:1px 5px}
+ .plcell.dragging{opacity:.3}
+ .plcell.drop-before{box-shadow:-4px 0 0 #7c3aed} .plcell.drop-after{box-shadow:4px 0 0 #7c3aed}
  .plcell .tagl{position:absolute;left:3px;bottom:3px;font-size:9.5px;background:rgba(255,255,255,.92);border-radius:4px;padding:1px 4px;color:#3f3f46;max-width:calc(100% - 6px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
  .plcell .stg{position:absolute;right:3px;top:3px;font-size:9px;font-weight:700;background:#f59e0b;color:#fff;border-radius:4px;padding:1px 4px}
  .plsec{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#71717a;margin:22px 0 8px}
@@ -391,7 +397,7 @@ async function boot(){
   NEEDUP=Object.values(PHOTOS).filter(p=>p.needs_upload).length;
   startRotPoll();   // a reload mid-rotation should still pick up the finished pixels
   document.querySelectorAll('#modeseg button').forEach(b=>b.onclick=()=>{
-    mode=b.dataset.mode; page=0; memberSlug=null;
+    mode=b.dataset.mode; page=0; memberSlug=null; memberReturn='colls';
     location.hash=mode;
     document.querySelectorAll('#modeseg button').forEach(x=>x.classList.toggle('on',x===b));
     render();
@@ -538,12 +544,11 @@ function collRow(key){
     <button onclick="(()=>{const i=document.getElementById('nc-${cssid(key)}');if(i.value.trim())newCollection(i.value.trim(),'${jesc(key)}')})()">＋ create & add</button></div></div>`;
 }
 const cssid=k=>k.replace(/[^a-z0-9]/gi,'_');
-// Special roles: Hero (in the home-page hero rotation) + Place cover (this
-// photo represents its place on /places). One cover per city.
+// Special role: Place cover (this photo represents its place on /places).
+// One cover per city.
 function rolesRow(key){
   const p=PHOTOS[key];
   return `<div class="dim" data-dim="roles"><div class="label">Roles</div><div class="chips">`+
-    `<span class="chip role ${p.hero?'on':''}" onclick="toggleHero('${jesc(key)}')">★ Hero</span>`+
     `<span class="chip role ${p.place_cover?'on':''}" onclick="toggleCover('${jesc(key)}')">⚑ Place cover</span>`+
     `</div></div>`;
 }
@@ -554,7 +559,6 @@ function mediumRow(key){
   return `<div class="dim" data-dim="medium"><div class="label">Medium</div><div class="chips">${chip('Digital')}${chip('Film')}</div></div>`;
 }
 window.setMedium=(key,v)=>{PHOTOS[key].medium=v;save(key,{medium:v});repaint(key,'medium',mediumRow(key));};
-window.toggleHero=(key)=>{const v=!PHOTOS[key].hero;PHOTOS[key].hero=v;save(key,{hero:v});repaint(key,'roles',rolesRow(key));};
 window.toggleCover=(key)=>{const v=!PHOTOS[key].place_cover;
   if(v){const city=PHOTOS[key].city;Object.keys(PHOTOS).forEach(k=>{
     if(k!==key&&PHOTOS[k].city===city&&PHOTOS[k].place_cover){PHOTOS[k].place_cover=false;save(k,{place_cover:false});
@@ -766,12 +770,12 @@ function renderColls(){
      <td class="ct">${collCount(c.slug)}</td>
      <td><input type="checkbox" ${c.featured?'checked':''} onchange="updateColl('${esc(c.slug)}',{featured:this.checked})"></td>
      <td><input class="order" type="number" min="0" value="${c.order||0}" onchange="updateColl('${esc(c.slug)}',{order:+this.value})"></td>
-     <td title="Eligible for the home-page collage hero. Curate which members show via the ▦ toggle in Edit members."><input type="checkbox" ${c.collage?'checked':''} onchange="updateColl('${esc(c.slug)}',{collage:this.checked})"> <span class="ct">${c.collage?collageCount(c.slug)+' ▦':''}</span></td>
+     <td title="Eligible for the home-page collage walls. Curate which members make up the wall via the ▦ toggle in Edit members."><input type="checkbox" ${c.collage?'checked':''} onchange="updateColl('${esc(c.slug)}',{collage:this.checked})"> <span class="ct">${c.collage?collageCount(c.slug)+' ▦':''}</span></td>
      <td>${c.collage?`<input class="order" type="number" min="0" placeholder="—" value="${c.collage_rank||''}" onchange="updateColl('${esc(c.slug)}',{collage_rank:+this.value||0})" title="Home-collage priority: 1 = most likely to appear, 2 next, and so on — weighted, still random. Blank/0 = unranked (all unranked share the tier below the last ranked).">`:''}</td>
      <td><button class="linkbtn" onclick="editMembers('${esc(c.slug)}')">Edit members →</button>
          <button class="linkbtn arch" title="Remove from the site (membership kept; restore anytime from the Archived list below)" onclick="archiveColl('${esc(c.slug)}')">Archive</button></td>
    </tr>
-   <tr class="caprow${c.featured?' feat':''}"><td colspan="8"><div class="caplabel">Caption${c.featured?' — shown on the home page':''}</div><textarea class="caption" placeholder="Write a 2–10 sentence caption…" onchange="updateColl('${esc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea></td></tr>`).join('');
+   <tr class="caprow${c.featured?' feat':''}"><td colspan="8"><div class="caplabel">Caption — shown beside the collection on its place page, and on its collection page</div><textarea class="caption" placeholder="Write a 2–10 sentence caption…" onchange="updateColl('${esc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea></td></tr>`).join('');
   const archRows=archived.slice().sort((a,b)=>a.title.localeCompare(b.title))
    .map(c=>`<tr class="archrow">
      <td class="ct">${esc(c.title)}</td>
@@ -782,12 +786,10 @@ function renderColls(){
    </tr>`).join('');
   const archBlock=archived.length?`<tr><td colspan="8" class="archhead">Archived (${archived.length})</td></tr>${archRows}`:'';
   const cities=uniq(Object.values(PHOTOS).map(p=>p.city));
-  // Two special "sets" browsable in the same grid: the home Hero rotation and
-  // the per-place cover photos.
+  // A special "set" browsable in the same grid: the per-place cover photos.
   const roleRows=`
-   <tr class="role-row"><td><b>★ Hero</b> <span class="ct">— home hero rotation</span></td><td class="ct">any</td><td class="ct">${targetCount('__hero')}</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__hero')">Edit set →</button></td></tr>
    <tr class="role-row"><td><b>⚑ Place cover</b> <span class="ct">— one per place</span></td><td class="ct">per city</td><td class="ct">${targetCount('__cover')}</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__cover')">Edit set →</button></td></tr>`;
-  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — type one or several <b>comma-separated</b> locations (e.g. “Newark, Brooklyn”) to span multiple; the site’s Collections filter then lists it under each. Tick <b>Featured</b> + set <b>Order</b> (1,2,3…) to choose the home-page 5 and their sequence. Tick <b>Collage</b> to make a collection eligible for the home collage walls — then curate WHICH photos show with the ▦ toggle inside “Edit members”: ONLY flagged photos appear (12–18 tiles gap-perfectly; a handful renders as a short wall of big cells, possibly with some crop). <b>Home rank</b> skews which collections the three walls draw: 1 = most likely, 2 next, etc — weighted but still random; blank = unranked. “Edit members / set” opens the add/remove grid — that includes the two special sets at the top: ★ Hero and ⚑ Place cover.</p>
+  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — one city puts the collection on that place’s page; several <b>comma-separated</b> cities (e.g. “Newark, Brooklyn”) make it a multi-place collection, which appears on NO place page, only on /collections/ under “Multiple places”. (The <b>Places</b> mode is the easier way to build and order a place’s collections.) <b>Featured</b> + <b>Order</b> now only pick a collection’s accent colour. Tick <b>Collage</b> to make a collection eligible for the home walls. The ▦ toggle inside “Edit members” picks WHICH photos make up its wall, on home AND on its place page: if any are flagged, ONLY those appear (12–18 tile best; a handful renders as a few big cells); if none are, every shown photo is in the pool. <b>Home rank</b> skews which collections the five home walls draw: 1 = most likely; blank = unranked. “Edit members / set” opens the add/remove grid, including ⚑ Place cover at the top.</p>
    <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th>Collage</th><th>Home rank</th><th></th></tr></thead><tbody>${roleRows}${rows}${archBlock}</tbody></table>
    <datalist id="dl-place">${cities.map(c=>`<option value="${esc(c)}">`).join('')}</datalist>`;
 }
@@ -803,16 +805,15 @@ window.editMembers=(slug)=>{mode='members';memberSlug=slug;page=0;memberFilter.c
    scoped; cleared when switching collections. */
 let emptiedKeys=null;
 
-/* ============ EDIT-MEMBERS GRID (collections + Hero / Place-cover) ============
-   memberSlug is a collection slug, or the pseudo-targets "__hero" / "__cover"
+/* ============ EDIT-MEMBERS GRID (collections + Place-cover) ============
+   memberSlug is a collection slug, or the pseudo-target "__cover"
    (per-photo flags). isIn/setIn branch on which; the rest is shared. */
 const memberFilter={city:'',all:false};
-function targetLabel(t){return t==='__hero'?'★ Hero':t==='__cover'?'⚑ Place cover':((COLLS.find(x=>x.slug===t)||{}).title||t);}
-function isIn(key,t){const p=PHOTOS[key];return t==='__hero'?!!p.hero:t==='__cover'?!!p.place_cover:(p.collections||[]).includes(t);}
+function targetLabel(t){return t==='__cover'?'⚑ Place cover':((COLLS.find(x=>x.slug===t)||{}).title||t);}
+function isIn(key,t){const p=PHOTOS[key];return t==='__cover'?!!p.place_cover:(p.collections||[]).includes(t);}
 function targetCount(t){return Object.keys(PHOTOS).filter(k=>isIn(k,t)).length;}
 function setIn(key,t,on){const p=PHOTOS[key];
-  if(t==='__hero'){p.hero=on;save(key,{hero:on});}
-  else if(t==='__cover'){
+  if(t==='__cover'){
     if(on){const city=p.city;Object.keys(PHOTOS).forEach(k=>{if(k!==key&&PHOTOS[k].city===city&&PHOTOS[k].place_cover){PHOTOS[k].place_cover=false;save(k,{place_cover:false});}});}
     p.place_cover=on;save(key,{place_cover:on});}
   else{const s=new Set(p.collections||[]);on?s.add(t):s.delete(t);p.collections=[...s];save(key,{collections:[...s]});}}
@@ -840,7 +841,7 @@ window.toggleCollage=(ev,key)=>{ev.stopPropagation();
    this collection so it can be rebuilt one-by-one via "show all photos".
    Regular collections only — not the ★/⚑ pseudo-sets. */
 window.emptyCollection=async()=>{const t=memberSlug;
-  if(t==='__hero'||t==='__cover')return;
+  if(t==='__cover')return;
   const keys=Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(t));
   if(!keys.length)return;
   const c=COLLS.find(x=>x.slug===t);
@@ -873,7 +874,7 @@ function renderMembers(){
       <label style="font-size:13px"><input type="checkbox" id="m-all" ${memberFilter.all?'checked':''}> show all photos (to add)</label>
       <select id="m-city"><option value="">All cities</option>${cities.map(c=>`<option value="${esc(c)}"${c===memberFilter.city?' selected':''}>${esc(c)}</option>`).join('')}</select>
       ${showCollage?`<button class="keepall" onclick="deselectAllCollage()" title="Clear every ▦ collage flag in this collection">✕ Deselect all ▦</button>`:''}
-      ${(t!=='__hero'&&t!=='__cover')?`<button class="keepall" onclick="emptyCollection()" title="Remove every photo from this collection (membership only — nothing is deleted) so you can rebuild it one by one">⊘ Empty collection…</button>`:''}
+      ${t!=='__cover'?`<button class="keepall" onclick="emptyCollection()" title="Remove every photo from this collection (membership only — nothing is deleted) so you can rebuild it one by one">⊘ Empty collection…</button>`:''}
     </div>
     <div class="grid">`+slice.map(key=>{const p=PHOTOS[key];const inn=isIn(key,t);
       const cb=showCollage&&inn?`<span class="cbadge${p.collage?' on':''}" title="Include in home-page collage" onclick="toggleCollage(event,'${jesc(key)}')">▦</span>`:'';
@@ -1189,16 +1190,24 @@ function placeColls(city){const order=visOrder(), big=1e6;
   return COLLS.filter(c=>visColl(c)&&collPlaces(c).length===1&&collPlaces(c)[0]===city)
     .sort((a,b)=>((a.place_order||big)-(b.place_order||big))||((a.collage_rank||big)-(b.collage_rank||big))||(order.indexOf(a.slug)-order.indexOf(b.slug)));}
 function multiColls(city){return COLLS.filter(c=>visColl(c)&&collPlaces(c).length>1&&collPlaces(c).includes(city));}
-function plCell(key,label,cls){const p=PHOTOS[key];const w=Math.round(110*(p.width||3)/(p.height||2));
-  return `<div class="plcell ${cls||''}" style="width:${w}px" title="#${p.img_no}${label?' · shown in '+esc(label):''}" onclick="plClick('${jesc(key)}')">
-    <img loading="lazy" src="${imgu(p)}">${isStaged(p)?'<span class="stg">staged</span>':''}${label?`<span class="tagl">${esc(label)}</span>`:''}</div>`;}
+function plCell(key,label,cls,seq){const p=PHOTOS[key];const w=Math.round(110*(p.width||3)/(p.height||2));
+  const drag=seq?` draggable="true" data-key="${esc(key)}" data-slug="${esc(seq.slug)}" ondragstart="plDragStart(event)" ondragend="plDragEnd(event)" ondragover="plDragOver(event)" ondragleave="plDragLeave(event)" ondrop="plDrop(event)"`:'';
+  return `<div class="plcell ${cls||''}" style="width:${w}px" title="#${p.img_no}${label?' · shown in '+esc(label):''}${seq?' · drag to reorder':''}" onclick="plClick('${jesc(key)}')"${drag}>
+    <img loading="lazy" src="${imgu(p)}">${seq?`<span class="seq">${seq.n}</span>`:''}${isStaged(p)?'<span class="stg">staged</span>':''}${label?`<span class="tagl">${esc(label)}</span>`:''}</div>`;}
+/* SEQUENCE: the order a collection is shown in (collection page, walls).
+   `photo_order` (keys, written by dragging a row's photos) first, then the
+   rest — old-camera frames last, then by key. MIRRORS build_index.py
+   in_sequence() — keep them agreed. */
+function collSeq(c,keys){const pos=new Map((c.photo_order||[]).map((k,i)=>[k,i])), big=1e6;
+  const old=k=>PHOTOS[k].camera==='EOS 7D'?1:0;
+  return keys.slice().sort((a,b)=>((pos.has(a)?pos.get(a):big)-(pos.has(b)?pos.get(b):big))||(old(a)-old(b))||(a<b?-1:a>b?1:0));}
 const byImg=(a,b)=>(PHOTOS[a].shoot||'').localeCompare(PHOTOS[b].shoot||'')||(PHOTOS[a].img_no-PHOTOS[b].img_no);
 function plRow(c,order,cityKeys,multi){
   const shown=[],elsewhere=[];
   for(const k of (multi?Object.keys(PHOTOS):cityKeys)){const p=PHOTOS[k];
     if(!(p.collections||[]).includes(c.slug))continue;
     (displayColl(p,order)===c.slug?shown:elsewhere).push(k);}
-  shown.sort(byImg);elsewhere.sort(byImg);
+  const seq=collSeq(c,shown);elsewhere.sort(byImg);
   const title=t=>(COLLS.find(x=>x.slug===t)||{}).title||t;
   const on=plTarget===c.slug;
   return `<div class="plrow${on?' target':''}">
@@ -1206,7 +1215,8 @@ function plRow(c,order,cityKeys,multi){
       <b>${esc(c.title)}</b><span class="n">${shown.length} shown${elsewhere.length?` · ${elsewhere.length} tagged, shown elsewhere`:''}${multi?' · '+esc(collPlaces(c).join(', ')):''}</span>
       ${multi?'':`<button class="keepall" onclick="plMove('${jesc(c.slug)}',-1)" title="Earlier on the place page">▲</button><button class="keepall" onclick="plMove('${jesc(c.slug)}',1)" title="Later on the place page">▼</button>`}
       <button class="linkbtn" onclick="plEdit('${jesc(c.slug)}')">edit members →</button></div>
-    <div class="plstrip">${shown.map(k=>plCell(k)).join('')||'<span class="hint">empty — pick ◎ target, then click photos below</span>'}${elsewhere.map(k=>plCell(k,title(displayColl(PHOTOS[k],order)),'elsewhere')).join('')}</div></div>`;}
+    <textarea class="plcap" placeholder="Caption — shown beside this collection on ${multi?'its collection page':'the place page, and on its collection page'}. Saves when you click away." onchange="updateColl('${jesc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea>
+    <div class="plstrip">${seq.map((k,i)=>plCell(k,'','',{slug:c.slug,n:i+1})).join('')||'<span class="hint">empty — pick ◎ target, then click photos below</span>'}${elsewhere.map(k=>plCell(k,title(displayColl(PHOTOS[k],order)),'elsewhere')).join('')}</div></div>`;}
 function renderPlace(){
   const counts={};Object.values(PHOTOS).forEach(p=>{if(p.city)counts[p.city]=(counts[p.city]||0)+1;});
   const cities=Object.keys(counts).sort();
@@ -1217,7 +1227,7 @@ function renderPlace(){
   if(plTarget&&![...rows,...multis].some(c=>c.slug===plTarget))plTarget=null;
   const unsorted=cityKeys.filter(k=>!displayColl(PHOTOS[k],order)).sort(byImg);
   $('#stat').textContent=`${plCity}: ${cityKeys.length-unsorted.length} shown · ${unsorted.length} unsorted`;
-  $('#main').innerHTML=`<p class="hint">One row per collection, in the order the place page shows them. Pick a <b>◎ target</b>, then click photos to show them there (their other tags are kept). Click a photo already in the target to take it out. Faded = tagged here but shown in another collection; click it to bring it here.</p>
+  $('#main').innerHTML=`<p class="hint">One row per collection, in the order the place page shows them. Pick a <b>◎ target</b>, then click photos to show them there (their other tags are kept). Click a photo already in the target to take it out. Faded = tagged here but shown in another collection; click it to bring it here. <b>Drag</b> a row's photos to set the order the site shows them in (numbered); each wall shows the first photos that fit, so lead with the strongest. New photos join at the end.</p>
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px">
       <select id="pl-city">${cities.map(c=>`<option value="${esc(c)}"${c===plCity?' selected':''}>${esc(c)} (${counts[c]})</option>`).join('')}</select>
       <button class="keepall" onclick="plNew(false)">+ New collection in ${esc(plCity)}</button>
@@ -1249,6 +1259,25 @@ window.plMove=async(slug,dir)=>{
   [list[i],list[j]]=[list[j],list[i]];
   for(let n=0;n<list.length;n++){const c=COLLS.find(x=>x.slug===list[n]);if(c.place_order!==n+1)await updateColl(list[n],{place_order:n+1});}
   render();};
+let plDrag=null;
+window.plDragStart=(e)=>{const el=e.currentTarget;plDrag={key:el.dataset.key,slug:el.dataset.slug};
+  e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',plDrag.key);el.classList.add('dragging');};
+window.plDragEnd=(e)=>{e.currentTarget.classList.remove('dragging');plDrag=null;
+  document.querySelectorAll('.drop-before,.drop-after').forEach(x=>x.classList.remove('drop-before','drop-after'));};
+const plAfter=(e)=>{const r=e.currentTarget.getBoundingClientRect();return e.clientX>r.left+r.width/2;};
+window.plDragOver=(e)=>{const el=e.currentTarget;
+  if(!plDrag||el.dataset.slug!==plDrag.slug||el.dataset.key===plDrag.key)return;   // reorder within one row only
+  e.preventDefault();e.dataTransfer.dropEffect='move';
+  const after=plAfter(e);el.classList.toggle('drop-after',after);el.classList.toggle('drop-before',!after);};
+window.plDragLeave=(e)=>e.currentTarget.classList.remove('drop-before','drop-after');
+window.plDrop=async(e)=>{e.preventDefault();const el=e.currentTarget;
+  if(!plDrag||el.dataset.slug!==plDrag.slug)return;
+  const {key,slug}=plDrag, target=el.dataset.key, after=plAfter(e);
+  const strip=[...el.parentNode.querySelectorAll('.plcell[draggable=true]')].map(x=>x.dataset.key).filter(k=>k!==key);
+  strip.splice(strip.indexOf(target)+(after?1:0),0,key);
+  // Persist the WHOLE shown sequence, so the order is exactly what he sees
+  // (stale keys of photos since moved out drop away on the next drag).
+  const y=window.scrollY;await updateColl(slug,{photo_order:strip});render();window.scrollTo(0,y);};
 window.plEdit=(slug)=>{memberReturn='place';mode='members';memberSlug=slug;memberFilter.all=false;memberFilter.city='';page=0;render();};
 window.plNew=async(multi)=>{
   const title=(prompt(multi?'Title of the new multi-place collection:':`Title of the new ${plCity} collection:`)||'').trim();
@@ -1628,7 +1657,7 @@ class Handler(BaseHTTPRequestHandler):
                 reg = load(COLLECTIONS, {"collections": []})
                 for c in reg["collections"]:
                     if c["slug"] == slug:
-                        for f in ("title", "featured", "order", "place", "places", "place_order", "description", "caption", "collage", "collage_rank", "archived"):
+                        for f in ("title", "featured", "order", "place", "places", "place_order", "photo_order", "description", "caption", "collage", "collage_rank", "archived"):
                             if f in data:
                                 c[f] = data[f]
                         break

@@ -7,9 +7,8 @@ as the manifest grows — see the scaling assessment).
 Emits (paths RELATIVE — templates prepend photo_base, so this stays valid if
 the base/domain changes):
   {
-    "collections": { "<slug>": [ item, ... ], ... },   # membership order = img_no
+    "collections": { "<slug>": [ item, ... ], ... },   # in sequence (photo_order)
     "places":      { "<city>": [ item, ... ], ... },
-    "hero":        [ {avif, webp, ar}, ... ],           # photos flagged hero:true
     "covers":      { "<city>": item }                    # the place_cover per city
   }
   item = { thumb, avif, webp, ar, title, meta }  (matches partials/collitems.html)
@@ -32,6 +31,11 @@ def _ar(p):
 
 def _title(p):
     return ", ".join(x for x in (p.get("neighborhood"), p.get("city"), p.get("state")) if x)
+
+
+def _coll_places(c):
+    """A collection's places: `places` when set, else its single `place`."""
+    return c.get("places") or ([c["place"]] if c.get("place") else [])
 
 
 def _coll_item(p):
@@ -93,21 +97,33 @@ def main():
         pick = p.get("shown_in")
         return pick if pick in mem else min(mem, key=vis_rank.get)
 
-    curated_cities = set()
-    for c in registry:
-        pls = c.get("places") or ([c["place"]] if c.get("place") else [])
-        if c["slug"] in vis_rank and len(pls) == 1:
-            curated_cities.add(pls[0])
+    # Cities with at least one visible single-place collection: their place
+    # page shows collection walls, so their fallback cover must be a shown photo.
+    curated_cities = {_coll_places(c)[0] for c in registry
+                      if c["slug"] in vis_rank and len(_coll_places(c)) == 1}
 
-    collections, places, hero, covers = {}, {}, [], {}
+    # SEQUENCE. Every collection is shown in a fixed order: the registry's
+    # `photo_order` (keys, set by dragging in the tagger's Places mode) first,
+    # then any member not in it — old-camera (EOS 7D) frames after the rest,
+    # then by key (shoot folder, IMG number). New members therefore land at the
+    # end until he places them. Mirrored in the tagger's collSeq().
+    big = 10 ** 6
+    seq_pos = {c["slug"]: {k: i for i, k in enumerate(c.get("photo_order") or [])}
+               for c in registry}
+
+    def in_sequence(slug, ps):
+        pos = seq_pos.get(slug, {})
+        return sorted(ps, key=lambda p: (pos.get(p["key"], big),
+                                         p.get("camera") == "EOS 7D", p["key"]))
+
+    collections, places, covers = {}, {}, {}
     for p in recs:
-        ci = _coll_item(p)
         d = shown_in(p)
         # Hidden collections (home-hero) are not display collections, so they
         # keep listing every member exactly as before.
         for slug in (p.get("collections") or []):
             if slug == d or slug not in vis_rank:
-                collections.setdefault(slug, []).append(ci)
+                collections.setdefault(slug, []).append(p)
         city = p.get("city")
         if city:
             places.setdefault(city, []).append(_place_item(p))
@@ -119,8 +135,9 @@ def main():
                     and (d or p.get("place_cover") or city not in curated_cities)):
                 if city not in covers or p.get("place_cover"):
                     covers[city] = {"thumb": p.get("thumb"), "ar": _ar(p)}
-        if p.get("hero"):
-            hero.append({"avif": ci["avif"], "webp": ci["webp"], "ar": ci["ar"], "cam": ci["cam"]})
+
+    collections = {slug: [_coll_item(p) for p in in_sequence(slug, ps)]
+                   for slug, ps in collections.items()}
 
     # Collage pools: for every collection flagged collage-eligible in the
     # registry, EXACTLY the curated members (photo.collage) — no top-up. A
@@ -132,7 +149,7 @@ def main():
     # collection); the home `collage` set is the subset flagged collage-eligible.
     walls = {}
     for slug in visible:
-        members = [p for p in recs if shown_in(p) == slug]
+        members = in_sequence(slug, [p for p in recs if shown_in(p) == slug])
         pool = [p for p in members if p.get("collage")] or members
         if pool:
             walls[slug] = [_coll_item(p) for p in pool]
@@ -146,12 +163,9 @@ def main():
     # "Multiple" filter. A city with no entry here keeps its legacy album.
     place_colls = {}
     for c in registry:
-        if c["slug"] not in walls:
-            continue
-        pls = c.get("places") or ([c["place"]] if c.get("place") else [])
-        if len(pls) == 1:
+        pls = _coll_places(c)
+        if c["slug"] in walls and len(pls) == 1:
             place_colls.setdefault(pls[0], []).append(c)
-    big = 10 ** 6
     place_colls = {city: [c["slug"] for c in sorted(cs, key=lambda c: (
         c.get("place_order") or big, c.get("collage_rank") or big, vis_rank[c["slug"]]))]
         for city, cs in place_colls.items()}
@@ -182,12 +196,12 @@ def main():
                         if r and r not in refs
                         and withheld & set(photos[k].get("collections") or [])})
 
-    index = {"collections": collections, "places": places, "hero": hero,
+    index = {"collections": collections, "places": places,
              "covers": covers, "collage": collage, "walls": walls,
              "place_colls": place_colls, "refs": refs}
     (DATA / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")))
     print(f"index: {len(collections)} collections, {len(places)} places, "
-          f"{len(hero)} hero, {len(covers)} covers, {len(collage)} collage pools, "
+          f"{len(covers)} covers, {len(collage)} collage pools, "
           f"{len(walls)} walls, {len(place_colls)} curated places, "
           f"{len(refs)} essay refs, {held} withheld -> data/index.json")
     for r, n in sorted(ref_dupes.items()):

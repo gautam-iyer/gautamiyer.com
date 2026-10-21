@@ -13,15 +13,6 @@
   const allSlugs = pools ? Object.keys(pools).filter((s) => (pools[s] || []).length) : []
   if (!boxes.length || !allSlugs.length) return
 
-  function shuffled(arr) {
-    const a = arr.slice()
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-      ;[a[i], a[j]] = [a[j], a[i]]
-    }
-    return a
-  }
-
   // Each wall on the page gets a DIFFERENT collection, assigned in DOM order
   // from one WEIGHTED shuffle per visit (repeats only if there are more walls
   // than eligible pools). Collections carry an optional home rank set in the
@@ -52,7 +43,7 @@
 
   // Caption: collection name + place, linking to the collection page.
   // Scoped to this wall's section — every wall captions itself.
-  const section = box.closest('.hero-collage') || document
+  const section = box.closest('.hero-collage, .place-coll') || document
   const cap = section.querySelector('[data-collage-caption]')
   // Only the FIRST wall is above the fold. The follow walls are a viewport or
   // more down, so their cells load lazily — otherwise all five walls' images
@@ -60,7 +51,9 @@
   // before the reader has scrolled to any of them. Layout is unaffected: row
   // heights and cell widths come from manifest aspect ratios, not from decoded
   // images, so nothing reflows when a lazy cell arrives.
-  const lazy = section !== document && section.classList.contains('hero-collage--follow')
+  // (Place pages: every row after the first.)
+  const lazy = section !== document && (section.classList.contains('hero-collage--follow') ||
+    (section.classList.contains('place-coll') && !!section.previousElementSibling))
   const meta = (window.COLLAGE_META || {})[slug]
   if (cap && meta) {
     cap.textContent = meta.place ? `${meta.title} · ${meta.place}` : meta.title
@@ -69,12 +62,14 @@
   }
 
   const GAP = 8 // px — column gap; the search aims the row gap at this too
-  const TRIES = 160 // candidate orders examined per layout (cheap: O(n) each)
 
-  // Candidate orders are generated ONCE per visit and reused by every layout()
-  // call, so the layout is a pure function of (W, H): the same photos stay put
-  // until the page is reloaded — no reshuffling on scroll-driven resizes.
-  const ORDERS = Array.from({ length: TRIES }, () => shuffled(items))
+  // The wall reads the collection IN SEQUENCE (the order set in the tagger,
+  // shipped pre-sorted by build_index.py): left to right, top to bottom, the
+  // first photos that fit. The layout search varies only row heights and how
+  // many rows (so how many photos) to show — never the order — so the result
+  // is a pure function of (W, H). A fixed order gives the solver far fewer
+  // tilings to choose from, so it sweeps row-height targets finely instead.
+  const FACTORS = Array.from({ length: 40 }, (_, i) => 0.5 + (0.9 * i) / 39)
 
   // Greedy rows at a target height with gap-aware widths; heights are EXACT
   // (h = usable width / sum of aspect ratios), never scaled afterwards.
@@ -177,6 +172,56 @@
     return best
   }
 
+  // Exhaustive search over the fixed sequence: every way to break a prefix
+  // of it into rows (each row 1–8 photos, at most 7 rows, pruned to sane row
+  // heights). For a given set of breaks the unified gap has a CLOSED FORM —
+  // the box height is linear in g — so flush and framed need no iteration:
+  //   H = Σ (W − g(nᵢ−1))/Aᵢ + g·gutters  ⇒  g = (H − Σ W/Aᵢ) / (gutters − Σ (nᵢ−1)/Aᵢ)
+  // (Aᵢ = row i's summed aspect ratio). The crop tier is the same breaks at
+  // the design gap, scaled to fill. Greedy rows at a target height (above)
+  // only ever see one partition per target; with the order pinned, the
+  // partition is the only freedom left, so this is where the good tilings are.
+  function exhaustive(W, H, consider) {
+    const n = items.length
+    const rows = [] // { start, end, A }
+    const close = () => {
+      const R = rows.length
+      let sWA = 0
+      let sNA = 0
+      for (const r of rows) { sWA += W / r.A; sNA += (r.end - r.start - 1) / r.A }
+      const mk = (g, mode, k) => ({
+        rows: rows.map((r) => ({ row: items.slice(r.start, r.end), h: (W - g * (r.end - r.start - 1)) / r.A })),
+        g, v: g, mode, k,
+      })
+      for (const [mode, gutters] of [['flush', R - 1], ['framed', R + 1]]) {
+        if (R < 2) continue
+        const den = gutters - sNA
+        if (Math.abs(den) < 1e-9) continue
+        const g = (H - sWA) / den
+        if (g >= 2 && g <= 34) consider(mk(g, mode))
+      }
+      const sumH = sWA - GAP * sNA
+      const avail = H - GAP * (R - 1)
+      if (avail > 0) consider(mk(GAP, 'crop', avail / sumH))
+    }
+    const dfs = (start, usedH) => {
+      if (rows.length === 7) return
+      let A = 0
+      for (let end = start + 1; end <= Math.min(n, start + 8); end++) {
+        A += items[end - 1].ar
+        const h = (W - GAP * (end - start - 1)) / A
+        if (h > H * 1.4) continue // too tall: one row would overfill the box
+        if (h < H / 9) break // rows only get shorter as photos are added
+        if (usedH + h > H * 1.45) continue
+        rows.push({ start, end, A })
+        close()
+        dfs(end, usedH + h + GAP)
+        rows.pop()
+      }
+    }
+    dfs(0, 0)
+  }
+
   // Unified "badness" across tiers: perfect unified gap ≈ 0; oversized or
   // inconsistent gaps accumulate points; crop counts ~1.6 points per % of crop
   // so it only wins when gap-based layouts are genuinely poor.
@@ -188,13 +233,17 @@
     // quadratic: 1 photo short is mild, 3-4 short (two giant photos) is
     // prohibitive — a denser layout with moderate crop must win instead
     const sparse = Math.pow(Math.max(0, wantMin - count), 2) * 2.2
-    if (c.mode === 'crop') return Math.abs(1 - c.k) * 160 + 2 + sparse
+    // Uneven rows: a short strip under a tall row reads as a mistake. Greedy
+    // rows at one target height never produced these; free row breaks can.
+    const hs = c.rows.map((r) => r.h)
+    const uneven = Math.max(0, Math.max(...hs) / Math.min(...hs) - 1.7) * 6 + sparse
+    if (c.mode === 'crop') return Math.abs(1 - c.k) * 160 + 2 + uneven
     return (
       Math.abs(c.v - c.g) * 4 +
       Math.abs(c.v - GAP) * 0.15 +
       Math.max(0, c.v - 34) * 1.5 +
       (c.mode === 'framed' ? 1 : 0) +
-      sparse
+      uneven
     )
   }
 
@@ -213,7 +262,7 @@
     const mobile = W < 700
     const base = mobile ? H / 2.8 : H / 2.2
 
-    // Search: for each candidate order × row-height target, try the no-crop
+    // Search: for each row-height target (and every row break, below), try the no-crop
     // modes (flush, then framed) and the guaranteed crop fallback; keep the
     // lowest unified badness. The crop tier always yields SOMETHING, so a
     // blank hero is impossible at any viewport size.
@@ -227,15 +276,12 @@
     // divides the whole pool's aspect mass into exactly R rows. Rescues extreme
     // viewports (very wide/short) where the density ladder can't force a split.
     const totalAr = items.reduce((s, i) => s + i.ar, 0)
-    for (let t = 0; t < TRIES; t++) {
-      const order = ORDERS[t]
-      for (const f of [0.55, 0.7, 0.85, 1, 1.15, 1.3]) {
-        for (const mode of ['flush', 'framed']) consider(refine(order, W, H, base * f, GAP, mode))
-        consider(cropCandidate(order, W, H, base * f))
-      }
-      for (let R = 1; R <= 6; R++) consider(cropCandidate(order, W, H, (W * R) / totalAr))
-      if (best && best.score < 0.8) break
+    for (const f of FACTORS) {
+      for (const mode of ['flush', 'framed']) consider(refine(items, W, H, base * f, GAP, mode))
+      consider(cropCandidate(items, W, H, base * f))
     }
+    for (let R = 1; R <= 6; R++) consider(cropCandidate(items, W, H, (W * R) / totalAr))
+    exhaustive(W, H, consider)
     if (!best) return
 
     const k = best.mode === 'crop' ? best.k : 1

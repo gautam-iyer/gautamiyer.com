@@ -1,0 +1,18 @@
+{{- /* A collection's accent colour, from the site palette (hugo.toml). Featured
+       collections take the colour of their featured slot (sorted by `order`);
+       every other collection cycles the palette by its position in the
+       registry. Single definition — used by the collections index, collection
+       pages and place pages. Call cached per slug:
+         {{ $color := partialCached "accent.html" $slug $slug }} */ -}}
+{{- $slug := . -}}
+{{- $palette := site.Params.palette -}}
+{{- $color := index $palette 0 -}}
+{{- $featured := slice -}}
+{{- range $i, $c := (index hugo.Data.collections "collections") -}}
+  {{- if eq $c.slug $slug -}}{{- $color = index $palette (mod $i 5) -}}{{- end -}}
+  {{- if and $c.featured (not $c.archived) -}}{{- $featured = $featured | append $c -}}{{- end -}}
+{{- end -}}
+{{- range $i, $c := (sort $featured "order") -}}
+  {{- if eq $c.slug $slug -}}{{- $color = index $palette (mod $i 5) -}}{{- end -}}
+{{- end -}}
+{{- return $color -}}

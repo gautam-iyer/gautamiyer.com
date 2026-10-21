@@ -2,8 +2,8 @@
 // Packs the *visible* items of each .jgallery into full-width rows and scales
 // each row to fill the container exactly — left and right edges flush — while
 // preserving every photo's real aspect ratio (--ar = width/height), so nothing
-// is cropped. Sets width/height inline per item. Re-run on resize and whenever
-// filtering changes which items are visible (photos.js calls justifyGalleries).
+// is cropped. Sets width/height inline per item. Re-run on resize. Used by the
+// legacy place album (places not yet curated into collections).
 (function () {
   function ar(el) {
     return parseFloat(el.style.getPropertyValue('--ar')) || 1.5;
@@ -48,7 +48,6 @@
   function justifyGalleries() {
     document.querySelectorAll('.jgallery').forEach(justify);
   }
-  window.justifyGalleries = justifyGalleries;
 
   let raf = null;
   window.addEventListener('resize', () => {

@@ -326,11 +326,40 @@ html:has(> body.home) {
    unreachable by the primary scroll gesture (only the End key escaped it).
    Releasing the final wall lets the tail of the page settle normally. */
 .hero-collage--follow:last-of-type { scroll-snap-align: none; }
-/* Place pages: the place's collections as a stack of the same walls. The first
-   sits right under the place header (no white band above it), and the page
-   snaps like home so each collection settles flush under the bar. */
-.place-walls .hero-collage--follow:first-child { margin-top: 0; scroll-snap-align: none; } /* the place header must stay visible on load: a snap point this close to the top pulled the page down to the first wall */
-.place-walls .hero-collage { margin-bottom: var(--grid); }
+/* Place pages: each collection is a full-bleed row — a text column (title,
+   count, the caption written in the tagger) beside its pinned collage wall.
+   Rows are separated by the same white band as the home walls and snap under
+   the bar — except the FIRST (a snap point that close to the top pulled the
+   page past the place title on load) and the LAST (same footer trap as home). */
+.place-walls { width: 100vw; margin-left: calc(50% - 50vw); }
+.place-coll {
+  display: grid;
+  /* minmax(0,…): a grid track defaults to min-content, so the wall's laid-out
+     cells could hold the column wider than the screen (overflowed on phones) */
+  grid-template-columns: clamp(220px, 24vw, 360px) minmax(0, 1fr);
+  margin-top: calc(var(--grid) * 6);
+  scroll-snap-align: start;
+}
+.place-coll:first-child { margin-top: 0; scroll-snap-align: none; }
+.place-coll:last-child { scroll-snap-align: none; margin-bottom: var(--grid); }
+.place-coll-text { padding: 2px 32px 0 var(--page-gutter); }
+.place-coll-title { display: block; text-decoration: none; }
+.place-coll-title:hover { text-decoration: underline; }
+.place-coll-count { margin-top: 8px; font-size: 0.72rem; color: var(--light); }
+.place-coll-caption { margin-top: 20px; font-size: 0.88rem; line-height: 1.65; color: var(--dark); }
+.place-coll-caption p + p, .coll-caption p + p { margin-top: 0.8em; }
+/* collection page: the caption under the title, at prose width */
+.coll-caption { max-width: var(--text-width); margin: -8px 0 28px; font-size: 0.92rem; line-height: 1.7; color: var(--dark); }
+.place-coll .collage {
+  height: calc(100vh - var(--header-one) - var(--grid));
+  height: calc(100svh - var(--header-one) - var(--grid));
+  overflow: hidden;
+}
+@media (max-width: 700px) {
+  .place-coll { grid-template-columns: minmax(0, 1fr); }
+  .place-coll-text { padding: 0 var(--page-gutter) 16px; }
+  .place-coll .collage { height: calc(100svh - var(--header-one) - 160px); }
+}
 html:has(.place-walls) {
   scroll-snap-type: y proximity;
   scroll-padding-top: var(--header-one);
@@ -388,47 +417,6 @@ body.home header { border-bottom: none; }
 .collage-cell { display: block; padding: 0; border: 0; background: none; cursor: zoom-in; }
 .collage-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* ── Hero ──────────────────────────────────────────────────────────────
-   One photo fills the first screen, framed by a couple of grid cells; name,
-   blurb and featured-writing chips sit over it on a soft scrim. Scrolling
-   reveals the Featured Photos below. hero.js randomizes the image. */
-.hero {
-  position: relative;
-  width: 100%;
-  margin-bottom: calc(var(--grid) * 2);
-}
-/* Full content width (left/right bounds match the sections below). The box
-   aspect-ratio is set to the image's own ratio (inline + by hero.js), so the
-   photo fills it with NO crop and NO letterbox bars. Height follows naturally. */
-.hero-media {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: var(--bg-subtle);
-}
-.hero-pic { display: block; width: 100%; height: 100%; }
-.hero-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.66), rgba(0,0,0,0.16) 42%, rgba(0,0,0,0.04) 68%, transparent);
-}
-.hero-overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: clamp(24px, 4vw, 60px);
-  color: #fff;
-}
-.hero-blurb {
-  margin: 0;
-  max-width: 680px;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.6;
-  opacity: 0.96;
-}
-
 /* Fade-in reveal (set by the IntersectionObserver in baseof). Scoped to .js so
    nothing is hidden without JS. Opacity-only — a transform would shift layout
    and throw off the grid line-snapping measurements. */
@@ -436,14 +424,9 @@ body.home header { border-bottom: none; }
 .js [data-reveal].revealed { opacity: 1; }
 
 .intro {
-  max-width: 900px; /* matches the Featured Writing column's right edge */
+  max-width: 900px;
   margin-bottom: 56px;
 }
-
-/* Darker grid lines above each featured section + around the essay rows are
-   drawn by gridlines.js onto the .gridlines overlay, exactly on existing grid
-   lines (see [data-darkline]). */
-#featured-writing { margin-bottom: 28px; }
 
 /* Overlay that darkens individual grid lines. Sits above the faint body grid
    but behind the page content (which is given z-index: 1). */
@@ -475,60 +458,6 @@ main, footer { position: relative; z-index: 1; }
   letter-spacing: 0.1em;
   color: var(--light);
   margin-bottom: 24px;
-}
-
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.featured-item {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  transition: opacity 0.2s ease;
-}
-
-.featured-item:hover { opacity: 0.7; }
-
-.featured-image {
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
-  margin-bottom: 14px;
-  overflow: hidden;
-}
-
-.featured-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.featured-tag {
-  font-size: 0.68rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--light);
-  margin-bottom: 6px;
-}
-
-.featured-title {
-  font-size: 0.92rem;
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--black);
-  margin-bottom: 6px;
-}
-
-.featured-desc {
-  font-size: 0.8rem;
-  line-height: 1.55;
-  color: var(--mid);
 }
 
 /* ════════════════════════════════════════════════
@@ -614,13 +543,6 @@ main, footer { position: relative; z-index: 1; }
 .series-count {
   font-size: 0.72rem;
   color: var(--light);
-}
-
-.series-desc {
-  font-size: 0.82rem;
-  color: var(--mid);
-  margin-bottom: 20px;
-  line-height: 1.6;
 }
 
 /* ── Work index list ── */
@@ -913,34 +835,6 @@ article {
   margin: 32px 0;
 }
 
-/* ── Footnotes ── */
-.article-footnotes {
-  max-width: var(--text-width);
-  margin-top: 56px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-}
-
-.article-footnotes h3 {
-  font-size: 0.72rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--light);
-  margin-bottom: 16px;
-}
-
-.article-footnotes ol {
-  padding-left: 20px;
-}
-
-.article-footnotes li {
-  font-size: 0.8rem;
-  line-height: 1.6;
-  color: var(--mid);
-  margin-bottom: 8px;
-}
-
 /* ── Prev / Next Nav ── */
 .piece-end {
   max-width: var(--text-width);
@@ -1025,75 +919,6 @@ article {
 .filter-select:hover { border-color: var(--black); }
 .filter-select:focus { outline: none; border-color: var(--black); }
 
-.active-filters {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-  min-height: 0;
-}
-
-.active-filters:empty { margin-bottom: 0; }
-
-.filter-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--dark);
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
-  cursor: pointer;
-  transition: all 0.15s;
-}
-
-.filter-tag:hover { border-color: var(--black); background: var(--border); }
-.filter-tag .x { font-size: 0.65rem; color: var(--light); line-height: 1; }
-
-/* Shuffle button (matches the filter selects) */
-.shuffle-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font);
-  font-size: 0.8rem;
-  padding: 6px 12px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--dark);
-  cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
-}
-.shuffle-btn svg { display: block; }
-.shuffle-btn:hover { border-color: var(--black); color: var(--black); }
-.shuffle-btn:active svg { transform: rotate(180deg); transition: transform 0.3s; }
-
-/* Simple pagination */
-.pager {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  margin: 40px 0 8px;
-}
-.pager:empty { display: none; }
-.pager-btn {
-  font-family: var(--font);
-  font-size: 0.8rem;
-  padding: 7px 16px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--dark);
-  cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
-}
-.pager-btn:hover:not(:disabled) { border-color: var(--black); color: var(--black); }
-.pager-btn:disabled { opacity: 0.35; cursor: default; }
-.pager-info { font-size: 0.72rem; color: var(--light); font-variant-numeric: tabular-nums; }
-
 .photo-count {
   font-size: 0.72rem;
   color: var(--light);
@@ -1165,11 +990,6 @@ article {
   font-size: 0.65rem;
   color: rgba(255,255,255,0.7);
 }
-
-.map-view { display: none; }
-.map-view.visible { display: block; }
-.grid-view { display: block; }
-.grid-view.hidden { display: none; }
 
 .lightbox {
   display: none;
@@ -1309,14 +1129,6 @@ article {
 
 .about-bio a:hover { text-decoration-color: var(--black); }
 
-.contact-card {
-  padding: 36px;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
-  position: sticky;
-  top: 32px;
-}
-
 .contact-label {
   font-size: 0.68rem;
   font-weight: 500;
@@ -1326,82 +1138,12 @@ article {
   margin-bottom: 20px;
 }
 
-.contact-item { margin-bottom: 20px; }
-.contact-item:last-child { margin-bottom: 0; }
-
-.contact-item-label {
-  font-size: 0.7rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--light);
-  margin-bottom: 4px;
-}
-
-.contact-item-value {
-  font-size: 0.88rem;
-  color: var(--dark);
-}
-
-.contact-item-value a {
-  color: var(--black);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--border);
-  transition: text-decoration-color 0.2s;
-}
-
-.contact-item-value a:hover { text-decoration-color: var(--black); }
-
-.section-divider {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin-bottom: 48px;
-}
-
-.currently {
-  max-width: var(--text-width);
-  margin-bottom: 56px;
-}
-
-.currently h2,
 .elsewhere h2 {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 20px;
 }
-
-.currently-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.currently-label {
-  font-size: 0.68rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--light);
-  margin-bottom: 6px;
-}
-
-.currently-value {
-  font-size: 0.88rem;
-  color: var(--dark);
-  line-height: 1.55;
-}
-
-.currently-value a {
-  color: var(--black);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--border);
-  transition: text-decoration-color 0.2s;
-}
-
-.currently-value a:hover { text-decoration-color: var(--black); }
 
 .elsewhere { max-width: var(--text-width); }
 
@@ -1438,34 +1180,6 @@ article {
   margin-bottom: 4px;
 }
 
-.elsewhere-item-desc {
-  font-size: 0.78rem;
-  color: var(--mid);
-  line-height: 1.5;
-}
-
-.colophon {
-  max-width: var(--text-width);
-  margin-top: 56px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-}
-
-.colophon h2 {
-  font-size: 0.72rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--light);
-  margin-bottom: 12px;
-}
-
-.colophon p {
-  font-size: 0.82rem;
-  line-height: 1.65;
-  color: var(--mid);
-}
-
 /* ════════════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════════════ */
@@ -1488,8 +1202,6 @@ article {
      collage's -40px margin still cancels exactly on mobile.) */
   article { padding: 36px var(--side-padding) 64px; }
 
-  .featured-grid { grid-template-columns: 1fr; gap: 40px; }
-
   .work-row { grid-template-columns: 44px 1fr; gap: 14px; }
   .work-thumb { width: 44px; }
   .work-date { grid-column: 2; order: -1; }
@@ -1498,9 +1210,9 @@ article {
   .article-body > p:first-of-type::first-letter { font-size: 2.6rem; }
 
   .about-layout { grid-template-columns: 1fr; gap: 40px; }
-  .contact-card { position: static; }
+
   .elsewhere-grid { grid-template-columns: 1fr; }
-  .currently-grid { grid-template-columns: 1fr; }
+
 }
 
 @media (max-width: 480px) {
@@ -1620,35 +1332,6 @@ article {
 
 .place-essays .work-sub { color: var(--mid); font-weight: 400; }
 
-/* ════════════════════════════════════════════════
-   HOME — FEATURED COLLECTIONS
-   ════════════════════════════════════════════════ */
-
-.fc-head {
-  margin: 0;
-  padding: 24px 0;                 /* equal padding centers the heading between */
-  border-top: 1px solid rgba(0, 0, 0, 0.2);  /* its own rule and the first row's */
-  display: flex;
-  align-items: baseline;           /* gray "All …" link sits on the heading baseline */
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-}
-
-/* Small gray "All Writing" / "All Photos" link sitting beside a section head. */
-.fc-head-link {
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--light);
-  letter-spacing: 0;
-  margin-left: 14px;
-  /* baseline-aligned with the heading via .fc-head { align-items: baseline } —
-     mirrors how .fc-place sits beside a collection name */
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.fc-head-link:hover { color: var(--dark); }
-
 .fc-collection { margin-bottom: 40px; }
 
 /* font sizing comes from .subsubhead (shared with the tile titles) */
@@ -1659,24 +1342,6 @@ article {
   transition: opacity 0.15s;
 }
 .fc-name:hover { opacity: 0.65; }
-/* small, gray, non-bold place label next to a collection name */
-.fc-place {
-  margin-left: 10px;
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--light);
-}
-.fc-place a { color: inherit; text-decoration: none; }
-.fc-place a:hover { text-decoration: underline; text-underline-offset: 2px; color: var(--mid); }
-/* editorial caption under a featured collection's carousel */
-.fc-caption {
-  font-style: italic;
-  color: var(--mid);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  max-width: var(--text-width);
-  margin: 18px 0 0;
-}
 
 .fc-rule {
   border: 0;
@@ -1782,31 +1447,6 @@ article {
   transition: opacity 0.15s;
 }
 .lb-thumb:hover { opacity: 0.8; }
-
-/* Collection page header */
-.collection-head { margin-bottom: 24px; }
-.collection-name { font-size: 1.4rem; margin-bottom: 12px; }
-
-/* Home — Writing */
-.home-essays { display: flex; flex-direction: column; max-width: 900px; }
-/* Each essay row is 3 grid cells; its separator lines are the darkened grid
-   lines drawn by gridlines.js. The text is centred at the 1.5-cell mark so it
-   sits between grid lines, never on one. */
-/* Each essay/project row: equal top+bottom padding centers the text between its
-   own top rule and the next row's, and the last row has no rule beneath it. */
-.home-essay {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  color: var(--black);
-}
-.home-essay-title { font-size: 0.98rem; font-weight: 500; }
-.home-essay:hover .home-essay-title { text-decoration: underline; text-underline-offset: 3px; }
-.home-essay-sub { font-size: 0.85rem; color: var(--mid); margin-top: 2px; }
 
 /* Justified gallery scales down on narrower screens (one knob does home,
    /photos, and collection pages at once). */
