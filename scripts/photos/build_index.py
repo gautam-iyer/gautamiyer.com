@@ -12,6 +12,10 @@ the base/domain changes):
     "covers":      { "<city>": item }                    # the place_cover per city
   }
   item = { thumb, avif, webp, ar, title, meta }  (matches partials/collitems.html)
+  A collection item's `title` is its lightbox caption: "<collection> / <city>",
+  or "<photo caption> / <collection>" when the photo has its own `caption`
+  (written per photo in the tagger). `meta` stays empty — it used to carry
+  tag_notes, internal tagging prose that shipped in the page source.
 
 Run at deploy time (scripts/deploy.sh) BEFORE hugo, and commit the result so the
 index always reflects the current manifest (the tagger edits photos.json; deploy
@@ -38,15 +42,23 @@ def _coll_places(c):
     return c.get("places") or ([c["place"]] if c.get("place") else [])
 
 
-def _coll_item(p):
-    """Shape consumed by partials/collitems.html (meta = tag_notes)."""
+def _coll_caption(p, coll):
+    """Lightbox caption for a photo shown in the collection titled `coll`."""
+    own = (p.get("caption") or "").strip()
+    if own:
+        return f"{own} / {coll}"
+    return f"{coll} / {p['city']}" if p.get("city") else coll
+
+
+def _coll_item(p, coll):
+    """Shape consumed by partials/collitems.html; `coll` = the collection title."""
     return {
         "thumb": p.get("thumb"),
         "avif": p.get("display_avif"),
         "webp": p.get("display_webp"),
         "ar": _ar(p),
-        "title": _title(p),
-        "meta": p.get("tag_notes") or "",
+        "title": _coll_caption(p, coll),
+        "meta": "",
         "cam": p.get("camera") or "",
     }
 
@@ -60,7 +72,9 @@ def _place_item(p):
         "webp": p.get("display_webp"),
         "cam": p.get("camera") or "",
         "ar": _ar(p),
-        "title": _title(p),
+        # an uncurated place's album has no collection to name: a photo's own
+        # caption leads, then its location
+        "title": " / ".join(x for x in ((p.get("caption") or "").strip(), _title(p)) if x),
         "meta": " · ".join(meta),
     }
 
@@ -136,7 +150,8 @@ def main():
                 if city not in covers or p.get("place_cover"):
                     covers[city] = {"thumb": p.get("thumb"), "ar": _ar(p)}
 
-    collections = {slug: [_coll_item(p) for p in in_sequence(slug, ps)]
+    titles = {c["slug"]: c.get("title") or c["slug"] for c in registry}
+    collections = {slug: [_coll_item(p, titles[slug]) for p in in_sequence(slug, ps)]
                    for slug, ps in collections.items()}
 
     # Wall pools for EVERY visible collection (place pages draw one wall per
@@ -155,9 +170,9 @@ def main():
         members = in_sequence(slug, [p for p in recs if shown_in(p) == slug])
         if not members:
             continue
-        walls[slug] = [_coll_item(p) for p in members]
+        walls[slug] = [_coll_item(p, titles[slug]) for p in members]
         if slug in eligible:
-            collage[slug] = [_coll_item(p) for p in
+            collage[slug] = [_coll_item(p, titles[slug]) for p in
                              ([p for p in members if p.get("collage")] or members)]
 
     # Place pages: a city's SINGLE-place collections, in display order —

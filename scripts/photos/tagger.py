@@ -242,6 +242,8 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .plcell.dragging{opacity:.3}
  .plcell.drop-before{box-shadow:-4px 0 0 #7c3aed} .plcell.drop-after{box-shadow:4px 0 0 #7c3aed}
  .plcell .tagl{position:absolute;left:3px;bottom:3px;font-size:9.5px;background:rgba(255,255,255,.92);border-radius:4px;padding:1px 4px;color:#3f3f46;max-width:calc(100% - 6px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .plcell .capbtn{position:absolute;right:3px;bottom:3px;font-size:11px;line-height:16px;background:rgba(255,255,255,.92);border-radius:4px;padding:0 4px;color:#3f3f46;opacity:0;cursor:pointer}
+ .plcell:hover .capbtn,.plcell .capbtn.on{opacity:1} .plcell .capbtn.on{background:#7c3aed;color:#fff}
  .plcell .stg{position:absolute;right:3px;top:3px;font-size:9px;font-weight:700;background:#f59e0b;color:#fff;border-radius:4px;padding:1px 4px}
  .plsec{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#71717a;margin:22px 0 8px}
  .tgtbtn{border:1px solid #d4d4d8;background:#fff;border-radius:999px;font-size:12px;padding:3px 10px;cursor:pointer}
@@ -517,6 +519,23 @@ function nextRef(key){
   let n=1; while(refOwners(`${base}-${n}`).length) n++;
   setRef(key,`${base}-${n}`);
 }
+/* A photo's own lightbox caption. The site shows "<caption> / <collection>";
+   with none it shows "<collection> / <city>" (build_index._coll_caption). */
+function setCaption(key,v){v=(v||'').trim();PHOTOS[key].caption=v||null;return save(key,{caption:v||null});}
+function captionRow(key){
+  const p=PHOTOS[key];
+  return `<div class="dim" data-dim="caption"><div class="label">Caption</div>
+    <div class="geo" style="grid-template-columns:1fr"><div><input placeholder="Optional, e.g. “Armsmear” — the lightbox shows “Armsmear / Coltsville”; blank shows “Coltsville / Hartford”" value="${esc(p.caption||'')}"
+         onchange="setCaption('${jesc(key)}',this.value)"></div></div></div>`;
+}
+async function plCaption(e,key){
+  e.stopPropagation();
+  const p=PHOTOS[key];
+  const v=prompt('Caption for this photo. The lightbox shows “Caption / Collection”; leave it blank for “Collection / City”.',p.caption||'');
+  if(v===null)return;
+  await setCaption(key,v);
+  const b=e.target;b.classList.toggle('on',!!PHOTOS[key].caption);b.title=PHOTOS[key].caption||'Add a caption';
+}
 function essayRow(key){
   const p=PHOTOS[key], cur=p.essay_ref||'';
   const dupes=refOwners(cur).filter(k=>k!==key);
@@ -695,7 +714,7 @@ function renderList(){
         ${p.tag_notes?`<div class="notes">“${esc(p.tag_notes)}”</div>`:''}
         <button class="del small" onclick="deletePhoto('${jesc(key)}')">🗑 Delete photo</button>
         ${rotBtns(key)}</div>
-      <div>${geoRow(key)}${rolesRow(key)}${mediumRow(key)}${dims}${collRow(key)}${essayRow(key)}</div></div>`;
+      <div>${geoRow(key)}${rolesRow(key)}${mediumRow(key)}${dims}${collRow(key)}${captionRow(key)}${essayRow(key)}</div></div>`;
   }).join('')+pager(page,pages,all.length)+datalists();
   wirePager();
 }
@@ -790,7 +809,7 @@ function renderColls(){
   // A special "set" browsable in the same grid: the per-place cover photos.
   const roleRows=`
    <tr class="role-row"><td><b>⚑ Place cover</b> <span class="ct">— one per place</span></td><td class="ct">per city</td><td class="ct">${targetCount('__cover')}</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__cover')">Edit set →</button></td></tr>`;
-  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — one city puts the collection on that place’s page; several <b>comma-separated</b> cities (e.g. “Newark, Brooklyn”) make it a multi-place collection, which appears on NO place page, only on /collections/ under “Multiple places”. (The <b>Places</b> mode is the easier way to build and order a place’s collections.) <b>Featured</b> + <b>Order</b> now only pick a collection’s accent colour. Tick <b>Collage</b> to make a collection eligible for the home walls. The ▦ toggle inside “Edit members” picks WHICH photos make up its wall, on home AND on its place page: if any are flagged, ONLY those appear (12–18 tile best; a handful renders as a few big cells); if none are, every shown photo is in the pool. <b>Home rank</b> skews which collections the five home walls draw: 1 = most likely; blank = unranked. “Edit members / set” opens the add/remove grid, including ⚑ Place cover at the top.</p>
+  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — one city puts the collection on that place’s page; several <b>comma-separated</b> cities (e.g. “Newark, Brooklyn”) make it a multi-place collection, which appears on NO place page, only on /collections/ under “Multiple places”. (The <b>Places</b> mode is the easier way to build and order a place’s collections.) <b>Featured</b> + <b>Order</b> now only pick a collection’s accent colour. Tick <b>Collage</b> to make a collection eligible for the home walls. The ▦ toggle inside “Edit members” picks WHICH photos make up its HOME wall (place pages always show every photo): if any are flagged, ONLY those appear (12–18 tile best; a handful renders as a few big cells); if none are, every shown photo is in the pool. <b>Home rank</b> skews which collections the five home walls draw: 1 = most likely; blank = unranked. “Edit members / set” opens the add/remove grid, including ⚑ Place cover at the top.</p>
    <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th>Collage</th><th>Home rank</th><th></th></tr></thead><tbody>${roleRows}${rows}${archBlock}</tbody></table>
    <datalist id="dl-place">${cities.map(c=>`<option value="${esc(c)}">`).join('')}</datalist>`;
 }
@@ -1194,7 +1213,7 @@ function multiColls(city){return COLLS.filter(c=>visColl(c)&&collPlaces(c).lengt
 function plCell(key,label,cls,seq){const p=PHOTOS[key];const w=Math.round(110*(p.width||3)/(p.height||2));
   const drag=seq?` draggable="true" data-key="${esc(key)}" data-slug="${esc(seq.slug)}" ondragstart="plDragStart(event)" ondragend="plDragEnd(event)" ondragover="plDragOver(event)" ondragleave="plDragLeave(event)" ondrop="plDrop(event)"`:'';
   return `<div class="plcell ${cls||''}" style="width:${w}px" title="#${p.img_no}${label?' · shown in '+esc(label):''}${seq?' · drag to reorder':''}" onclick="plClick('${jesc(key)}')"${drag}>
-    <img loading="lazy" src="${imgu(p)}">${seq?`<span class="seq">${seq.n}</span>`:''}${isStaged(p)?'<span class="stg">staged</span>':''}${label?`<span class="tagl">${esc(label)}</span>`:''}</div>`;}
+    <img loading="lazy" src="${imgu(p)}">${seq?`<span class="seq">${seq.n}</span>`:''}${isStaged(p)?'<span class="stg">staged</span>':''}${label?`<span class="tagl">${esc(label)}</span>`:''}${seq?`<span class="capbtn${p.caption?' on':''}" title="${esc(p.caption||'Add a caption')}" onclick="plCaption(event,'${jesc(key)}')">✎</span>`:''}</div>`;}
 /* SEQUENCE: the order a collection is shown in (collection page, walls).
    `photo_order` (keys, written by dragging a row's photos) first, then the
    rest — old-camera frames last, then by key. MIRRORS build_index.py
@@ -1229,7 +1248,7 @@ function renderPlace(){
   if(plTarget&&![...rows,...multis].some(c=>c.slug===plTarget))plTarget=null;
   const unsorted=cityKeys.filter(k=>!displayColl(PHOTOS[k],order)).sort(byImg);
   $('#stat').textContent=`${plCity}: ${cityKeys.length-unsorted.length} shown · ${unsorted.length} unsorted`;
-  $('#main').innerHTML=`<p class="hint">One row per collection, in the order the place page shows them. Pick a <b>◎ target</b>, then click photos to show them there (their other tags are kept). Click a photo already in the target to take it out. Faded = tagged here but shown in another collection; click it to bring it here. <b>Drag</b> a row's photos to set the order the site shows them in (numbered); each wall shows the first photos that fit, so lead with the strongest. New photos join at the end.</p>
+  $('#main').innerHTML=`<p class="hint">One row per collection, in the order the place page shows them. Pick a <b>◎ target</b>, then click photos to show them there (their other tags are kept). Click a photo already in the target to take it out. Faded = tagged here but shown in another collection; click it to bring it here. <b>Drag</b> a row's photos to set the order the site shows them in (numbered); each wall shows the first photos that fit, so lead with the strongest. New photos join at the end. <b>✎</b> on a photo (hover) gives it its own lightbox caption — purple ✎ = captioned.</p>
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px">
       <select id="pl-city">${cities.map(c=>`<option value="${esc(c)}"${c===plCity?' selected':''}>${esc(c)} (${counts[c]})</option>`).join('')}</select>
       <button class="keepall" onclick="plNew(false)">+ New collection in ${esc(plCity)}</button>

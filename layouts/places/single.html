@@ -41,14 +41,13 @@
       {{ end }}
       {{ $pools = merge $pools (dict $slug $pool) }}
     <section class="place-coll" id="{{ $slug }}" aria-label="{{ $c.title }}" style="--accent:{{ $color }}">
-      <div class="place-coll-main">
-        <div class="place-coll-text">
-          <a class="place-coll-title subsubhead" href="/collections/{{ $slug }}/">{{ $c.title }}</a>
-          {{/* place.js clamps a caption of 2+ paragraphs behind "Read more" */}}
-          {{ with $c.caption }}<div class="place-coll-caption">{{ . | markdownify }}</div>{{ end }}
-        </div>
-        <div class="collage" data-collage="{{ $slug }}"></div>
+      <div class="place-coll-text">
+        <a class="place-coll-title subsubhead" href="/collections/{{ $slug }}/">{{ $c.title }}</a>
+        {{/* place.js clamps a long caption behind "Read more" */}}
+        {{ with $c.caption }}<div class="place-coll-caption">{{ . | markdownify }}</div>{{ end }}
       </div>
+      {{/* every photo of the collection, justified into rows by collage.js */}}
+      <div class="collage" data-collage="{{ $slug }}"></div>
       {{ with $c.sources }}{{ partial "sources.html" . }}{{ end }}
     </section>
     {{ end }}
@@ -92,8 +91,7 @@
 {{ end }}
 
 {{ define "scripts" }}
-{{/* place.js before collage: a clamped caption sets the wall's height.
-     collage before lightbox: its cells must exist when the lightbox collects triggers */}}
+{{/* collage before lightbox: its cells must exist when the lightbox collects triggers */}}
 {{ partial "asset-js.html" "js/place.js" }}
 {{ partial "asset-js.html" "js/collage.js" }}
 {{ partial "asset-js.html" "js/justify.js" }}

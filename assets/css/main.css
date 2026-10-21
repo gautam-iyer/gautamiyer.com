@@ -327,9 +327,10 @@ html:has(> body.home) {
    Releasing the final wall lets the tail of the page settle normally. */
 .hero-collage--follow:last-of-type { scroll-snap-align: none; }
 /* Place pages: a menu of the page's collections, then one full-bleed section
-   per collection — its text (title in the collection's accent, caption) ABOVE
-   its pinned collage wall, then its sources. Text + wall fill one screen
-   (.place-coll-main), so a section snaps whole under the bar. Sections are
+   per collection — its text (title in the collection's accent, caption, full
+   page width) ABOVE a wall of EVERY photo in the collection (collage.js
+   justifies them into rows; the wall is as tall as it needs), then its
+   sources. Sections are
    separated by the same white band as the home walls and snap under the bar —
    except the FIRST (a snap point that close to the top pulled the page past
    the place title on load) and the LAST (same footer trap as home). */
@@ -360,16 +361,10 @@ html:has(> body.home) {
 }
 .place-coll:first-child { margin-top: 0; scroll-snap-align: none; }
 .place-coll:last-child { scroll-snap-align: none; margin-bottom: var(--grid); }
-.place-coll-main {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - var(--header-one) - var(--grid));
-  min-height: calc(100svh - var(--header-one) - var(--grid));
-}
-.place-coll-text { padding: 2px var(--page-gutter) 20px; max-width: calc(var(--text-width) + 2 * var(--page-gutter)); }
+.place-coll-text { padding: 2px var(--page-gutter) 20px; }
 .place-coll-title { display: block; text-decoration: none; color: var(--accent); }
 .place-coll-title:hover { text-decoration: underline; }
-.place-coll-caption { position: relative; margin-top: 14px; font-size: 0.88rem; line-height: 1.65; color: var(--dark); }
+.place-coll-caption { position: relative; margin-top: 14px; font-size: 1rem; line-height: 1.7; color: var(--dark); }
 .place-coll-caption p + p, .coll-caption p + p { margin-top: 0.8em; }
 /* A caption of 2+ paragraphs: place.js caps it at the first paragraph plus a
    few lines that fade to the page, with "Read more" sitting on the fade. */
@@ -394,14 +389,8 @@ html:has(> body.home) {
 .place-coll-caption:not(.is-clamped) + .read-more { margin-top: 12px; }
 /* collection page: the caption under the title, at prose width */
 .coll-caption { max-width: var(--text-width); margin: -8px 0 28px; font-size: 0.92rem; line-height: 1.7; color: var(--dark); }
-/* The wall takes whatever the screen has left under the text (at least half
-   of it); place.js pins its height while a caption is expanded. */
-.place-coll .collage {
-  flex: 1 0 auto;
-  height: 50vh;
-  height: 50svh;
-  overflow: hidden;
-}
+/* height is set by collage.js from the laid-out rows */
+.place-coll .collage { overflow: hidden; }
 /* Sources: small and light, under the photos (place page and collection page) */
 .coll-sources { max-width: var(--text-width); margin-top: 14px; font-size: 0.72rem; line-height: 1.55; color: var(--light); }
 .place-coll .coll-sources { margin: 14px var(--page-gutter) 0; }

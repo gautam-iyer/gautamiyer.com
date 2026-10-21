@@ -1,6 +1,4 @@
 // Place pages: "Read more" on long captions, and the collections menu.
-// Loaded BEFORE collage.js — a clamped caption decides how much of the screen
-// is left for the wall under it, so it must be clamped before the wall lays out.
 (() => {
   // A caption of 2+ paragraphs shows its first paragraph plus a few lines of the
   // next, fading to the page, with "Read more" sitting on the fade. The button
@@ -11,7 +9,7 @@
   const PEEK = 2.6 // lines of the second paragraph that show through the fade
   const CAP = 0.4 // of the screen height
   // svh, measured once: unlike innerHeight it doesn't move with the mobile URL
-  // bar, so scrolling never re-clamps a caption (and relayouts its wall)
+  // bar, so scrolling never re-clamps a caption under the reader
   const probe = document.createElement('div')
   probe.style.cssText = 'position:absolute;visibility:hidden;height:100vh;height:100svh'
   document.body.appendChild(probe)
@@ -23,7 +21,6 @@
     const lh0 = parseFloat(getComputedStyle(cap).lineHeight) || 22
     if (cap.children.length < 2 && cap.scrollHeight <= limit(lh0) + 2 * lh0) return
     const section = cap.closest('.place-coll')
-    const wall = section.querySelector('.collage')
     const btn = document.createElement('button')
     btn.type = 'button'
     btn.className = 'read-more'
@@ -40,14 +37,7 @@
       if (clamped) {
         cap.classList.add('is-clamped')
         clamp()
-        // release the wall back to "whatever the screen has left"
-        wall.style.height = ''
-        wall.style.flex = ''
       } else {
-        // pin the wall first, so opening the caption pushes it down the page
-        // instead of squeezing it
-        wall.style.height = wall.offsetHeight + 'px'
-        wall.style.flex = 'none'
         cap.classList.remove('is-clamped')
         cap.style.maxHeight = ''
       }
