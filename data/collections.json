@@ -600,6 +600,16 @@
         "CT '26/Edited/Hartford/IMG_8599.jpg"
       ],
       "caption": "Much like many capital cities of the US, Hartford's capitol complex is gorgeous, serene, and completely devoid of life."
+    },
+    {
+      "slug": "parlor-city",
+      "title": "Parlor City",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Binghamton"
     }
   ]
 }

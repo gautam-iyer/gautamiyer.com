@@ -196,6 +196,12 @@
         "from_img": 7629,
         "neighborhood": "Coltsville"
       }
+    ],
+    "road-trip-2025-11": [
+      {
+        "from_img": 200,
+        "city": "Endicott"
+      }
     ]
   }
 }
