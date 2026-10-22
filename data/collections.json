@@ -610,6 +610,296 @@
       "order": 0,
       "type": "curated",
       "place": "Binghamton"
+    },
+    {
+      "slug": "the-stockade",
+      "title": "The Stockade",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Schenectady"
+    },
+    {
+      "slug": "moon-and-river",
+      "title": "Moon and River",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Schenectady"
+    },
+    {
+      "slug": "nott",
+      "title": "Nott",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Schenectady"
+    },
+    {
+      "slug": "the-carpet-mills",
+      "title": "The Carpet Mills",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Amsterdam"
+    },
+    {
+      "slug": "amber",
+      "title": "Amber",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Amsterdam"
+    },
+    {
+      "slug": "roscoe-conkling",
+      "title": "Roscoe Conkling",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Utica"
+    },
+    {
+      "slug": "little-italy",
+      "title": "Little Italy",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Utica"
+    },
+    {
+      "slug": "genesee",
+      "title": "Genesee",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Utica"
+    },
+    {
+      "slug": "haunted-house",
+      "title": "Haunted House",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Utica"
+    },
+    {
+      "slug": "industrial-utica",
+      "title": "Industrial Utica",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Utica"
+    },
+    {
+      "slug": "sent-upstate",
+      "title": "Sent Upstate",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Utica"
+    },
+    {
+      "slug": "utica-core",
+      "title": "Utica Core",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Utica"
+    },
+    {
+      "slug": "niagara-mohawk",
+      "title": "Niagara Mohawk",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Syracuse"
+    },
+    {
+      "slug": "downtown-syracuse",
+      "title": "Downtown Syracuse",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Syracuse"
+    },
+    {
+      "slug": "outer-cuse",
+      "title": "Outer Cuse",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Syracuse"
+    },
+    {
+      "slug": "sunset-every-night",
+      "title": "Sunset Every Night",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Skaneateles"
+    },
+    {
+      "slug": "tri-cities-ephemera",
+      "title": "Tri-Cities Ephemera",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Endicott"
+    },
+    {
+      "slug": "the-square-deal",
+      "title": "The Square Deal",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Endicott"
+    },
+    {
+      "slug": "punch",
+      "title": "Punch",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Troy"
+    },
+    {
+      "slug": "empire-state-plaza",
+      "title": "Empire State Plaza",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Albany"
+    },
+    {
+      "slug": "across-the-river",
+      "title": "Across-the-River",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Rensselaer"
+    },
+    {
+      "slug": "the-port-of-albany",
+      "title": "The Port of Albany",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Albany"
+    },
+    {
+      "slug": "south-side-albany",
+      "title": "South Side Albany",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Albany"
+    },
+    {
+      "slug": "the-capitol-albany",
+      "title": "The Capitol",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Albany"
+    },
+    {
+      "slug": "ethnic-utica",
+      "title": "Ethnic Utica",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Utica"
+    },
+    {
+      "slug": "tri-cities-industrial",
+      "title": "Tri-Cities Industrial",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Binghamton"
+    },
+    {
+      "slug": "little-italy-endicott",
+      "title": "Little Italy",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Endicott"
+    },
+    {
+      "slug": "upstate-orthodox",
+      "title": "Upstate Orthodox",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Endicott"
+    },
+    {
+      "slug": "chenango",
+      "title": "Chenango",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Binghamton"
     }
   ]
 }

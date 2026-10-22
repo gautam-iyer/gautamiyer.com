@@ -99062,7 +99062,9 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Binghamton — Derelict brick industrial plant, likely an Endicott-Johnson-era factory or powerhouse, with towering slit windows of rusted steel sash, a skeletal fire-escape ladder, and bare trees and weeds reclaiming the yard.",
-    "collections": [],
+    "collections": [
+      "little-italy"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257201_002558870037.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257201_002558870037.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257201_002558870037.display.webp",
@@ -99098,7 +99100,9 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — strip-plaza storefront of Maria's Pasta Shop ('The Tradition Continues', mariaspastashop.com) with a hand-painted menu of meatballs & sauce, manicotti and baked ziti in the window; a battered blue USPS collection box and American and Italian flags flank the brick-and-corrugated-metal facade. Signage does not name the city.",
-    "collections": [],
+    "collections": [
+      "little-italy"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880002.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880002.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880002.display.webp",
@@ -99135,12 +99139,14 @@
       "Color"
     ],
     "tag_notes": "The 1927 Uptown Theatre on Genesee Street in Utica — carved stone Moorish-Gothic arch and pinnacled niches over a white marquee reading 'IMPROV FRIDAYS'. A classic neighborhood movie-palace theater facade with planters and storefronts tucked either side.",
-    "collections": [],
+    "collections": [
+      "genesee"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880003.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880003.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880003.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1056828,
     "src_mtime": 1764200472
   },
@@ -99170,12 +99176,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — vacant two-story brick institutional building (reads as a former school or parish hall) with a square entry tower, Tudor-Gothic arched wooden doors, stone trim and boarded upper windows, set behind a leaf-strewn lawn and bare November trees.",
-    "collections": [],
+    "collections": [
+      "utica-core"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880004.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880004.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880004.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1521332,
     "src_mtime": 1764200410
   },
@@ -99205,12 +99213,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — grand yellow-brick Colonial Revival foursquare at no. 1606 with a full-width columned and screened porch, slate mansard-like roof with pedimented dormers, and mustard-painted trim, photographed head-on across an autumn lawn.",
-    "collections": [],
+    "collections": [
+      "haunted-house"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880005.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880005.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880005.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1300049,
     "src_mtime": 1764083553
   },
@@ -99241,12 +99251,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — boarded-up Italianate frame house with a heavy bracketed cornice, arched window hoods, a carved pediment porch and plywood over the ground-floor windows and bay; a black street lamp stands in the overgrown yard. Quietly derelict rust-belt residential block.",
-    "collections": [],
+    "collections": [
+      "haunted-house"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880008.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880008.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880008.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1447687,
     "src_mtime": 1764083564
   },
@@ -99277,12 +99289,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — imposing vacant Italianate masonry mansion with an ornately bracketed dark cornice, arched brown-trimmed windows, a two-story oriel over a columned entry porch, and plywood in several openings; long stair run up from the sidewalk between bare trees.",
-    "collections": [],
+    "collections": [
+      "haunted-house"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880010.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880010.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880010.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1485866,
     "src_mtime": 1764083526
   },
@@ -99316,12 +99330,14 @@
       "Color"
     ],
     "tag_notes": "Entrance of St. Volodymyr the Great Ukrainian Catholic Church in Utica — bilingual Ukrainian/English bronze plaque, a gold-ground mosaic mural of St. Volodymyr holding a cross and trident shield above the bronze doors, a wreath on the door and mums at the foot of the steps.",
-    "collections": [],
+    "collections": [
+      "genesee"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880011.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880011.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880011.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1300069,
     "src_mtime": 1764083510
   },
@@ -99352,12 +99368,14 @@
       "Color"
     ],
     "tag_notes": "Hemstrought's Bakeries, 'Home of \"The Original\" Half-Moon Cookie' and '100 Years' — a corrugated-metal roadside bakery in Utica, with a Utica Coffee Roasting Co. decal (Utica, New York) and neon OPEN and COFFEE signs in the windows.",
-    "collections": [],
+    "collections": [
+      "utica-core"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880013.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880013.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880013.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1065565,
     "src_mtime": 1764081523
   },
@@ -99387,12 +99405,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — pair of rusting mushroom-capped cyclone dust collectors and ductwork sprouting from the back of a derelict whitewashed brick factory, half swallowed by vines and scrub behind a chain-link fence. Rust-belt industrial decay study.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880014.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880014.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880014.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1422745,
     "src_mtime": 1764081504
   },
@@ -99422,12 +99442,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — back-lot view of a peeling white-painted brick factory: a tall metal boiler stack rises through a rusted steel water-tank frame, with runs of pipes bridging the alley and a bare cinder-block wall below. Quiet geometry of an aging industrial plant.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880015.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880015.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880015.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1046057,
     "src_mtime": 1764200449
   },
@@ -99459,12 +99481,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Jeannelle's 'Disha Vu' Diner (315-797-1617, a Utica-area 315-797 exchange) occupying a peeling one-story corner addition to a teal-shingled Victorian-era house, its retro sign showing a waitress in a red dress. Wonderful worn-paint texture on the clapboard.",
-    "collections": [],
+    "collections": [
+      "utica-core"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880016.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880016.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880016.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1414868,
     "src_mtime": 1764081482
   },
@@ -99495,12 +99519,14 @@
       "Color"
     ],
     "tag_notes": "The long white-painted brick Utica Cutlery Company factory, its name hand-lettered in giant black capitals across the full facade, with shed dormers on the roof and a chain-link fence along the highway guardrail in front. Working 19th-century-rooted Utica manufacturer.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880017.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880017.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880017.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1234306,
     "src_mtime": 1764081462
   },
@@ -99530,12 +99556,14 @@
       "Color"
     ],
     "tag_notes": "Monumental Greek Revival portico of Old Main at the former Utica State Hospital (1843) — four-story unfluted Doric limestone columns beneath a pediment, the vacant asylum sealed off behind a chain-link fence across a cracked empty forecourt.",
-    "collections": [],
+    "collections": [
+      "sent-upstate"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880020.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880020.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880020.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1095010,
     "src_mtime": 1764081447
   },
@@ -99566,12 +99594,14 @@
       "Color"
     ],
     "tag_notes": "The red-brick F.X. Matt Brewery in Utica crowned by its rooftop script 'Utica Club' steel-frame sign, an American flag flying at left and a boom lift working against the tower; dense evergreen hedge and iron fence in the foreground. Historic brewery landmark.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880023.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880023.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880023.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1265263,
     "src_mtime": 1764200350
   },
@@ -99602,12 +99632,14 @@
       "Color"
     ],
     "tag_notes": "F.X. Matt Brewing Co. brew house in Utica under a blue sky — 'FX MATT BREWING' and 'BREW HOUSE' signage on the brick blocks, a tall tapered brick smokestack, stainless tank and rising steam, with the Utica Club rooftop sign visible behind.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880024.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880024.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880024.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1149454,
     "src_mtime": 1764081382
   },
@@ -99638,12 +99670,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Sure Stop Brake Service, a weathered tan-brick auto garage with a faded hand-painted sign, a roll-up door, an old white sedan parked out front and a red SUV with a plow at the side. Golden late-day rust-belt light.",
-    "collections": [],
+    "collections": [
+      "utica-core"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880026.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880026.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880026.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1484011,
     "src_mtime": 1764200319
   },
@@ -99674,12 +99708,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — pale-blue Italianate frame double house at no. 315 with pedimented window hoods, a bracketed bay, dentiled cornice and a red-floored porch with painted floral frieze panels; wicker bench and chair by the paneled double doors. Warm low-angle autumn light.",
-    "collections": [],
+    "collections": [
+      "haunted-house"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880028.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880028.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880028.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1127665,
     "src_mtime": 1764081361
   },
@@ -99711,12 +99747,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — storefront Pentecostal church in a salmon-stuccoed building: hand-cut red bubble letters on the black door read 'Iglesia Pentecostal Jesus Es La Puerta', beside a white residential door with an oval leaded-glass insert; twin concrete stoops throw hard raking shadows.",
-    "collections": [],
+    "collections": [
+      "utica-core"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880029.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880029.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880029.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1123838,
     "src_mtime": 1764200286
   },
@@ -99747,12 +99785,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — 'Fresh & Fried Seafood' fish market in a low white vinyl-sided building with a seagull on the scalloped fascia; window signs list haddock, scallops, clams and shrimp and boast of 'the only outstanding fish market' in town. Leaves scattered on the sunny sidewalk.",
-    "collections": [],
+    "collections": [
+      "utica-core"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880031.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880031.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880031.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1220056,
     "src_mtime": 1764083734
   },
@@ -99784,12 +99824,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — empty wooden park bench on a green lawn facing a chain-link fence, with a rusting concrete batch plant behind: twin silos, hoppers and an inclined conveyor strung against a clear blue sky laced with power lines. Deadpan park-meets-industry juxtaposition.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880033.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880033.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880033.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1386746,
     "src_mtime": 1764081348
   },
@@ -99819,12 +99861,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — sun-washed interior of an old Italian deli/pasta shop (likely Maria's Pasta Shop) decked with a gold 'Happy 50th Anniversary' banner and a big '5' and '0' in the window; pressed-tin ceiling, ceiling fan, checkered floor, deli cases and tables of boxed goods.",
-    "collections": [],
+    "collections": [
+      "utica-core"
+    ],
     "thumb": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880036.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880036.display.avif",
     "display_webp": "road-trip-2025-11/kodak_200_c_41_34848_113790_257202_002558880036.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1313598,
     "src_mtime": 1764200303
   },
@@ -99857,12 +99901,14 @@
       "Color"
     ],
     "tag_notes": "Twin storefronts on Bleecker Street, Utica: the Dominican Barbershop (flag-styled sign, barber pole, Christmas tree in the window) beside La Famiglia Bossone's Sausage & Meat Co., whose window poster touts 'The Original Utica Recipe'; a man steps into the barbershop.",
-    "collections": [],
+    "collections": [
+      "little-italy"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890003.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890003.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890003.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 994242,
     "src_mtime": 1764081175
   },
@@ -99893,12 +99939,14 @@
       "Color"
     ],
     "tag_notes": "Looking down Bleecker Street in East Utica under the tricolor-striped hanging sign of Caffe Caruso Italian Pastry Shop, its painted layer cake above the sidewalk; the N.J. Flihan & Co. restaurant-supply sign hangs beyond and downtown Utica towers rise in the distance.",
-    "collections": [],
+    "collections": [
+      "little-italy"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890004.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890004.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890004.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1280946,
     "src_mtime": 1764063012
   },
@@ -99906,7 +99954,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890005.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890005.jpg",
     "shoot": "road-trip-2025-11",
-    "city": "Utica",
+    "city": "Syracuse",
     "state": "NY",
     "date": "2025-11-17",
     "img_no": 400,
@@ -99930,12 +99978,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Art Deco Niagara Mohawk Power building: 'NIAGARA MOHAWK' lettering flanking a sunburst New York State medallion over a chrome-banded marquee, black-granite piers with zigzag motifs, buff brick above and National Grid banners at the doors; lacks the Syracuse headquarters' Spirit of Light figure, and the rest of the roll is Utica, so likely the Utica utility office.",
-    "collections": [],
+    "collections": [
+      "niagara-mohawk"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890005.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890005.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890005.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1148285,
     "src_mtime": 1764083668
   },
@@ -99965,12 +100015,14 @@
       "Color"
     ],
     "tag_notes": "The Niagara Mohawk Building in Syracuse, shot head-on: buff brick and stainless-steel setbacks climbing to the winged 'Spirit of Light' figure, with an American flag at half-staff on the mast above. One of the great Art Deco utility headquarters in America.",
-    "collections": [],
+    "collections": [
+      "niagara-mohawk"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890006.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890006.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890006.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1387197,
     "src_mtime": 1764083652
   },
@@ -100001,12 +100053,14 @@
       "Color"
     ],
     "tag_notes": "Looking straight up the corner of the Niagara Mohawk Building in Syracuse — chrome fins, zigzag stainless trim and the Spirit of Light statue silhouetted against blue sky. Sunstruck Art Deco metalwork at a vertiginous angle.",
-    "collections": [],
+    "collections": [
+      "niagara-mohawk"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890008.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890008.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890008.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1142928,
     "src_mtime": 1764063014
   },
@@ -100038,12 +100092,14 @@
       "Color"
     ],
     "tag_notes": "The Syracuse Savings Bank Building (1876) on Clinton Square, its High Victorian Gothic tower and gabled sandstone façade beside a decorated Christmas tree, reflected in the flooded ice-rink basin in the foreground. Red-brick Victorian blocks stand to the left.",
-    "collections": [],
+    "collections": [
+      "downtown-syracuse"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890009.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890009.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890009.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1034302,
     "src_mtime": 1764080250
   },
@@ -100074,12 +100130,14 @@
       "Color"
     ],
     "tag_notes": "Clinton Square, Syracuse: the Gothic Revival Syracuse Savings Bank with an American flag and a red-brick Victorian commercial block, both mirrored upside-down in the still water of the square's flooded rink basin. Water reflection carries the whole lower half of the frame.",
-    "collections": [],
+    "collections": [
+      "downtown-syracuse"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890010.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890010.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890010.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1228007,
     "src_mtime": 1764080269
   },
@@ -100111,12 +100169,14 @@
       "Color"
     ],
     "tag_notes": "Close view of the Syracuse Savings Bank Building's upper stories — banded sandstone, pointed-arch windows, corner pinnacles and the steep slate-clad tower catching late sun against a cloud bank. A green Clinton Square lamppost enters at right.",
-    "collections": [],
+    "collections": [
+      "downtown-syracuse"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890012.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890012.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890012.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1337755,
     "src_mtime": 1764063014
   },
@@ -100147,12 +100207,14 @@
       "Color"
     ],
     "tag_notes": "The Soldiers' and Sailors' Monument (1910) in Clinton Square, Syracuse — a classical limestone shaft with engaged Ionic columns, bronze relief figures and a sphere finial, ringed by green lampposts at the edge of the drained rink. A lone pedestrian passes a mid-century office block behind.",
-    "collections": [],
+    "collections": [
+      "downtown-syracuse"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890013.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890013.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890013.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1129380,
     "src_mtime": 1764063016
   },
@@ -100183,12 +100245,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Syracuse — a derelict corrugated-metal elevator/silo structure, rust bleeding down its white cladding, laced with utility-pole wires and graffiti tags ('PAWA' legible) around its open ground bays; an orange traffic cone sits at the curb. Shot between the Clinton Square and Gem Diner frames.",
-    "collections": [],
+    "collections": [
+      "outer-cuse"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890015.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890015.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890015.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1320790,
     "src_mtime": 1764063016
   },
@@ -100220,12 +100284,14 @@
       "Color"
     ],
     "tag_notes": "Dead-on elevation of 'The Patio at the Gem,' the stainless-steel annex of the Gem Diner on Spencer Street, Syracuse — quilted steel panels, red trim bands, checkerboard sign lettering and two small American flags in the windows. Pure roadside Streamline Moderne.",
-    "collections": [],
+    "collections": [
+      "outer-cuse"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890017.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890017.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890017.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1202703,
     "src_mtime": 1764081224
   },
@@ -100258,12 +100324,14 @@
       "Color"
     ],
     "tag_notes": "The Gem Diner, Syracuse, in low golden light: corrugated stainless prefab diner with red roofline, the vintage 'The GEM' neon pylon sign, a 'COLOR TV' sign below it, and a black 1960s sedan lettered 'Great Food' parked out front.",
-    "collections": [],
+    "collections": [
+      "outer-cuse"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890018.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890018.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890018.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1336394,
     "src_mtime": 1764081237
   },
@@ -100294,12 +100362,14 @@
       "Color"
     ],
     "tag_notes": "The Crucible steel works on Syracuse's western edge at sunset — sawtooth mill blocks in silhouette under a burning cloud bank, with the rooftop 'CRUCIBLE' sign legible at right. Specialty steel has been made on this site for over a century.",
-    "collections": [],
+    "collections": [
+      "outer-cuse"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890019.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890019.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890019.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 955070,
     "src_mtime": 1764079489
   },
@@ -100307,7 +100377,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890020.JPG",
     "file": "kodak_400_c_41_34848_113790_257204_002558890020.JPG",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Skaneateles",
     "state": null,
     "date": "2025-11-17",
     "img_no": 400,
@@ -100331,12 +100401,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Skaneateles — the long concrete village pier with its iron railing raking out into a glassy lake at golden hour, its warm-lit flank reflected in the water, wooded hills folding away down the far shore. Water fills two-thirds of the frame.",
-    "collections": [],
+    "collections": [
+      "sunset-every-night"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890020.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890020.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890020.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1195653,
     "src_mtime": 1764063018
   },
@@ -100344,7 +100416,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890021.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890021.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Skaneateles",
     "state": null,
     "date": "2025-11-17",
     "img_no": 400,
@@ -100366,12 +100438,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Skaneateles — a shadowed alley between a brick commercial building and a yellow clapboard one, framing a bright slice of lake with houses on the far shore; 'PRIVATE' is stenciled on the asphalt in the foreground. Water glows at the end of the passage.",
-    "collections": [],
+    "collections": [
+      "sunset-every-night"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890021.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890021.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890021.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1049695,
     "src_mtime": 1764079433
   },
@@ -100379,7 +100453,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890022.JPG",
     "file": "kodak_400_c_41_34848_113790_257204_002558890022.JPG",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Skaneateles",
     "state": null,
     "date": "2025-11-17",
     "img_no": 400,
@@ -100402,12 +100476,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Skaneateles — the bare aluminum frame of a canopied boat hoist juts into calm evening lake water, mooring buoys dotting the surface and the far shoreline glowing in last light. Quiet off-season waterfront still life.",
-    "collections": [],
+    "collections": [
+      "sunset-every-night"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890022.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890022.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890022.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1191969,
     "src_mtime": 1764063018
   },
@@ -100415,7 +100491,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890023.JPG",
     "file": "kodak_400_c_41_34848_113790_257204_002558890023.JPG",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Skaneateles",
     "state": null,
     "date": "2025-11-17",
     "img_no": 400,
@@ -100437,12 +100513,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Skaneateles — empty green benches on a lakeside park lawn under a bare weeping tree with a few clinging golden leaves, the lake stretching mirror-flat toward low hills. Late-autumn stillness at the water's edge.",
-    "collections": [],
+    "collections": [
+      "sunset-every-night"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890023.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890023.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890023.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1344424,
     "src_mtime": 1764063018
   },
@@ -100450,7 +100528,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890027.JPG",
     "file": "kodak_400_c_41_34848_113790_257204_002558890027.JPG",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Skaneateles",
     "state": null,
     "date": "2025-11-17",
     "img_no": 400,
@@ -100472,12 +100550,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Skaneateles — golden-hour lakeshore with a turreted white boathouse, docks and stone-walled cottages strung along the near shore, all doubled in the calm water; wooded ridgelines recede down the lake. Water dominates the frame.",
-    "collections": [],
+    "collections": [
+      "sunset-every-night"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890027.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890027.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890027.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1191518,
     "src_mtime": 1764063020
   },
@@ -100485,7 +100565,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890028.JPG",
     "file": "kodak_400_c_41_34848_113790_257204_002558890028.JPG",
     "shoot": "road-trip-2025-11",
-    "city": "Endwell",
+    "city": "Endicott",
     "state": "NY",
     "date": "2025-11-17",
     "img_no": 400,
@@ -100509,12 +100589,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — the Endwell Motel's stacked googie signage ('Endwell' in script over yellow 'MOTEL' letterboxes and a 'COLOR TV' panel) fronting a pink two-story motor court; a billboard for 'After Hours Tires 607-748-5555' hangs at right. Endwell is the hamlet between Endicott and Johnson City.",
-    "collections": [],
+    "collections": [
+      "tri-cities-ephemera"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890028.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890028.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890028.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1331903,
     "src_mtime": 1764063020
   },
@@ -100522,7 +100604,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890030.JPG",
     "file": "kodak_400_c_41_34848_113790_257204_002558890030.JPG",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 400,
@@ -100545,12 +100627,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — a sprawling white-clad factory complex seen across a weedy lot and sagging chain-link fence, with a rusted gate gantry marked 'CLEARANCE 14'' and a line of birds strung along the power lines above. Rust-belt perimeter scene in raking light.",
-    "collections": [],
+    "collections": [
+      "the-square-deal"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890030.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890030.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890030.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1370425,
     "src_mtime": 1764063020
   },
@@ -100558,7 +100642,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890032.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890032.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 400,
@@ -100581,12 +100665,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — an active industrial plant with a red band running across its gray metal cladding, steam curling off a cluster of tall dark stacks into blue sky; a red pickup and rows of workers' cars line the street in front. The working counterpoint to the derelict mills nearby.",
-    "collections": [],
+    "collections": [
+      "the-square-deal"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890032.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890032.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890032.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1129342,
     "src_mtime": 1764081272
   },
@@ -100594,7 +100680,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257204_002558890034.jpg",
     "file": "kodak_400_c_41_34848_113790_257204_002558890034.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 400,
@@ -100618,12 +100704,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — a three-story mid-century storefront slab at no. 48, its white panelized façade framed like a proscenium over dark terrazzo-flecked granite, with 'PHOTONIX' in brushed letters above a ribbed-metal entry bay; a red awning marked '50' hangs on the tan brick neighbor.",
-    "collections": [],
+    "collections": [
+      "the-square-deal"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890034.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890034.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257204_002558890034.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1036203,
     "src_mtime": 1764081296
   },
@@ -100668,7 +100756,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257205_002558900005.jpg",
     "file": "kodak_400_c_41_34848_113790_257205_002558900005.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Troy",
     "state": null,
     "date": "2025-11-17",
     "img_no": 400,
@@ -100692,12 +100780,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — a weathered brick warehouse wall with a tall round-arched doorway of blackened vertical planks, its flanking window openings bricked in; vines, weeds and a leaning sheet of plywood soften the base, with a faint graffiti tag at left. Texture study in brick and decay.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900005.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900005.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900005.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1543898,
     "src_mtime": 1764199683
   },
@@ -100705,7 +100795,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257205_002558900010.jpg",
     "file": "kodak_400_c_41_34848_113790_257205_002558900010.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Troy",
     "state": null,
     "date": "2025-11-17",
     "img_no": 400,
@@ -100728,12 +100818,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — a derelict red-painted brick rowhouse with every window boarded in fresh plywood behind arched Italianate hoods, hard afternoon shadow slicing diagonally across the façade and a bare street tree throwing its own shadow-drawing on the wall.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900010.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900010.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900010.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1355859,
     "src_mtime": 1764199621
   },
@@ -100741,7 +100833,7 @@
     "key": "November '25 Road Trip/Edited/kodak_400_c_41_34848_113790_257205_002558900011.jpg",
     "file": "kodak_400_c_41_34848_113790_257205_002558900011.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Troy",
     "state": null,
     "date": "2025-11-17",
     "img_no": 400,
@@ -100766,12 +100858,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — a green-painted brick façade with raised round arches picked out in dusty red, some framing windows and others blind; a faded 'Benjamin Moore Paints' sign leans in one upper sash above a black mesh-draped canopy. Two-tone color-block composition.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900011.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900011.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900011.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1170873,
     "src_mtime": 1764199602
   },
@@ -100803,12 +100897,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — Three attached late-1800s brick flats with projecting white bay windows and arched entries catch low golden light behind an American flag on a flagpole. A blue SUV is parked at the curb; the roofline carries pressed-metal cornices.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900013.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900013.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900013.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1135057,
     "src_mtime": 1764199549
   },
@@ -100838,12 +100934,14 @@
       "Color"
     ],
     "tag_notes": "Close corner view of the round brick Troy Gasholder House (1873), its corbelled cornice, blind arches, and tall arched windows raking in afternoon sun, with graffiti at the base and fall hillside color behind. A wooden ramp leads to an arched plank door.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900014.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900014.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900014.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1534864,
     "src_mtime": 1764199521
   },
@@ -100874,12 +100972,14 @@
       "Color"
     ],
     "tag_notes": "The full circular Troy Gasholder House with its domed roof and central cupola rises behind a chain-link fence and a bare street tree, while a burnt-orange vintage VW bus is parked in the foreground street. A classic South Troy industrial-landmark scene.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900015.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900015.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900015.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1249033,
     "src_mtime": 1764199494
   },
@@ -100911,12 +101011,14 @@
       "Color"
     ],
     "tag_notes": "Richardsonian Romanesque entrance in rough-faced red sandstone with the carved lintel 'GVRLEY MEMORIAL HALL' (Russell Sage College) and an 'A.D.' datestone, teal double doors under a deep round arch, and a lamppost, all dappled by blazing autumn maple leaves.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900019.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900019.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900019.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1628411,
     "src_mtime": 1764199377
   },
@@ -100948,12 +101050,14 @@
       "Color"
     ],
     "tag_notes": "The Soldiers' and Sailors' Monument at Troy's Monument Square: the verdigris bronze 'Call to Arms' figure raises a trumpet atop its granite column against a hard blue sky. Behind stands a white terra-cotta Beaux-Arts commercial palace with arched windows and pigeons on its cornice.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900020.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900020.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900020.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 953293,
     "src_mtime": 1764199364
   },
@@ -100985,12 +101089,14 @@
       "Color"
     ],
     "tag_notes": "The Rice Building (1871) at First and River Streets in downtown Troy — a polychrome High Victorian Gothic corner block with a sawtooth run of gabled dormers, banded arches, and pointed windows over ground-floor storefronts, a lamppost dressed with a holiday wreath at the corner.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900021.thumb.webp",
     "display_avif": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900021.display.avif",
     "display_webp": "road-trip-2025-11/kodak_400_c_41_34848_113790_257205_002558900021.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1405688,
     "src_mtime": 1764199343
   },
@@ -101022,12 +101128,14 @@
       "Color"
     ],
     "tag_notes": "The Albany skyline — the marble Corning Tower and the Empire State Plaza agency towers with a church spire below — framed through a blurred gap in a fence across a weedy vacant lot under a gray November sky.",
-    "collections": [],
+    "collections": [
+      "empire-state-plaza"
+    ],
     "thumb": "road-trip-2025-11/img_8044.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8044.display.avif",
     "display_webp": "road-trip-2025-11/img_8044.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 703474,
     "src_mtime": 1763392301
   },
@@ -101035,7 +101143,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8071.jpg",
     "file": "IMG_8071.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Rensselaer",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8071,
@@ -101057,12 +101165,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Albany — A weathered three-story Victorian frame house in white and oxblood, its fishscale-shingled top floor with a diamond motif over a heavy bracketed cornice, and a deep front porch holding wicker chairs and a wreath on the door.",
-    "collections": [],
+    "collections": [
+      "across-the-river"
+    ],
     "thumb": "road-trip-2025-11/img_8071.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8071.display.avif",
     "display_webp": "road-trip-2025-11/img_8071.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 881987,
     "src_mtime": 1763393139
   },
@@ -101070,7 +101180,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8082.jpg",
     "file": "IMG_8082.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Rensselaer",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8082,
@@ -101093,12 +101203,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Albany — Handsome gray-painted brick Victorian house with faded pink scalloped awnings, a frieze of purple-accented rosettes under the bracketed cornice, gingerbread porch brackets, and arched double entry doors above a short stoop.",
-    "collections": [],
+    "collections": [
+      "across-the-river"
+    ],
     "thumb": "road-trip-2025-11/img_8082.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8082.display.avif",
     "display_webp": "road-trip-2025-11/img_8082.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 766471,
     "src_mtime": 1763393340
   },
@@ -101106,7 +101218,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8090.jpg",
     "file": "IMG_8090.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Rensselaer",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8090,
@@ -101129,12 +101241,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Albany — A sidewalk-level run of modest clapboard workers' houses with bracketed cornices and enclosed porches, roofs dusted with the season's first snow, telephone wires crisscrossing overhead and a tall concrete industrial chimney rising in the distance.",
-    "collections": [],
+    "collections": [
+      "across-the-river"
+    ],
     "thumb": "road-trip-2025-11/img_8090.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8090.display.avif",
     "display_webp": "road-trip-2025-11/img_8090.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 914341,
     "src_mtime": 1763393704
   },
@@ -101142,7 +101256,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8119.jpg",
     "file": "IMG_8119.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Albany",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8119,
@@ -101169,7 +101283,7 @@
     "display_avif": "road-trip-2025-11/img_8119.display.avif",
     "display_webp": "road-trip-2025-11/img_8119.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 876525,
     "src_mtime": 1763395588
   },
@@ -101177,7 +101291,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8124.jpg",
     "file": "IMG_8124.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Albany",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8124,
@@ -101205,7 +101319,7 @@
     "display_avif": "road-trip-2025-11/img_8124.display.avif",
     "display_webp": "road-trip-2025-11/img_8124.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 742851,
     "src_mtime": 1763395819
   },
@@ -101213,7 +101327,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8142.jpg",
     "file": "IMG_8142.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Albany",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8142,
@@ -101243,7 +101357,7 @@
     "display_avif": "road-trip-2025-11/img_8142.display.avif",
     "display_webp": "road-trip-2025-11/img_8142.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1002232,
     "src_mtime": 1763396916
   },
@@ -101251,7 +101365,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8160.jpg",
     "file": "IMG_8160.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Albany",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8160,
@@ -101279,7 +101393,7 @@
     "display_avif": "road-trip-2025-11/img_8160.display.avif",
     "display_webp": "road-trip-2025-11/img_8160.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1012299,
     "src_mtime": 1763398161
   },
@@ -101287,7 +101401,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8195.jpg",
     "file": "IMG_8195.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Albany",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8195,
@@ -101316,7 +101430,7 @@
     "display_avif": "road-trip-2025-11/img_8195.display.avif",
     "display_webp": "road-trip-2025-11/img_8195.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 610678,
     "src_mtime": 1763404428
   },
@@ -101324,7 +101438,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8210.jpg",
     "file": "IMG_8210.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Albany",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8210,
@@ -101352,7 +101466,7 @@
     "display_avif": "road-trip-2025-11/img_8210.display.avif",
     "display_webp": "road-trip-2025-11/img_8210.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 936620,
     "src_mtime": 1763404752
   },
@@ -101425,7 +101539,7 @@
     "display_avif": "road-trip-2025-11/img_8266.display.avif",
     "display_webp": "road-trip-2025-11/img_8266.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 892352,
     "src_mtime": 1763409115
   },
@@ -101457,12 +101571,14 @@
       "Color"
     ],
     "tag_notes": "An ornate black-and-gold 'CITY OF ALBANY' post clock reads just past noon on lower State Street, with a flame-red November tree beside it and the turreted Flemish Gothic tower of the SUNY System Administration Building (the old D&H headquarters) closing the view downhill.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8282.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8282.display.avif",
     "display_webp": "road-trip-2025-11/img_8282.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 776105,
     "src_mtime": 1763409420
   },
@@ -101493,12 +101609,14 @@
       "Color"
     ],
     "tag_notes": "Beneath the cantilevered marble mass of Agency Building 4 at Albany's Empire State Plaza, a brick-paved promenade runs past rows of rust-orange autumn trees, with the numbered agency towers receding down the government campus on a moody evening.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8337.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8337.display.avif",
     "display_webp": "road-trip-2025-11/img_8337.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 661403,
     "src_mtime": 1763410654
   },
@@ -101530,12 +101648,14 @@
       "Color"
     ],
     "tag_notes": "Telephoto compression flattens the New York State Capitol's façade into a granite grid: tiers of round-arched windows between paired pilasters, a balustraded belt course, and rusticated entrance arches at the base, glowing warm gray in evening light.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8351.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8351.display.avif",
     "display_webp": "road-trip-2025-11/img_8351.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 930011,
     "src_mtime": 1763410991
   },
@@ -101566,12 +101686,14 @@
       "Color"
     ],
     "tag_notes": "The great concrete bowl of The Egg, Albany's performing arts center at the Empire State Plaza, curves across an overcast sky like a ship's hull, its board-formed texture streaked with rain stains; a russet treetop enters from the corner.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8357.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8357.display.avif",
     "display_webp": "road-trip-2025-11/img_8357.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 623357,
     "src_mtime": 1763411208
   },
@@ -101603,12 +101725,14 @@
       "Color"
     ],
     "tag_notes": "Head-on symmetrical portrait of an Empire State Plaza agency tower in Albany — a slim marble-ribbed slab tapering to its pedestal base over a small entry pavilion, flanked by copper-toned autumn trees under drifting clouds.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8362.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8362.display.avif",
     "display_webp": "road-trip-2025-11/img_8362.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 513012,
     "src_mtime": 1763411375
   },
@@ -101640,12 +101764,14 @@
       "Color"
     ],
     "tag_notes": "Abstract pairing at Albany's Empire State Plaza: the blank white-marble service core of the Corning Tower rises behind the gold-anodized curtain-wall block beside it, low sun raking the ribbed metal fins against a slate-gray sky.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8366.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8366.display.avif",
     "display_webp": "road-trip-2025-11/img_8366.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 573853,
     "src_mtime": 1763411397
   },
@@ -101676,12 +101802,14 @@
       "Color"
     ],
     "tag_notes": "Curved modernist entrance colonnade at Empire State Plaza — close-set marble piers, bronze revolving doors, and sweeping yellow-striped steps over brick paving. Part of the Wallace Harrison state-government complex.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8368.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8368.display.avif",
     "display_webp": "road-trip-2025-11/img_8368.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 644760,
     "src_mtime": 1763411572
   },
@@ -101713,12 +101841,14 @@
       "Color"
     ],
     "tag_notes": "Vertigo-inducing straight-up view of a marble-clad Empire State Plaza tower, its paired vertical stone fins converging into a cloudy sky. Cream marble panels and ribbon windows emphasize the modernist verticality.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8372.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8372.display.avif",
     "display_webp": "road-trip-2025-11/img_8372.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 448822,
     "src_mtime": 1763411644
   },
@@ -101750,12 +101880,14 @@
       "Color"
     ],
     "tag_notes": "The stepped row of identical Agency Building towers at Albany's Empire State Plaza, dark ribbed curtain walls and white marble end towers catching golden-hour sun against a cloud-streaked blue sky. An unmistakable Albany silhouette.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8393.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8393.display.avif",
     "display_webp": "road-trip-2025-11/img_8393.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 653987,
     "src_mtime": 1763412129
   },
@@ -101785,12 +101917,14 @@
       "Color"
     ],
     "tag_notes": "White plaster sculpture of a workman on a wooden scaffold with orange ropes, reaching toward a blue circular form — part of the Empire State Plaza art collection. A raking diagonal of sunlight cuts across the wall behind.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8415.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8415.display.avif",
     "display_webp": "road-trip-2025-11/img_8415.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 615248,
     "src_mtime": 1763412923
   },
@@ -101898,12 +102032,14 @@
       "Color"
     ],
     "tag_notes": "\"AGENCY BUILDING 2\" incised on the cantilevered marble underside of an Empire State Plaza tower, its recessed lobby in shadow. A small dark bronze sculpture holding an umbrella stands on a plinth by the doors, framed by autumn shrubs.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8458.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8458.display.avif",
     "display_webp": "road-trip-2025-11/img_8458.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 681644,
     "src_mtime": 1763415251
   },
@@ -101935,12 +102071,14 @@
       "Color"
     ],
     "tag_notes": "Abstract close-up of the gridded concrete underside of The Egg performing arts center glowing gold in low sun, with the dark ribbed curtain wall of an Agency Building tower behind against deep blue sky. Empire State Plaza's most sculptural pairing.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8463.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8463.display.avif",
     "display_webp": "road-trip-2025-11/img_8463.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 914507,
     "src_mtime": 1763415368
   },
@@ -101970,12 +102108,14 @@
       "Color"
     ],
     "tag_notes": "Interlocking cantilevered marble volumes and deep-set gridded windows of Empire State Plaza's state office buildings, trading sunlit and shadowed planes at golden hour. Heavy modernist massing in white Vermont marble.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8465.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8465.display.avif",
     "display_webp": "road-trip-2025-11/img_8465.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 717132,
     "src_mtime": 1763415468
   },
@@ -102006,12 +102146,14 @@
       "Color"
     ],
     "tag_notes": "The Egg performing arts center at Empire State Plaza in full profile, its concrete saucer hovering above a screen of blazing orange and gold November trees, with the ribbed curtain wall of a plaza office tower filling the background.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8467.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8467.display.avif",
     "display_webp": "road-trip-2025-11/img_8467.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1227072,
     "src_mtime": 1763415485
   },
@@ -102043,12 +102185,14 @@
       "Color"
     ],
     "tag_notes": "\"ROBERT ABRAMS BUILDING FOR LAW AND JUSTICE\" lettered across veined white marble panels at Empire State Plaza, with the honeycomb grid of a neighboring office slab glowing amber in low sun at left.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8475.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8475.display.avif",
     "display_webp": "road-trip-2025-11/img_8475.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 698360,
     "src_mtime": 1763415671
   },
@@ -102079,12 +102223,14 @@
       "Color"
     ],
     "tag_notes": "The Egg's silver saucer seen through a black iron fence at Empire State Plaza, golden autumn foliage massed beneath the curve, an American flag below, and a vertically finned plaza tower framing the composition at left.",
-    "collections": [],
+    "collections": [
+      "the-capitol-albany"
+    ],
     "thumb": "road-trip-2025-11/img_8480.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8480.display.avif",
     "display_webp": "road-trip-2025-11/img_8480.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 753728,
     "src_mtime": 1763415717
   },
@@ -102116,12 +102262,14 @@
       "Color"
     ],
     "tag_notes": "The 1873 Gasholder House in South Troy — a vast round brick drum with arched windows, corbelled Italianate cornice, weathered conical metal roof, and a louvered cupola with weathervane. A blue-and-yellow New York State historic marker stands by the sidewalk.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8517.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8517.display.avif",
     "display_webp": "road-trip-2025-11/img_8517.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1042141,
     "src_mtime": 1763474251
   },
@@ -102151,12 +102299,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — white-painted brick two-bay garage building (No. 1049) with corbelled cornice, two big red roll-down doors, and a hayloft-style door with rope above; reads as a converted firehouse or livery. Frame sits between two Troy Gasholder House shots on the same walk, but nothing in-frame confirms the city.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8518.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8518.display.avif",
     "display_webp": "road-trip-2025-11/img_8518.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 902854,
     "src_mtime": 1763474266
   },
@@ -102188,12 +102338,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — head-on portrait of a two-story red-brick worker's rowhouse with a white clapboard two-story bay window, red-painted stoop, and a bracketed cornice studded with white rosette medallions. Worn but proud 19th-century fabric.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8524.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8524.display.avif",
     "display_webp": "road-trip-2025-11/img_8524.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 733239,
     "src_mtime": 1763474407
   },
@@ -102223,12 +102375,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — derelict brick industrial building with whitewashed boarded window bays, exposed joist pockets marking a lost floor, and a tarp-draped roofline; a Gothic church spire rises behind, over a chain-link fenced lot with a lone lawn chair.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8543.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8543.display.avif",
     "display_webp": "road-trip-2025-11/img_8543.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 719517,
     "src_mtime": 1763474940
   },
@@ -102261,12 +102415,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — fading painted ghost sign for \"LINDY'S HARDWARE INC. — Building Materials, Rope, Roofing, Steel, Wholesale-Retail\" on a weathered four-story brick warehouse with broken-sash windows, glowing in low raking sun.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8558.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8558.display.avif",
     "display_webp": "road-trip-2025-11/img_8558.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1245686,
     "src_mtime": 1763475479
   },
@@ -102298,12 +102454,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — vacant red-painted brick rowhouse with plywood-boarded windows under stone lintels and an ornate bracketed Italianate cornice, half in shadow and half in warm evening light, a bare sapling with a few red leaves before the façade.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8566.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8566.display.avif",
     "display_webp": "road-trip-2025-11/img_8566.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 794473,
     "src_mtime": 1763475603
   },
@@ -102334,12 +102492,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — upper façades of three adjoining rowhouses in red brick, buff brick with an ornamented two-story bay, and yellow brick, under a cloudless blue sky with an American flag flying at left. Pressed-metal cornices and sunburst panels show late-Victorian streetwall variety.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8585.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8585.display.avif",
     "display_webp": "road-trip-2025-11/img_8585.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 829457,
     "src_mtime": 1763476284
   },
@@ -102372,12 +102532,14 @@
       "Color"
     ],
     "tag_notes": "Detail of the curving brick wall of Troy's 1873 Gasholder House — a cast date plaque, tall arched window, pilaster strips, and dentiled band course catching the late sun, with autumn hillside foliage glowing behind the drum.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8594.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8594.display.avif",
     "display_webp": "road-trip-2025-11/img_8594.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1038519,
     "src_mtime": 1763476690
   },
@@ -102409,12 +102571,14 @@
       "Color"
     ],
     "tag_notes": "Weathered arched wooden freight door set into the brick wall at Troy's Gasholder House site, vines climbing a plywood ramp below, faint graffiti at left, and square putlog holes punctuating the sunlit brick.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8597.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8597.display.avif",
     "display_webp": "road-trip-2025-11/img_8597.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1206785,
     "src_mtime": 1763476743
   },
@@ -102447,12 +102611,14 @@
       "Color"
     ],
     "tag_notes": "New York State historic marker reading \"GASHOLDER HOUSE — within this 19th century structure was a telescoping iron tank that stored manufactured coal gas until needed to illuminate streets and buildings in Troy,\" the great round brick drum curving behind at golden hour.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8598.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8598.display.avif",
     "display_webp": "road-trip-2025-11/img_8598.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 995098,
     "src_mtime": 1763476788
   },
@@ -102483,12 +102649,14 @@
       "Color"
     ],
     "tag_notes": "\"The Cookie Factory — Generations of Quality Baking\" oval sign with green-and-red Italian stripes over the gabled portico of a tan concrete-block bakery building with boarded flanking windows — the longtime Troy bakery, shot minutes after the Gasholder House frames.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8606.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8606.display.avif",
     "display_webp": "road-trip-2025-11/img_8606.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 800531,
     "src_mtime": 1763477312
   },
@@ -102519,12 +102687,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — boarded-up concrete-block building at the edge of a gravel lot, looking across a sunken road or rail corridor to 19th-century brick blocks crowned by a white cupola with a gold cross. Same South Troy walk as the Cookie Factory frame, but no legible signage confirms the location.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8616.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8616.display.avif",
     "display_webp": "road-trip-2025-11/img_8616.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 692768,
     "src_mtime": 1763477452
   },
@@ -102554,12 +102724,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — Stone clock tower glimpsed through a screen of blazing golden maple leaves against a deep blue sky, the black-and-white clock face just visible between branches. Autumn foliage dominates the frame; the tower's masonry and clock suggest a civic or bank building downtown.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8634.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8634.display.avif",
     "display_webp": "road-trip-2025-11/img_8634.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1094440,
     "src_mtime": 1763478080
   },
@@ -102591,12 +102763,14 @@
       "Color"
     ],
     "tag_notes": "Upper stories and ornate iron roof cresting of the Troy Savings Bank Music Hall (1875), with the names JONSON, MOZART and BEETHOVEN carved into the limestone frieze between pilasters. Low raking sun models the classical cornice against a cloudless blue sky.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8646.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8646.display.avif",
     "display_webp": "road-trip-2025-11/img_8646.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 838504,
     "src_mtime": 1763478511
   },
@@ -102626,12 +102800,14 @@
       "Color"
     ],
     "tag_notes": "Detail of the downtown Troy mural celebrating the Troy Savings Bank Music Hall: a painted couple watch a conductor from a box seat, holding a 'Music at The Hall' program naming the Troy Savings Bank Music Hall, above a carved band of performer names — Chet Atkins, Vladimir Horowitz, Diana Krall, Yehudi Menuhin.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8649.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8649.display.avif",
     "display_webp": "road-trip-2025-11/img_8649.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 738613,
     "src_mtime": 1763478559
   },
@@ -102661,12 +102837,14 @@
       "Color"
     ],
     "tag_notes": "Central medallion of the Troy mural reading 'TROY SAVINGS BANK MUSIC HALL — EST 1875 — MUSIC HALL' around a painted view of the hall, framed by gilt scrollwork, a painted audience, and a frieze of performer names (Rachmaninoff, Yo-Yo Ma, Dizzy Gillespie, Leontyne Price, Tito Puente).",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8651.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8651.display.avif",
     "display_webp": "road-trip-2025-11/img_8651.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 811213,
     "src_mtime": 1763478584
   },
@@ -102696,12 +102874,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Troy — Two-story Art Deco commercial front at street number 267: cream stone with a stylized foliate frieze, industrial steel-sash windows, red marble pilaster inscribed 1959, glazed brick entrance bay and a graffiti-tagged dark storefront door. A cut-out face artwork peers from an upper window.",
-    "collections": [],
+    "collections": [
+      "punch"
+    ],
     "thumb": "road-trip-2025-11/img_8657.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8657.display.avif",
     "display_webp": "road-trip-2025-11/img_8657.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 812494,
     "src_mtime": 1763478818
   },
@@ -102709,7 +102889,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8676.jpg",
     "file": "IMG_8676.jpg",
     "shoot": "road-trip-2025-11",
-    "city": "Troy",
+    "city": "Schenectady",
     "state": "NY",
     "date": "2025-11-17",
     "img_no": 8676,
@@ -102737,7 +102917,7 @@
     "display_avif": "road-trip-2025-11/img_8676.display.avif",
     "display_webp": "road-trip-2025-11/img_8676.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 698345,
     "src_mtime": 1763482837
   },
@@ -102804,12 +102984,14 @@
       "Color"
     ],
     "tag_notes": "Lawrence the Indian, the statue on its ornate pedestal at Lawrence Circle in Schenectady's Stockade district, holding a staff with a feather in his hair. Behind him a mansard-roofed rowhouse with patterned slate and iron cresting, a teal clapboard neighbor, and a One Way sign.",
-    "collections": [],
+    "collections": [
+      "the-stockade"
+    ],
     "thumb": "road-trip-2025-11/img_8686.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8686.display.avif",
     "display_webp": "road-trip-2025-11/img_8686.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 2642941,
     "src_mtime": 1763484033
   },
@@ -102841,12 +103023,14 @@
       "Color"
     ],
     "tag_notes": "Deep green arched Italianate double doors on a red-brick Stockade townhouse in Schenectady, framed by a bracketed door hood with carved panels and twin lanterns; two pumpkins sit on the stoop amid fallen November leaves.",
-    "collections": [],
+    "collections": [
+      "the-stockade"
+    ],
     "thumb": "road-trip-2025-11/img_8691.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8691.display.avif",
     "display_webp": "road-trip-2025-11/img_8691.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1118202,
     "src_mtime": 1763484165
   },
@@ -102876,12 +103060,14 @@
       "Color"
     ],
     "tag_notes": "Historic churchyard burial ground in Schenectady's Stockade district: weathered obelisks, urns and slate headstones under a canopy of golden elm leaves, with a stone chapel at left and a large round-arched red-brick church behind, a scarlet maple glowing between them.",
-    "collections": [],
+    "collections": [
+      "the-stockade"
+    ],
     "thumb": "road-trip-2025-11/img_8708.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8708.display.avif",
     "display_webp": "road-trip-2025-11/img_8708.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1345804,
     "src_mtime": 1763484869
   },
@@ -102911,12 +103097,14 @@
       "Color"
     ],
     "tag_notes": "A weathered sandstone cemetery monument of a mourning figure atop a square shaft, set in sharp focus against the soft white clapboard tower, octagonal belfry and slender black spire of a Stockade church in Schenectady, clouds piling behind.",
-    "collections": [],
+    "collections": [
+      "the-stockade"
+    ],
     "thumb": "road-trip-2025-11/img_8713.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8713.display.avif",
     "display_webp": "road-trip-2025-11/img_8713.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 460552,
     "src_mtime": 1763484973
   },
@@ -102981,12 +103169,14 @@
       "Color"
     ],
     "tag_notes": "A small stone statue of St. Francis stands quietly in a Stockade garden in Schenectady, ankle-deep in russet fallen leaves among dried hydrangea heads and cedar trunks, lit by a shaft of late-autumn sun.",
-    "collections": [],
+    "collections": [
+      "the-stockade"
+    ],
     "thumb": "road-trip-2025-11/img_8722.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8722.display.avif",
     "display_webp": "road-trip-2025-11/img_8722.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1356757,
     "src_mtime": 1763485162
   },
@@ -103018,12 +103208,14 @@
       "Color"
     ],
     "tag_notes": "Gold-lettered sign for the First Reformed Church, 'Established 1680,' in Schenectady's Stockade district, listing Sunday services; behind it a forked sycamore trunk and the rough gray stone Gothic Revival tower with lancet windows, red maple foliage at left and a black iron fence in front.",
-    "collections": [],
+    "collections": [
+      "the-stockade"
+    ],
     "thumb": "road-trip-2025-11/img_8733.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8733.display.avif",
     "display_webp": "road-trip-2025-11/img_8733.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1386208,
     "src_mtime": 1763485516
   },
@@ -103053,12 +103245,14 @@
       "Color"
     ],
     "tag_notes": "Three-story brick Italianate townhouse in Schenectady's Stockade with a heavy bracketed cornice, molded window pediments and a black paneled double door up a red stoop, half-veiled by a street tree in full orange autumn leaf.",
-    "collections": [],
+    "collections": [
+      "the-stockade"
+    ],
     "thumb": "road-trip-2025-11/img_8737.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8737.display.avif",
     "display_webp": "road-trip-2025-11/img_8737.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1278193,
     "src_mtime": 1763485659
   },
@@ -103089,12 +103283,14 @@
       "Color"
     ],
     "tag_notes": "Flat frontal detail of a pink-painted brick house in Schenectady: a white screen door under a stained-glass transom reading '146' in pink, teal and violet, a lace-curtained sash window with an aging AC unit, and gray fire-escape ladders bolted to the peeling wall.",
-    "collections": [],
+    "collections": [
+      "moon-and-river"
+    ],
     "thumb": "road-trip-2025-11/img_8744.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8744.display.avif",
     "display_webp": "road-trip-2025-11/img_8744.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1010754,
     "src_mtime": 1763486160
   },
@@ -103124,12 +103320,14 @@
       "Color"
     ],
     "tag_notes": "Gravel back alley in Schenectady behind a row of brick commercial buildings: a concrete-block garage with a white door, a derelict wood-and-tar-shingle neighbor with a collapsing hayloft door, tipped-over trash bins, and a leaning utility pole stitched with wires against the sky.",
-    "collections": [],
+    "collections": [
+      "moon-and-river"
+    ],
     "thumb": "road-trip-2025-11/img_8764.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8764.display.avif",
     "display_webp": "road-trip-2025-11/img_8764.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 887313,
     "src_mtime": 1763487228
   },
@@ -103159,12 +103357,14 @@
       "Color"
     ],
     "tag_notes": "Inside the Moon & River Café in Schenectady's Stockade: an upright piano crowned with a goldfish bowl, a Buddha figure, a plush octopus in a top hat, a zebra teapot, DR Congo and Palestinian flags, a vintage mixing console, and a handwritten plea reading 'We Need Yarn!' under a red-shaded lamp.",
-    "collections": [],
+    "collections": [
+      "moon-and-river"
+    ],
     "thumb": "road-trip-2025-11/img_8765.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8765.display.avif",
     "display_webp": "road-trip-2025-11/img_8765.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 782336,
     "src_mtime": 1763488450
   },
@@ -103195,12 +103395,14 @@
       "Color"
     ],
     "tag_notes": "Café table at the Moon & River in Schenectady selling ephemera: a hand-lettered card reads 'Schenectady Photos 2.00 each' beside a stack of prints of Schenectady City Hall in cherry-blossom bloom, a Pre-Raphaelite-style greeting card marked $2.00, vintage cookbooks and a blue glass plate.",
-    "collections": [],
+    "collections": [
+      "moon-and-river"
+    ],
     "thumb": "road-trip-2025-11/img_8766.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8766.display.avif",
     "display_webp": "road-trip-2025-11/img_8766.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 831027,
     "src_mtime": 1763489290
   },
@@ -103230,12 +103432,14 @@
       "Color"
     ],
     "tag_notes": "Sunlit sitting nook at the Moon & River Café, Schenectady: a green sofa heaped with stuffed animals beneath a large painting of Martin Luther King Jr. with a child and a golden crown, flanked by a Peter Tosh 'Wanted' poster, a pencil portrait, and a leggy houseplant at the window.",
-    "collections": [],
+    "collections": [
+      "moon-and-river"
+    ],
     "thumb": "road-trip-2025-11/img_8768.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8768.display.avif",
     "display_webp": "road-trip-2025-11/img_8768.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 734924,
     "src_mtime": 1763489526
   },
@@ -103266,12 +103470,14 @@
       "Color"
     ],
     "tag_notes": "Tabletop of activist ephemera at the Moon & River Café: stickers reading 'Stop Funding Genocide,' 'Peace with Russia' and 'Iran Next? No War! No Way!' (womenagainstwar.org), a 'No More War' Ukraine peace flyer, a scallop shell on a yellow speaker list, and cards for Alternative Radio and Art Night Schenectady.",
-    "collections": [],
+    "collections": [
+      "moon-and-river"
+    ],
     "thumb": "road-trip-2025-11/img_8771.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8771.display.avif",
     "display_webp": "road-trip-2025-11/img_8771.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 973407,
     "src_mtime": 1763489590
   },
@@ -103301,12 +103507,14 @@
       "Color"
     ],
     "tag_notes": "Window corner of the Moon & River Café in Schenectady's Stockade, looking past oxblood leather chairs, a fringed lamp and a red bookshelf of magazines to sunlit clapboard houses across the street; a wooden fan and a small painting hang on the warm plaster wall.",
-    "collections": [],
+    "collections": [
+      "moon-and-river"
+    ],
     "thumb": "road-trip-2025-11/img_8774.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8774.display.avif",
     "display_webp": "road-trip-2025-11/img_8774.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 688879,
     "src_mtime": 1763489616
   },
@@ -103337,12 +103545,14 @@
       "Color"
     ],
     "tag_notes": "The counter of the Moon & River Café, Schenectady: a glowing vintage deli case fringed with handwritten vegan menu cards, red roses in a jug, a bowl of tomatoes, an oval mirror, and folk-art signs reading 'PEACE' and 'MOON & RIVER CAFE' above the window.",
-    "collections": [],
+    "collections": [
+      "moon-and-river"
+    ],
     "thumb": "road-trip-2025-11/img_8777.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8777.display.avif",
     "display_webp": "road-trip-2025-11/img_8777.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 850944,
     "src_mtime": 1763489728
   },
@@ -103409,12 +103619,14 @@
       "Color"
     ],
     "tag_notes": "The Nott Memorial at Union College, Schenectady — the unmistakable 16-sided High Victorian Gothic rotunda, a National Historic Landmark, with its patterned red-and-slate dome, verdigris ironwork lantern, and polychrome banded stone arches, seen across the campus lawn against blue sky and orange autumn trees.",
-    "collections": [],
+    "collections": [
+      "nott"
+    ],
     "thumb": "road-trip-2025-11/img_8827.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8827.display.avif",
     "display_webp": "road-trip-2025-11/img_8827.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 718060,
     "src_mtime": 1763492172
   },
@@ -103482,12 +103694,14 @@
       "Color"
     ],
     "tag_notes": "Curving flank of the Nott Memorial at Union College, Schenectady — banded buff stonework, pointed arches, and fan-patterned stained-glass lunettes filling the frame — with a red-capped white cupola of a neighboring campus building rising beyond bare trees.",
-    "collections": [],
+    "collections": [
+      "nott"
+    ],
     "thumb": "road-trip-2025-11/img_8837.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8837.display.avif",
     "display_webp": "road-trip-2025-11/img_8837.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 819530,
     "src_mtime": 1763492317
   },
@@ -103519,12 +103733,14 @@
       "Color"
     ],
     "tag_notes": "Tight masonry detail of the Nott Memorial at Union College, Schenectady: alternating cream-and-buff voussoirs over fan-tracery violet stained glass, triple lancet windows with stone colonnettes, and a dark arched door beside a globe lamppost.",
-    "collections": [],
+    "collections": [
+      "nott"
+    ],
     "thumb": "road-trip-2025-11/img_8839.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8839.display.avif",
     "display_webp": "road-trip-2025-11/img_8839.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1010673,
     "src_mtime": 1763492341
   },
@@ -103532,7 +103748,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8872.jpg",
     "file": "IMG_8872.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Amsterdam",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8872,
@@ -103555,12 +103771,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Amsterdam — A weathered green replica Statue of Liberty on a cream stone pedestal inside a wrought-iron fence, an American flag flying beside it, fronting a sagging vinyl-sided double and a bare red-brick corner block; the green street blade reads 'Swan'. Hard-luck small-city corner under overcast light.",
-    "collections": [],
+    "collections": [
+      "amber"
+    ],
     "thumb": "road-trip-2025-11/img_8872.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8872.display.avif",
     "display_webp": "road-trip-2025-11/img_8872.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 683273,
     "src_mtime": 1763496144
   },
@@ -103568,7 +103786,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8885.jpg",
     "file": "IMG_8885.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Amsterdam",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8885,
@@ -103590,12 +103808,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Amsterdam — Collapsing brick mill ruins, likely a former carpet/textile factory: a whitewashed tower wall with a red EXIT sign over a gutted window, mounds of splintered timber and brick rubble, and a blue graffiti piece along the base of the intact mill wall behind.",
-    "collections": [],
+    "collections": [
+      "the-carpet-mills"
+    ],
     "thumb": "road-trip-2025-11/img_8885.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8885.display.avif",
     "display_webp": "road-trip-2025-11/img_8885.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1339587,
     "src_mtime": 1763496618
   },
@@ -103603,7 +103823,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8886.jpg",
     "file": "IMG_8886.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Amsterdam",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8886,
@@ -103626,12 +103846,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Amsterdam — A battered red steel door punched into the concrete-and-brick wall of an abandoned factory, flanked by ranks of broken multi-pane steel-sash windows, with leaning saplings and downed limbs swallowing the yard. Same derelict industrial complex as the neighboring frames.",
-    "collections": [],
+    "collections": [
+      "the-carpet-mills"
+    ],
     "thumb": "road-trip-2025-11/img_8886.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8886.display.avif",
     "display_webp": "road-trip-2025-11/img_8886.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1154230,
     "src_mtime": 1763496638
   },
@@ -103639,7 +103861,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8889.jpg",
     "file": "IMG_8889.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Amsterdam",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8889,
@@ -103661,12 +103883,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Amsterdam — A tall crumbling brick smokestack rises from a long low mill with a moss-green sagging roof, bare poplars and drifts of demolition debris and plastic sheeting in the foreground under a heavy gray sky. Same ruined factory complex.",
-    "collections": [],
+    "collections": [
+      "the-carpet-mills"
+    ],
     "thumb": "road-trip-2025-11/img_8889.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8889.display.avif",
     "display_webp": "road-trip-2025-11/img_8889.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 579041,
     "src_mtime": 1763496660
   },
@@ -103674,7 +103898,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8891.jpg",
     "file": "IMG_8891.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Amsterdam",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8891,
@@ -103696,12 +103920,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Amsterdam — A rusting white fuel pump lettered 'ON ROAD DIESEL' stranded in brush before a shattered steel-sash factory window, with fallen logs, chain-link fencing, and pipes tangled in the leaf litter — a still-life of the same abandoned industrial site.",
-    "collections": [],
+    "collections": [
+      "the-carpet-mills"
+    ],
     "thumb": "road-trip-2025-11/img_8891.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8891.display.avif",
     "display_webp": "road-trip-2025-11/img_8891.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1330699,
     "src_mtime": 1763496716
   },
@@ -103709,7 +103935,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8900.jpg",
     "file": "IMG_8900.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Amsterdam",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8900,
@@ -103731,12 +103957,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Amsterdam — Telephoto stack of candy-colored working-class frame houses: a salmon-pink painted-brick double with arched window hoods, a faded barn-red cottage, and a seafoam-green clapboard gable-front with dark green metal roof, tied together by a coral picket fence and sagging utility lines.",
-    "collections": [],
+    "collections": [
+      "amber"
+    ],
     "thumb": "road-trip-2025-11/img_8900.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8900.display.avif",
     "display_webp": "road-trip-2025-11/img_8900.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 636639,
     "src_mtime": 1763496771
   },
@@ -103744,7 +103972,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8903.jpg",
     "file": "IMG_8903.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Amsterdam",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8903,
@@ -103767,12 +103995,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Amsterdam — The 'American Lithuanian Club Inc.', a one-story rusticated stone-block social hall with a shaped parapet sign panel, grafted onto an older brick Italianate building with a bracketed cornice; a red-and-yellow fire hydrant stands on the lawn and wooded hills rise behind — an ethnic fraternal-club relic of an upstate mill town.",
-    "collections": [],
+    "collections": [
+      "amber"
+    ],
     "thumb": "road-trip-2025-11/img_8903.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8903.display.avif",
     "display_webp": "road-trip-2025-11/img_8903.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1028025,
     "src_mtime": 1763497298
   },
@@ -103780,7 +104010,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8913.jpg",
     "file": "IMG_8913.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Amsterdam",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8913,
@@ -103803,12 +104033,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Amsterdam — Surviving mid-century storefront signage for 'The New Paris Shop': a projecting sign with an Eiffel Tower graphic and red-and-teal lettering below a yellow lightbox bearing a stylized gowned figure, above a hand-painted script fascia on a white slipcover façade against red brick.",
-    "collections": [],
+    "collections": [
+      "amber"
+    ],
     "thumb": "road-trip-2025-11/img_8913.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8913.display.avif",
     "display_webp": "road-trip-2025-11/img_8913.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 690659,
     "src_mtime": 1763497609
   },
@@ -103816,7 +104048,7 @@
     "key": "November '25 Road Trip/Edited/IMG_8926.jpg",
     "file": "IMG_8926.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Herkimer",
     "state": null,
     "date": "2025-11-17",
     "img_no": 8926,
@@ -103843,7 +104075,7 @@
     "display_avif": "road-trip-2025-11/img_8926.display.avif",
     "display_webp": "road-trip-2025-11/img_8926.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 837051,
     "src_mtime": 1763502433
   },
@@ -103946,12 +104178,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Cemetery mausoleum detail: a bronze-grilled glass door revealing stained glass of a robed figure, a wreathed cross, autumn flowers and a pumpkin inside, beside granite panels laser-etched with an angel, a 'When tomorrow starts without me' verse, and the names Scott M., Sally A. Tinker, and Brian A.",
-    "collections": [],
+    "collections": [
+      "roscoe-conkling"
+    ],
     "thumb": "road-trip-2025-11/img_8978.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8978.display.avif",
     "display_webp": "road-trip-2025-11/img_8978.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 865193,
     "src_mtime": 1763559700
   },
@@ -103982,12 +104216,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — The BARILE family mausoleum in a hillside cemetery: rock-faced granite with a bronze-grilled stained-glass door, panels for 'precious wife & mother' Janet, 'cherished daughter' Monica, and 'beloved husband & father' Louis, and the epitaph 'What you are we once were / what we are you will one day be'; small American flags and evergreens dot the surrounding graves.",
-    "collections": [],
+    "collections": [
+      "roscoe-conkling"
+    ],
     "thumb": "road-trip-2025-11/img_8983.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8983.display.avif",
     "display_webp": "road-trip-2025-11/img_8983.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1267909,
     "src_mtime": 1763559864
   },
@@ -104017,12 +104253,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Polished black granite headstone 'In loving memory of Naw Htoo Phaw' (b. 1943) — a Karen (Burmese) name pointing to the area's refugee community — with an oval photo portrait, etched roses and cross, ringed by solar lanterns, metal flowers, and pinwheels amid fallen oak leaves along a hilltop cemetery fence.",
-    "collections": [],
+    "collections": [
+      "roscoe-conkling"
+    ],
     "thumb": "road-trip-2025-11/img_8989.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8989.display.avif",
     "display_webp": "road-trip-2025-11/img_8989.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 913895,
     "src_mtime": 1763560028
   },
@@ -104052,12 +104290,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Black granite headstone of Ko Naw Tee (Jan. 1, 1918 – Feb. 8, 2024, a 106-year life), another Karen (Burmese) name, etched with twin ornate crosses, a color photo cameo, and Psalm 23, beside a white monument carved with Christ praying at Gethsemane; hazy valley light stretches beyond the cemetery fence.",
-    "collections": [],
+    "collections": [
+      "roscoe-conkling"
+    ],
     "thumb": "road-trip-2025-11/img_8991.thumb.webp",
     "display_avif": "road-trip-2025-11/img_8991.display.avif",
     "display_webp": "road-trip-2025-11/img_8991.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 899149,
     "src_mtime": 1763560066
   },
@@ -104089,12 +104329,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — A white-tailed buck pauses on a hilltop lawn (likely a cemetery ridge) above a dusk panorama of a valley city: a sea of frame houses and bare trees, a white church steeple, long red-brick institutional blocks, and the flat wooded valley floor running to the horizon under a peach-gray sky.",
-    "collections": [],
+    "collections": [
+      "roscoe-conkling"
+    ],
     "thumb": "road-trip-2025-11/img_9001.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9001.display.avif",
     "display_webp": "road-trip-2025-11/img_9001.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 687200,
     "src_mtime": 1763560252
   },
@@ -104124,12 +104366,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Victorian-era cemetery statuary amid blazing rust-orange autumn oaks: a weathered stone angel with folded wings beside a tall fluted Corinthian column monument, with the black granite GARRO-KROEGER mausoleum and a row of young evergreens in the foreground.",
-    "collections": [],
+    "collections": [
+      "roscoe-conkling"
+    ],
     "thumb": "road-trip-2025-11/img_9010.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9010.display.avif",
     "display_webp": "road-trip-2025-11/img_9010.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1186946,
     "src_mtime": 1763560459
   },
@@ -104160,12 +104404,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Storefront of Maria's Pasta Shop ('The Tradition Continues', mariaspastashop.com), its sign framed by two vintage sepia portraits, windows advertising award-winning homemade meatballs and sauce, lasagna, manicotti, baked cavatelli and dinners to go; Italian and American flags in the door and a blue USPS mailbox out front, next to storefront no. 2518.",
-    "collections": [],
+    "collections": [
+      "little-italy"
+    ],
     "thumb": "road-trip-2025-11/img_9014.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9014.display.avif",
     "display_webp": "road-trip-2025-11/img_9014.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 794081,
     "src_mtime": 1763562632
   },
@@ -104196,12 +104442,14 @@
       "Color"
     ],
     "tag_notes": "The Uptown Theatre on Genesee Street in South Utica — a 1927 neighborhood movie house whose limestone façade carries 'UPTOWN THEATRE' in raised letters over an ornate carved arch flanked by turreted pinnacles, with the white marquee reading 'IMPROV FRIDAYS' beside the Uptown Improv storefront. Exotic-revival theater stonework and signage in soft overcast light.",
-    "collections": [],
+    "collections": [
+      "genesee"
+    ],
     "thumb": "road-trip-2025-11/img_9021.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9021.display.avif",
     "display_webp": "road-trip-2025-11/img_9021.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 758706,
     "src_mtime": 1763563345
   },
@@ -104209,7 +104457,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9033.jpg",
     "file": "IMG_9033.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Utica",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9033,
@@ -104231,12 +104479,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — A stately yellow-brick Colonial Revival mansion numbered 1606, with a full-width porch on paired mustard-painted columns, pedimented dormers in a dark shingled roof, and a leaf-strewn lawn; a shingled Queen Anne neighbor with a Palladian gable window peeks in at right — grand-avenue streetcar-era housing stock.",
-    "collections": [],
+    "collections": [
+      "haunted-house"
+    ],
     "thumb": "road-trip-2025-11/img_9033.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9033.display.avif",
     "display_webp": "road-trip-2025-11/img_9033.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1026097,
     "src_mtime": 1763563957
   },
@@ -104266,12 +104516,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Abandoned two-story Italianate clapboard house in sage green with bracketed cornice, arched window hoods, and plywood-boarded windows and door; a charred porch pediment, overgrown lawn, and a yellow school bus passing behind mark a disinvested residential block.",
-    "collections": [],
+    "collections": [
+      "haunted-house"
+    ],
     "thumb": "road-trip-2025-11/img_9040.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9040.display.avif",
     "display_webp": "road-trip-2025-11/img_9040.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1025791,
     "src_mtime": 1763564272
   },
@@ -104304,12 +104556,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Limestone façade of St. Francis de Sales School, its name carved across the frieze above an ornate arched triple-door entry with marble infill; a lone pedestrian in a red jacket walks past the shuttered Catholic school.",
-    "collections": [],
+    "collections": [
+      "genesee"
+    ],
     "thumb": "road-trip-2025-11/img_9044.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9044.display.avif",
     "display_webp": "road-trip-2025-11/img_9044.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 781268,
     "src_mtime": 1763564405
   },
@@ -104340,12 +104594,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Grand vacant Victorian-era brick mansion with elaborate maroon trim: arched hooded windows, a two-story oriel over a columned porch, ornate dormers in the mansard-style roof, and plywood in several sashes.",
-    "collections": [],
+    "collections": [
+      "genesee"
+    ],
     "thumb": "road-trip-2025-11/img_9048.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9048.display.avif",
     "display_webp": "road-trip-2025-11/img_9048.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1132644,
     "src_mtime": 1763564500
   },
@@ -104375,12 +104631,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Byzantine-style Orthodox church in tan brick with a verdigris copper dome and cross, its entrance arch filled by a gold-leaf mosaic icon of a crowned saint holding a cross and sword with Cyrillic lettering; a cornerstone plaque reads 1977 and parked cars line the street.",
-    "collections": [],
+    "collections": [
+      "genesee"
+    ],
     "thumb": "road-trip-2025-11/img_9057.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9057.display.avif",
     "display_webp": "road-trip-2025-11/img_9057.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 780175,
     "src_mtime": 1763564658
   },
@@ -104414,12 +104672,14 @@
       "Color"
     ],
     "tag_notes": "Three worn frame houses — two with plywood-boarded windows, one green Italianate with an American flag at the door — sit below the massive gray bulk of the new Wynn Hospital, whose sign is legible across the skyline of downtown Utica.",
-    "collections": [],
+    "collections": [
+      "genesee"
+    ],
     "thumb": "road-trip-2025-11/img_9065.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9065.display.avif",
     "display_webp": "road-trip-2025-11/img_9065.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1058739,
     "src_mtime": 1763564899
   },
@@ -104484,12 +104744,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Derelict industrial complex of whitewashed brick shedding paint to red beneath, laced with exterior conduit and pipe runs, a rusted steel superstructure, cinder-block patches, and a tall metal flue against a cloudy sky.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9076.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9076.display.avif",
     "display_webp": "road-trip-2025-11/img_9076.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 730617,
     "src_mtime": 1763567113
   },
@@ -104520,12 +104782,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Moss-filmed CG Distributing box truck (USDOT 3030846) rotting into an overgrown side yard, its faded barrel graphic and the slogan 'The pride of the neighborhood' still legible on the panel; sawhorses prop a ramp at its flank.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9082.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9082.display.avif",
     "display_webp": "road-trip-2025-11/img_9082.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1251621,
     "src_mtime": 1763567303
   },
@@ -104556,12 +104820,14 @@
       "Color"
     ],
     "tag_notes": "Long peeling brick factory of the Utica Cutlery Company, its name painted in huge black letters across the second story, with shed dormers along the roofline, a chain-link fence, and an arterial guardrail in the foreground.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9086.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9086.display.avif",
     "display_webp": "road-trip-2025-11/img_9086.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 734139,
     "src_mtime": 1763567692
   },
@@ -104593,12 +104859,14 @@
       "Color"
     ],
     "tag_notes": "Bright blue Empire City Chinese takeout (sign reads www.EmpireCityUtica.com, 315-793-0123, with Chinese characters) on a corner opposite the Foodland grocery in a clapboard three-story; industrial tanks and a brick stack rise behind the wires.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9091.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9091.display.avif",
     "display_webp": "road-trip-2025-11/img_9091.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 865203,
     "src_mtime": 1763568129
   },
@@ -104629,12 +104897,14 @@
       "Color"
     ],
     "tag_notes": "Monumental weathered limestone façade with giant fluted Doric columns framing a recessed entrance and tall multi-pane windows — Old Main of the former Utica State Hospital, one of America's great Greek Revival asylums — sealed off behind chain-link fencing.",
-    "collections": [],
+    "collections": [
+      "sent-upstate"
+    ],
     "thumb": "road-trip-2025-11/img_9102.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9102.display.avif",
     "display_webp": "road-trip-2025-11/img_9102.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1089010,
     "src_mtime": 1763568573
   },
@@ -104665,12 +104935,14 @@
       "Color"
     ],
     "tag_notes": "Tan brick smokestack towering over the red-brick F.X. Matt Brewery, the rooftop script 'Utica Club' sign partly visible on its steel scaffold; a stainless fermenter tank and caged ladders fill the foreground under blue sky with drifting steam.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9124.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9124.display.avif",
     "display_webp": "road-trip-2025-11/img_9124.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 713564,
     "src_mtime": 1763569188
   },
@@ -104702,12 +104974,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Defunct tan-brick auto garage with a faded mid-century 'Sure Stop Brake Service' sign and multicolor tile wainscot; two derelict 1990s Lincoln Town Cars flank the vine-fringed roll-up door in low golden light.",
-    "collections": [],
+    "collections": [
+      "utica-core"
+    ],
     "thumb": "road-trip-2025-11/img_9152.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9152.display.avif",
     "display_webp": "road-trip-2025-11/img_9152.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1013048,
     "src_mtime": 1763569928
   },
@@ -104740,12 +105014,14 @@
       "Color"
     ],
     "tag_notes": "Corner sign shop — a red-brick storefront addition ('We do windows,' banners, vehicle graphics) grafted onto a white gabled house — with a skeletal awning frame over the walk; green highway signs behind point to Oriskany St and Whitesboro along the Utica arterial.",
-    "collections": [],
+    "collections": [
+      "utica-core"
+    ],
     "thumb": "road-trip-2025-11/img_9159.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9159.display.avif",
     "display_webp": "road-trip-2025-11/img_9159.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 930991,
     "src_mtime": 1763570019
   },
@@ -104777,12 +105053,14 @@
       "Color"
     ],
     "tag_notes": "Entrance of the Bosnian Islamic Association of Utica mosque (Utica Mosque – Gradska Dzamija, 306 Court Street) — a former Gothic Revival church in cream stucco with gray trim, its pointed-arch portal now crowned by a green crescent-and-star roundel, flanked by flagpoles and yellow bollards.",
-    "collections": [],
+    "collections": [
+      "ethnic-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9163.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9163.display.avif",
     "display_webp": "road-trip-2025-11/img_9163.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 745731,
     "src_mtime": 1763570225
   },
@@ -104814,12 +105092,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Pair of Italianate frame houses in raking morning light: a cream double-door duplex with bracketed eaves and bay window beside a pale-blue house with an ornate copper-toned Victorian oriel and columned porch trimmed in oxblood red.",
-    "collections": [],
+    "collections": [
+      "utica-core"
+    ],
     "thumb": "road-trip-2025-11/img_9173.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9173.display.avif",
     "display_webp": "road-trip-2025-11/img_9173.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 896742,
     "src_mtime": 1763570797
   },
@@ -104850,12 +105130,14 @@
       "Color"
     ],
     "tag_notes": "Ghost sign for 'Charles Millar & Son Co. — PIPE,' the historic Utica plumbing-supply house, fading across a concrete-block warehouse; the open loading bay below is roped off with a 'hard hat area' chain, pipe stock stacked in the shadows.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9182.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9182.display.avif",
     "display_webp": "road-trip-2025-11/img_9182.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 753219,
     "src_mtime": 1763571180
   },
@@ -104886,12 +105168,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Tapered yellow-brick industrial smokestack, holed near the crown and tagged vertically with 'FOSTER ONE' graffiti, rising out of bare trees above a derelict white cab-over truck and a yellow backhoe in a scrapyard.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9187.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9187.display.avif",
     "display_webp": "road-trip-2025-11/img_9187.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1123281,
     "src_mtime": 1763571282
   },
@@ -104922,12 +105206,14 @@
       "Color"
     ],
     "tag_notes": "Shuttered white-sided fish shack with a red 'Fresh & Fried Seafood' fascia and seagull motif; the window boasts 'The Only Outstanding Fish Market In Utica' and hand-lettered menus of haddock, scallops, clams, and shrimp, leaves drifted along the curb.",
-    "collections": [],
+    "collections": [
+      "utica-core"
+    ],
     "thumb": "road-trip-2025-11/img_9196.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9196.display.avif",
     "display_webp": "road-trip-2025-11/img_9196.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 728269,
     "src_mtime": 1763571711
   },
@@ -104963,7 +105249,7 @@
     "display_avif": "road-trip-2025-11/img_9201.display.avif",
     "display_webp": "road-trip-2025-11/img_9201.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 804779,
     "src_mtime": 1763571795
   },
@@ -104994,12 +105280,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Empty park benches on a small green face a working concrete batch plant across a chain-link fence — rusted silos, an inclined conveyor gantry, and corrugated hoppers against blue sky, with an old brick mill at right.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9212.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9212.display.avif",
     "display_webp": "road-trip-2025-11/img_9212.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1063023,
     "src_mtime": 1763572202
   },
@@ -105030,12 +105318,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Detail of the batch plant's rusted inclined conveyor, its belt climbing through hooped sheet-metal covers past a corrugated shed and yellow guardrails, shot low over a blurred berm of aggregate against clear blue sky.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9225.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9225.display.avif",
     "display_webp": "road-trip-2025-11/img_9225.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 669855,
     "src_mtime": 1763572468
   },
@@ -105066,12 +105356,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — Rank of six weathered red-and-yellow front-discharge concrete mixer trucks parked in the plant yard, dwarfed by the long cream-brick façade of a 19th-century knitting mill with rooftop monitors and a utility pole dead center.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9227.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9227.display.avif",
     "display_webp": "road-trip-2025-11/img_9227.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 777104,
     "src_mtime": 1763572504
   },
@@ -105102,12 +105394,14 @@
       "Color"
     ],
     "tag_notes": "Ivy-drowned brick façade of the ONEITA knitting mill (Oneita Knitting Mills, Utica), its carved name panel standing clear above autumn-red Virginia creeper that swallows the windows and the stone-pedimented entrance with its red 'IDCA's' door.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9234.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9234.display.avif",
     "display_webp": "road-trip-2025-11/img_9234.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1429556,
     "src_mtime": 1763572653
   },
@@ -105138,12 +105432,14 @@
       "Color"
     ],
     "tag_notes": "Ivy-smothered brick façade of the former Oneita Knitting Mills in Utica, its carved ONEITA nameplate crowning the parapet above a limestone-pedimented entrance with a faded red door lettered IDCA's. Autumn Virginia creeper turns the whole two-story mill wall rust and gold.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9234 2.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9234 2.display.avif",
     "display_webp": "road-trip-2025-11/img_9234 2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1429556,
     "src_mtime": 1763572653
   },
@@ -105173,12 +105469,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — weathered cement silos and conveyor gantries of a working concrete batch plant, a wire star ornament perched on one tank; a red-and-yellow Cranesville mixer truck is parked below behind red-striped concrete barriers.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9237.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9237.display.avif",
     "display_webp": "road-trip-2025-11/img_9237.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 716444,
     "src_mtime": 1763572764
   },
@@ -105210,12 +105508,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — flat-on study of a derelict whitewashed brick commercial building: a faded painted ghost sign in red letters over a plywood-boarded doorway numbered 811, a newer white roll-up garage door in a weathered surround, and a blind arched window bay at right.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9247.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9247.display.avif",
     "display_webp": "road-trip-2025-11/img_9247.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1095452,
     "src_mtime": 1763572977
   },
@@ -105246,12 +105546,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Utica — low tan cinder-block machine shop with a rooftop vent hood; a hand-painted red sign between two long banks of steel-sash factory windows reads NO PARKING or TRESPASSING… Kelly Foundry & Machine Co Inc.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9255.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9255.display.avif",
     "display_webp": "road-trip-2025-11/img_9255.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 721552,
     "src_mtime": 1763573844
   },
@@ -105281,12 +105583,14 @@
       "Color"
     ],
     "tag_notes": "Sky-blue billboard for Iglesia Pentecostal Reedificando los Muros Caídos Inc. at 804 Bleecker St, Utica, NY 13501, with a dove-and-globe logo, seen over a chain-link fence between shingle-sided houses.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9258.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9258.display.avif",
     "display_webp": "road-trip-2025-11/img_9258.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 886604,
     "src_mtime": 1763573904
   },
@@ -105317,12 +105621,14 @@
       "Color"
     ],
     "tag_notes": "Nguyen Phat Asian market on Bleecker Street in Utica: red channel letters on a smooth stucco upper story with quoins and diamond medallions, a stacked-stone storefront base with neon OPEN signs, and stray shopping carts and produce boxes on the sidewalk.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9268.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9268.display.avif",
     "display_webp": "road-trip-2025-11/img_9268.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 927531,
     "src_mtime": 1763574362
   },
@@ -105354,12 +105660,14 @@
       "Color"
     ],
     "tag_notes": "Leasing-office window of the Mohawk Tower apartments in Utica: an oval sign with a painted skyline over stacked-stone veneer and red brick, NOW LEASING banners from Pinnacle Properties (315-269-1581) behind the glass, and diagonal wire shadows raking the wall.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9272.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9272.display.avif",
     "display_webp": "road-trip-2025-11/img_9272.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1267002,
     "src_mtime": 1763574543
   },
@@ -105390,12 +105698,14 @@
       "Color"
     ],
     "tag_notes": "Giuseppe's Bakery hanging sign (est. 1983, phone 735-6750) ringed with painted bread loaves juts over a Bleecker Street sidewalk in Utica; a lone pedestrian and a parked SUV lead the eye down the commercial strip toward hazy Mohawk Valley hills.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9273.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9273.display.avif",
     "display_webp": "road-trip-2025-11/img_9273.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 936314,
     "src_mtime": 1763574583
   },
@@ -105426,12 +105736,14 @@
       "Color"
     ],
     "tag_notes": "Side-by-side storefronts at 709-711 Bleecker Street: the Dominican Barbershop with a flag-striped sign and barber pole, and La Famiglia Bossone's Sausage & Meat Co., whose window poster boasts 'The Original Utica Recipe' beside a Halloween pumpkin and holiday signs.",
-    "collections": [],
+    "collections": [
+      "industrial-utica"
+    ],
     "thumb": "road-trip-2025-11/img_9277.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9277.display.avif",
     "display_webp": "road-trip-2025-11/img_9277.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 837532,
     "src_mtime": 1763574695
   },
@@ -105462,12 +105774,14 @@
       "Color"
     ],
     "tag_notes": "Sunlit corner inside Caffe Caruso, the Bleecker Street Italian pastry shop in Utica: framed newspaper clippings ('Caffe Caruso savors the flavors of Italy', 'The pastry business has been good to Carusos'), family photo collages, a nutcracker and a big rubber plant over a floral-clothed radiator cover.",
-    "collections": [],
+    "collections": [
+      "little-italy"
+    ],
     "thumb": "road-trip-2025-11/img_9284.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9284.display.avif",
     "display_webp": "road-trip-2025-11/img_9284.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 981587,
     "src_mtime": 1763575280
   },
@@ -105498,7 +105812,9 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Pixel-identical duplicate of IMG_9284.jpg (same Caffe Caruso corner, same light, same framing) - would publish the same frame twice in the gallery/lightbox. Nothing personal or broken about the content itself; keep one, drop the '2' copy. — Sunlit corner inside Caffe Caruso, the Bleecker Street Italian pastry shop in Utica: framed newspaper clippings ('Caffe Caruso savors the flavors of Italy', 'The pastry business has been good to Carusos'), family photo collages, a nutcracker and a big rubber plant over a floral-clothed radiator cover. Duplicate frame of IMG_9284.",
-    "collections": [],
+    "collections": [
+      "little-italy"
+    ],
     "thumb": "road-trip-2025-11/img_9284 2.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9284 2.display.avif",
     "display_webp": "road-trip-2025-11/img_9284 2.display.webp",
@@ -105570,7 +105886,9 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Pixel-identical duplicate of IMG_9286.jpg (Caffe Caruso memory wall with Mrs. Claus doll) - duplicate publish risk only, content is fine. — Memory wall inside Caffe Caruso in Utica: two big frames of black-and-white family bakery photographs above a radiator cover dressed in red, with a Mrs. Claus doll holding a candle, a tiny decorated Christmas tree and a houseplant against a red curtain. Duplicate frame of IMG_9286.",
-    "collections": [],
+    "collections": [
+      "little-italy"
+    ],
     "thumb": "road-trip-2025-11/img_9286 2.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9286 2.display.avif",
     "display_webp": "road-trip-2025-11/img_9286 2.display.webp",
@@ -105606,12 +105924,14 @@
       "Color"
     ],
     "tag_notes": "Cluttered keepsake wall at Caffe Caruso in Utica: a framed clipping headlined 'Holy cannoli! Caffe Caruso always a happening place' with a cannoli photo, a folk-art painting of the caffe's green storefront, a black-and-white portrait of a baker in whites, and wedding and team photos around a lampshade.",
-    "collections": [],
+    "collections": [
+      "little-italy"
+    ],
     "thumb": "road-trip-2025-11/img_9287.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9287.display.avif",
     "display_webp": "road-trip-2025-11/img_9287.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 858182,
     "src_mtime": 1763575336
   },
@@ -105642,7 +105962,9 @@
       "Color"
     ],
     "tag_notes": "FLAG(review): Pixel-identical duplicate of IMG_9287.jpg (Caffe Caruso keepsake wall, 'Holy cannoli!' clipping) - duplicate publish risk only, content is fine. — Cluttered keepsake wall at Caffe Caruso in Utica: a framed clipping headlined 'Holy cannoli! Caffe Caruso always a happening place' with a cannoli photo, a folk-art painting of the caffe's green storefront, a black-and-white portrait of a baker in whites, and wedding and team photos around a lampshade. Duplicate frame of IMG_9287.",
-    "collections": [],
+    "collections": [
+      "little-italy"
+    ],
     "thumb": "road-trip-2025-11/img_9287 2.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9287 2.display.avif",
     "display_webp": "road-trip-2025-11/img_9287 2.display.webp",
@@ -105677,12 +105999,14 @@
       "Color"
     ],
     "tag_notes": "Wider view of the Caffe Caruso memory wall in Utica, framed by two rubber plants: family portraits, the baker photo and storefront painting hang above a poinsettia-print tablecloth holding a Santa snow globe, a toy-soldier nutcracker and a spider plant.",
-    "collections": [],
+    "collections": [
+      "little-italy"
+    ],
     "thumb": "road-trip-2025-11/img_9288.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9288.display.avif",
     "display_webp": "road-trip-2025-11/img_9288.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1027327,
     "src_mtime": 1763575344
   },
@@ -105713,12 +106037,14 @@
       "Color"
     ],
     "tag_notes": "Main entrance of the Niagara Mohawk Building in Syracuse, the Art Deco power-company headquarters: NIAGARA MOHAWK lettering around a sunburst New York State medallion, a stainless chevron marquee reading NIAGARA MOHAWK POWER, fluted piers and gridded ornamental window screens, with a renovation notice in the door glass.",
-    "collections": [],
+    "collections": [
+      "niagara-mohawk"
+    ],
     "thumb": "road-trip-2025-11/img_9305.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9305.display.avif",
     "display_webp": "road-trip-2025-11/img_9305.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 943434,
     "src_mtime": 1763580698
   },
@@ -105748,12 +106074,14 @@
       "Color"
     ],
     "tag_notes": "The winged stainless-steel 'Spirit of Light' figure spreading fan-shaped wings at the center of the Niagara Mohawk Building's crown in Syracuse, flanked by fluted limestone piers and chrome setback ornament against blue sky.",
-    "collections": [],
+    "collections": [
+      "niagara-mohawk"
+    ],
     "thumb": "road-trip-2025-11/img_9310.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9310.display.avif",
     "display_webp": "road-trip-2025-11/img_9310.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 918738,
     "src_mtime": 1763580746
   },
@@ -105783,12 +106111,14 @@
       "Color"
     ],
     "tag_notes": "Looking up the buff-brick setbacks of Syracuse's Niagara Mohawk Building to its chrome-finned Art Deco crown, an American flag flying from the mast; the Spirit of Light sculpture is visible in profile at left.",
-    "collections": [],
+    "collections": [
+      "niagara-mohawk"
+    ],
     "thumb": "road-trip-2025-11/img_9324.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9324.display.avif",
     "display_webp": "road-trip-2025-11/img_9324.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 984035,
     "src_mtime": 1763580980
   },
@@ -105819,12 +106149,14 @@
       "Color"
     ],
     "tag_notes": "Steep worm's-eye detail of the Niagara Mohawk Building in Syracuse: the helmeted head and chevron-crested wing of the Spirit of Light statue rise past mirror-polished stainless piers, with vertical NIAGARA letters climbing the black-glass spandrels.",
-    "collections": [],
+    "collections": [
+      "niagara-mohawk"
+    ],
     "thumb": "road-trip-2025-11/img_9339.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9339.display.avif",
     "display_webp": "road-trip-2025-11/img_9339.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 736552,
     "src_mtime": 1763581433
   },
@@ -105855,12 +106187,14 @@
       "Color"
     ],
     "tag_notes": "Angled view along the Niagara Mohawk Building's entrance bay in Syracuse: the layered zigzag stainless marquee juts below NIAGARA MOHAWK lettering and the sunburst medallion, with gridded ornamental window screens and fluted buff-brick piers raking away overhead.",
-    "collections": [],
+    "collections": [
+      "niagara-mohawk"
+    ],
     "thumb": "road-trip-2025-11/img_9343.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9343.display.avif",
     "display_webp": "road-trip-2025-11/img_9343.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1108185,
     "src_mtime": 1763581532
   },
@@ -105893,12 +106227,14 @@
       "Color"
     ],
     "tag_notes": "The columned Soldiers' and Sailors' Monument in Clinton Square, Syracuse, its bronze battle group in shadow, with the pointed clock tower and sandstone arches of the High Victorian Gothic Syracuse Savings Bank building rising behind an American flag and green lampposts.",
-    "collections": [],
+    "collections": [
+      "downtown-syracuse"
+    ],
     "thumb": "road-trip-2025-11/img_9348.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9348.display.avif",
     "display_webp": "road-trip-2025-11/img_9348.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 927534,
     "src_mtime": 1763581710
   },
@@ -105931,12 +106267,14 @@
       "Color"
     ],
     "tag_notes": "The High Victorian Gothic Syracuse Savings Bank building and a lit Christmas tree mirrored in the still water of the Clinton Square rink basin in Syracuse, red-brick Victorian commercial blocks at left — the water doubles the spire against a cloud-swept sky.",
-    "collections": [],
+    "collections": [
+      "downtown-syracuse"
+    ],
     "thumb": "road-trip-2025-11/img_9352.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9352.display.avif",
     "display_webp": "road-trip-2025-11/img_9352.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 757436,
     "src_mtime": 1763581862
   },
@@ -105972,7 +106310,7 @@
     "display_avif": "road-trip-2025-11/img_9369.display.avif",
     "display_webp": "road-trip-2025-11/img_9369.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 808788,
     "src_mtime": 1763584444
   },
@@ -106002,12 +106340,14 @@
       "Color"
     ],
     "tag_notes": "The Gridley Building at Clinton Square, Syracuse — an 1867 white Onondaga-limestone Second Empire landmark with an ornate clock tower, arched windows, and ivy swallowing its lower floors in late-autumn sun.",
-    "collections": [],
+    "collections": [
+      "downtown-syracuse"
+    ],
     "thumb": "road-trip-2025-11/img_9370.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9370.display.avif",
     "display_webp": "road-trip-2025-11/img_9370.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1302466,
     "src_mtime": 1763585095
   },
@@ -106037,12 +106377,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Syracuse — rust-streaked steel hopper tower and chutes of a derelict batch plant, graffiti across the lower sheds, with a battered pickup and a silver Prius parked on the gravel apron below.",
-    "collections": [],
+    "collections": [
+      "outer-cuse"
+    ],
     "thumb": "road-trip-2025-11/img_9379.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9379.display.avif",
     "display_webp": "road-trip-2025-11/img_9379.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 857192,
     "src_mtime": 1763585941
   },
@@ -106073,12 +106415,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Syracuse — the rooftop CRUCIBLE sign over the darkened brick sheds of the Crucible Steel works (technically Solvay/Geddes, on Syracuse's western edge), silhouetted under a smoldering sunset cloud bank behind corrugated fencing.",
-    "collections": [],
+    "collections": [
+      "outer-cuse"
+    ],
     "thumb": "road-trip-2025-11/img_9395 2.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9395 2.display.avif",
     "display_webp": "road-trip-2025-11/img_9395 2.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 559786,
     "src_mtime": 1763586687
   },
@@ -106086,7 +106430,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9401.jpg",
     "file": "IMG_9401.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Skaneateles",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9401,
@@ -106110,12 +106454,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Skaneateles — a long railed concrete pier reaching into glassy Finger Lakes water at golden hour, the low hills of the far shore fading into haze; lake fills most of the frame.",
-    "collections": [],
+    "collections": [
+      "sunset-every-night"
+    ],
     "thumb": "road-trip-2025-11/img_9401.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9401.display.avif",
     "display_webp": "road-trip-2025-11/img_9401.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 817902,
     "src_mtime": 1763588536
   },
@@ -106123,7 +106469,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9405.jpg",
     "file": "IMG_9405.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Skaneateles",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9405,
@@ -106151,7 +106497,7 @@
     "display_avif": "road-trip-2025-11/img_9405.display.avif",
     "display_webp": "road-trip-2025-11/img_9405.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 803342,
     "src_mtime": 1763588672
   },
@@ -106159,7 +106505,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9412.jpg",
     "file": "IMG_9412.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Skaneateles",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9412,
@@ -106182,12 +106528,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Skaneateles — sunset view down a narrow alley between a brick commercial block and a yellow clapboard building, opening onto lake water with wooded shoreline houses beyond; a lone traffic cone sits by the railing.",
-    "collections": [],
+    "collections": [
+      "sunset-every-night"
+    ],
     "thumb": "road-trip-2025-11/img_9412.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9412.display.avif",
     "display_webp": "road-trip-2025-11/img_9412.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 651451,
     "src_mtime": 1763588819
   },
@@ -106195,7 +106543,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9426.jpg",
     "file": "IMG_9426.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Skaneateles",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9426,
@@ -106217,12 +106565,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Skaneateles — an empty park bench on a grassy shore facing mirror-still lake water at dusk, pastel clouds doubled in the surface and long wooded ridgelines closing the horizon.",
-    "collections": [],
+    "collections": [
+      "sunset-every-night"
+    ],
     "thumb": "road-trip-2025-11/img_9426.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9426.display.avif",
     "display_webp": "road-trip-2025-11/img_9426.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 734789,
     "src_mtime": 1763589152
   },
@@ -106230,7 +106580,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9429.jpg",
     "file": "IMG_9429.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Binghamton",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9429,
@@ -106253,12 +106603,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Cortland — a huge column of steam boils up behind bare trees from a hillside plant with concrete silos and utility poles, a green dumpster and sheds in the scruffy foreground lot catching low sun.",
-    "collections": [],
+    "collections": [
+      "tri-cities-industrial"
+    ],
     "thumb": "road-trip-2025-11/img_9429.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9429.display.avif",
     "display_webp": "road-trip-2025-11/img_9429.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 903675,
     "src_mtime": 1763647602
   },
@@ -106266,7 +106618,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9439.jpg",
     "file": "IMG_9439.jpg",
     "shoot": "road-trip-2025-11",
-    "city": "Endwell",
+    "city": "Endicott",
     "state": "NY",
     "date": "2025-11-17",
     "img_no": 9439,
@@ -106290,12 +106642,14 @@
       "Color"
     ],
     "tag_notes": "The vintage Endwell Motel sign — stacked gold-and-black MOTEL letterboxes on yellow posts with a COLOR TV placard — fronting a faded brick motor court on the Main St strip in Endwell, the hamlet between Endicott and Johnson City.",
-    "collections": [],
+    "collections": [
+      "tri-cities-ephemera"
+    ],
     "thumb": "road-trip-2025-11/img_9439.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9439.display.avif",
     "display_webp": "road-trip-2025-11/img_9439.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 977109,
     "src_mtime": 1763648577
   },
@@ -106303,7 +106657,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9443.jpg",
     "file": "IMG_9443.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9443,
@@ -106326,12 +106680,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — a rusting CLEARANCE 14' truck gate and chain-link fence guarding a sprawling white corrugated factory complex (likely the former IBM Endicott / Huron Campus), elevated pipe bridges and tanks behind, weeds reclaiming the yard.",
-    "collections": [],
+    "collections": [
+      "tri-cities-industrial"
+    ],
     "thumb": "road-trip-2025-11/img_9443.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9443.display.avif",
     "display_webp": "road-trip-2025-11/img_9443.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 921712,
     "src_mtime": 1763648840
   },
@@ -106339,7 +106695,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9458.jpg",
     "file": "IMG_9458.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9458,
@@ -106364,12 +106720,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — a working powerhouse with a red-striped parapet and dark glass curtain wall, steam venting from a cluster of tall weathered steel stacks above a full parking lot in low winter sun.",
-    "collections": [],
+    "collections": [
+      "tri-cities-industrial"
+    ],
     "thumb": "road-trip-2025-11/img_9458.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9458.display.avif",
     "display_webp": "road-trip-2025-11/img_9458.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 588557,
     "src_mtime": 1763649449
   },
@@ -106377,7 +106735,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9472.jpg",
     "file": "IMG_9472.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9472,
@@ -106400,12 +106758,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — process tanks, a tall gold-toned silo and yellow caged stairs along a rail spur at an industrial campus, glassy modern plant buildings behind; a small blue church onion dome peeks over distant brick rooftops at right.",
-    "collections": [],
+    "collections": [
+      "tri-cities-industrial"
+    ],
     "thumb": "road-trip-2025-11/img_9472.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9472.display.avif",
     "display_webp": "road-trip-2025-11/img_9472.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 975510,
     "src_mtime": 1763649979
   },
@@ -106413,7 +106773,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9486.jpg",
     "file": "IMG_9486.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9486,
@@ -106440,7 +106800,7 @@
     "display_avif": "road-trip-2025-11/img_9486.display.avif",
     "display_webp": "road-trip-2025-11/img_9486.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 953718,
     "src_mtime": 1763650616
   },
@@ -106448,7 +106808,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9491.jpg",
     "file": "IMG_9491.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9491,
@@ -106475,7 +106835,7 @@
     "display_avif": "road-trip-2025-11/img_9491.display.avif",
     "display_webp": "road-trip-2025-11/img_9491.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 583457,
     "src_mtime": 1763650891
   },
@@ -106519,7 +106879,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9502.jpg",
     "file": "IMG_9502.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9502,
@@ -106547,7 +106907,7 @@
     "display_avif": "road-trip-2025-11/img_9502.display.avif",
     "display_webp": "road-trip-2025-11/img_9502.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 845392,
     "src_mtime": 1763651190
   },
@@ -106627,7 +106987,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9547.jpg",
     "file": "IMG_9547.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9547,
@@ -106650,12 +107010,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — low pavement-level view down a cracked asphalt street whose centerline is painted red, white, and green like the Italian flag (a Little Italy district marker), frame houses and storefronts receding toward hazy hills; possibly Old Forge, PA instead.",
-    "collections": [],
+    "collections": [
+      "little-italy-endicott"
+    ],
     "thumb": "road-trip-2025-11/img_9547.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9547.display.avif",
     "display_webp": "road-trip-2025-11/img_9547.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1244936,
     "src_mtime": 1763656162
   },
@@ -106663,7 +107025,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9552.jpg",
     "file": "IMG_9552.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9552,
@@ -106686,12 +107048,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — Joey's Italian Ice stand, its walls covered in a trompe-l'oeil mural of an 'Italia' alley in perspective with laundry lines and flags, two mustachioed men sharing wine at a café table; the menu board lists fat-free fruit flavors.",
-    "collections": [],
+    "collections": [
+      "little-italy-endicott"
+    ],
     "thumb": "road-trip-2025-11/img_9552.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9552.display.avif",
     "display_webp": "road-trip-2025-11/img_9552.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 804118,
     "src_mtime": 1763656254
   },
@@ -106699,7 +107063,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9556.jpg",
     "file": "IMG_9556.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9556,
@@ -106722,12 +107086,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — a postwar red-brick Eastern Orthodox church crowned by two brilliant sky-blue onion domes with crosses, bare street trees latticing the façade; its blue dome may be the one visible in the distance from the industrial-campus frame.",
-    "collections": [],
+    "collections": [
+      "upstate-orthodox"
+    ],
     "thumb": "road-trip-2025-11/img_9556.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9556.display.avif",
     "display_webp": "road-trip-2025-11/img_9556.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1040057,
     "src_mtime": 1763656568
   },
@@ -106735,7 +107101,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9560.jpg",
     "file": "IMG_9560.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9560,
@@ -106759,12 +107125,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Scranton — three verdigris bells hung in slender freestanding concrete parabolic arches before St. Mary's Orthodox Church, its golden filigree doors glowing between white portico columns; US and Ukrainian flags and a three-bar Orthodox cross memorial flank the steps.",
-    "collections": [],
+    "collections": [
+      "upstate-orthodox"
+    ],
     "thumb": "road-trip-2025-11/img_9560.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9560.display.avif",
     "display_webp": "road-trip-2025-11/img_9560.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1084643,
     "src_mtime": 1763656799
   },
@@ -106772,7 +107140,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9561.jpg",
     "file": "IMG_9561.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9561,
@@ -106795,12 +107163,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Scranton — full view of St. Mary's Orthodox Church (per its maroon lawn sign): tan brick with a great arched rose window and gold onion domes bearing Orthodox crosses, the freestanding concrete bell arches at left on a hilltop lawn.",
-    "collections": [],
+    "collections": [
+      "upstate-orthodox"
+    ],
     "thumb": "road-trip-2025-11/img_9561.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9561.display.avif",
     "display_webp": "road-trip-2025-11/img_9561.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 760347,
     "src_mtime": 1763656852
   },
@@ -106808,7 +107178,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9567.jpg",
     "file": "IMG_9567.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9567,
@@ -106833,12 +107203,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Scranton — looking past the rear of St. Mary's freestanding concrete bell arches and a brick shrine with a small American flag, down a long straight street of close-set two-story frame houses filling the valley below, a water tower and radio mast on the wooded ridge.",
-    "collections": [],
+    "collections": [
+      "upstate-orthodox"
+    ],
     "thumb": "road-trip-2025-11/img_9567.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9567.display.avif",
     "display_webp": "road-trip-2025-11/img_9567.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 980807,
     "src_mtime": 1763656961
   },
@@ -106846,7 +107218,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9569.jpg",
     "file": "IMG_9569.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9569,
@@ -106871,12 +107243,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — From a hilltop church terrace, a rock-faced brick gate pier holding a small wooden cross anchors the foreground beneath a blurred modern concrete bell-tower shaft, while a long straight residential street of frame houses runs downhill into the valley town.",
-    "collections": [],
+    "collections": [
+      "upstate-orthodox"
+    ],
     "thumb": "road-trip-2025-11/img_9569.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9569.display.avif",
     "display_webp": "road-trip-2025-11/img_9569.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 633804,
     "src_mtime": 1763657011
   },
@@ -106884,7 +107258,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9581.jpg",
     "file": "IMG_9581.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9581,
@@ -106908,12 +107282,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — Over a peeling white wooden fence and the brick corner of a house, a sprawling white factory complex fills the valley floor, its smokestacks steaming against a hazy wooded mountain ridge — company-town industry seen from a residential hillside.",
-    "collections": [],
+    "collections": [
+      "tri-cities-industrial"
+    ],
     "thumb": "road-trip-2025-11/img_9581.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9581.display.avif",
     "display_webp": "road-trip-2025-11/img_9581.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 656034,
     "src_mtime": 1763657530
   },
@@ -106921,7 +107297,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9582.jpg",
     "file": "IMG_9582.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9582,
@@ -106948,7 +107324,7 @@
     "display_avif": "road-trip-2025-11/img_9582.display.avif",
     "display_webp": "road-trip-2025-11/img_9582.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 925772,
     "src_mtime": 1763657675
   },
@@ -106956,7 +107332,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9590.jpg",
     "file": "IMG_9590.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9590,
@@ -106981,12 +107357,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — The blue onion dome and cross of an Eastern-rite church rise beside a dark evergreen through a dense tangle of overhead wires; parked cars line the street below and a row of steaming factory smokestacks closes the hazy valley view — church and industry in one frame.",
-    "collections": [],
+    "collections": [
+      "upstate-orthodox"
+    ],
     "thumb": "road-trip-2025-11/img_9590.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9590.display.avif",
     "display_webp": "road-trip-2025-11/img_9590.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 730015,
     "src_mtime": 1763657797
   },
@@ -106994,7 +107372,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9599.jpg",
     "file": "IMG_9599.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9599,
@@ -107017,12 +107395,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — Entrance of DeGennaro's restaurant (No. 300): gilded script signage on a dark recessed entry wall between red-brick piers, under a copper-toned standing-seam mansard roof, framed by backlit yellow autumn leaves.",
-    "collections": [],
+    "collections": [
+      "little-italy-endicott"
+    ],
     "thumb": "road-trip-2025-11/img_9599.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9599.display.avif",
     "display_webp": "road-trip-2025-11/img_9599.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 726674,
     "src_mtime": 1763657953
   },
@@ -107030,7 +107410,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9622.jpg",
     "file": "IMG_9622.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9622,
@@ -107052,12 +107432,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — Rusticated stone pier of one of the twin 1920 Endicott-Johnson workers' memorial arches (identical arches stand in Endicott and Johnson City): globe lamp on the capped pedestal, blank bronze-framed plaque, and '1920' incised at the base, with lilac-gray frame houses behind.",
-    "collections": [],
+    "collections": [
+      "the-square-deal"
+    ],
     "thumb": "road-trip-2025-11/img_9622.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9622.display.avif",
     "display_webp": "road-trip-2025-11/img_9622.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 966675,
     "src_mtime": 1763659690
   },
@@ -107065,7 +107447,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9627.jpg",
     "file": "IMG_9627.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9627,
@@ -107088,12 +107470,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Endicott — Stone arch inscribed 'HOME OF THE SQUARE DEAL / ERECTED BY E-J WORKERS' spanning a commercial strip, McDonald's golden arches glowing through the stonework — the 1920 company-town monument framing a fast-food streetscape; twin arches exist in Endicott and Johnson City.",
-    "collections": [],
+    "collections": [
+      "the-square-deal"
+    ],
     "thumb": "road-trip-2025-11/img_9627.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9627.display.avif",
     "display_webp": "road-trip-2025-11/img_9627.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 637817,
     "src_mtime": 1763659729
   },
@@ -107101,7 +107485,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9633.jpg",
     "file": "IMG_9633.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Endicott",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9633,
@@ -107126,12 +107510,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Binghamton — Giant red channel letters of a Salvation Army store (No. 311) across a white-painted concrete-block front, the doorway flanked by curved glass-block columns under a red metal awning, seen across a guardrail and cracked asphalt.",
-    "collections": [],
+    "collections": [
+      "the-square-deal"
+    ],
     "thumb": "road-trip-2025-11/img_9633.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9633.display.avif",
     "display_webp": "road-trip-2025-11/img_9633.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 995607,
     "src_mtime": 1763660290
   },
@@ -107139,7 +107525,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9634.jpg",
     "file": "IMG_9634.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Binghamton",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9634,
@@ -107169,7 +107555,7 @@
     "display_avif": "road-trip-2025-11/img_9634.display.avif",
     "display_webp": "road-trip-2025-11/img_9634.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 906086,
     "src_mtime": 1763661332
   },
@@ -107177,7 +107563,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9641.jpg",
     "file": "IMG_9641.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Binghamton",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9641,
@@ -107207,7 +107593,7 @@
     "display_avif": "road-trip-2025-11/img_9641.display.avif",
     "display_webp": "road-trip-2025-11/img_9641.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 730057,
     "src_mtime": 1763661510
   },
@@ -107239,12 +107625,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Binghamton — Chùa Quan Âm, a Vietnamese Buddhist temple in a small converted gable-front house (No. 194, sign 'Giáo Hội Phật Giáo Việt Nam Thống Nhất', tel 723-…): yellow fencing, an American-flag curtain in the window, and a tall spiral-banded industrial smokestack looming directly behind.",
-    "collections": [],
+    "collections": [
+      "chenango"
+    ],
     "thumb": "road-trip-2025-11/img_9662.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9662.display.avif",
     "display_webp": "road-trip-2025-11/img_9662.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 838612,
     "src_mtime": 1763661952
   },
@@ -107252,7 +107640,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9672.jpg",
     "file": "IMG_9672.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Binghamton",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9672,
@@ -107276,12 +107664,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Binghamton — The Brass Rail tavern in a long two-story tan-brick block (No. 184): vintage 7up 'BRASS RAIL' privilege sign over the door, American and Irish flags hung from the second floor, dead ivy trailing off the green cornice, and a blue USPS relay box at the curb.",
-    "collections": [],
+    "collections": [
+      "chenango"
+    ],
     "thumb": "road-trip-2025-11/img_9672.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9672.display.avif",
     "display_webp": "road-trip-2025-11/img_9672.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1314260,
     "src_mtime": 1763662092
   },
@@ -107312,12 +107702,14 @@
       "Color"
     ],
     "tag_notes": "Framed between the pale-green iron stays of Binghamton's 1886 South Washington Street parabolic truss footbridge, a modern girder bridge carries traffic across the Susquehanna River, with a lone brick smokestack and wooded hills beyond; bridge, river, water.",
-    "collections": [],
+    "collections": [
+      "chenango"
+    ],
     "thumb": "road-trip-2025-11/img_9676.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9676.display.avif",
     "display_webp": "road-trip-2025-11/img_9676.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 615301,
     "src_mtime": 1763664608
   },
@@ -107348,12 +107740,14 @@
       "Color"
     ],
     "tag_notes": "Through the green lattice guard of Binghamton's 1886 South Washington Street Bridge, the riveted parabolic truss arches of the Berlin Iron Bridge Co. span frame the empty deck of the old roadway, now a pedestrian crossing of the Susquehanna; bridge.",
-    "collections": [],
+    "collections": [
+      "chenango"
+    ],
     "thumb": "road-trip-2025-11/img_9677.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9677.display.avif",
     "display_webp": "road-trip-2025-11/img_9677.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 709407,
     "src_mtime": 1763664632
   },
@@ -107421,12 +107815,14 @@
       "Color"
     ],
     "tag_notes": "'CHENANGO RIVER PROMENADE' incised over the arched underpass of a concrete bridge approach in Binghamton, beneath a Gothic-slotted balustrade with twin lantern posts; rusting iron picket gates swing open onto the shadowed riverside path; bridge, river.",
-    "collections": [],
+    "collections": [
+      "chenango"
+    ],
     "thumb": "road-trip-2025-11/img_9688.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9688.display.avif",
     "display_webp": "road-trip-2025-11/img_9688.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 875297,
     "src_mtime": 1763665081
   },
@@ -107458,12 +107854,14 @@
       "Color"
     ],
     "tag_notes": "Binghamton's green 1886 South Washington Street parabolic truss bridge on its stone piers over the Susquehanna River, seen through a scrim of bare riverbank branches, with brick commercial blocks on the far shore and a wooded hillside above; bridge, river, water.",
-    "collections": [],
+    "collections": [
+      "chenango"
+    ],
     "thumb": "road-trip-2025-11/img_9697.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9697.display.avif",
     "display_webp": "road-trip-2025-11/img_9697.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1068985,
     "src_mtime": 1763665373
   },
@@ -107496,12 +107894,14 @@
       "Color"
     ],
     "tag_notes": "Entrance bay of the Phelps Mansion at 191 Court Street, Binghamton — an 1870s Second Empire brick mansion with paired Corinthian porch columns over carved walnut double doors, stone window hoods, and its original ornate cast-iron fence and gate posts.",
-    "collections": [],
+    "collections": [
+      "parlor-city"
+    ],
     "thumb": "road-trip-2025-11/img_9704.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9704.display.avif",
     "display_webp": "road-trip-2025-11/img_9704.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1052242,
     "src_mtime": 1763665962
   },
@@ -107533,12 +107933,14 @@
       "Color"
     ],
     "tag_notes": "'THE PARLOR CITY — BINGHAMTON' wall sign painted high on a cream brick party wall downtown, built around a giant vintage 'in gold coin' banknote mural with seated allegorical figures; the ornate green cornice of an early-1900s brick tower rises behind.",
-    "collections": [],
+    "collections": [
+      "parlor-city"
+    ],
     "thumb": "road-trip-2025-11/img_9710.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9710.display.avif",
     "display_webp": "road-trip-2025-11/img_9710.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 690510,
     "src_mtime": 1763666401
   },
@@ -107546,7 +107948,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9716.jpg",
     "file": "IMG_9716.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Binghamton",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9716,
@@ -107573,7 +107975,7 @@
     "display_avif": "road-trip-2025-11/img_9716.display.avif",
     "display_webp": "road-trip-2025-11/img_9716.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 998813,
     "src_mtime": 1763666766
   },
@@ -107581,7 +107983,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9720.jpg",
     "file": "IMG_9720.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Binghamton",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9720,
@@ -107604,12 +108006,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Binghamton — Eccentric pale gray-blue Victorian frame house (No. 86) crowned by an unpainted square tower of carved wood panels with its own peaked cap, its steep Gothic Revival front gable filled with pierced vergeboard scrollwork; a bent No Parking sign leans in the lawn.",
-    "collections": [],
+    "collections": [
+      "parlor-city"
+    ],
     "thumb": "road-trip-2025-11/img_9720.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9720.display.avif",
     "display_webp": "road-trip-2025-11/img_9720.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1015244,
     "src_mtime": 1763666985
   },
@@ -107617,7 +108021,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9725.jpg",
     "file": "IMG_9725.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Binghamton",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9725,
@@ -107639,12 +108043,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Binghamton — Red-and-white Queen Anne Victorian with a conical-roofed corner turret, fish-scale shingled bays, a painted sunburst pediment over the porch steps, and a broad spindlework porch with lattice skirt, glowing in low autumn light.",
-    "collections": [],
+    "collections": [
+      "parlor-city"
+    ],
     "thumb": "road-trip-2025-11/img_9725.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9725.display.avif",
     "display_webp": "road-trip-2025-11/img_9725.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 988861,
     "src_mtime": 1763667045
   },
@@ -107652,7 +108058,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9737.jpg",
     "file": "IMG_9737.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Binghamton",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9737,
@@ -107675,12 +108081,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Binghamton — Gable detail of a deep-green Shingle Style house: fish-scale and lozenge shingle courses arch over a round-headed multi-pane attic window flanked by small cream columns, with a jeweled stained-glass pane glowing in the bay below.",
-    "collections": [],
+    "collections": [
+      "parlor-city"
+    ],
     "thumb": "road-trip-2025-11/img_9737.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9737.display.avif",
     "display_webp": "road-trip-2025-11/img_9737.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 922904,
     "src_mtime": 1763667342
   },
@@ -107713,12 +108121,14 @@
       "Color"
     ],
     "tag_notes": "Camelot Jewelers at 48 Clinton Street, Binghamton: a scalloped blue awning and blue mosaic-tiled storefront grafted onto a clapboard Victorian house with a mint-green gable and Gothic-arched attic window; a faded 'Camelot / We Buy Gold $$$' ghost sign (tel 722-0574) on the corner pier.",
-    "collections": [],
+    "collections": [
+      "chenango"
+    ],
     "thumb": "road-trip-2025-11/img_9747.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9747.display.avif",
     "display_webp": "road-trip-2025-11/img_9747.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1073745,
     "src_mtime": 1763668009
   },
@@ -107726,7 +108136,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9762.jpg",
     "file": "IMG_9762.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Binghamton",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9762,
@@ -107748,12 +108158,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Binghamton — Abandoned three-story brick factory or warehouse in raking golden light: segmental-arched window openings boarded with plywood or open to the sky where the roof has gone, a metal chute jutting from one ground-floor bay. Rust-orange vines climb the lower wall and a graffiti tag marks a boarded door.",
-    "collections": [],
+    "collections": [
+      "chenango"
+    ],
     "thumb": "road-trip-2025-11/img_9762.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9762.display.avif",
     "display_webp": "road-trip-2025-11/img_9762.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 1198148,
     "src_mtime": 1763668699
   },
@@ -107783,12 +108195,14 @@
       "Color"
     ],
     "tag_notes": "Castellated Gothic Revival stone entrance tower of the former New York State Inebriate Asylum (Binghamton's 'Castle on the Hill'), its carved 'A.D. 1858' datestone legible above the pointed-arch doorway. Shot through the chain-link security fence that rings the abandoned landmark, boarded tracery windows above.",
-    "collections": [],
+    "collections": [
+      "sent-upstate"
+    ],
     "thumb": "road-trip-2025-11/img_9776.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9776.display.avif",
     "display_webp": "road-trip-2025-11/img_9776.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 945167,
     "src_mtime": 1763670340
   },
@@ -107818,12 +108232,14 @@
       "Color"
     ],
     "tag_notes": "Side entrance of the abandoned New York State Inebriate Asylum in Binghamton, seen through chain-link fence: battered wooden double doors under a transom atop a broad crumbling stone stair, flanked by heavy castellated pylons casting sawtooth shadows, weeds reclaiming the steps.",
-    "collections": [],
+    "collections": [
+      "sent-upstate"
+    ],
     "thumb": "road-trip-2025-11/img_9783.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9783.display.avif",
     "display_webp": "road-trip-2025-11/img_9783.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 772993,
     "src_mtime": 1763670438
   },
@@ -107831,7 +108247,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9797.jpg",
     "file": "IMG_9797.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Binghamton",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9797,
@@ -107854,12 +108270,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Binghamton — A lone wooden utility pole and its crossing wires frame a hazy hilltop view over a valley city ringed by low mountains: a distant industrial smokestack, frame houses along the downhill street, and one tree still holding rust-red November leaves at right.",
-    "collections": [],
+    "collections": [
+      "sent-upstate"
+    ],
     "thumb": "road-trip-2025-11/img_9797.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9797.display.avif",
     "display_webp": "road-trip-2025-11/img_9797.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 747904,
     "src_mtime": 1763670693
   },
@@ -107867,7 +108285,7 @@
     "key": "November '25 Road Trip/Edited/IMG_9803.jpg",
     "file": "IMG_9803.jpg",
     "shoot": "road-trip-2025-11",
-    "city": null,
+    "city": "Binghamton",
     "state": null,
     "date": "2025-11-17",
     "img_no": 9803,
@@ -107890,12 +108308,14 @@
       "Color"
     ],
     "tag_notes": "CITY? best guess Scranton — A weathered red circular '84' sign (84 Lumber logo) lines up in front of an industrial plant whose white storage silos release a tall steam plume into a clear blue sky. Utility poles, bare roadside brush, and a guardrail frame the scene from the road shoulder.",
-    "collections": [],
+    "collections": [
+      "chenango"
+    ],
     "thumb": "road-trip-2025-11/img_9803.thumb.webp",
     "display_avif": "road-trip-2025-11/img_9803.display.avif",
     "display_webp": "road-trip-2025-11/img_9803.display.webp",
     "tagged": true,
-    "reviewed": false,
+    "reviewed": true,
     "src_size": 670939,
     "src_mtime": 1763671418
   },

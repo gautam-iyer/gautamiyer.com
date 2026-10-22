@@ -190,6 +190,21 @@
       "name": "Hartford, CT",
       "city": "Hartford",
       "state": "CT"
+    },
+    {
+      "name": "Amsterdam, NY",
+      "city": "Amsterdam",
+      "state": "NY"
+    },
+    {
+      "name": "Herkimer, NY",
+      "city": "Herkimer",
+      "state": "NY"
+    },
+    {
+      "name": "Rensselaer, NY",
+      "city": "Rensselaer",
+      "state": "NY"
     }
   ]
 }
