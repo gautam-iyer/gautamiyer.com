@@ -3,8 +3,9 @@
 //   1. flush   — exact aspect ratios, ONE solved unified gap (row == column)
 //   2. framed  — same, with the gap also above/below (rescues stubborn pools)
 //   3. crop    — justified rows at the design gap, scaled to fit; prefix and
-//                pool-derived row-split targets keep the crop minimal (sweep-
-//                verified ≤ ~16% worst-case, typically a few %)
+//                pool-derived row-split targets keep the crop minimal, and a
+//                collection that would crop past MAX_CROP to meet the photo
+//                floor yields the wall to another (see MIN_SHOWN)
 // A unified badness score picks across tiers; crop pays ~1.6 pts per % so
 // gap-perfect layouts always win when they exist.
 (() => {
@@ -29,28 +30,6 @@
     .map((s) => ({ s, key: Math.pow(Math.random(), 1 / weight(s)) }))
     .sort((a, b) => b.key - a.key)
     .map((x) => x.s)
-  boxes.forEach((box, n) => initCollage(box, picks[n % picks.length]))
-
-  function initCollage(box, slug) {
-  const items = pools[slug]
-
-  // Caption: collection name + place, linking to the collection page.
-  // Scoped to this wall's section — every wall captions itself.
-  const section = box.closest('.hero-collage') || document
-  const cap = section.querySelector('[data-collage-caption]')
-  // Only the FIRST wall is above the fold. The follow walls are a viewport or
-  // more down, so their cells load lazily — otherwise all five walls' images
-  // (~35 requests, and the retina ones pull the 3500px display tier) download
-  // before the reader has scrolled to any of them. Layout is unaffected: row
-  // heights and cell widths come from manifest aspect ratios, not from decoded
-  // images, so nothing reflows when a lazy cell arrives.
-  const lazy = section !== document && section.classList.contains('hero-collage--follow')
-  const meta = (window.COLLAGE_META || {})[slug]
-  if (cap && meta) {
-    cap.textContent = meta.place ? `${meta.title} · ${meta.place}` : meta.title
-    cap.href = meta.href
-    cap.hidden = false
-  }
 
   const GAP = 8 // px — column gap; the search aims the row gap at this too
 
@@ -61,6 +40,40 @@
   // is a pure function of (W, H). A fixed order gives the solver far fewer
   // tilings to choose from, so it sweeps row-height targets finely instead.
   const FACTORS = Array.from({ length: 40 }, (_, i) => 0.5 + (0.9 * i) / 39)
+
+  // A wall shows at least MIN_SHOWN photos (the whole pool, if it is smaller)
+  // — a hard rule, not a preference: the score below used to merely penalize
+  // sparse layouts, and a gap-perfect pair of giant photos could still win
+  // (Bridges of Pittsburgh at 1280×720). Meeting the floor can cost crop when a
+  // pool is small and portrait-heavy, since a wide screen needs aspect mass to
+  // fill; past MAX_CROP the collection gives up THIS wall to the next one in
+  // the shuffle instead of mangling its photos. It can still win a wall at a
+  // size it does fill (a phone, a taller window), so nothing is ever barred
+  // outright. If no remaining collection fills the wall within budget, the
+  // least-cropped one takes it.
+  const MIN_SHOWN = 5
+  const MAX_CROP = 0.25
+  const cropOf = (c) => (c && c.mode === 'crop' ? Math.abs(1 - c.k) : 0)
+  let unused = picks.slice()
+  boxes.forEach((box) => {
+    if (!unused.length) unused = picks.slice() // more walls than pools: repeat
+    let slug = unused[0]
+    let least = Infinity
+    for (const s of unused) {
+      const crop = cropOf(solve(pools[s], box.clientWidth, box.clientHeight))
+      if (crop <= MAX_CROP) { slug = s; break }
+      if (crop < least) { least = crop; slug = s }
+    }
+    unused = unused.filter((s) => s !== slug)
+    initCollage(box, slug)
+  })
+
+  // The layout search for one pool in a W×H box — pure, so the wall
+  // assignment above can ask every candidate collection before choosing.
+  // Returns the lowest-badness layout showing at least the photo floor, or
+  // null for a box with no size yet.
+  function solve(items, W, H) {
+  if (!W || !H) return null
 
   // Greedy rows at a target height with gap-aware widths; heights are EXACT
   // (h = usable width / sum of aspect ratios), never scaled afterwards.
@@ -217,8 +230,8 @@
   // inconsistent gaps accumulate points; crop counts ~1.6 points per % of crop
   // so it only wins when gap-based layouts are genuinely poor.
   function badness(c) {
-    // Sparse layouts look absurd (two giant photos filling the hero): penalize
-    // showing fewer photos than the pool could reasonably support.
+    // Above the hard floor (MIN_SHOWN), still lean toward fuller walls:
+    // penalize showing fewer photos than the pool could reasonably support.
     const count = c.rows.reduce((s, r) => s + r.row.length, 0)
     const wantMin = Math.min(6, items.length)
     // quadratic: 1 photo short is mild, 3-4 short (two giant photos) is
@@ -238,6 +251,57 @@
     )
   }
 
+  const mobile = W < 700
+  const base = mobile ? H / 2.8 : H / 2.2
+
+  // Search: for each row-height target (and every row break, below), try the no-crop
+  // modes (flush, then framed) and the guaranteed crop fallback; keep the
+  // lowest unified badness. The crop tier always yields SOMETHING, so a
+  // blank hero is impossible at any viewport size.
+  let best = null
+  let sparse = null // fewer photos than the floor: only if nothing else exists
+  const floor = Math.min(MIN_SHOWN, items.length)
+  const consider = (c) => {
+    if (!c) return
+    const score = badness(c)
+    if (c.rows.reduce((s, r) => s + r.row.length, 0) < floor) {
+      if (!sparse || score < sparse.score) sparse = { ...c, score }
+    } else if (!best || score < best.score) best = { ...c, score }
+  }
+  // Row-split targets derived from the pool itself: the row height that
+  // divides the whole pool's aspect mass into exactly R rows. Rescues extreme
+  // viewports (very wide/short) where the density ladder can't force a split.
+  const totalAr = items.reduce((s, i) => s + i.ar, 0)
+  for (const f of FACTORS) {
+    for (const mode of ['flush', 'framed']) consider(refine(items, W, H, base * f, GAP, mode))
+    consider(cropCandidate(items, W, H, base * f))
+  }
+  for (let R = 1; R <= 6; R++) consider(cropCandidate(items, W, H, (W * R) / totalAr))
+  exhaustive(W, H, consider)
+  return best || sparse
+  } // solve
+
+  function initCollage(box, slug) {
+  const items = pools[slug]
+
+  // Caption: collection name + place, linking to the collection page.
+  // Scoped to this wall's section — every wall captions itself.
+  const section = box.closest('.hero-collage') || document
+  const cap = section.querySelector('[data-collage-caption]')
+  // Only the FIRST wall is above the fold. The follow walls are a viewport or
+  // more down, so their cells load lazily — otherwise all five walls' images
+  // (~35 requests, and the retina ones pull the 3500px display tier) download
+  // before the reader has scrolled to any of them. Layout is unaffected: row
+  // heights and cell widths come from manifest aspect ratios, not from decoded
+  // images, so nothing reflows when a lazy cell arrives.
+  const lazy = section !== document && section.classList.contains('hero-collage--follow')
+  const meta = (window.COLLAGE_META || {})[slug]
+  if (cap && meta) {
+    cap.textContent = meta.place ? `${meta.title} · ${meta.place}` : meta.title
+    cap.href = meta.href
+    cap.hidden = false
+  }
+
   let lastW = 0
   let lastH = 0
   function layout() {
@@ -250,29 +314,7 @@
     if (W === lastW && H === lastH) return
     lastW = W
     lastH = H
-    const mobile = W < 700
-    const base = mobile ? H / 2.8 : H / 2.2
-
-    // Search: for each row-height target (and every row break, below), try the no-crop
-    // modes (flush, then framed) and the guaranteed crop fallback; keep the
-    // lowest unified badness. The crop tier always yields SOMETHING, so a
-    // blank hero is impossible at any viewport size.
-    let best = null
-    const consider = (c) => {
-      if (!c) return
-      const score = badness(c)
-      if (!best || score < best.score) best = { ...c, score }
-    }
-    // Row-split targets derived from the pool itself: the row height that
-    // divides the whole pool's aspect mass into exactly R rows. Rescues extreme
-    // viewports (very wide/short) where the density ladder can't force a split.
-    const totalAr = items.reduce((s, i) => s + i.ar, 0)
-    for (const f of FACTORS) {
-      for (const mode of ['flush', 'framed']) consider(refine(items, W, H, base * f, GAP, mode))
-      consider(cropCandidate(items, W, H, base * f))
-    }
-    for (let R = 1; R <= 6; R++) consider(cropCandidate(items, W, H, (W * R) / totalAr))
-    exhaustive(W, H, consider)
+    const best = solve(items, W, H)
     if (!best) return
 
     const k = best.mode === 'crop' ? best.k : 1
