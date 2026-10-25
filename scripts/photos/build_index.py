@@ -10,7 +10,7 @@ the base/domain changes):
     "collections": { "<slug>": [ item, ... ], ... },   # SHOWN photos, in sequence
     "places":      { "<city>": [ item, ... ], ... },     # legacy (uncurated) albums
     "covers":      { "<city>": item },                   # the place_cover per city
-    "collage":     { "<slug>": [ item, ... ], ... },     # home-wall pools (▦)
+    "collage":     { "<slug>": [ item, ... ], ... },     # home-wall pools
     "place_colls": { "<city>": [ "<slug>", ... ] },      # place-page order
     "refs":        { "<essay ref>": item }
   }
@@ -155,21 +155,15 @@ def main():
     shown = {slug: in_sequence(slug, ps) for slug, ps in collections.items()}
     collections = {slug: [_coll_item(p, titles[slug]) for p in ps] for slug, ps in shown.items()}
 
-    # Home collage pools: for every visible collection flagged collage-eligible
-    # in the registry, EXACTLY its ▦-curated shown members (photo.collage) — no
-    # top-up. A deliberately small curation (e.g. "Free": 4 kids-running
-    # close-ups) must stay small; the collage solver's tiered fallbacks
-    # guarantee a layout at any pool size, small ones just render fewer, larger
-    # cells (possibly with some crop). A collection with NOTHING curated pools
-    # its whole membership. ▦ is home-only: place pages show every shown
-    # member (`collections`) — narrowing them by ▦ once left Coltsville
-    # showing 2 of 13 photos.
-    collage = {}
-    for c in registry:
-        ps = shown.get(c["slug"]) if c.get("collage") and c["slug"] in vis_rank else None
-        if ps:
-            collage[c["slug"]] = [_coll_item(p, titles[c["slug"]])
-                                  for p in ([p for p in ps if p.get("collage")] or ps)]
+    # Home-wall pools: every visible collection with Home walls on (registry
+    # `collage`), its shown members IN SEQUENCE — the wall shows the first
+    # photos that fit, so the order dragged in the tagger is what decides the
+    # home wall too. A per-photo ▦ pick used to narrow this; it was retired
+    # 2026-10-25 as a second ordering system, and its small, portrait-heavy
+    # subsets were what left walls showing 2 photos. `photo.collage` flags
+    # remain in the manifest, inert.
+    collage = {slug: collections[slug] for slug in (c["slug"] for c in registry if c.get("collage"))
+               if slug in vis_rank and collections.get(slug)}
 
     # Place pages: a city's SINGLE-place collections, in display order —
     # `place_order` (set per collection in the tagger), then home rank, then

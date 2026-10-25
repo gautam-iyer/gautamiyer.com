@@ -269,10 +269,9 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .plopts label{display:flex;gap:5px;align-items:center}
  .plopts input[type=text]{font-size:12px;padding:2px 6px;border:1px solid #e4e4e7;border-radius:4px;width:170px}
  .plopts input[type=number]{font-size:12px;padding:2px 4px;border:1px solid #e4e4e7;border-radius:4px;width:46px}
- .plcell .wallbtn,.plcell .covbtn{position:absolute;font-size:11px;line-height:16px;background:rgba(255,255,255,.92);border-radius:4px;padding:0 4px;color:#3f3f46;opacity:0;cursor:pointer}
- .plcell .wallbtn{left:3px;bottom:3px} .plcell .covbtn{right:3px;top:3px}
- .plcell:hover .wallbtn,.plcell:hover .covbtn,.plcell .wallbtn.on,.plcell .covbtn.on{opacity:1}
- .plcell .wallbtn.on{background:#0f766e;color:#fff} .plcell .covbtn.on{background:#b45309;color:#fff}
+ .plcell .covbtn{position:absolute;font-size:11px;line-height:16px;background:rgba(255,255,255,.92);border-radius:4px;padding:0 4px;color:#3f3f46;opacity:0;cursor:pointer}
+ .plcell .covbtn{right:3px;top:3px}
+ .plcell:hover .covbtn,.plcell .covbtn.on{opacity:1} .plcell .covbtn.on{background:#b45309;color:#fff}
  .notsaved{position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:99;background:#dc2626;color:#fff;font-size:13px;font-weight:600;padding:8px 14px;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.2)}
  .plcell.archived{opacity:.35;cursor:default} .plcell.archived:hover{outline-color:transparent}
  .plrow.arch .plhead b{color:#71717a}
@@ -293,9 +292,6 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .cell .cap{font-size:11px;color:#52525b;padding:4px 7px;font-variant-numeric:tabular-nums}
  .cell .badge{position:absolute;top:6px;right:6px;font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:999px;background:#7c3aed;color:#fff}
  .cell.out{border-color:#e4e4e7;opacity:.5} .cell.out .badge{background:#94a3b8}
- .cell .cbadge{position:absolute;top:32px;left:6px;font-size:12px;line-height:1;padding:4px 6px;border-radius:6px;background:#fff;border:1px solid #d4d4d8;color:#a1a1aa;cursor:pointer;z-index:2}
- .cell .cbadge.on{background:#16a34a;border-color:#16a34a;color:#fff}
- .cell .cbadge:hover{border-color:#16a34a}
  .linkbtn.arch{color:#a1a1aa} .linkbtn.arch:hover{color:#dc2626}
  .archhead{padding:14px 8px 6px;font-size:12px;font-weight:700;color:#a1a1aa;text-transform:uppercase;letter-spacing:.04em;border-top:2px solid #e4e4e7}
  .archrow td{color:#a1a1aa;background:#fafafa}
@@ -844,7 +840,7 @@ function renderColls(){
      <td class="ct">${collCount(c.slug)}</td>
      <td><input type="checkbox" ${c.featured?'checked':''} onchange="updateColl('${esc(c.slug)}',{featured:this.checked})"></td>
      <td><input class="order" type="number" min="0" value="${c.order||0}" onchange="updateColl('${esc(c.slug)}',{order:+this.value})"></td>
-     <td title="Eligible for the home-page collage walls. Curate which members make up the wall via the ▦ toggle in Edit members."><input type="checkbox" ${c.collage?'checked':''} onchange="updateColl('${esc(c.slug)}',{collage:this.checked})"> <span class="ct">${c.collage?collageCount(c.slug)+' ▦':''}</span></td>
+     <td title="Eligible for the home-page walls. A wall shows the first photos of the collection's sequence that fit — drag the order in Places."><input type="checkbox" ${c.collage?'checked':''} onchange="updateColl('${esc(c.slug)}',{collage:this.checked})"></td>
      <td>${c.collage?`<input class="order" type="number" min="0" placeholder="—" value="${c.collage_rank||''}" onchange="updateColl('${esc(c.slug)}',{collage_rank:+this.value||0})" title="Home-collage priority: 1 = most likely to appear, 2 next, and so on — weighted, still random. Blank/0 = unranked (all unranked share the tier below the last ranked).">`:''}</td>
      <td><button class="linkbtn" onclick="editMembers('${esc(c.slug)}')">Edit members →</button>
          <button class="linkbtn arch" title="Remove from the site (membership kept; restore anytime from the Archived list below)" onclick="archiveColl('${esc(c.slug)}')">Archive</button></td>
@@ -863,13 +859,12 @@ function renderColls(){
   // A special "set" browsable in the same grid: the per-place cover photos.
   const roleRows=`
    <tr class="role-row"><td><b>⚑ Place cover</b> <span class="ct">— one per place</span></td><td class="ct">per city</td><td class="ct">${targetCount('__cover')}</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td class="ct">—</td><td><button class="linkbtn" onclick="editMembers('__cover')">Edit set →</button></td></tr>`;
-  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — one city puts the collection on that place’s page; several <b>comma-separated</b> cities (e.g. “Newark, Brooklyn”) make it a multi-place collection, which appears on NO place page, only on /collections/ under “Multiple places”. (The <b>Places</b> mode is the easier way to build and order a place’s collections.) <b>Featured</b> + <b>Order</b> now only pick a collection’s accent colour. Tick <b>Collage</b> to make a collection eligible for the home walls. The ▦ toggle inside “Edit members” picks WHICH photos make up its HOME wall (place pages always show every photo): if any are flagged, ONLY those appear (12–18 tile best; a handful renders as a few big cells); if none are, every shown photo is in the pool. <b>Home rank</b> skews which collections the five home walls draw: 1 = most likely; blank = unranked. “Edit members / set” opens the add/remove grid, including ⚑ Place cover at the top.</p>
-   <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th>Collage</th><th>Home rank</th><th></th></tr></thead><tbody>${roleRows}${rows}${archBlock}</tbody></table>
+  $('#main').innerHTML=`<p class="hint">Rename via the title. <b>Place</b> is editable — one city puts the collection on that place’s page; several <b>comma-separated</b> cities (e.g. “Newark, Brooklyn”) make it a multi-place collection, which appears on NO place page, only on /collections/ under “Multiple places”. (The <b>Places</b> mode is the easier way to build and order a place’s collections.) <b>Featured</b> + <b>Order</b> now only pick a collection’s accent colour. Tick <b>Home walls</b> to make a collection eligible for the home walls. Its home wall shows the first photos of its sequence that fit (set the order by dragging in Places). <b>Home rank</b> skews which collections the five home walls draw: 1 = most likely; blank = unranked. “Edit members / set” opens the add/remove grid, including ⚑ Place cover at the top.</p>
+   <table class="ctable"><thead><tr><th>Title</th><th>Place(s)</th><th>Photos</th><th>Featured</th><th>Order</th><th>Home walls</th><th>Home rank</th><th></th></tr></thead><tbody>${roleRows}${rows}${archBlock}</tbody></table>
    <datalist id="dl-place">${cities.map(c=>`<option value="${esc(c)}">`).join('')}</datalist>`;
 }
-function collageCount(slug){return Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(slug)&&PHOTOS[k].collage).length;}
 window.archiveColl=async(slug)=>{const c=COLLS.find(x=>x.slug===slug);if(!c)return;
-  let msg=`Archive “${c.title}”? It disappears from the site (collections page, place pages${c.featured?', AND the home page — it is currently FEATURED':''}${c.collage?', and the collage pool':''}). Membership is kept; restore anytime.`;
+  let msg=`Archive “${c.title}”? It disappears from the site (collections page, place pages${c.collage?', and the home walls':''}). Membership is kept; restore anytime.`;
   if(!confirm(msg))return;
   await updateColl(slug,{archived:true});render();};
 window.restoreColl=async(slug)=>{await updateColl(slug,{archived:false});render();};
@@ -902,16 +897,7 @@ window.toggleMember=(key)=>{const t=memberSlug;const on=!isIn(key,t);setIn(key,t
   const cell=document.querySelector(`.cell[data-key="${CSS.escape(key)}"]`);
   if(cell){cell.classList.toggle('out',!on);cell.querySelector('.badge').textContent=on?'in':'add';}
   $('#stat').textContent=`${targetCount(t)} in set`;};
-/* Per-photo collage inclusion (photo.collage). Only shown for collage-enabled
-   collections. NOTE: the flag is per-PHOTO — a photo in two collage-enabled
-   collections shows in both pools. */
-function collActive(){const c=COLLS.find(x=>x.slug===memberSlug);return !!(c&&c.collage);}
-window.toggleCollage=(ev,key)=>{ev.stopPropagation();
-  const p=PHOTOS[key];p.collage=!p.collage;save(key,{collage:p.collage});
-  const b=document.querySelector(`.cell[data-key="${CSS.escape(key)}"] .cbadge`);
-  if(b)b.classList.toggle('on',p.collage);
-  memberStat();};
-/* Empty a collection's MEMBERSHIP (not collage flags): remove every photo from
+/* Empty a collection's MEMBERSHIP: remove every photo from
    this collection so it can be rebuilt one-by-one via "show all photos".
    Regular collections only — not the ★/⚑ pseudo-sets. */
 window.emptyCollection=async()=>{const t=memberSlug;
@@ -924,16 +910,7 @@ window.emptyCollection=async()=>{const t=memberSlug;
     return fetch('/api/save',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({key:k,patch:{collections:s}})});}));
   emptiedKeys=new Set(keys);
   render();};
-window.deselectAllCollage=async()=>{const t=memberSlug;
-  const keys=Object.keys(PHOTOS).filter(k=>(PHOTOS[k].collections||[]).includes(t)&&PHOTOS[k].collage);
-  if(!keys.length)return;
-  if(!confirm(`Clear the ▦ collage flag on ${keys.length} photo${keys.length===1?'':'s'} in this collection?`))return;
-  await Promise.all(keys.map(k=>{PHOTOS[k].collage=false;
-    return fetch('/api/save',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({key:k,patch:{collage:false}})});}));
-  render();};
-function memberStat(){const t=memberSlug;let s=`${targetCount(t)} in set`;
-  if(collActive())s+=` · ${collageCount(t)} ▦ in collage`;
-  $('#stat').textContent=s;}
+function memberStat(){$('#stat').textContent=`${targetCount(memberSlug)} in set`;}
 function renderMembers(){
   const t=memberSlug;
   const cities=uniq(Object.values(PHOTOS).map(p=>p.city));
@@ -941,19 +918,16 @@ function renderMembers(){
   if(page>=pages)page=pages-1;
   const slice=all.slice(page*GRIDPER,page*GRIDPER+GRIDPER);
   memberStat();
-  const showCollage=collActive();
   $('#main').innerHTML=`<p class="hint"><button class="linkbtn" onclick="backToColls()">← Collections</button> &nbsp; Editing <b>${esc(targetLabel(t))}</b>.
-     Click a photo to ${memberFilter.all?'add/remove':'remove'} it. Autosaves.${showCollage?' &nbsp;·&nbsp; <b>▦</b> = include in the home-page collage (click the corner chip).':''}</p>
+     Click a photo to ${memberFilter.all?'add/remove':'remove'} it. Autosaves.</p>
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
       <label style="font-size:13px"><input type="checkbox" id="m-all" ${memberFilter.all?'checked':''}> show all photos (to add)</label>
       <select id="m-city"><option value="">All cities</option>${cities.map(c=>`<option value="${esc(c)}"${c===memberFilter.city?' selected':''}>${esc(c)}</option>`).join('')}</select>
-      ${showCollage?`<button class="keepall" onclick="deselectAllCollage()" title="Clear every ▦ collage flag in this collection">✕ Deselect all ▦</button>`:''}
       ${t!=='__cover'?`<button class="keepall" onclick="emptyCollection()" title="Remove every photo from this collection (membership only — nothing is deleted) so you can rebuild it one by one">⊘ Empty collection…</button>`:''}
     </div>
     <div class="grid">`+slice.map(key=>{const p=PHOTOS[key];const inn=isIn(key,t);
-      const cb=showCollage&&inn?`<span class="cbadge${p.collage?' on':''}" title="Include in home-page collage" onclick="toggleCollage(event,'${jesc(key)}')">▦</span>`:'';
       return `<div class="cell ${inn?'':'out'}" data-key="${esc(key)}" onclick="toggleMember('${jesc(key)}')">
-        <span class="badge">${inn?'in':'add'}</span>${cb}${cellMenu(key)}<span class="rotdot"></span><img loading="lazy" src="${imgu(p)}">
+        <span class="badge">${inn?'in':'add'}</span>${cellMenu(key)}<span class="rotdot"></span><img loading="lazy" src="${imgu(p)}">
         <div class="cap">${esc(p.city||'')} · #${p.img_no}${(()=>{if(!inn||t.startsWith('__'))return '';const d=displayColl(p);return d&&d!==t?` · <b>shown in ${esc((COLLS.find(x=>x.slug===d)||{}).title||d)}</b>`:'';})()}</div></div>`;}).join('')+`</div>`+pager(page,pages,all.length);
   $('#m-all').onchange=e=>{memberFilter.all=e.target.checked;page=0;render();};
   $('#m-city').onchange=e=>{memberFilter.city=e.target.value;page=0;render();};
@@ -1267,7 +1241,7 @@ function multiColls(city){return COLLS.filter(c=>visColl(c)&&collPlaces(c).lengt
 function plCell(key,label,cls,seq){const p=PHOTOS[key];const w=Math.round(110*(p.width||3)/(p.height||2));
   const drag=seq?` draggable="true" data-key="${esc(key)}" data-slug="${esc(seq.slug)}" ondragstart="plDragStart(event)" ondragend="plDragEnd(event)" ondragover="plDragOver(event)" ondragleave="plDragLeave(event)" ondrop="plDrop(event)"`:'';
   return `<div class="plcell ${cls||''}" style="width:${w}px" title="#${p.img_no}${label?' · shown in '+esc(label):''}${seq?' · drag to reorder':''}" onclick="plClick('${jesc(key)}')"${drag}>
-    <img loading="lazy" src="${imgu(p)}">${seq?`<span class="seq">${seq.n}</span>`:''}${isStaged(p)?'<span class="stg">staged</span>':''}${label?`<span class="tagl">${esc(label)}</span>`:''}${seq?`<span class="capbtn${p.caption?' on':''}" title="${esc(p.caption||'Add a caption')}" onclick="plCaption(event,'${jesc(key)}')">✎</span>`:''}${seq&&seq.wall?`<span class="wallbtn${p.collage?' on':''}" title="▦ On this collection's HOME wall. If any photo is ▦, only ▦ photos make the wall; if none are, all do." onclick="plFlag(event,'${jesc(key)}','collage')">▦</span>`:''}${seq?`<span class="covbtn${p.place_cover?' on':''}" title="⚑ Place cover — the photo that represents ${esc(p.city||'this place')} on /places/ (one per place)" onclick="plFlag(event,'${jesc(key)}','place_cover')">⚑</span>`:''}</div>`;}
+    <img loading="lazy" src="${imgu(p)}">${seq?`<span class="seq">${seq.n}</span>`:''}${isStaged(p)?'<span class="stg">staged</span>':''}${label?`<span class="tagl">${esc(label)}</span>`:''}${seq?`<span class="capbtn${p.caption?' on':''}" title="${esc(p.caption||'Add a caption')}" onclick="plCaption(event,'${jesc(key)}')">✎</span>`:''}${seq?`<span class="covbtn${p.place_cover?' on':''}" title="⚑ Place cover — the photo that represents ${esc(p.city||'this place')} on /places/ (one per place)" onclick="plFlag(event,'${jesc(key)}','place_cover')">⚑</span>`:''}</div>`;}
 /* SEQUENCE: the order a collection is shown in (collection page, walls).
    `photo_order` (keys, written by dragging a row's photos) first, then the
    rest — old-camera frames last, then by key. MIRRORS build_index.py
@@ -1292,13 +1266,13 @@ function plRow(c,order,cityKeys,multi){
       <button class="linkbtn arch" onclick="plArchive('${jesc(c.slug)}')" title="Take it off the site. Its photos keep the tag; any not shown in another collection move to Unsorted. Restore it from Archived at the bottom.">archive</button></div>
     <div class="plopts">
       <label title="One city = on that place's page. Several, comma-separated = a multi-place collection (on /collections/ only). Changing it moves the collection.">Place(s) <input type="text" list="dl-place" value="${esc(collPlaces(c).join(', '))}" onchange="plPlaces('${jesc(c.slug)}',this.value)"></label>
-      <label title="Eligible for the five home-page walls. ▦ on a photo (hover) picks which photos make its wall.">Home walls <input type="checkbox" ${c.collage?'checked':''} onchange="plSet('${jesc(c.slug)}',{collage:this.checked})">${c.collage?` <span>${collageCount(c.slug)||'all'} ▦</span>`:''}</label>
+      <label title="Eligible for the five home-page walls. A wall shows the first photos of this row's order that fit — put the best first.">Home walls <input type="checkbox" ${c.collage?'checked':''} onchange="plSet('${jesc(c.slug)}',{collage:this.checked})"></label>
       ${c.collage?`<label title="Home-wall priority: 1 = most likely to appear, 2 next… weighted, still random. Blank = unranked.">Home rank <input type="number" min="0" placeholder="—" value="${c.collage_rank||''}" onchange="plSet('${jesc(c.slug)}',{collage_rank:+this.value||0})"></label>`:''}
       <label title="Featured + Order only pick the collection's accent colour.">Accent: featured <input type="checkbox" ${c.featured?'checked':''} onchange="plSet('${jesc(c.slug)}',{featured:this.checked})"> order <input type="number" min="0" value="${c.order||0}" onchange="plSet('${jesc(c.slug)}',{order:+this.value})"></label>
     </div>
     <textarea class="plcap" placeholder="Caption — shown above this collection on ${multi?'its collection page':'the place page, and on its collection page'}. Saves when you click away." onchange="updateColl('${jesc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea>
     <textarea class="plcap plsrc" placeholder="Sources — citations for the caption, shown small under the photos (markdown: one per line, or a list). Saves when you click away." onchange="updateColl('${jesc(c.slug)}',{sources:this.value})">${esc(c.sources||'')}</textarea>
-    <div class="plstrip">${seq.map((k,i)=>plCell(k,'','',{slug:c.slug,n:i+1,wall:c.collage})).join('')||'<span class="hint">empty — pick ◎ target, then click photos below</span>'}${elsewhere.map(k=>plCell(k,title(displayColl(PHOTOS[k],order)),'elsewhere')).join('')}</div></div>`;}
+    <div class="plstrip">${seq.map((k,i)=>plCell(k,'','',{slug:c.slug,n:i+1})).join('')||'<span class="hint">empty — pick ◎ target, then click photos below</span>'}${elsewhere.map(k=>plCell(k,title(displayColl(PHOTOS[k],order)),'elsewhere')).join('')}</div></div>`;}
 function renderPlace(){
   const counts={};Object.values(PHOTOS).forEach(p=>{if(p.city)counts[p.city]=(counts[p.city]||0)+1;});
   const cities=Object.keys(counts).sort();
@@ -1311,7 +1285,7 @@ function renderPlace(){
   const essay=(PLACES.find(p=>p.city===plCity)||{}).essay||'';
   const archived=COLLS.filter(c=>c.archived&&collPlaces(c).includes(plCity)).sort((a,b)=>a.title.localeCompare(b.title));
   $('#stat').textContent=`${plCity}: ${cityKeys.length-unsorted.length} shown · ${unsorted.length} unsorted`;
-  $('#main').innerHTML=`<p class="hint">One row per collection, in the order the place page shows them. Pick a <b>◎ target</b>, then click photos to show them there (their other tags are kept). Click a photo already in the target to take it out. Faded = tagged here but shown in another collection; click it to bring it here. <b>Drag</b> a row's photos to set the order the site shows them in (numbered): the place page shows every photo in that order, and the collection page's carousel opens on #1. New photos join at the end. Hover a photo: <b>✎</b> its own lightbox caption (purple = captioned), <b>▦</b> on the collection's home wall (rows with Home walls ticked), <b>⚑</b> the place's cover. Click a title to rename it; the line under it holds the Collections-tab settings (place, home walls + rank, accent).</p>
+  $('#main').innerHTML=`<p class="hint">One row per collection, in the order the place page shows them. Pick a <b>◎ target</b>, then click photos to show them there (their other tags are kept). Click a photo already in the target to take it out. Faded = tagged here but shown in another collection; click it to bring it here. <b>Drag</b> a row's photos to set the order the site shows them in (numbered): the place page shows every photo in that order, and the collection page's carousel opens on #1. New photos join at the end. Hover a photo: <b>✎</b> its own lightbox caption (purple = captioned), <b>⚑</b> the place's cover. A row with Home walls ticked can appear on the home page, showing the first photos of its order that fit. Click a title to rename it; the line under it holds the Collections-tab settings (place, home walls + rank, accent).</p>
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px">
       <select id="pl-city">${cities.map(c=>`<option value="${esc(c)}"${c===plCity?' selected':''}>${esc(c)} (${counts[c]})</option>`).join('')}</select>
       <label style="font-size:13px;color:#71717a" title="Shows “Read the essay here” under the place name on its page. Collection captions still show either way.">Essay
