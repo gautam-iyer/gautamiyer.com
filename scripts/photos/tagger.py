@@ -263,6 +263,17 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .plcell:hover{outline-color:#7c3aed}
  .plcell.elsewhere{opacity:.35} .plcell.elsewhere:hover{opacity:.8}
  .plcell[draggable=true]{cursor:grab}
+ .pltitle{font-family:inherit;font-size:15px;font-weight:600;border:1px solid transparent;border-radius:4px;padding:1px 4px;margin-left:-4px;min-width:6em;field-sizing:content;background:transparent;color:#18181b}
+ .pltitle:hover{border-color:#e4e4e7} .pltitle:focus{border-color:#7c3aed;outline:0;background:#fff}
+ .plopts{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font-size:12px;color:#71717a;margin:0 0 8px}
+ .plopts label{display:flex;gap:5px;align-items:center}
+ .plopts input[type=text]{font-size:12px;padding:2px 6px;border:1px solid #e4e4e7;border-radius:4px;width:170px}
+ .plopts input[type=number]{font-size:12px;padding:2px 4px;border:1px solid #e4e4e7;border-radius:4px;width:46px}
+ .plcell .wallbtn,.plcell .covbtn{position:absolute;font-size:11px;line-height:16px;background:rgba(255,255,255,.92);border-radius:4px;padding:0 4px;color:#3f3f46;opacity:0;cursor:pointer}
+ .plcell .wallbtn{left:3px;bottom:3px} .plcell .covbtn{right:3px;top:3px}
+ .plcell:hover .wallbtn,.plcell:hover .covbtn,.plcell .wallbtn.on,.plcell .covbtn.on{opacity:1}
+ .plcell .wallbtn.on{background:#0f766e;color:#fff} .plcell .covbtn.on{background:#b45309;color:#fff}
+ .notsaved{position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:99;background:#dc2626;color:#fff;font-size:13px;font-weight:600;padding:8px 14px;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.2)}
  .plcell.archived{opacity:.35;cursor:default} .plcell.archived:hover{outline-color:transparent}
  .plrow.arch .plhead b{color:#71717a}
  .plcell .seq{position:absolute;left:3px;top:3px;font-size:10px;font-weight:700;background:rgba(24,24,27,.78);color:#fff;border-radius:4px;padding:1px 5px}
@@ -443,15 +454,25 @@ async function boot(){
 }
 function flash(){const f=$('#flash');f.classList.add('on');setTimeout(()=>f.classList.remove('on'),800);}
 
+/* A save the server never got must not look saved: the page updates its own
+   copy first, so a click while the tagger is down or restarting used to show
+   the change and lose it. Now a red banner stays up until a save succeeds. */
+function notSaved(){let b=$('#notsaved');
+  if(!b){b=document.createElement('div');b.id='notsaved';b.className='notsaved';document.body.appendChild(b);}
+  b.textContent='NOT SAVED — the tagger server did not answer. Restart it, reload this page, and redo the last change.';}
+function savedOK(){const b=$('#notsaved');if(b)b.remove();flash();}
 async function save(key,patch){
   PHOTOS[key]=Object.assign(PHOTOS[key],patch,{reviewed:true});
-  await fetch('/api/save',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({key,patch})});
-  flash();
+  let ok=false;
+  try{ok=(await fetch('/api/save',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({key,patch})})).ok;}catch(e){}
+  ok?savedOK():notSaved();
 }
 async function updateColl(slug,patch){
-  const r=await (await fetch('/api/collection/update',{method:'POST',headers:{'content-type':'application/json'},
-    body:JSON.stringify(Object.assign({slug},patch))})).json();
-  COLLS=r.collections; flash();
+  let r=null;
+  try{const res=await fetch('/api/collection/update',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify(Object.assign({slug},patch))});if(res.ok)r=await res.json();}catch(e){}
+  if(!r){notSaved();return;}
+  COLLS=r.collections; savedOK();
 }
 async function newCollection(title,key){
   const r=await (await fetch('/api/collection',{method:'POST',headers:{'content-type':'application/json'},
@@ -1246,7 +1267,7 @@ function multiColls(city){return COLLS.filter(c=>visColl(c)&&collPlaces(c).lengt
 function plCell(key,label,cls,seq){const p=PHOTOS[key];const w=Math.round(110*(p.width||3)/(p.height||2));
   const drag=seq?` draggable="true" data-key="${esc(key)}" data-slug="${esc(seq.slug)}" ondragstart="plDragStart(event)" ondragend="plDragEnd(event)" ondragover="plDragOver(event)" ondragleave="plDragLeave(event)" ondrop="plDrop(event)"`:'';
   return `<div class="plcell ${cls||''}" style="width:${w}px" title="#${p.img_no}${label?' · shown in '+esc(label):''}${seq?' · drag to reorder':''}" onclick="plClick('${jesc(key)}')"${drag}>
-    <img loading="lazy" src="${imgu(p)}">${seq?`<span class="seq">${seq.n}</span>`:''}${isStaged(p)?'<span class="stg">staged</span>':''}${label?`<span class="tagl">${esc(label)}</span>`:''}${seq?`<span class="capbtn${p.caption?' on':''}" title="${esc(p.caption||'Add a caption')}" onclick="plCaption(event,'${jesc(key)}')">✎</span>`:''}</div>`;}
+    <img loading="lazy" src="${imgu(p)}">${seq?`<span class="seq">${seq.n}</span>`:''}${isStaged(p)?'<span class="stg">staged</span>':''}${label?`<span class="tagl">${esc(label)}</span>`:''}${seq?`<span class="capbtn${p.caption?' on':''}" title="${esc(p.caption||'Add a caption')}" onclick="plCaption(event,'${jesc(key)}')">✎</span>`:''}${seq&&seq.wall?`<span class="wallbtn${p.collage?' on':''}" title="▦ On this collection's HOME wall. If any photo is ▦, only ▦ photos make the wall; if none are, all do." onclick="plFlag(event,'${jesc(key)}','collage')">▦</span>`:''}${seq?`<span class="covbtn${p.place_cover?' on':''}" title="⚑ Place cover — the photo that represents ${esc(p.city||'this place')} on /places/ (one per place)" onclick="plFlag(event,'${jesc(key)}','place_cover')">⚑</span>`:''}</div>`;}
 /* SEQUENCE: the order a collection is shown in (collection page, walls).
    `photo_order` (keys, written by dragging a row's photos) first, then the
    rest — old-camera frames last, then by key. MIRRORS build_index.py
@@ -1265,13 +1286,19 @@ function plRow(c,order,cityKeys,multi){
   const on=plTarget===c.slug;
   return `<div class="plrow${on?' target':''}">
     <div class="plhead"><button class="tgtbtn${on?' on':''}" onclick="plSetTarget('${jesc(c.slug)}')">${on?'◉ target':'◎ target'}</button>
-      <b>${esc(c.title)}</b><span class="n">${shown.length} shown${elsewhere.length?` · ${elsewhere.length} tagged, shown elsewhere`:''}${multi?' · '+esc(collPlaces(c).join(', ')):''}</span>
+      <input class="pltitle" value="${esc(c.title)}" title="Rename (the collection's URL keeps its slug)" onchange="plRename('${jesc(c.slug)}',this)"><span class="n">${shown.length} shown${elsewhere.length?` · ${elsewhere.length} tagged, shown elsewhere`:''}${multi?' · '+esc(collPlaces(c).join(', ')):''}</span>
       ${multi?'':`<button class="keepall" onclick="plMove('${jesc(c.slug)}',-1)" title="Earlier on the place page">▲</button><button class="keepall" onclick="plMove('${jesc(c.slug)}',1)" title="Later on the place page">▼</button>`}
       <button class="linkbtn" onclick="plEdit('${jesc(c.slug)}')">edit members →</button>
       <button class="linkbtn arch" onclick="plArchive('${jesc(c.slug)}')" title="Take it off the site. Its photos keep the tag; any not shown in another collection move to Unsorted. Restore it from Archived at the bottom.">archive</button></div>
+    <div class="plopts">
+      <label title="One city = on that place's page. Several, comma-separated = a multi-place collection (on /collections/ only). Changing it moves the collection.">Place(s) <input type="text" list="dl-place" value="${esc(collPlaces(c).join(', '))}" onchange="plPlaces('${jesc(c.slug)}',this.value)"></label>
+      <label title="Eligible for the five home-page walls. ▦ on a photo (hover) picks which photos make its wall.">Home walls <input type="checkbox" ${c.collage?'checked':''} onchange="plSet('${jesc(c.slug)}',{collage:this.checked})">${c.collage?` <span>${collageCount(c.slug)||'all'} ▦</span>`:''}</label>
+      ${c.collage?`<label title="Home-wall priority: 1 = most likely to appear, 2 next… weighted, still random. Blank = unranked.">Home rank <input type="number" min="0" placeholder="—" value="${c.collage_rank||''}" onchange="plSet('${jesc(c.slug)}',{collage_rank:+this.value||0})"></label>`:''}
+      <label title="Featured + Order only pick the collection's accent colour.">Accent: featured <input type="checkbox" ${c.featured?'checked':''} onchange="plSet('${jesc(c.slug)}',{featured:this.checked})"> order <input type="number" min="0" value="${c.order||0}" onchange="plSet('${jesc(c.slug)}',{order:+this.value})"></label>
+    </div>
     <textarea class="plcap" placeholder="Caption — shown above this collection on ${multi?'its collection page':'the place page, and on its collection page'}. Saves when you click away." onchange="updateColl('${jesc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea>
     <textarea class="plcap plsrc" placeholder="Sources — citations for the caption, shown small under the photos (markdown: one per line, or a list). Saves when you click away." onchange="updateColl('${jesc(c.slug)}',{sources:this.value})">${esc(c.sources||'')}</textarea>
-    <div class="plstrip">${seq.map((k,i)=>plCell(k,'','',{slug:c.slug,n:i+1})).join('')||'<span class="hint">empty — pick ◎ target, then click photos below</span>'}${elsewhere.map(k=>plCell(k,title(displayColl(PHOTOS[k],order)),'elsewhere')).join('')}</div></div>`;}
+    <div class="plstrip">${seq.map((k,i)=>plCell(k,'','',{slug:c.slug,n:i+1,wall:c.collage})).join('')||'<span class="hint">empty — pick ◎ target, then click photos below</span>'}${elsewhere.map(k=>plCell(k,title(displayColl(PHOTOS[k],order)),'elsewhere')).join('')}</div></div>`;}
 function renderPlace(){
   const counts={};Object.values(PHOTOS).forEach(p=>{if(p.city)counts[p.city]=(counts[p.city]||0)+1;});
   const cities=Object.keys(counts).sort();
@@ -1284,7 +1311,7 @@ function renderPlace(){
   const essay=(PLACES.find(p=>p.city===plCity)||{}).essay||'';
   const archived=COLLS.filter(c=>c.archived&&collPlaces(c).includes(plCity)).sort((a,b)=>a.title.localeCompare(b.title));
   $('#stat').textContent=`${plCity}: ${cityKeys.length-unsorted.length} shown · ${unsorted.length} unsorted`;
-  $('#main').innerHTML=`<p class="hint">One row per collection, in the order the place page shows them. Pick a <b>◎ target</b>, then click photos to show them there (their other tags are kept). Click a photo already in the target to take it out. Faded = tagged here but shown in another collection; click it to bring it here. <b>Drag</b> a row's photos to set the order the site shows them in (numbered): the place page shows every photo in that order, and the collection page's carousel opens on #1. New photos join at the end. <b>✎</b> on a photo (hover) gives it its own lightbox caption — purple ✎ = captioned.</p>
+  $('#main').innerHTML=`<p class="hint">One row per collection, in the order the place page shows them. Pick a <b>◎ target</b>, then click photos to show them there (their other tags are kept). Click a photo already in the target to take it out. Faded = tagged here but shown in another collection; click it to bring it here. <b>Drag</b> a row's photos to set the order the site shows them in (numbered): the place page shows every photo in that order, and the collection page's carousel opens on #1. New photos join at the end. Hover a photo: <b>✎</b> its own lightbox caption (purple = captioned), <b>▦</b> on the collection's home wall (rows with Home walls ticked), <b>⚑</b> the place's cover. Click a title to rename it; the line under it holds the Collections-tab settings (place, home walls + rank, accent).</p>
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px">
       <select id="pl-city">${cities.map(c=>`<option value="${esc(c)}"${c===plCity?' selected':''}>${esc(c)} (${counts[c]})</option>`).join('')}</select>
       <label style="font-size:13px;color:#71717a" title="Shows “Read the essay here” under the place name on its page. Collection captions still show either way.">Essay
@@ -1297,6 +1324,7 @@ function renderPlace(){
     ${multis.length?`<div class="plsec">Spanning several places — on /collections/ only (“Multiple places”), not on any place page</div>${multis.map(c=>plRow(c,order,cityKeys,true)).join('')}`:''}
     <div class="plsec">Unsorted — ${unsorted.length} ${esc(plCity)} photo${unsorted.length===1?'':'s'} shown in no collection${rows.length?' (they do not appear on the site)':''}</div>
     <div class="plstrip">${unsorted.map(k=>plCell(k)).join('')}</div>
+    <datalist id="dl-place">${cities.map(c=>`<option value="${esc(c)}">`).join('')}</datalist>
     ${archived.length?`<div class="plsec">Archived — not on the site; their photos keep the tag, so restoring brings the collection back as it was</div>${archived.map(c=>plArchRow(c,cityKeys)).join('')}`:''}`;
   $('#pl-city').onchange=e=>{plCity=e.target.value;plTarget=null;try{localStorage.setItem('plCity',plCity)}catch(_){}render();};
   $('#pl-essay').onchange=e=>plEssay(e.target.value);
@@ -1307,6 +1335,19 @@ function plArchRow(c,cityKeys){
   return `<div class="plrow arch"><div class="plhead"><b>${esc(c.title)}</b><span class="n">${keys.length} tagged${collPlaces(c).length>1?' · '+esc(collPlaces(c).join(', ')):''}</span>
     <button class="linkbtn" onclick="plRestore('${jesc(c.slug)}')">restore</button></div>
     <div class="plstrip">${seq.map(k=>{const p=PHOTOS[k];return `<div class="plcell archived" style="width:${Math.round(110*(p.width||3)/(p.height||2))}px" title="#${p.img_no}"><img loading="lazy" src="${imgu(p)}"></div>`;}).join('')}</div></div>`;}
+const plKeep=async(fn)=>{const y=window.scrollY;await fn();render();window.scrollTo(0,y);};
+window.plSet=(slug,patch)=>plKeep(()=>updateColl(slug,patch));
+window.plRename=(slug,el)=>{const t=el.value.trim();
+  if(!t){el.value=COLLS.find(c=>c.slug===slug).title;return;}
+  plSet(slug,{title:t});};
+window.plPlaces=(slug,val)=>{const a=val.split(',').map(s=>s.trim()).filter(Boolean);
+  if(!a.length){alert('A collection needs a place.');render();return;}
+  plSet(slug,{places:a.length>1?a:[],place:a[0]});};
+window.plFlag=(e,key,f)=>{e.stopPropagation();const p=PHOTOS[key],on=!p[f];
+  plKeep(async()=>{
+    // one cover per place: setting it here clears the city's old one
+    if(f==='place_cover'&&on)await Promise.all(Object.keys(PHOTOS).filter(k=>k!==key&&PHOTOS[k].city===p.city&&PHOTOS[k].place_cover).map(k=>save(k,{place_cover:false})));
+    await save(key,{[f]:on});});};
 window.plArchive=async(slug)=>{const y=window.scrollY;await updateColl(slug,{archived:true});render();window.scrollTo(0,y);};
 window.plRestore=async(slug)=>{const y=window.scrollY;await updateColl(slug,{archived:false});render();window.scrollTo(0,y);};
 window.plEssay=async(essay)=>{
