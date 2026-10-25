@@ -6,6 +6,14 @@
   <a class="backlink" href="/places/">← Back to Places</a>
   <div class="place-header">
     <h1 class="place-title">{{ .Title }}</h1>
+    {{/* The Work piece written about this place (data/places.json "essay",
+         picked in the tagger's Places mode). Collection captions still render
+         below either way. */}}
+    {{ range where (index hugo.Data.places "places") "city" $place }}{{ with .essay }}
+      {{ with site.GetPage (printf "/work/%s" .) }}
+    <p class="place-essay">Read the {{ .Params.form | default "essay" | lower }} <a href="{{ .RelPermalink }}">here</a></p>
+      {{ else }}{{ warnf "places.json: %q links essay %q, which is not a page under content/work/" $place . }}{{ end }}
+    {{ end }}{{ end }}
     {{ with .Content }}<div class="intro place-overview">{{ . }}</div>{{ end }}
   </div>
 
@@ -21,11 +29,15 @@
   {{ if $colls }}
   {{ $reg := dict }}
   {{ range (index hugo.Data.collections "collections") }}{{ $reg = merge $reg (dict .slug .) }}{{ end }}
+  {{/* a menu of one is no menu (a place whose photos all sit in one
+       collection named for it) */}}
+  {{ if gt (len $colls) 1 }}
   <nav class="place-menu" aria-label="Collections in {{ .Title }}">
     {{ range $slug := $colls }}
       <a href="#{{ $slug }}" style="--accent:{{ partialCached "accent.html" $slug $slug }}">{{ (index $reg $slug).title }}</a>
     {{ end }}
   </nav>
+  {{ end }}
   <div class="place-walls">
     {{ range $slug := $colls }}
       {{ $c := index $reg $slug }}
@@ -67,16 +79,6 @@
 
   {{ end }}{{/* end legacy album */}}
 
-  {{/* Essays tagged with this place (writing front matter: places: ["Pittsburgh"]) */}}
-  {{ $essays := where (where .Site.RegularPages "Section" "work") "Params.places" "intersect" (slice $place) }}
-  {{ with $essays }}
-  <div class="section-label">Writing</div>
-  <ul class="place-essays">
-    {{ range .ByDate.Reverse }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.subtitle }} <span class="work-sub">— {{ . }}</span>{{ end }}</li>
-    {{ end }}
-  </ul>
-  {{ end }}
 </main>
 {{ end }}
 

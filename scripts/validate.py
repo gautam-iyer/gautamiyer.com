@@ -197,6 +197,12 @@ def main():
                 warn(f"collection {c['slug']!r} names place {p!r}, which is not in places.json "
                      f"(the /collections place filter won't match it)")
 
+    # A place's linked essay (tagger Places mode) must be a real Work piece —
+    # the template warns too, but a bad link should fail here, before deploy.
+    for p in plist:
+        if p.get("essay") and not (REPO / "content" / "work" / f"{p['essay']}.md").exists():
+            err(f"place {p.get('city')!r} links essay {p['essay']!r}, which is not in content/work/")
+
     # ---- 8. index.json is in step with the manifest ----------------------
     # deploy.sh regenerates it before hugo, but a manual push can skip that and
     # ship a stale index — the templates read the index, not the manifest.

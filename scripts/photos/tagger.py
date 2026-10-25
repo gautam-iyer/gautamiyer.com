@@ -152,6 +152,31 @@ def load(path, default):
     return json.loads(path.read_text()) if path.exists() else default
 
 
+WORK = REPO / "content" / "work"
+
+
+def work_pieces():
+    """The Work pieces a place can link to: [{slug, title, form}], by title.
+    Front matter is read line by line (title/form/draft are flat scalars), so
+    no YAML dependency for a dropdown."""
+    out = []
+    for md in sorted(WORK.glob("*.md")):
+        if md.name.startswith("_"):
+            continue
+        fm, lines = {}, md.read_text().split("\n")
+        if lines and lines[0].strip() == "---":
+            for line in lines[1:]:
+                if line.strip() == "---":
+                    break
+                k, sep, v = line.partition(":")
+                if sep and k in ("title", "form", "draft"):
+                    fm[k] = v.strip().strip('"').strip("'")
+        if fm.get("draft") == "true":
+            continue
+        out.append({"slug": md.stem, "title": fm.get("title") or md.stem, "form": fm.get("form") or ""})
+    return sorted(out, key=lambda e: e["title"].lower())
+
+
 def atomic_write(path, obj):
     tmp = path.with_suffix(path.suffix + ".tmp")
     tmp.write_text(json.dumps(obj, indent=2, ensure_ascii=False) + "\n")
@@ -238,6 +263,8 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
  .plcell:hover{outline-color:#7c3aed}
  .plcell.elsewhere{opacity:.35} .plcell.elsewhere:hover{opacity:.8}
  .plcell[draggable=true]{cursor:grab}
+ .plcell.archived{opacity:.35;cursor:default} .plcell.archived:hover{outline-color:transparent}
+ .plrow.arch .plhead b{color:#71717a}
  .plcell .seq{position:absolute;left:3px;top:3px;font-size:10px;font-weight:700;background:rgba(24,24,27,.78);color:#fff;border-radius:4px;padding:1px 5px}
  .plcell.dragging{opacity:.3}
  .plcell.drop-before{box-shadow:-4px 0 0 #7c3aed} .plcell.drop-after{box-shadow:4px 0 0 #7c3aed}
@@ -379,7 +406,7 @@ PAGE = r"""<!doctype html><html><head><meta charset="utf-8"><title>Photo Tagger<
 </header>
 <main id="main"></main>
 <script>
-let PHOTOS={}, COLLS=[], TAX=[], SHOOTS=[], DUPES=[];
+let PHOTOS={}, COLLS=[], TAX=[], SHOOTS=[], DUPES=[], PLACES=[], ESSAYS=[];
 let mode='tag', page=0, memberSlug=null;
 let cullFilter={shoot:'',city:'',coll:'',show:'all'}, cullCursor=0;
 let BREAKS={}, HINTS={}, nbShoot='', nbDirty=false;
@@ -396,7 +423,7 @@ const uniq=a=>[...new Set(a.filter(Boolean))].sort();
 async function boot(){
   const d=await (await fetch('/api/data')).json();
   PHOTOS=d.photos; COLLS=d.collections; TAX=d.taxonomy||[]; SHOOTS=d.shoots||[]; DUPES=d.dupes||[];
-  BREAKS=d.breaks||{}; HINTS=d.hints||{};
+  BREAKS=d.breaks||{}; HINTS=d.hints||{}; PLACES=d.places||[]; ESSAYS=d.essays||[];
   NEEDUP=Object.values(PHOTOS).filter(p=>p.needs_upload).length;
   startRotPoll();   // a reload mid-rotation should still pick up the finished pixels
   document.querySelectorAll('#modeseg button').forEach(b=>b.onclick=()=>{
@@ -1240,7 +1267,8 @@ function plRow(c,order,cityKeys,multi){
     <div class="plhead"><button class="tgtbtn${on?' on':''}" onclick="plSetTarget('${jesc(c.slug)}')">${on?'◉ target':'◎ target'}</button>
       <b>${esc(c.title)}</b><span class="n">${shown.length} shown${elsewhere.length?` · ${elsewhere.length} tagged, shown elsewhere`:''}${multi?' · '+esc(collPlaces(c).join(', ')):''}</span>
       ${multi?'':`<button class="keepall" onclick="plMove('${jesc(c.slug)}',-1)" title="Earlier on the place page">▲</button><button class="keepall" onclick="plMove('${jesc(c.slug)}',1)" title="Later on the place page">▼</button>`}
-      <button class="linkbtn" onclick="plEdit('${jesc(c.slug)}')">edit members →</button></div>
+      <button class="linkbtn" onclick="plEdit('${jesc(c.slug)}')">edit members →</button>
+      <button class="linkbtn arch" onclick="plArchive('${jesc(c.slug)}')" title="Take it off the site. Its photos keep the tag; any not shown in another collection move to Unsorted. Restore it from Archived at the bottom.">archive</button></div>
     <textarea class="plcap" placeholder="Caption — shown above this collection on ${multi?'its collection page':'the place page, and on its collection page'}. Saves when you click away." onchange="updateColl('${jesc(c.slug)}',{caption:this.value})">${esc(c.caption||'')}</textarea>
     <textarea class="plcap plsrc" placeholder="Sources — citations for the caption, shown small under the photos (markdown: one per line, or a list). Saves when you click away." onchange="updateColl('${jesc(c.slug)}',{sources:this.value})">${esc(c.sources||'')}</textarea>
     <div class="plstrip">${seq.map((k,i)=>plCell(k,'','',{slug:c.slug,n:i+1})).join('')||'<span class="hint">empty — pick ◎ target, then click photos below</span>'}${elsewhere.map(k=>plCell(k,title(displayColl(PHOTOS[k],order)),'elsewhere')).join('')}</div></div>`;}
@@ -1253,10 +1281,14 @@ function renderPlace(){
   const rows=placeColls(plCity), multis=multiColls(plCity);
   if(plTarget&&![...rows,...multis].some(c=>c.slug===plTarget))plTarget=null;
   const unsorted=cityKeys.filter(k=>!displayColl(PHOTOS[k],order)).sort(byImg);
+  const essay=(PLACES.find(p=>p.city===plCity)||{}).essay||'';
+  const archived=COLLS.filter(c=>c.archived&&collPlaces(c).includes(plCity)).sort((a,b)=>a.title.localeCompare(b.title));
   $('#stat').textContent=`${plCity}: ${cityKeys.length-unsorted.length} shown · ${unsorted.length} unsorted`;
   $('#main').innerHTML=`<p class="hint">One row per collection, in the order the place page shows them. Pick a <b>◎ target</b>, then click photos to show them there (their other tags are kept). Click a photo already in the target to take it out. Faded = tagged here but shown in another collection; click it to bring it here. <b>Drag</b> a row's photos to set the order the site shows them in (numbered): the place page shows every photo in that order, and the collection page's carousel opens on #1. New photos join at the end. <b>✎</b> on a photo (hover) gives it its own lightbox caption — purple ✎ = captioned.</p>
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px">
       <select id="pl-city">${cities.map(c=>`<option value="${esc(c)}"${c===plCity?' selected':''}>${esc(c)} (${counts[c]})</option>`).join('')}</select>
+      <label style="font-size:13px;color:#71717a" title="Shows “Read the essay here” under the place name on its page. Collection captions still show either way.">Essay
+        <select id="pl-essay" style="max-width:340px"><option value="">none</option>${ESSAYS.map(e=>`<option value="${esc(e.slug)}"${e.slug===essay?' selected':''}>${esc(e.title)}${e.form&&e.form!=='Essay'?' ('+esc(e.form)+')':''}</option>`).join('')}</select></label>
       <button class="keepall" onclick="plNew(false)">+ New collection in ${esc(plCity)}</button>
       <button class="keepall" onclick="plNew(true)">+ New multi-place collection…</button>
     </div>
@@ -1264,9 +1296,24 @@ function renderPlace(){
     ${rows.map(c=>plRow(c,order,cityKeys,false)).join('')}
     ${multis.length?`<div class="plsec">Spanning several places — on /collections/ only (“Multiple places”), not on any place page</div>${multis.map(c=>plRow(c,order,cityKeys,true)).join('')}`:''}
     <div class="plsec">Unsorted — ${unsorted.length} ${esc(plCity)} photo${unsorted.length===1?'':'s'} shown in no collection${rows.length?' (they do not appear on the site)':''}</div>
-    <div class="plstrip">${unsorted.map(k=>plCell(k)).join('')}</div>`;
+    <div class="plstrip">${unsorted.map(k=>plCell(k)).join('')}</div>
+    ${archived.length?`<div class="plsec">Archived — not on the site; their photos keep the tag, so restoring brings the collection back as it was</div>${archived.map(c=>plArchRow(c,cityKeys)).join('')}`:''}`;
   $('#pl-city').onchange=e=>{plCity=e.target.value;plTarget=null;try{localStorage.setItem('plCity',plCity)}catch(_){}render();};
+  $('#pl-essay').onchange=e=>plEssay(e.target.value);
 }
+/* An archived collection: read-only (it can't be a target), restorable. */
+function plArchRow(c,cityKeys){
+  const keys=cityKeys.filter(k=>(PHOTOS[k].collections||[]).includes(c.slug)), seq=collSeq(c,keys);
+  return `<div class="plrow arch"><div class="plhead"><b>${esc(c.title)}</b><span class="n">${keys.length} tagged${collPlaces(c).length>1?' · '+esc(collPlaces(c).join(', ')):''}</span>
+    <button class="linkbtn" onclick="plRestore('${jesc(c.slug)}')">restore</button></div>
+    <div class="plstrip">${seq.map(k=>{const p=PHOTOS[k];return `<div class="plcell archived" style="width:${Math.round(110*(p.width||3)/(p.height||2))}px" title="#${p.img_no}"><img loading="lazy" src="${imgu(p)}"></div>`;}).join('')}</div></div>`;}
+window.plArchive=async(slug)=>{const y=window.scrollY;await updateColl(slug,{archived:true});render();window.scrollTo(0,y);};
+window.plRestore=async(slug)=>{const y=window.scrollY;await updateColl(slug,{archived:false});render();window.scrollTo(0,y);};
+window.plEssay=async(essay)=>{
+  const r=await fetch('/api/place/update',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({city:plCity,essay})});
+  const d=await r.json();
+  if(!r.ok){alert(d.error||'Could not save the essay link.');render();return;}
+  PLACES=d.places;flash();};
 window.plSetTarget=(slug)=>{plTarget=plTarget===slug?null:slug;render();};
 window.plClick=async(key)=>{
   if(!plTarget){alert('Pick a ◎ target collection first.');return;}
@@ -1399,9 +1446,11 @@ class Handler(BaseHTTPRequestHandler):
             dupes = load(DUPES, {"groups": []})["groups"]
             breaks = load(BREAKS, {"shoots": {}})["shoots"]
             hints = load(HINTS, {"shoots": {}})["shoots"]
+            places = load(PLACES, {"places": []})["places"]
             return self._send(200, {"photos": m, "collections": colls, "taxonomy": tax,
                                     "shoots": shoots, "dupes": dupes,
-                                    "breaks": breaks, "hints": hints})
+                                    "breaks": breaks, "hints": hints,
+                                    "places": places, "essays": work_pieces()})
         if path == "/api/rotate/status":
             # Cheap on purpose — polled every ~1.2s while a rotation is in flight.
             # Deliberately does NOT recount needs_upload: that would mean parsing
@@ -1691,6 +1740,24 @@ class Handler(BaseHTTPRequestHandler):
                         break
                 atomic_write(DUPES, d)
             return self._send(200, {"ok": True})
+        if path == "/api/place/update":
+            # A place's linked Work piece ("Read the essay here" under its
+            # title on the place page). essay = a content/work slug, or "" for
+            # none — which removes the key, so places.json stays sparse.
+            city, essay = data.get("city"), (data.get("essay") or "").strip()
+            if essay and essay not in {e["slug"] for e in work_pieces()}:
+                return self._send(400, {"error": f"no Work piece {essay!r}"})
+            with _lock:
+                reg = load(PLACES, {"places": []})
+                pl = next((p for p in reg["places"] if p.get("city") == city), None)
+                if pl is None:
+                    return self._send(404, {"error": f"{city!r} is not in data/places.json"})
+                if essay:
+                    pl["essay"] = essay
+                else:
+                    pl.pop("essay", None)
+                atomic_write(PLACES, reg)
+            return self._send(200, {"places": reg["places"]})
         if path == "/api/collection/update":
             slug = data["slug"]
             with _lock:

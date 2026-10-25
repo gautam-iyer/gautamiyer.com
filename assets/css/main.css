@@ -1340,23 +1340,10 @@ article {
 
 .place-overview p { font-size: 1rem; line-height: 1.7; color: var(--dark); }
 
-.place-essays { list-style: none; }
-
-.place-essays li {
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.95rem;
-}
-
-.place-essays a {
-  color: var(--black);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.place-essays a:hover { text-decoration: underline; text-underline-offset: 3px; }
-
-.place-essays .work-sub { color: var(--mid); font-weight: 400; }
+/* "Read the essay here" under the place name (places.json "essay") */
+.place-essay { margin: -8px 0 0; font-size: 0.95rem; color: var(--mid); }
+.place-essay a { color: var(--black); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.place-essay a:hover { opacity: 0.65; }
 
 .fc-collection { margin-bottom: 40px; }
 
