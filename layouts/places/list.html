@@ -26,7 +26,7 @@
   </div>
 
   <div class="tile-grid dim-titles" id="places-grid" data-tilegrid>
-    {{ range $i, $pl := (index hugo.Data.places "places") }}
+    {{ range $i, $pl := (index hugo.Data.places "places") }}{{ if not $pl.hidden }}
       {{ $color := index $palette (mod $i 5) }}
       {{ $cover := index $covers $pl.city }}
       {{/* Places with photos become clickable album pages; the rest (no photos
@@ -56,7 +56,7 @@
         <div class="tile-title subsubhead" style="color:{{ $color }}">{{ $pl.name }}</div>
       </div>
       {{ end }}
-    {{ end }}
+    {{ end }}{{ end }}
   </div>
 </main>
 {{ end }}

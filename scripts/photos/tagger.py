@@ -1282,14 +1282,16 @@ function renderPlace(){
   const rows=placeColls(plCity), multis=multiColls(plCity);
   if(plTarget&&![...rows,...multis].some(c=>c.slug===plTarget))plTarget=null;
   const unsorted=cityKeys.filter(k=>!displayColl(PHOTOS[k],order)).sort(byImg);
-  const essay=(PLACES.find(p=>p.city===plCity)||{}).essay||'';
+  const plRec=PLACES.find(p=>p.city===plCity)||{}, essay=plRec.essay||'';
+  const hiddenCity=new Set(PLACES.filter(p=>p.hidden).map(p=>p.city));
   const archived=COLLS.filter(c=>c.archived&&collPlaces(c).includes(plCity)).sort((a,b)=>a.title.localeCompare(b.title));
   $('#stat').textContent=`${plCity}: ${cityKeys.length-unsorted.length} shown · ${unsorted.length} unsorted`;
   $('#main').innerHTML=`<p class="hint">One row per collection, in the order the place page shows them. Pick a <b>◎ target</b>, then click photos to show them there (their other tags are kept). Click a photo already in the target to take it out. Faded = tagged here but shown in another collection; click it to bring it here. <b>Drag</b> a row's photos to set the order the site shows them in (numbered): the place page shows every photo in that order, and the collection page's carousel opens on #1. New photos join at the end. Hover a photo: <b>✎</b> its own lightbox caption (purple = captioned), <b>⚑</b> the place's cover. A row with Home walls ticked can appear on the home page, showing the first photos of its order that fit. Click a title to rename it; the line under it holds the Collections-tab settings (place, home walls + rank, accent).</p>
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px">
-      <select id="pl-city">${cities.map(c=>`<option value="${esc(c)}"${c===plCity?' selected':''}>${esc(c)} (${counts[c]})</option>`).join('')}</select>
+      <select id="pl-city">${cities.map(c=>`<option value="${esc(c)}"${c===plCity?' selected':''}>${esc(c)} (${counts[c]})${hiddenCity.has(c)?' · hidden':''}</option>`).join('')}</select>
       <label style="font-size:13px;color:#71717a" title="Shows “Read the essay here” under the place name on its page. Collection captions still show either way.">Essay
         <select id="pl-essay" style="max-width:340px"><option value="">none</option>${ESSAYS.map(e=>`<option value="${esc(e.slug)}"${e.slug===essay?' selected':''}>${esc(e.title)}${e.form&&e.form!=='Essay'?' ('+esc(e.form)+')':''}</option>`).join('')}</select></label>
+      ${plRec.city?`<label style="font-size:13px;color:#71717a" title="Untick to leave this place off the /places/ grid. Its page and collections stay on the site; only the tile goes."><input type="checkbox" id="pl-listed"${plRec.hidden?'':' checked'}> On Places page</label>`:''}
       <button class="keepall" onclick="plNew(false)">+ New collection in ${esc(plCity)}</button>
       <button class="keepall" onclick="plNew(true)">+ New multi-place collection…</button>
     </div>
@@ -1302,6 +1304,7 @@ function renderPlace(){
     ${archived.length?`<div class="plsec">Archived — not on the site; their photos keep the tag, so restoring brings the collection back as it was</div>${archived.map(c=>plArchRow(c,cityKeys)).join('')}`:''}`;
   $('#pl-city').onchange=e=>{plCity=e.target.value;plTarget=null;try{localStorage.setItem('plCity',plCity)}catch(_){}render();};
   $('#pl-essay').onchange=e=>plEssay(e.target.value);
+  const listed=$('#pl-listed');if(listed)listed.onchange=e=>plPlaceSet({hidden:!e.target.checked});
 }
 /* An archived collection: read-only (it can't be a target), restorable. */
 function plArchRow(c,cityKeys){
@@ -1324,11 +1327,12 @@ window.plFlag=(e,key,f)=>{e.stopPropagation();const p=PHOTOS[key],on=!p[f];
     await save(key,{[f]:on});});};
 window.plArchive=async(slug)=>{const y=window.scrollY;await updateColl(slug,{archived:true});render();window.scrollTo(0,y);};
 window.plRestore=async(slug)=>{const y=window.scrollY;await updateColl(slug,{archived:false});render();window.scrollTo(0,y);};
-window.plEssay=async(essay)=>{
-  const r=await fetch('/api/place/update',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({city:plCity,essay})});
-  const d=await r.json();
-  if(!r.ok){alert(d.error||'Could not save the essay link.');render();return;}
-  PLACES=d.places;flash();};
+window.plEssay=essay=>plPlaceSet({essay});
+window.plPlaceSet=async(patch)=>{
+  let r,d={};
+  try{r=await fetch('/api/place/update',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({city:plCity,...patch})});d=await r.json();}catch(_){}
+  if(!r||!r.ok){alert(d.error||'Could not save — is the tagger running?');render();return;}
+  PLACES=d.places;render();flash();};
 window.plSetTarget=(slug)=>{plTarget=plTarget===slug?null:slug;render();};
 window.plClick=async(key)=>{
   if(!plTarget){alert('Pick a ◎ target collection first.');return;}
@@ -1756,9 +1760,10 @@ class Handler(BaseHTTPRequestHandler):
                 atomic_write(DUPES, d)
             return self._send(200, {"ok": True})
         if path == "/api/place/update":
-            # A place's linked Work piece ("Read the essay here" under its
-            # title on the place page). essay = a content/work slug, or "" for
-            # none — which removes the key, so places.json stays sparse.
+            # Per-place settings; each field optional. essay = the linked Work
+            # piece ("Read the essay here" under the place name), a content/work
+            # slug or "" for none. hidden = left off the /places/ grid (its page
+            # still builds). Off/none removes the key, so places.json stays sparse.
             city, essay = data.get("city"), (data.get("essay") or "").strip()
             if essay and essay not in {e["slug"] for e in work_pieces()}:
                 return self._send(400, {"error": f"no Work piece {essay!r}"})
@@ -1767,10 +1772,16 @@ class Handler(BaseHTTPRequestHandler):
                 pl = next((p for p in reg["places"] if p.get("city") == city), None)
                 if pl is None:
                     return self._send(404, {"error": f"{city!r} is not in data/places.json"})
-                if essay:
-                    pl["essay"] = essay
-                else:
-                    pl.pop("essay", None)
+                if "essay" in data:
+                    if essay:
+                        pl["essay"] = essay
+                    else:
+                        pl.pop("essay", None)
+                if "hidden" in data:
+                    if data["hidden"]:
+                        pl["hidden"] = True
+                    else:
+                        pl.pop("hidden", None)
                 atomic_write(PLACES, reg)
             return self._send(200, {"places": reg["places"]})
         if path == "/api/collection/update":
