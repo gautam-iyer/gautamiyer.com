@@ -341,7 +341,34 @@
       "cover": null,
       "order": 0,
       "type": "curated",
-      "place": "Buffalo"
+      "place": "Buffalo",
+      "photo_order": [
+        "Buffalo '26/Drop 2/IMG_3362.JPG",
+        "Buffalo '26/Drop 2/IMG_3406.JPG",
+        "Buffalo '26/Drop 2/IMG_3400.JPG",
+        "Buffalo '26/Drop 2/IMG_3410.JPG",
+        "Buffalo '26/Drop 2/IMG_3394.JPG",
+        "Buffalo '26/Drop 2/IMG_3607.JPG",
+        "Buffalo '26/Edited Film/iyer5882-R1-08-8A.jpg",
+        "Buffalo '26/Edited Film/iyer5882-R1-01-1A.jpg",
+        "Buffalo '26/Edited Film/iyer5882-R1-02-2A.jpg",
+        "Buffalo '26/Edited Film/iyer5882-R1-03-3A.jpg",
+        "Buffalo '26/Edited Film/iyer5882-R1-04-4A.jpg",
+        "Buffalo '26/Edited Film/iyer5882-R1-05-5A.jpg",
+        "Buffalo '26/Edited Film/iyer5882-R1-11-11A.jpg",
+        "Buffalo '26/Edited Film/iyer5882-R1-15-15A.jpg",
+        "Buffalo '26/Drop 2/IMG_3540.JPG",
+        "Buffalo '26/Drop 2/IMG_3554.JPG",
+        "Buffalo '26/Drop 2/IMG_3564.JPG",
+        "Buffalo '26/Drop 2/IMG_3568.JPG",
+        "Buffalo '26/Drop 2/IMG_3570.JPG",
+        "Buffalo '26/Drop 2/IMG_3585.JPG",
+        "Buffalo '26/Drop 2/IMG_3591.JPG",
+        "Buffalo '26/Drop 2/IMG_3596.JPG",
+        "Buffalo '26/Drop 2/IMG_3604.JPG",
+        "Buffalo '26/Drop 2/IMG_3616.JPG",
+        "Buffalo '26/Drop 2/IMG_3626.JPG"
+      ]
     },
     {
       "slug": "denver-heights",
@@ -900,6 +927,28 @@
       "order": 0,
       "type": "curated",
       "place": "Binghamton"
+    },
+    {
+      "slug": "albany",
+      "title": "Albany",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Albany",
+      "photo_order": [
+        "November '25 Road Trip/Edited/IMG_8427.jpg",
+        "November '25 Road Trip/Edited/IMG_8119.jpg",
+        "November '25 Road Trip/Edited/IMG_8282.jpg",
+        "November '25 Road Trip/Edited/IMG_8210.jpg",
+        "November '25 Road Trip/Edited/IMG_8195.jpg",
+        "November '25 Road Trip/Edited/IMG_8124.jpg",
+        "November '25 Road Trip/Edited/IMG_8142.jpg",
+        "November '25 Road Trip/Edited/IMG_8453.jpg",
+        "November '25 Road Trip/Edited/IMG_8160.jpg",
+        "November '25 Road Trip/Edited/IMG_8266.jpg"
+      ]
     }
   ]
 }
