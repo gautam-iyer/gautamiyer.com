@@ -283,6 +283,17 @@ SHOOTS = [
         "date": "2026-10-11",
         "title": "Hartford",
     },
+    {
+        # Three rolls of Kodak 400 B&W, lightly edited scans; the roll id is
+        # the 3rd number in the filename (348648/49/50), the frame the last.
+        "folder": "CT '26/Edited Bridgeport Film",
+        "slug": "ct-2026-bridgeport-film",
+        "city": "Bridgeport",
+        "date": "2026-10-11",
+        "title": "Bridgeport (Film)",
+        "medium": "Film",
+        "camera": None,
+    },
 ]
 
 TAG_FIELDS = ["neighborhood", "land_use", "architecture", "subject", "medium", "tone", "tag_notes"]

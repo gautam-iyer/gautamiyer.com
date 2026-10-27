@@ -949,6 +949,16 @@
         "November '25 Road Trip/Edited/IMG_8160.jpg",
         "November '25 Road Trip/Edited/IMG_8266.jpg"
       ]
+    },
+    {
+      "slug": "bridgeport-b-w",
+      "title": "Bridgeport B/W",
+      "description": "",
+      "featured": false,
+      "cover": null,
+      "order": 0,
+      "type": "curated",
+      "place": "Bridgeport"
     }
   ]
 }
